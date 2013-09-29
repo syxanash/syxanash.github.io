@@ -204,6 +204,12 @@ body
 
 #footer
 {
+  opacity:0.9;
+filter:alpha(opacity=90); /* For IE8 and earlier */
+
+  border-top: 1px solid #cccccc;
+  background: white;
+
   color: #666666;
 
   text-align: center;
