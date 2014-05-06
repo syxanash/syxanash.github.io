@@ -1,1 +1,1 @@
-[syxanash.github.io](http://syxanash.github.io) Simone Marzulli Personal Web Page
+[syxanash.github.io](http://syxanash.github.io) my personal web page
