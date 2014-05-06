@@ -71,23 +71,23 @@ a:hover {
 
 .links {    
   padding-top:5px;
-  font-size: 30px;
-  height: 50px;
+  font-size: 40px;
+  height: 60px;
   text-align: center;
 }
 
 #email {
-  background-color: #F4BA70;
-}
-
-#linkedin {
   background-color: #4A789C;
 }
 
+#linkedin {
+  background-color: #F4BA70;
+}
+
 #github {
-  background-color: #E96D63;
+  background-color: #85C1F5;
 }
 
 #twitter {
-  background-color: #85C1F5;
+  background-color: #E96D63;
 }
