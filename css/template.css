@@ -37,7 +37,7 @@ a {
 }
 
 a:hover {
-  border-bottom: 4px solid;
+  text-decoration: underline;
 }
 
 /* Container */
