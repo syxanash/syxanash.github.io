@@ -1,13 +1,3 @@
-/*
-
- Copyright (c) Simone syxanash Marzulli
- 
- syxanash at gmail dot com
- 
- This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
-
-*/
-
 /* Standard Elements */
 
 html { min-height: 100%; }
@@ -29,7 +19,7 @@ body
   text-align: justify;
 }
 
-/* a */
+/* hyperlinks */
 
 a {
   text-decoration: none;
@@ -72,24 +62,28 @@ a:hover {
 /* Links */
 
 .links {    
-  padding-top:5px;
+  padding-top:10px;
   font-size: 40px;
   height: 60px;
   text-align: center;
 }
 
-#email {
+#green {
+  background-color: #7FCA9F;
+}
+
+#blue {
   background-color: #4A789C;
 }
 
-#linkedin {
+#yellow {
   background-color: #F4BA70;
 }
 
-#github {
+#lightblue {
   background-color: #85C1F5;
 }
 
-#twitter {
+#red {
   background-color: #E96D63;
 }
