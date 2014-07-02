@@ -14,7 +14,7 @@ html { min-height: 100%; }
 body
 {
   font-family: 'Libre Baskerville', serif;
-  background-color: #efefef;
+  background-color: #FCFEFD;
   margin: 0 auto;
   text-align: justify;
 }
@@ -23,7 +23,7 @@ body
 
 a {
   text-decoration: none;
-  color: #efefef;
+  color: #FCFEFD;
 }
 
 a:hover {
