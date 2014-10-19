@@ -1,0 +1,70 @@
+==================================================================
+https://keybase.io/syx
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://syxanash.github.io
+  * I am syx (https://keybase.io/syx) on keybase.
+  * I have a public key with fingerprint FD98 EE0B 9B14 775D A75E  2413 25D4 5A38 DC5B 64AE
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "fd98ee0b9b14775da75e241325d45a38dc5b64ae",
+            "host": "keybase.io",
+            "key_id": "25d45a38dc5b64ae",
+            "uid": "9d653385aa3d502c59d07862da714800",
+            "username": "syx"
+        },
+        "service": {
+            "hostname": "syxanash.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1413751919,
+    "expire_in": 157680000,
+    "prev": "b4cb3f93ae3d1ca3dbf2fb29f52f69b14a470aabd39c2b0b9799408a2e4eedda",
+    "seqno": 7,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v1.1.3
+Comment: https://keybase.io/crypto
+
+yML1AnicO8LLzMDFqHolyuJOdMo6xtMHPpcyhLio5FcrJeWnVCpZVStlp4KptMy8
+9NSigqLMvBIlK6W0FEuL1FSDJMskQxNzc9OURHPTVCMTQ2Mj0xQT00Rji5Rk0yQz
+k8RUJR2ljPxikA6gMUmJxal6mflAMSAnPjMFKIpFfSlYwjLFzNTY2MI0MdE4xdTA
+KNnUMsXA3MLMCGiToYmFgQFIYXFqUV5ibipQdXFlhVKtjhJQoCwzORXkXJCtCMnE
+vMTiDL30zJKM0iSICwqK8kvyk/NzgPIZJSUFxVYg/SWVBSAN5alJ8VCj4pMy81KA
+PgfqKEstKs7Mz1OyMgSqTC7JBJltCPSyuamhpaGljlJqRUFmUWp8JkiFqbkZ0I0G
+BiB7UsuARiaZJCcZp1kaJ6YapxgmA/2UlGaUlmRkmWZqlGYGCsREE3ODxMSkFGPL
+ZKMkYLiaW1qaGFgkGqWapKampCQqgTxXmJevZGUOdGZiOshbmel5iSWlRalKtYcO
+xrAwMHIxsLEygeKOgYtTABajr634/1kbV6Y6+ug95qreJ9a+fRnf7ob5rmvstSJS
+t58stPk/9eGP2ZUsU1Z6RO979pn/xkn90Ih7tR5zXwkLimz90XBYv/bk36Qnuxae
++XI1aFfagYAtlda6bDXP1knN+MDD0f9ff67gk182cuKznpfufnygfHrWPvMJy07N
+5fr9xIrHTFrla151zalJpeUVbwUf3D2+2aXnR/OB7sVR0+sbep9KT2HLaKxI367x
+MLY6n8u/+8116+MKee2u3zO23HZimnYpuy39zy+T07N6umcyy9Sdt7CzffPzh6d2
+qbpBVnrg6f2rHoRYhXoYGrzeMXfiRAcDlWMy+5n5rzes+3HwowJ3z7/br3L1rzCc
+5iw0urO/XuNKZnfXzO6DqxvW3J7cHajT0n+5u9vfo/uUwvHzF0tWOM1gbCoImzfV
+5KLc47RtMuem3Z7p8U1RJuzuDOdLxglOD78END2UuVK5KCIg9BTHZuEL6zVPeJ3O
+U4qfX7ZNuzt0WzWXx4UugQtKPddmffiz+oq30Mr9O9p3hW94UjIr5O6ZmZMFjyTJ
+Py2wVxOZfufcjLLSvKkMKhXPOfSm8969wNmV26uhUXin7qLaR7viaOGC+dblyo1v
+fh6dKyN2Yae4L9frrc7CoY0ij0RqrX82bpultYYv+t3jx6eqD3Rctd77zYjP7yu7
+7hlPy28p9v7xi56dcPt7YdW51JvLLQzrY5idXohWLdnh2gQAOkaaPA==
+=f+e5
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/syx
+
+==================================================================
