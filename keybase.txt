@@ -1,70 +1,100 @@
-==================================================================
-https://keybase.io/syx
---------------------------------------------------------------------
+### Keybase proof
 
 I hereby claim:
 
-  * I am an admin of https://syxanash.github.io
+  * I am syxanash on github.
   * I am syx (https://keybase.io/syx) on keybase.
-  * I have a public key with fingerprint 2F87 C990 8312 8E66 74AB  DB92 E3E5 A892 5610 3B0D
+  * I have a public key whose fingerprint is 2F87 C990 8312 8E66 74AB  DB92 E3E5 A892 5610 3B0D
 
 To claim this, I am signing this object:
 
+```json
 {
     "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.7.2"
+        },
         "key": {
             "fingerprint": "2f87c99083128e6674abdb92e3e5a89256103b0d",
             "host": "keybase.io",
-            "key_id": "e3e5a89256103b0d",
+            "key_id": "E3E5A89256103B0D",
             "uid": "9d653385aa3d502c59d07862da714800",
             "username": "syx"
         },
+        "merkle_root": {
+            "ctime": 1416061597,
+            "hash": "e70e8c1723cd94f3c2df540d34a0be57ccbcc1e027e0d200472a453b65c961ce617f8510034bb440fa37bc85f296ad9eaba4eb0db99f6805b58dd624292f3ea5",
+            "seqno": 95771
+        },
         "service": {
-            "hostname": "syxanash.github.io",
-            "protocol": "https:"
+            "name": "github",
+            "username": "syxanash"
         },
         "type": "web_service_binding",
         "version": 1
     },
-    "ctime": 1413973300,
+    "ctime": 1416061671,
     "expire_in": 157680000,
-    "prev": "efcc52cab4d403f0b453fcdb9810cafa7458095a9076b8c6a04bf33b0d4c3e15",
-    "seqno": 16,
+    "prev": "4f33fdd651e3f7ec7ea5231f00cf7a76aacaa2dade065312ff917635a39d68dc",
+    "seqno": 20,
     "tag": "signature"
 }
+```
 
-with the aforementioned key, yielding the PGP signature:
+with the PGP key whose fingerprint is
+[2F87 C990 8312 8E66 74AB  DB92 E3E5 A892 5610 3B0D](https://keybase.io/syx)
+(captured above as `body.key.fingerprint`), yielding the PGP signature:
 
+```
 -----BEGIN PGP MESSAGE-----
-Version: Keybase OpenPGP v1.1.3
-Comment: https://keybase.io/crypto
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - https://gpgtools.org
 
-yML1AnicO8LLzMDF+PjpiklhAta8jKcPfCllCHFvNalWSspPqVSyqlbKTgVTaZl5
-6alFBUWZeSVKVkpGaRbmyZaWBhbGhkYWqWZm5iaJSSlJlkapxqmmiRaWRqZmhgbG
-SQYpSjpKGfnFIB1AY5ISi1P1MvOBYkBOfGYKUBSL+lKwhGWKmamxsYVpYqJxiqmB
-UbKpZYqBuYWZUUqiuaGJhYEBSGFxalFeYm4qUHVxZYVSrY4SUKAsMzkV5FyQrQjJ
-xLzE4gy99MySjNIkiAsKivJL8pPzc4DyGSUlBcVWIP0llQUgDeWpSfFQo+KTMvNS
-gD4H6ihLLSrOzM9TsjIEqkwuyQSZbWhiaGxpbmxsYKCjlFpRkFmUGp8JUmFqbgZ0
-I0i0oCi1DOTPtORkU6PkxCSTFBMD4zSDJBNT47RkYIhZGBokJ6YlmpuYWhhYmiZa
-GpibJVkkmyUamCSlGYNCxCTZONXQVAnkucK8fKDZZkB3JqaD/JWZnpdYUlqUqlR7
-6GAMCwMjFwMbKxMo8hi4OAVgUerRyv8/4MOt3V27Pyj+mbRt/ZanYe/6r5k9D1w8
-P85MnnvN+5nnxVO7ak8pfNNb9+iB8KuXDlYn+OQyF3Moyh7b9WvOUzm9HX+Dj6ad
-2vLq/tTLEit9zsZLRAZW5JdsXGrme0zhnQ7jekmd5VrFH3n3nuneVOCW5Pf7zxH2
-RW6bv8n3bV13ztj7yby0u8cN2BPY066uEl18UEso47FDUoGExonIk7tZ5YWteD/s
-jTF8FttQeaI8dPYz//X2v3MPLK5e8Z4t5OS3CuWQH1uyWPLaLJo9ue0a2Aq5vkcc
-17mRlRcuuXmn/Xa3g/+47xxbWxDh8jdC4/s9p1LJ+7G1O61vyrHa1aa8Mdmjn8dT
-7hln7X5xA6uSnpKe4/e7JUs7NFNXB/dNv+U7Y/ebiCXxDHPvuRTFr/IRm3d1ddQq
-/fQNDO4NDs8DNWzzg8xbpfRmhijs6f2ddDNNw/K/Qp4Yj/TjxACF06r/WRYcLc1J
-cggV/5j0lGHFml31Jp6ddlm3pFY/39jQuvrbxetKF5oj1/2I+nX4XuOx86u/Vse6
-ukQ+CNq1SFxa/bHK0fXCP+aes6u33aK61WbTj41Zi92MbyvExcqUhbzXOr325sLr
-dx+1XVL8HbBP4OnmZk9LD3fh3/8rdk9ekr8qTeHRFV5+/YzlvE67PXffq+xPdJaJ
-jD6+oKti6eWcVqmIlUt7w+c+qLjD3JzzKH+uZP6u57IWnXoABu+STA==
-=1GQ1
+owFlUntQVFUc3kU0AgmhGsURh67yGORx7uPcB2USxSgOVqTggBN07r3nLjdgd9ld
+FraNkUYGFAMxJjEgGDQSKFdgypScsZdJgqg4OE3CWBomCRNqLOo42b2MTjqdv875
+/b7fd77vfKcucJ7B33hlvOODzEXPBxoHJkTDJpN4y02IFtlFJLoJqUDFZoe+M6NC
+TCQS+dglIjuOVy3hZouM49+2hz/AxBJObLOrFrOGAvFcPEWUxepwfVhRzSZss9pU
+nYugFJ6TBAHwNEnxmGU5BomyKFCYxhDxAgVZEtAikDXKPIvd8ditxBxnripr1RQ6
+Bb70EJ8MXtF6xXMNQWYhTfMQIVqGgJKgIAOOZykZcSTDA6AD7dj2wJLdVapLLcS2
+/AKca7NY5vxKDlXvkgzJApaEAqeJQfY8DY85gHmJ5ChakgVGoSVKViADZJpBQMSQ
+kyRRkkgMKA4DmQKA4SjEQFpkoSSwpIRZklN4SAJAM6LIMEBBNCdKPFQogUWygJGI
+GKzZFwVBYXkARcjLMksxlEApNEZQU2/HRWYLkShAjiPL9KPNqUr4kZhMqiOvWPyf
+T2TWLWgTDpdVL5VgMffBcK6ommW1zWx6NEid/PGHYDkylsClVtWGc1UdATlNo7Zi
+CasNOzVO7UVoRRMMSUwrHJY4TTJFkwoAksIhjkVIQkiLQsZAS4mkFEUgOZaGiNZi
+42XpP3uURupAJl26ajIjR7ENE2U7fJb5Goz+hgXzffSvavB/ctHD/2vpD7qfYvku
+iF3CCi3rD9eGXfNtyNjvynrj1TSgrjif/83wgax1l3ZY7l+gT78VsbqkqCZg21mf
+NYPNOfXb3dbYQNH7k494qf2m85xx6crOicrgbZFF1umatA18VMW8xrRjjvWiX3v7
+2O3gvS8wM3xcw5e9HfxAwr0FUxHmymutax0JHq5jaOqfVXEZdT23auN+LH+mN388
+Mn9NDu4r9mbFDN1vzFm+p8Jx89SU+1iDZ+uzQnsEZY9+bsmhPmPTH37R0Qd3H/7e
+vcNz8bYz5rP02neMISvTk1PG9yeXju4KPffr4N2fN48o4327rzclHan1mdybOnqj
+73bBLmLt5Lqcpo3Lfnc8LVdvL2u9y/+5PPL17PKWsPHpjHKjN2Jh6EVlYo2xekvc
+tzBkMWw6dJJr3jxyNcwzNGTtQZ6v1AT48bobqe89cWBVwBfZQSu6xv467pH61289
+dSfTez7xeuu9+roLv1S2ff41PhG3q2bQPdY93bYh4Ydul8GzNbtiZ9Xis/6zMzcW
+1u85eCa7e/HRooBFR0M+ufLhbxNVKUXp9PFOpTo7vLB7gS9/xFuys3F031K2bmD1
+i+Et/oPJJw0zA6NoIx/ceedyR39gRQ7vOeEX9dpsVdS7o1bv313Ol5s/suSLsy2B
+PUnzM0MNN1Pf/BQmuTbRsyVXR4bf7x1J3Xf89PDpLTGTU12XK5mnzvwL
+=NuX1
 -----END PGP MESSAGE-----
 
-And finally, I am proving ownership of this host by posting or
-appending to this document.
+```
 
-View my publicly-auditable identity here: https://keybase.io/syx
+And finally, I am proving ownership of the github account by posting this as a gist.
 
-==================================================================
+### My publicly-auditable identity:
+
+https://keybase.io/syx
+
+### From the command line:
+
+Consider the [keybase command line program](https://keybase.io/docs/command_line).
+
+```bash
+# look me up
+keybase id syx
+
+# encrypt a message to me
+keybase encrypt syx -m 'a secret message...'
+
+# ...and more...
+```
