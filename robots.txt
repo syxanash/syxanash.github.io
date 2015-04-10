@@ -27,4 +27,4 @@
 #         /|\   /|\
 #        |___| |___|
 #
-# (C) Syxanash 2009 - syxanash [at] gmail.com
+# (C) syx 2009

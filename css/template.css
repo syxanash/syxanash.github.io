@@ -9,6 +9,11 @@ html { min-height: 100%; }
   src: local('Libre Baskerville'), local('LibreBaskerville-Regular'), url(https://themes.googleusercontent.com/static/fonts/librebaskerville/v2/pR0sBQVcY0JZc_ciXjFsK5gtRqbDAavNCEBluaoIIJc.woff) format('woff');
 }
 
+@font-face {
+  font-family: "ArcadeClassic";
+  src: url("../font/ArcadeClassic.otf") format("opentype");
+}
+
 /* Body content */
 
 body
@@ -56,7 +61,12 @@ a:hover {
 /* Name */
 
 #name {
-  font-size: 50px
+  font-family: "ArcadeClassic";
+  letter-spacing: 1px;
+  word-spacing: 10px;
+  text-align: justify;
+
+  font-size: 60px
 }
 
 /* Links */
