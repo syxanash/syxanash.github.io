@@ -62,7 +62,7 @@ a:hover {
 
 #name {
   font-family: "ArcadeClassic";
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   word-spacing: 10px;
   text-align: justify;
 
@@ -93,22 +93,22 @@ a:hover {
 
 /* color links */
 
-#green {
-  background-color: #7FCA9F;
+#first {
+  background-color: #4d5057;
 }
 
-#blue {
-  background-color: #4A789C;
+#second {
+  background-color: #919191;
 }
 
-#yellow {
-  background-color: #F4BA70;
+#third {
+  background-color: #686868;
 }
 
-#lightblue {
-  background-color: #85C1F5;
+#fourth {
+  background-color: #4f4f4f;
 }
 
-#red {
-  background-color: #E96D63;
+#fifth {
+  background-color: #2d2d2d;
 }
