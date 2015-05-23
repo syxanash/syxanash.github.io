@@ -5,6 +5,8 @@
     <link rel="stylesheet" type="text/css" href="css/animate.css" />
     <link rel="shortcut icon" href="favicon.png" type="image/png">
 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
         
@@ -37,13 +39,12 @@
     </div>
 
     <script type="text/javascript">
-        setInterval(function(){
-            var r = Math.floor(Math.random() * 256);
-            var g = Math.floor(Math.random() * 256);
-            var b = Math.floor(Math.random() * 256);        
-            
-            document.getElementById("name").style.color = "rgb(" + r + "," + g + "," + b + ")";
-        }, 200);
+        $(document).ready(function() {
+          $('#name').hover(function(){
+            $('#name').addClass('animated rubberBand');
+          })
+        });
+
     </script>
 </body>
 </html>

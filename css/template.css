@@ -61,12 +61,7 @@ a:hover {
 /* Name */
 
 #name {
-  font-family: "ArcadeClassic";
-  letter-spacing: 2px;
-  word-spacing: 10px;
-  text-align: justify;
-
-  font-size: 60px
+  font-size: 50px
 }
 
 /* Links */
