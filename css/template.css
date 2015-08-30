@@ -30,10 +30,7 @@ a {
   text-decoration: none;
   color: #FCFEFD;
 }
-
-a:hover {
-  text-decoration: underline;
-}
+/*
 
 /* Container */
 
