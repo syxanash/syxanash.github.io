@@ -9,20 +9,20 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-        
+
     <title>Simone Marzulli</title>
 </head>
 <body>
     <div id="container">
 
-        <div id="content">
+        <div id="content" class="animated bounceInUp">
             Hello there!<br>
             I'm <span id="name">Simone Marzulli</span> and I'm a<br>
             freelance developer,<br>
             open source enthusiast and piadina lover.
         </div>
 
-        <div class="animated bounceInUp">
+        <div class="animated bounceInDown">
           <div class="links" id="first"><a href="http://github.com/syxanash">Github</a></div>
 
           <div class="links" id="second"><a href="http://twitter.com/syxanash">Twitter</a></div>
@@ -39,12 +39,17 @@
     </div>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-          $('#name').hover(function(){
-            $('#name').addClass('animated rubberBand');
-          })
-        });
+      function getRandomColor() {
+        var colors = ["2E282A", "17BEBB", "CD5334", "EDB88B", "048A81"]
+        var color = '#' + colors[Math.floor(Math.random() * colors.length)];
+        return color;
+      }
 
+      $(document).ready(function(){
+        $('#name').hover(function(){
+          document.getElementById("name").style.color = getRandomColor();
+        });
+      });
     </script>
 </body>
 </html>
