@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import {
   Window, WindowHeader, WindowContent,
 } from 'react95';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import 'animate.css';
 
 import WindowHead from './components/WindowHead';
@@ -76,7 +76,7 @@ class App extends Component {
     } = this.state;
 
     return (
-      <BrowserRouter>
+      <HashRouter>
         <SoundEffects />
         <div className='window_centered'>
           <div style={ { display: poweredOff || isBrokenScreen ? 'none' : 'block' } }>
@@ -113,7 +113,7 @@ class App extends Component {
         </div>
         <Poweroff shouldPoweroff={ poweredOff } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }

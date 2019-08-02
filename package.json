@@ -2,7 +2,7 @@
   "name": "simone_computer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https:/simone.computer",
+  "homepage": "https://simone.computer",
   "dependencies": {
     "animate.css": "^3.7.2",
     "husky": "^3.0.2",
