@@ -1,0 +1,53 @@
+.links_window {
+  width: 570px;
+}
+
+.link_list {
+  overflow: auto;
+  overflow-y: hidden;
+  color: white;
+  background-color: #3968C2;
+  font-weight: bold;
+
+  font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
+}
+
+.link_list a {
+  color: yellow;
+}
+
+.link_list a:hover {
+  color: red;
+}
+
+.link_list a:visited {
+  color: lightgray;
+}
+
+.link_style {
+  padding: 3px;
+}
+
+.globe_container {
+  background-color: black;
+  width: 80px;
+  height: 80px;
+  float: right;
+
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.globe_picture {
+  height: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 400px)  {
+  .links_window {
+    width: 280px;
+  }
+}

@@ -1,0 +1,65 @@
+.button_item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+}
+
+.first_row_icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 5px
+}
+
+.last_row_icons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 5px
+}
+
+.cut_out {
+  width: 600px;
+  height: 280px;
+  background-color: white;
+}
+
+.movable_icon {
+  cursor: grab;
+}
+
+.movable_icon:active {
+  cursor: grabbing;
+}
+
+@media only screen and (max-width: 400px)  {
+  .cut_out {
+    width: 310px;
+    height: 280px;
+  }
+}
+
+.icon {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge*/
+   user-select: none;          /* Non-prefixed version, currently 
+                                  not supported by any browser */
+   -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+
+  height: 48px;
+}
+
+.icon_caption {
+  font-weight: bold;
+  display: block;
+}

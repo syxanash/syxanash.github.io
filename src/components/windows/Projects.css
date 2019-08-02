@@ -1,0 +1,59 @@
+.projects_window {
+  width: 580px;
+}
+
+.cutout_area {
+  overflow: auto;
+  overflow-y: hidden;
+  background-color: black;
+
+  padding: 10px;
+
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
+}
+
+.project_item {
+  padding: 5px;
+}
+
+.bulletpoint {
+  color: orange;
+  font-weight: bold;
+}
+
+.comment_text {
+  color: lime;
+  font-style: italic;
+}
+
+.project_item a {
+  color: yellow;
+}
+
+.project_item a:hover {
+  color: red;
+}
+
+.project_item a:visited {
+  color: lightskyblue;
+}
+
+.blink_text {
+  animation: blinker 500ms linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+@media only screen and (max-width: 400px)  {
+  .projects_window {
+    width: 290px;
+  }
+}

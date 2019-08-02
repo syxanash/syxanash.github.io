@@ -1,0 +1,13 @@
+.copyright {
+  font-size: 12px;
+  position: absolute;
+  text-shadow: -1px -1px 1px white;
+  opacity: 0.6;
+  filter: Alpha(opacity=60); /* IE8 and earlier */
+}
+
+@media only screen and (max-width: 400px)  {
+  .copyright {
+    font-size: 11px;
+  }
+}

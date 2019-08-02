@@ -1,0 +1,16 @@
+{
+  "Perl": "pl",
+  "Php": "php",
+  "Ruby": "rb",
+  "C++": "cpp",
+  "JavaScript": "js",
+  "Gosu": "gs",
+  "Java": "java",
+  "SoftScript": "sft",
+  "HTML": "html",
+  "CSS": "css",
+  "Lua": "lua",
+  "Arduino": "ino",
+  "Bash": "sh",
+  "Basic": "vb"
+}

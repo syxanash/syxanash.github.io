@@ -1,0 +1,16 @@
+.popup_window_container {
+  position: absolute;
+  z-index: 4;
+  padding: 10px;
+
+  margin-left: -15px;
+  margin-top: -25px;
+}
+
+.popup_movable_header {
+  cursor: grab;
+}
+
+.popup_movable_header:active {
+  cursor: grabbing;
+}

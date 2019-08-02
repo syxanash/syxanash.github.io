@@ -1,0 +1,28 @@
+.about_window {
+  width: 570px;
+}
+
+.text_container {
+  background: #fffee8;
+  padding: 10px;
+
+  margin-bottom: 15px;
+
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 10px #707070;
+  font-size: 18px;
+}
+
+.avatar_picture {
+  height: 210px;
+  float: right;
+  padding: 5px;
+  margin-left: 2px;
+}
+
+@media only screen and (max-width: 400px)  {
+  .about_window {
+    width: 280px;
+  }
+}

@@ -1,0 +1,16 @@
+.centered_item {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  color: red;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  animation: blinker 0.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

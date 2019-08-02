@@ -1,0 +1,25 @@
+.small_icon {
+  padding-right: 5px;
+  height: 20px;
+}
+
+.footer_buttons {
+  width: 50%;
+}
+
+.footer_cut_out {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  width: 600px;
+}
+
+@media only screen and (max-width: 400px)  {
+  .footer_cut_out {
+    width: 310px;
+  }
+
+  .footer_buttons {
+    width: 100%;
+  }
+}
