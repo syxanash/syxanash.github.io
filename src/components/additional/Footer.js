@@ -24,7 +24,7 @@ class Footer extends Component {
 
     return (
       <Anchor
-        href='https://github.com/syxanash/simonecomputer'
+        href='https://github.com/syxanash/syxanash.github.io'
         target='_blank'
         style={ { color: '#000000', textDecoration: 'none' } }
       >
