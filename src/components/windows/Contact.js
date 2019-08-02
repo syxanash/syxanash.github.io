@@ -23,49 +23,49 @@ class ContactHeader extends Component {
 }
 
 class ContactBody extends Component {
-  render = () => (<div className='contact_window'>
+  render = () => (<div className='contact-window'>
     <span>
       Please feel free to drop me an email or stalk me on the web.
     </span>
-    <div className='social_icons_container'>
+    <div className='social-icons-container'>
       <Tooltip text='Email'>
         <Anchor href='mailto:si.marzulli@gmail.com?subject=Hi%20Mr.%20Awesome%20Dude' target='_blank'>
-          <Button className='social_icon' size='lg' square>
+          <Button className='social-icon' size='lg' square>
             <img src={ emailIcon } style={ { height: '40px' } } alt="email"/>
           </Button>
         </Anchor>
       </Tooltip>
       <Tooltip text='PGP Public Key'>
         <Anchor href={ pgpKey } target='_blank'>
-          <Button className='social_icon' size='lg' square>
+          <Button className='social-icon' size='lg' square>
             <img src={ pgpIcon } style={ { height: '40px' } } alt="pgp"/>
           </Button>
         </Anchor>
       </Tooltip>
       <Tooltip text='GitHub'>
         <Anchor href='https://github.com/syxanash' target='_blank'>
-          <Button className='social_icon' size='lg' square>
+          <Button className='social-icon' size='lg' square>
             <img src={ githubIcon } style={ { height: '40px' } } alt="github"/>
           </Button>
         </Anchor>
       </Tooltip>
       <Tooltip text='Twitter'>
         <Anchor href='https://twitter.com/syxanash' target='_blank'>
-          <Button className='social_icon' size='lg' square>
+          <Button className='social-icon' size='lg' square>
             <img src={ twitterIcon } style={ { height: '30px' } } alt="twitter"/>
           </Button>
         </Anchor>
       </Tooltip>
       <Tooltip text='Tinder?'>
         <Anchor href='https://www.linkedin.com/in/simone-marzulli-318b4a81' target='_blank'>
-          <Button className='social_icon' size='lg' square>
+          <Button className='social-icon' size='lg' square>
             <img src={ linkedinIcon } style={ { height: '40px' } } alt="linkedin"/>
           </Button>
         </Anchor>
       </Tooltip>
       <Tooltip text='Dribbble'>
         <Anchor href='https://dribbble.com/syx' target='_blank'>
-          <Button className='social_icon' size='lg' square>
+          <Button className='social-icon' size='lg' square>
             <img src={ dribbbleIcon } style={ { height: '40px' } } alt="dribbble"/>
           </Button>
         </Anchor>

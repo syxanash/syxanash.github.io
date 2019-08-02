@@ -1,21 +1,21 @@
-.contact_window {
+.contact-window {
   width: 450px;
 }
 
 @media only screen and (max-width: 400px)  {
-  .contact_window {
+  .contact-window {
     width: 280px;
   }
 }
 
-.social_icon {
+.social-icon {
   width: 60px;
   margin: 5px;
   height: 60px;
   background-color: white;
 }
 
-.social_icons_container {
+.social-icons-container {
   padding-top: 10px;
 
   display: flex;

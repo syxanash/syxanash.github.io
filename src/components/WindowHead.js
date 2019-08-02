@@ -44,15 +44,15 @@ class WindowHead extends Component {
     const currentPathname = this.props.location.pathname;
     const rightActionButton = currentPathname === '/' ? '◓' : '↵';
 
-    return <div className='window_header'>
-      <span className='window_title_text' >
+    return <div className='window-header'>
+      <span className='window-title-text' >
         <Switch>
           <Route exact path='/' component={ MainWindowHeader }/>
           {pageHeaderRoutes}
           <Route component={ NotFoundHeader }/>
         </Switch>
       </span>
-      <span className='window_title_buttons'>
+      <span className='window-title-buttons'>
         <Button
           size='sm'
           square

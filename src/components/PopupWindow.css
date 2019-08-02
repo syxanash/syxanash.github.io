@@ -1,4 +1,4 @@
-.popup_window_container {
+.popup-window-container {
   position: absolute;
   z-index: 4;
   padding: 10px;
@@ -7,10 +7,10 @@
   margin-top: -25px;
 }
 
-.popup_movable_header {
+.popup-movable-header {
   cursor: grab;
 }
 
-.popup_movable_header:active {
+.popup-movable-header:active {
   cursor: grabbing;
 }

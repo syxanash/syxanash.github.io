@@ -78,7 +78,7 @@ class App extends Component {
     return (
       <HashRouter>
         <SoundEffects />
-        <div className='window_centered'>
+        <div className='window-centered'>
           <div style={ { display: poweredOff || isBrokenScreen ? 'none' : 'block' } }>
             <Helmet>
               <style>

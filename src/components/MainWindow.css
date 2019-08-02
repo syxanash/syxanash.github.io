@@ -1,4 +1,4 @@
-.button_item {
+.button-item {
   vertical-align: top;
   display: inline-block;
   text-align: center;
@@ -7,36 +7,36 @@
   margin: 5px;
 }
 
-.first_row_icons {
+.first-row-icons {
   position: absolute;
   top: 0;
   left: 0;
   margin: 5px
 }
 
-.last_row_icons {
+.last-row-icons {
   position: absolute;
   bottom: 0;
   right: 0;
   margin: 5px
 }
 
-.cut_out {
+.cut-out {
   width: 600px;
   height: 280px;
   background-color: white;
 }
 
-.movable_icon {
+.movable-icon {
   cursor: grab;
 }
 
-.movable_icon:active {
+.movable-icon:active {
   cursor: grabbing;
 }
 
 @media only screen and (max-width: 400px)  {
-  .cut_out {
+  .cut-out {
     width: 310px;
     height: 280px;
   }
@@ -59,7 +59,7 @@
   height: 48px;
 }
 
-.icon_caption {
+.icon-caption {
   font-weight: bold;
   display: block;
 }

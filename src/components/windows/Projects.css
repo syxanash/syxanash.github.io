@@ -1,8 +1,8 @@
-.projects_window {
+.projects-window {
   width: 580px;
 }
 
-.cutout_area {
+.cutout-area {
   overflow: auto;
   overflow-y: hidden;
   background-color: black;
@@ -15,7 +15,7 @@
   font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
 }
 
-.project_item {
+.project-item {
   padding: 5px;
 }
 
@@ -24,24 +24,24 @@
   font-weight: bold;
 }
 
-.comment_text {
+.comment-text {
   color: lime;
   font-style: italic;
 }
 
-.project_item a {
+.project-item a {
   color: yellow;
 }
 
-.project_item a:hover {
+.project-item a:hover {
   color: red;
 }
 
-.project_item a:visited {
+.project-item a:visited {
   color: lightskyblue;
 }
 
-.blink_text {
+.blink-text {
   animation: blinker 500ms linear infinite;
 }
 
@@ -53,7 +53,7 @@
 
 
 @media only screen and (max-width: 400px)  {
-  .projects_window {
+  .projects-window {
     width: 290px;
   }
 }

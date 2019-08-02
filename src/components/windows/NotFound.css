@@ -1,9 +1,9 @@
-.notfound_window {
+.notfound-window {
   width: 570px;
 }
 
 @media only screen and (max-width: 400px)  {
-  .notfound_window {
+  .notfound-window {
     width: 280px;
   }
 }

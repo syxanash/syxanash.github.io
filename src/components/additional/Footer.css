@@ -1,13 +1,13 @@
-.small_icon {
+.small-icon {
   padding-right: 5px;
   height: 20px;
 }
 
-.footer_buttons {
+.footer-buttons {
   width: 50%;
 }
 
-.footer_cut_out {
+.footer-cut-out {
   display: flex;
   flex-grow: 1;
   flex-wrap: wrap;
@@ -15,11 +15,11 @@
 }
 
 @media only screen and (max-width: 400px)  {
-  .footer_cut_out {
+  .footer-cut-out {
     width: 310px;
   }
 
-  .footer_buttons {
+  .footer-buttons {
     width: 100%;
   }
 }

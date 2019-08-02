@@ -87,15 +87,15 @@ class PopupWindow extends Component {
         position={ windowPosition }
         onDrag={ this.updateWindowPosition }
       >
-        <div className='popup_window_container' style={ { display: displayProp } }>
+        <div className='popup-window-container' style={ { display: displayProp } }>
           <ThemeProvider theme={ PippoTheme }>
             <Window className={ `animated ${displayExtraActions ? 'zoomIn faster' : 'swing faster'}` }>
               <WindowHeader className="handle">
-                <div className='window_header popup_movable_header'>
-                  <span className='window_title_text' >
+                <div className='window-header popup-movable-header'>
+                  <span className='window-title-text' >
                     <PopupWindowHeader />
                   </span>
-                  <span className='window_title_buttons'>
+                  <span className='window-title-buttons'>
                     { displayExtraActions ? this.renderExtraActionButtons() : null }
                     <Button
                       size='sm'

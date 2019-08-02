@@ -34,9 +34,9 @@ class AboutBody extends Component {
 
   render = () => {
     const { timePassed } = this.state;
-    return (<div className='about_window'>
-      <div className='text_container'>
-        <img src={ avatarPicture } alt='my avatar' className='avatar_picture' />
+    return (<div className='about-window'>
+      <div className='text-container'>
+        <img src={ avatarPicture } alt='my avatar' className='avatar-picture' />
         <span style={ { fontWeight: 'bold', fontSize: '1.5em' } }>Hello there!</span>
         <p>
           I'm <b>Simone</b>, pronounced like `<i>see-mow-nay</i>`<br />

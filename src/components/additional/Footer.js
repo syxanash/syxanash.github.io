@@ -29,7 +29,7 @@ class Footer extends Component {
         style={ { color: '#000000', textDecoration: 'none' } }
       >
         <Button fullWidth>
-          <img src={ clockIcon } className="small_icon" alt="clock"/>
+          <img src={ clockIcon } className="small-icon" alt="clock"/>
           <figcaption>Last edited {displayDate}</figcaption>
         </Button>
       </Anchor>
@@ -40,14 +40,14 @@ class Footer extends Component {
     const { active, onClick } = this.props;
 
     return (
-      <Cutout className='footer_cut_out'>
-        <div className='footer_buttons' style={ { float: 'left' } }>
+      <Cutout className='footer-cut-out'>
+        <div className='footer-buttons' style={ { float: 'left' } }>
           <Button fullWidth active={ active } onClick={ onClick }>
-            <img src={ codeIcon } className='small_icon' alt="code"/>
+            <img src={ codeIcon } className='small-icon' alt="code"/>
             <figcaption>Info about this website</figcaption>
           </Button>
         </div>
-        <div className='footer_buttons' style={ { float: 'right' } }>
+        <div className='footer-buttons' style={ { float: 'right' } }>
           {this.renderLastCommitButton()}
         </div>
       </Cutout>

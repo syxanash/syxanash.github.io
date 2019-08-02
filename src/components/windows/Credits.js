@@ -38,7 +38,7 @@ class CreditsBody extends Component {
         active={ isOpen }
         style={ { fontWeight: 'bold' } }
       >
-        {text}<img src={ openlinkIcon } alt='link icon' className={ `accordion_icon ${isOpen ? '' : 'rotate'}` }/>
+        {text}<img src={ openlinkIcon } alt='link icon' className={ `accordion-icon ${isOpen ? '' : 'rotate'}` }/>
       </Button>
     </span>);
   }
@@ -55,7 +55,7 @@ class CreditsBody extends Component {
   render = () => {
     const { displayAccordion } = this.state;
 
-    return (<div className='credits_window'>
+    return (<div className='credits-window'>
       <div>
         This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>ReactJS</a> and the code is entirely available on <a href='https://github.com/syxanash/simonecomputer' target='_blank' rel='noopener noreferrer'>GitHub</a>.
         <p>
@@ -63,8 +63,8 @@ class CreditsBody extends Component {
           you could help me fix them by opening a pull request!
         </p>
       </div>
-      <div className='bulletpoint_container'>
-        <div className='paragraph_title'>Copyright &amp; License</div>
+      <div className='bulletpoint-container'>
+        <div className='paragraph-title'>Copyright &amp; License</div>
         <ul>
           <li>All <b>icons</b> and <b>images</b> (checkout directory <i>src/resources/icons/</i> and <i>public/backgrounds/</i>) were made by myself and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</li>
           <li>The <b>source code</b> I wrote for this website is under MIT License. See <a href={ licenseText } target='_blank' rel='noopener noreferrer'>LICENSE.txt</a></li>
@@ -74,15 +74,15 @@ class CreditsBody extends Component {
       <div style={ { paddingTop: '15px', paddingBottom: '15px' } }>
         Here you will find a list of technologies and media I've used to build this site.
       </div>
-      <div className='bulletpoint_container'>
-        <div className='paragraph_title'>{this.renderAccordionButton('Code', 'code')}</div>
+      <div className='bulletpoint-container'>
+        <div className='paragraph-title'>{this.renderAccordionButton('Code', 'code')}</div>
         <ul style={ { display: displayAccordion.code ? 'block' : 'none' } }>
           <li><a href='https://github.com/arturbien/React95' target='_blank' rel='noopener noreferrer'>React95</a> ~ Amazing Windows 95 style UI components for React</li>
           <li><a href='https://daneden.github.io/animate.css/' target='_blank' rel='noopener noreferrer'>Animate.css</a> ~ Set of animations used for opening windows and animating stuff</li>
           <li><a href='https://www.npmjs.com/package/react-draggable' target='_blank' rel='noopener noreferrer'>react-draggable</a> ~ A cool library for dragging items on a page</li>
           <li><a href='https://www.npmjs.com/package/react-typist' target='_blank' rel='noopener noreferrer'>react-typist</a> ~ A nice library for typing animations (used in Projects page)</li>
         </ul>
-        <div className='paragraph_title'>{this.renderAccordionButton('Images', 'images')}</div>
+        <div className='paragraph-title'>{this.renderAccordionButton('Images', 'images')}</div>
         <ul style={ { display: displayAccordion.images ? 'block' : 'none' } }>
           <li><a href='https://www.gimp.org' target='_blank' rel='noopener noreferrer'>GIMP</a> ~ All icons and some GIFs on this site have been created using GIMP.</li>
           <li><a href='https://ezgif.com/video-to-gif' target='_blank' rel='noopener noreferrer'>Ezgif</a> ~ Amazing web app for editing gifs and converting videos to GIF.</li>
@@ -91,7 +91,7 @@ class CreditsBody extends Component {
           <li><a href='https://en.wikipedia.org/wiki/Blue_Monday_(New_Order_song)#/media/File:NewOrderBlueMonday.jpg' target='_blank' rel='noopener noreferrer'>Blue Monday LP Cover</a> ~ The Favicon of this site is highly inspired by the cover art for the vinyl LP "Blue Monday" by New Order</li>
           <li><a href='https://en.wikipedia.org/wiki/Microsoft_Plus!' target='_blank' rel='noopener noreferrer'>Windows 95 Plus!</a> ~ a wallpaper taken from Inside your Computer</li>
         </ul>
-        <div className='paragraph_title'>{this.renderAccordionButton('Links', 'links')}</div>
+        <div className='paragraph-title'>{this.renderAccordionButton('Links', 'links')}</div>
         <ul style={ { display: displayAccordion.links ? 'block' : 'none' } }>
           <li>
             This site is not affiliated, associated, authorized, endorsed by,
@@ -99,7 +99,7 @@ class CreditsBody extends Component {
             to the websites listed in the page <b>Links</b>.
           </li>
         </ul>
-        <div className='paragraph_title'>{this.renderAccordionButton('Sounds', 'sounds')}</div>
+        <div className='paragraph-title'>{this.renderAccordionButton('Sounds', 'sounds')}</div>
         <ul style={ { display: displayAccordion.sounds ? 'block' : 'none' } }>
           <li>The poweroff screen page has a sample sound I modified from the original song <a href='https://www.youtube.com/watch?v=Z0XLzIswI2s' target='_blank' rel='noopener noreferrer'>Grace Jones - Slave to the Rhythm</a></li>
         </ul>

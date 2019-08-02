@@ -1,14 +1,14 @@
-.window_header {
+.window-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.window_title_text {
+.window-title-text {
   padding-right: 20px;
 }
 
-.window_title_buttons {
+.window-title-buttons {
   margin-right: -6px;
   display: flex;
   justify-content: space-between;

@@ -30,7 +30,7 @@ class BrokenScreen extends Component {
           }
         </style>
       </Helmet>
-      <div className='centered_item'>
+      <div className='centered-item'>
         <h1>This computer has been permanently damaged!</h1>
       </div>
     </React.Fragment>

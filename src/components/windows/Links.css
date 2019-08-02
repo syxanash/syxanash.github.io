@@ -1,8 +1,8 @@
-.links_window {
+.links-window {
   width: 570px;
 }
 
-.link_list {
+.link-list {
   overflow: auto;
   overflow-y: hidden;
   color: white;
@@ -12,23 +12,23 @@
   font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
 }
 
-.link_list a {
+.link-list a {
   color: yellow;
 }
 
-.link_list a:hover {
+.link-list a:hover {
   color: red;
 }
 
-.link_list a:visited {
+.link-list a:visited {
   color: lightgray;
 }
 
-.link_style {
+.link-style {
   padding: 3px;
 }
 
-.globe_container {
+.globe-container {
   background-color: black;
   width: 80px;
   height: 80px;
@@ -38,7 +38,7 @@
   margin-bottom: 15px;
 }
 
-.globe_picture {
+.globe-picture {
   height: 70px;
   position: absolute;
   top: 50%;
@@ -47,7 +47,7 @@
 }
 
 @media only screen and (max-width: 400px)  {
-  .links_window {
+  .links-window {
     width: 280px;
   }
 }

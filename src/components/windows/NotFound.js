@@ -43,7 +43,7 @@ class NotFoundBody extends Component {
 
   render = () => {
     const { randomColor } = this.state;
-    return (<div className='notfound_window'>
+    return (<div className='notfound-window'>
       <h1 style={ { textAlign: 'center', color: randomColor } }>404</h1>
       <span>Whatever you were looking for is not here.</span>
       <p>Stop using internet, go out and love someone!</p>

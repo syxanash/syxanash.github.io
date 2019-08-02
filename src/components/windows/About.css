@@ -1,8 +1,8 @@
-.about_window {
+.about-window {
   width: 570px;
 }
 
-.text_container {
+.text-container {
   background: #fffee8;
   padding: 10px;
 
@@ -14,7 +14,7 @@
   font-size: 18px;
 }
 
-.avatar_picture {
+.avatar-picture {
   height: 210px;
   float: right;
   padding: 5px;
@@ -22,7 +22,7 @@
 }
 
 @media only screen and (max-width: 400px)  {
-  .about_window {
+  .about-window {
     width: 280px;
   }
 }

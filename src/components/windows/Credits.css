@@ -1,9 +1,9 @@
-.credits_window {
+.credits-window {
   width: 630px;
   padding-bottom: 5px;
 }
 
-.bulletpoint_container {
+.bulletpoint-container {
   background: #eeeeee;
   padding: 10px;
 
@@ -14,11 +14,11 @@
   box-shadow: 10px 10px #707070;
 }
 
-.paragraph_title {
+.paragraph-title {
   font-weight: bold;
 }
 
-.accordion_icon {
+.accordion-icon {
   height: 17px;
   margin-left: 5px;
 }
@@ -32,7 +32,7 @@
 }
 
 @media only screen and (max-width: 400px)  {
-  .credits_window {
+  .credits-window {
     width: 300px;
   }
 }

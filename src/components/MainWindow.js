@@ -176,65 +176,65 @@ class MainWindowBody extends Component {
     return (
       <div>
         {this.renderPopupWindows()}
-        <Cutout className='cut_out'>
-          <div className='last_row_icons'>
+        <Cutout className='cut-out'>
+          <div className='last-row-icons'>
             <Tooltip text={ tooltipMessages[tooltipCount] }>
-              <Button id='cestino_icon' size='lg' square className='button_item' active={ iconsColliding }
+              <Button id='cestino_icon' size='lg' square className='button-item' active={ iconsColliding }
                 onClick={ this.increaseClickCount }
               >
                 <img src={ trashIcon } className='icon' alt="trash"/>
-                <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon_caption'>Cestino</figcaption>
+                <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>Cestino</figcaption>
               </Button>
             </Tooltip>
           </div>
-          <div className='first_row_icons'>
+          <div className='first-row-icons'>
             <Draggable
               handle='.handle_icon'
               onDrag={ this.checkCollision }
-              bounds=".cut_out"
+              bounds=".cut-out"
             >
               <Button
                 id='computer_icon'
                 size='lg'
                 square
-                className={ `button_item ${eggTriggered ? 'movable_icon handle_icon' : ''}` }
+                className={ `button-item ${eggTriggered ? 'movable-icon handle_icon' : ''}` }
                 onClick={ () => this.openWindow('about') }
                 active={ this.isWindowOpened('about') }
                 disabled={ eggTriggered }
               >
                 <img src={ aboutIcon } className={ `icon ${eggTriggered ? 'animated wobble faster delay-1s' : ''}` } alt="about"/>
-                <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon_caption'>About</figcaption>
+                <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>About</figcaption>
               </Button>
             </Draggable>
-            <Button size='lg' square className='button_item'
+            <Button size='lg' square className='button-item'
               onClick={ () => this.openWindow('projects') }
               active={ this.isWindowOpened('projects') }
             >
               <img src={ projectsIcon } className='icon' alt="projects"/>
-              <figcaption className='icon_caption'>Projects</figcaption>
+              <figcaption className='icon-caption'>Projects</figcaption>
             </Button>
-            <Button size='lg' square className='button_item'
+            <Button size='lg' square className='button-item'
               onClick={ () => this.openWindow('contact') }
               active={ this.isWindowOpened('contact') }
             >
               <img src={ contactIcon } className='icon' alt="contact"/>
-              <figcaption className='icon_caption'>Contact</figcaption>
+              <figcaption className='icon-caption'>Contact</figcaption>
             </Button>
-            <Button size='lg' square className='button_item'
+            <Button size='lg' square className='button-item'
               onClick={ () => this.openWindow('links') }
               active={ this.isWindowOpened('links') }
             >
               <img src={ linksIcon } className='icon' alt="links"/>
-              <figcaption className='icon_caption'>Links</figcaption>
+              <figcaption className='icon-caption'>Links</figcaption>
             </Button>
             <Anchor
               href='https://open.spotify.com/user/1192532714?si=_Z9kVqrCRJWOaJlWAE-hqA'
               target='_blank'
               style={ { color: '#000000', textDecoration: 'none' } }
             >
-              <Button size='lg' square className='button_item'>
+              <Button size='lg' square className='button-item'>
                 <img src={ musicIcon } className='icon' alt="music"/>
-                <figcaption className='icon_caption'>Music</figcaption>
+                <figcaption className='icon-caption'>Music</figcaption>
               </Button>
             </Anchor>
           </div>
