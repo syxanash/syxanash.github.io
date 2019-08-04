@@ -179,7 +179,7 @@ class MainWindowBody extends Component {
         <Cutout className='cut-out'>
           <div className='last-row-icons'>
             <Tooltip text={ tooltipMessages[tooltipCount] }>
-              <Button id='cestino_icon' size='lg' square className='button-item' active={ iconsColliding }
+              <Button id='cestino_icon' size='lg' square className='button-item' style={ { width: '80px', height: '80px', display: 'inline-block' } } active={ iconsColliding }
                 onClick={ this.increaseClickCount }
               >
                 <img src={ trashIcon } className='icon' alt="trash"/>
@@ -201,26 +201,27 @@ class MainWindowBody extends Component {
                 onClick={ () => this.openWindow('about') }
                 active={ this.isWindowOpened('about') }
                 disabled={ eggTriggered }
+                style={ { width: '80px', height: '80px', display: 'inline-block' } }
               >
                 <img src={ aboutIcon } className={ `icon ${eggTriggered ? 'animated wobble faster delay-1s' : ''}` } alt="about"/>
                 <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>About</figcaption>
               </Button>
             </Draggable>
-            <Button size='lg' square className='button-item'
+            <Button size='lg' square className='button-item' style={ { width: '80px', height: '80px', display: 'inline-block' } }
               onClick={ () => this.openWindow('projects') }
               active={ this.isWindowOpened('projects') }
             >
               <img src={ projectsIcon } className='icon' alt="projects"/>
               <figcaption className='icon-caption'>Projects</figcaption>
             </Button>
-            <Button size='lg' square className='button-item'
+            <Button size='lg' square className='button-item' style={ { width: '80px', height: '80px', display: 'inline-block' } }
               onClick={ () => this.openWindow('contact') }
               active={ this.isWindowOpened('contact') }
             >
               <img src={ contactIcon } className='icon' alt="contact"/>
               <figcaption className='icon-caption'>Contact</figcaption>
             </Button>
-            <Button size='lg' square className='button-item'
+            <Button size='lg' square className='button-item' style={ { width: '80px', height: '80px', display: 'inline-block' } }
               onClick={ () => this.openWindow('links') }
               active={ this.isWindowOpened('links') }
             >
@@ -232,7 +233,7 @@ class MainWindowBody extends Component {
               target='_blank'
               style={ { color: '#000000', textDecoration: 'none' } }
             >
-              <Button size='lg' square className='button-item'>
+              <Button size='lg' square className='button-item' style={ { width: '80px', height: '80px', display: 'inline-block' } } >
                 <img src={ musicIcon } className='icon' alt="music"/>
                 <figcaption className='icon-caption'>Music</figcaption>
               </Button>

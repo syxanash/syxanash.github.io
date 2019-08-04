@@ -37,7 +37,7 @@ class ProjectsBody extends Component {
     const { randomPromptChars } = this.state;
 
     return (<div className='projects-window'>
-      <Cutout className='cutout-area'>
+      <Cutout className='cutout-area' style={ { padding: '10px' } }>
         <p className='comment-text'>{'//'} Sometimes when I feel motivated and planets are perfectly aligned
         I work on small side projects. I usually do it to create something I need
         or to play with new tech.</p>

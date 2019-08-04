@@ -30,42 +30,42 @@ class ContactBody extends Component {
     <div className='social-icons-container'>
       <Tooltip text='Email'>
         <Anchor href='mailto:si.marzulli@gmail.com?subject=Hi%20Mr.%20Awesome%20Dude' target='_blank'>
-          <Button className='social-icon' size='lg' square>
+          <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ emailIcon } style={ { height: '40px' } } alt="email"/>
           </Button>
         </Anchor>
       </Tooltip>
       <Tooltip text='PGP Public Key'>
         <Anchor href={ pgpKey } target='_blank'>
-          <Button className='social-icon' size='lg' square>
+          <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ pgpIcon } style={ { height: '40px' } } alt="pgp"/>
           </Button>
         </Anchor>
       </Tooltip>
       <Tooltip text='GitHub'>
         <Anchor href='https://github.com/syxanash' target='_blank'>
-          <Button className='social-icon' size='lg' square>
+          <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ githubIcon } style={ { height: '40px' } } alt="github"/>
           </Button>
         </Anchor>
       </Tooltip>
       <Tooltip text='Twitter'>
         <Anchor href='https://twitter.com/syxanash' target='_blank'>
-          <Button className='social-icon' size='lg' square>
+          <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ twitterIcon } style={ { height: '30px' } } alt="twitter"/>
           </Button>
         </Anchor>
       </Tooltip>
       <Tooltip text='Tinder?'>
         <Anchor href='https://www.linkedin.com/in/simone-marzulli-318b4a81' target='_blank'>
-          <Button className='social-icon' size='lg' square>
+          <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ linkedinIcon } style={ { height: '40px' } } alt="linkedin"/>
           </Button>
         </Anchor>
       </Tooltip>
       <Tooltip text='Dribbble'>
         <Anchor href='https://dribbble.com/syx' target='_blank'>
-          <Button className='social-icon' size='lg' square>
+          <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ dribbbleIcon } style={ { height: '40px' } } alt="dribbble"/>
           </Button>
         </Anchor>
