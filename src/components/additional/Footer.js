@@ -44,7 +44,7 @@ class Footer extends Component {
         <div className='footer-buttons' style={ { float: 'left' } }>
           <Button fullWidth active={ active } onClick={ onClick }>
             <img src={ codeIcon } className='small-icon' alt="code"/>
-            <figcaption>Info about this website</figcaption>
+            <figcaption>About this website</figcaption>
           </Button>
         </div>
         <div className='footer-buttons' style={ { float: 'right' } }>

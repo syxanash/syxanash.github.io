@@ -81,6 +81,7 @@ class CreditsBody extends Component {
           <li><a href='https://daneden.github.io/animate.css/' target='_blank' rel='noopener noreferrer'>Animate.css</a> ~ Set of animations used for opening windows and animating stuff</li>
           <li><a href='https://www.npmjs.com/package/react-draggable' target='_blank' rel='noopener noreferrer'>react-draggable</a> ~ A cool library for dragging items on a page</li>
           <li><a href='https://www.npmjs.com/package/react-typist' target='_blank' rel='noopener noreferrer'>react-typist</a> ~ A nice library for typing animations (used in Projects page)</li>
+          <li><a href='https://github.com/Swordfish90/cool-retro-term' target='_blank' rel='noopener noreferrer'>cool-retro-term</a> ~ a vintage terminal emulator used to design the page 404</li>
         </ul>
         <div className='paragraph-title'>{this.renderAccordionButton('Images', 'images')}</div>
         <ul style={ { display: displayAccordion.images ? 'block' : 'none' } }>
