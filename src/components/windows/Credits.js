@@ -57,7 +57,7 @@ class CreditsBody extends Component {
 
     return (<div className='credits-window'>
       <div>
-        This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>ReactJS</a> and the code is entirely available on <a href='https://github.com/syxanash/simonecomputer' target='_blank' rel='noopener noreferrer'>GitHub</a>.
+        This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>ReactJS</a> and the code is entirely available on GitHub.
         <p>
           If you have any bugfix, suggestions, typos
           you could help me fix them by opening a pull request!
