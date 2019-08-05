@@ -106,7 +106,7 @@ class CreditsBody extends Component {
         </ul>
       </div>
       <div style={ { paddingTop: '15px', textAlign: 'center' } }>
-        This site has been mainly coded with <span role="img" aria-label="pizza">🍕</span> &amp; <span role="img" aria-label="beers">🍺</span>
+        No <span role="img" aria-label="pizza">🍕</span> was harmed in the making of this website.
       </div>
     </div>);
   }
