@@ -4,7 +4,7 @@ import {
   Divider, Cutout, Avatar, Button,
 } from 'react95';
 
-import alanTuringAvatar from '../../resources/images/avatars/turing.png';
+import alanTuringAvatar from '../../resources/images/avatars/turing.jpg';
 import khwarizmiAvatar from '../../resources/images/avatars/mrkhwarizmi.jpg';
 import mitnickAvatar from '../../resources/images/avatars/mitnick.jpg';
 import babbageAvatar from '../../resources/images/avatars/babbage.jpg';
@@ -28,6 +28,10 @@ class GuestbookBody extends Component {
     intervalId: undefined,
   }
 
+  showCommentAlert = () => {
+    // eslint-disable-next-line no-alert
+    alert('Due to ongoing spam and flames activity, the comment section has been temporarily disabled!');
+  }
 
   // eslint-disable-next-line arrow-body-style
   render = () => {
@@ -36,7 +40,7 @@ class GuestbookBody extends Component {
         If you enjoyed visiting this website leave a comment down here!
       </div>
       <div style={ { padding: '15px', textAlign: 'center' } }>
-        <Button>Add a comment</Button>
+        <Button onClick={ this.showCommentAlert }>Add a comment</Button>
       </div>
       <Cutout className='guestbook-window'>
         <div className='single-comment-container'>
@@ -50,7 +54,7 @@ class GuestbookBody extends Component {
             </span>
           </div>
           <div className='comment-item'>
-            Truly a masterpiece of our times,
+            This site is truly a masterpiece of our times,
             makes me very proud for having invented the first computer!
           </div>
         </div>
@@ -66,7 +70,8 @@ class GuestbookBody extends Component {
             </span>
           </div>
           <div>
-            Yeah great website! but hey the f**k you talking about? I made the first computer!
+            Yeah great website! but hey Turing the hell you talking about?
+            I made the first computer!
           </div>
         </div>
         <Divider />
@@ -81,7 +86,7 @@ class GuestbookBody extends Component {
             </span>
           </div>
           <div>
-            Boys without me you'd still code with fecking gears and screwdrivers!
+            Boys without me you'd still be coding with fecking gears and screwdrivers!
           </div>
         </div>
         <Divider />
@@ -126,8 +131,8 @@ class GuestbookBody extends Component {
             </span>
           </div>
           <div>
-            All these mofo here owe me a pint...
-            Congrats tho Simone, this website is just awesome!
+            Ya'll owe me a pint actually...
+            Congrats Simone, this website is just awesome, keep up the good work, I love you mate!
           </div>
         </div>
       </Cutout>
