@@ -32,7 +32,7 @@ class GuestbookBody extends Component {
 
   showCommentAlert = () => {
     // eslint-disable-next-line no-alert
-    alert('Due to ongoing spam and flames activity, the comment section has been temporarily disabled!');
+    alert('Due to ongoing spam and flame activity the comment section has been temporarily disabled!');
   }
 
   // eslint-disable-next-line arrow-body-style
