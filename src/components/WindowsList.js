@@ -2,6 +2,7 @@ import { AboutHeader, AboutBody } from './windows/About';
 import { LinksHeader, LinksBody } from './windows/Links';
 import { ProjectsHeader, ProjectsBody } from './windows/Projects';
 import { ContactHeader, ContactBody } from './windows/Contact';
+import { GuestbookHeader, GuestbookBody } from './windows/Guestbook';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
 
 export default function WindowsList() {
@@ -29,6 +30,12 @@ export default function WindowsList() {
       opened: false,
       header: LinksHeader,
       body: LinksBody,
+    },
+    guestbook: {
+      hasFullScreen: true,
+      opened: false,
+      header: GuestbookHeader,
+      body: GuestbookBody,
     },
     credits: {
       hasFullScreen: false,

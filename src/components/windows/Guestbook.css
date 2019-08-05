@@ -1,0 +1,28 @@
+.guestbook-window {
+  width: 570px;
+
+  background-color: #ffffcc;
+}
+
+.avatar-container {
+  padding: 10px;
+}
+
+.single-comment-container {
+  padding: 15px;
+}
+
+.comment-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.comment-date {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 400px)  {
+  .guestbook-window {
+    width: 280px;
+  }
+}
