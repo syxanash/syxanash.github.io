@@ -64,36 +64,6 @@ class GuestbookBody extends Component {
         <div className='single-comment-container'>
           <div style={ { display: 'flex' } }>
             <span className='avatar-container'>
-              <Avatar src={ dennisAvatar } style={ { height: '60px', width: '60px' } } />
-            </span>
-            <div className='comment-author-name'>
-              <div className='comment-name'>Dennis Ritchie</div>
-              <div className='comment-date'>on 2011/11/10</div>
-            </div>
-          </div>
-          <div>
-            { ':(){ :|: & };: ' } ⬅️ run this in your terminal lol
-          </div>
-        </div>
-        <Divider />
-        <div className='single-comment-container'>
-          <div style={ { display: 'flex' } }>
-            <span className='avatar-container'>
-              <Avatar src={ mitnickAvatar } style={ { height: '60px', width: '60px' } } />
-            </span>
-            <div className='comment-author-name'>
-              <div className='comment-name'>Condor</div>
-              <div className='comment-date'>on 1995/14/02</div>
-            </div>
-          </div>
-          <div>
-            { '<script>alert(\'document.cookie\');</script>' }
-          </div>
-        </div>
-        <Divider />
-        <div className='single-comment-container'>
-          <div style={ { display: 'flex' } }>
-            <span className='avatar-container'>
               <Avatar src={ alanTuringAvatar } style={ { height: '60px', width: '60px' } } />
             </span>
             <div className='comment-author-name'>
@@ -166,6 +136,36 @@ class GuestbookBody extends Component {
           <div>
             Ya'll owe me a pint actually...
             Congrats Simone, this website is just awesome, keep up the good work, I love you mate!
+          </div>
+        </div>
+        <Divider />
+        <div className='single-comment-container'>
+          <div style={ { display: 'flex' } }>
+            <span className='avatar-container'>
+              <Avatar src={ dennisAvatar } style={ { height: '60px', width: '60px' } } />
+            </span>
+            <div className='comment-author-name'>
+              <div className='comment-name'>Dennis Ritchie</div>
+              <div className='comment-date'>on 2011/11/10</div>
+            </div>
+          </div>
+          <div>
+            { ':(){ :|: & };: ' } ⬅️ run this in your terminal lol
+          </div>
+        </div>
+        <Divider />
+        <div className='single-comment-container'>
+          <div style={ { display: 'flex' } }>
+            <span className='avatar-container'>
+              <Avatar src={ mitnickAvatar } style={ { height: '60px', width: '60px' } } />
+            </span>
+            <div className='comment-author-name'>
+              <div className='comment-name'>Condor</div>
+              <div className='comment-date'>on 1995/14/02</div>
+            </div>
+          </div>
+          <div>
+            { '<script>alert(\'document.cookie\');</script>' }
           </div>
         </div>
       </Cutout>
