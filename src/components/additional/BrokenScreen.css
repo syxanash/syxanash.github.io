@@ -3,9 +3,13 @@
   top: 35%;
   left: 50%;
   color: red;
+  background-color:black;
   transform: translate(-50%, -50%);
   text-align: center;
+  font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
+}
 
+.blink-text {
   animation: blinker 0.5s linear infinite;
 }
 

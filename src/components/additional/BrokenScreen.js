@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
-import screenBackground from '../../resources/images/insideyourcomputer.jpg';
+import screenBackground from '../../resources/images/kernelpanic.gif';
 import './BrokenScreen.css';
 
 class BrokenScreen extends Component {
@@ -31,7 +31,8 @@ class BrokenScreen extends Component {
         </style>
       </Helmet>
       <div className='centered-item'>
-        <h1>This computer has been permanently damaged!</h1>
+        <h1 className='blink-text'>ERROR</h1>
+        <p>The computer has been permanently damaged...</p>
       </div>
     </React.Fragment>
   );
