@@ -22,6 +22,12 @@
   font-weight: bold;
 }
 
+.bottom-text {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
 .comment-date {
   font-weight: bold;
 }

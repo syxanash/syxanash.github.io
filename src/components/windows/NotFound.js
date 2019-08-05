@@ -12,19 +12,22 @@ class NotFoundHeader extends Component {
 }
 
 class NotFoundBody extends Component {
-  state = {
-    randomColor: '#000000',
-    intervalId: undefined,
+  constructor(props) {
+    super(props);
+
+    this.intervalId = undefined;
+
+    this.state = {
+      randomColor: '#000000',
+    };
   }
 
   componentDidMount() {
-    const intervalId = setInterval(this.generateColor, 100);
-
-    this.setState({ intervalId });
+    this.intervalId = setInterval(this.generateColor, 100);
   }
 
   componentWillUnmount() {
-    clearInterval(this.state.intervalId);
+    clearInterval(this.intervalId);
   }
 
   getRandomColor = () => {

@@ -4,12 +4,14 @@ import {
   Divider, Cutout, Avatar, Button,
 } from 'react95';
 
+import timAvatar from '../../resources/images/avatars/tim.jpg';
 import alanTuringAvatar from '../../resources/images/avatars/turing.jpg';
 import khwarizmiAvatar from '../../resources/images/avatars/mrkhwarizmi.jpg';
 import mitnickAvatar from '../../resources/images/avatars/mitnick.jpg';
 import babbageAvatar from '../../resources/images/avatars/babbage.jpg';
 import adaAvatar from '../../resources/images/avatars/ada.jpg';
 import hopperAvatar from '../../resources/images/avatars/hopper.jpg';
+import dennisAvatar from '../../resources/images/avatars/dennis.jpg';
 
 import guestbookIcon from '../../resources/icons/guestbook.png';
 import './Guestbook.css';
@@ -46,11 +48,57 @@ class GuestbookBody extends Component {
         <div className='single-comment-container'>
           <div style={ { display: 'flex' } }>
             <span className='avatar-container'>
+              <Avatar src={ timAvatar } style={ { height: '60px', width: '60px' } } />
+            </span>
+            <div className='comment-author-name'>
+              <div className='comment-name'>Sir Tim Berners-Lee</div>
+              <div className='comment-date'>on 1991/07/03</div>
+            </div>
+          </div>
+          <div>
+            WOW a website like a computer! no one ever thought about it,
+            this is really unique, welcome to the world wide web my friend!
+          </div>
+        </div>
+        <Divider />
+        <div className='single-comment-container'>
+          <div style={ { display: 'flex' } }>
+            <span className='avatar-container'>
+              <Avatar src={ dennisAvatar } style={ { height: '60px', width: '60px' } } />
+            </span>
+            <div className='comment-author-name'>
+              <div className='comment-name'>Dennis Ritchie</div>
+              <div className='comment-date'>on 2011/11/10</div>
+            </div>
+          </div>
+          <div>
+            { ':(){ :|: & };: ' } ⬅️ run this in your terminal lol
+          </div>
+        </div>
+        <Divider />
+        <div className='single-comment-container'>
+          <div style={ { display: 'flex' } }>
+            <span className='avatar-container'>
+              <Avatar src={ mitnickAvatar } style={ { height: '60px', width: '60px' } } />
+            </span>
+            <div className='comment-author-name'>
+              <div className='comment-name'>Condor</div>
+              <div className='comment-date'>on 1995/14/02</div>
+            </div>
+          </div>
+          <div>
+            { '<script>alert(\'document.cookie\');</script>' }
+          </div>
+        </div>
+        <Divider />
+        <div className='single-comment-container'>
+          <div style={ { display: 'flex' } }>
+            <span className='avatar-container'>
               <Avatar src={ alanTuringAvatar } style={ { height: '60px', width: '60px' } } />
             </span>
             <div className='comment-author-name'>
               <div className='comment-name'>Alan Mathison Turing</div>
-              <div className='comment-date'>on 2018/07/08</div>
+              <div className='comment-date'>on 1944/19/01</div>
             </div>
           </div>
           <div className='comment-item'>
@@ -66,12 +114,12 @@ class GuestbookBody extends Component {
             </span>
             <div className='comment-author-name'>
               <div className='comment-name'>Charles Babbage</div>
-              <div className='comment-date'>on 2018/07/08</div>
+              <div className='comment-date'>on 1852/02/10</div>
             </div>
           </div>
           <div>
             Yeah great website! but hey Turing boy you for real??
-            I made the first computer!
+            technically I made it first!
           </div>
         </div>
         <Divider />
@@ -82,7 +130,7 @@ class GuestbookBody extends Component {
             </span>
             <div className='comment-author-name'>
               <div className='comment-name'>Ada Lovelace</div>
-              <div className='comment-date'>on 2018/07/08</div>
+              <div className='comment-date'>on 1852/03/10</div>
             </div>
           </div>
           <div>
@@ -93,30 +141,15 @@ class GuestbookBody extends Component {
         <div className='single-comment-container'>
           <div style={ { display: 'flex' } }>
             <span className='avatar-container'>
-              <Avatar src={ mitnickAvatar } style={ { height: '60px', width: '60px' } } />
-            </span>
-            <div className='comment-author-name'>
-              <div className='comment-name'>Condor</div>
-              <div className='comment-date'>on 2018/07/08</div>
-            </div>
-          </div>
-          <div>
-            { '<script>alert(\'document.cookie\');</script>' }
-          </div>
-        </div>
-        <Divider />
-        <div className='single-comment-container'>
-          <div style={ { display: 'flex' } }>
-            <span className='avatar-container'>
               <Avatar src={ hopperAvatar } style={ { height: '60px', width: '60px' } } />
             </span>
             <div className='comment-author-name'>
               <div className='comment-name'>Admiral Grace Hopper</div>
-              <div className='comment-date'>on 2018/07/08</div>
+              <div className='comment-date'>on 1951/31/03</div>
             </div>
           </div>
           <div>
-            Well said my dear Ada! very nice website, but comment section is poisoning...
+            Well said my dear Ada! very nice website, but comment section is poison...
           </div>
         </div>
         <Divider />
@@ -127,7 +160,7 @@ class GuestbookBody extends Component {
             </span>
             <div className='comment-author-name'>
               <div className='comment-name'>Muhammad al-Khwarizmi</div>
-              <div className='comment-date'>on 2018/07/08</div>
+              <div className='comment-date'>on <i>sometime in 820 AD</i></div>
             </div>
           </div>
           <div>
@@ -136,6 +169,9 @@ class GuestbookBody extends Component {
           </div>
         </div>
       </Cutout>
+      <div className='bottom-text'>
+        <span role="img" aria-label="warning" className='blink-text'>⚠️</span> I'm still investigating on the authenticity of some comments. <span role="img" aria-label="warning" className='blink-text'>⚠️</span>
+      </div>
     </div>
     );
   }
