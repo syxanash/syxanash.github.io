@@ -203,7 +203,7 @@ class MainWindowBody extends Component {
                 disabled={ eggTriggered }
                 style={ { width: '80px', height: '80px', display: 'inline-block' } }
               >
-                <img src={ aboutIcon } className={ `icon ${eggTriggered ? 'animated wobble faster delay-1s' : ''}` } alt="about"/>
+                <img src={ aboutIcon } className={ `icon ${eggTriggered ? 'animated infinite bounce fast' : ''}` } alt="about"/>
                 <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>About</figcaption>
               </Button>
             </Draggable>
