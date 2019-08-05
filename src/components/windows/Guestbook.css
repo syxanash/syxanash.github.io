@@ -5,7 +5,12 @@
 }
 
 .avatar-container {
-  padding: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.comment-author-name {
+  padding-bottom: 10px;
 }
 
 .single-comment-container {

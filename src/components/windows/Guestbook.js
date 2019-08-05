@@ -44,14 +44,14 @@ class GuestbookBody extends Component {
       </div>
       <Cutout className='guestbook-window'>
         <div className='single-comment-container'>
-          <div style={ { display: 'flex', justifyContent: 'space-between' } }>
-            <div>
-              <div className='comment-name'>Alan Mathison Turing</div>
-              <div className='comment-date'>on 2018/07/08</div>
-            </div>
+          <div style={ { display: 'flex' } }>
             <span className='avatar-container'>
               <Avatar src={ alanTuringAvatar } style={ { height: '60px', width: '60px' } } />
             </span>
+            <div className='comment-author-name'>
+              <div className='comment-name'>Alan Mathison Turing</div>
+              <div className='comment-date'>on 2018/07/08</div>
+            </div>
           </div>
           <div className='comment-item'>
             This site is truly a masterpiece of our times,
@@ -60,45 +60,45 @@ class GuestbookBody extends Component {
         </div>
         <Divider />
         <div className='single-comment-container'>
-          <div style={ { display: 'flex', justifyContent: 'space-between' } }>
-            <div>
-              <div className='comment-name'>Charles Babbage</div>
-              <div className='comment-date'>on 2018/07/08</div>
-            </div>
+          <div style={ { display: 'flex' } }>
             <span className='avatar-container'>
               <Avatar src={ babbageAvatar } style={ { height: '60px', width: '60px' } } />
             </span>
+            <div className='comment-author-name'>
+              <div className='comment-name'>Charles Babbage</div>
+              <div className='comment-date'>on 2018/07/08</div>
+            </div>
           </div>
           <div>
-            Yeah great website! but hey Turing the hell you talking about?
+            Yeah great website! but hey Turing boy you for real??
             I made the first computer!
           </div>
         </div>
         <Divider />
         <div className='single-comment-container'>
-          <div style={ { display: 'flex', justifyContent: 'space-between' } }>
-            <div>
-              <div className='comment-name'>Ada Lovelace</div>
-              <div className='comment-date'>on 2018/07/08</div>
-            </div>
+          <div style={ { display: 'flex' } }>
             <span className='avatar-container'>
               <Avatar src={ adaAvatar } style={ { height: '60px', width: '60px' } } />
             </span>
+            <div className='comment-author-name'>
+              <div className='comment-name'>Ada Lovelace</div>
+              <div className='comment-date'>on 2018/07/08</div>
+            </div>
           </div>
           <div>
-            Boys without me you'd still be coding with fecking gears and screwdrivers!
+            Folks without me you'd still be coding with fecking gears and screwdrivers!
           </div>
         </div>
         <Divider />
         <div className='single-comment-container'>
-          <div style={ { display: 'flex', justifyContent: 'space-between' } }>
-            <div>
-              <div className='comment-name'>Condor</div>
-              <div className='comment-date'>on 2018/07/08</div>
-            </div>
+          <div style={ { display: 'flex' } }>
             <span className='avatar-container'>
               <Avatar src={ mitnickAvatar } style={ { height: '60px', width: '60px' } } />
             </span>
+            <div className='comment-author-name'>
+              <div className='comment-name'>Condor</div>
+              <div className='comment-date'>on 2018/07/08</div>
+            </div>
           </div>
           <div>
             { '<script>alert(\'document.cookie\');</script>' }
@@ -106,14 +106,14 @@ class GuestbookBody extends Component {
         </div>
         <Divider />
         <div className='single-comment-container'>
-          <div style={ { display: 'flex', justifyContent: 'space-between' } }>
-            <div>
-              <div className='comment-name'>Admiral Grace Hopper</div>
-              <div className='comment-date'>on 2018/07/08</div>
-            </div>
+          <div style={ { display: 'flex' } }>
             <span className='avatar-container'>
               <Avatar src={ hopperAvatar } style={ { height: '60px', width: '60px' } } />
             </span>
+            <div className='comment-author-name'>
+              <div className='comment-name'>Admiral Grace Hopper</div>
+              <div className='comment-date'>on 2018/07/08</div>
+            </div>
           </div>
           <div>
             Well said my dear Ada! very nice website, but comment section is poisoning...
@@ -121,14 +121,14 @@ class GuestbookBody extends Component {
         </div>
         <Divider />
         <div className='single-comment-container'>
-          <div style={ { display: 'flex', justifyContent: 'space-between' } }>
-            <div>
-              <div className='comment-name'>Muhammad al-Khwarizmi</div>
-              <div className='comment-date'>on 2018/07/08</div>
-            </div>
+          <div style={ { display: 'flex' } }>
             <span className='avatar-container'>
               <Avatar src={ khwarizmiAvatar } style={ { height: '60px', width: '60px' } } />
             </span>
+            <div className='comment-author-name'>
+              <div className='comment-name'>Muhammad al-Khwarizmi</div>
+              <div className='comment-date'>on 2018/07/08</div>
+            </div>
           </div>
           <div>
             Ya'll owe me a pint actually...
