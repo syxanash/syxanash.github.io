@@ -12,6 +12,9 @@ import babbageAvatar from '../../resources/images/avatars/babbage.jpg';
 import adaAvatar from '../../resources/images/avatars/ada.jpg';
 import hopperAvatar from '../../resources/images/avatars/hopper.jpg';
 import dennisAvatar from '../../resources/images/avatars/dennis.jpg';
+import hamiltonAvatar from '../../resources/images/avatars/hamilton.jpg';
+import perottoAvatar from '../../resources/images/avatars/perotto.jpg';
+import jobsAvatar from '../../resources/images/avatars/jobs.png';
 
 import guestbookIcon from '../../resources/icons/guestbook.png';
 import './Guestbook.css';
@@ -119,6 +122,53 @@ class GuestbookBody extends Component {
           </div>
           <div>
             Well said my dear Ada! very nice website, but comment section is poison...
+          </div>
+        </div>
+        <Divider />
+        <div className='single-comment-container'>
+          <div style={ { display: 'flex' } }>
+            <span className='avatar-container'>
+              <Avatar src={ jobsAvatar } style={ { height: '60px', width: '60px' } } />
+            </span>
+            <div className='comment-author-name'>
+              <div className='comment-name'>Steve Jobs</div>
+              <div className='comment-date'>on 1984/23/01</div>
+            </div>
+          </div>
+          <div>
+            all these plebs arguing but the truth is I made the
+            first real "personal" computer, I CHANGED THE WORLD!
+          </div>
+        </div>
+        <Divider />
+        <div className='single-comment-container'>
+          <div style={ { display: 'flex' } }>
+            <span className='avatar-container'>
+              <Avatar src={ perottoAvatar } style={ { height: '60px', width: '60px' } } />
+            </span>
+            <div className='comment-author-name'>
+              <div className='comment-name'>Pier Giorgio Perotto</div>
+              <div className='comment-date'>on 2000/01/01</div>
+            </div>
+          </div>
+          <div>
+            Stevie go back to your garage and read some history book bro! <span role="img" aria-label="wink face">😉</span>
+          </div>
+        </div>
+        <Divider />
+        <div className='single-comment-container'>
+          <div style={ { display: 'flex' } }>
+            <span className='avatar-container'>
+              <Avatar src={ hamiltonAvatar } style={ { height: '60px', width: '60px' } } />
+            </span>
+            <div className='comment-author-name'>
+              <div className='comment-name'>Margaret Hamilton</div>
+              <div className='comment-date'>on 2016/23/11</div>
+            </div>
+          </div>
+          <div>
+            Jesus, glad I didn’t use JavaScript back in the 60s...
+            this website is slow and bloated... the build/ folder is 14MB, srsly?
           </div>
         </div>
         <Divider />

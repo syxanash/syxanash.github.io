@@ -88,7 +88,7 @@ class App extends Component {
                   }`
                 }
               </style>
-              <meta name="description" content="Simone Marzulli's personal website, feel free to click the buttons!" />
+              <meta name="description" content="Simone Marzulli's personal website, feel free to click your favourite buttons!" />
             </Helmet>
             <ThemeProvider theme={ PippoTheme }>
               <Window className='animated fadeIn faster' shadow={ false }>
