@@ -56,7 +56,7 @@ class GuestbookBody extends Component {
             </div>
           </div>
           <div>
-            WOW a website like a computer! no one ever thought about it,
+            WOW a website which looks like a computer! no one ever thought about it,
             this is really unique, welcome to the world wide web my friend!
           </div>
         </div>
