@@ -179,7 +179,7 @@ class MainWindowBody extends Component {
         {this.renderPopupWindows()}
         <Cutout className='cut-out'>
           <div className='last-row-icons'>
-            <Tooltip text={ tooltipMessages[tooltipCount] }>
+            <Tooltip text={ tooltipMessages[tooltipCount] } delay={ 200 }>
               <Button id='cestino_icon' size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } } active={ iconsColliding }
                 onClick={ this.increaseClickCount }
               >
@@ -213,28 +213,28 @@ class MainWindowBody extends Component {
               active={ this.isWindowOpened('projects') }
             >
               <img src={ projectsIcon } className='icon' alt="projects"/>
-              <figcaption className='icon-caption'>Projects</figcaption>
+              <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>Projects</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindow('contact') }
               active={ this.isWindowOpened('contact') }
             >
               <img src={ contactIcon } className='icon' alt="contact"/>
-              <figcaption className='icon-caption'>Contact</figcaption>
+              <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>Contact</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindow('links') }
               active={ this.isWindowOpened('links') }
             >
               <img src={ linksIcon } className='icon' alt="links"/>
-              <figcaption className='icon-caption'>Links</figcaption>
+              <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>Links</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindow('guestbook') }
               active={ this.isWindowOpened('guestbook') }
             >
               <img src={ guestbookIcon } className='icon' alt="links"/>
-              <figcaption style={ { fontSize: '14px' } } className='icon-caption'>Guestbook</figcaption>
+              <figcaption className='icon-caption' style={ { fontSize: '14px', display: eggTriggered ? 'none' : 'block' } }>Guestbook</figcaption>
             </Button>
             <Anchor
               href='https://open.spotify.com/user/1192532714?si=_Z9kVqrCRJWOaJlWAE-hqA'
@@ -243,7 +243,7 @@ class MainWindowBody extends Component {
             >
               <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } } >
                 <img src={ musicIcon } className='icon' alt="music"/>
-                <figcaption className='icon-caption'>Music</figcaption>
+                <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>Music</figcaption>
               </Button>
             </Anchor>
           </div>
