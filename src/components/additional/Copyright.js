@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 
+import lastUpdatedFile from '../../resources/last-updated.json';
+
 import './Copyright.css';
 
 class Copyright extends Component {
-  state = {
-    displayWatermark: false,
-    buildNumber: Math.floor(10000 + Math.random() * 90000),
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      displayWatermark: false,
+      buildNumber: lastUpdatedFile.buildNumber.substr(0, 5),
+    };
   }
 
   setWatermark = () => {
