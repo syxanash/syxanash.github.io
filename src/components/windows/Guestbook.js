@@ -91,7 +91,7 @@ class GuestbookBody extends Component {
             </div>
           </div>
           <div>
-            Yeah great website! but hey Turing boy you for real??
+            Yeah great website! Hey Turing boy you for real??
           </div>
         </div>
         <Divider />
@@ -137,7 +137,7 @@ class GuestbookBody extends Component {
           </div>
           <div>
             all these plebs arguing but the truth is I made the
-            first real "personal" computer, I CHANGED THE WORLD!
+            first "personal" computer, I CHANGED THE WORLD!
           </div>
         </div>
         <Divider />
@@ -152,7 +152,7 @@ class GuestbookBody extends Component {
             </div>
           </div>
           <div>
-            Stevie go back to your garage and read some history book bro! <span role="img" aria-label="wink face">😉</span>
+            Stevie go back to your dad's garage! <span role="img" aria-label="wink face">😉</span>
           </div>
         </div>
         <Divider />
@@ -168,7 +168,7 @@ class GuestbookBody extends Component {
           </div>
           <div>
             Jesus, glad I didn’t use JavaScript back in the 60s...
-            this website is slow and bloated... the build/ folder is 14MB, srsly?
+            this website is slow and bloated, build/ folder is like 14MB!!!
           </div>
         </div>
         <Divider />
