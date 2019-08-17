@@ -29,16 +29,16 @@ class CreditsBody extends Component {
   renderAccordionButton = (text, accordionId) => {
     const { displayAccordion } = this.state;
 
-    const isOpen = _.get(displayAccordion, accordionId);
+    const isAccordionOpen = _.get(displayAccordion, accordionId);
 
     return (<span>
       <Button
         onClick={ () => this.changeAccordion(accordionId) }
         fullWidth={ true }
-        active={ isOpen }
+        active={ isAccordionOpen }
         style={ { fontWeight: 'bold' } }
       >
-        {text}<img src={ openlinkIcon } alt='link icon' className={ `accordion-icon ${isOpen ? '' : 'rotate'}` }/>
+        {text}<img src={ openlinkIcon } alt='link icon' className={ `accordion-icon ${isAccordionOpen ? '' : 'rotate'}` }/>
       </Button>
     </span>);
   }

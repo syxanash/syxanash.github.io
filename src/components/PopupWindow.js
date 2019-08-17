@@ -78,7 +78,9 @@ class PopupWindow extends Component {
     const PopupWindowHeader = header;
     const PopupWindowBody = body;
 
-    const displayProp = isOpen ? 'block' : 'none';
+    if (!isOpen) {
+      return null;
+    }
 
     return (
       <Draggable
@@ -87,7 +89,7 @@ class PopupWindow extends Component {
         position={ windowPosition }
         onDrag={ this.updateWindowPosition }
       >
-        <div className='popup-window-container' style={ { display: displayProp } }>
+        <div className='popup-window-container'>
           <ThemeProvider theme={ PippoTheme }>
             <Window className={ `animated ${displayExtraActions ? 'zoomIn faster' : 'swing faster'}` }>
               <WindowHeader className="handle">
