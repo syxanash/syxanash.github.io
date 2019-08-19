@@ -85,6 +85,7 @@ class App extends Component {
                 {
                   `body {
                     background: url(/backgrounds/${bgWallpapers[bgIndex]});
+                    background-color : #3975A9;
                   }`
                 }
               </style>
