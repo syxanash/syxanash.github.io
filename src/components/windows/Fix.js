@@ -6,7 +6,7 @@ import './NotFound.css';
 class FixHeader extends Component {
   render = () => (
     <span>
-      <img src={ mainIcon } alt='main logo' style={ { height: '15px' } }/>
+      <img src={ mainIcon } alt='main logo' style={ { height: '15px' } }/> fiks.exe
     </span>
   )
 }
@@ -25,8 +25,8 @@ class FixBody extends Component {
     <h1 style={ { textAlign: 'center' } }>
       {
         localStorage.getItem('fixed')
-          ? 'The computer has been fixed...'
-          : 'You shouldn\'t fix what is not broken!'
+          ? <span style={ { color: 'green' } }>The computer has been fixed...</span>
+          : <span style={ { color: 'yellow' } }>You shouldn't fix what is not broken!</span>
       }
     </h1>
   </div>
