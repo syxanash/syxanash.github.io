@@ -2,20 +2,24 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
 import screenBackground from '../../resources/images/kernelpanic.gif';
+import qrcodeFix from '../../resources/images/qrcodefix.png';
+
 import './BrokenScreen.css';
 
 class BrokenScreen extends Component {
   constructor(props) {
     super(props);
 
-    this.turnOffTimeout = undefined;
+    this.solutionTimeout = undefined;
     this.state = {
-      isScreenOff: false,
+      showQrCode: false,
     };
   }
 
-  renderBackgroundPicture = () => (
-    <React.Fragment>
+  renderBackgroundPicture = () => {
+    const { showQrCode } = this.state;
+
+    return (<React.Fragment>
       <Helmet>
         <style>
           {
@@ -32,10 +36,12 @@ class BrokenScreen extends Component {
       </Helmet>
       <div className='centered-item'>
         <h1 className='blink-text'>ERROR</h1>
-        <p>The computer has been permanently damaged...</p>
+        <p>The computer has been permanently damaged!</p>
+        <p>maybe if you wait long enough it will repair itself...</p>
+        { showQrCode ? <img src={ qrcodeFix } alt='qrcode fix' /> : '' }
       </div>
-    </React.Fragment>
-  );
+    </React.Fragment>);
+  };
 
   render() {
     const { isScreenBroken } = this.props;
@@ -44,7 +50,10 @@ class BrokenScreen extends Component {
       return null;
     }
 
-    console.info('%cor maybe you\'re just an idiot and you don\'t know about localStorage', 'background: red; color: yellow; font-size: large');
+    this.solutionTimeout = setTimeout(() => {
+      this.setState({ showQrCode: true });
+    }, 10 * 1000);
+
     return this.renderBackgroundPicture();
   }
 }

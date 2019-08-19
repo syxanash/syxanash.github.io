@@ -136,7 +136,7 @@ class GuestbookBody extends Component {
             </div>
           </div>
           <div>
-            all these plebs arguing but the truth is I made the
+            all these plebs arguing but the truth is: I made the
             first "personal" computer, I CHANGED THE WORLD!
           </div>
         </div>
@@ -152,7 +152,7 @@ class GuestbookBody extends Component {
             </div>
           </div>
           <div>
-            Stevie go back to your dad's garage! <span role="img" aria-label="wink face">😉</span>
+            Steve go back to your dad's garage! <span role="img" aria-label="wink face">😉</span>
           </div>
         </div>
         <Divider />

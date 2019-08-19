@@ -180,7 +180,7 @@ class MainWindowBody extends Component {
         <Cutout className='cut-out'>
           <div className='last-row-icons'>
             <Tooltip text={ tooltipMessages[tooltipCount] } delay={ 200 }>
-              <Button id='cestino_icon' size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } } active={ iconsColliding }
+              <Button id='cestino_icon' size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } } active={ iconsColliding }
                 onClick={ this.increaseClickCount }
               >
                 <img src={ trashIcon } className='icon' alt="trash"/>

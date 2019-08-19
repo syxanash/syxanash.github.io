@@ -4,6 +4,7 @@ import { ProjectsHeader, ProjectsBody } from './windows/Projects';
 import { ContactHeader, ContactBody } from './windows/Contact';
 import { GuestbookHeader, GuestbookBody } from './windows/Guestbook';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
+import { FixHeader, FixBody } from './windows/Fix';
 
 export default function WindowsList() {
   const windowsList = {
@@ -42,6 +43,12 @@ export default function WindowsList() {
       opened: false,
       header: CreditsHeader,
       body: CreditsBody,
+    },
+    fixmycomputer: {
+      hasFullScreen: true,
+      opened: false,
+      header: FixHeader,
+      body: FixBody,
     },
   };
 
