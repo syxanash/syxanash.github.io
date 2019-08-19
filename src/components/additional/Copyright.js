@@ -25,9 +25,11 @@ class Copyright extends Component {
   render() {
     const { displayWatermark, buildNumber } = this.state;
 
+    const watermarkString = ` - ${localStorage.getItem('fixed') ? '' : 'Evaluation Copy.'} Build ${buildNumber}`;
+
     return (
       <div className='copyright' onClick={ this.setWatermark } style={ { cursor: displayWatermark ? 'default' : 'pointer' } }>
-        <span>&copy; Simone Marzulli {new Date().getFullYear()}{displayWatermark ? ` - Evaluation Copy. Build ${buildNumber}` : ''}</span>
+        <span>&copy; Simone Marzulli {new Date().getFullYear()}{displayWatermark ? watermarkString : ''}</span>
       </div>
     );
   }
