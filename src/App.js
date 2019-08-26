@@ -6,7 +6,6 @@ import {
   Window, WindowHeader, WindowContent,
 } from 'react95';
 import { HashRouter, Switch, Route } from 'react-router-dom';
-import 'animate.css';
 
 import WindowHead from './components/WindowHead';
 import SoundEffects from './components/additional/SoundEffects';
@@ -92,7 +91,7 @@ class App extends Component {
               <meta name="description" content="Simone Marzulli's personal website, feel free to click your favourite buttons!" />
             </Helmet>
             <ThemeProvider theme={ PippoTheme }>
-              <Window className='animated fadeIn faster' shadow={ false }>
+              <Window shadow={ false }>
                 <WindowHeader>
                   <WindowHead
                     onClickLeft={ this.toggleBody }
