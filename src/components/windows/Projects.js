@@ -19,8 +19,8 @@ class ProjectsHeader extends Component {
 
 class ProjectsBody extends Component {
   state = {
-    randomPromptChars: Object.values(PROMPT_CHARS)[
-      Math.floor(Math.random() * Object.values(PROMPT_CHARS).length)
+    randomPromptChars: Object.keys(PROMPT_CHARS).map(e => PROMPT_CHARS[e])[
+      Math.floor(Math.random() * Object.keys(PROMPT_CHARS).map(e => PROMPT_CHARS[e]).length)
     ],
   }
 

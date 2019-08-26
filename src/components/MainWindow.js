@@ -32,8 +32,8 @@ class MainWindowHeader extends Component {
 
   componentDidMount() {
     this.setState({
-      programmingLanguage: Object.values(languages)[
-        Math.floor(Math.random() * Object.values(languages).length)
+      programmingLanguage: Object.keys(languages).map(e => languages[e])[
+        Math.floor(Math.random() * Object.keys(languages).map(e => languages[e]).length)
       ],
     });
   }
