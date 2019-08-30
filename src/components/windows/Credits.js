@@ -6,6 +6,8 @@ import licenseText from '../../resources/misc/LICENSE.txt';
 import creditsIcon from '../../resources/icons/favicon.png';
 import openlinkIcon from '../../resources/icons/openlink.png';
 
+import codeAnimation from '../../resources/images/code.gif';
+
 import './Credits.css';
 
 class CreditsHeader extends Component {
@@ -57,9 +59,10 @@ class CreditsBody extends Component {
 
     return (<div className='credits-window'>
       <div>
-        This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>ReactJS</a> and the code is entirely available on GitHub.
+        <img src={ codeAnimation } alt='code scrolling animation' className='mascot-picture' />
+        This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>ReactJS</a>, I probably shot myself in the foot, I know, but hey you can always use the <i>fallback mode</i> by disabling JavaScript <span role="img" aria-label="wink face">😉</span>
         <p>
-          If you have any bugfix, suggestions, typos
+          The code is entirely available on GitHub. If you have any bugfix, suggestions, typos
           you could help me fix them by opening a pull request!
         </p>
       </div>
@@ -82,6 +85,7 @@ class CreditsBody extends Component {
           <li><a href='https://www.npmjs.com/package/react-draggable' target='_blank' rel='noopener noreferrer'>react-draggable</a> ~ A cool library for dragging items on a page</li>
           <li><a href='https://www.npmjs.com/package/react-typist' target='_blank' rel='noopener noreferrer'>react-typist</a> ~ A nice library for typing animations (used in Projects page)</li>
           <li><a href='https://github.com/Swordfish90/cool-retro-term' target='_blank' rel='noopener noreferrer'>cool-retro-term</a> ~ a vintage terminal emulator used in some pages</li>
+          <li><a href='https://code.visualstudio.com' target='_blank' rel='noopener noreferrer'>VSCode</a> ~ wish I told you I built the website using VIM or Emacs like true #10xdeveloper but oh well...</li>
         </ul>
         <div className='paragraph-title'>{this.renderAccordionButton('Images', 'images')}</div>
         <ul style={ { display: displayAccordion.images ? 'block' : 'none' } }>

@@ -14,6 +14,12 @@
   box-shadow: 10px 10px #707070;
 }
 
+.mascot-picture {
+  height: 70px;
+  float: left;
+  padding-right: 15px;
+}
+
 .paragraph-title {
   font-weight: bold;
 }
