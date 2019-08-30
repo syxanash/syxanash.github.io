@@ -60,7 +60,7 @@ class CreditsBody extends Component {
     return (<div className='credits-window'>
       <div>
         <img src={ codeAnimation } alt='code scrolling animation' className='mascot-picture' />
-        This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>ReactJS</a>, I probably shot myself in the foot, I know, but hey you can always use the <i>fallback mode</i> by disabling JavaScript <span role="img" aria-label="wink face">😉</span>
+        This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>ReactJS</a>, I probably shot myself in the foot here, but hey you can always use the <i>fallback mode</i> by disabling JavaScript!
         <p>
           The code is entirely available on GitHub. If you have any bugfix, suggestions, typos
           you could help me fix them by opening a pull request!
@@ -85,7 +85,7 @@ class CreditsBody extends Component {
           <li><a href='https://www.npmjs.com/package/react-draggable' target='_blank' rel='noopener noreferrer'>react-draggable</a> ~ A cool library for dragging items on a page</li>
           <li><a href='https://www.npmjs.com/package/react-typist' target='_blank' rel='noopener noreferrer'>react-typist</a> ~ A nice library for typing animations (used in Projects page)</li>
           <li><a href='https://github.com/Swordfish90/cool-retro-term' target='_blank' rel='noopener noreferrer'>cool-retro-term</a> ~ a vintage terminal emulator used in some pages</li>
-          <li><a href='https://code.visualstudio.com' target='_blank' rel='noopener noreferrer'>VSCode</a> ~ wish I told you I built the website using VIM or Emacs like true #10xdeveloper but oh well...</li>
+          <li><a href='https://code.visualstudio.com' target='_blank' rel='noopener noreferrer'>VSCode</a> ~ wish I told you I built this website using VIM or Emacs like true &#35;10xdeveloper but oh well...</li>
         </ul>
         <div className='paragraph-title'>{this.renderAccordionButton('Images', 'images')}</div>
         <ul style={ { display: displayAccordion.images ? 'block' : 'none' } }>
