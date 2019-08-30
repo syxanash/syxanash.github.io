@@ -217,6 +217,21 @@ class GuestbookBody extends Component {
             { '<script>alert(\'document.cookie\');</script>' }
           </div>
         </div>
+        <Divider />
+        <div className='single-comment-container'>
+          <div style={ { display: 'flex' } }>
+            <span className='avatar-container'>
+              <Avatar src={ timAvatar } style={ { height: '60px', width: '60px' } } />
+            </span>
+            <div className='comment-author-name'>
+              <div className='comment-name'>Sir Tim Berners-Lee</div>
+              <div className='comment-date'>on 1991/08/03</div>
+            </div>
+          </div>
+          <div>
+            Heeey this website is totally ripped from <a href='https://poolside.fm' target='_blank' rel='noopener noreferrer'>poolside.fm</a> and <a href='https://plaza.one' target='_blank' rel='noopener noreferrer'>plaza.one</a>!! <span role="img" aria-label="angry face">😡</span>
+          </div>
+        </div>
       </Cutout>
       <div className='bottom-text'>
         <span role="img" aria-label="warning" className='blink-text'>⚠️</span> I'm still investigating on the authenticity of some comments. <span role="img" aria-label="warning" className='blink-text'>⚠️</span>
