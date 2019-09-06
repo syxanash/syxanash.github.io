@@ -60,7 +60,7 @@ class CreditsBody extends Component {
     return (<div className='credits-window'>
       <div>
         <img src={ codeAnimation } alt='code scrolling animation' className='mascot-picture' />
-        This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>ReactJS</a>, I probably shot myself in the foot here, but hey you can always use the <i>fallback mode</i> by disabling JavaScript!
+        This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>ReactJS</a>, if your 'puter is too slow to render my website use the <i>fallback mode</i> by disabling JavaScript!
         <p>
           The code is entirely available on GitHub. If you have any bugfix, suggestions, typos
           you could help me fix them by opening a pull request!
@@ -69,9 +69,10 @@ class CreditsBody extends Component {
       <div className='bulletpoint-container'>
         <div className='paragraph-title'>Copyright &amp; License</div>
         <ul>
-          <li>All <b>icons</b> and <b>images</b> (checkout directory <i>src/resources/icons/</i> and <i>public/backgrounds/</i>) were made by myself and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</li>
-          <li>The <b>source code</b> I wrote for this website is under MIT License. See <a href={ licenseText } target='_blank' rel='noopener noreferrer'>LICENSE.txt</a></li>
-          <li>Any other <b>third party</b> materials are under their respective license.</li>
+          <li>All <b>icons</b> and <b>images</b> were made by myself and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</li>
+          <li>The <b>source code</b> is under MIT License. See <a href={ licenseText } target='_blank' rel='noopener noreferrer'>LICENSE.txt</a></li>
+          <li>Any other <b>third party</b> materials are under their respective license,
+          see the details below.</li>
         </ul>
       </div>
       <div style={ { paddingTop: '15px', paddingBottom: '15px' } }>
@@ -94,6 +95,10 @@ class CreditsBody extends Component {
           <li><a href='https://win98icons.alexmeub.com' target='_blank' rel='noopener noreferrer'>Windows 98 Icons</a> ~ original Windows 98 icons were downloaded from here.</li>
           <li><a href='https://www.youtube.com/watch?v=-MH6JZdGZcI' target='_blank' rel='noopener noreferrer'>TV turn off GIF</a> ~ The TV turn off GIF was taken from this video</li>
           <li><a href='https://en.wikipedia.org/wiki/Blue_Monday_(New_Order_song)#/media/File:NewOrderBlueMonday.jpg' target='_blank' rel='noopener noreferrer'>Blue Monday LP Cover</a> ~ The Favicon of this site is highly inspired by the cover art for the vinyl LP "Blue Monday" by New Order</li>
+          <li>The avatars in <code>src/resources/images/avatars/</code>, used
+          in the Guestbook page, were found online from various websites</li>
+          <li>The spinning globe in <code>src/resources/images/globe.gif</code> was
+          found online, I wish I knew who made this gif :(</li>
         </ul>
         <div className='paragraph-title'>{this.renderAccordionButton('Links', 'links')}</div>
         <ul style={ { display: displayAccordion.links ? 'block' : 'none' } }>
