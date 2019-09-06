@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 
 import mainIcon from '../../resources/icons/favicon.png';
+import warningIcon from '../../resources/icons/warning.png';
+import checkIcon from '../../resources/icons/check.png';
+
 import './NotFound.css';
+import './Fix.css';
 
 class FixHeader extends Component {
   render = () => (
@@ -21,14 +25,16 @@ class FixBody extends Component {
     }
   }
 
+  renderFixed = () => <span className='message-container'>
+    <img src={ checkIcon } style={ { height: '52px' } } alt='success icon' /><h1>The computer has been fixed...</h1>
+  </span>
+
+  renderWarning = () => <span className='message-container'>
+    <img src={ warningIcon } style={ { height: '52px' } } alt='warning icon' /><h1>You shouldn't fix what is not broken!</h1>
+  </span>
+
   render = () => (<div className='notfound-window'>
-    <h1 style={ { textAlign: 'center' } }>
-      {
-        localStorage.getItem('fixed')
-          ? <span style={ { color: 'green' } }>The computer has been fixed...</span>
-          : <span style={ { color: 'yellow' } }>You shouldn't fix what is not broken!</span>
-      }
-    </h1>
+    { localStorage.getItem('fixed') ? this.renderFixed() : this.renderWarning() }
   </div>
   )
 }
