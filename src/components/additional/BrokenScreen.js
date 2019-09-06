@@ -10,14 +10,16 @@ class BrokenScreen extends Component {
   constructor(props) {
     super(props);
 
+    this.hintTimeout = undefined;
     this.solutionTimeout = undefined;
     this.state = {
+      showHint: false,
       showQrCode: false,
     };
   }
 
   renderBackgroundPicture = () => {
-    const { showQrCode } = this.state;
+    const { showQrCode, showHint } = this.state;
 
     return (<React.Fragment>
       <Helmet>
@@ -37,11 +39,21 @@ class BrokenScreen extends Component {
       <div className='centered-item'>
         <h1 className='blink-text'>ERROR</h1>
         <p>The computer has been permanently damaged!</p>
-        <p>maybe if you wait long enough it will repair itself...</p>
+        { showHint ? <p className='shake'>maybe if you wait long enough it will repair itself...</p> : '' }
         { showQrCode ? <img src={ qrcodeFix } alt='qrcode fix' /> : '' }
       </div>
     </React.Fragment>);
   };
+
+  componentWillUmount = () => {
+    if (this.solutionTimeout) {
+      clearTimeout(this.solutionTimeout);
+    }
+
+    if (this.hintTimeout) {
+      clearTimeout(this.hintTimeout);
+    }
+  }
 
   render() {
     const { isScreenBroken } = this.props;
@@ -52,6 +64,10 @@ class BrokenScreen extends Component {
 
     this.solutionTimeout = setTimeout(() => {
       this.setState({ showQrCode: true });
+    }, 20 * 1000);
+
+    this.hintTimeout = setTimeout(() => {
+      this.setState({ showHint: true });
     }, 10 * 1000);
 
     return this.renderBackgroundPicture();
