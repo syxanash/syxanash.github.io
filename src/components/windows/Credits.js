@@ -60,7 +60,7 @@ class CreditsBody extends Component {
     return (<div className='credits-window'>
       <div>
         <img src={ codeAnimation } alt='code scrolling animation' className='mascot-picture' />
-        This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>ReactJS</a>, if your 'puter is too slow to render my website use the <i>fallback mode</i> by disabling JavaScript!
+        This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>ReactJS</a>, if your 'puter is too slow then disable JavaScript you can always use the <i>fallback mode</i>!
         <p>
           The code is entirely available on GitHub. If you have any bugfix, suggestions, typos
           you could help me fix them by opening a pull request!
