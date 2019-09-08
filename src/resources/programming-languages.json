@@ -12,5 +12,7 @@
   "Lua": "lua",
   "Arduino": "ino",
   "Bash": "sh",
+  "Pascal": "pas",
+  "8086 Assembly": "asm",
   "Basic": "vb"
 }
