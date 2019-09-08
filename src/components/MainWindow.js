@@ -22,7 +22,7 @@ import musicIcon from '../resources/icons/music.png';
 import guestbookIcon from '../resources/icons/guestbook.png';
 import websiteIcon from '../resources/icons/favicon.png';
 
-import languages from '../resources/programming-languages.json';
+import languages from '../resources/languages.json';
 import tooltipMessages from '../resources/tooltip-messages.json';
 
 class MainWindowHeader extends Component {
