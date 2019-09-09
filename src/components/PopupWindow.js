@@ -52,7 +52,6 @@ class PopupWindow extends Component {
         <Button
           size='sm'
           square
-          style={ { marginRight: '3px' } }
           onClick={ this.toggleBody }
         >
           <span style={ { transform: 'translateY(-1px)' } }>{displayWindowBody ? '▲' : '▼'}</span>

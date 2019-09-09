@@ -56,7 +56,6 @@ class WindowHead extends Component {
         <Button
           size='sm'
           square
-          style={ { marginRight: '3px' } }
           onClick={ this.toggleMinimizeIcon }
         >
           <span style={ { transform: 'translateY(-1px)' } }>{ windowMinimized ? '▼' : '▲'}</span>

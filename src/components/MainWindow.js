@@ -174,6 +174,10 @@ class MainWindowBody extends Component {
   render() {
     const { tooltipCount, iconsColliding, eggTriggered } = this.state;
 
+    if (iconsColliding) {
+      console.info('LINDAAAA?!?');
+    }
+
     return (
       <div>
         {this.renderPopupWindows()}
