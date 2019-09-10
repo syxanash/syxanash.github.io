@@ -62,7 +62,7 @@ class CreditsBody extends Component {
         <img src={ codeAnimation } alt='code scrolling animation' className='mascot-picture' />
         This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>ReactJS</a>, if your 'puter is too slow then disable JavaScript you can always use the <i>fallback mode</i>!
         <p>
-          The code is entirely available on GitHub. If you have any bugfix, suggestions, typos
+          The code is <a href='https://github.com/syxanash/syxanash.github.io'>entirely available</a> on GitHub. If you have any bugfix, suggestions, typos
           you could help me fix them by opening a pull request!
         </p>
       </div>
@@ -84,7 +84,6 @@ class CreditsBody extends Component {
           <li><a href='https://github.com/arturbien/React95' target='_blank' rel='noopener noreferrer'>React95</a> ~ Amazing Windows 95 style UI components for React</li>
           <li><a href='https://daneden.github.io/animate.css/' target='_blank' rel='noopener noreferrer'>Animate.css</a> ~ Set of animations used for opening windows and animating stuff</li>
           <li><a href='https://www.npmjs.com/package/react-draggable' target='_blank' rel='noopener noreferrer'>react-draggable</a> ~ A cool library for dragging items on a page</li>
-          <li><a href='https://www.npmjs.com/package/react-typist' target='_blank' rel='noopener noreferrer'>react-typist</a> ~ A nice library for typing animations (used in Projects page)</li>
           <li><a href='https://github.com/Swordfish90/cool-retro-term' target='_blank' rel='noopener noreferrer'>cool-retro-term</a> ~ a vintage terminal emulator used in some pages</li>
           <li><a href='https://code.visualstudio.com' target='_blank' rel='noopener noreferrer'>VSCode</a> ~ wish I told you I built this website using VIM or Emacs like true &#35;10xdeveloper but oh well...</li>
         </ul>

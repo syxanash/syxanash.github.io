@@ -113,6 +113,7 @@ class App extends Component {
         </div>
         <Poweroff shouldPoweroff={ poweredOff } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
+        <div className='scan-lines'></div>
       </HashRouter>
     );
   }
