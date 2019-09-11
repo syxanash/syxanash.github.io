@@ -24,9 +24,9 @@
   overflow: hidden;
   pointer-events: none;
 
-  background-image: -webkit-radial-gradient( center,ellipse cover,transparent 0%,transparent 60%,rgba(0,0,0,0.25) 100% ),-webkit-repeating-linear-gradient( top,transparent 0px,transparent 1px,rgba(0,0,0,0.25) 3px );
-  background-image: -moz-radial-gradient( center,ellipse cover,transparent 0%,transparent 60%,rgba(0,0,0,0.25) 100% ),-moz-repeating-linear-gradient( top,transparent 0px,transparent 1px,rgba(0,0,0,0.25) 3px );
-  background-image: radial-gradient( ellipse at center,transparent 0%,transparent 60%,rgba(0,0,0,0.25) 100% ),repeating-linear-gradient( 0deg,transparent 0px,transparent 1px,rgba(0,0,0,0.25) 3px );
+  background-image: -webkit-radial-gradient( center,ellipse cover,transparent 0%,transparent 60%,rgba(0,0,0,0.25) 100% ),-webkit-repeating-linear-gradient( top,transparent 0px,transparent 1px,rgba(0,0,0,0.35) 3px );
+  background-image: -moz-radial-gradient( center,ellipse cover,transparent 0%,transparent 60%,rgba(0,0,0,0.25) 100% ),-moz-repeating-linear-gradient( top,transparent 0px,transparent 1px,rgba(0,0,0,0.35) 3px );
+  background-image: radial-gradient( ellipse at center,transparent 0%,transparent 60%,rgba(0,0,0,0.25) 100% ),repeating-linear-gradient( 0deg,transparent 0px,transparent 1px,rgba(0,0,0,0.35) 3px );
   -webkit-background-size: 100% 100%,100% 6px;
   -moz-background-size: 100% 100%,100% 6px;
   background-size: 100% 100%,100% 6px;
