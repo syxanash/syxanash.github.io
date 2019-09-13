@@ -14,5 +14,6 @@
   "Bash": "sh",
   "Pascal": "pas",
   "8086 Assembly": "asm",
-  "Basic": "vb"
+  "Basic": "vb",
+  "Batch": "bat"
 }
