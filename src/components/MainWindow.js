@@ -18,7 +18,7 @@ import contactIcon from '../resources/icons/contact.gif';
 import projectsIcon from '../resources/icons/development.gif';
 import trashIcon from '../resources/icons/trash.gif';
 import linksIcon from '../resources/icons/links.gif';
-import musicIcon from '../resources/icons/music.png';
+import musicIcon from '../resources/icons/music.gif';
 import guestbookIcon from '../resources/icons/guestbook.png';
 import websiteIcon from '../resources/icons/favicon.png';
 
