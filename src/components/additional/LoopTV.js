@@ -62,7 +62,7 @@ class LoopTV extends Component {
 
     return (
       <div className='image-container' onClick={ this.changeLoopImage }>
-        <img className='main-image-loop' src={ `/looptv/${imageList[imageIndex].img}` } alt='main loop gif' />
+        <img className='main-image-loop' src={ `looptv/${imageList[imageIndex].img}` } alt='main loop gif' />
         <div className={ `TV-output ${disableTVOutput ? 'animated fadeOut slower' : ''}` }>AV-1</div>
         <div className={ `loop-caption ${disableCaption ? 'animated fadeOut slower delay-5s' : ''}` }>{ imageList[imageIndex].description }</div>
       </div>
