@@ -1,0 +1,47 @@
+.image-container {
+  height: 100%;
+  position: absolute;    
+  margin:auto;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color: black;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.TV-output {
+  color: #00FF00;
+  padding: 10px;
+  font-size:60px;
+  font-weight: bold;
+  position: absolute;
+}
+
+.loop-caption {
+  color: white;
+  padding: 10px;
+  font-size:20px;
+  position: absolute;
+  
+  bottom: 0;
+  right: 0;
+}
+
+.main-image-loop {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  position: absolute;
+  margin:auto;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}

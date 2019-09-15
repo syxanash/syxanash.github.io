@@ -61,3 +61,20 @@
   font-weight: bold;
   display: block;
 }
+
+.colored-text {
+  background-image: linear-gradient(92deg,#f35626,#feab3a);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hue 1s infinite linear;
+}
+
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
