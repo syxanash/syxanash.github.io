@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2931577d3d22ee060aea95ac9b4de87e",
+    "revision": "d8f959f12f3826f98fd4b1b906e09801",
     "url": "/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.c9cf82b3.chunk.css"
   },
   {
-    "revision": "56d442ce15ba3e0a1e52",
-    "url": "/static/css/main.b0dfb2e8.chunk.css"
+    "revision": "7a30d5f1fc212e5a4014",
+    "url": "/static/css/main.ae1c8d76.chunk.css"
   },
   {
     "revision": "d5866892aa294b4673dc",
     "url": "/static/js/2.89629cce.chunk.js"
   },
   {
-    "revision": "56d442ce15ba3e0a1e52",
-    "url": "/static/js/main.9c1a7ee4.chunk.js"
+    "revision": "7a30d5f1fc212e5a4014",
+    "url": "/static/js/main.56244a70.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -40,8 +40,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/favicon.271ea5b7.png"
   },
   {
+    "revision": "853a92ef8efbcd034ca4a7a260f09b33",
+    "url": "/static/media/fight.853a92ef.gif"
+  },
+  {
     "revision": "4b77273192ff5016eb016f2bcbe2e24f",
     "url": "/static/media/globe.4b772731.gif"
+  },
+  {
+    "revision": "b3e351b15504e9df0c59741ac549e117",
+    "url": "/static/media/goldenboy-fake-keyboard.b3e351b1.gif"
+  },
+  {
+    "revision": "1520f1542fd636e4da9f59b9de45eaa7",
+    "url": "/static/media/goldenboy-toilet.1520f154.gif"
+  },
+  {
+    "revision": "6e1411973f167f28dc0c5352b58afcca",
+    "url": "/static/media/hackers.6e141197.gif"
+  },
+  {
+    "revision": "dea4856d168a5e974101a436a7e92ae7",
+    "url": "/static/media/hacktheplanet.dea4856d.gif"
   },
   {
     "revision": "06f0eeaadede131d243f3c93d4660fac",
@@ -76,6 +96,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/myavatar.795b5ff9.gif"
   },
   {
+    "revision": "1f49ec02e969500319dd3c74e3f9f425",
+    "url": "/static/media/oddparents.1f49ec02.gif"
+  },
+  {
+    "revision": "b94da33f0bf6f35bef5dec6c56504525",
+    "url": "/static/media/oddparents2.b94da33f.gif"
+  },
+  {
     "revision": "08e3662818bce0e1cf9ea2905f0e78bf",
     "url": "/static/media/perotto.08e36628.jpg"
   },
@@ -86,6 +114,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "71bcb3869e8ec6da71193d5b700c7feb",
     "url": "/static/media/poweroff.71bcb386.wav"
+  },
+  {
+    "revision": "217044a7e049c6ef727b2347ced2fb03",
+    "url": "/static/media/prince.217044a7.gif"
+  },
+  {
+    "revision": "7a861827c8f6a1934ba589731889e55c",
+    "url": "/static/media/prince_start.7a861827.gif"
+  },
+  {
+    "revision": "0ba11e6aa2d0b3de8485d43cabf4c671",
+    "url": "/static/media/princess.0ba11e6a.gif"
   },
   {
     "revision": "08f44307b61d24e89f81847dc88ace29",
