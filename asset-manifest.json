@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.ae1c8d76.chunk.css",
-    "main.js": "/static/js/main.56244a70.chunk.js",
-    "main.js.map": "/static/js/main.56244a70.chunk.js.map",
+    "main.css": "/static/css/main.9dada4a9.chunk.css",
+    "main.js": "/static/js/main.6ac4001c.chunk.js",
+    "main.js.map": "/static/js/main.6ac4001c.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
     "static/css/2.c9cf82b3.chunk.css": "/static/css/2.c9cf82b3.chunk.css",
-    "static/js/2.89629cce.chunk.js": "/static/js/2.89629cce.chunk.js",
-    "static/js/2.89629cce.chunk.js.map": "/static/js/2.89629cce.chunk.js.map",
+    "static/js/2.7d0b581d.chunk.js": "/static/js/2.7d0b581d.chunk.js",
+    "static/js/2.7d0b581d.chunk.js.map": "/static/js/2.7d0b581d.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.bb026f01c583490b3a574a6dbc0b8368.js": "/precache-manifest.bb026f01c583490b3a574a6dbc0b8368.js",
+    "precache-manifest.7dfbf3ee254492fbc5252cc0354725be.js": "/precache-manifest.7dfbf3ee254492fbc5252cc0354725be.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.c9cf82b3.chunk.css.map": "/static/css/2.c9cf82b3.chunk.css.map",
-    "static/css/main.ae1c8d76.chunk.css.map": "/static/css/main.ae1c8d76.chunk.css.map",
+    "static/css/main.9dada4a9.chunk.css.map": "/static/css/main.9dada4a9.chunk.css.map",
     "static/media/LICENSE.txt": "/static/media/LICENSE.a42d6c14.txt",
     "static/media/ada.jpg": "/static/media/ada.161c7d9c.jpg",
     "static/media/babbage.jpg": "/static/media/babbage.25324f6f.jpg",
@@ -42,6 +42,7 @@
     "static/media/public.asc": "/static/media/public.08f44307.asc",
     "static/media/screenmessage.gif": "/static/media/screenmessage.e2a92c0c.gif",
     "static/media/screenoff.gif": "/static/media/screenoff.00f1239f.gif",
+    "static/media/static.gif": "/static/media/static.4b5da638.gif",
     "static/media/tim.jpg": "/static/media/tim.73e25a87.jpg",
     "static/media/turing.jpg": "/static/media/turing.b0a791da.jpg"
   }
