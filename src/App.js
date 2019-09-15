@@ -14,6 +14,7 @@ import Copyright from './components/additional/Copyright';
 import { MainWindowBody } from './components/MainWindow';
 import WindowsList from './components/WindowsList';
 import Poweroff from './components/additional/Poweroff';
+import LoopTV from './components/additional/LoopTV';
 import BrokenScreen from './components/additional/BrokenScreen';
 
 import PippoTheme from './PippoTheme';
@@ -29,6 +30,7 @@ class App extends Component {
     displayWindowBody: true,
     pageBodyRoutes: undefined,
     poweredOff: false,
+    loopTVon: false,
     isBrokenScreen: false,
   }
 
@@ -62,23 +64,31 @@ class App extends Component {
     this.setState({ poweredOff: true });
   }
 
+  turnOnTV = () => {
+    this.setState({ loopTVon: true });
+  }
+
   triggerEasterEgg = () => {
     localStorage.setItem('broken', true);
     this.setState({ isBrokenScreen: true });
   }
 
-  renderMainWindow = () => <MainWindowBody onClickEgg={ this.triggerEasterEgg } />
+  renderMainWindow = () => <MainWindowBody
+    onClickEgg={ this.triggerEasterEgg }
+    onClickTV={ this.turnOnTV }
+  />
 
   render() {
     const {
-      bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes, poweredOff, isBrokenScreen,
+      bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes,
+      poweredOff, loopTVon, isBrokenScreen,
     } = this.state;
 
     return (
       <HashRouter>
         <SoundEffects />
         <div className='window-centered'>
-          <div style={ { display: poweredOff || isBrokenScreen ? 'none' : 'block' } }>
+          <div style={ { display: poweredOff || isBrokenScreen || loopTVon ? 'none' : 'block' } }>
             <Helmet>
               <style>
                 {
@@ -111,6 +121,7 @@ class App extends Component {
             </ThemeProvider>
           </div>
         </div>
+        <LoopTV shouldPowerOn={ loopTVon } />
         <Poweroff shouldPoweroff={ poweredOff } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
         <div className='scan-lines'></div>

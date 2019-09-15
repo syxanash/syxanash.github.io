@@ -20,6 +20,7 @@ import trashIcon from '../resources/icons/trash.gif';
 import linksIcon from '../resources/icons/links.gif';
 import musicIcon from '../resources/icons/music.gif';
 import guestbookIcon from '../resources/icons/guestbook.png';
+import loopTVIcon from '../resources/icons/loopTV.gif';
 import websiteIcon from '../resources/icons/favicon.png';
 
 import languages from '../resources/languages.json';
@@ -172,6 +173,7 @@ class MainWindowBody extends Component {
   }
 
   render() {
+    const { onClickTV } = this.props;
     const { tooltipCount, iconsColliding, eggTriggered } = this.state;
 
     if (iconsColliding) {
@@ -183,6 +185,12 @@ class MainWindowBody extends Component {
         {this.renderPopupWindows()}
         <Cutout className='cut-out'>
           <div className='last-row-icons'>
+            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+              onClick={ onClickTV }
+            >
+              <img src={ loopTVIcon } className='icon' alt="projects"/>
+              <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
+            </Button>
             <Tooltip text={ tooltipMessages[tooltipCount] } delay={ 200 }>
               <Button id='cestino_icon' size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } } active={ iconsColliding }
                 onClick={ this.increaseClickCount }
