@@ -69,7 +69,7 @@ class CreditsBody extends Component {
       <div className='bulletpoint-container'>
         <div className='paragraph-title'>Copyright &amp; License</div>
         <ul>
-          <li>All <b>icons</b> and <b>images</b> were made by myself and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</li>
+          <li>All <b>icons</b> were made by myself and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</li>
           <li>The <b>source code</b> is under MIT License. See <a href={ licenseText } target='_blank' rel='noopener noreferrer'>LICENSE.txt</a></li>
           <li>Any other <b>third party</b> materials are under their respective license,
           see the details below.</li>
@@ -95,10 +95,12 @@ class CreditsBody extends Component {
           <li><a href='https://win98icons.alexmeub.com' target='_blank' rel='noopener noreferrer'>Windows 98 Icons</a> ~ original Windows 98 icons were downloaded from here.</li>
           <li><a href='https://www.youtube.com/watch?v=-MH6JZdGZcI' target='_blank' rel='noopener noreferrer'>TV turn off GIF</a> ~ The TV turn off GIF was taken from this video</li>
           <li><a href='https://en.wikipedia.org/wiki/Blue_Monday_(New_Order_song)#/media/File:NewOrderBlueMonday.jpg' target='_blank' rel='noopener noreferrer'>Blue Monday LP Cover</a> ~ The Favicon of this site is highly inspired by the cover art for the vinyl LP "Blue Monday" by New Order</li>
-          <li>The avatars in <code>src/resources/images/avatars/</code>, used
+          <li>The avatars in <b>src/resources/images/avatars/</b>, used
           in the Guestbook page, were found online from various websites</li>
-          <li>The spinning globe in <code>src/resources/images/globe.gif</code> was
+          <li>The spinning globe in <b>src/resources/images/globe.gif</b> was
           found online, I wish I knew who made this gif :(</li>
+          <li>Almost all of the GIFs in <b>loop TV</b> were made by myself and were
+          taken from various games/movies/cartoons. Some of these GIFs were also found online.</li>
         </ul>
         <div className='paragraph-title'>{this.renderAccordionButton('Links', 'links')}</div>
         <ul style={ { display: displayAccordion.links ? 'block' : 'none' } }>

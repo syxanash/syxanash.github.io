@@ -1,35 +1,39 @@
 [
     {
         "img": "prince_start.gif",
-        "description": "© Prince of Persia - Where it all began"
+        "description": "Prince of Persia - could I come downstairs?"
     },
     {
         "img": "prince.gif",
-        "description": "© Prince of Persia"
+        "description": "Prince of Persia"
     },
     {
         "img": "princess.gif",
-        "description": "© Prince of Persia - Waiting starring at the stars"
+        "description": "Prince of Persia"
     },
     {
         "img": "fight.gif",
-        "description": "© Prince of Persia - Fighting the mighty Alkhaled"
+        "description": "Prince of Persia - Alkhaled"
     },
     {
         "img": "oddparents.gif",
-        "description": "© The Fairly OddParents"
+        "description": "The Fairly OddParents"
     },
     {
         "img": "oddparents2.gif",
-        "description": "© The Fairly OddParents"
+        "description": "The Fairly OddParents"
+    },
+    {
+        "img": "oddparents3.gif",
+        "description": "The Fairly OddParents"
     },
     {
         "img": "goldenboy-toilet.gif",
-        "description": "© ゴールデンボーイ"
+        "description": "ゴールデンボーイ (Golden Boy)"
     },
     {
         "img": "goldenboy-fake-keyboard.gif",
-        "description": "© ゴールデンボーイ"
+        "description": "ゴールデンボーイ (Golden Boy)"
     },
     {
         "img": "hackers.gif",
@@ -38,5 +42,93 @@
     {
         "img": "hacktheplanet.gif",
         "description": "Hackers (1995)"
+    },
+    {
+        "img": "sneakers.gif",
+        "description": "Sneakers (1992)"
+    },
+    {
+        "img": "wargames.gif",
+        "description": "WarGames (1983)"
+    },
+    {
+        "img": "wargames1.gif",
+        "description": "WarGames (1983)"
+    },
+    {
+        "img": "tron_1.gif",
+        "description": "Tron (1982)"
+    },
+    {
+        "img": "tron_2.gif",
+        "description": "Tron (1982)"
+    },
+    {
+        "img": "tron_3.gif",
+        "description": "Tron (1982)"
+    },
+    {
+        "img": "tron_4.gif",
+        "description": "Tron (1982)"
+    },
+    {
+        "img": "motolabirinto.gif",
+        "description": "Tron (1982)"
+    },
+    {
+        "img": "boardsofcanada.gif",
+        "description": "Boards of Canada"
+    },
+    {
+        "img": "whitewater.gif",
+        "description": "Boards of Canada - Whitewater - youtube.com/watch?v=6p4HmyVr2Bo"
+    },
+    {
+        "img": "knoppix.jpg",
+        "description": "Knoppix 5.0"
+    },
+    {
+        "img": "gutsygibbon.jpg",
+        "description": "Ubuntu (Gutsy Gibbon)"
+    },
+    {
+        "img": "mandrivaboot.jpg",
+        "description": "Mandriva 2006"
+    },
+    {
+        "img": "aladdin.gif",
+        "description": "Disney's Aladdin (Sega Genesis)"
+    },
+    {
+        "img": "aladdin2.gif",
+        "description": "Disney's Aladdin (Sega Genesis)"
+    },
+    {
+        "img": "toystory2.gif",
+        "description": "Pixar - Toy Story 2"
+    },
+    {
+        "img": "scumbar.gif",
+        "description": "The Secret of Monkey Island"
+    },
+    {
+        "img": "monkeyisland.gif",
+        "description": "The Secret of Monkey Island"
+    },
+    {
+        "img": "monkeyisland1.gif",
+        "description": "The Secret of Monkey Island"
+    },
+    {
+        "img": "yodastories.gif",
+        "description": "Star Wars: Yoda Stories"
+    },
+    {
+        "img": "yodastories1.gif",
+        "description": "Star Wars: Yoda Stories"
+    },
+    {
+        "img": "yodastories2.gif",
+        "description": "Star Wars: Yoda Stories"
     }
 ]

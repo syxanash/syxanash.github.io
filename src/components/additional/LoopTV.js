@@ -13,13 +13,11 @@ class LoopTV extends Component {
     super(props);
 
     this.tvOutputTimeout = undefined;
-    this.captionTimeout = undefined;
 
     this.state = {
       imageList: _.shuffle(loopList),
       imageIndex: 0,
       disableTVOutput: false,
-      disableCaption: false,
       imageLoaded: false,
     };
   }
@@ -28,45 +26,38 @@ class LoopTV extends Component {
     if (this.tvOutputTimeout) {
       clearTimeout(this.tvOutputTimeout);
     }
-
-    if (this.captionTimeout) {
-      clearTimeout(this.captionTimeout);
-    }
   }
 
   changeLoopImage = () => {
     const { imageIndex, imageList } = this.state;
 
-    clearTimeout(this.captionTimeout);
-
     this.setState({
       imageIndex: (imageIndex + 1) % imageList.length,
-      disableCaption: false,
       imageLoaded: false,
     });
   }
 
   imageLoaded = () => {
+    const { disableTVOutput } = this.state;
+
     this.setState({ imageLoaded: true });
+
+    if (!disableTVOutput) {
+      this.tvOutputTimeout = setTimeout(() => {
+        this.setState({ disableTVOutput: true });
+      }, 3 * 1000);
+    }
   }
 
   render() {
     const {
-      imageList, imageIndex, disableTVOutput, disableCaption, imageLoaded,
+      imageList, imageIndex, disableTVOutput, imageLoaded,
     } = this.state;
     const { shouldPowerOn } = this.props;
 
     if (!shouldPowerOn) {
       return null;
     }
-
-    this.tvOutputTimeout = setTimeout(() => {
-      this.setState({ disableTVOutput: true });
-    }, 3 * 1000);
-
-    this.captionTimeout = setTimeout(() => {
-      this.setState({ disableCaption: true });
-    }, 3 * 1000);
 
     return (
       <div className='image-container' onClick={ this.changeLoopImage }>
@@ -84,7 +75,12 @@ class LoopTV extends Component {
           alt='static animation'
         />
         <div className={ `TV-output ${disableTVOutput ? 'animated fadeOut slower' : ''}` }>AV-1</div>
-        <div className={ `loop-caption ${disableCaption ? 'animated fadeOut slower delay-5s' : ''}` }>{ imageList[imageIndex].description }</div>
+        <div
+          style={ { display: imageLoaded ? 'block' : 'none' } }
+          className={ 'loop-caption animated fadeOut slower delay-5s' }
+        >
+          { imageList[imageIndex].description }
+        </div>
       </div>
     );
   }

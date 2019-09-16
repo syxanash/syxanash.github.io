@@ -65,6 +65,7 @@ class App extends Component {
   }
 
   turnOnTV = () => {
+    document.getElementById('loopTvSound').play();
     this.setState({ loopTVon: true });
   }
 

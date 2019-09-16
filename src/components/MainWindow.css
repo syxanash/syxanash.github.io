@@ -63,7 +63,7 @@
 }
 
 .colored-text {
-  background-image: linear-gradient(92deg,#f35626,#feab3a);
+  background-image: linear-gradient(to left, blue, rgb(255, 43, 43));
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: hue 1s infinite linear;
