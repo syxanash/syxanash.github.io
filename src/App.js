@@ -99,7 +99,6 @@ class App extends Component {
                   }`
                 }
               </style>
-              <meta name="description" content="Simone Marzulli's personal website, feel free to click your favourite buttons!" />
             </Helmet>
             <ThemeProvider theme={ PippoTheme }>
               <Window shadow={ false }>
