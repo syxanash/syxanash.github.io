@@ -5,6 +5,7 @@ import 'animate.css';
 import './LoopTV.css';
 import loopList from '../../resources/loops-list.json';
 import staticImage from '../../resources/images/static.gif';
+import vhsWatermark from '../../resources/icons/vhs.png';
 
 const loopImages = require.context('../../resources/images/loopTV', true);
 
@@ -81,6 +82,11 @@ class LoopTV extends Component {
         >
           { imageList[imageIndex].description }
         </div>
+        <img
+          className='vhswatermark'
+          src={ vhsWatermark }
+          alt='Loop TV VHS logo'
+        />
       </div>
     );
   }
