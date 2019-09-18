@@ -5,7 +5,7 @@ import 'animate.css';
 import './LoopTV.css';
 import loopList from '../../resources/loops-list.json';
 import staticImage from '../../resources/images/static.gif';
-import vhsWatermark from '../../resources/icons/vhs.png';
+import poweroffButton from '../../resources/icons/poweroff_button.png';
 
 const loopImages = require.context('../../resources/images/loopTV', true);
 
@@ -54,7 +54,7 @@ class LoopTV extends Component {
     const {
       imageList, imageIndex, disableTVOutput, imageLoaded,
     } = this.state;
-    const { shouldPowerOn } = this.props;
+    const { shouldPowerOn, turnOff } = this.props;
 
     if (!shouldPowerOn) {
       return null;
@@ -83,9 +83,10 @@ class LoopTV extends Component {
           { imageList[imageIndex].description }
         </div>
         <img
-          className='vhswatermark'
-          src={ vhsWatermark }
-          alt='Loop TV VHS logo'
+          className='poweroffButton'
+          src={ poweroffButton }
+          alt='power off tv button'
+          onClick={ turnOff }
         />
       </div>
     );

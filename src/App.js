@@ -69,6 +69,10 @@ class App extends Component {
     this.setState({ loopTVon: true });
   }
 
+  turnOffTV = () => {
+    this.setState({ loopTVon: false });
+  }
+
   triggerEasterEgg = () => {
     localStorage.setItem('broken', true);
     this.setState({ isBrokenScreen: true });
@@ -121,7 +125,7 @@ class App extends Component {
             </ThemeProvider>
           </div>
         </div>
-        <LoopTV shouldPowerOn={ loopTVon } />
+        <LoopTV shouldPowerOn={ loopTVon } turnOff={ this.turnOffTV } />
         <Poweroff shouldPoweroff={ poweredOff } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
         <div className='scan-lines'></div>

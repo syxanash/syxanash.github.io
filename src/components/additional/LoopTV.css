@@ -27,14 +27,14 @@
 .loop-caption {
   color: white;
   padding: 10px;
-  font-size:20px;
+  font-size: 15px;
   position: absolute;
   
   bottom: 0;
   left: 0;
 }
 
-.vhswatermark {
+.poweroffButton {
   color: white;
   padding: 10px;
   font-size:20px;
@@ -42,6 +42,8 @@
   
   bottom: 0;
   right: 0;
+
+  cursor: pointer;
 }
 
 .main-image-loop {
