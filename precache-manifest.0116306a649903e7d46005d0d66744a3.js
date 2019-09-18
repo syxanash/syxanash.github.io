@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b2c251856a22be10c6b09684314c066f",
+    "revision": "0b7b97fb99159492206d474afbbe7733",
     "url": "/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.c9cf82b3.chunk.css"
   },
   {
-    "revision": "580b69b2567fe8b22710",
-    "url": "/static/css/main.6d52dc0d.chunk.css"
+    "revision": "cb57f12890b12bb0f916",
+    "url": "/static/css/main.05f61bb8.chunk.css"
   },
   {
     "revision": "a8bd1d573986b327acd8",
     "url": "/static/js/2.f948383d.chunk.js"
   },
   {
-    "revision": "580b69b2567fe8b22710",
-    "url": "/static/js/main.d83c88ac.chunk.js"
+    "revision": "cb57f12890b12bb0f916",
+    "url": "/static/js/main.d0f0559b.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -46,6 +46,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "4f0c005d574540d2ad555f61b197a555",
     "url": "/static/media/boardsofcanada.4f0c005d.gif"
+  },
+  {
+    "revision": "3411898c877c2c7283a7869fb1303efa",
+    "url": "/static/media/darkforces.3411898c.gif"
   },
   {
     "revision": "271ea5b7d8e06bc6e7b234738e0d9169",
@@ -224,6 +228,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/tron_4.762b0a74.gif"
   },
   {
+    "revision": "4793d7ada2e706b85f56a813aed8f30a",
+    "url": "/static/media/tron_5.4793d7ad.jpg"
+  },
+  {
+    "revision": "a87963f507d75f563cabb9315a6fe125",
+    "url": "/static/media/tron_uprising.a87963f5.jpg"
+  },
+  {
     "revision": "b0a791da63c99782ba5e5e7a5449370a",
     "url": "/static/media/turing.b0a791da.jpg"
   },
@@ -250,5 +262,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "efd24ad8cb38ec528dccbf055bd4e499",
     "url": "/static/media/yodastories2.efd24ad8.gif"
+  },
+  {
+    "revision": "69f7330d5eb6c2479f107b50e904ad1d",
+    "url": "/static/media/yrose.69f7330d.png"
   }
 ]);
