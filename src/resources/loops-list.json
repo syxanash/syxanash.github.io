@@ -72,6 +72,10 @@
         "description": "Tron (1982)"
     },
     {
+        "img": "tron_5.jpg",
+        "description": "Tron (1982)"
+    },
+    {
         "img": "motolabirinto.gif",
         "description": "Tron (1982)"
     },
@@ -130,5 +134,17 @@
     {
         "img": "yodastories2.gif",
         "description": "Star Wars: Yoda Stories"
+    },
+    {
+        "img": "darkforces.gif",
+        "description": "Star Wars: Dark Forces"
+    },
+    {
+        "img": "tron_uprising.jpg",
+        "description": "Tron: Uprising"
+    },
+    {
+        "img": "yrose.png",
+        "description": ""
     }
 ]
