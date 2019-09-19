@@ -16,6 +16,7 @@ import WindowsList from './components/WindowsList';
 import Poweroff from './components/additional/Poweroff';
 import LoopTV from './components/additional/LoopTV';
 import BrokenScreen from './components/additional/BrokenScreen';
+import TheAgent from './components/additional/TheAgent';
 
 import PippoTheme from './PippoTheme';
 
@@ -123,6 +124,7 @@ class App extends Component {
                 </WindowContent>
               </Window>
             </ThemeProvider>
+            <TheAgent displayAgent={ !displayWindowBody } />
           </div>
         </div>
         <LoopTV shouldPowerOn={ loopTVon } turnOff={ this.turnOffTV } />
