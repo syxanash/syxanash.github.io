@@ -8,6 +8,10 @@
         "description": "Prince of Persia"
     },
     {
+        "img": "prince_of_persia_castle.png",
+        "description": "Prince of Persia"
+    },
+    {
         "img": "princess.gif",
         "description": "Prince of Persia"
     },
@@ -105,6 +109,10 @@
     },
     {
         "img": "aladdin2.gif",
+        "description": "Disney's Aladdin (Sega Genesis)"
+    },
+    {
+        "img": "aladdin_snes_castle.png",
         "description": "Disney's Aladdin (Sega Genesis)"
     },
     {
