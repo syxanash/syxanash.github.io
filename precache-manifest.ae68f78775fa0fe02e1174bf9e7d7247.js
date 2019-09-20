@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b1a93b79dd12b3e728eb257533b7172d",
+    "revision": "07db312de888c1db0b439b2632097910",
     "url": "/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.c9cf82b3.chunk.css"
   },
   {
-    "revision": "df56f609fb7bebd8bd64",
-    "url": "/static/css/main.60625aea.chunk.css"
+    "revision": "bc46046e6d1cfe9a427c",
+    "url": "/static/css/main.858bb94c.chunk.css"
   },
   {
     "revision": "6885e3f9ede619553fc2",
     "url": "/static/js/2.766b565e.chunk.js"
   },
   {
-    "revision": "df56f609fb7bebd8bd64",
-    "url": "/static/js/main.7cb69d86.chunk.js"
+    "revision": "bc46046e6d1cfe9a427c",
+    "url": "/static/js/main.cf709113.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -38,6 +38,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "500c4547db302b33127a6a7903b6bc15",
     "url": "/static/media/aladdin2.500c4547.gif"
+  },
+  {
+    "revision": "322dcb586e778e6b9086cf82e6e4cc61",
+    "url": "/static/media/aladdin_snes_castle.322dcb58.png"
   },
   {
     "revision": "25324f6f978785471a86046b2eee2185",
@@ -178,6 +182,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "217044a7e049c6ef727b2347ced2fb03",
     "url": "/static/media/prince.217044a7.gif"
+  },
+  {
+    "revision": "c7689cad87b97197e1c5e207e69a4cf1",
+    "url": "/static/media/prince_of_persia_castle.c7689cad.png"
   },
   {
     "revision": "c143dbc5d2fab703de8801d2ddb981c0",
