@@ -3,7 +3,7 @@
   z-index: 4;
   padding: 10px;
 
-  touch-action: auto !important;
+  touch-action: auto;
 
   margin-left: -15px;
   margin-top: -25px;
