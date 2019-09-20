@@ -15,8 +15,8 @@ const PippoTheme = {
   borderDark: '#5b57a1',
   borderLight: '#a4a7c8',
 
-  headerMaterialDark: '#2518c5',
-  headerMaterialLight: '#ad23b7',
+  headerMaterialDark: '#1832c5',
+  headerMaterialLight: '#b72392',
   headerText: '#010601',
 
   text: '#010601',
