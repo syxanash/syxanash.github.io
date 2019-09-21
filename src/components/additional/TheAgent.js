@@ -54,10 +54,10 @@ class TheAgent extends Component {
     }
 
     return (<div className='agent-container'>
+      <div className='agent-image'><img src={ stillTalking ? agentImg : agentImgShut } style={ { height: '250px' } } alt='the secret agent' /></div>
       <div className='agent-speech animated fadeInUp'>
         { this.renderSpeechText(stillTalking, finalSpeechText) }
       </div>
-      <img src={ stillTalking ? agentImg : agentImgShut } style={ { height: '250px' } } alt='the secret agent' />
     </div>);
   }
 }

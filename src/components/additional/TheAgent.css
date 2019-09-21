@@ -1,10 +1,15 @@
 .agent-container {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
   padding-top: 20px;
 }
 
-.agent-speech {
-  padding-top: 20px;
+.agent-image {
+  padding-right: 20px;
+}
 
+.agent-speech {
   background: #fffee8;
   padding: 10px;
 
@@ -13,7 +18,7 @@
 
   position:relative;
   margin-bottom: 15px;
-  border-radius: 25px;
+  border-radius: 0px 25px 25px 25px;
   border: 1px solid;
   box-shadow: 5px 5px #707070;
   font-size: 16px;
