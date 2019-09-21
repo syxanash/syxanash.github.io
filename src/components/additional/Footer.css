@@ -11,14 +11,9 @@
   display: flex;
   flex-grow: 1;
   flex-wrap: wrap;
-  width: 600px;
 }
 
-@media only screen and (max-width: 400px)  {
-  .footer-cut-out {
-    width: 310px;
-  }
-
+@media only screen and (max-width: 865px)  {
   .footer-buttons {
     width: 100%;
   }

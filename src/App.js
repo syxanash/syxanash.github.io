@@ -108,7 +108,7 @@ class App extends Component {
               </style>
             </Helmet>
             <ThemeProvider theme={ PippoTheme }>
-              <Window shadow={ false }>
+              <Window shadow={ false } style={ { width: '100%' } }>
                 <WindowHeader>
                   <WindowHead
                     onClickLeft={ this.toggleBody }

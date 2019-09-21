@@ -20,7 +20,6 @@
 }
 
 .cut-out {
-  width: 600px;
   height: 280px;
   background-color: white;
 }
@@ -33,9 +32,8 @@
   cursor: grabbing;
 }
 
-@media only screen and (max-width: 400px)  {
+@media only screen and (max-width: 865px)  {
   .cut-out {
-    width: 310px;
     height: 350px;
   }
 }
