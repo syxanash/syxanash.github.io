@@ -13,7 +13,7 @@
   flex-wrap: wrap;
 }
 
-@media only screen and (max-width: 865px)  {
+@media only screen and (max-width: 600px)  {
   .footer-buttons {
     width: 100%;
   }

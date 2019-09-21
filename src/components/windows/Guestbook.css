@@ -1,6 +1,4 @@
 .guestbook-window {
-  width: 570px;
-
   background-color: #ffffcc;
 }
 
@@ -30,10 +28,4 @@
 
 .comment-date {
   font-weight: bold;
-}
-
-@media only screen and (max-width: 400px)  {
-  .guestbook-window {
-    width: 280px;
-  }
 }

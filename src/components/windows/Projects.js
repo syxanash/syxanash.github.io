@@ -36,7 +36,7 @@ class ProjectsBody extends Component {
   render = () => {
     const { randomPromptChars } = this.state;
 
-    return (<div className='projects-window'>
+    return (<div>
       <Cutout className='cutout-area' style={ { padding: '10px' } }>
         <span className='comment-text'>{'//'} Sometimes when I feel motivated and planets are perfectly aligned
         I work on small side projects. I usually do it to create something I need

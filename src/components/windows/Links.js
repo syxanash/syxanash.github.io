@@ -46,7 +46,7 @@ class LinksBody extends Component {
       </li>);
     })}</ul>;
 
-    return (<div className='links-window'>
+    return (<div>
       <Cutout className='globe-container'><img src={ spinningGlobe } alt='spinning globe' className='globe-picture' /></Cutout>
       <span>
         This is a collection of some links to articles, cool websites and people's

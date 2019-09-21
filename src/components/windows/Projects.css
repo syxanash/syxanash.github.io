@@ -1,6 +1,3 @@
-.projects-window {
-  width: 580px;
-}
 
 .cutout-area {
   overflow: auto;
@@ -51,12 +48,5 @@
 @keyframes blinker {
   50% {
     opacity: 0;
-  }
-}
-
-
-@media only screen and (max-width: 400px)  {
-  .projects-window {
-    width: 290px;
   }
 }

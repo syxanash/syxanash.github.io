@@ -4,7 +4,6 @@ import mainIcon from '../../resources/icons/favicon.png';
 import warningIcon from '../../resources/icons/warning.png';
 import checkIcon from '../../resources/icons/check.png';
 
-import './NotFound.css';
 import './Fix.css';
 
 class FixHeader extends Component {
@@ -33,7 +32,7 @@ class FixBody extends Component {
     <img src={ warningIcon } style={ { height: '52px' } } alt='warning icon' /><h1>You shouldn't fix what is not broken!</h1>
   </span>
 
-  render = () => (<div className='notfound-window'>
+  render = () => (<div>
     { localStorage.getItem('fixed') ? this.renderFixed() : this.renderWarning() }
   </div>
   )

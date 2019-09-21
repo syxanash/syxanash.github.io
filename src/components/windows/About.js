@@ -34,7 +34,7 @@ class AboutBody extends Component {
 
   render = () => {
     const { timePassed } = this.state;
-    return (<div className='about-window'>
+    return (
       <div className='text-container'>
         <img src={ avatarPicture } alt='my avatar' className='avatar-picture' />
         <span style={ { fontWeight: 'bold', fontSize: '1.5em' } }>Hello there!</span>
@@ -55,7 +55,7 @@ class AboutBody extends Component {
           80s and I'm really fond of skeuomorphic design of 90s and early 2000s UIs.
         </p>
       </div>
-    </div>);
+    );
   }
 }
 

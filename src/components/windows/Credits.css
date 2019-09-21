@@ -1,5 +1,4 @@
 .credits-window {
-  width: 630px;
   padding-bottom: 5px;
 }
 
@@ -36,10 +35,4 @@
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
-}
-
-@media only screen and (max-width: 400px)  {
-  .credits-window {
-    width: 300px;
-  }
 }
