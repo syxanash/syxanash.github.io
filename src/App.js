@@ -20,9 +20,11 @@ import TheAgent from './components/additional/TheAgent';
 
 import PippoTheme from './PippoTheme';
 
+import './App.css';
+
 import bgList from './resources/backgrounds-list.json';
 
-import './App.css';
+const backgroundImages = require.context('./resources/images/backgrounds', true);
 
 class App extends Component {
   state = {
@@ -99,7 +101,7 @@ class App extends Component {
               <style>
                 {
                   `body {
-                    background: url(/backgrounds/${bgWallpapers[bgIndex]});
+                    background: url(${backgroundImages(`./${bgWallpapers[bgIndex]}`)});
                     background-color : #3975A9;
                   }`
                 }
