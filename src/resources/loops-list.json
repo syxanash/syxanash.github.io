@@ -202,5 +202,9 @@
     {
         "img": "dontcopy5.gif",
         "description": "Don't Copy That Floppy"
+    },
+    {
+        "img": "inside_your_computer.jpg",
+        "description": "Inside Your Computer"
     }
 ]
