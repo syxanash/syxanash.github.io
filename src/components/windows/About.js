@@ -47,12 +47,21 @@ class AboutBody extends Component {
           I have a degree in computer science from <a href='https://www.uniba.it/ricerca/dipartimenti/informatica/dipartimento-di-informatica' target='_blank' rel='noopener noreferrer'>University of Bari</a>.
         </p>
         <p>
-          In my free time I like to practice inline skating and roam around the streets of Dublin on my <a href='https://www.rollerblade.com/products/metroblade/' target='_blank' rel='noopener noreferrer'>Rollerblades</a>.
+          In my free time I like to practice inline skating and roam around
+          the streets of Dublin on my <a href='https://www.rollerblade.com/products/metroblade/' target='_blank' rel='noopener noreferrer'>Rollerblades</a>.
+          This urban sport typically involves dodging tourists and jumping
+          on chippers meal boxes in Grafton Street.
         </p>
         <p>
-          I'm passionate about retrocomputing.
-          When I get the chance I collect old computers from the
+          I'm passionate about retrocomputing,
+          when I get the chance I collect old computers from the
           80s and I'm really fond of skeuomorphic design of 90s and early 2000s UIs.
+        </p>
+        <p>
+          As most of human beings out there I listen to a <i>_lot_</i> of music,
+          my favorite genre would be Electronic, Jazz, Rap, Hip-hop. I do care about my
+          playlists <span role="img" aria-label="music-note">🎶</span> so make
+          sure to checkout my Spotify profile on your way back!
         </p>
       </div>
     );
