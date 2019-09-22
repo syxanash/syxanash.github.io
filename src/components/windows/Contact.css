@@ -1,7 +1,3 @@
-.contact-window {
-  max-width: 30em;
-}
-
 .social-icon {
   margin: 5px;
 }
@@ -12,4 +8,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.contact-info {
+  padding-bottom: 10px;
+  padding-top: 10px;
 }

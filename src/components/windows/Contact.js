@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Anchor, Tooltip } from 'react95';
+import {
+  Button, Anchor, Tooltip, Fieldset,
+} from 'react95';
 
 import contactIcon from '../../resources/icons/contact.gif';
 
@@ -23,7 +25,7 @@ class ContactHeader extends Component {
 }
 
 class ContactBody extends Component {
-  render = () => (<div className='contact-window'>
+  render = () => (<div>
     <span>
       Please feel free to drop me an email or stalk me on the web.
     </span>
@@ -71,9 +73,11 @@ class ContactBody extends Component {
         </Anchor>
       </Tooltip>
     </div>
-    <p>
-      If you want to keep me updated with the latest tinfoil hat news use my <a target="_blank" rel="noopener noreferrer" href='http://futureboy.us/pgp.html'>PGP</a> public key.
-    </p>
+    <div className='contact-info'>
+      <Fieldset label="🔑 Warning:">
+        If you want to keep me updated with the latest tinfoil hat news use my <a target="_blank" rel="noopener noreferrer" href='http://futureboy.us/pgp.html'>PGP</a> public key.
+      </Fieldset>
+    </div>
   </div>)
 }
 
