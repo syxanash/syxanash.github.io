@@ -59,7 +59,7 @@ class LinksBody extends Component {
         <Button className='animated tada delay-1s' onClick={ this.openRandomLink }>Open a random website</Button>
       </div>
       <Cutout><div className='link-list'>{LinksListComponent}</div></Cutout>
-      <p>only quality links ;)</p>
+      <p>I promise you won't get bored ;)</p>
     </div>);
   }
 }

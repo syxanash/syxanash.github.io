@@ -69,7 +69,7 @@ class CreditsBody extends Component {
       <div className='bulletpoint-container'>
         <div className='paragraph-title'>Copyright &amp; License</div>
         <ul>
-          <li>All <b>icons</b> were made by myself and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</li>
+          <li>All <b>icons</b> and <b>animated icons</b> were made by myself and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</li>
           <li>The <b>source code</b> is under MIT License. See <a href={ licenseText } target='_blank' rel='noopener noreferrer'>LICENSE.txt</a></li>
           <li>Any other <b>third party</b> materials are under their respective license,
           see the details below.</li>
