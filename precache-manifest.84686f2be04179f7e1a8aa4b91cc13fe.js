@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a9699bb6821acda1412aa86642d2eb38",
+    "revision": "f8bec7514b91e9fd5a69bd9ff21a94c6",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.c9cf82b3.chunk.css"
   },
   {
-    "revision": "53ff77c2ea94261ce4f5",
+    "revision": "5f9c7cb81c25800be173",
     "url": "/static/css/main.3ebf5d12.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.3ec75929.chunk.js"
   },
   {
-    "revision": "53ff77c2ea94261ce4f5",
-    "url": "/static/js/main.54049278.chunk.js"
+    "revision": "5f9c7cb81c25800be173",
+    "url": "/static/js/main.9e32aba3.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -110,6 +110,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6e1411973f167f28dc0c5352b58afcca",
     "url": "/static/media/hackers.6e141197.gif"
+  },
+  {
+    "revision": "41e501dff7b4aa52e416e0cb80634b38",
+    "url": "/static/media/hackers_cyberdelia.41e501df.gif"
+  },
+  {
+    "revision": "77fe0eade78ee26d3cf30fbbe1de208e",
+    "url": "/static/media/hackers_garbage.77fe0ead.gif"
   },
   {
     "revision": "dea4856d168a5e974101a436a7e92ae7",
