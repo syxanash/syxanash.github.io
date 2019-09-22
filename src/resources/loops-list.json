@@ -174,5 +174,25 @@
     {
         "img": "space_jam3.gif",
         "description": "Space Jam (MS-DOS)"
+    },
+    {
+        "img": "dontcopy1.gif",
+        "description": "Don't Copy That Floppy"
+    },
+    {
+        "img": "dontcopy2.gif",
+        "description": "Don't Copy That Floppy"
+    },
+    {
+        "img": "dontcopy3.gif",
+        "description": "Don't Copy That Floppy"
+    },
+    {
+        "img": "dontcopy4.gif",
+        "description": "Don't Copy That Floppy"
+    },
+    {
+        "img": "dontcopy5.gif",
+        "description": "Don't Copy That Floppy"
     }
 ]
