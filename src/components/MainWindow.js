@@ -226,7 +226,7 @@ class MainWindowBody extends Component {
               active={ this.isWindowOpened('guestbook') }
             >
               <img src={ guestbookIcon } className='icon' alt="links"/>
-              <figcaption className='icon-caption' style={ { fontSize: '14px', display: eggTriggered ? 'none' : 'block' } }>Guestbook</figcaption>
+              <figcaption className='icon-caption' style={ { fontSize: '14px' } }>Guestbook</figcaption>
             </Button>
             <Anchor
               href='https://open.spotify.com/user/1192532714?si=_Z9kVqrCRJWOaJlWAE-hqA'
