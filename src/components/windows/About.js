@@ -49,8 +49,8 @@ class AboutBody extends Component {
         <p>
           In my free time I like to practice inline skating and roam around
           the streets of Dublin on my <a href='https://www.rollerblade.com/products/metroblade/' target='_blank' rel='noopener noreferrer'>Rollerblades</a>.
-          This urban sport typically involves dodging tourists and jumping
-          on chippers meal boxes in Grafton Street.
+          This urban sport typically involves dodging tourists on Grafton Street
+          and jumping over chippers meal boxes on Friday night. <span role="img" aria-label="awannaghèn">🤙</span>
         </p>
         <p>
           I'm passionate about retrocomputing,
@@ -59,7 +59,7 @@ class AboutBody extends Component {
         </p>
         <p>
           As most of human beings out there I listen to a <i>_lot_</i> of music,
-          my favorite genre would be Electronic, Jazz, Rap, Hip-hop. I do care about my
+          my favorite types are Electronic, Jazz, Rap, Hip-hop. I do care about my
           playlists <span role="img" aria-label="music-note">🎶</span> so make
           sure to checkout my Spotify profile on your way back!
         </p>
