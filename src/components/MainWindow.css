@@ -22,6 +22,7 @@
 .cut-out {
   height: 280px;
   background-color: white;
+  overflow: hidden;
 }
 
 .movable-icon {

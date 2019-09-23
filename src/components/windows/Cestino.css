@@ -1,0 +1,25 @@
+.cestino-message-container {
+  padding-bottom: 30px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.cestino-message-text {
+  padding-top: 10px;
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.crash-text-button {
+  font-weight: bold;
+}
+
+.action-button-container {
+  display: flex;
+  justify-content: center;
+}

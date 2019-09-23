@@ -3,7 +3,7 @@ import _ from 'lodash';
 import $ from 'jquery';
 import Draggable from 'react-draggable';
 import {
-  Cutout, Button, Anchor, Tooltip,
+  Cutout, Button, Anchor,
 } from 'react95';
 
 import MainWindowFooter from './additional/Footer';
@@ -24,7 +24,6 @@ import loopTVIcon from '../resources/icons/loopTV.gif';
 import websiteIcon from '../resources/icons/favicon.png';
 
 import languages from '../resources/languages.json';
-import tooltipMessages from '../resources/tooltip-messages.json';
 
 class MainWindowHeader extends Component {
   state = {
@@ -53,10 +52,7 @@ class MainWindowHeader extends Component {
 class MainWindowBody extends Component {
   state = {
     windowsList: WindowsList(),
-    clickCount: 1,
-    tooltipCount: 0,
     iconsColliding: false,
-    eggTriggered: false,
   }
 
   componentDidMount() {
@@ -97,22 +93,6 @@ class MainWindowBody extends Component {
       if (topWindow !== undefined) {
         this.closeWindow(topWindow);
       }
-    }
-  }
-
-  increaseClickCount = () => {
-    const { clickCount, tooltipCount } = this.state;
-
-    let newTooltipCount = tooltipCount;
-    if (clickCount % 2 === 0
-      && tooltipCount + 1 < tooltipMessages.length) {
-      newTooltipCount += 1;
-    }
-
-    if (tooltipCount === tooltipMessages.length - 1) {
-      this.setState({ eggTriggered: true });
-    } else {
-      this.setState({ clickCount: clickCount + 1, tooltipCount: newTooltipCount });
     }
   }
 
@@ -174,7 +154,8 @@ class MainWindowBody extends Component {
 
   render() {
     const { onClickTV } = this.props;
-    const { tooltipCount, iconsColliding, eggTriggered } = this.state;
+    const { iconsColliding } = this.state;
+    const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
 
     if (iconsColliding) {
       console.info('LINDAAAA?!?');
@@ -189,16 +170,15 @@ class MainWindowBody extends Component {
               onClick={ onClickTV }
             >
               <img src={ loopTVIcon } className='icon' alt="projects"/>
-              <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
+              <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
             </Button>
-            <Tooltip text={ tooltipMessages[tooltipCount] } delay={ 200 }>
-              <Button id='cestino_icon' size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } } active={ iconsColliding }
-                onClick={ this.increaseClickCount }
-              >
-                <img src={ trashIcon } className='icon' alt="trash"/>
-                <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>Cestino</figcaption>
-              </Button>
-            </Tooltip>
+            <Button id='cestino_icon' size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } }
+              onClick={ () => this.openWindow('cestino') }
+              active={ this.isWindowOpened('cestino') || iconsColliding }
+            >
+              <img src={ trashIcon } className='icon' alt="trash"/>
+              <figcaption className='icon-caption'>Cestino</figcaption>
+            </Button>
           </div>
           <div className='first-row-icons'>
             <Draggable
@@ -217,7 +197,7 @@ class MainWindowBody extends Component {
                 style={ { width: '85px', height: '85px', display: 'inline-block' } }
               >
                 <img src={ aboutIcon } className={ `icon ${eggTriggered ? 'animated infinite bounce fast' : ''}` } alt="about"/>
-                <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>About</figcaption>
+                <figcaption className='icon-caption'>About</figcaption>
               </Button>
             </Draggable>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
@@ -225,21 +205,21 @@ class MainWindowBody extends Component {
               active={ this.isWindowOpened('projects') }
             >
               <img src={ projectsIcon } className='icon' alt="projects"/>
-              <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>Projects</figcaption>
+              <figcaption className='icon-caption'>Projects</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindow('contact') }
               active={ this.isWindowOpened('contact') }
             >
               <img src={ contactIcon } className='icon' alt="contact"/>
-              <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>Contact</figcaption>
+              <figcaption className='icon-caption'>Contact</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindow('links') }
               active={ this.isWindowOpened('links') }
             >
               <img src={ linksIcon } className='icon' alt="links"/>
-              <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>Links</figcaption>
+              <figcaption className='icon-caption'>Links</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindow('guestbook') }
@@ -255,7 +235,7 @@ class MainWindowBody extends Component {
             >
               <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } } >
                 <img src={ musicIcon } className='icon' alt="music"/>
-                <figcaption style={ { display: eggTriggered ? 'none' : 'block' } } className='icon-caption'>Music</figcaption>
+                <figcaption className='icon-caption'>Music</figcaption>
               </Button>
             </Anchor>
           </div>
