@@ -57,9 +57,14 @@ class BrokenScreen extends Component {
 
   render() {
     const { isScreenBroken } = this.props;
+    const { showHint } = this.state;
 
     if (!isScreenBroken) {
       return null;
+    }
+
+    if (!showHint) {
+      document.getElementById('errorSound').play();
     }
 
     this.solutionTimeout = setTimeout(() => {
