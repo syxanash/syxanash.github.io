@@ -8,7 +8,7 @@ import tooltipMessages from '../../resources/tooltip-messages.json';
 
 import mainIcon from '../../resources/icons/favicon.png';
 import cestinoManDeadIcon from '../../resources/icons/uomomorto.gif';
-import cestinoManAliveIcon from '../../resources/icons/Cestino-warning.gif';
+import cestinoManAliveIcon from '../../resources/icons/cestino_warning.gif';
 
 class CestinoHeader extends Component {
   render = () => (
@@ -50,7 +50,7 @@ class CestinoBody extends Component {
       <div className='cestino-message-container'>
         {
           eggTriggered
-            ? <img src={ cestinoManDeadIcon } style={ { height: '80px' } } alt='cestino man dead' />
+            ? <img src={ cestinoManDeadIcon } style={ { height: '70px' } } alt='cestino man dead' />
             : <img src={ cestinoManAliveIcon } style={ { height: '80px' } } className='animated bounce infinite' alt='cestino man icon' />
         }
         <span style={ { display: eggTriggered ? 'none' : 'block' } } className='cestino-message-text'>{currentMessage.charAt(0).toUpperCase() + currentMessage.slice(1)}</span>

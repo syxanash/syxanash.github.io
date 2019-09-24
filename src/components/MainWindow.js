@@ -17,6 +17,7 @@ import aboutIcon from '../resources/icons/about.gif';
 import contactIcon from '../resources/icons/contact.gif';
 import projectsIcon from '../resources/icons/development.gif';
 import trashIcon from '../resources/icons/trash.gif';
+import emptyTrashIcon from '../resources/icons/empty_trash.gif';
 import linksIcon from '../resources/icons/links.gif';
 import musicIcon from '../resources/icons/music.gif';
 import guestbookIcon from '../resources/icons/guestbook.png';
@@ -176,7 +177,7 @@ class MainWindowBody extends Component {
               onClick={ () => this.openWindow('cestino') }
               active={ this.isWindowOpened('cestino') || iconsColliding }
             >
-              <img src={ trashIcon } className='icon' alt="trash"/>
+              <img src={ eggTriggered ? emptyTrashIcon : trashIcon } className='icon' alt="trash"/>
               <figcaption className='icon-caption'>Cestino</figcaption>
             </Button>
           </div>
