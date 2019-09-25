@@ -8,7 +8,7 @@
     "button": "OK"
   },
   {
-    "message": "you really like this?",
+    "message": "you really like this window?",
     "button": "YES"
   },
   {
@@ -33,7 +33,7 @@
   },
   {
     "message": "we're slaves of nostalgia",
-    "button": "I KNOW RIGHT"
+    "button": "👏"
   },
   {
     "message": "past was good",
@@ -49,11 +49,11 @@
   },
   {
     "message": "present is tiresome",
-    "button": "oh..."
+    "button": "☹️"
   },
   {
     "message": "we forgot the bad stuff",
-    "button": "TRUE, OMG!"
+    "button": "true"
   },
   {
     "message": "but we remember the good time",
@@ -61,7 +61,7 @@
   },
   {
     "message": "like nothing ever happened",
-    "button": "wait"
+    "button": "..."
   },
   {
     "message": "nothing will happen",

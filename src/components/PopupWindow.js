@@ -90,7 +90,7 @@ class PopupWindow extends Component {
       >
         <div className='popup-window-container'>
           <ThemeProvider theme={ PippoTheme }>
-            <Window className={ `animated ${displayExtraActions ? 'zoomIn faster' : 'swing faster'}` }>
+            <Window className={ `animated ${displayExtraActions ? 'zoomIn faster' : 'fadeIn faster'}` }>
               <WindowHeader className="handle">
                 <div className='window-header popup-movable-header'>
                   <span className='window-title-text' >
@@ -109,7 +109,7 @@ class PopupWindow extends Component {
                 </div>
               </WindowHeader>
               <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
-                <PopupWindowBody />
+                <PopupWindowBody closeWindow={ this.closeCurrentWindow } />
               </WindowContent>
             </Window>
           </ThemeProvider>

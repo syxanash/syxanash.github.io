@@ -20,7 +20,7 @@ class FixBody extends Component {
     if (localStorage.getItem('broken')) {
       localStorage.removeItem('broken');
       localStorage.setItem('fixed', true);
-      sessionStorage.removeItem('eggTriggered');
+      sessionStorage.clear();
       window.location.reload();
     }
   }

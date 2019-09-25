@@ -40,7 +40,7 @@ export default function WindowsList() {
       body: GuestbookBody,
     },
     credits: {
-      hasFullScreen: false,
+      hasFullScreen: true,
       opened: false,
       header: CreditsHeader,
       body: CreditsBody,

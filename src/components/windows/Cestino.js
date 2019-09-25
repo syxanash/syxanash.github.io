@@ -7,8 +7,6 @@ import 'animate.css';
 import cestinoMessages from '../../resources/cestino-messages.json';
 
 import mainIcon from '../../resources/icons/favicon.png';
-import cestinoManDeadIcon from '../../resources/icons/uomomorto.gif';
-import cestinoManAliveIcon from '../../resources/icons/cestino_warning.gif';
 
 class CestinoHeader extends Component {
   render = () => (
@@ -19,12 +17,17 @@ class CestinoHeader extends Component {
 }
 
 class CestinoBody extends Component {
-  state = {
-    messageCounter: 0,
+  constructor(props) {
+    super(props);
+
+    if (sessionStorage.getItem('messageCounter') === null) {
+      sessionStorage.setItem('messageCounter', 0);
+    }
   }
 
   increaseClickCount = () => {
-    const { messageCounter } = this.state;
+    const { closeWindow } = this.props;
+    const messageCounter = parseInt(sessionStorage.getItem('messageCounter'), 10);
 
     let newMessageCounter = messageCounter;
     if (messageCounter + 1 < cestinoMessages.length) {
@@ -33,32 +36,31 @@ class CestinoBody extends Component {
 
     if (messageCounter === cestinoMessages.length - 1) {
       sessionStorage.setItem('eggTriggered', true);
-      this.forceUpdate();
     } else {
-      this.setState({ messageCounter: newMessageCounter });
+      sessionStorage.setItem('messageCounter', newMessageCounter);
     }
+
+    closeWindow();
   }
 
   render = () => {
-    const { messageCounter } = this.state;
+    const messageCounter = parseInt(sessionStorage.getItem('messageCounter'), 10);
     const currentMessage = cestinoMessages[messageCounter].message;
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
 
     return (<div>
       <div className='cestino-message-container'>
-        {
-          eggTriggered
-            ? <img src={ cestinoManDeadIcon } style={ { height: '70px' } } alt='cestino man dead' />
-            : <img src={ cestinoManAliveIcon } style={ { height: '80px' } } className='animated bounce infinite' alt='cestino man icon' />
-        }
-        <span style={ { display: eggTriggered ? 'none' : 'block' } } className='cestino-message-text'>{currentMessage.charAt(0).toUpperCase() + currentMessage.slice(1)}</span>
+        <span className='cestino-message-text'>
+          {currentMessage.charAt(0).toUpperCase() + currentMessage.slice(1)}
+        </span>
       </div>
       <div className='action-button-container'>
-        <Cutout style={ { display: eggTriggered ? 'none' : 'block' } }>
+        <Cutout>
           <div>
             <Button
               fullWidth
               onClick={ this.increaseClickCount }
+              disabled={ eggTriggered }
               style={ { width: '150px' } }
             >{cestinoMessages[messageCounter].button}</Button>
           </div>
