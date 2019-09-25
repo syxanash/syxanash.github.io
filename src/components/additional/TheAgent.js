@@ -10,24 +10,37 @@ import './TheAgent.css';
 class TheAgent extends Component {
   state = {
     stillTalking: true,
+    imageLoaded: false,
   }
 
   closeMouth = () => {
     this.setState({ stillTalking: false });
   }
 
-  renderSpeechText = (isTalking, text) => {
-    if (isTalking) {
-      return <Typist
-        avgTypingDelay={ 25 }
-        cursor={ { show: false } }
-        onTypingDone={ this.closeMouth }
-      >
-        {text}
-      </Typist>;
+  imageLoaded = () => {
+    this.setState({ imageLoaded: true });
+  }
+
+  renderSpeechBubble = (finalSpeechText) => {
+    const { stillTalking, imageLoaded } = this.state;
+
+    if (!imageLoaded) {
+      return null;
     }
 
-    return <span>{text}</span>;
+    return (<div className='agent-speech animated fadeIn'>
+      {
+        stillTalking
+          ? <Typist
+            avgTypingDelay={ 25 }
+            cursor={ { show: false } }
+            onTypingDone={ this.closeMouth }
+          >
+            {finalSpeechText}
+          </Typist>
+          : <span>{finalSpeechText}</span>
+      }
+    </div>);
   }
 
   render() {
@@ -54,10 +67,8 @@ class TheAgent extends Component {
     }
 
     return (<div className='agent-container'>
-      <div className='agent-image'><img src={ stillTalking ? agentImg : agentImgShut } style={ { height: '250px' } } alt='the secret agent' /></div>
-      <div className='agent-speech animated fadeIn'>
-        { this.renderSpeechText(stillTalking, finalSpeechText) }
-      </div>
+      <div className='agent-image'><img src={ stillTalking ? agentImg : agentImgShut } onLoad={ this.imageLoaded } style={ { height: '250px' } } alt='the secret agent' /></div>
+      { this.renderSpeechBubble(finalSpeechText) }
     </div>);
   }
 }
