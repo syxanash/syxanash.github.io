@@ -4,7 +4,7 @@ import { Button, Cutout } from 'react95';
 import './Cestino.css';
 import 'animate.css';
 
-import tooltipMessages from '../../resources/tooltip-messages.json';
+import cestinoMessages from '../../resources/cestino-messages.json';
 
 import mainIcon from '../../resources/icons/favicon.png';
 import cestinoManDeadIcon from '../../resources/icons/uomomorto.gif';
@@ -20,30 +20,28 @@ class CestinoHeader extends Component {
 
 class CestinoBody extends Component {
   state = {
-    clickCount: 1,
-    tooltipCount: 0,
-    eggTriggered: false,
+    messageCounter: 0,
   }
 
   increaseClickCount = () => {
-    const { clickCount, tooltipCount } = this.state;
+    const { messageCounter } = this.state;
 
-    let newTooltipCount = tooltipCount;
-    if (tooltipCount + 1 < tooltipMessages.length) {
-      newTooltipCount += 1;
+    let newMessageCounter = messageCounter;
+    if (messageCounter + 1 < cestinoMessages.length) {
+      newMessageCounter += 1;
     }
 
-    if (tooltipCount === tooltipMessages.length - 1) {
+    if (messageCounter === cestinoMessages.length - 1) {
       sessionStorage.setItem('eggTriggered', true);
       this.forceUpdate();
     } else {
-      this.setState({ clickCount: clickCount + 1, tooltipCount: newTooltipCount });
+      this.setState({ messageCounter: newMessageCounter });
     }
   }
 
   render = () => {
-    const { tooltipCount } = this.state;
-    const currentMessage = tooltipMessages[tooltipCount];
+    const { messageCounter } = this.state;
+    const currentMessage = cestinoMessages[messageCounter].message;
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
 
     return (<div>
@@ -61,8 +59,8 @@ class CestinoBody extends Component {
             <Button
               fullWidth
               onClick={ this.increaseClickCount }
-              style={ { width: '100px' } }
-            >OK</Button>
+              style={ { width: '150px' } }
+            >{cestinoMessages[messageCounter].button}</Button>
           </div>
         </Cutout>
       </div>

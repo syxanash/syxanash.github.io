@@ -1,0 +1,70 @@
+[
+  {
+    "message": "this button does nothing...",
+    "button": "OK"
+  },
+  {
+    "message": "nothing is happening...",
+    "button": "OK"
+  },
+  {
+    "message": "you really like this?",
+    "button": "YES"
+  },
+  {
+    "message": "I know it feels good to click this button",
+    "button": "SO MUCH"
+  },
+  {
+    "message": "old design was better",
+    "button": "I AGREE"
+  },
+  {
+    "message": "buttons nowadays are not as clickable as before",
+    "button": "TOTALLY"
+  },
+  {
+    "message": "everything made in the past is better",
+    "button": "YESS"
+  },
+  {
+    "message": "songs, movies, videogames, politics...",
+    "button": "TRUE"
+  },
+  {
+    "message": "we're slaves of nostalgia",
+    "button": "I KNOW RIGHT"
+  },
+  {
+    "message": "past was good",
+    "button": "YES!"
+  },
+  {
+    "message": "present is tedious",
+    "button": "oh no..."
+  },
+  {
+    "message": "past was cozy",
+    "button": "YESS!"
+  },
+  {
+    "message": "present is tiresome",
+    "button": "oh..."
+  },
+  {
+    "message": "we forgot the bad stuff",
+    "button": "TRUE, OMG!"
+  },
+  {
+    "message": "but we remember the good time",
+    "button": "SO SAD"
+  },
+  {
+    "message": "like nothing ever happened",
+    "button": "wait"
+  },
+  {
+    "message": "nothing will happen",
+    "button": "WHAT?"
+  }
+]
