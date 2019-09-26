@@ -113,6 +113,7 @@ class CreditsBody extends Component {
         <div className='paragraph-title'>{this.renderAccordionButton('Sounds', 'sounds')}</div>
         <ul style={ { display: displayAccordion.sounds ? 'block' : 'none' } }>
           <li>The poweroff screen page has a sample sound I modified from the original song <a href='https://www.youtube.com/watch?v=Z0XLzIswI2s' target='_blank' rel='noopener noreferrer'>Grace Jones - Slave to the Rhythm</a></li>
+          <li>The error sound was modified from the Windows ME warning chord, original file downloaded from <a href='https://guidebookgallery.org/sounds' target='_blank' rel='noopener noreferrer'>guidebookgallery.org/sounds</a></li>
         </ul>
       </div>
       <div style={ { paddingTop: '15px', textAlign: 'center' } }>
