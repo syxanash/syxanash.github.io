@@ -90,7 +90,7 @@ class PopupWindow extends Component {
       >
         <div className='popup-window-container'>
           <ThemeProvider theme={ PippoTheme }>
-            <Window className={ `animated ${displayExtraActions ? 'zoomIn faster' : 'fadeIn faster'}` }>
+            <Window className={ `animated ${displayExtraActions ? 'zoomIn faster' : 'bounceIn faster'}` }>
               <WindowHeader className="handle">
                 <div className='window-header popup-movable-header'>
                   <span className='window-title-text' >
