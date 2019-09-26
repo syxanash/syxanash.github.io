@@ -15,6 +15,7 @@ import { MainWindowBody } from './components/MainWindow';
 import WindowsList from './components/WindowsList';
 import Poweroff from './components/additional/Poweroff';
 import LoopTV from './components/additional/LoopTV';
+import StoppedProgram from './components/additional/StoppedProgram';
 import BrokenScreen from './components/additional/BrokenScreen';
 import TheAgent from './components/additional/TheAgent';
 
@@ -34,10 +35,12 @@ class App extends Component {
     pageBodyRoutes: undefined,
     poweredOff: false,
     loopTVon: false,
+    stoppedWindowProgram: false,
     isBrokenScreen: false,
   }
 
   componentDidMount() {
+    document.addEventListener('keydown', this.stoppedProgram);
     const windowsList = WindowsList();
 
     const pageBodyRoutes = Object.keys(windowsList)
@@ -49,6 +52,17 @@ class App extends Component {
       });
 
     this.setState({ pageBodyRoutes, isBrokenScreen: localStorage.getItem('broken') });
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.stoppedProgram);
+  }
+
+  stoppedProgram = (event) => {
+    if ((event.ctrlKey && event.key === 'c')
+      || (event.ctrlKey && event.key === 'C')) {
+      this.setState({ stoppedWindowProgram: true });
+    }
   }
 
   generateWallpaper = () => {
@@ -89,14 +103,14 @@ class App extends Component {
   render() {
     const {
       bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes,
-      poweredOff, loopTVon, isBrokenScreen,
+      poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram,
     } = this.state;
 
     return (
       <HashRouter>
         <SoundEffects />
         <div className='window-centered'>
-          <div style={ { display: poweredOff || isBrokenScreen || loopTVon ? 'none' : 'block' } }>
+          <div style={ { display: poweredOff || isBrokenScreen || loopTVon || stoppedWindowProgram ? 'none' : 'block' } }>
             <Helmet>
               <style>
                 {
@@ -131,6 +145,7 @@ class App extends Component {
         </div>
         <LoopTV shouldPowerOn={ loopTVon } turnOff={ this.turnOffTV } />
         <Poweroff shouldPoweroff={ poweredOff } />
+        <StoppedProgram shouldStopWindowing={ stoppedWindowProgram } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
         <div className='scan-lines'></div>
       </HashRouter>
