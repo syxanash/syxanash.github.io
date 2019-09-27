@@ -59,9 +59,11 @@ class App extends Component {
   }
 
   stoppedProgram = (event) => {
+    const { isBrokenScreen, poweredOff } = this.state;
+
     if ((event.ctrlKey && event.key === 'c')
       || (event.ctrlKey && event.key === 'C')) {
-      this.setState({ stoppedWindowProgram: true });
+      this.setState({ stoppedWindowProgram: !isBrokenScreen && !poweredOff });
     }
   }
 
