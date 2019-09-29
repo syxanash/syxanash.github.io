@@ -132,6 +132,14 @@
         "description": "Disney's Aladdin (Sega Genesis)"
     },
     {
+        "img": "aladdin_snes_rugrun.gif",
+        "description": "Disney's Aladdin (Sega Genesis)"
+    },
+    {
+        "img": "aladdin_snes_gameover.gif",
+        "description": "Disney's Aladdin (Sega Genesis)"
+    },
+    {
         "img": "toystory2.gif",
         "description": "Pixar - Toy Story 2"
     },
