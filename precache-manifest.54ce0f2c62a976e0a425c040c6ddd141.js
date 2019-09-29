@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "94bca6f51cccd63d5d6aea7ef7f36f0f",
+    "revision": "f2aae60949116477b1d0301d7d422045",
     "url": "/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.c9cf82b3.chunk.css"
   },
   {
-    "revision": "81966a63cec619eec0df",
-    "url": "/static/css/main.cdf9fa45.chunk.css"
+    "revision": "321146849e181e6a4180",
+    "url": "/static/css/main.c88d32dc.chunk.css"
   },
   {
     "revision": "18bdb8db9c71a69fc43e",
     "url": "/static/js/2.451b5721.chunk.js"
   },
   {
-    "revision": "81966a63cec619eec0df",
-    "url": "/static/js/main.171913a6.chunk.js"
+    "revision": "321146849e181e6a4180",
+    "url": "/static/js/main.22bf226e.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -42,6 +42,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "322dcb586e778e6b9086cf82e6e4cc61",
     "url": "/static/media/aladdin_snes_castle.322dcb58.png"
+  },
+  {
+    "revision": "f1ea788d226020c3db07825ff1d9375e",
+    "url": "/static/media/aladdin_snes_gameover.f1ea788d.gif"
+  },
+  {
+    "revision": "3203e5aba1947fe3b4822a48e6c928af",
+    "url": "/static/media/aladdin_snes_rugrun.3203e5ab.gif"
   },
   {
     "revision": "25324f6f978785471a86046b2eee2185",
