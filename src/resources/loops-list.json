@@ -96,6 +96,10 @@
         "description": "Tron (1982)"
     },
     {
+        "img": "tron_6.gif",
+        "description": "Tron (1982)"
+    },
+    {
         "img": "motolabirinto.gif",
         "description": "Tron (1982)"
     },
@@ -226,5 +230,17 @@
     {
         "img": "backpackgirl.gif",
         "description": "Parked Domain Girl"
+    },
+    {
+        "img": "tumblr1.jpg",
+        "description": ""
+    },
+    {
+        "img": "tumblr2.gif",
+        "description": ""
+    },
+    {
+        "img": "tumblr3.gif",
+        "description": ""
     }
 ]
