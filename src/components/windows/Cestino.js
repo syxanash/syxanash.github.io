@@ -7,6 +7,7 @@ import 'animate.css';
 import cestinoMessages from '../../resources/cestino-messages.json';
 
 import cestinoIcon from '../../resources/icons/trash.gif';
+import spiderWindowIcon from '../../resources/icons/spiderwindow.gif';
 
 class CestinoHeader extends Component {
   render = () => (
@@ -51,7 +52,7 @@ class CestinoBody extends Component {
     return (<div>
       <div className='cestino-message-container'>
         <span className='cestino-message-text'>
-          {currentMessage.charAt(0).toUpperCase() + currentMessage.slice(1)}
+          <img src={ spiderWindowIcon } alt='spider window icon' /><span style={ { margin: '15px' } }>{currentMessage.charAt(0).toUpperCase() + currentMessage.slice(1)}</span>
         </span>
       </div>
       <div className='action-button-container'>
