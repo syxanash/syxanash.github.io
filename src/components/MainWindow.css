@@ -25,18 +25,24 @@
   overflow: hidden;
 }
 
+@media only screen and (max-width: 865px)  {
+  .cut-out {
+    height: 350px;
+  }
+}
+
+@media only screen and (max-width: 345px) {
+  .cut-out { 
+    height: 450px;
+  }
+}
+
 .movable-icon {
   cursor: grab;
 }
 
 .movable-icon:active {
   cursor: grabbing;
-}
-
-@media only screen and (max-width: 865px)  {
-  .cut-out {
-    height: 350px;
-  }
 }
 
 .icon {
