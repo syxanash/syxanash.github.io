@@ -6,12 +6,12 @@ import 'animate.css';
 
 import cestinoMessages from '../../resources/cestino-messages.json';
 
-import mainIcon from '../../resources/icons/favicon.png';
+import cestinoIcon from '../../resources/icons/trash.gif';
 
 class CestinoHeader extends Component {
   render = () => (
     <span>
-      <img src={ mainIcon } alt='main icon' style={ { height: '15px' } }/> Cestino
+      <img src={ cestinoIcon } alt='main icon' style={ { height: '15px' } }/> Cestino
     </span>
   )
 }
