@@ -167,12 +167,6 @@ class MainWindowBody extends Component {
         {this.renderPopupWindows()}
         <Cutout className='cut-out'>
           <div className='last-row-icons'>
-            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
-              onClick={ onClickTV }
-            >
-              <img src={ loopTVIcon } className='icon' alt="projects"/>
-              <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
-            </Button>
             <Button id='cestino_icon' size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } }
               onClick={ () => this.openWindow('cestino') }
               active={ this.isWindowOpened('cestino') || iconsColliding }
@@ -239,6 +233,12 @@ class MainWindowBody extends Component {
                 <figcaption className='icon-caption'>Music</figcaption>
               </Button>
             </Anchor>
+            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+              onClick={ onClickTV }
+            >
+              <img src={ loopTVIcon } className='icon' alt="projects"/>
+              <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
+            </Button>
           </div>
         </Cutout>
         <MainWindowFooter onClick={ () => this.openWindow('credits') } active={ this.isWindowOpened('credits') }/>
