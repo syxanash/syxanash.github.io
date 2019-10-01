@@ -24,7 +24,7 @@ class MusicHeader extends Component {
 class TheMightyMarquee extends React.Component {
   render() {
     // eslint-disable-next-line
-    return (<marquee>{this.props.text}</marquee>);
+    return (<marquee><span className='music-track-text '>{this.props.text}</span></marquee>);
   }
 }
 
@@ -40,7 +40,7 @@ class MusicBody extends Component {
           target='_blank'
           style={ { color: '#000000', textDecoration: 'none' } }
         >
-          <Button fullWidth size='lg' style={ { height: '85px', display: 'inline-block', backgroundColor: '#fffee8' } }>
+          <Button fullWidth size='lg' style={ { height: '95px', display: 'inline-block', backgroundColor: '#fffee8' } }>
             <img src={ spotifyIcon } className='icon' alt="Spotify link"/>
             <figcaption className='icon-caption'>Spotify</figcaption>
           </Button>
@@ -52,7 +52,7 @@ class MusicBody extends Component {
           target='_blank'
           style={ { color: '#000000', textDecoration: 'none' } }
         >
-          <Button fullWidth size='lg' style={ { height: '85px', display: 'inline-block', backgroundColor: '#fffee8' } }>
+          <Button fullWidth size='lg' style={ { height: '95px', display: 'inline-block', backgroundColor: '#fffee8' } }>
             <img src={ bandcampIcon } className='icon' alt="Bandcamp link"/>
             <figcaption className='icon-caption'>Bandcamp</figcaption>
           </Button>
@@ -64,7 +64,7 @@ class MusicBody extends Component {
           target='_blank'
           style={ { color: '#000000', textDecoration: 'none' } }
         >
-          <Button fullWidth size='lg' style={ { height: '85px', display: 'inline-block', backgroundColor: '#fffee8' } }>
+          <Button fullWidth size='lg' style={ { height: '95px', display: 'inline-block', backgroundColor: '#fffee8' } }>
             <img src={ soundcloudIcon } className='icon' alt="Bandcamp link"/>
             <figcaption className='icon-caption'>SoundCloud</figcaption>
           </Button>
@@ -79,7 +79,7 @@ class MusicBody extends Component {
         href={ discoveredMusic.url }
         target='_blank'
       >
-        <Cutout style={ { backgroundColor: 'black', color: 'yellow' } }>
+        <Cutout style={ { backgroundColor: 'black' } }>
           <TheMightyMarquee text={ discoveredMusic.name } />
         </Cutout>
       </Anchor>
