@@ -1,0 +1,10 @@
+.music-cutout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.music-button {
+  width: 33.33%;
+  width: calc(100% / 3);
+  display: inline-block;
+}

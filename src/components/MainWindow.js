@@ -3,7 +3,7 @@ import _ from 'lodash';
 import $ from 'jquery';
 import Draggable from 'react-draggable';
 import {
-  Cutout, Button, Anchor,
+  Cutout, Button,
 } from 'react95';
 
 import MainWindowFooter from './additional/Footer';
@@ -217,22 +217,18 @@ class MainWindowBody extends Component {
               <figcaption className='icon-caption'>Links</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+              onClick={ () => this.openWindow('music') }
+              active={ this.isWindowOpened('music') }>
+              <img src={ musicIcon } className='icon' alt="music"/>
+              <figcaption className='icon-caption'>Music</figcaption>
+            </Button>
+            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindow('guestbook') }
               active={ this.isWindowOpened('guestbook') }
             >
               <img src={ guestbookIcon } className='icon' alt="links"/>
               <figcaption className='icon-caption' style={ { fontSize: '14px' } }>Guestbook</figcaption>
             </Button>
-            <Anchor
-              href='https://open.spotify.com/user/1192532714?si=_Z9kVqrCRJWOaJlWAE-hqA'
-              target='_blank'
-              style={ { color: '#000000', textDecoration: 'none' } }
-            >
-              <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } } >
-                <img src={ musicIcon } className='icon' alt="music"/>
-                <figcaption className='icon-caption'>Music</figcaption>
-              </Button>
-            </Anchor>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ onClickTV }
             >

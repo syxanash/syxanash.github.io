@@ -3,6 +3,7 @@ import { LinksHeader, LinksBody } from './windows/Links';
 import { ProjectsHeader, ProjectsBody } from './windows/Projects';
 import { ContactHeader, ContactBody } from './windows/Contact';
 import { GuestbookHeader, GuestbookBody } from './windows/Guestbook';
+import { MusicHeader, MusicBody } from './windows/Music';
 import { CestinoHeader, CestinoBody } from './windows/Cestino';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
 import { FixHeader, FixBody } from './windows/Fix';
@@ -38,6 +39,12 @@ export default function WindowsList() {
       opened: false,
       header: GuestbookHeader,
       body: GuestbookBody,
+    },
+    music: {
+      hasFullScreen: true,
+      opened: false,
+      header: MusicHeader,
+      body: MusicBody,
     },
     credits: {
       hasFullScreen: true,
