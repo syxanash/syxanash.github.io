@@ -250,5 +250,13 @@
     {
         "img": "maze_screensaver.gif",
         "description": "Windows 95 - 3D Maze Screensaver"
+    },
+    {
+        "img": "lunedi_cinema_starting.gif",
+        "description": "dubudebududubududà"
+    },
+    {
+        "img": "lunedi_cinema_closing.gif",
+        "description": "dubudebududubududà"
     }
 ]
