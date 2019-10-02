@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0140e3dce4961bfbc3a7db94812b16b2",
+    "revision": "85ac3b94b8d2d5e4e4e8a17ee80eb064",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.c9cf82b3.chunk.css"
   },
   {
-    "revision": "c6ea249bdc85965532af",
+    "revision": "110b98d943875ae7a4a3",
     "url": "/static/css/main.f20609c6.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.7b6aceea.chunk.js"
   },
   {
-    "revision": "c6ea249bdc85965532af",
-    "url": "/static/js/main.cc5213c4.chunk.js"
+    "revision": "110b98d943875ae7a4a3",
+    "url": "/static/js/main.835c7442.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -178,6 +178,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "1234bf7414cd76886d95fd75efa8aeed",
     "url": "/static/media/looptv_chime.1234bf74.wav"
+  },
+  {
+    "revision": "60780126fc7b22c242908b71e6c96a76",
+    "url": "/static/media/lunedi_cinema_closing.60780126.gif"
+  },
+  {
+    "revision": "a8f4cdb11902e490ba6e5c3c9381addb",
+    "url": "/static/media/lunedi_cinema_starting.a8f4cdb1.gif"
   },
   {
     "revision": "2fdac8ddd8c367973ba90c75c9d63b0b",
