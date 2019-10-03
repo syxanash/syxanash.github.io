@@ -1,12 +1,12 @@
 .popup-window-container {
   position: absolute;
   z-index: 4;
-  padding: 10px;
 
   touch-action: auto !important;
 
-  margin-left: -20px;
-  margin-top: -25px;
+  margin-left: -10px;
+  margin-right: 10px;
+  margin-top: -15px;
 }
 
 .popup-movable-header {

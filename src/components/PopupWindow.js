@@ -16,6 +16,7 @@ const DEFAULT_POSITION = { x: 0, y: 0 };
 class PopupWindow extends Component {
   state = {
     displayWindowBody: true,
+    openAnimation: true,
     windowPosition: DEFAULT_POSITION,
   }
 
@@ -68,18 +69,28 @@ class PopupWindow extends Component {
     );
   }
 
+  removeOpeningAnimation = () => {
+    this.setState({ openAnimation: false });
+  }
+
+  componentDidMount() {
+    const { windowName } = this.props;
+    this.windowElement = document.getElementById(windowName);
+    this.windowElement.addEventListener('animationend', this.removeOpeningAnimation);
+  }
+
+  componentWillUnmount() {
+    this.windowElement.removeEventListener('animationend', this.removeOpeningAnimation);
+  }
+
   render() {
-    const { displayWindowBody, windowPosition } = this.state;
+    const { displayWindowBody, windowPosition, openAnimation } = this.state;
     const {
-      isOpen, header, body, displayExtraActions,
+      header, body, displayExtraActions,
     } = this.props;
 
     const PopupWindowHeader = header;
     const PopupWindowBody = body;
-
-    if (!isOpen) {
-      return null;
-    }
 
     return (
       <Draggable
@@ -90,7 +101,7 @@ class PopupWindow extends Component {
       >
         <div className='popup-window-container'>
           <ThemeProvider theme={ PippoTheme }>
-            <Window className={ `animated ${displayExtraActions ? 'zoomIn faster' : 'bounceIn faster'}` }>
+            <Window className={ openAnimation ? `animated ${displayExtraActions ? 'zoomIn faster' : 'bounceIn faster'}` : '' }>
               <WindowHeader className="handle">
                 <div className='window-header popup-movable-header'>
                   <span className='window-title-text' >

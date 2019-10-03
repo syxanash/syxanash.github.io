@@ -71,6 +71,7 @@ class MainWindowBody extends Component {
   openWindow = (windowName) => {
     const { windowsList } = this.state;
     _.set(windowsList, `${windowName}.opened`, true);
+    this.focusWindow(windowName);
     this.setState({ windowsList });
   }
 
@@ -87,13 +88,24 @@ class MainWindowBody extends Component {
 
   closeTopWindow = (event) => {
     if (event.keyCode === 27) {
-      const { windowsList } = this.state;
+      const parent = document.getElementById('windows-list');
+      const domElements = Array.prototype.slice.call(parent.childNodes).slice().reverse();
+      const topWindowDiv = domElements.find(element => element.hasChildNodes());
 
-      const topWindow = Object.keys(windowsList).reverse().find(item => windowsList[item].opened);
-
-      if (topWindow !== undefined) {
-        this.closeWindow(topWindow);
+      if (topWindowDiv !== undefined) {
+        this.closeWindow(topWindowDiv.id);
       }
+    }
+  }
+
+  focusWindow = (chosenWindow) => {
+    const chosenWindowDiv = document.getElementById(chosenWindow);
+    const windowsContainer = document.getElementById('windows-list');
+    const lastElement = windowsContainer.lastChild;
+
+    // make sure the window we chose is not already on top of the others
+    if (chosenWindow !== lastElement.previousSibling.id) {
+      windowsContainer.insertBefore(chosenWindowDiv, lastElement);
     }
   }
 
@@ -106,15 +118,22 @@ class MainWindowBody extends Component {
       const hasFullScreen = _.get(windowsList, `${window}.hasFullScreen`);
       const windowBody = _.get(windowsList, `${window}.body`);
 
-      return <PopupWindow
+      return <div
         key={ `${window}_${index}` }
-        isOpen={ windowOpened }
-        closeWindow={ () => this.closeWindow(window) }
-        header={ windowHeader }
-        body={ windowBody }
-        windowName={ window }
-        displayExtraActions={ hasFullScreen }
-      />;
+        id={ window }
+        onClick={ () => this.focusWindow(window) }
+      >{
+          windowOpened
+            ? <PopupWindow
+              closeWindow={ () => this.closeWindow(window) }
+              header={ windowHeader }
+              body={ windowBody }
+              windowName={ window }
+              displayExtraActions={ hasFullScreen }
+            />
+            : null
+        }
+      </div>;
     });
   }
 
@@ -164,7 +183,7 @@ class MainWindowBody extends Component {
 
     return (
       <div>
-        {this.renderPopupWindows()}
+        <div id='windows-list'>{this.renderPopupWindows()}</div>
         <Cutout className='cut-out'>
           <div className='last-row-icons'>
             <Button id='cestino_icon' size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } }
