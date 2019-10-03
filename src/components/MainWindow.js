@@ -106,6 +106,11 @@ class MainWindowBody extends Component {
     // make sure the window we chose is not already on top of the others
     if (chosenWindow !== lastElement.previousSibling.id) {
       windowsContainer.insertBefore(chosenWindowDiv, lastElement);
+
+      const { windowsList } = this.state;
+      _.set(windowsList, `${chosenWindowDiv.previousSibling.id}.focused`, false);
+      _.set(windowsList, `${chosenWindowDiv.id}.focused`, true);
+      this.setState({ windowsList });
     }
   }
 
@@ -114,6 +119,7 @@ class MainWindowBody extends Component {
 
     return Object.keys(windowsList).map((window, index) => {
       const windowOpened = _.get(windowsList, `${window}.opened`);
+      const windowFocused = _.get(windowsList, `${window}.focused`);
       const windowHeader = _.get(windowsList, `${window}.header`);
       const hasFullScreen = _.get(windowsList, `${window}.hasFullScreen`);
       const windowBody = _.get(windowsList, `${window}.body`);
@@ -126,6 +132,7 @@ class MainWindowBody extends Component {
           windowOpened
             ? <PopupWindow
               closeWindow={ () => this.closeWindow(window) }
+              focused={ windowFocused }
               header={ windowHeader }
               body={ windowBody }
               windowName={ window }
