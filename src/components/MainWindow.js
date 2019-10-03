@@ -78,6 +78,11 @@ class MainWindowBody extends Component {
   closeWindow = (windowName) => {
     const { windowsList } = this.state;
     _.set(windowsList, `${windowName}.opened`, false);
+
+    const currentWindow = document.getElementById(windowName);
+    const backgroundWindow = currentWindow.previousSibling;
+    this.focusWindow(backgroundWindow.id);
+
     this.setState({ windowsList });
   }
 
@@ -103,8 +108,11 @@ class MainWindowBody extends Component {
     const windowsContainer = document.getElementById('windows-list');
     const lastElement = windowsContainer.lastChild;
 
+    const domElements = Array.prototype.slice.call(windowsContainer.childNodes).slice().reverse();
+    const topWindowOpened = domElements.find(element => element.hasChildNodes());
+
     // make sure the window we chose is not already on top of the others
-    if (chosenWindow !== lastElement.previousSibling.id) {
+    if (chosenWindow !== lastElement.previousSibling.id || topWindowOpened === undefined) {
       windowsContainer.insertBefore(chosenWindowDiv, lastElement);
 
       const { windowsList } = this.state;

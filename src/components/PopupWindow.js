@@ -29,7 +29,6 @@ class PopupWindow extends Component {
 
   closeCurrentWindow = () => {
     const { closeWindow } = this.props;
-    this.setState({ displayWindowBody: true, windowPosition: DEFAULT_POSITION });
     closeWindow();
   }
 
