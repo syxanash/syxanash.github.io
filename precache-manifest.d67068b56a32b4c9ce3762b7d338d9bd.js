@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ed481478a08f4f29523c263a3de68115",
+    "revision": "8ee1d88ec370e5ccbb30e23376b01afa",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.c9cf82b3.chunk.css"
   },
   {
-    "revision": "b4dbbd89477ef818dbd3",
+    "revision": "e20c657c7d1913a68a04",
     "url": "/static/css/main.123fc5b7.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.7b6aceea.chunk.js"
   },
   {
-    "revision": "b4dbbd89477ef818dbd3",
-    "url": "/static/js/main.556f6df7.chunk.js"
+    "revision": "e20c657c7d1913a68a04",
+    "url": "/static/js/main.f143d731.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -216,8 +216,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/mrkhwarizmi.1b05c141.jpg"
   },
   {
-    "revision": "795b5ff9d27ed577cb49f71f72c1d77c",
-    "url": "/static/media/myavatar.795b5ff9.gif"
+    "revision": "3e382c6e48a8ebaad7e7e0860b888daa",
+    "url": "/static/media/myavatar.3e382c6e.gif"
   },
   {
     "revision": "1f49ec02e969500319dd3c74e3f9f425",
