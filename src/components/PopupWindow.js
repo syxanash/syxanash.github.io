@@ -12,13 +12,10 @@ import PippoDistracted from '../PippoDistracted';
 
 import './PopupWindow.css';
 
-const DEFAULT_POSITION = { x: 0, y: 0 };
-
 class PopupWindow extends Component {
   state = {
     displayWindowBody: true,
     openAnimation: true,
-    windowPosition: DEFAULT_POSITION,
   }
 
   toggleBody = () => {
@@ -30,18 +27,6 @@ class PopupWindow extends Component {
   closeCurrentWindow = () => {
     const { closeWindow } = this.props;
     closeWindow();
-  }
-
-  updateWindowPosition = (e, ui) => {
-    const { windowPosition } = this.state;
-    const { x, y } = windowPosition;
-
-    this.setState({
-      windowPosition: {
-        x: x + ui.deltaX,
-        y: y + ui.deltaY,
-      },
-    });
   }
 
   renderExtraActionButtons = () => {
@@ -84,7 +69,7 @@ class PopupWindow extends Component {
   }
 
   render() {
-    const { displayWindowBody, windowPosition, openAnimation } = this.state;
+    const { displayWindowBody, openAnimation } = this.state;
     const {
       header, body, displayExtraActions, focused,
     } = this.props;
@@ -95,9 +80,6 @@ class PopupWindow extends Component {
     return (
       <Draggable
         handle='.handle'
-        defaultPosition={ DEFAULT_POSITION }
-        position={ windowPosition }
-        onDrag={ this.updateWindowPosition }
       >
         <div className='popup-window-container'>
           <ThemeProvider theme={ focused ? PippoTheme : PippoDistracted }>
