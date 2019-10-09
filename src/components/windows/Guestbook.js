@@ -227,7 +227,7 @@ class GuestbookBody extends Component {
           </div>
         </div>
         <div>
-          Heeey this website is totally ripped from <a href='https://poolside.fm' target='_blank' rel='noopener noreferrer'>poolside.fm</a> and <a href='https://plaza.one' target='_blank' rel='noopener noreferrer'>plaza.one</a>!! <span role="img" aria-label="angry face">😡</span>
+          Heeey this website is totally ripped from <a href='https://github.com/syxanash/awesome-gui-websites' target='_blank' rel='noopener noreferrer'>these sites</a>!!! <span role="img" aria-label="angry face">😡</span>
         </div>
       </div>
     </Cutout>
