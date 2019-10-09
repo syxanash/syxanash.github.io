@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c14e9707e00cf5b4d5fd275aa9f42cef",
+    "revision": "f9fe50aecff80c36b603a2d8b9ffff82",
     "url": "/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.c9cf82b3.chunk.css"
   },
   {
-    "revision": "f4db643ee3f1a851a3e3",
-    "url": "/static/css/main.123fc5b7.chunk.css"
+    "revision": "04d0b7b9095f77e55c9c",
+    "url": "/static/css/main.863f01fe.chunk.css"
   },
   {
     "revision": "5c7ae8afdd4b08932f9b",
     "url": "/static/js/2.7b6aceea.chunk.js"
   },
   {
-    "revision": "f4db643ee3f1a851a3e3",
-    "url": "/static/js/main.fd58feb7.chunk.js"
+    "revision": "04d0b7b9095f77e55c9c",
+    "url": "/static/js/main.2e9e64a3.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -158,6 +158,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c5bbf49d4ca92a941b6454f4634128cf",
     "url": "/static/media/inside_your_computer.c5bbf49d.jpg"
+  },
+  {
+    "revision": "7f81faf4a5256580acbefc771d450110",
+    "url": "/static/media/island_sunrise.7f81faf4.gif"
   },
   {
     "revision": "8587b02b8332fe5759350b10ce26da05",
@@ -370,6 +374,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a3cf53b8826fa2b5fea6d0cbe37b348c",
     "url": "/static/media/whitewater.a3cf53b8.gif"
+  },
+  {
+    "revision": "755a7e9b1f1e7de9e5f60e667bdd501e",
+    "url": "/static/media/wicked_city.755a7e9b.gif"
   },
   {
     "revision": "6b2e51109a93948962206bcacea164d7",
