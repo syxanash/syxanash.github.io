@@ -258,5 +258,13 @@
     {
         "img": "lunedi_cinema_closing.gif",
         "description": "dubudebududubududà"
+    },
+    {
+        "img": "lisland_sunrise.gif",
+        "description": "Software - Island Sunrise"
+    },
+    {
+        "img": "wicked_city.gif",
+        "description": "Wicked City"
     }
 ]
