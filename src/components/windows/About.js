@@ -58,7 +58,7 @@ class AboutBody extends Component {
           80s and I'm really fond of skeuomorphic design of 90s and early 2000s UIs.
         </p>
         <p>
-          As most of human beings out there I listen to a <i>_lot_</i> of music,
+          As many human beings out there I listen to a <i>_lot_</i> of music,
           my favorite types are Electronic, Jazz, Rap, Hip-hop. I do care about my
           playlists <span role="img" aria-label="music-note">🎶</span> so make
           sure to checkout my Spotify profile on your way back!
