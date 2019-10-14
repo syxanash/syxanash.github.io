@@ -42,7 +42,7 @@ class WindowHead extends Component {
     const { windowMinimized, pageHeaderRoutes } = this.state;
     const { onClickMiddle, onRightClick } = this.props;
     const currentPathname = this.props.location.pathname;
-    const rightActionButton = currentPathname === '/' ? '◓' : '↵';
+    const rightActionButton = currentPathname === '/' ? '●' : '↵';
 
     return <div className='window-header'>
       <span className='window-title-text' >
