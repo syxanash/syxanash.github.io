@@ -96,7 +96,7 @@ class PopupWindow extends Component {
                       square
                       onClick={ this.closeCurrentWindow }
                     >
-                      <span style={ { fontWeight: 'bold', transform: 'translateY(-1px)' } }>◓</span>
+                      <span style={ { fontWeight: 'bold', transform: 'translateY(-1px)' } }>✕</span>
                     </Button>
                   </span>
                 </div>
