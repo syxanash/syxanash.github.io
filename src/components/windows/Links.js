@@ -53,7 +53,11 @@ class LinksBody extends Component {
         personal pages that I found inspiring or somehow creative.
       </span>
       <p>
-        <i>(Beware some of these links do <b>not</b> provide <b>https</b>)</i>
+        <i>(P.S. Beware some of these links do <b>not</b> provide <b>https</b>)</i>
+      </p>
+      <p>
+        <i>(P.S.² on internet no website lasts forever so if you see a dead link
+          feel free to open a PR)</i>
       </p>
       <div style={ { paddingBottom: '15px', textAlign: 'center' } }>
         <Button className='animated tada delay-1s' onClick={ this.openRandomLink }>Open a random website</Button>
