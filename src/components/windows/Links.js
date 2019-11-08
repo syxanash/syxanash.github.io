@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Cutout } from 'react95';
+import {
+  Button, Cutout, Fieldset,
+} from 'react95';
 import _ from 'lodash';
 
 import 'animate.css';
@@ -20,11 +22,14 @@ class LinksHeader extends Component {
 
 class LinksBody extends Component {
   state = {
-    linksList: _.shuffle(websiteLinks),
+    linksObject: websiteLinks,
+    activeTab: 0,
   }
 
   openRandomLink = () => {
-    const { linksList } = this.state;
+    const { linksObject } = this.state;
+
+    const linksList = _.flatten(linksObject.map(linkItem => linkItem.links));
 
     const randomLink = Object.keys(linksList).map(e => linksList[e])[
       Math.floor(Math.random() * Object.keys(linksList).map(e => linksList[e]).length)
@@ -33,8 +38,32 @@ class LinksBody extends Component {
     window.open(randomLink.url, '_blank');
   }
 
-  render = () => {
-    const { linksList } = this.state;
+  handleChangeTab = value => this.setState({ activeTab: value });
+
+  generateTabs = () => {
+    const { linksObject, activeTab } = this.state;
+
+    const tabsComponent = linksObject
+      .map((linkItem, index) => (<Button
+        style={ { margin: '5px', marginRight: '10px' } }
+        key={ `tab_${index}` }
+        active={ index === activeTab }
+        onClick={ () => {
+          this.handleChangeTab(index);
+        } }>
+        {linkItem.section}
+      </Button>));
+
+    return (<div style={ { display: 'flex', flexWrap: 'wrap', justifyContent: 'center' } }>
+      {tabsComponent}
+      <Button style={ { margin: '5px', marginRight: '10px' } } className='animated tada delay-1s' onClick={ this.openRandomLink }><b>Open a random website</b></Button>
+    </div>);
+  }
+
+  generateTabBody = () => {
+    const { linksObject, activeTab } = this.state;
+
+    const linksList = linksObject[activeTab].links;
 
     const LinksListComponent = <ul>{linksList.map((link, index) => {
       const descriptionContent = link.description
@@ -46,26 +75,27 @@ class LinksBody extends Component {
       </li>);
     })}</ul>;
 
-    return (<div>
-      <Cutout className='globe-container'><img src={ spinningGlobe } alt='spinning globe' className='globe-picture' /></Cutout>
-      <span>
-        This is a collection of some links to articles, cool websites and people's
-        personal pages that I found inspiring or somehow creative.
-      </span>
-      <p>
-        <i>(P.S. Beware some of these links do <b>not</b> provide <b>https</b>)</i>
-      </p>
-      <p>
-        <i>(P.S.² on internet no website lasts forever so if you see a dead link
-          feel free to open a PR)</i>
-      </p>
-      <div style={ { paddingBottom: '15px', textAlign: 'center' } }>
-        <Button className='animated tada delay-1s' onClick={ this.openRandomLink }>Open a random website</Button>
-      </div>
-      <Cutout><div className='link-list'>{LinksListComponent}</div></Cutout>
-      <p>I promise you won't get bored ;)</p>
-    </div>);
+    return (
+      <Cutout>
+        <div className='link-list'>{LinksListComponent}</div>
+      </Cutout>
+    );
   }
+
+  render = () => (<div>
+    <Cutout className='globe-container'><img src={ spinningGlobe } alt='spinning globe' className='globe-picture' /></Cutout>
+    <Fieldset>
+      This is my <b>Linklog</b> with links to articles, cool websites and people's
+      personal pages that I found inspiring or somehow creative.
+      If you see a dead link feel free to open a pull request!
+    </Fieldset>
+    <div style={ { paddingBottom: '15px', paddingTop: '10px', textAlign: 'center' } }>
+      {this.generateTabs()}
+    </div>
+    <div>
+      {this.generateTabBody()}
+    </div>
+  </div>);
 }
 
 export { LinksHeader, LinksBody };
