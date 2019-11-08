@@ -207,11 +207,11 @@
         "description": "the ultimate <a target='_blank' rel='noopener noreferrer' href='https://duckduckgo.com/?q=vaporwave&iax=images&ia=images'>#Vaporwave</a> game"
       },
       {
-        "url": "http://brokendimension.com",
+        "url": "https://xra.itch.io/memory-of-a-broken-dimension",
         "description": ""
       },
       {
-        "url": "http://www.armagetronad.org",
+        "url": "https://sourceforge.net/projects/armagetronad",
         "description": "I can still hear the buzzing of the lightcycles on the battlefield before going to bed"
       },
       {
@@ -250,6 +250,10 @@
       {
         "url": "https://asciiexpress.net",
         "description": "great collection of Apple ][ software"
+      },
+      {
+        "url": "https://morrick.me/archives/8432",
+        "description": ""
       }
     ]
   },
