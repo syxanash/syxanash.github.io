@@ -82,7 +82,7 @@ class LinksBody extends Component {
     );
   }
 
-  render = () => (<div>
+  render = () => (<div style={ { marginTop: '-10px' } }>
     <Cutout className='globe-container'><img src={ spinningGlobe } alt='spinning globe' className='globe-picture' /></Cutout>
     <Fieldset>
       This is my <b>Linklog</b> with links to articles, cool websites and people's
