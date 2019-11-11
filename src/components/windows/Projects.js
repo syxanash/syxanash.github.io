@@ -38,10 +38,9 @@ class ProjectsBody extends Component {
 
     return (<div>
       <Cutout className='cutout-area' style={ { padding: '10px' } }>
-        <span className='comment-text'>{'//'} Sometimes when I feel motivated and planets are perfectly aligned
-        I work on small side projects. I usually do it to create something I need
-        or to play with new tech.</span>
-        <p className='comment-text'>{'//'} Sporadically I also contribute to open source projects, while most of the these are on GitHub, here is a list of the ones I really enjoyed building:</p>
+        <div className='comment-text' style={ { paddingBottom: '15px' } }>{'//'} Sometimes when I feel motivated and planets are perfectly aligned
+        I work on small side projects to create something I need
+        or to play with new tech. Here is a list of the ones I really enjoyed building:</div>
         {this.renderProjectsList()}
         <span>{randomPromptChars} <span className='blink-text'>█</span></span>
       </Cutout>
