@@ -49,19 +49,13 @@ class AboutBody extends Component {
         <p>
           In my free time I like to practice inline skating and roam around
           the streets of Dublin on my <a href='https://www.rollerblade.com/products/metroblade/' target='_blank' rel='noopener noreferrer'>Rollerblades</a>.
-          This urban sport typically involves dodging tourists on Grafton Street
-          and jumping over chippers meal boxes on Friday night. <span role="img" aria-label="awannaghèn">🤙</span>
+          Being Ireland such a great hiking location I enjoy exploring the
+          countryside and hike the amazing Wicklow mountains <span role="img" aria-label="mountain">⛰</span>
         </p>
         <p>
           I'm passionate about retrocomputing,
           when I get the chance I collect old computers from the
           80s and I'm really fond of skeuomorphic design of 90s and early 2000s UIs.
-        </p>
-        <p>
-          As many human beings out there I listen to a <i>_lot_</i> of music,
-          my favorite types are Electronic, Jazz, Rap, Hip-hop. I do care about my
-          playlists <span role="img" aria-label="music-note">🎶</span> so make
-          sure to checkout my Spotify profile on your way back!
         </p>
       </div>
     );
