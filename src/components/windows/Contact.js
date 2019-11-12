@@ -31,7 +31,7 @@ class ContactBody extends Component {
     </span>
     <div className='social-icons-container'>
       <Tooltip text='Email'>
-        <Anchor href='mailto:si.marzulli@gmail.com?subject=Hi%20Mr.%20Awesome%20Dude' target='_blank'>
+        <Anchor href='mailto:hello@simone.computer?subject=Hi%20Mr.%20Awesome%20Dude' target='_blank'>
           <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ emailIcon } style={ { height: '40px' } } alt="email"/>
           </Button>
