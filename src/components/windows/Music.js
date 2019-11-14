@@ -73,7 +73,7 @@ class MusicBody extends Component {
     </Cutout>
     <div style={ { paddingBottom: '10px', paddingTop: '20px' } }>
       <TabBody>
-        <div style={ { marginTop: '-20px', paddingBottom: '5px' } }>Recently discovered 🎧</div>
+        <div style={ { marginTop: '-20px', paddingBottom: '5px' } }>Recently discovered <span role="img" aria-label="headphones">🎧</span></div>
         <Anchor
           href={ discoveredMusic.url }
           target='_blank'
