@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Button, Cutout, Anchor, Fieldset,
+  Button, Cutout, Anchor, TabBody,
 } from 'react95';
 
 import musicIcon from '../../resources/icons/music.gif';
@@ -72,7 +72,8 @@ class MusicBody extends Component {
       </div>
     </Cutout>
     <div style={ { paddingBottom: '10px', paddingTop: '20px' } }>
-      <Fieldset label="Recently discovered 🎧">
+      <TabBody>
+        <div style={ { marginTop: '-20px', paddingBottom: '5px' } }>Recently discovered 🎧</div>
         <Anchor
           href={ discoveredMusic.url }
           target='_blank'
@@ -81,7 +82,7 @@ class MusicBody extends Component {
             <TheMightyMarquee text={ discoveredMusic.name } />
           </Cutout>
         </Anchor>
-      </Fieldset>
+      </TabBody>
     </div>
   </div>)
 }
