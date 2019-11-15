@@ -126,6 +126,10 @@
       {
         "url": "http://websdr.ewi.utwente.nl:8901",
         "description": ""
+      },
+      {
+        "url": "https://www.tvbgone.com",
+        "description": ""
       }
     ]
   },
