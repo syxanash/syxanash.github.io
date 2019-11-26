@@ -27,10 +27,6 @@
         "description": ""
       },
       {
-        "url": "https://jvns.ca",
-        "description": ""
-      },
-      {
         "url": "https://neave.com",
         "description": ""
       },
@@ -48,10 +44,6 @@
       },
       {
         "url": "https://nadim.computer",
-        "description": ""
-      },
-      {
-        "url": "https://www.evilsocket.net",
         "description": ""
       },
       {
@@ -80,14 +72,6 @@
       },
       {
         "url": "https://www.strml.net",
-        "description": ""
-      },
-      {
-        "url": "https://www.jordanmechner.com",
-        "description": ""
-      },
-      {
-        "url": "https://zachholman.com",
         "description": ""
       },
       {
@@ -149,6 +133,10 @@
         "description": ""
       },
       {
+        "url": "https://www.beeple-crap.com",
+        "description": ""
+      },
+      {
         "url": "https://vinnieneuberg.com",
         "description": ""
       },
@@ -166,6 +154,39 @@
       },
       {
         "url": "https://substack.net",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "section": "Blogs",
+    "links": [
+      {
+        "url": "https://www.jordanmechner.com/articles/",
+        "description": "Creator of Prince of Persia"
+      },
+      {
+        "url": "https://zachholman.com",
+        "description": ""
+      },
+      {
+        "url": "https://aelkus.github.io/archive",
+        "description": ""
+      },
+      {
+        "url": "https://jvns.ca",
+        "description": ""
+      },
+      {
+        "url": "https://www.evilsocket.net",
+        "description": ""
+      },
+      {
+        "url": "https://keinpfusch.net",
+        "description": ""
+      },
+      {
+        "url": "https://rarlindseysmash.com/archive",
         "description": ""
       }
     ]
@@ -281,8 +302,8 @@
         "description": "awesome blog about gamedev"
       },
       {
-        "url": "https://rarlindseysmash.com/posts/spirit-of-burrito-saturday",
-        "description": "interesting read about working on side projects"
+        "url": "https://learnxinyminutes.com",
+        "description": ""
       },
       {
         "url": "https://poignant.guide",
