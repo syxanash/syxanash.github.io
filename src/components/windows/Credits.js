@@ -63,19 +63,19 @@ class CreditsBody extends Component {
         <div style={ { marginTop: '-5px' } }>
           <Cutout style={ { backgroundColor: '#e9e8ff' } }>
             <ul style={ { display: activeTab === 0 ? 'block' : 'none' } }>
-              <li className='list-content'><a href='https://github.com/arturbien/React95' target='_blank' rel='noopener noreferrer'>React95</a> ~ Amazing Windows 95 style UI components for React</li>
-              <li className='list-content'><a href='https://daneden.github.io/animate.css/' target='_blank' rel='noopener noreferrer'>Animate.css</a> ~ Set of animations used for opening windows and animating stuff</li>
-              <li className='list-content'><a href='https://www.npmjs.com/package/react-draggable' target='_blank' rel='noopener noreferrer'>react-draggable</a> ~ A cool library for dragging items on a page</li>
+              <li className='list-content'><a href='https://github.com/arturbien/React95' target='_blank' rel='noopener noreferrer'>React95</a> → Amazing Windows 95 style UI components for React</li>
+              <li className='list-content'><a href='https://daneden.github.io/animate.css/' target='_blank' rel='noopener noreferrer'>Animate.css</a> → Set of animations used for opening windows and animating stuff</li>
+              <li className='list-content'><a href='https://www.npmjs.com/package/react-draggable' target='_blank' rel='noopener noreferrer'>react-draggable</a> → A cool library for dragging items on a page</li>
               <li className='list-content'>The scanlines CSS code was <span style={ { textDecoration: 'line-through' } }>copied</span> highly inspired by <a href='https://neave.tv'>neave.tv</a></li>
-              <li className='list-content'><a href='https://github.com/Swordfish90/cool-retro-term' target='_blank' rel='noopener noreferrer'>cool-retro-term</a> ~ a vintage terminal emulator used in some pages</li>
-              <li className='list-content'><a href='https://code.visualstudio.com' target='_blank' rel='noopener noreferrer'>VSCode</a> ~ wish I told you I built this website using VIM or Emacs like true &#35;10xdeveloper but oh well...</li>
+              <li className='list-content'><a href='https://github.com/Swordfish90/cool-retro-term' target='_blank' rel='noopener noreferrer'>cool-retro-term</a> → a vintage terminal emulator used in some pages</li>
+              <li className='list-content'><a href='https://code.visualstudio.com' target='_blank' rel='noopener noreferrer'>VSCode</a> → wish I told you I built this website using VIM or Emacs like true &#35;10xdeveloper but oh well...</li>
             </ul>
             <ul style={ { display:activeTab === 1 ? 'block' : 'none' } }>
-              <li className='list-content'><a href='https://www.gimp.org' target='_blank' rel='noopener noreferrer'>GIMP</a> ~ All icons and some GIFs on this site have been created using GIMP.</li>
-              <li className='list-content'><a href='https://ezgif.com/video-to-gif' target='_blank' rel='noopener noreferrer'>Ezgif</a> ~ Amazing web app for editing gifs and converting videos to GIF.</li>
-              <li className='list-content'><a href='https://win98icons.alexmeub.com' target='_blank' rel='noopener noreferrer'>Windows 98 Icons</a> ~ original Windows 98 icons were downloaded from here.</li>
-              <li className='list-content'><a href='https://www.youtube.com/watch?v=-MH6JZdGZcI' target='_blank' rel='noopener noreferrer'>TV turn off GIF</a> ~ The TV turn off GIF was taken from this video</li>
-              <li className='list-content'><a href='https://en.wikipedia.org/wiki/Blue_Monday_(New_Order_song)#/media/File:NewOrderBlueMonday.jpg' target='_blank' rel='noopener noreferrer'>Blue Monday LP Cover</a> ~ The Favicon of this site is highly inspired by the cover art for the vinyl LP "Blue Monday" by New Order</li>
+              <li className='list-content'><a href='https://www.gimp.org' target='_blank' rel='noopener noreferrer'>GIMP</a> → All icons and some GIFs on this site have been created using GIMP.</li>
+              <li className='list-content'><a href='https://ezgif.com/video-to-gif' target='_blank' rel='noopener noreferrer'>Ezgif</a> → Amazing web app for editing gifs and converting videos to GIF.</li>
+              <li className='list-content'><a href='https://win98icons.alexmeub.com' target='_blank' rel='noopener noreferrer'>Windows 98 Icons</a> → original Windows 98 icons were downloaded from here.</li>
+              <li className='list-content'><a href='https://www.youtube.com/watch?v=-MH6JZdGZcI' target='_blank' rel='noopener noreferrer'>TV turn off GIF</a> → The TV turn off GIF was taken from this video</li>
+              <li className='list-content'><a href='https://en.wikipedia.org/wiki/Blue_Monday_(New_Order_song)#/media/File:NewOrderBlueMonday.jpg' target='_blank' rel='noopener noreferrer'>Blue Monday LP Cover</a> → The Favicon of this site is highly inspired by the cover art for the vinyl LP "Blue Monday" by New Order</li>
               <li className='list-content'>The avatars in <b>src/resources/images/avatars/</b>, used
               in the Guestbook page, were found online from various websites</li>
               <li className='list-content'>The spinning globe in <b>src/resources/images/globe.gif</b> was
