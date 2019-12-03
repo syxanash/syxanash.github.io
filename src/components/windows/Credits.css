@@ -2,26 +2,11 @@
   padding-bottom: 5px;
 }
 
-.bulletpoint-container {
-  background: #eeeeee;
-  padding: 10px;
-
-  margin-bottom: 10px;
-
-  border: 1px solid;
-  padding: 10px;
-  box-shadow: 10px 10px #707070;
-}
-
 .mascot-picture {
   height: 70px;
   float: left;
   padding-right: 15px;
   padding-left: 10px;
-}
-
-.paragraph-title {
-  font-weight: bold;
 }
 
 .list-content {
