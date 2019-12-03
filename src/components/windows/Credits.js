@@ -35,34 +35,23 @@ class CreditsBody extends Component {
           you could help me fix them by opening a pull request!
         </p>
       </div>
-      <Tabs value={0}>
-        <Tab value={0}>Copyright &amp; License</Tab>
-      </Tabs>
-      <TabBody>
-        <div style={ { marginTop: '-5px' } }>
-          <Cutout style={ { backgroundColor: '#e9e8ff' } }>
-            <ul>
-              <li className='list-content'>All <b>icons</b> and <b>animated icons</b> were made by myself and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</li>
-              <li className='list-content'>The <b>source code</b> is under MIT License. See <a href={ licenseText } target='_blank' rel='noopener noreferrer'>LICENSE.txt</a></li>
-              <li className='list-content'>Any other <b>third party</b> materials are under their respective license,
-              see the details below.</li>
-            </ul>
-          </Cutout>
-        </div>
-      </TabBody>
-      <div style={ { paddingTop: '15px', paddingBottom: '15px' } }>
-        Here you will find a list of technologies and media I've used to build this site.
-      </div>
-      <Tabs value={activeTab} onChange={this.handleChangeTab}>
-        <Tab value={0}>Code</Tab>
-        <Tab value={1}>Images</Tab>
-        <Tab value={2}>Links</Tab>
-        <Tab value={3}>Sounds</Tab>
+      <Tabs value={activeTab} onChange={this.handleChangeTab} style={ { paddingTop: '10px' } }>
+        <Tab value={0}>&copy;</Tab>
+        <Tab value={1}>Code</Tab>
+        <Tab value={2}>Images</Tab>
+        <Tab value={3}>Links</Tab>
+        <Tab value={4}>Sounds</Tab>
       </Tabs>
       <TabBody>
         <div style={ { marginTop: '-5px' } }>
           <Cutout style={ { backgroundColor: '#e9e8ff' } }>
             <ul style={ { display: activeTab === 0 ? 'block' : 'none' } }>
+              <li className='list-content'>All <b>icons</b> and <b>animated icons</b> were made by myself and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</li>
+              <li className='list-content'>The <b>source code</b> is under MIT License. See <a href={ licenseText } target='_blank' rel='noopener noreferrer'>LICENSE.txt</a></li>
+              <li className='list-content'>Any other <b>third party</b> materials are under their respective license,
+              see the details below.</li>
+            </ul>
+            <ul style={ { display: activeTab === 1 ? 'block' : 'none' } }>
               <li className='list-content'><a href='https://github.com/arturbien/React95' target='_blank' rel='noopener noreferrer'>React95</a> → Amazing Windows 95 style UI components for React</li>
               <li className='list-content'><a href='https://daneden.github.io/animate.css/' target='_blank' rel='noopener noreferrer'>Animate.css</a> → Set of animations used for opening windows and animating stuff</li>
               <li className='list-content'><a href='https://www.npmjs.com/package/react-draggable' target='_blank' rel='noopener noreferrer'>react-draggable</a> → A cool library for dragging items on a page</li>
@@ -70,7 +59,7 @@ class CreditsBody extends Component {
               <li className='list-content'><a href='https://github.com/Swordfish90/cool-retro-term' target='_blank' rel='noopener noreferrer'>cool-retro-term</a> → a vintage terminal emulator used in some pages</li>
               <li className='list-content'><a href='https://code.visualstudio.com' target='_blank' rel='noopener noreferrer'>VSCode</a> → wish I told you I built this website using VIM or Emacs like true &#35;10xdeveloper but oh well...</li>
             </ul>
-            <ul style={ { display:activeTab === 1 ? 'block' : 'none' } }>
+            <ul style={ { display:activeTab === 2 ? 'block' : 'none' } }>
               <li className='list-content'><a href='https://www.gimp.org' target='_blank' rel='noopener noreferrer'>GIMP</a> → All icons and some GIFs on this site have been created using GIMP.</li>
               <li className='list-content'><a href='https://ezgif.com/video-to-gif' target='_blank' rel='noopener noreferrer'>Ezgif</a> → Amazing web app for editing gifs and converting videos to GIF.</li>
               <li className='list-content'><a href='https://win98icons.alexmeub.com' target='_blank' rel='noopener noreferrer'>Windows 98 Icons</a> → original Windows 98 icons were downloaded from here.</li>
@@ -83,14 +72,14 @@ class CreditsBody extends Component {
               <li className='list-content'>Almost all of the GIFs in <b>loop TV</b> were made by myself and were
               taken from various games/movies/cartoons. Some of these GIFs were also found online.</li>
             </ul>
-            <ul style={ { display: activeTab === 2 ? 'block' : 'none' } }>
+            <ul style={ { display: activeTab === 3 ? 'block' : 'none' } }>
               <li className='list-content'>
                 This site is not affiliated, associated, authorized, endorsed by,
                 or in any way officially connected (except with hyperlinks lol)
                 to the websites listed in the page <b>Links</b>.
               </li>
             </ul>
-            <ul style={ { display: activeTab === 3 ? 'block' : 'none' } }>
+            <ul style={ { display: activeTab === 4 ? 'block' : 'none' } }>
               <li className='list-content'>The poweroff screen page has a sample sound I modified from the original song <a href='https://www.youtube.com/watch?v=Z0XLzIswI2s' target='_blank' rel='noopener noreferrer'>Grace Jones - Slave to the Rhythm</a></li>
               <li className='list-content'>The error sound was modified from the Windows ME warning chord, original file downloaded from <a href='https://guidebookgallery.org/sounds' target='_blank' rel='noopener noreferrer'>guidebookgallery.org/sounds</a></li>
             </ul>
