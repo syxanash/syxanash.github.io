@@ -8,10 +8,6 @@ import { CestinoHeader, CestinoBody } from './windows/Cestino';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
 import { FixHeader, FixBody } from './windows/Fix';
 
-import PippoTheme from '../themes/PippoTheme';
-import PippoDarkPro from '../themes/PippoDarkPro';
-import PippoBleeding from '../themes/PippoBleeding';
-
 export default function WindowsList() {
   const windowsList = {
     about: {
@@ -20,7 +16,6 @@ export default function WindowsList() {
       focused: false,
       header: AboutHeader,
       body: AboutBody,
-      windowTheme: PippoTheme
     },
     projects: {
       hasFullScreen: true,
@@ -28,7 +23,6 @@ export default function WindowsList() {
       focused: false,
       header: ProjectsHeader,
       body: ProjectsBody,
-      windowTheme: PippoDarkPro
     },
     contact: {
       hasFullScreen: true,
@@ -36,7 +30,6 @@ export default function WindowsList() {
       focused: false,
       header: ContactHeader,
       body: ContactBody,
-      windowTheme: PippoTheme
     },
     links: {
       hasFullScreen: true,
@@ -44,7 +37,6 @@ export default function WindowsList() {
       focused: false,
       header: LinksHeader,
       body: LinksBody,
-      windowTheme: PippoTheme
     },
     guestbook: {
       hasFullScreen: true,
@@ -52,7 +44,6 @@ export default function WindowsList() {
       focused: false,
       header: GuestbookHeader,
       body: GuestbookBody,
-      windowTheme: PippoTheme
     },
     music: {
       hasFullScreen: true,
@@ -60,7 +51,6 @@ export default function WindowsList() {
       focused: false,
       header: MusicHeader,
       body: MusicBody,
-      windowTheme: PippoTheme
     },
     credits: {
       hasFullScreen: true,
@@ -68,7 +58,6 @@ export default function WindowsList() {
       focused: false,
       header: CreditsHeader,
       body: CreditsBody,
-      windowTheme: PippoTheme
     },
     cestino: {
       hasFullScreen: false,
@@ -76,7 +65,6 @@ export default function WindowsList() {
       focused: false,
       header: CestinoHeader,
       body: CestinoBody,
-      windowTheme: PippoBleeding
     },
     fixmycomputer: {
       hasFullScreen: true,
@@ -84,7 +72,6 @@ export default function WindowsList() {
       focused: false,
       header: FixHeader,
       body: FixBody,
-      windowTheme: PippoTheme
     },
   };
 

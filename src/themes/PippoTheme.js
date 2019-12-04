@@ -1,4 +1,4 @@
-const theme = {
+const PippoTheme = {
   hatchedBackground:
     'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIElEQVQYV2P8////fwYGBgZGRkZGMI0hABIFAbgEugAAQFQP/QfjEPcAAAAASUVORK5CYII=)',
 
@@ -42,4 +42,4 @@ const theme = {
   flatDark: '#5b57a1',
 };
 
-export default theme;
+export default PippoTheme;
