@@ -131,6 +131,7 @@ class MainWindowBody extends Component {
       const windowHeader = _.get(windowsList, `${window}.header`);
       const hasFullScreen = _.get(windowsList, `${window}.hasFullScreen`);
       const windowBody = _.get(windowsList, `${window}.body`);
+      const windowTheme = _.get(windowsList, `${window}.windowTheme`);
 
       return <div
         key={ `${window}_${index}` }
@@ -145,6 +146,7 @@ class MainWindowBody extends Component {
               body={ windowBody }
               windowName={ window }
               displayExtraActions={ hasFullScreen }
+              windowTheme={windowTheme}
             />
             : null
         }
