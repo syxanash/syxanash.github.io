@@ -20,7 +20,7 @@ const theme = {
     headerText: '#010601',
   
     text: '#010601',
-    textInvert: '#c7c7df',
+    textInvert: '#bfff00',
     textDisabled: '#5b57a1',
     textDisabledShadow: '#c7c7df',
   
