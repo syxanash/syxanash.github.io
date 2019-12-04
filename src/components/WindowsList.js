@@ -20,7 +20,7 @@ export default function WindowsList() {
       focused: false,
       header: AboutHeader,
       body: AboutBody,
-      windowTheme: PippoBrightDay
+      windowTheme: PippoTheme
     },
     projects: {
       hasFullScreen: true,
