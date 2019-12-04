@@ -20,6 +20,7 @@ import BrokenScreen from './components/additional/BrokenScreen';
 import TheAgent from './components/additional/TheAgent';
 
 import PippoTheme from './themes/PippoTheme';
+import ThemeContext from './ThemeContext';
 
 import './App.css';
 
@@ -37,6 +38,7 @@ class App extends Component {
     loopTVon: false,
     stoppedWindowProgram: false,
     isBrokenScreen: false,
+    mainTheme: PippoTheme
   }
 
   componentDidMount() {
@@ -51,11 +53,25 @@ class App extends Component {
         return <Route exact key={ `${window}_${index}` } path={ `/${window}` } component={ () => <WindowBodyComponent /> } />;
       });
 
-    this.setState({ pageBodyRoutes, isBrokenScreen: localStorage.getItem('broken') });
+    const currentPage = _.last(window.location.href.split('/'));
+    const pageTheme = _.get(windowsList, `${currentPage}.windowTheme`, PippoTheme);
+
+    this.setState({
+      mainTheme: pageTheme,
+      pageBodyRoutes,
+      isBrokenScreen: localStorage.getItem('broken')
+    });
   }
 
   componentWillUnmount() {
     document.removeEventListener('keydown', this.stoppedProgram);
+  }
+
+  changeTheme = (pageName) => {
+    const windowsList = WindowsList();
+    const newTheme = _.get(windowsList, `${pageName}.windowTheme`, PippoTheme);
+
+    this.setState({ mainTheme: newTheme });
   }
 
   stoppedProgram = (event) => {
@@ -105,7 +121,7 @@ class App extends Component {
   render() {
     const {
       bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes,
-      poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram,
+      poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme
     } = this.state;
 
     return (
@@ -123,25 +139,27 @@ class App extends Component {
                 }
               </style>
             </Helmet>
-            <ThemeProvider theme={ PippoTheme }>
-              <Window shadow={ false } style={ { width: '100%' } }>
-                <WindowHeader>
-                  <WindowHead
-                    onClickLeft={ this.toggleBody }
-                    onClickMiddle={ this.generateWallpaper }
-                    onRightClick={ this.poweroff }
-                  />
-                </WindowHeader>
-                <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
-                  <Switch>
-                    <Route exact path='/' component={ this.renderMainWindow }/>
-                    {pageBodyRoutes}
-                    <Route component={ NotFoundBody }/>
-                  </Switch>
-                  <Copyright />
-                </WindowContent>
-              </Window>
-            </ThemeProvider>
+            <ThemeContext.Provider value={ { changeTheme: this.changeTheme } }>
+              <ThemeProvider theme={ mainTheme }>
+                <Window shadow={ false } style={ { width: '100%' } }>
+                  <WindowHeader>
+                    <WindowHead
+                      onClickLeft={ this.toggleBody }
+                      onClickMiddle={ this.generateWallpaper }
+                      onRightClick={ this.poweroff }
+                    />
+                  </WindowHeader>
+                  <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
+                    <Switch>
+                      <Route exact path='/' component={ this.renderMainWindow }/>
+                      {pageBodyRoutes}
+                      <Route component={ NotFoundBody }/>
+                    </Switch>
+                    <Copyright />
+                  </WindowContent>
+                </Window>
+              </ThemeProvider>
+            </ThemeContext.Provider>
             <TheAgent displayAgent={ !displayWindowBody } />
           </div>
         </div>

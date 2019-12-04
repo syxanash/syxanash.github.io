@@ -8,6 +8,7 @@ import Draggable from 'react-draggable';
 import 'animate.css';
 
 import PippoTheme from '../themes/PippoTheme';
+import ThemeContext from '../ThemeContext';
 import PippoDistracted from '../themes/PippoDistracted';
 
 import './PopupWindow.css';
@@ -34,23 +35,30 @@ class PopupWindow extends Component {
     const { windowName } = this.props;
 
     return (
-      <React.Fragment>
-        <Button
-          size='sm'
-          square
-          onClick={ this.toggleBody }
-        >
-          <span style={ { transform: 'translateY(-1px)' } }>{displayWindowBody ? '▲' : '▼'}</span>
-        </Button>
-        <Button
-          size='sm'
-          square
-          style={ { marginRight: '3px' } }
-          onClick={ () => this.props.history.push(`/${windowName}`) }
-        >
-          <span style={ { transform: 'translateY(-1px)' } }>⌘</span>
-        </Button>
-      </React.Fragment>
+      <ThemeContext.Consumer>
+        {({ changeTheme }) => (
+          <React.Fragment>
+            <Button
+              size='sm'
+              square
+              onClick={ this.toggleBody }
+            >
+              <span style={ { transform: 'translateY(-1px)' } }>{displayWindowBody ? '▲' : '▼'}</span>
+            </Button>
+            <Button
+              size='sm'
+              square
+              style={ { marginRight: '3px' } }
+              onClick={ () => {
+                this.props.history.push(`/${windowName}`);
+                changeTheme(windowName);
+              } }
+            >
+              <span style={ { transform: 'translateY(-1px)' } }>⌘</span>
+            </Button>
+          </React.Fragment>
+        )}
+      </ThemeContext.Consumer>
     );
   }
 
