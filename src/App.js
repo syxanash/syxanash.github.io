@@ -19,7 +19,7 @@ import StoppedProgram from './components/additional/StoppedProgram';
 import BrokenScreen from './components/additional/BrokenScreen';
 import TheAgent from './components/additional/TheAgent';
 
-import PippoTheme from './PippoTheme';
+import PippoTheme from './themes/PippoTheme';
 
 import './App.css';
 

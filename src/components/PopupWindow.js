@@ -7,8 +7,8 @@ import {
 import Draggable from 'react-draggable';
 import 'animate.css';
 
-import PippoTheme from '../PippoTheme';
-import PippoDistracted from '../PippoDistracted';
+import PippoTheme from '../themes/PippoTheme';
+import PippoDistracted from '../themes/PippoDistracted';
 
 import './PopupWindow.css';
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import Typist from 'react-typist';
 
 import lastUpdatedFile from '../../resources/last-updated.json';
 
@@ -11,9 +10,28 @@ const backgroundImages = require.context('../../resources/images/backgrounds', t
 class Poweroff extends Component {
   state = {
     shouldStopWindowing: false,
+    outputText: ''
   };
 
+  componentDidMount() {
+    document.addEventListener('keydown', this.addCtrlC);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.addCtrlC);
+  }
+
+  addCtrlC = (event) => {
+    const { outputText } = this.state;
+
+    if ((event.ctrlKey && event.key === 'c')
+      || (event.ctrlKey && event.key === 'C')) {
+      this.setState({ outputText: outputText + '^C<br />' });
+    }
+  }
+
   render() {
+    const { outputText } = this.state;
     const { shouldStopWindowing } = this.props;
 
     if (!shouldStopWindowing) {
@@ -64,16 +82,7 @@ class Poweroff extends Component {
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] User-agent detected: {navigator.userAgent}</div>
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started cmptrOS ver.
           "{lastUpdatedFile.buildNumber.substr(0, 5)}"</div>
-        <Typist avgTypingDelay={ 1 } cursor={ { show: false } }>
-          <div>^C</div>
-          <div>[&nbsp;&nbsp;712.450538] Code: 30 fa 58 80 4c 39 2c 08 75 04 0f 0b eb fe 48
-            c7 c0 40 fa 58 80 eb 1f 65 48 8b 04 25 10 00 00 00 66 f7 80 44 e0 ff ff 00 ff
-            75 04 0f 0b eb fe 48 c7 c0 30 fa 58 80 48 8d 1c 08 48 83 3b 00 74 04</div>
-          <div>[&nbsp;&nbsp;712.450538] RIP  [ffffffff8037fa9c] xen_spin_wait+0x90/0x139</div>
-          <div>[&nbsp;&nbsp;712.450538]  RSP [ffffffff80595e38]</div>
-          <div>[&nbsp;&nbsp;712.450538] ---[ end trace 73e60cdc01c1f34c ]---</div>
-          <div>[&nbsp;&nbsp;712.450538] Kernel panic - not syncing: Aiee, killing interrupt handler! <span className='blink-text'>█</span></div>
-        </Typist>
+          <span dangerouslySetInnerHTML={ { __html: outputText } }></span>
       </div>
     </React.Fragment>);
   }
