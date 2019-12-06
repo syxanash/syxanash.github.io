@@ -5,8 +5,6 @@ import lastUpdatedFile from '../../resources/last-updated.json';
 
 import './StoppedProgram.css';
 
-const backgroundImages = require.context('../../resources/images/backgrounds', true);
-
 class Poweroff extends Component {
   state = {
     shouldStopWindowing: false,
@@ -43,7 +41,7 @@ class Poweroff extends Component {
         <style>
           {
             `body {
-              background: url(${backgroundImages('./h4x0r_green.gif')});
+              background: url(data:image/gif;base64,R0lGODlhAQABAIABAAAAAAD/FywAAAAAAQABAAACAkQBADs=);
             }`
           }
         </style>
