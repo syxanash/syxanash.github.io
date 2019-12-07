@@ -11,8 +11,11 @@ class Poweroff extends Component {
     outputText: ''
   };
 
+  messagesEndRef = React.createRef();
+
   componentDidMount() {
     document.addEventListener('keydown', this.addCtrlC);
+    this.scrollToBottom();
   }
 
   componentWillUnmount() {
@@ -25,6 +28,16 @@ class Poweroff extends Component {
     if ((event.ctrlKey && event.key === 'c')
       || (event.ctrlKey && event.key === 'C')) {
       this.setState({ outputText: outputText + '^C<br />' });
+    }
+  }
+  
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom = () => {
+    if (this.messagesEndRef.current !== null) {
+      this.messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
     }
   }
 
@@ -81,6 +94,7 @@ class Poweroff extends Component {
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started cmptrOS ver.
           "{lastUpdatedFile.buildNumber.substr(0, 5)}"</div>
           <span dangerouslySetInnerHTML={ { __html: outputText } }></span>
+        <div ref={this.messagesEndRef} />
       </div>
     </React.Fragment>);
   }
