@@ -134,6 +134,7 @@ class App extends Component {
                 {
                   `body {
                     background: url(${backgroundImages(`./${bgWallpapers[bgIndex]}`)});
+                    background-attachment: fixed;
                     background-color : #a1a3ca;
                   }`
                 }
