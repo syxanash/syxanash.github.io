@@ -39,7 +39,7 @@ class BrokenScreen extends Component {
       <div className='centered-item'>
         <h1 className='blink-text'>ERROR</h1>
         <p>The computer has been permanently damaged!</p>
-        { showHint ? <p className='shake'>maybe if you wait long enough it will repair itself...</p> : '' }
+        { showHint ? <p className='shake'>or is it?</p> : '' }
         { showQrCode ? <img src={ qrcodeFix } alt='qrcode fix' /> : '' }
       </div>
     </React.Fragment>);
@@ -73,7 +73,7 @@ class BrokenScreen extends Component {
 
     this.hintTimeout = setTimeout(() => {
       this.setState({ showHint: true });
-    }, 10 * 1000);
+    }, 8 * 1000);
 
     return this.renderBackgroundPicture();
   }
