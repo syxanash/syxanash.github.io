@@ -30,7 +30,7 @@ class Footer extends Component {
       >
         <Button fullWidth>
           <img src={ clockIcon } className="small-icon" alt="clock"/>
-          <figcaption>Last edited {displayDate}</figcaption>
+          <figcaption>Last updated {displayDate}</figcaption>
         </Button>
       </Anchor>
     );
