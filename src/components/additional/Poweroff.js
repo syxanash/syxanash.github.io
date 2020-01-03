@@ -44,7 +44,7 @@ class Poweroff extends Component {
 
       this.turnOffTimeout = setTimeout(() => {
         this.setState({ isScreenOff: true });
-      }, 4 * 1000);
+      }, 6 * 1000);
 
       return this.renderBackgroundPicture(screenMessage);
     }
