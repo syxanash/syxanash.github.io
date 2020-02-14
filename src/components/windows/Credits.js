@@ -49,7 +49,7 @@ class CreditsBody extends Component {
               <li className='list-content'>All <b>icons</b> and <b>animated icons</b> were made by myself and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</li>
               <li className='list-content'>The <b>source code</b> is under MIT License. See <a href={ licenseText } target='_blank' rel='noopener noreferrer'>LICENSE.txt</a></li>
               <li className='list-content'>Any other <b>third party</b> materials are under their respective license,
-              see the details below.</li>
+              see the other tabs.</li>
             </ul>
             <ul style={ { display: activeTab === 1 ? 'block' : 'none' } }>
               <li className='list-content'><a href='https://github.com/arturbien/React95' target='_blank' rel='noopener noreferrer'>React95</a> → Amazing Windows 95 style UI components for React</li>
