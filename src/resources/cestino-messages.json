@@ -21,7 +21,7 @@
   },
   {
     "message": "buttons nowadays are not as clickable as before",
-    "button": "YES"
+    "button": "OK"
   },
   {
     "message": "everything made in the past is better",
@@ -41,7 +41,7 @@
   },
   {
     "message": "present is tedious",
-    "button": "OK"
+    "button": "OK."
   },
   {
     "message": "past was cozy",
@@ -49,7 +49,7 @@
   },
   {
     "message": "present is tiresome",
-    "button": "ok"
+    "button": ".OK"
   },
   {
     "message": "we forgot the bad stuff",
@@ -57,7 +57,7 @@
   },
   {
     "message": "but we remember the good time",
-    "button": "OK"
+    "button": "KO"
   },
   {
     "message": "like nothing ever happened",
@@ -65,6 +65,6 @@
   },
   {
     "message": "nothing will happen",
-    "button": ":("
+    "button": "ok..."
   }
 ]
