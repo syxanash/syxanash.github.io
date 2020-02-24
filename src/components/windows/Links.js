@@ -85,7 +85,6 @@ class LinksBody extends Component {
 
   render = () => {
     const { globeImgLoaded } = this.state;
-    console.log(globeImgLoaded);
 
     return (<div style={ { marginTop: '-10px' } }>
       <Cutout className='globe-container'>
