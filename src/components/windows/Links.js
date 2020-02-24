@@ -24,6 +24,7 @@ class LinksBody extends Component {
   state = {
     linksObject: websiteLinks,
     activeTab: 0,
+    globeImgLoaded: false,
   }
 
   openRandomLink = () => {
@@ -82,20 +83,32 @@ class LinksBody extends Component {
     );
   }
 
-  render = () => (<div style={ { marginTop: '-10px' } }>
-    <Cutout className='globe-container'><img src={ spinningGlobe } alt='spinning globe' className='globe-picture animated fadeIn' /></Cutout>
-    <Fieldset>
-      This is my <b>Linklog</b> which contains articles, cool websites and people's
-      personal pages that I found inspiring or somehow creative.
-      If you see a dead link feel free to open a pull request!
-    </Fieldset>
-    <div style={ { paddingBottom: '15px', paddingTop: '10px', textAlign: 'center' } }>
-      {this.generateTabs()}
-    </div>
-    <div>
-      {this.generateTabBody()}
-    </div>
-  </div>);
+  render = () => {
+    const { globeImgLoaded } = this.state;
+    console.log(globeImgLoaded);
+
+    return (<div style={ { marginTop: '-10px' } }>
+      <Cutout className='globe-container'>
+        <img
+          src={ spinningGlobe }
+          alt='spinning globe'
+          onLoad={ () => { this.setState({ globeImgLoaded: true }); } }
+          className={ `globe-picture ${globeImgLoaded ? 'animated fadeIn' : ''}` }
+        />
+      </Cutout>
+      <Fieldset>
+        This is my <b>Linklog</b> which contains articles, cool websites and people's
+        personal pages that I found inspiring or somehow creative.
+        If you see a dead link feel free to open a pull request!
+      </Fieldset>
+      <div style={ { paddingBottom: '15px', paddingTop: '10px', textAlign: 'center' } }>
+        {this.generateTabs()}
+      </div>
+      <div>
+        {this.generateTabBody()}
+      </div>
+    </div>);
+  }
 }
 
 export { LinksHeader, LinksBody };
