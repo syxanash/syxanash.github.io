@@ -92,6 +92,7 @@ class LinksBody extends Component {
           src={ spinningGlobe }
           alt='spinning globe'
           onLoad={ () => { this.setState({ globeImgLoaded: true }); } }
+          style={{ display: `${globeImgLoaded ? 'block' : 'none'}` }}
           className={ `globe-picture ${globeImgLoaded ? 'animated fadeIn' : ''}` }
         />
       </Cutout>
