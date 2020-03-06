@@ -49,6 +49,7 @@ class AboutBody extends Component {
           src={ avatarPicture }
           alt='my avatar'
           className='avatar-picture'
+          style={ { display: myAvatarImgLoaded ? 'block' : 'none' } }
           onLoad={ () => { this.setState({ myAvatarImgLoaded: true }); } }
         />
         <span style={ { fontWeight: 'bold', fontSize: '1.5em' } }>Hello there!</span>
