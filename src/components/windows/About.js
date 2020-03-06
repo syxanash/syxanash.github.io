@@ -3,6 +3,7 @@ import moment from 'moment';
 
 import aboutIcon from '../../resources/icons/about.gif';
 import avatarPicture from '../../resources/images/myavatar.gif';
+import avatarPicturePreview from '../../resources/images/myavatar_preview.gif';
 
 import './About.css';
 
@@ -17,6 +18,7 @@ class AboutHeader extends Component {
 class AboutBody extends Component {
   state = {
     timePassed: '',
+    myAvatarImgLoaded: false,
   };
 
   getDateDiff = () => {
@@ -33,10 +35,22 @@ class AboutBody extends Component {
   }
 
   render = () => {
-    const { timePassed } = this.state;
+    const { timePassed, myAvatarImgLoaded } = this.state;
+
     return (
       <div className='text-container'>
-        <img src={ avatarPicture } alt='my avatar' className='avatar-picture' />
+        <img
+          src={ avatarPicturePreview }
+          alt='my avatar'
+          className='avatar-picture'
+          style={ { display: myAvatarImgLoaded ? 'none' : 'block' } }
+        />
+        <img
+          src={ avatarPicture }
+          alt='my avatar'
+          className='avatar-picture'
+          onLoad={ () => { this.setState({ myAvatarImgLoaded: true }); } }
+        />
         <span style={ { fontWeight: 'bold', fontSize: '1.5em' } }>Hello there!</span>
         <p>
           I'm <b>Simone</b>, pronounced like `<i>see-mow-nay</i>`<br />
