@@ -12,4 +12,5 @@
 .music-track-text {
   color: yellow;
   font-size: 20px;
+  cursor: url(../../resources/images/pointer.gif), auto;
 }
