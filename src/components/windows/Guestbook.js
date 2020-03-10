@@ -57,8 +57,8 @@ class GuestbookBody extends Component {
           </div>
         </div>
         <div>
-          WOW a website which looks like a computer! no one ever thought about it,
-          this is really unique, welcome to the world wide web my friend!
+          WOW a website which looks like a computer! <b><a href='https://github.com/syxanash/awesome-gui-websites' target='_blank' rel='noopener noreferrer' style={ { textDecoration: 'none', color: 'black' } }>no one</a></b> ever thought about it,
+          this is so cool, welcome to the world wide web my friend!
         </div>
       </div>
       <Divider />
@@ -213,21 +213,6 @@ class GuestbookBody extends Component {
         </div>
         <div>
           { '<script>alert(\'document.cookie\');</script>' }
-        </div>
-      </div>
-      <Divider />
-      <div className='single-comment-container'>
-        <div style={ { display: 'flex' } }>
-          <span className='avatar-container'>
-            <Avatar src={ timAvatar } style={ { height: '60px', width: '60px' } } />
-          </span>
-          <div className='comment-author-name'>
-            <div className='comment-name'>Sir Tim Berners-Lee</div>
-            <div className='comment-date'>on 1991/08/03</div>
-          </div>
-        </div>
-        <div>
-          Heeey this website is totally ripped from <a href='https://github.com/syxanash/awesome-gui-websites' target='_blank' rel='noopener noreferrer'>these sites</a>!!! <span role="img" aria-label="angry face">😡</span>
         </div>
       </div>
     </Cutout>
