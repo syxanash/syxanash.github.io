@@ -10,9 +10,9 @@
 }
 
 .popup-movable-header {
-  cursor: grab;
+  cursor: url(../resources/images/grab.gif), auto;
 }
 
 .popup-movable-header:active {
-  cursor: grabbing;
+  cursor: url(../resources/images/grabbing.gif), auto;
 }

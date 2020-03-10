@@ -38,11 +38,11 @@
 }
 
 .movable-icon {
-  cursor: grab;
+  cursor: url(../resources/images/grab.gif), auto;
 }
 
 .movable-icon:active {
-  cursor: grabbing;
+  cursor: url(../resources/images/grabbing.gif), auto;
 }
 
 .icon {
