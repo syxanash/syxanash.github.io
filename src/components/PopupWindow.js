@@ -29,6 +29,15 @@ class PopupWindow extends Component {
     closeWindow();
   }
 
+  renderCloseButton = () => (<Button
+      size='sm'
+      square
+      onClick={ this.closeCurrentWindow }
+    >
+      <span style={ { fontWeight: 'bold', transform: 'translateY(-1px)' } }>X</span>
+    </Button>
+  );
+
   renderExtraActionButtons = () => {
     const { displayWindowBody } = this.state;
     const { windowName } = this.props;
@@ -78,7 +87,7 @@ class PopupWindow extends Component {
   render() {
     const { displayWindowBody, openAnimation } = this.state;
     const {
-      header, body, displayExtraActions, focused, windowTheme
+      header, body, displayExtraActions, displayCloseButton, focused, windowTheme
     } = this.props;
 
     const PopupWindowHeader = header;
@@ -98,13 +107,7 @@ class PopupWindow extends Component {
                   </span>
                   <span className='window-title-buttons'>
                     { displayExtraActions ? this.renderExtraActionButtons() : null }
-                    <Button
-                      size='sm'
-                      square
-                      onClick={ this.closeCurrentWindow }
-                    >
-                      <span style={ { fontWeight: 'bold', transform: 'translateY(-1px)' } }>X</span>
-                    </Button>
+                    { displayCloseButton ? this.renderCloseButton() : null }
                   </span>
                 </div>
               </WindowHeader>

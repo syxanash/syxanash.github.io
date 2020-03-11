@@ -58,14 +58,14 @@ class AboutBody extends Component {
           on the internet my nick name is usually <b>syx</b>.
         </p>
         <p>
-          I was born in <a href='https://en.wikipedia.org/wiki/Taranto' target='_blank' rel='noopener noreferrer'>Taranto (Italy)</a> <span role="img" aria-label="italian-flag">🇮🇹</span> where I lived most of my life. I moved to Dublin Ireland <span role="img" aria-label="irish-flag">🇮🇪</span> { timePassed } ago where I currently work as a full stack software engineer.
+          I was born in <a href='https://en.wikipedia.org/wiki/Taranto' target='_blank' rel='noopener noreferrer'>Taranto (Italy)</a> where I lived most of my life. I moved to Dublin (Ireland) { timePassed } ago where I currently work as a full stack software engineer.
           I have a degree in computer science from <a href='https://www.uniba.it/ricerca/dipartimenti/informatica/dipartimento-di-informatica' target='_blank' rel='noopener noreferrer'>University of Bari</a>.
         </p>
         <p>
           In my free time I like to practice inline skating and roam around
           the streets of Dublin on my <a href='https://www.rollerblade.com/uk/products/metroblade' target='_blank' rel='noopener noreferrer'>Rollerblades</a>.
           Being Ireland such a great hiking location I enjoy exploring the
-          countryside and hike the amazing Wicklow mountains <span role="img" aria-label="mountain">⛰</span>
+          countryside and hike the amazing <a href='https://en.wikipedia.org/wiki/Wicklow_Mountains' target='_blank' rel='noopener noreferrer'>Wicklow mountains</a>.
         </p>
         <p>
           I'm passionate about retrocomputing,

@@ -16,6 +16,7 @@ export default function WindowsList() {
   const windowsList = {
     about: {
       hasFullScreen: true,
+      canCloseWindow: true,
       opened: false,
       focused: false,
       header: AboutHeader,
@@ -24,6 +25,7 @@ export default function WindowsList() {
     },
     projects: {
       hasFullScreen: true,
+      canCloseWindow: true,
       opened: false,
       focused: false,
       header: ProjectsHeader,
@@ -32,6 +34,7 @@ export default function WindowsList() {
     },
     contact: {
       hasFullScreen: true,
+      canCloseWindow: true,
       opened: false,
       focused: false,
       header: ContactHeader,
@@ -40,6 +43,7 @@ export default function WindowsList() {
     },
     links: {
       hasFullScreen: true,
+      canCloseWindow: true,
       opened: false,
       focused: false,
       header: LinksHeader,
@@ -48,6 +52,7 @@ export default function WindowsList() {
     },
     guestbook: {
       hasFullScreen: true,
+      canCloseWindow: true,
       opened: false,
       focused: false,
       header: GuestbookHeader,
@@ -56,6 +61,7 @@ export default function WindowsList() {
     },
     music: {
       hasFullScreen: true,
+      canCloseWindow: true,
       opened: false,
       focused: false,
       header: MusicHeader,
@@ -64,6 +70,7 @@ export default function WindowsList() {
     },
     credits: {
       hasFullScreen: true,
+      canCloseWindow: true,
       opened: false,
       focused: false,
       header: CreditsHeader,
@@ -72,6 +79,7 @@ export default function WindowsList() {
     },
     cestino: {
       hasFullScreen: false,
+      canCloseWindow: false,
       opened: false,
       focused: false,
       header: CestinoHeader,
@@ -80,6 +88,7 @@ export default function WindowsList() {
     },
     fixmycomputer: {
       hasFullScreen: true,
+      canCloseWindow: true,
       opened: false,
       focused: false,
       header: FixHeader,
