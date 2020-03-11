@@ -49,13 +49,20 @@ class WindowHead extends Component {
       <ThemeContext.Consumer>
         {({ changeTheme }) => (
           <div className='window-header'>
-            <span className='window-title-text' >
-              <Switch>
-                <Route exact path='/' component={ MainWindowHeader }/>
-                {pageHeaderRoutes}
-                <Route component={ NotFoundHeader }/>
-              </Switch>
+            <span style={ { marginLeft: '-5px' } }>
+              <Button
+                size='sm'
+                square
+                onClick={ this.toggleMinimizeIcon }
+              >
+                <span style={ { transform: 'translateY(-1px)' } }><b>&#63;</b></span>
+              </Button>
             </span>
+            <Switch>
+              <Route exact path='/' component={ MainWindowHeader }/>
+              {pageHeaderRoutes}
+              <Route component={ NotFoundHeader }/>
+            </Switch>
             <span className='window-title-buttons'>
               <Button
                 size='sm'

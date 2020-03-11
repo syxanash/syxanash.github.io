@@ -22,7 +22,6 @@ import linksIcon from '../resources/icons/links.gif';
 import musicIcon from '../resources/icons/music.gif';
 import guestbookIcon from '../resources/icons/guestbook.png';
 import loopTVIcon from '../resources/icons/loopTV.gif';
-import websiteIcon from '../resources/icons/favicon.png';
 
 import languages from '../resources/languages.json';
 
@@ -44,7 +43,7 @@ class MainWindowHeader extends Component {
 
     return (
       <span>
-        <img src={ websiteIcon } alt='main title' style={ { height: '15px' } }/> Computer.{programmingLanguage}
+        Computer.{programmingLanguage}
       </span>
     );
   }
