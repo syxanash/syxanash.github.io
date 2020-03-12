@@ -41,7 +41,7 @@ class WindowHead extends Component {
 
   render() {
     const { windowMinimized, pageHeaderRoutes } = this.state;
-    const { onClickMiddle, onRightClick } = this.props;
+    const { onClickMiddle, onRightClick, onQuestionMark } = this.props;
     const currentPathname = this.props.location.pathname;
     const rightActionButton = currentPathname === '/' ? '◓' : '↵';
 
@@ -53,7 +53,7 @@ class WindowHead extends Component {
               <Button
                 size='sm'
                 square
-                onClick={ this.toggleMinimizeIcon }
+                onClick={ onQuestionMark }
               >
                 <span style={ { transform: 'translateY(-1px)' } }><b>&#63;</b></span>
               </Button>

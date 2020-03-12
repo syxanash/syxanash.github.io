@@ -144,6 +144,7 @@ class App extends Component {
                 <Window shadow={ false } style={ { width: '100%' } }>
                   <WindowHeader>
                     <WindowHead
+                      onQuestionMark={ () => {console.log('hellow');} }
                       onClickLeft={ this.toggleBody }
                       onClickMiddle={ this.generateWallpaper }
                       onRightClick={ this.poweroff }
