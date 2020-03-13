@@ -5,11 +5,8 @@ import Draggable from 'react-draggable';
 import {
   Cutout, Button,
 } from 'react95';
-
-import MainWindowFooter from './additional/Footer';
 import PopupWindow from './PopupWindow';
-
-import WindowsList from './WindowsList';
+import MainWindowFooter from './additional/Footer';
 
 import './MainWindow.css';
 
@@ -22,6 +19,7 @@ import linksIcon from '../resources/icons/links.gif';
 import musicIcon from '../resources/icons/music.gif';
 import guestbookIcon from '../resources/icons/guestbook.png';
 import loopTVIcon from '../resources/icons/loopTV.gif';
+import websiteIcon from '../resources/icons/favicon.png';
 
 import languages from '../resources/languages.json';
 
@@ -43,7 +41,7 @@ class MainWindowHeader extends Component {
 
     return (
       <span>
-        Computer.{programmingLanguage}
+        <img src={ websiteIcon } alt='main title' style={ { height: '15px' } }/> Computer.{programmingLanguage}
       </span>
     );
   }
@@ -51,108 +49,21 @@ class MainWindowHeader extends Component {
 
 class MainWindowBody extends Component {
   state = {
-    windowsList: WindowsList(),
     iconsColliding: false,
   }
 
   componentDidMount() {
     $('#computer_icon').bind('mouseup', this.triggerUp);
     $('#computer_icon').bind('touchend', this.triggerUp);
-    document.addEventListener('keydown', this.closeTopWindow);
   }
 
   componentWillUnmount() {
+    const { resetWindows } = this.props;
+
+    resetWindows();
+
     $('#computer_icon').unbind('mouseup', this.triggerUp);
     $('#computer_icon').unbind('touchend', this.triggerUp);
-    document.removeEventListener('keydown', this.closeTopWindow);
-  }
-
-  openWindow = (windowName) => {
-    const { windowsList } = this.state;
-    _.set(windowsList, `${windowName}.opened`, true);
-    this.focusWindow(windowName);
-    this.setState({ windowsList });
-  }
-
-  closeWindow = (windowName) => {
-    const { windowsList } = this.state;
-    _.set(windowsList, `${windowName}.opened`, false);
-
-    const currentWindow = document.getElementById(windowName);
-    const backgroundWindow = currentWindow.previousSibling;
-    this.focusWindow(backgroundWindow.id);
-
-    this.setState({ windowsList });
-  }
-
-  isWindowOpened = (windowName) => {
-    const { windowsList } = this.state;
-    return _.get(windowsList, `${windowName}.opened`);
-  }
-
-  closeTopWindow = (event) => {
-    if (event.keyCode === 27) {
-      const parent = document.getElementById('windows-list');
-      const domElements = Array.prototype.slice.call(parent.childNodes).slice().reverse();
-      const topWindowDiv = domElements.find(element => element.hasChildNodes());
-
-      if (topWindowDiv !== undefined) {
-        this.closeWindow(topWindowDiv.id);
-      }
-    }
-  }
-
-  focusWindow = (chosenWindow) => {
-    const chosenWindowDiv = document.getElementById(chosenWindow);
-    const windowsContainer = document.getElementById('windows-list');
-    const lastElement = windowsContainer.lastChild;
-
-    const domElements = Array.prototype.slice.call(windowsContainer.childNodes).slice().reverse();
-    const topWindowOpened = domElements.find(element => element.hasChildNodes());
-
-    // make sure the window we chose is not already on top of the others
-    if (chosenWindow !== lastElement.previousSibling.id || topWindowOpened === undefined) {
-      windowsContainer.insertBefore(chosenWindowDiv, lastElement);
-
-      const { windowsList } = this.state;
-      _.set(windowsList, `${chosenWindowDiv.previousSibling.id}.focused`, false);
-      _.set(windowsList, `${chosenWindowDiv.id}.focused`, true);
-      this.setState({ windowsList });
-    }
-  }
-
-  renderPopupWindows() {
-    const { windowsList } = this.state;
-
-    return Object.keys(windowsList).map((window, index) => {
-      const windowOpened = _.get(windowsList, `${window}.opened`);
-      const windowFocused = _.get(windowsList, `${window}.focused`);
-      const windowHeader = _.get(windowsList, `${window}.header`);
-      const hasFullScreen = _.get(windowsList, `${window}.hasFullScreen`);
-      const canCloseWindow = _.get(windowsList, `${window}.canCloseWindow`);
-      const windowBody = _.get(windowsList, `${window}.body`);
-      const windowTheme = _.get(windowsList, `${window}.windowTheme`);
-
-      return <div
-        key={ `${window}_${index}` }
-        id={ window }
-        onClick={ () => this.focusWindow(window) }
-      >{
-          windowOpened
-            ? <PopupWindow
-              closeWindow={ () => this.closeWindow(window) }
-              focused={ windowFocused }
-              header={ windowHeader }
-              body={ windowBody }
-              windowName={ window }
-              displayExtraActions={ hasFullScreen }
-              displayCloseButton={ canCloseWindow }
-              windowTheme={windowTheme}
-            />
-            : null
-        }
-      </div>;
-    });
   }
 
   triggerUp = () => {
@@ -190,8 +101,42 @@ class MainWindowBody extends Component {
     return true;
   }
 
+  renderPopupWindows = () => {
+    const { windowsList, focusWindow, closeWindow } = this.props;
+
+    return Object.keys(windowsList).map((window, index) => {
+      const windowOpened = _.get(windowsList, `${window}.opened`);
+      const windowFocused = _.get(windowsList, `${window}.focused`);
+      const windowHeader = _.get(windowsList, `${window}.header`);
+      const hasFullScreen = _.get(windowsList, `${window}.hasFullScreen`);
+      const canCloseWindow = _.get(windowsList, `${window}.canCloseWindow`);
+      const windowBody = _.get(windowsList, `${window}.body`);
+      const windowTheme = _.get(windowsList, `${window}.windowTheme`);
+
+      return <div
+        key={ `${window}_${index}` }
+        id={ window }
+        onClick={ () => focusWindow(window) }
+      >{
+          windowOpened
+            ? <PopupWindow
+              closeWindow={ () => closeWindow(window) }
+              focused={ windowFocused }
+              header={ windowHeader }
+              body={ windowBody }
+              windowName={ window }
+              displayExtraActions={ hasFullScreen }
+              displayCloseButton={ canCloseWindow }
+              windowTheme={windowTheme}
+            />
+            : null
+        }
+      </div>;
+    });
+  }
+
   render() {
-    const { onClickTV } = this.props;
+    const { onClickTV, openWindow, isWindowOpened } = this.props;
     const { iconsColliding } = this.state;
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
 
@@ -205,8 +150,8 @@ class MainWindowBody extends Component {
         <Cutout className='cut-out'>
           <div className='last-row-icons'>
             <Button id='cestino_icon' size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } }
-              onClick={ () => this.openWindow('cestino') }
-              active={ this.isWindowOpened('cestino') || iconsColliding }
+              onClick={ () => openWindow('cestino') }
+              active={ isWindowOpened('cestino') || iconsColliding }
             >
               <img src={ eggTriggered ? emptyTrashIcon : trashIcon } className='icon' alt="trash"/>
               <figcaption className='icon-caption'>Cestino</figcaption>
@@ -223,8 +168,8 @@ class MainWindowBody extends Component {
                 size='lg'
                 square
                 className={ `button-item ${eggTriggered ? 'movable-icon handle_icon' : ''}` }
-                onClick={ () => this.openWindow('about') }
-                active={ this.isWindowOpened('about') }
+                onClick={ () => openWindow('about') }
+                active={ isWindowOpened('about') }
                 disabled={ eggTriggered }
                 style={ { width: '85px', height: '85px', display: 'inline-block' } }
               >
@@ -233,35 +178,35 @@ class MainWindowBody extends Component {
               </Button>
             </Draggable>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
-              onClick={ () => this.openWindow('projects') }
-              active={ this.isWindowOpened('projects') }
+              onClick={ () => openWindow('projects') }
+              active={ isWindowOpened('projects') }
             >
               <img src={ projectsIcon } className='icon' alt="projects"/>
               <figcaption className='icon-caption'>Projects</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
-              onClick={ () => this.openWindow('contact') }
-              active={ this.isWindowOpened('contact') }
+              onClick={ () => openWindow('contact') }
+              active={ isWindowOpened('contact') }
             >
               <img src={ contactIcon } className='icon' alt="contact"/>
               <figcaption className='icon-caption'>Contact</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
-              onClick={ () => this.openWindow('links') }
-              active={ this.isWindowOpened('links') }
+              onClick={ () => openWindow('links') }
+              active={ isWindowOpened('links') }
             >
               <img src={ linksIcon } className='icon' alt="links"/>
               <figcaption className='icon-caption'>Links</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
-              onClick={ () => this.openWindow('music') }
-              active={ this.isWindowOpened('music') }>
+              onClick={ () => openWindow('music') }
+              active={ isWindowOpened('music') }>
               <img src={ musicIcon } className='icon' alt="music"/>
               <figcaption className='icon-caption'>Music</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
-              onClick={ () => this.openWindow('guestbook') }
-              active={ this.isWindowOpened('guestbook') }
+              onClick={ () => openWindow('guestbook') }
+              active={ isWindowOpened('guestbook') }
             >
               <img src={ guestbookIcon } className='icon' alt="links"/>
               <figcaption className='icon-caption' style={ { fontSize: '14px' } }>Guestbook</figcaption>
@@ -274,7 +219,7 @@ class MainWindowBody extends Component {
             </Button>
           </div>
         </Cutout>
-        <MainWindowFooter onClick={ () => this.openWindow('credits') } active={ this.isWindowOpened('credits') }/>
+        <MainWindowFooter onClick={ () => openWindow('credits') } active={ isWindowOpened('credits') }/>
       </div>
     );
   }

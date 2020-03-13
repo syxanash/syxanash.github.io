@@ -9,6 +9,10 @@
   margin-top: -15px;
 }
 
+.window-title-text {
+  padding-right: 20px;
+}
+
 .popup-movable-header {
   cursor: url(../resources/images/grab.gif), auto;
 }

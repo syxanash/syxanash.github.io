@@ -38,10 +38,12 @@ class App extends Component {
     loopTVon: false,
     stoppedWindowProgram: false,
     isBrokenScreen: false,
-    mainTheme: PippoTheme
+    mainTheme: PippoTheme,
+    windowsList: WindowsList(),
   }
 
   componentDidMount() {
+    document.addEventListener('keydown', this.closeTopWindow);
     document.addEventListener('keydown', this.stoppedProgram);
     const windowsList = WindowsList();
 
@@ -64,7 +66,66 @@ class App extends Component {
   }
 
   componentWillUnmount() {
+    document.removeEventListener('keydown', this.closeTopWindow);
     document.removeEventListener('keydown', this.stoppedProgram);
+  }
+
+  resetWindows = () => {
+    this.setState({ windowsList: WindowsList() });
+  }
+
+  openWindow = (windowName) => {
+    const { windowsList } = this.state;
+    _.set(windowsList, `${windowName}.opened`, true);
+    this.focusWindow(windowName);
+    this.setState({ windowsList });
+  }
+
+  closeWindow = (windowName) => {
+    const { windowsList } = this.state;
+    _.set(windowsList, `${windowName}.opened`, false);
+
+    const currentWindow = document.getElementById(windowName);
+    const backgroundWindow = currentWindow.previousSibling;
+    this.focusWindow(backgroundWindow.id);
+
+    this.setState({ windowsList });
+  }
+
+  isWindowOpened = (windowName) => {
+    const { windowsList } = this.state;
+    return _.get(windowsList, `${windowName}.opened`);
+  }
+
+  closeTopWindow = (event) => {
+    if (event.keyCode === 27) {
+      const parent = document.getElementById('windows-list');
+      const domElements = Array.prototype.slice.call(parent.childNodes).slice().reverse();
+      const topWindowDiv = domElements.find(element => element.hasChildNodes());
+
+      if (topWindowDiv !== undefined) {
+        this.closeWindow(topWindowDiv.id);
+      }
+    }
+  }
+
+  focusWindow = (chosenWindow) => {
+    const chosenWindowDiv = document.getElementById(chosenWindow);
+    const windowsContainer = document.getElementById('windows-list');
+    const lastElement = windowsContainer.lastChild;
+
+    const domElements = Array.prototype.slice.call(windowsContainer.childNodes).slice().reverse();
+    const topWindowOpened = domElements.find(element => element.hasChildNodes());
+
+    // make sure the window we chose is not already on top of the others
+    if (chosenWindow !== lastElement.previousSibling.id || topWindowOpened === undefined) {
+      windowsContainer.insertBefore(chosenWindowDiv, lastElement);
+
+      const { windowsList } = this.state;
+      _.set(windowsList, `${chosenWindowDiv.previousSibling.id}.focused`, false);
+      _.set(windowsList, `${chosenWindowDiv.id}.focused`, true);
+      this.setState({ windowsList });
+    }
   }
 
   changeTheme = (pageName) => {
@@ -113,10 +174,20 @@ class App extends Component {
     this.setState({ isBrokenScreen: true });
   }
 
-  renderMainWindow = () => <MainWindowBody
-    onClickEgg={ this.triggerEasterEgg }
-    onClickTV={ this.turnOnTV }
-  />
+  renderMainWindow = () => {
+    const { windowsList } = this.state;
+
+    return (<MainWindowBody
+      resetWindows={ this.resetWindows }
+      openWindow={ this.openWindow }
+      focusWindow={ this.focusWindow }
+      closeWindow={ this.closeWindow }
+      isWindowOpened={ this.isWindowOpened }
+      windowsList={ windowsList }
+      onClickEgg={ this.triggerEasterEgg }
+      onClickTV={ this.turnOnTV }
+    />)
+  }
 
   render() {
     const {
