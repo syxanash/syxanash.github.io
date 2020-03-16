@@ -10,6 +10,7 @@ import { MainWindowHeader } from './MainWindow';
 import { NotFoundHeader } from './windows/NotFound';
 import WindowsList from './WindowsList';
 import ThemeContext from '../ThemeContext';
+import faviconImg from '../resources/icons/favicon.gif';
 
 class WindowHead extends Component {
   state = {
@@ -47,7 +48,9 @@ class WindowHead extends Component {
         square
         onClick={ onQuestionMark }
       >
-        <span style={ { transform: 'translateY(-1px)' } }><b>&#63;</b></span>
+        <span style={ { transform: 'translateY(-1px)' } }>
+          <img src={ faviconImg } alt='main icon' style={ { height: '15px', marginLeft: '-3px', marginBottom: '-1px' } }/>
+        </span>
       </Button>);
   }
 

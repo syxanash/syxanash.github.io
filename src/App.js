@@ -71,7 +71,7 @@ class App extends Component {
   }
 
   onQuestionMark = () => {
-    this.openWindow('infowindow');
+    this.openWindow('osinfowindow');
   }
 
   resetWindows = () => {

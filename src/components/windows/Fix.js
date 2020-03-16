@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import mainIcon from '../../resources/icons/favicon.png';
+import mainIcon from '../../resources/icons/favicon.gif';
 import warningIcon from '../../resources/icons/warning.png';
 import checkIcon from '../../resources/icons/check.png';
 

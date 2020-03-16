@@ -6,7 +6,7 @@ import { GuestbookHeader, GuestbookBody } from './windows/Guestbook';
 import { MusicHeader, MusicBody } from './windows/Music';
 import { CestinoHeader, CestinoBody } from './windows/Cestino';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
-import { InfoWindowHeader, InfoWindowBody } from './windows/InfoWindow';
+import { OSInfoWindowHeader, OSInfoWindowBody } from './windows/OSInfoWindow';
 import { FixHeader, FixBody } from './windows/Fix';
 
 import PippoTheme from '../themes/PippoTheme';
@@ -78,13 +78,13 @@ export default function WindowsList() {
       body: CreditsBody,
       windowTheme: PippoTheme
     },
-    infowindow: {
+    osinfowindow: {
       hasFullScreen: false,
       canCloseWindow: true,
       opened: false,
       focused: false,
-      header: InfoWindowHeader,
-      body: InfoWindowBody,
+      header: OSInfoWindowHeader,
+      body: OSInfoWindowBody,
       windowTheme: PippoTheme
     },
     cestino: {

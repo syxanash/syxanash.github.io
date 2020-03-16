@@ -1,0 +1,16 @@
+.main-os-logo-div {
+  text-align: center;
+}
+
+.os-title {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.os-subtitle {
+  font-size: 20px;
+}
+
+.os-version {
+  padding: 5px;
+}
