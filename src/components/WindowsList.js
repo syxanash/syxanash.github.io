@@ -12,7 +12,7 @@ import { FixHeader, FixBody } from './windows/Fix';
 import PippoTheme from '../themes/PippoTheme';
 import PippoDarkPro from '../themes/PippoDarkPro';
 import PippoBleeding from '../themes/PippoBleeding';
-import PippoPaddysday from '../themes/PippoPaddysday';
+import PippoGoleador from '../themes/PippoGoleador';
 
 export default function WindowsList() {
   const windowsList = {
@@ -86,7 +86,7 @@ export default function WindowsList() {
       focused: false,
       header: OSInfoWindowHeader,
       body: OSInfoWindowBody,
-      windowTheme: PippoPaddysday
+      windowTheme: PippoGoleador
     },
     cestino: {
       hasFullScreen: false,

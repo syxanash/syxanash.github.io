@@ -101,7 +101,7 @@ class Poweroff extends Component {
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started Authorization Manager.</div>
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started Modem Manager.</div>
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] User-agent detected: {navigator.userAgent}</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started Pippo OS ver.
+        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started Pippo OS Build.
           "{lastUpdatedFile.buildNumber.substr(0, 5)}"</div>
           <span dangerouslySetInnerHTML={ { __html: outputText } }></span>
         <div ref={this.messagesEndRef} />

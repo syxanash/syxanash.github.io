@@ -14,3 +14,10 @@
 .os-version {
   padding: 5px;
 }
+
+.os-copyright {
+  padding-top: 10px;
+  font-size: 11px;
+  text-shadow: -1px -1px 1px white;
+  opacity: 0.6;
+}
