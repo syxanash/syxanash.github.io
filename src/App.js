@@ -70,6 +70,10 @@ class App extends Component {
     document.removeEventListener('keydown', this.stoppedProgram);
   }
 
+  onQuestionMark = () => {
+    this.openWindow('infowindow');
+  }
+
   resetWindows = () => {
     this.setState({ windowsList: WindowsList() });
   }
@@ -178,12 +182,12 @@ class App extends Component {
     const { windowsList } = this.state;
 
     return (<MainWindowBody
+      windowsList={ windowsList }
       resetWindows={ this.resetWindows }
       openWindow={ this.openWindow }
       focusWindow={ this.focusWindow }
       closeWindow={ this.closeWindow }
       isWindowOpened={ this.isWindowOpened }
-      windowsList={ windowsList }
       onClickEgg={ this.triggerEasterEgg }
       onClickTV={ this.turnOnTV }
     />)
@@ -215,7 +219,7 @@ class App extends Component {
                 <Window shadow={ false } style={ { width: '100%' } }>
                   <WindowHeader>
                     <WindowHead
-                      onQuestionMark={ () => {console.log('hellow');} }
+                      onQuestionMark={ this.onQuestionMark }
                       onClickLeft={ this.toggleBody }
                       onClickMiddle={ this.generateWallpaper }
                       onRightClick={ this.poweroff }

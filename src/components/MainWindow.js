@@ -41,7 +41,7 @@ class MainWindowHeader extends Component {
 
     return (
       <span>
-        <img src={ websiteIcon } alt='main title' style={ { height: '15px' } }/> Computer.{programmingLanguage}
+        Computer.{programmingLanguage}
       </span>
     );
   }

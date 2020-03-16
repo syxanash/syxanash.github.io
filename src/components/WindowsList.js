@@ -78,6 +78,15 @@ export default function WindowsList() {
       body: CreditsBody,
       windowTheme: PippoTheme
     },
+    infowindow: {
+      hasFullScreen: false,
+      canCloseWindow: true,
+      opened: false,
+      focused: false,
+      header: InfoWindowHeader,
+      body: InfoWindowBody,
+      windowTheme: PippoTheme
+    },
     cestino: {
       hasFullScreen: false,
       canCloseWindow: false,
@@ -95,16 +104,7 @@ export default function WindowsList() {
       header: FixHeader,
       body: FixBody,
       windowTheme: PippoTheme
-    },
-    infowindow: {
-      hasFullScreen: true,
-      canCloseWindow: true,
-      opened: false,
-      focused: false,
-      header: InfoWindowHeader,
-      body: InfoWindowBody,
-      windowTheme: PippoTheme
-    },
+    }
   };
 
   return windowsList;
