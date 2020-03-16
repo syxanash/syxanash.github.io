@@ -40,13 +40,13 @@ class WindowHead extends Component {
     this.setState({ windowMinimized: !windowMinimized });
   }
 
-  renderQuestionMarkButton = () => {
-    const { onQuestionMark } = this.props;
+  renderLeftsideButton = () => {
+    const { onLeftsideButton } = this.props;
 
     return (<Button
         size='sm'
         square
-        onClick={ onQuestionMark }
+        onClick={ onLeftsideButton }
       >
         <span style={ { transform: 'translateY(-1px)' } }>
           <img src={ faviconImg } alt='main icon' style={ { height: '15px', marginLeft: '-3px', marginBottom: '-1px' } }/>
@@ -66,7 +66,7 @@ class WindowHead extends Component {
           <div className='window-header'>
             <span>
               <span style={ { marginLeft: '-5px' } }>
-                { isCurrentPathRoot ? this.renderQuestionMarkButton() : null }
+                { isCurrentPathRoot ? this.renderLeftsideButton() : null }
               </span>
               <span style={ { marginLeft: '5px' } }>
                 <Switch>

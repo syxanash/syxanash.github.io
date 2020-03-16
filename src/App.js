@@ -70,7 +70,7 @@ class App extends Component {
     document.removeEventListener('keydown', this.stoppedProgram);
   }
 
-  onQuestionMark = () => {
+  onLeftsideButton = () => {
     this.openWindow('osinfowindow');
   }
 
@@ -219,7 +219,7 @@ class App extends Component {
                 <Window shadow={ false } style={ { width: '100%' } }>
                   <WindowHeader>
                     <WindowHead
-                      onQuestionMark={ this.onQuestionMark }
+                      onLeftsideButton={ this.onLeftsideButton }
                       onClickLeft={ this.toggleBody }
                       onClickMiddle={ this.generateWallpaper }
                       onRightClick={ this.poweroff }
