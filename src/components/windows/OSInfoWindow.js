@@ -18,13 +18,13 @@ class OSInfoWindowBody extends Component {
 
   render = () => {
     return (<div className='main-os-logo-div'>
-      <Cutout style={ { width: '208px', marginLeft: '25px' } }>
+      <Cutout style={ { width: '208px', marginLeft: '40px' } }>
         <Button id='os_logo' size='lg' fullwidth style={ { width: '200px', height: '140px' } } onClick={ this.openYoutubeLink }>
           <img src={ pippoOSlogo } alt='Pippo OS logo' height='130px' />
         </Button>
       </Cutout>
       <div className='os-title'>Pippo OS</div>
-      <div className='os-subtitle'>The <code><b>foo</b></code> Desktop Experience</div>
+      <div className='os-subtitle'>The <code><b>foobar</b></code> Desktop Experience</div>
       <div className='os-version'>Version 1.66.6</div>
       <div className='os-copyright'>
         &trade; and &copy; 2007-{new Date().getFullYear()} Simone's Computer Inc.<br />
