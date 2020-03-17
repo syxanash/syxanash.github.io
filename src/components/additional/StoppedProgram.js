@@ -70,11 +70,11 @@ class Poweroff extends Component {
         </style>
       </Helmet>
       <div className='terminal-style'>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Uncompressing cmptrOS... done, booting the kernel.</div>
+        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Uncompressing Pippo OS... done, booting the kernel.</div>
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Booting Linux on physical CPU 0x0</div>
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Initializing cgroup subsys cpu</div>
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Initializing cgroup subsys cpuacct</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] cmptrOS version {lastUpdatedFile.buildNumber}
+        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Pippo OS version {lastUpdatedFile.buildNumber}
         (dc4@dc4-XPS13-9333) #775 PREEMPT Thu Apr 2 18:10:12 BST 2015</div>
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Load BCM2835 MMC driver</div>
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Initializing XFRM netlink socket</div>
@@ -101,7 +101,7 @@ class Poweroff extends Component {
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started Authorization Manager.</div>
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started Modem Manager.</div>
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] User-agent detected: {navigator.userAgent}</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started cmptrOS ver.
+        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started Pippo OS Build.
           "{lastUpdatedFile.buildNumber.substr(0, 5)}"</div>
           <span dangerouslySetInnerHTML={ { __html: outputText } }></span>
         <div ref={this.messagesEndRef} />

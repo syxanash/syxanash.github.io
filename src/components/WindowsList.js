@@ -6,11 +6,13 @@ import { GuestbookHeader, GuestbookBody } from './windows/Guestbook';
 import { MusicHeader, MusicBody } from './windows/Music';
 import { CestinoHeader, CestinoBody } from './windows/Cestino';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
+import { OSInfoWindowHeader, OSInfoWindowBody } from './windows/OSInfoWindow';
 import { FixHeader, FixBody } from './windows/Fix';
 
 import PippoTheme from '../themes/PippoTheme';
 import PippoDarkPro from '../themes/PippoDarkPro';
 import PippoBleeding from '../themes/PippoBleeding';
+import PippoGoleador from '../themes/PippoGoleador';
 
 export default function WindowsList() {
   const windowsList = {
@@ -77,6 +79,15 @@ export default function WindowsList() {
       body: CreditsBody,
       windowTheme: PippoTheme
     },
+    osinfowindow: {
+      hasFullScreen: false,
+      canCloseWindow: true,
+      opened: false,
+      focused: false,
+      header: OSInfoWindowHeader,
+      body: OSInfoWindowBody,
+      windowTheme: PippoGoleador
+    },
     cestino: {
       hasFullScreen: false,
       canCloseWindow: false,
@@ -94,7 +105,7 @@ export default function WindowsList() {
       header: FixHeader,
       body: FixBody,
       windowTheme: PippoTheme
-    },
+    }
   };
 
   return windowsList;

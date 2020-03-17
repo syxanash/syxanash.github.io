@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { TabBody, Tab, Tabs, Cutout } from 'react95';
 
 import licenseText from '../../resources/misc/LICENSE.txt';
-import creditsIcon from '../../resources/icons/favicon.png';
+import creditsIcon from '../../resources/icons/favicon.gif';
 
 import codeAnimation from '../../resources/images/code.gif';
 

@@ -10,6 +10,7 @@ import { MainWindowHeader } from './MainWindow';
 import { NotFoundHeader } from './windows/NotFound';
 import WindowsList from './WindowsList';
 import ThemeContext from '../ThemeContext';
+import faviconImg from '../resources/icons/favicon.gif';
 
 class WindowHead extends Component {
   state = {
@@ -39,22 +40,41 @@ class WindowHead extends Component {
     this.setState({ windowMinimized: !windowMinimized });
   }
 
+  renderLeftsideButton = () => {
+    const { onLeftsideButton } = this.props;
+
+    return (<Button
+        size='sm'
+        square
+        onClick={ onLeftsideButton }
+      >
+        <span style={ { transform: 'translateY(-1px)' } }>
+          <img src={ faviconImg } alt='main icon' style={ { height: '15px', marginLeft: '-3px', marginBottom: '-1px' } }/>
+        </span>
+      </Button>);
+  }
+
   render() {
     const { windowMinimized, pageHeaderRoutes } = this.state;
     const { onClickMiddle, onRightClick } = this.props;
-    const currentPathname = this.props.location.pathname;
-    const rightActionButton = currentPathname === '/' ? '◓' : '↵';
+    const isCurrentPathRoot = this.props.location.pathname === '/';
+    const rightActionButton = isCurrentPathRoot ? '◓' : '↵';
 
     return (
       <ThemeContext.Consumer>
         {({ changeTheme }) => (
           <div className='window-header'>
-            <span className='window-title-text' >
-              <Switch>
-                <Route exact path='/' component={ MainWindowHeader }/>
-                {pageHeaderRoutes}
-                <Route component={ NotFoundHeader }/>
-              </Switch>
+            <span>
+              <span style={ { marginLeft: '-5px' } }>
+                { isCurrentPathRoot ? this.renderLeftsideButton() : null }
+              </span>
+              <span style={ { marginLeft: '5px' } }>
+                <Switch>
+                  <Route exact path='/' component={ MainWindowHeader }/>
+                  {pageHeaderRoutes}
+                  <Route component={ NotFoundHeader }/>
+                </Switch>
+              </span>
             </span>
             <span className='window-title-buttons'>
               <Button
@@ -80,7 +100,7 @@ class WindowHead extends Component {
 
                   this.props.history.push('/');
 
-                  if (currentPathname === '/') {
+                  if (isCurrentPathRoot) {
                     onRightClick();
                   }
                 } }

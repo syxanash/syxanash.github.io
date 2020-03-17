@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import mainIcon from '../../resources/icons/favicon.png';
+import mainIcon from '../../resources/icons/favicon.gif';
 
 class NotFoundHeader extends Component {
   render = () => (
