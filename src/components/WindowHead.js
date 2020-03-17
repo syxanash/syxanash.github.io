@@ -48,8 +48,12 @@ class WindowHead extends Component {
         square
         onClick={ onLeftsideButton }
       >
-        <span style={ { transform: 'translateY(-1px)' } }>
-          <img src={ faviconImg } alt='main icon' style={ { height: '15px', marginLeft: '-3px', marginBottom: '-1px' } }/>
+        <span>
+          <img
+            src={ faviconImg }
+            alt='main icon'
+            style={ { height: '15px', marginLeft: '-1px', marginBottom: '-1px' } }
+          />
         </span>
       </Button>);
   }
