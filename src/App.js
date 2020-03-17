@@ -220,6 +220,7 @@ class App extends Component {
                   <WindowHeader>
                     <WindowHead
                       onLeftsideButton={ this.onLeftsideButton }
+                      isLeftsideButtonActive={ this.isWindowOpened('osinfowindow') }
                       onClickLeft={ this.toggleBody }
                       onClickMiddle={ this.generateWallpaper }
                       onRightClick={ this.poweroff }

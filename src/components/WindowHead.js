@@ -41,11 +41,12 @@ class WindowHead extends Component {
   }
 
   renderLeftsideButton = () => {
-    const { onLeftsideButton } = this.props;
+    const { onLeftsideButton, isLeftsideButtonActive } = this.props;
 
     return (<Button
         size='sm'
         square
+        active={ isLeftsideButtonActive }
         onClick={ onLeftsideButton }
       >
         <span>
