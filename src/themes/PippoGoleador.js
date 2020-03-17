@@ -15,7 +15,7 @@ const theme = {
   borderDark: '#5b57a1',
   borderLight: '#a4a7c8',
 
-  headerMaterialDark: '#a71f85',
+  headerMaterialDark: '#b1125d',
   headerMaterialLight: '#209e34',
   headerText: '#010601',
 

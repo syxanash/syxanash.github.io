@@ -24,7 +24,7 @@ class OSInfoWindowBody extends Component {
       <div className='os-version'>Version 1.66.6</div>
       <div className='os-copyright'>
         &trade; and &copy; 2007-{new Date().getFullYear()} Simone's Computer Inc.<br />
-        All Rights Reserved. License and Warranty
+        All Righty Rights Reserved. License and Warranty
       </div>
     </div>);
   }
