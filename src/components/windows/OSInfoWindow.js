@@ -12,10 +12,14 @@ class OSInfoWindowHeader extends Component {
 }
 
 class OSInfoWindowBody extends Component {
+  openYoutubeLink = () => {
+    window.open('https://www.youtube.com/watch?v=dWgglyak6jA', '_blank');
+  }
+
   render = () => {
     return (<div className='main-os-logo-div'>
       <Cutout style={ { width: '208px', marginLeft: '25px' } }>
-        <Button id='os_logo' size='lg' fullwidth style={ { width: '200px', height: '140px' } }>
+        <Button id='os_logo' size='lg' fullwidth style={ { width: '200px', height: '140px' } } onClick={ this.openYoutubeLink }>
           <img src={ pippoOSlogo } alt='Pippo OS logo' height='130px' />
         </Button>
       </Cutout>
