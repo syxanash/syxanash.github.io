@@ -35,14 +35,14 @@ class CestinoBody extends Component {
       newMessageCounter += 1;
     }
 
+    closeWindow();
+
     if (messageCounter === cestinoMessages.length - 1) {
       sessionStorage.setItem('eggTriggered', true);
     } else {
+      openWindow('cestino');
       sessionStorage.setItem('messageCounter', newMessageCounter);
     }
-
-    closeWindow();
-    openWindow('cestino');
   }
 
   render = () => {

@@ -60,6 +60,7 @@
   user-drag: none;
 
   height: 54px;
+  pointer-events: none;
 }
 
 .icon-caption {
