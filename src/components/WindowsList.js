@@ -90,7 +90,7 @@ export default function WindowsList() {
     },
     cestino: {
       hasFullScreen: false,
-      canCloseWindow: false,
+      canCloseWindow: true,
       opened: false,
       focused: false,
       header: CestinoHeader,
