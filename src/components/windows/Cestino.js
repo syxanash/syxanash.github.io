@@ -27,7 +27,7 @@ class CestinoBody extends Component {
   }
 
   increaseClickCount = () => {
-    const { closeWindow } = this.props;
+    const { closeWindow, openWindow } = this.props;
     const messageCounter = parseInt(sessionStorage.getItem('messageCounter'), 10);
 
     let newMessageCounter = messageCounter;
@@ -42,6 +42,7 @@ class CestinoBody extends Component {
     }
 
     closeWindow();
+    openWindow('cestino');
   }
 
   render = () => {

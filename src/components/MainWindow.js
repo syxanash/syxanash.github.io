@@ -101,7 +101,12 @@ class MainWindowBody extends Component {
   }
 
   renderPopupWindows = () => {
-    const { windowsList, focusWindow, closeWindow } = this.props;
+    const {
+      windowsList,
+      focusWindow,
+      closeWindow,
+      openWindow,
+    } = this.props;
 
     return Object.keys(windowsList).map((window, index) => {
       const windowOpened = _.get(windowsList, `${window}.opened`);
@@ -120,13 +125,14 @@ class MainWindowBody extends Component {
           windowOpened
             ? <PopupWindow
               closeWindow={ () => closeWindow(window) }
+              openWindow={ openWindow }
               focused={ windowFocused }
               header={ windowHeader }
               body={ windowBody }
               windowName={ window }
               displayExtraActions={ hasFullScreen }
               displayCloseButton={ canCloseWindow }
-              windowTheme={windowTheme}
+              windowTheme={ windowTheme }
             />
             : null
         }
