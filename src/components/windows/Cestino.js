@@ -27,7 +27,7 @@ class CestinoBody extends Component {
   }
 
   increaseClickCount = () => {
-    const { closeWindow } = this.props;
+    const { closeWindow, openWindow } = this.props;
     const messageCounter = parseInt(sessionStorage.getItem('messageCounter'), 10);
 
     let newMessageCounter = messageCounter;
@@ -35,13 +35,14 @@ class CestinoBody extends Component {
       newMessageCounter += 1;
     }
 
+    closeWindow();
+
     if (messageCounter === cestinoMessages.length - 1) {
       sessionStorage.setItem('eggTriggered', true);
     } else {
+      openWindow('cestino');
       sessionStorage.setItem('messageCounter', newMessageCounter);
     }
-
-    closeWindow();
   }
 
   render = () => {

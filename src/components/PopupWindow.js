@@ -87,7 +87,8 @@ class PopupWindow extends Component {
   render() {
     const { displayWindowBody, openAnimation } = this.state;
     const {
-      header, body, displayExtraActions, displayCloseButton, focused, windowTheme
+      header, body, displayExtraActions, displayCloseButton,
+      focused, windowTheme, openWindow,
     } = this.props;
 
     const PopupWindowHeader = header;
@@ -112,7 +113,10 @@ class PopupWindow extends Component {
                 </div>
               </WindowHeader>
               <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
-                <PopupWindowBody closeWindow={ this.closeCurrentWindow } />
+                <PopupWindowBody
+                  closeWindow={ this.closeCurrentWindow }
+                  openWindow={ openWindow }
+                />
               </WindowContent>
             </Window>
           </ThemeProvider>
