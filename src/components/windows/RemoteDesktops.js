@@ -19,14 +19,14 @@ class RemoteDesktopsHeader extends Component {
 class RemoteDesktopsBody extends Component {
   renderSingleComputerIcon = ({ url, name }) => {
     return (
-      <Tooltip text={name} delay={100} style={ { bottom: '15px' } }>
+      <Tooltip text={name} delay={100} style={ { bottom: '25px' } }>
         <div className='computer-icon'>
-          <img src={ computerIcon } alt='single desktop icon' />
+          <img style={ { height: '65px' } } src={ computerIcon } alt='single desktop icon' />
         </div>
         <div className='website-favicon'>
-          <img src={`https://s2.googleusercontent.com/s2/favicons?domain_url=${url}`} alt='computer icon' />
+          <img style={ { height: '25px' } } src={`https://s2.googleusercontent.com/s2/favicons?domain_url=${url}`} alt='computer icon' />
         </div>
-      </Tooltip>
+      </ Tooltip>
     );
   }
 

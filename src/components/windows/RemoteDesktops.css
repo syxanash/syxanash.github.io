@@ -12,12 +12,18 @@
   padding: 10px;
 }
 
+.single-icon:hover .computer-icon {
+  filter: grayscale(100%) brightness(5%) sepia(100%) hue-rotate(170deg)
+    brightness(900%) saturate(500%);
+}
+
 .computer-icon {
   display: block;
+  backface-visibility: hidden;
 }
 
 .website-favicon {
   position: relative;
-  bottom: 43px;
-  left: 17px;
+  bottom: 59px;
+  left: 21px;
 }
