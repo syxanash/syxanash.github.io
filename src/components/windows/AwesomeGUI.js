@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import {
-  Cutout, Tooltip, Toolbar, Button
+  Cutout, Toolbar, Button
 } from 'react95';
 
 import './AwesomeGUI.css'
@@ -24,14 +24,17 @@ class AwesomeGUIBody extends Component {
 
   renderSingleComputerIcon = ({ url, name }) => {
     return (
-      <Tooltip text={name} delay={100} style={ { bottom: '25px' } }>
+      <React.Fragment>
         <div className='computer-icon'>
           <img style={ { height: '65px' } } src={ computerIcon } alt='single desktop icon' />
         </div>
         <div className='website-favicon'>
           <img style={ { height: '25px' } } src={`https://s2.googleusercontent.com/s2/favicons?domain_url=${url}`} alt='computer icon' />
         </div>
-      </ Tooltip>
+        <div className='website-name'>
+          { name }
+        </div>
+      </React.Fragment>
     );
   }
 

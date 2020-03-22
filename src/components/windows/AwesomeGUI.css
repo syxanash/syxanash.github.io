@@ -8,8 +8,14 @@
   flex-wrap: wrap;
 }
 
+.website-name {
+  margin-top: -20px;
+}
+
 .single-icon {
   padding: 10px;
+  text-align: center;
+  width: 90px;
 }
 
 .single-icon:hover .computer-icon {
@@ -44,8 +50,8 @@
 
 .website-favicon {
   position: relative;
-  bottom: 59px;
-  left: 21px;
+  bottom: 60px;
+  left: 1px;
 
   backface-visibility: hidden;
 
