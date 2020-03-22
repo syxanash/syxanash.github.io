@@ -26,6 +26,10 @@ class CestinoBody extends Component {
     }
   }
 
+  sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+  }  
+
   increaseClickCount = () => {
     const { closeWindow, openWindow } = this.props;
     const messageCounter = parseInt(sessionStorage.getItem('messageCounter'), 10);
@@ -40,7 +44,10 @@ class CestinoBody extends Component {
     if (messageCounter === cestinoMessages.length - 1) {
       sessionStorage.setItem('eggTriggered', true);
     } else {
-      openWindow('cestino');
+      this.sleep(100).then(() => {
+        openWindow('cestino');
+      });
+
       sessionStorage.setItem('messageCounter', newMessageCounter);
     }
   }
