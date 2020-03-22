@@ -93,8 +93,8 @@ class AwesomeGUIBody extends Component {
             <Button onClick={ () => this.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-gui-websites' }) }variant="menu">GitHub</Button>
           </Toolbar>
         </div>
-        <Cutout className='remote-desktop-cutoutbg'>
-          <div className='remote-desktops-icons-container'>
+        <Cutout className='awesome-gui-cutoutbg'>
+          <div className='awesome-gui-icons-container'>
             {this.renderAllIcons()}
           </div>
         </Cutout>

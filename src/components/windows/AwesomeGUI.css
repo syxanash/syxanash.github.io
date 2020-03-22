@@ -1,8 +1,8 @@
-.remote-desktop-cutoutbg {
+.awesome-gui-cutoutbg {
   background-color: #ffffff;
 }
 
-.remote-desktops-icons-container {
+.awesome-gui-icons-container {
   padding: 10px;
   display: flex;
   flex-wrap: wrap;

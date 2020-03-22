@@ -213,13 +213,13 @@ class MainWindowBody extends Component {
               onClick={ () => openWindow('guestbook') }
               active={ isWindowOpened('guestbook') }
             >
-              <img src={ guestbookIcon } className='icon' alt="links"/>
+              <img src={ guestbookIcon } className='icon' alt="guestbook"/>
               <figcaption className='icon-caption' style={ { fontSize: '14px' } }>Guestbook</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ onClickTV }
             >
-              <img src={ loopTVIcon } className='icon' alt="projects"/>
+              <img src={ loopTVIcon } className='icon' alt="loop TV"/>
               <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
             </Button>
           </div>
