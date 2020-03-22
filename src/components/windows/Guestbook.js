@@ -28,11 +28,6 @@ class GuestbookHeader extends Component {
 }
 
 class GuestbookBody extends Component {
-  state = {
-    randomColor: '#000000',
-    intervalId: undefined,
-  }
-
   showCommentAlert = () => {
     // eslint-disable-next-line no-alert
     alert('Due to ongoing spam and flame activity the comment section has been temporarily disabled!');

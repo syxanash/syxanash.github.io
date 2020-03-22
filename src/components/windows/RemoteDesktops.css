@@ -1,0 +1,23 @@
+.remote-desktop-cutoutbg {
+  background-color: #ffffff;
+}
+
+.remote-desktops-icons-container {
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.single-icon {
+  padding: 10px;
+}
+
+.computer-icon {
+  display: block;
+}
+
+.website-favicon {
+  position: relative;
+  bottom: 43px;
+  left: 17px;
+}

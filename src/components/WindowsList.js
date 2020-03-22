@@ -6,6 +6,7 @@ import { GuestbookHeader, GuestbookBody } from './windows/Guestbook';
 import { MusicHeader, MusicBody } from './windows/Music';
 import { CestinoHeader, CestinoBody } from './windows/Cestino';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
+import { RemoteDesktopsHeader, RemoteDesktopsBody } from './windows/RemoteDesktops';
 import { OSInfoWindowHeader, OSInfoWindowBody } from './windows/OSInfoWindow';
 import { FixHeader, FixBody } from './windows/Fix';
 
@@ -77,6 +78,15 @@ export default function WindowsList() {
       focused: false,
       header: CreditsHeader,
       body: CreditsBody,
+      windowTheme: PippoTheme
+    },
+    remotedesktops: {
+      hasFullScreen: true,
+      canCloseWindow: true,
+      opened: false,
+      focused: false,
+      header: RemoteDesktopsHeader,
+      body: RemoteDesktopsBody,
       windowTheme: PippoTheme
     },
     osinfowindow: {
