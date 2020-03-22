@@ -7,7 +7,7 @@ import {
 import './AwesomeGUI.css'
 import remoteDesktops from '../../resources/remote-desktops.json';
 import computerIcon from '../../resources/icons/remote.gif';
-import mainWindowIcon from '../../resources/icons/awesome-gui.png';
+import mainWindowIcon from '../../resources/icons/awesome-gui.gif';
 
 class AwesomeGUIHeader extends Component {
   render = () => (
