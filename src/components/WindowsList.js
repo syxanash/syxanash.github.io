@@ -6,7 +6,7 @@ import { GuestbookHeader, GuestbookBody } from './windows/Guestbook';
 import { MusicHeader, MusicBody } from './windows/Music';
 import { CestinoHeader, CestinoBody } from './windows/Cestino';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
-import { RemoteDesktopsHeader, RemoteDesktopsBody } from './windows/RemoteDesktops';
+import { AwesomeGUIHeader, AwesomeGUIBody } from './windows/AwesomeGUI';
 import { OSInfoWindowHeader, OSInfoWindowBody } from './windows/OSInfoWindow';
 import { FixHeader, FixBody } from './windows/Fix';
 
@@ -80,13 +80,13 @@ export default function WindowsList() {
       body: CreditsBody,
       windowTheme: PippoTheme
     },
-    remotedesktops: {
+    awesomegui: {
       hasFullScreen: true,
       canCloseWindow: true,
       opened: false,
       focused: false,
-      header: RemoteDesktopsHeader,
-      body: RemoteDesktopsBody,
+      header: AwesomeGUIHeader,
+      body: AwesomeGUIBody,
       windowTheme: PippoTheme
     },
     osinfowindow: {
