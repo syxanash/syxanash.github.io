@@ -1,0 +1,76 @@
+.remote-desktop-cutoutbg {
+  background-color: #ffffff;
+}
+
+.remote-desktops-icons-container {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.website-name {
+  margin-top: -20px;
+}
+
+.single-icon {
+  padding: 10px;
+  text-align: center;
+  width: 90px;
+}
+
+.single-icon:hover .computer-icon {
+  filter: grayscale(100%) brightness(5%) sepia(100%) hue-rotate(170deg)
+    brightness(900%) saturate(500%);
+}
+
+.single-icon:hover .website-favicon {
+  filter: grayscale(100%) brightness(5%) sepia(100%) hue-rotate(170deg)
+    brightness(900%) saturate(500%);
+}
+
+.computer-icon {
+  display: block;
+  backface-visibility: hidden;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge*/
+   user-select: none;          /* Non-prefixed version, currently 
+                                  not supported by any browser */
+   -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+
+  pointer-events: none;
+}
+
+.website-favicon {
+  position: relative;
+  bottom: 60px;
+  left: 1px;
+
+  backface-visibility: hidden;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge*/
+   user-select: none;          /* Non-prefixed version, currently 
+                                  not supported by any browser */
+   -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+
+  pointer-events: none;
+}
+
+.toolbar-container {
+  margin-top: -20px;
+}
