@@ -40,7 +40,7 @@ class CestinoBody extends Component {
     if (messageCounter === cestinoMessages.length - 1) {
       sessionStorage.setItem('eggTriggered', true);
     } else {
-      openWindow('cestino');
+      openWindow('cestino', true);
 
       sessionStorage.setItem('messageCounter', newMessageCounter);
     }

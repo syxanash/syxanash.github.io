@@ -91,18 +91,25 @@ class App extends Component {
     this.setState({ windowsList: WindowsList() });
   }
 
-  openWindow = (windowName) => {
-    // the promise created in order to fix an annoying bug with
-    // focusing the new window opened
+  openWindow = (windowName, subWindow = false) => {
+    const { windowsList } = this.state;
 
+    // this delay for the sub window is created to solve an annoying bug:
+    // when open window is called to open a sub window the focus erroneously goes back
+    // to the original window who called the sub window.
     const delay = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
 
-    delay(0).then(() => {
-      const { windowsList } = this.state;
+    const openWindowFunction = () => {
       _.set(windowsList, `${windowName}.opened`, true);
       this.focusWindow(windowName);
       this.setState({ windowsList });
-    });
+    };
+
+    if (subWindow) {
+      delay(100).then(openWindowFunction);
+    } else {
+      openWindowFunction();
+    }
   }
 
   closeWindow = (windowName) => {

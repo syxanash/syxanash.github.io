@@ -86,7 +86,7 @@ class AwesomeGUIBody extends Component {
           <Toolbar>
             <Button onClick={ this.openRandomURL } variant="menu">Random</Button>
             <Button onClick={ this.toggleHTTPSFilter } active={ httpsOnlyEnabled } variant="menu">HTTPS Only</Button>
-            <Button onClick={ () => this.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-gui-websites' }) }variant="menu">GitHub</Button>
+            <Button onClick={ () => this.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-gui-websites' }) } variant="menu">Contribute</Button>
           </Toolbar>
         </div>
         <Cutout className='awesome-gui-cutoutbg'>
