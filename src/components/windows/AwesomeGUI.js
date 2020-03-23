@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import {
-  Cutout, Toolbar, Button
+  Cutout, Toolbar, Button,
 } from 'react95';
 
-import './AwesomeGUI.css'
+import './AwesomeGUI.css';
 import remoteDesktops from '../../resources/remote-desktops.json';
 import computerIcon from '../../resources/icons/remote.gif';
 import mainWindowIcon from '../../resources/icons/awesome-gui.gif';
@@ -19,38 +19,36 @@ class AwesomeGUIHeader extends Component {
 
 class AwesomeGUIBody extends Component {
   state = {
-    httpsOnlyEnabled: false
+    httpsOnlyEnabled: false,
   }
 
-  renderSingleComputerIcon = ({ url, name }) => {
-    return (
-      <React.Fragment>
-        <div className='computer-icon'>
-          <img style={ { height: '65px' } } src={ computerIcon } alt='single desktop icon' />
-        </div>
-        <div className='website-favicon'>
-          <img style={ { height: '25px' } } src={`https://s2.googleusercontent.com/s2/favicons?domain_url=${url}`} alt='computer icon' />
-        </div>
-        <div className='website-name'>
-          { name }
-        </div>
-      </React.Fragment>
-    );
-  }
+  renderSingleComputerIcon = ({ url, name }) => (
+    <React.Fragment>
+      <div className='computer-icon'>
+        <img style={ { height: '65px' } } src={ computerIcon } alt='single desktop icon' />
+      </div>
+      <div className='website-favicon'>
+        <img style={ { height: '25px' } } src={ `https://s2.googleusercontent.com/s2/favicons?domain_url=${url}` } alt='computer icon' />
+      </div>
+      <div className='website-name'>
+        { name }
+      </div>
+    </React.Fragment>
+  )
 
   filterURLByHTTPS = (url) => {
     const { httpsOnlyEnabled } = this.state;
 
     if (httpsOnlyEnabled) {
-      return url.match(/^(https):\/\//g) !== null
+      return url.match(/^(https):\/\//g) !== null;
     }
 
     return true;
   }
 
   openRandomURL = () => {
-    const linksList = remoteDesktops.filter((website) => this.filterURLByHTTPS(website.url))
-      .map((website) => website.url);
+    const linksList = remoteDesktops.filter(website => this.filterURLByHTTPS(website.url))
+      .map(website => website.url);
 
     const randomLink = Object.keys(linksList).map(e => linksList[e])[
       Math.floor(Math.random() * Object.keys(linksList).map(e => linksList[e]).length)
@@ -64,19 +62,17 @@ class AwesomeGUIBody extends Component {
 
   toggleHTTPSFilter = () => {
     const { httpsOnlyEnabled } = this.state;
-    this.setState({ httpsOnlyEnabled: !httpsOnlyEnabled })
+    this.setState({ httpsOnlyEnabled: !httpsOnlyEnabled });
   }
 
   renderAllIcons = () => {
-    const desktopIcons = remoteDesktops.filter((website) => this.filterURLByHTTPS(website.url))
-      .map((website) => {
-      return (<div
+    const desktopIcons = remoteDesktops.filter(website => this.filterURLByHTTPS(website.url))
+      .map(website => (<div
         className='single-icon'
-        key={`icon_${website.name}`}
-        onClick={() => this.openWebsiteURL(website)}>
+        key={ `icon_${website.name}` }
+        onClick={ () => this.openWebsiteURL(website) }>
         { this.renderSingleComputerIcon(website) }
-      </div>);
-    });
+      </div>));
 
     return desktopIcons;
   }

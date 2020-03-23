@@ -2,6 +2,10 @@
   background-color: #ffffcc;
 }
 
+.guestbook-hidden-link {
+  cursor: url(../../resources/images/pointer.gif), auto;
+}
+
 .avatar-container {
   padding-right: 10px;
   padding-bottom: 10px;

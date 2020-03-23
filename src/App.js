@@ -7,6 +7,7 @@ import {
 } from 'react95';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 
+import PopupWindow from './components/PopupWindow';
 import WindowHead from './components/WindowHead';
 import SoundEffects from './components/additional/SoundEffects';
 import { NotFoundBody } from './components/windows/NotFound';
@@ -52,7 +53,19 @@ class App extends Component {
       .map((window, index) => {
         const WindowBodyComponent = _.get(windowsList, `${window}.body`);
 
-        return <Route exact key={ `${window}_${index}` } path={ `/${window}` } component={ () => <WindowBodyComponent /> } />;
+        return <Route
+          exact
+          key={ `${window}_${index}` }
+          path={ `/${window}` }
+          component={ () => <WindowBodyComponent
+            windowsList={ windowsList }
+            resetWindows={ this.resetWindows }
+            openWindow={ this.openWindow }
+            focusWindow={ this.focusWindow }
+            closeWindow={ this.closeWindow }
+            isWindowOpened={ this.isWindowOpened }
+          /> }
+        />;
       });
 
     const currentPage = _.last(window.location.href.split('/'));
@@ -61,7 +74,7 @@ class App extends Component {
     this.setState({
       mainTheme: pageTheme,
       pageBodyRoutes,
-      isBrokenScreen: localStorage.getItem('broken')
+      isBrokenScreen: localStorage.getItem('broken'),
     });
   }
 
@@ -79,10 +92,17 @@ class App extends Component {
   }
 
   openWindow = (windowName) => {
-    const { windowsList } = this.state;
-    _.set(windowsList, `${windowName}.opened`, true);
-    this.focusWindow(windowName);
-    this.setState({ windowsList });
+    // the promise created in order to fix an annoying bug with
+    // focusing the new window opened
+
+    const delay = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
+
+    delay(0).then(() => {
+      const { windowsList } = this.state;
+      _.set(windowsList, `${windowName}.opened`, true);
+      this.focusWindow(windowName);
+      this.setState({ windowsList });
+    });
   }
 
   closeWindow = (windowName) => {
@@ -190,13 +210,48 @@ class App extends Component {
       isWindowOpened={ this.isWindowOpened }
       onClickEgg={ this.triggerEasterEgg }
       onClickTV={ this.turnOnTV }
-    />)
+    />);
+  }
+
+  renderPopupWindows = () => {
+    const { windowsList } = this.state;
+
+    return Object.keys(windowsList).map((window, index) => {
+      const windowOpened = _.get(windowsList, `${window}.opened`);
+      const windowFocused = _.get(windowsList, `${window}.focused`);
+      const windowHeader = _.get(windowsList, `${window}.header`);
+      const hasFullScreen = _.get(windowsList, `${window}.hasFullScreen`);
+      const canCloseWindow = _.get(windowsList, `${window}.canCloseWindow`);
+      const windowBody = _.get(windowsList, `${window}.body`);
+      const windowTheme = _.get(windowsList, `${window}.windowTheme`);
+
+      return <div
+        key={ `${window}_${index}` }
+        id={ window }
+        onClick={ () => this.focusWindow(window) }
+      >{
+          windowOpened
+            ? <PopupWindow
+              closeWindow={ () => this.closeWindow(window) }
+              openWindow={ this.openWindow }
+              focused={ windowFocused }
+              header={ windowHeader }
+              body={ windowBody }
+              windowName={ window }
+              displayExtraActions={ hasFullScreen }
+              displayCloseButton={ canCloseWindow }
+              windowTheme={ windowTheme }
+            />
+            : null
+        }
+      </div>;
+    });
   }
 
   render() {
     const {
       bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes,
-      poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme
+      poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme,
     } = this.state;
 
     return (
@@ -227,6 +282,7 @@ class App extends Component {
                     />
                   </WindowHeader>
                   <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
+                    <div id='windows-list'>{this.renderPopupWindows()}</div>
                     <Switch>
                       <Route exact path='/' component={ this.renderMainWindow }/>
                       {pageBodyRoutes}

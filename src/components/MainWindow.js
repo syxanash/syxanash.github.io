@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
 import $ from 'jquery';
 import Draggable from 'react-draggable';
 import {
   Cutout, Button,
 } from 'react95';
-import PopupWindow from './PopupWindow';
 import MainWindowFooter from './additional/Footer';
 
 import './MainWindow.css';
@@ -100,46 +98,6 @@ class MainWindowBody extends Component {
     return true;
   }
 
-  renderPopupWindows = () => {
-    const {
-      windowsList,
-      focusWindow,
-      closeWindow,
-      openWindow,
-    } = this.props;
-
-    return Object.keys(windowsList).map((window, index) => {
-      const windowOpened = _.get(windowsList, `${window}.opened`);
-      const windowFocused = _.get(windowsList, `${window}.focused`);
-      const windowHeader = _.get(windowsList, `${window}.header`);
-      const hasFullScreen = _.get(windowsList, `${window}.hasFullScreen`);
-      const canCloseWindow = _.get(windowsList, `${window}.canCloseWindow`);
-      const windowBody = _.get(windowsList, `${window}.body`);
-      const windowTheme = _.get(windowsList, `${window}.windowTheme`);
-
-      return <div
-        key={ `${window}_${index}` }
-        id={ window }
-        onClick={ () => focusWindow(window) }
-      >{
-          windowOpened
-            ? <PopupWindow
-              closeWindow={ () => closeWindow(window) }
-              openWindow={ openWindow }
-              focused={ windowFocused }
-              header={ windowHeader }
-              body={ windowBody }
-              windowName={ window }
-              displayExtraActions={ hasFullScreen }
-              displayCloseButton={ canCloseWindow }
-              windowTheme={ windowTheme }
-            />
-            : null
-        }
-      </div>;
-    });
-  }
-
   render() {
     const { onClickTV, openWindow, isWindowOpened } = this.props;
     const { iconsColliding } = this.state;
@@ -151,7 +109,6 @@ class MainWindowBody extends Component {
 
     return (
       <div>
-        <div id='windows-list'>{this.renderPopupWindows()}</div>
         <Cutout className='cut-out'>
           <div className='last-row-icons'>
             <Button id='cestino_icon' size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } }

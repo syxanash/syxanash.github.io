@@ -33,6 +33,11 @@ class GuestbookBody extends Component {
     alert('Due to ongoing spam and flame activity the comment section has been temporarily disabled!');
   }
 
+  handleOpenWindow = () => {
+    const { openWindow } = this.props;
+    openWindow('awesomegui');
+  }
+
   render = () => (<div>
     <div style={ { textAlign: 'center' } }>
       If you enjoyed visiting this website leave a comment down here!
@@ -52,7 +57,9 @@ class GuestbookBody extends Component {
           </div>
         </div>
         <div>
-          WOW a website which looks like a computer! <b><a href='https://github.com/syxanash/awesome-gui-websites' target='_blank' rel='noopener noreferrer' style={ { textDecoration: 'none', color: 'black' } }>no one</a></b> ever thought about it,
+          WOW a website which looks like a computer! <b>
+            <span className='guestbook-hidden-link' onClick={ this.handleOpenWindow }>no one</span>
+          </b> ever thought about it,
           this is so cool, welcome to the world wide web my friend!
         </div>
       </div>

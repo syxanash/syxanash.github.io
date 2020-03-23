@@ -29,7 +29,8 @@ class PopupWindow extends Component {
     closeWindow();
   }
 
-  renderCloseButton = () => (<Button
+  renderCloseButton = () => (
+    <Button
       size='sm'
       square
       onClick={ this.closeCurrentWindow }
@@ -58,7 +59,9 @@ class PopupWindow extends Component {
               square
               style={ { marginRight: '3px' } }
               onClick={ () => {
-                this.props.history.push(`/${windowName}`);
+                const { history, closeWindow } = this.props;
+                history.push(`/${windowName}`);
+                closeWindow();
                 changeTheme(windowName);
               } }
             >

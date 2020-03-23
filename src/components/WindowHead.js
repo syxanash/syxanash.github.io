@@ -43,7 +43,8 @@ class WindowHead extends Component {
   renderLeftsideButton = () => {
     const { onLeftsideButton, isLeftsideButtonActive } = this.props;
 
-    return (<Button
+    return (
+      <Button
         size='sm'
         square
         active={ isLeftsideButtonActive }
@@ -56,7 +57,8 @@ class WindowHead extends Component {
             style={ { height: '15px', marginLeft: '-1px', marginBottom: '-1px' } }
           />
         </span>
-      </Button>);
+      </Button>
+    );
   }
 
   render() {
