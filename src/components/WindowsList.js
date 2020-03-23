@@ -24,7 +24,7 @@ export default function WindowsList() {
       focused: false,
       header: AboutHeader,
       body: AboutBody,
-      windowTheme: PippoTheme
+      windowTheme: PippoTheme,
     },
     projects: {
       hasFullScreen: true,
@@ -33,7 +33,7 @@ export default function WindowsList() {
       focused: false,
       header: ProjectsHeader,
       body: ProjectsBody,
-      windowTheme: PippoDarkPro
+      windowTheme: PippoDarkPro,
     },
     contact: {
       hasFullScreen: true,
@@ -42,7 +42,7 @@ export default function WindowsList() {
       focused: false,
       header: ContactHeader,
       body: ContactBody,
-      windowTheme: PippoTheme
+      windowTheme: PippoTheme,
     },
     links: {
       hasFullScreen: true,
@@ -51,7 +51,7 @@ export default function WindowsList() {
       focused: false,
       header: LinksHeader,
       body: LinksBody,
-      windowTheme: PippoTheme
+      windowTheme: PippoTheme,
     },
     guestbook: {
       hasFullScreen: true,
@@ -60,7 +60,7 @@ export default function WindowsList() {
       focused: false,
       header: GuestbookHeader,
       body: GuestbookBody,
-      windowTheme: PippoTheme
+      windowTheme: PippoTheme,
     },
     music: {
       hasFullScreen: true,
@@ -69,7 +69,7 @@ export default function WindowsList() {
       focused: false,
       header: MusicHeader,
       body: MusicBody,
-      windowTheme: PippoTheme
+      windowTheme: PippoTheme,
     },
     credits: {
       hasFullScreen: true,
@@ -78,7 +78,7 @@ export default function WindowsList() {
       focused: false,
       header: CreditsHeader,
       body: CreditsBody,
-      windowTheme: PippoTheme
+      windowTheme: PippoTheme,
     },
     awesomegui: {
       hasFullScreen: true,
@@ -87,7 +87,7 @@ export default function WindowsList() {
       focused: false,
       header: AwesomeGUIHeader,
       body: AwesomeGUIBody,
-      windowTheme: PippoTheme
+      windowTheme: PippoTheme,
     },
     osinfowindow: {
       hasFullScreen: false,
@@ -96,7 +96,7 @@ export default function WindowsList() {
       focused: false,
       header: OSInfoWindowHeader,
       body: OSInfoWindowBody,
-      windowTheme: PippoGoleador
+      windowTheme: PippoGoleador,
     },
     cestino: {
       hasFullScreen: false,
@@ -105,7 +105,7 @@ export default function WindowsList() {
       focused: false,
       header: CestinoHeader,
       body: CestinoBody,
-      windowTheme: PippoBleeding
+      windowTheme: PippoBleeding,
     },
     fixmycomputer: {
       hasFullScreen: true,
@@ -114,8 +114,8 @@ export default function WindowsList() {
       focused: false,
       header: FixHeader,
       body: FixBody,
-      windowTheme: PippoTheme
-    }
+      windowTheme: PippoTheme,
+    },
   };
 
   return windowsList;
