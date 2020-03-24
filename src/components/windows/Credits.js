@@ -60,12 +60,13 @@ class CreditsBody extends Component {
               <li className='list-content'><a href='https://code.visualstudio.com' target='_blank' rel='noopener noreferrer'>VSCode</a> → wish I told you I built this website using VIM or Emacs like true &#35;10xdeveloper but oh well...</li>
             </ul>
             <ul style={ { display:activeTab === 2 ? 'block' : 'none' } }>
-              <li className='list-content'><a href='https://www.gimp.org' target='_blank' rel='noopener noreferrer'>GIMP</a> → All icons and some GIFs on this site have been created using GIMP.</li>
-              <li className='list-content'><a href='https://ezgif.com/video-to-gif' target='_blank' rel='noopener noreferrer'>Ezgif</a> → Amazing web app for editing gifs and converting videos to GIF.</li>
-              <li className='list-content'><a href='https://win98icons.alexmeub.com' target='_blank' rel='noopener noreferrer'>Windows 98 Icons</a> → original Windows 98 icons were downloaded from here.</li>
+              <li className='list-content'><a href='https://www.gimp.org' target='_blank' rel='noopener noreferrer'>GIMP</a> → All icons and some GIFs on this site have been created using GIMP</li>
+              <li className='list-content'><a href='https://ezgif.com/video-to-gif' target='_blank' rel='noopener noreferrer'>Ezgif</a> → Amazing web app for editing gifs and converting videos to GIF</li>
+              <li className='list-content'><a href='https://win98icons.alexmeub.com' target='_blank' rel='noopener noreferrer'>Windows 98 Icons</a> → original Windows 98 icons were downloaded from here</li>
               <li className='list-content'><a href='https://www.youtube.com/watch?v=-MH6JZdGZcI' target='_blank' rel='noopener noreferrer'>TV turn off GIF</a> → The TV turn off GIF was taken from this video</li>
               <li className='list-content'><a href='https://en.wikipedia.org/wiki/Blue_Monday_(New_Order_song)#/media/File:NewOrderBlueMonday.jpg' target='_blank' rel='noopener noreferrer'>Blue Monday LP Cover</a> → The Favicon of this site is highly inspired by the cover art for the vinyl LP "Blue Monday" by New Order</li>
               <li className='list-content'><a href='http://cs.gettysburg.edu/~duncjo01/assets/images/patterns/' target='_blank' rel='noopener noreferrer'>Pattern Backgrounds</a> → Some patterns were downloaded from the amazing collection made by John D. Duncan, III</li>
+              <li className='list-content'><a href='https://www.popot.org' target='_blank' rel='noopener noreferrer'>PoP Backgrounds</a> → Two backgrounds were downloaded from the Prince of Persia modding community website</li>
               <li className='list-content'>The avatars in <b>src/resources/images/avatars/</b>, used
               in the Guestbook page, were found online from various websites</li>
               <li className='list-content'>The spinning globe in <b>src/resources/images/globe.gif</b> was
