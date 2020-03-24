@@ -57,9 +57,9 @@ class GuestbookBody extends Component {
           </div>
         </div>
         <div>
-          WOW a website which looks like a computer! <b>
-            <span className='guestbook-hidden-link' onClick={ this.handleOpenWindow }>no one</span>
-          </b> ever thought about it,
+          WOW a website which looks like a computer!&nbsp;
+          <span className='guestbook-hidden-link' onClick={ this.handleOpenWindow }>no one</span>
+          &nbsp;ever thought about it,
           this is so cool, welcome to the world wide web my friend!
         </div>
       </div>

@@ -96,7 +96,7 @@ class App extends Component {
 
     // this delay for the sub window is created to solve an annoying bug:
     // when open window is called to open a sub window the focus erroneously goes back
-    // to the original window who called the sub window.
+    // to the original window who called the sub window thus hiding the sub window.
     const delay = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
 
     const openWindowFunction = () => {

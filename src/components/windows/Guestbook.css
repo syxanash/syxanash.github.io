@@ -3,6 +3,10 @@
 }
 
 .guestbook-hidden-link {
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 20px;
   cursor: url(../../resources/images/pointer.gif), auto;
 }
 
