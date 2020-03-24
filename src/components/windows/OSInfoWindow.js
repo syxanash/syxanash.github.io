@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { Button, Cutout } from 'react95';
 import './OSInfoWindow.css';
 import pippoOSlogo from '../../resources/images/pippoOS.gif';
+import mainWindowIcon from '../../resources/icons/os_infowindow.gif';
 
 class OSInfoWindowHeader extends Component {
   render = () => (
     <span>
-      Pippo Operating System
+      <img src={ mainWindowIcon } alt='remote desktops icon' style={ { height: '15px' } }/> Pippo Operating System
     </span>
   )
 }
