@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { TabBody, Tab, Tabs, Cutout } from 'react95';
+import {
+  TabBody, Tab, Tabs, Cutout,
+} from 'react95';
 
 import licenseText from '../../resources/misc/LICENSE.txt';
 import creditsIcon from '../../resources/icons/favicon.gif';
@@ -18,7 +20,7 @@ class CreditsHeader extends Component {
 
 class CreditsBody extends Component {
   state = {
-    activeTab: 0
+    activeTab: 0,
   }
 
   handleChangeTab = value => this.setState({ activeTab: value });
@@ -35,12 +37,12 @@ class CreditsBody extends Component {
           you could help me fix them by opening a pull request!
         </p>
       </div>
-      <Tabs value={activeTab} onChange={this.handleChangeTab} style={ { paddingTop: '10px' } }>
-        <Tab value={0}>&copy;</Tab>
-        <Tab value={1}>Code</Tab>
-        <Tab value={2}>Images</Tab>
-        <Tab value={3}>Links</Tab>
-        <Tab value={4}>Sounds</Tab>
+      <Tabs value={ activeTab } onChange={ this.handleChangeTab } style={ { paddingTop: '10px' } }>
+        <Tab value={ 0 }>&copy;</Tab>
+        <Tab value={ 1 }>Code</Tab>
+        <Tab value={ 2 }>Images</Tab>
+        <Tab value={ 3 }>Links</Tab>
+        <Tab value={ 4 }>Sounds</Tab>
       </Tabs>
       <TabBody>
         <div style={ { marginTop: '-5px' } }>
@@ -59,7 +61,7 @@ class CreditsBody extends Component {
               <li className='list-content'><a href='https://github.com/Swordfish90/cool-retro-term' target='_blank' rel='noopener noreferrer'>cool-retro-term</a> → a vintage terminal emulator used in some pages</li>
               <li className='list-content'><a href='https://code.visualstudio.com' target='_blank' rel='noopener noreferrer'>VSCode</a> → wish I told you I built this website using VIM or Emacs like true &#35;10xdeveloper but oh well...</li>
             </ul>
-            <ul style={ { display:activeTab === 2 ? 'block' : 'none' } }>
+            <ul style={ { display: activeTab === 2 ? 'block' : 'none' } }>
               <li className='list-content'><a href='https://www.gimp.org' target='_blank' rel='noopener noreferrer'>GIMP</a> → All icons and some GIFs on this site have been created using GIMP</li>
               <li className='list-content'><a href='https://ezgif.com/video-to-gif' target='_blank' rel='noopener noreferrer'>Ezgif</a> → Amazing web app for editing gifs and converting videos to GIF</li>
               <li className='list-content'><a href='https://win98icons.alexmeub.com' target='_blank' rel='noopener noreferrer'>Windows 98 Icons</a> → original Windows 98 icons were downloaded from here</li>
@@ -72,7 +74,8 @@ class CreditsBody extends Component {
               <li className='list-content'>The spinning globe in <b>src/resources/images/globe.gif</b> was
               found online, I wish I knew who made this gif :(</li>
               <li className='list-content'>Almost all of the GIFs in <b>loop TV</b> were made by myself and were
-              taken from various games/movies/cartoons. Some of these GIFs were also found online.</li>
+              taken from various games/movies/cartoons.
+              Some of these GIFs were also found online.</li>
             </ul>
             <ul style={ { display: activeTab === 3 ? 'block' : 'none' } }>
               <li className='list-content'>

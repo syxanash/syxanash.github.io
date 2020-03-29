@@ -37,7 +37,7 @@ class App extends Component {
     pageBodyRoutes: undefined,
     poweredOff: false,
     loopTVon: false,
-    stoppedWindowProgram: false,
+    stoppedWindowProgram: undefined,
     isBrokenScreen: false,
     mainTheme: PippoTheme,
     windowsList: WindowsList(),
@@ -167,10 +167,13 @@ class App extends Component {
   }
 
   stoppedProgram = (event) => {
-    const { isBrokenScreen, poweredOff, loopTVon } = this.state;
+    const {
+      isBrokenScreen, poweredOff, loopTVon, stoppedWindowProgram,
+    } = this.state;
 
-    if ((event.ctrlKey && event.key === 'c')
-      || (event.ctrlKey && event.key === 'C')) {
+    if (((event.ctrlKey && event.key === 'c')
+      || (event.ctrlKey && event.key === 'C'))
+      && stoppedWindowProgram === undefined && !loopTVon) {
       this.setState({ stoppedWindowProgram: !isBrokenScreen && !poweredOff && !loopTVon });
     }
   }

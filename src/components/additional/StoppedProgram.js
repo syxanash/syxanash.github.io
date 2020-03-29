@@ -8,7 +8,7 @@ import './StoppedProgram.css';
 class Poweroff extends Component {
   state = {
     shouldStopWindowing: false,
-    outputText: ''
+    outputText: '',
   };
 
   messagesEndRef = React.createRef();
@@ -24,20 +24,21 @@ class Poweroff extends Component {
 
   addCtrlC = (event) => {
     const { outputText } = this.state;
+    const { shouldStopWindowing } = this.props;
 
-    if ((event.ctrlKey && event.key === 'c')
-      || (event.ctrlKey && event.key === 'C')) {
-      this.setState({ outputText: outputText + '^C<br />' });
+    if (((event.ctrlKey && event.key === 'c')
+      || (event.ctrlKey && event.key === 'C')) && shouldStopWindowing) {
+      this.setState({ outputText: `${outputText} ^C<br />` });
     }
   }
-  
+
   componentDidUpdate() {
     this.scrollToBottom();
   }
 
   scrollToBottom = () => {
     if (this.messagesEndRef.current !== null) {
-      this.messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
+      this.messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
@@ -103,8 +104,9 @@ class Poweroff extends Component {
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] User-agent detected: {navigator.userAgent}</div>
         <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started Pippo OS Build.
           "{lastUpdatedFile.buildNumber.substr(0, 5)}"</div>
-          <span dangerouslySetInnerHTML={ { __html: outputText } }></span>
-        <div ref={this.messagesEndRef} />
+        ^C<br />
+        <span dangerouslySetInnerHTML={ { __html: outputText } }></span>
+        <div ref={ this.messagesEndRef } />
       </div>
     </React.Fragment>);
   }
