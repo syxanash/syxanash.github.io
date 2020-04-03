@@ -92,7 +92,7 @@ class CreditsBody extends Component {
         </div>
       </TabBody>
       <div style={ { paddingTop: '15px', textAlign: 'center' } }>
-        No <span role="img" aria-label="pizza">🍕</span> was harmed in the making of this website.
+        No <span role="img" aria-label="robot">🤖</span> robots were harmed in the making of this website.
       </div>
     </div>);
   }
