@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import Helmet from 'react-helmet';
 import 'animate.css';
 
 import './LoopTV.css';
 import loopList from '../../resources/loops-list.json';
 import staticImage from '../../resources/images/static.gif';
 import poweroffButton from '../../resources/icons/poweroff_button.png';
+import tvRemote from '../../resources/icons/tv-remote.gif';
 
 const loopImages = require.context('../../resources/images/loopTV', true);
 
@@ -62,6 +64,16 @@ class LoopTV extends Component {
 
     return (
       <div className='image-container' onClick={ this.changeLoopImage }>
+        <Helmet>
+          <style>
+            {
+              `* {
+                overflow: hidden;
+                cursor: url(${tvRemote}), auto;
+              }`
+            }
+          </style>
+        </Helmet>
         <img
           style={ { display: imageLoaded ? 'block' : 'none' } }
           className='main-image-loop'
@@ -83,7 +95,7 @@ class LoopTV extends Component {
           { imageList[imageIndex].description }
         </div>
         <img
-          className='poweroffButton'
+          className='poweroff-button'
           src={ poweroffButton }
           alt='power off tv button'
           onClick={ turnOff }
