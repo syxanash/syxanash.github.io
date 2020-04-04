@@ -174,5 +174,33 @@
 	{
 		"name": "N10.AS RADIO",
 		"url": "http://www.n10.as"
+	},
+	{
+		"name": "Rahul.io",
+		"url": "https://rahul.io"
+	},
+	{
+		"name": "EmuOS",
+		"url": "https://emupedia.net/beta/emuos/"
+	},
+	{
+		"name": "AaronOS",
+		"url": "https://aaronos.dev/AaronOS/aosBeta.php"
+	},
+	{
+		"name": "CloudDesk",
+		"url": "http://altaica.altervista.org/"
+	},
+	{
+		"name": "Web Desktop",
+		"url": "https://webdesktop.net"
+	},
+	{
+		"name": "Windows 98 -- Packard Belle",
+		"url": "https://packard-belle.netlify.com"
+	},
+	{
+		"name": "vue win3.1",
+		"url": "https://disjfa.github.io/vue-win-3.1"
 	}
 ]
