@@ -41,6 +41,7 @@ class WindowHead extends Component {
   }
 
   renderLeftsideButton = () => {
+    const { windowMinimized } = this.state;
     const { onLeftsideButton, isLeftsideButtonActive } = this.props;
 
     return (
@@ -49,12 +50,18 @@ class WindowHead extends Component {
         square
         active={ isLeftsideButtonActive }
         onClick={ onLeftsideButton }
+        disabled={ windowMinimized }
       >
         <span>
           <img
             src={ faviconImg }
             alt='main icon'
-            style={ { height: '15px', marginLeft: '-1px', marginBottom: '-1px' } }
+            style={ {
+              height: '15px',
+              marginLeft: '-1px',
+              marginBottom: '-1px',
+              opacity: windowMinimized ? 0.4 : 1,
+            } }
           />
         </span>
       </Button>
