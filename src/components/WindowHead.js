@@ -48,7 +48,7 @@ class WindowHead extends Component {
       <Button
         size='sm'
         square
-        active={ isLeftsideButtonActive }
+        active={ isLeftsideButtonActive && !windowMinimized }
         onClick={ onLeftsideButton }
         disabled={ windowMinimized }
       >
