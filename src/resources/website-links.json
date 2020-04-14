@@ -400,6 +400,10 @@
       {
         "url": "https://moviecode.tumblr.com",
         "description": ""
+      },
+      {
+        "url": "https://copy.sh/life/?pattern=universalturingmachine",
+        "description": "a Turing Machine made in Game of Life"
       }
     ]
   }
