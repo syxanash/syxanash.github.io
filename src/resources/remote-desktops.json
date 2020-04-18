@@ -206,5 +206,9 @@
 	{
 		"name": "Welcome to Agora Road",
 		"url": "http://agoraroad.com"
+	},
+	{
+		"name": "Minesweeper",
+		"url": "https://winmine-exe.now.sh"
 	}
 ]
