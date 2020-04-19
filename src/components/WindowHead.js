@@ -10,7 +10,6 @@ import { MainWindowHeader } from './MainWindow';
 import { NotFoundHeader } from './windows/NotFound';
 import WindowsList from './WindowsList';
 import ThemeContext from '../ThemeContext';
-import faviconImg from '../resources/icons/favicon.gif';
 
 class WindowHead extends Component {
   state = {
@@ -44,26 +43,17 @@ class WindowHead extends Component {
     const { windowMinimized } = this.state;
     const { onLeftsideButton, isLeftsideButtonActive } = this.props;
 
+    const isActive = isLeftsideButtonActive && !windowMinimized;
+
     return (
       <Button
         size='sm'
         square
-        active={ isLeftsideButtonActive && !windowMinimized }
+        active={ isActive }
         onClick={ onLeftsideButton }
         disabled={ windowMinimized }
       >
-        <span>
-          <img
-            src={ faviconImg }
-            alt='main icon'
-            style={ {
-              height: '15px',
-              marginLeft: '-1px',
-              marginBottom: '-1px',
-              opacity: windowMinimized ? 0.4 : 1,
-            } }
-          />
-        </span>
+        <span style={ { transform: 'translateY(-1px)' } }>{isActive ? '⬘' : '◩' }</span>
       </Button>
     );
   }
