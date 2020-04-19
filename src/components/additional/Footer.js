@@ -7,11 +7,19 @@ import './Footer.css';
 
 import lastUpdatedFile from '../../resources/last-updated.json';
 import clockIcon from '../../resources/icons/clock.png';
-import codeIcon from '../../resources/icons/code.png';
+import codeIconLight from '../../resources/icons/code_light.gif';
+import codeIconDark from '../../resources/icons/code_dark.gif';
 
 class Footer extends Component {
   state = {
     lastUpdated: lastUpdatedFile,
+    codeIcon: codeIconLight,
+  }
+
+  componentDidMount() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      this.setState({ codeIcon: codeIconDark });
+    }
   }
 
   renderLastCommitButton() {
@@ -37,6 +45,7 @@ class Footer extends Component {
   }
 
   render() {
+    const { codeIcon } = this.state;
     const { active, onClick } = this.props;
 
     return (

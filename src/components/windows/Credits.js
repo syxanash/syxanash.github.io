@@ -6,7 +6,8 @@ import {
 import licenseText from '../../resources/misc/LICENSE.txt';
 import creditsIcon from '../../resources/icons/favicon.gif';
 
-import codeAnimation from '../../resources/images/code.gif';
+import codeAnimationDark from '../../resources/images/code_dark.gif';
+import codeAnimationLight from '../../resources/images/code_light.gif';
 
 import './Credits.css';
 
@@ -21,12 +22,19 @@ class CreditsHeader extends Component {
 class CreditsBody extends Component {
   state = {
     activeTab: 0,
+    codeAnimation: codeAnimationLight,
+  }
+
+  componentDidMount() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      this.setState({ codeAnimation: codeAnimationDark });
+    }
   }
 
   handleChangeTab = value => this.setState({ activeTab: value });
 
   render = () => {
-    const { activeTab } = this.state;
+    const { activeTab, codeAnimation } = this.state;
 
     return (<div className='credits-window'>
       <div>
