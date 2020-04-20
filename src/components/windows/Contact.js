@@ -10,7 +10,7 @@ import dribbbleIcon from '../../resources/icons/social/dribbble.gif';
 import webringIcon from '../../resources/icons/social/webring.gif';
 import twitterIcon from '../../resources/icons/social/twitter.gif';
 import emailIcon from '../../resources/icons/social/email.gif';
-import pgpIcon from '../../resources/icons/social/pgp.png';
+import pgpIcon from '../../resources/icons/social/pgp.gif';
 import linkedinIcon from '../../resources/icons/social/linkedin.gif';
 
 import pgpKey from '../../resources/misc/public.asc';
@@ -31,49 +31,49 @@ class ContactBody extends Component {
       Please feel free to drop me an email or stalk me on the web.
     </span>
     <div className='social-icons-container'>
-      <Tooltip text='Email'>
+      <Tooltip text='Email' delay='100'>
         <Anchor href='mailto:hello@simone.computer?subject=Hi%20Mr.%20Awesome%20Dude' target='_blank'>
           <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ emailIcon } style={ { height: '40px' } } alt="email"/>
           </Button>
         </Anchor>
       </Tooltip>
-      <Tooltip text='PGP Public Key'>
+      <Tooltip text='PGP Public Key' delay='100'>
         <Anchor href={ pgpKey } target='_blank'>
           <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ pgpIcon } style={ { height: '40px' } } alt="pgp"/>
           </Button>
         </Anchor>
       </Tooltip>
-      <Tooltip text='GitHub'>
+      <Tooltip text='GitHub' delay='100'>
         <Anchor href='https://github.com/syxanash' target='_blank'>
           <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ githubIcon } style={ { height: '40px' } } alt="github"/>
           </Button>
         </Anchor>
       </Tooltip>
-      <Tooltip text='Twitter'>
+      <Tooltip text='Twitter' delay='100'>
         <Anchor href='https://twitter.com/syxanash' target='_blank'>
           <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ twitterIcon } style={ { height: '30px' } } alt="twitter"/>
           </Button>
         </Anchor>
       </Tooltip>
-      <Tooltip text='Tinder?'>
+      <Tooltip text='Tinder?' delay='100'>
         <Anchor href='https://www.linkedin.com/in/simone-marzulli-318b4a81' target='_blank'>
           <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ linkedinIcon } style={ { height: '40px' } } alt="linkedin"/>
           </Button>
         </Anchor>
       </Tooltip>
-      <Tooltip text='Dribbble'>
+      <Tooltip text='Dribbble' delay='100'>
         <Anchor href='https://dribbble.com/syx' target='_blank'>
           <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ dribbbleIcon } style={ { height: '40px' } } alt="dribbble"/>
           </Button>
         </Anchor>
       </Tooltip>
-      <Tooltip text='Webring'>
+      <Tooltip text='Webring' delay='100'>
         <Anchor href='https://webring.xxiivv.com/#random' target='_blank'>
           <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ webringIcon } style={ { height: '40px' } } alt="webring"/>
