@@ -53,7 +53,9 @@ class WindowHead extends Component {
         onClick={ onLeftsideButton }
         disabled={ windowMinimized }
       >
-        <span style={ { transform: 'translateY(-1px)' } }>{isActive ? '⬘' : '◩' }</span>
+        <span style={ { transform: `translate(${isActive ? '0' : '-1'}px, -1px)` } }>
+          {isActive ? '◖◗' : '●' }
+        </span>
       </Button>
     );
   }
