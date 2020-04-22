@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import {
-  Cutout, Toolbar, Button,
+  Cutout, Toolbar, Button, Fieldset,
 } from 'react95';
 
 import './AwesomeGUI.css';
@@ -88,6 +88,12 @@ class AwesomeGUIBody extends Component {
             <Button onClick={ this.toggleHTTPSFilter } active={ httpsOnlyEnabled } variant="menu">HTTPS Only</Button>
             <Button onClick={ () => this.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-gui-websites' }) } variant="menu">Contribute</Button>
           </Toolbar>
+        </div>
+        <div style={ { paddingBottom: '10px' } }>
+          <Fieldset>
+            If you are a fan of websites, web apps and portfolios which
+            resemble desktop graphical user interfaces here is a curated list
+          </Fieldset>
         </div>
         <Cutout className='awesome-gui-cutoutbg'>
           <div className='awesome-gui-icons-container'>
