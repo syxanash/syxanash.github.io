@@ -58,7 +58,7 @@ class AboutBody extends Component {
           on the internet my nick name is usually <b>syx</b>.
         </p>
         <p>
-          I was born in <a href='https://en.wikipedia.org/wiki/Taranto' target='_blank' rel='noopener noreferrer'>Taranto (Italy)</a> where I lived most of my life. I moved to Dublin (Ireland) { timePassed } ago where I currently work as a full stack software engineer.
+          I was born in <a href='https://en.wikipedia.org/wiki/Taranto' target='_blank' rel='noopener noreferrer'>Taranto (Italy)</a> where I lived most of my life. I moved to Dublin (Ireland) { timePassed } ago where I currently work as a software engineer.
           I have a degree in computer science from <a href='https://www.uniba.it/ricerca/dipartimenti/informatica/dipartimento-di-informatica' target='_blank' rel='noopener noreferrer'>University of Bari</a>.
         </p>
         <p>
