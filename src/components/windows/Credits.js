@@ -42,7 +42,7 @@ class CreditsBody extends Component {
         This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>ReactJS</a>, if your 'puter is too slow then disable JavaScript you can always use the <i>fallback mode</i>!
         <p>
           The code is <a href='https://github.com/syxanash/syxanash.github.io'>entirely available</a> on GitHub. If you have any bugfix, suggestions, typos
-          you could help me fix them by opening a pull request!
+          feel free to open a pull request!
         </p>
       </div>
       <Tabs value={ activeTab } onChange={ this.handleChangeTab } style={ { paddingTop: '10px' } }>
@@ -100,7 +100,7 @@ class CreditsBody extends Component {
         </div>
       </TabBody>
       <div style={ { paddingTop: '15px', textAlign: 'center' } }>
-        No <span role="img" aria-label="robot">🤖</span> robots were harmed in the making of this website.
+        No <span role="img" aria-label="pizza">🍕</span> was harmed in the making of this website.
       </div>
     </div>);
   }

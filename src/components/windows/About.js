@@ -23,7 +23,7 @@ class AboutBody extends Component {
 
   getDateDiff = () => {
     const now = moment();
-    const then = moment([2017, 5, 15]);
+    const then = moment([2017, 4, 15]);
     const years = now.diff(then, 'year');
 
     const timePassed = `${years} years`;
