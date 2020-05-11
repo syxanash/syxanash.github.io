@@ -1,0 +1,28 @@
+.pizza-wizard-container {
+  padding-bottom: 25px;
+  margin-top: -20px;
+}
+
+.pizza-wizard-side-image {
+  height: 400px;
+  width: 30%;
+  float: left;
+  margin-right: 20px;
+  object-fit: cover;
+
+  border: 3px inset rgb(102, 102, 102);
+}
+
+.pizza-wizard-text-container {
+  height: 400px;
+}
+
+.underline-text {
+  border-bottom: 1px solid #000;
+}
+
+.pizza-wizard-buttons-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
