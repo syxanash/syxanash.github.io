@@ -25,7 +25,7 @@ class PizzaNetBody extends Component {
       <div>
         <div className='pizza-wizard-container'>
           <div>
-            <img className='pizza-wizard-side-image' src='https://i.imgur.com/xKGBMwl.jpg' alt='pizza' />
+            <img className='pizza-wizard-side-image' src='https://live.staticflickr.com/65535/49882208456_8f708222a8_k.jpg' alt='pizza' />
           </div>
           <div className='pizza-wizard-text-container'>
             <ReactMarkdown source={ input } />

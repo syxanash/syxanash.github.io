@@ -72,7 +72,7 @@ export default function WindowsList() {
       body: MusicBody,
       windowTheme: PippoTheme,
     },
-    pizzanet: {
+    pizza: {
       hasFullScreen: true,
       canCloseWindow: true,
       opened: false,

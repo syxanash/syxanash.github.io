@@ -181,8 +181,8 @@ class MainWindowBody extends Component {
               <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
-              onClick={ () => openWindow('pizzanet') }
-              active={ isWindowOpened('pizzanet') }
+              onClick={ () => openWindow('pizza') }
+              active={ isWindowOpened('pizza') }
             >
               <img src={ pizzaIcon } className='icon' alt="pizza net"/>
               <figcaption className='icon-caption'>Pizza Net</figcaption>
