@@ -16,6 +16,7 @@ import emptyTrashIcon from '../resources/icons/empty_trash.gif';
 import linksIcon from '../resources/icons/links.gif';
 import musicIcon from '../resources/icons/music.gif';
 import guestbookIcon from '../resources/icons/guestbook.png';
+import pizzaIcon from '../resources/icons/pizza.gif';
 import loopTVIcon from '../resources/icons/loopTV.gif';
 
 import languages from '../resources/languages.json';
@@ -172,6 +173,13 @@ class MainWindowBody extends Component {
             >
               <img src={ guestbookIcon } className='icon' alt="guestbook"/>
               <figcaption className='icon-caption' style={ { fontSize: '14px' } }>Guestbook</figcaption>
+            </Button>
+            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+              onClick={ () => openWindow('pizzanet') }
+              active={ isWindowOpened('pizzanet') }
+            >
+              <img src={ pizzaIcon } className='icon' alt="pizza net"/>
+              <figcaption className='icon-caption'>Pizza Net</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ onClickTV }
