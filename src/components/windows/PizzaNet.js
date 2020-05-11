@@ -29,10 +29,12 @@ class PizzaNetBody extends Component {
           </div>
           <div className='pizza-wizard-text-container'>
             <ReactMarkdown source={ input } />
-            <div style={ { display: 'block' } }>
-              <div style={ { paddingBottom: '5px' } }><span>Recipe progres...</span></div>
-              <div><Progress percent={ 52 } shadow={ false } /></div>
-            </div>
+          </div>
+        </div>
+        <div className='pizza-wizard-progress'>
+          <div style={ { display: 'block' } }>
+            <div style={ { paddingBottom: '5px' } }><span>Recipe progres...</span></div>
+            <div><Progress percent={ 0 } shadow={ false } style={ { maxWidth: '100%' } } /></div>
           </div>
         </div>
         <Divider />

@@ -1,20 +1,27 @@
 .pizza-wizard-container {
-  padding-bottom: 25px;
-  margin-top: -20px;
+  padding-bottom: 10px;
+  display: flex;
 }
 
 .pizza-wizard-side-image {
   height: 400px;
-  width: 30%;
-  float: left;
+  width: 150px;
   margin-right: 20px;
   object-fit: cover;
-
   border: 3px inset rgb(102, 102, 102);
 }
 
+.pizza-wizard-progress {
+  padding-bottom: 10px;
+  margin: 0 auto;
+  margin-top: -60px;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
 .pizza-wizard-text-container {
-  height: 400px;
+  margin-bottom: 50px;
 }
 
 .underline-text {
