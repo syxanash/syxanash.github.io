@@ -175,17 +175,17 @@ class MainWindowBody extends Component {
               <figcaption className='icon-caption' style={ { fontSize: '14px' } }>Guestbook</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+              onClick={ onClickTV }
+            >
+              <img src={ loopTVIcon } className='icon' alt="loop TV"/>
+              <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
+            </Button>
+            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => openWindow('pizzanet') }
               active={ isWindowOpened('pizzanet') }
             >
               <img src={ pizzaIcon } className='icon' alt="pizza net"/>
               <figcaption className='icon-caption'>Pizza Net</figcaption>
-            </Button>
-            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
-              onClick={ onClickTV }
-            >
-              <img src={ loopTVIcon } className='icon' alt="loop TV"/>
-              <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
             </Button>
           </div>
         </Cutout>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 import pizzaIcon from '../../resources/icons/pizza.gif';
 
@@ -13,8 +14,10 @@ class PizzaNetHeader extends Component {
 class PizzaNetBody extends Component {
   // eslint-disable-next-line arrow-body-style
   render = () => {
+    const input = '# This is a header\n\nAnd this is a paragraph';
+
     return (
-      <div>Hello pizza</div>
+      <ReactMarkdown source={ input } />
     );
   }
 }
