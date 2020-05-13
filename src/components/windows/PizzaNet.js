@@ -27,7 +27,7 @@ class PizzaNetBody extends Component {
             <img className='pizza-wizard-side-image' src='https://live.staticflickr.com/65535/49882208456_8f708222a8_k.jpg' alt='pizza' />
           </div>
           <div className='pizza-wizard-text-container'>
-            <ReactMarkdown source={ pizzaSteps.ingredients } />
+            <ReactMarkdown source={ pizzaSteps.introduction } />
           </div>
         </div>
         <div className='pizza-wizard-progress'>
