@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown/with-html';
 
 import {
   Divider, Button, Progress,
@@ -27,7 +27,7 @@ class PizzaNetBody extends Component {
             <img className='pizza-wizard-side-image' src='https://live.staticflickr.com/65535/49882208456_8f708222a8_k.jpg' alt='pizza' />
           </div>
           <div className='pizza-wizard-text-container'>
-            <ReactMarkdown source={ pizzaSteps.introduction } />
+            <ReactMarkdown source={ pizzaSteps.ingredients } escapeHtml={ false } />
           </div>
         </div>
         <div className='pizza-wizard-progress'>
