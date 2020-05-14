@@ -3,6 +3,12 @@
   display: flex;
 }
 
+@media screen and (max-width: 500px) {
+  .pizza-wizard-side-image {
+    display: none;
+  }
+}
+
 .pizza-wizard-side-image {
   height: 400px;
   width: 150px;
@@ -31,5 +37,6 @@
 .pizza-wizard-buttons-container {
   margin-top: 10px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
 }
