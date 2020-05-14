@@ -10,8 +10,8 @@
 }
 
 .pizza-wizard-side-image {
-  height: 400px;
-  width: 150px;
+  height: 450px;
+  width: 180px;
   margin-right: 20px;
   object-fit: cover;
   border: 3px inset rgb(0, 0, 0);
