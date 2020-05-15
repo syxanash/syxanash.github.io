@@ -54,7 +54,7 @@ class Poweroff extends Component {
       if (navigator.appVersion.indexOf('Mac') !== -1) OSName = 'macOS';
       if (navigator.appVersion.indexOf('X11') !== -1) OSName = 'UNIX';
       if (navigator.appVersion.indexOf('Linux') !== -1) OSName = 'Linux';
-      if (navigator.appVersion.indexOf('Android') !== -1) OSName = 'Shitty Linux';
+      if (navigator.appVersion.indexOf('Android') !== -1) OSName = 'Linux Botnet Edition';
 
       return OSName;
     };
