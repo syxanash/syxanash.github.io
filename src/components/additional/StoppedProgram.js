@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
 import lastUpdatedFile from '../../resources/last-updated.json';
+import bootPux from '../../resources/images/pux.gif';
 
 import './StoppedProgram.css';
 
@@ -46,6 +47,18 @@ class Poweroff extends Component {
     const { outputText } = this.state;
     const { shouldStopWindowing } = this.props;
 
+    const getOSName = () => {
+      let OSName = 'Unknown OS';
+
+      if (navigator.appVersion.indexOf('Win') !== -1) OSName = 'Windows';
+      if (navigator.appVersion.indexOf('Mac') !== -1) OSName = 'macOS';
+      if (navigator.appVersion.indexOf('X11') !== -1) OSName = 'UNIX';
+      if (navigator.appVersion.indexOf('Linux') !== -1) OSName = 'Linux';
+      if (navigator.appVersion.indexOf('Android') !== -1) OSName = 'Shitty Linux';
+
+      return OSName;
+    };
+
     if (!shouldStopWindowing) {
       return null;
     }
@@ -71,40 +84,32 @@ class Poweroff extends Component {
         </style>
       </Helmet>
       <div className='terminal-style'>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Uncompressing Pippo OS... done, booting the kernel.</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Booting Linux on physical CPU 0x0</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Initializing cgroup subsys cpu</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Initializing cgroup subsys cpuacct</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Pippo OS version {lastUpdatedFile.buildNumber}
-        (dc4@dc4-XPS13-9333) #775 PREEMPT Thu Apr 2 18:10:12 BST 2015</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Load BCM2835 MMC driver</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Initializing XFRM netlink socket</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started LSB: This services starts and
-          stops the USB Arbitrator..</div>
-        <div>Starting Hostname Service...</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started Hostname Service.</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started Login Service.</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Freeing unused kernel memory:
-          340K (c079b000 - c07f0000)</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] usb 1-1: New USB device found,
-          idVendor=0424, idProduct=9512</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] usb 1-1: New USB device strings:
-          Mfr=0, Product=0, SerialNumber=0</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] hub 1-1:1.0: USB hub found</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] hub 1-1:1.0: 3 ports detected</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] usb 1-1.1: new high-speed USB
-          device number 3 using dwc_otg</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] usb 1-1.1: New USB device found,
-          idVendor=0424, idProduct=ec00</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] usb 1-1.1: New USB device strings:
-          Mfr=0, Product=0, SerialNumber=0</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started Locale Service.</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started Authorization Manager.</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started Modem Manager.</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] User-agent detected: {navigator.userAgent}</div>
-        <div>[&nbsp;&nbsp;OK&nbsp;&nbsp;] Started Pippo OS Build.
-          "{lastUpdatedFile.buildNumber.substr(0, 5)}"</div>
-        ^C<br />
+        { Array(window.navigator.hardwareConcurrency).fill().map(() => <span><img height='90' alt='kernel mascot' src={ bootPux } />&nbsp;</span>) }
+        <br /><br />
+        <div>Welcome to the <span className='console-text-blue'>P</span><span className='console-text-pink'>i</span><span className='console-text-yellow'>p</span><span className='console-text-purple'>p</span><span className='console-text-green'>o</span> <span className='console-text-purple'>O</span><span className='console-text-yellow'>S</span> experience!</div><br />
+        <div>&nbsp;&nbsp;<span className='console-text-green'>Found SCSI device(s) handled by</span> <span className='console-text-purple'>BusLogic.o.</span></div>
+        <div><span className='console-text-blue'>Scanning for USB/Firewire devices... Done. (that was quick)</span></div>
+        <div><span className='console-text-blue'>Enabling DMA acceleration for:</span> <span className='console-text-purple'>hdc</span></div>
+        <div>&nbsp;&nbsp;<span className='console-text-green'>Accessing Pippo OS Kernel at</span> <span className='console-text-purple'>github.com/syxanash/syxanash.github.io</span><span className='console-text-green'>....</span></div>
+        <div><span className='console-text-blue'>Total memory found : <span className='console-text-yellow'>515124</span> kB</span></div>
+        <div><span className='console-text-blue'>Creating <span className='console-text-yellow'>/ramdisk</span> (dynamic size=404516k) on <span className='console-text-purple'>shared memory</span>...Done.</span></div>
+        <div><span className='console-text-blue'>Creating directories and symlinks on ramdisk...Done</span></div>
+        <div><span className='console-text-blue'>Starting init process.</span></div>
+        <div>INIT version 1.66.6 booting</div>
+        <div>&nbsp;&nbsp;<span className='console-text-green'>Running Pippo OS Kernel</span> <span className='console-text-yellow'>1.66.6 Build. {lastUpdatedFile.buildNumber.substr(0, 5)}</span></div>
+        <div>&nbsp;&nbsp;<span className='console-text-green'>Processor 0 is a very good one apparently!</span></div>
+        <div>&nbsp;&nbsp;<span className='console-text-green'>ACPI Bios found, activating modules: <span className='console-text-yellow'>ac battery button fan processor thermal</span></span></div>
+        <div>&nbsp;&nbsp;<span className='console-text-green'>USB found, managed by <span className='console-text-purple'>hotplug</span>: <span className='console-text-yellow'>(Re-)scanning USB devices...
+          you never know[001 ] Done.</span></span></div>
+        <div>Autoconfiguring devices... <span className='console-text-green'>▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span> Done.</div>
+        <div>&nbsp;&nbsp;<span className='console-text-green'>Mouse is <span className='console-text-yellow'>a mouse (with wheel hopefully) at /dev/psaux</span></span></div>
+        <div>&nbsp;&nbsp;<span className='console-text-green'>Video is <span className='console-text-yellow'>{`${window.screen.width}x${window.screen.height}`}</span></span></div>
+        <div>&nbsp;&nbsp;<span className='console-text-green'>User Agent is <span className='console-text-yellow'>{navigator.userAgent}</span></span></div>
+        <div>&nbsp;&nbsp;<span className='console-text-green'>Host OS is <span className='console-text-yellow'>{getOSName()}</span></span></div>
+        <div><span className='console-text-blue'>Scanning for Harddisk partitions and creating <span className='console-text-yellow'>/etc/fstab</span>... <span className='console-text-green'>Done.</span></span></div>
+        <div>Booting sequence <span className='console-text-green'>complete</span>!</div>
+        <br />
+        [1]+  Exit 1 ^C<br />
         <span dangerouslySetInnerHTML={ { __html: outputText } }></span>
         <div ref={ this.messagesEndRef } />
       </div>

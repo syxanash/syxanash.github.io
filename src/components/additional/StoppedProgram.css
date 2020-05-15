@@ -4,10 +4,26 @@
 
   padding: 5px;
 
-  text-shadow: 0px 0px 8px white;
+  text-shadow: 0px 0px 10px white;
 
   color: white;
   font-size: 18px;
   font-weight: bold;
   font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
+}
+
+.console-text-green {
+  color: #39ff38;
+}
+
+.console-text-purple {
+  color: #f13df4;
+}
+
+.console-text-blue {
+  color: #45ccf6;
+}
+
+.console-text-yellow {
+  color: #fff97f;
 }
