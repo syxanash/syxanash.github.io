@@ -84,9 +84,8 @@ class Poweroff extends Component {
         </style>
       </Helmet>
       <div className='terminal-style'>
-        { Array(window.navigator.hardwareConcurrency).fill().map(() => <span><img height='90' alt='kernel mascot' src={ bootPux } />&nbsp;</span>) }
-        <br /><br />
-        <div>Welcome to the <span className='console-text-blue'>P</span><span className='console-text-pink'>i</span><span className='console-text-yellow'>p</span><span className='console-text-purple'>p</span><span className='console-text-green'>o</span> <span className='console-text-purple'>O</span><span className='console-text-yellow'>S</span> experience!</div><br />
+        <div style={ { paddingBottom: '5px' } }>{ Array(window.navigator.hardwareConcurrency).fill().map(() => <span><img height='90' alt='kernel mascot' src={ bootPux } />&nbsp;</span>) }</div>
+        <div>Welcome to the <span className='console-text-blue'>P</span><span className='console-text-pink'>i</span><span className='console-text-yellow'>p</span><span className='console-text-purple'>p</span><span className='console-text-green'>o</span> <span className='console-text-red'>O</span><span className='console-text-yellow'>S</span> experience!</div><br />
         <div>&nbsp;&nbsp;<span className='console-text-green'>Found SCSI device(s) handled by</span> <span className='console-text-purple'>BusLogic.o.</span></div>
         <div><span className='console-text-blue'>Scanning for USB/Firewire devices... Done. (that was quick)</span></div>
         <div><span className='console-text-blue'>Enabling DMA acceleration for:</span> <span className='console-text-purple'>hdc</span></div>
@@ -97,7 +96,7 @@ class Poweroff extends Component {
         <div><span className='console-text-blue'>Starting init process.</span></div>
         <div>INIT version 1.66.6 booting</div>
         <div>&nbsp;&nbsp;<span className='console-text-green'>Running Pippo OS Kernel</span> <span className='console-text-yellow'>1.66.6 Build. {lastUpdatedFile.buildNumber.substr(0, 5)}</span></div>
-        <div>&nbsp;&nbsp;<span className='console-text-green'>Processor 0 is a very good one apparently!</span></div>
+        <div>&nbsp;&nbsp;<span className='console-text-green'>Logical processors found: <span className='console-text-yellow'>{ window.navigator.hardwareConcurrency }</span></span></div>
         <div>&nbsp;&nbsp;<span className='console-text-green'>ACPI Bios found, activating modules: <span className='console-text-yellow'>ac battery button fan processor thermal</span></span></div>
         <div>&nbsp;&nbsp;<span className='console-text-green'>USB found, managed by <span className='console-text-purple'>hotplug</span>: <span className='console-text-yellow'>(Re-)scanning USB devices...
           you never know[001 ] Done.</span></span></div>
@@ -107,8 +106,9 @@ class Poweroff extends Component {
         <div>&nbsp;&nbsp;<span className='console-text-green'>User Agent is <span className='console-text-yellow'>{navigator.userAgent}</span></span></div>
         <div>&nbsp;&nbsp;<span className='console-text-green'>Host OS is <span className='console-text-yellow'>{getOSName()}</span></span></div>
         <div><span className='console-text-blue'>Scanning for Harddisk partitions and creating <span className='console-text-yellow'>/etc/fstab</span>... <span className='console-text-green'>Done.</span></span></div>
-        <div>Booting sequence <span className='console-text-green'>complete</span>!</div>
+        <div>INIT: Entering runlevel: 5</div>
         <br />
+        <div><span className='console-text-red'>*** Orekcimdrap Window Manager has been halted ***</span></div>
         [1]+  Exit 1 ^C<br />
         <span dangerouslySetInnerHTML={ { __html: outputText } }></span>
         <div ref={ this.messagesEndRef } />
