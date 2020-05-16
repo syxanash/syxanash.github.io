@@ -42,7 +42,7 @@ class ProjectsBody extends Component {
         I work on small side projects to create something I need
         or to play with new tech. Here is a list of the ones I really enjoyed building:</div>
         {this.renderProjectsList()}
-        <span>{randomPromptChars} <span className='blink-text'>█</span></span>
+        <span>{randomPromptChars} <span className='blink'>█</span></span>
       </Cutout>
     </div>);
   }

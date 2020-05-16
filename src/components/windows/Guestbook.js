@@ -219,7 +219,7 @@ class GuestbookBody extends Component {
       </div>
     </Cutout>
     <div className='bottom-text'>
-      <span role="img" aria-label="warning" className='blink-text'>⚠️</span> I'm still investigating on the authenticity of some comments. <span role="img" aria-label="warning" className='blink-text'>⚠️</span>
+      <span role="img" aria-label="warning" className='blink'>⚠️</span> I'm still investigating on the authenticity of some comments. <span role="img" aria-label="warning" className='blink'>⚠️</span>
     </div>
   </div>
   )

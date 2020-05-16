@@ -47,7 +47,7 @@ class BrokenScreen extends Component {
         </style>
       </Helmet>
       <div className='centered-item'>
-        <h1 className='blink-text'>ERROR</h1>
+        <h1 className='blink'>ERROR</h1>
         <p>The computer has been permanently damaged!</p>
         { showHint ? <p className='shake'>or is it?</p> : '' }
         { showQrCode ? <img src={ qrcodeFix } alt='qrcode fix' /> : '' }

@@ -40,13 +40,3 @@
 .project-item a:visited {
   color: lightskyblue;
 }
-
-.blink-text {
-  animation: blinker 500ms linear infinite;
-}
-
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
