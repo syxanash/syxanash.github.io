@@ -35,7 +35,7 @@ class GuestbookBody extends Component {
 
   handleOpenWindow = () => {
     const { openWindow } = this.props;
-    openWindow('awesomegui', true);
+    openWindow('webdesktops', true);
   }
 
   render = () => (<div>

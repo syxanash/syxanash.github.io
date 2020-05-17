@@ -6,7 +6,7 @@ import { GuestbookHeader, GuestbookBody } from './windows/Guestbook';
 import { MusicHeader, MusicBody } from './windows/Music';
 import { CestinoHeader, CestinoBody } from './windows/Cestino';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
-import { AwesomeGUIHeader, AwesomeGUIBody } from './windows/AwesomeGUI';
+import { WebDesktopsHeader, WebDesktopsBody } from './windows/WebDesktops';
 import { OSInfoWindowHeader, OSInfoWindowBody } from './windows/OSInfoWindow';
 import { FixHeader, FixBody } from './windows/Fix';
 
@@ -80,13 +80,13 @@ export default function WindowsList() {
       body: CreditsBody,
       windowTheme: PippoTheme,
     },
-    awesomegui: {
+    webdesktops: {
       hasFullScreen: true,
       canCloseWindow: true,
       opened: false,
       focused: false,
-      header: AwesomeGUIHeader,
-      body: AwesomeGUIBody,
+      header: WebDesktopsHeader,
+      body: WebDesktopsBody,
       windowTheme: PippoTheme,
     },
     osinfowindow: {

@@ -4,20 +4,20 @@ import {
   Cutout, Toolbar, Button, Fieldset,
 } from 'react95';
 
-import './AwesomeGUI.css';
+import './WebDesktops.css';
 import remoteDesktops from '../../resources/remote-desktops.json';
 import computerIcon from '../../resources/icons/remote.gif';
 import mainWindowIcon from '../../resources/icons/inceputer.gif';
 
-class AwesomeGUIHeader extends Component {
+class WebDesktopsHeader extends Component {
   render = () => (
     <span>
-      <img src={ mainWindowIcon } alt='remote desktops icon' style={ { height: '15px' } }/> Awesome GUI Websites
+      <img src={ mainWindowIcon } alt='remote desktops icon' style={ { height: '15px' } }/> Awesome Web Desktops
     </span>
   )
 }
 
-class AwesomeGUIBody extends Component {
+class WebDesktopsBody extends Component {
   state = {
     httpsOnlyEnabled: false,
   }
@@ -105,4 +105,4 @@ class AwesomeGUIBody extends Component {
   }
 }
 
-export { AwesomeGUIHeader, AwesomeGUIBody };
+export { WebDesktopsHeader, WebDesktopsBody };
