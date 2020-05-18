@@ -12,7 +12,7 @@ import mainWindowIcon from '../../resources/icons/inceputer.gif';
 class WebDesktopsHeader extends Component {
   render = () => (
     <span>
-      <img src={ mainWindowIcon } alt='remote desktops icon' style={ { height: '15px' } }/> Awesome Web Desktops
+      <img src={ mainWindowIcon } alt='remote desktops icon' style={ { height: '15px' } }/> Web Desktops
     </span>
   )
 }
@@ -86,7 +86,7 @@ class WebDesktopsBody extends Component {
           <Toolbar>
             <Button onClick={ this.openRandomURL } variant="menu">Random</Button>
             <Button onClick={ this.toggleHTTPSFilter } active={ httpsOnlyEnabled } variant="menu">HTTPS Only</Button>
-            <Button onClick={ () => this.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-gui-websites' }) } variant="menu">Contribute</Button>
+            <Button onClick={ () => this.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) } variant="menu">Contribute</Button>
           </Toolbar>
         </div>
         <div style={ { paddingBottom: '10px' } }>
