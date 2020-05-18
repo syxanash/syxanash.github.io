@@ -32,10 +32,6 @@
 		"url": "https://www.expensive.toys"
 	},
 	{
-		"name": "Enhance Computer",
-		"url": "https://www.enhance.computer"
-	},
-	{
 		"name": "The Restart Page",
 		"url": "http://www.therestartpage.com"
 	},
@@ -226,5 +222,13 @@
 	{
 		"name": "Victor Ribeiro",
 		"url": "https://victorribeiro.com"
+	},
+	{
+		"name": "Nirrius Creative Studio",
+		"url": "https://nirri.us"
+	},
+	{
+		"name": "Hillary Churchill - Copywriter",
+		"url": "http://hillarychurchill.com"
 	}
 ]
