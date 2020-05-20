@@ -5,6 +5,7 @@ import circuitAnimation from '../../resources/images/circuit.gif';
 import bugImage from '../../resources/icons/spiderwindow.gif';
 import screenBackground from '../../resources/images/kernelpanic.gif';
 import explosionAnim from '../../resources/images/explosion.gif';
+import viewFinder from '../../resources/icons/viewfinder.gif';
 
 import './BrokenScreen.css';
 
@@ -14,7 +15,7 @@ class BrokenScreen extends Component {
 
     this.bugRefreshInterval = undefined;
     this.explosionTimeout = undefined;
-    this.backgroundCircuits = 500;
+    this.backgroundCircuits = parseInt(document.body.clientWidth / 3, 10);
     this.bugsInterval = 800;
 
     this.state = {
@@ -26,10 +27,10 @@ class BrokenScreen extends Component {
     };
   }
 
-  renderRandomIcon = () => Array(this.backgroundCircuits).fill().map((_, index) => (
+  generateBackgroundCircuit = () => Array(this.backgroundCircuits).fill().map((_, index) => (
     <div
-      id={ `randommainIcon_${index}` }
-      key={ `random_icon_${index}` }
+      id={ `background_circuit_${index}` }
+      key={ `background_circuit_${index}` }
       style={ {
         position: 'absolute',
         top: `${Math.floor(Math.random() * (document.body.clientHeight))}px`,
@@ -57,7 +58,7 @@ class BrokenScreen extends Component {
   }
 
   componentDidMount = () => {
-    this.setState({ randomCircuit: this.renderRandomIcon() });
+    this.setState({ randomCircuit: this.generateBackgroundCircuit() });
   }
 
   renderBug = () => {
@@ -154,6 +155,13 @@ class BrokenScreen extends Component {
             }
             * {
               overflow: hidden;
+              cursor: url(${viewFinder}) 24 24, auto;
+              webkit-touch-callout: none; /* iOS Safari */
+               -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                  -moz-user-select: none; /* Old versions of Firefox */
+                   -ms-user-select: none; /* Internet Explorer/Edge */
+                       user-select: none; /* Non-prefixed version, currently
             }`
           }
         </style>
