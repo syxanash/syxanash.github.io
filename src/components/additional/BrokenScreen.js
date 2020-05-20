@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import circuitAnimation from '../../resources/images/circuit.gif';
 import bugImage from '../../resources/icons/spiderwindow.gif';
 import screenBackground from '../../resources/images/kernelpanic.gif';
+import explosionAnim from '../../resources/images/explosion.gif';
 
 import './BrokenScreen.css';
 
@@ -11,16 +12,21 @@ class BrokenScreen extends Component {
   constructor(props) {
     super(props);
 
-    this.bugTimeout = undefined;
+    this.bugRefreshInterval = undefined;
+    this.explosionTimeout = undefined;
+    this.backgroundCircuits = 500;
+    this.bugsInterval = 800;
 
     this.state = {
       randomCircuit: undefined,
-      bugX: 0,
-      bugY: 0,
+      coordinates: [],
+      bugsNumber: 12,
+      explosionVisibile: false,
+      explosionCoordinates: { x: 0, y: 0 },
     };
   }
 
-  renderRandomIcon = () => Array(500).fill().map((_, index) => (
+  renderRandomIcon = () => Array(this.backgroundCircuits).fill().map((_, index) => (
     <div
       id={ `randommainIcon_${index}` }
       key={ `random_icon_${index}` }
@@ -41,8 +47,12 @@ class BrokenScreen extends Component {
   ));
 
   componentWillUnmount() {
-    if (this.bugTimeout) {
-      clearTimeout(this.bugTimeout);
+    if (this.bugRefreshInterval) {
+      clearInterval(this.bugRefreshInterval);
+    }
+
+    if (this.explosionTimeout) {
+      clearTimeout(this.explosionTimeout);
     }
   }
 
@@ -51,24 +61,76 @@ class BrokenScreen extends Component {
   }
 
   renderBug = () => {
-    const { bugX, bugY } = this.state;
+    const { coordinates } = this.state;
 
-    return (<div
-      id='floating_bug'
+    return coordinates.map((axis, index) => (<div
+      id={ `floating_bug_${index}` }
+      key={ `bug_${index}` }
       style={ {
         position: 'absolute',
-        top: `${bugY}px`,
-        left: `${bugX}px`,
+        top: `${axis.bugY}px`,
+        left: `${axis.bugX}px`,
         marginLeft: '-40px',
         marginTop: '-30px',
       } }
+      onClick={ () => { this.deleteBug(axis.bugX, axis.bugY); } }
     >
       <img
-        height='40px'
+        height='50px'
         src={ bugImage }
         alt='icon'
       />
-    </div>);
+    </div>));
+  }
+
+  deleteBug = (x, y) => {
+    const { bugsNumber } = this.state;
+    this.setState({
+      bugsNumber: bugsNumber - 1,
+      explosionCoordinates: { x, y },
+      explosionVisibile: true,
+    });
+
+    this.explosionTimeout = setTimeout(() => {
+      this.setState({ explosionVisibile: false });
+    }, 500);
+  }
+
+  renderExplosion() {
+    const { explosionVisibile, explosionCoordinates } = this.state;
+    return (
+      <div
+        id={ 'bug_exploded' }
+        key={ 'bug' }
+        style={ {
+          position: 'absolute',
+          top: `${explosionCoordinates.y}px`,
+          left: `${explosionCoordinates.x}px`,
+          marginLeft: '-40px',
+          marginTop: '-30px',
+          display: explosionVisibile ? 'block' : 'none',
+        } }
+      >
+        <img
+          height='60px'
+          src={ explosionAnim }
+          alt='icon'
+        />
+      </div>
+    );
+  }
+
+  updateAxis = () => {
+    const { bugsNumber } = this.state;
+
+    const newCoordinates = Array(bugsNumber).fill().map(() => ({
+      bugX: Math.floor(Math.random() * (document.body.clientWidth)),
+      bugY: Math.floor(Math.random() * (document.body.clientHeight)),
+    }));
+
+    this.setState({
+      coordinates: newCoordinates,
+    });
   }
 
   render() {
@@ -79,13 +141,8 @@ class BrokenScreen extends Component {
       return null;
     }
 
-    if (!this.bugTimeout) {
-      this.bugTimeout = setInterval(() => {
-        this.setState({
-          bugX: Math.floor(Math.random() * (document.body.clientWidth)),
-          bugY: Math.floor(Math.random() * (document.body.clientHeight)),
-        });
-      }, 2000);
+    if (!this.bugRefreshInterval) {
+      this.bugRefreshInterval = setInterval(this.updateAxis, this.bugsInterval);
     }
 
     return (<React.Fragment>
@@ -102,14 +159,15 @@ class BrokenScreen extends Component {
         </style>
       </Helmet>
       { randomCircuit }
-      { this.renderBug() }
       <div className='centered-item'>
         <div className='error-items'>
           <h1 className='blink'>ERROR</h1>
           <p>The computer has been permanently damaged!</p>
-          <div className='shake'>Squish 5 bugs roaming freely the network</div>
+          <div className='shake'>Squish the bugs infesting the network</div>
         </div>
       </div>
+      { this.renderBug() }
+      { this.renderExplosion() }
     </React.Fragment>);
   }
 }
