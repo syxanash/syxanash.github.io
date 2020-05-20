@@ -9,7 +9,12 @@
   font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
 }
 
+.error-items { 
+  padding: 20px;
+}
+
 .shake {
+  color: greenyellow;
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }

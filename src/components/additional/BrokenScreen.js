@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
+import circuitAnimation from '../../resources/images/circuit.gif';
+import bugImage from '../../resources/icons/spiderwindow.gif';
 import screenBackground from '../../resources/images/kernelpanic.gif';
-import qrcodeFix from '../../resources/images/qrcodefix.png';
 
 import './BrokenScreen.css';
 
@@ -10,82 +11,106 @@ class BrokenScreen extends Component {
   constructor(props) {
     super(props);
 
-    this.hintTimeout = undefined;
-    this.solutionTimeout = undefined;
+    this.bugTimeout = undefined;
+
     this.state = {
-      showHint: false,
-      showQrCode: false,
+      randomCircuit: undefined,
+      bugX: 0,
+      bugY: 0,
     };
   }
 
-  renderBackgroundPicture = () => {
-    const { showQrCode, showHint } = this.state;
+  renderRandomIcon = () => Array(500).fill().map((_, index) => (
+    <div
+      id={ `randommainIcon_${index}` }
+      key={ `random_icon_${index}` }
+      style={ {
+        position: 'absolute',
+        top: `${Math.floor(Math.random() * (document.body.clientHeight))}px`,
+        left: `${Math.floor(Math.random() * (document.body.clientWidth))}px`,
+        marginLeft: '-40px',
+        marginTop: '-30px',
+      } }
+    >
+      <img
+        height='40px'
+        src={ circuitAnimation }
+        alt='icon'
+      />
+    </div>
+  ));
+
+  componentWillUnmount() {
+    if (this.bugTimeout) {
+      clearTimeout(this.bugTimeout);
+    }
+  }
+
+  componentDidMount = () => {
+    this.setState({ randomCircuit: this.renderRandomIcon() });
+  }
+
+  renderBug = () => {
+    const { bugX, bugY } = this.state;
+
+    return (<div
+      id='floating_bug'
+      style={ {
+        position: 'absolute',
+        top: `${bugY}px`,
+        left: `${bugX}px`,
+        marginLeft: '-40px',
+        marginTop: '-30px',
+      } }
+    >
+      <img
+        height='40px'
+        src={ bugImage }
+        alt='icon'
+      />
+    </div>);
+  }
+
+  render() {
+    const { randomCircuit } = this.state;
+    const { isScreenBroken } = this.props;
+
+    if (!isScreenBroken) {
+      return null;
+    }
+
+    if (!this.bugTimeout) {
+      this.bugTimeout = setInterval(() => {
+        this.setState({
+          bugX: Math.floor(Math.random() * (document.body.clientWidth)),
+          bugY: Math.floor(Math.random() * (document.body.clientHeight)),
+        });
+      }, 2000);
+    }
 
     return (<React.Fragment>
       <Helmet>
         <style>
           {
             `body {
-              background: url(${screenBackground}) no-repeat center center fixed; 
-              -webkit-background-size: cover;
-              -moz-background-size: cover;
-              -o-background-size: cover;
-              background-size: cover;
-              margin: 0px
+              background: url(${screenBackground});
             }
             * {
               overflow: hidden;
-              cursor: url(data:image/gif;base64,R0lGODlhAQABAIABAAAAAAD/FywAAAAAAQABAAACAkQBADs=), auto;
-              webkit-touch-callout: none; /* iOS Safari */
-               -webkit-user-select: none; /* Safari */
-                -khtml-user-select: none; /* Konqueror HTML */
-                  -moz-user-select: none; /* Old versions of Firefox */
-                   -ms-user-select: none; /* Internet Explorer/Edge */
-                       user-select: none; /* Non-prefixed version, currently
             }`
           }
         </style>
       </Helmet>
+      { randomCircuit }
+      { this.renderBug() }
       <div className='centered-item'>
-        <h1 className='blink'>ERROR</h1>
-        <p>The computer has been permanently damaged!</p>
-        { showHint ? <p className='shake'>or is it?</p> : '' }
-        { showQrCode ? <img src={ qrcodeFix } alt='qrcode fix' /> : '' }
+        <div className='error-items'>
+          <h1 className='blink'>ERROR</h1>
+          <p>The computer has been permanently damaged!</p>
+          <div className='shake'>Squish 5 bugs roaming freely the network</div>
+        </div>
       </div>
     </React.Fragment>);
-  };
-
-  componentWillUmount = () => {
-    if (this.solutionTimeout) {
-      clearTimeout(this.solutionTimeout);
-    }
-
-    if (this.hintTimeout) {
-      clearTimeout(this.hintTimeout);
-    }
-  }
-
-  render() {
-    const { isScreenBroken } = this.props;
-    const { showHint } = this.state;
-
-    if (!isScreenBroken) {
-      return null;
-    }
-
-    if (!showHint) {
-      document.getElementById('errorSound').play();
-    }
-
-    this.solutionTimeout = setTimeout(() => {
-      this.setState({ showQrCode: true });
-    }, 20 * 1000);
-
-    this.hintTimeout = setTimeout(() => {
-      this.setState({ showHint: true });
-    }, 8 * 1000);
-
-    return this.renderBackgroundPicture();
   }
 }
 
