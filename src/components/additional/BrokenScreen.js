@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
+import easterEggObject from '../../resources/cestino-messages.json';
+
 import circuitAnimation from '../../resources/images/circuit.gif';
 import bugImage from '../../resources/icons/spiderwindow.gif';
 import screenBackground from '../../resources/images/kernelpanic.gif';
@@ -21,7 +23,8 @@ class BrokenScreen extends Component {
     this.state = {
       randomCircuit: undefined,
       coordinates: [],
-      bugsNumber: 12,
+      bugsNumber: easterEggObject.brokenScreenMessages.length,
+      bugsMessages: easterEggObject.brokenScreenMessages.reverse(),
       explosionVisibile: false,
       explosionCoordinates: { x: 0, y: 0 },
     };
@@ -135,7 +138,7 @@ class BrokenScreen extends Component {
   }
 
   render() {
-    const { randomCircuit } = this.state;
+    const { randomCircuit, bugsNumber, bugsMessages } = this.state;
     const { isScreenBroken } = this.props;
 
     if (!isScreenBroken) {
@@ -171,7 +174,11 @@ class BrokenScreen extends Component {
         <div className='error-items'>
           <h1 className='blink'>ERROR</h1>
           <p>The computer has been permanently damaged!</p>
-          <div className='shake'>Squish the bugs infesting the network</div>
+          <div className='shake'>
+            <span>
+              {bugsMessages[bugsNumber - 1]}
+            </span>
+          </div>
         </div>
       </div>
       { this.renderBug() }

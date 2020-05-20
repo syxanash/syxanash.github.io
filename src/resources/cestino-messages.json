@@ -1,70 +1,82 @@
-[
-  {
-    "message": "this button does nothing...",
-    "button": "OK"
-  },
-  {
-    "message": "nothing is happening...",
-    "button": "OK"
-  },
-  {
-    "message": "you really like this window?",
-    "button": "YES"
-  },
-  {
-    "message": "I know it feels good to click this button",
-    "button": "OK"
-  },
-  {
-    "message": "old design was better",
-    "button": "OK"
-  },
-  {
-    "message": "buttons nowadays are not as clickable as before",
-    "button": "OK"
-  },
-  {
-    "message": "everything made in the past is better",
-    "button": "OK"
-  },
-  {
-    "message": "songs, movies, videogames, politics...",
-    "button": "OK"
-  },
-  {
-    "message": "we're slaves of nostalgia",
-    "button": "OK"
-  },
-  {
-    "message": "past was good",
-    "button": "OK"
-  },
-  {
-    "message": "present is tedious",
-    "button": "OK."
-  },
-  {
-    "message": "past was cozy",
-    "button": "OK"
-  },
-  {
-    "message": "present is tiresome",
-    "button": ".OK"
-  },
-  {
-    "message": "we forgot the bad stuff",
-    "button": "OK"
-  },
-  {
-    "message": "but we remember the good time",
-    "button": "KO"
-  },
-  {
-    "message": "like nothing ever happened",
-    "button": "OK"
-  },
-  {
-    "message": "nothing will happen",
-    "button": "ok..."
-  }
-]
+{
+  "brokenScreenMessages": [
+    "You will never squish them all!",
+    "You're no match for my bugs, you poor fool!",
+    "remember జ్ఞా, feel old yet?",
+    "you'll never make it in time! (even though I forgot to implement a timer)",
+    "y2k will happen again in 2038!",
+    "my college teacher used to hate gotos in our code",
+    "all those moments will be lost in time...",
+    "time to die"
+  ],
+  "cestinoMessages": [
+    {
+      "message": "this button does nothing...",
+      "button": "OK"
+    },
+    {
+      "message": "nothing is happening...",
+      "button": "OK"
+    },
+    {
+      "message": "you really like this window?",
+      "button": "YES"
+    },
+    {
+      "message": "I know it feels good to click this button",
+      "button": "OK"
+    },
+    {
+      "message": "old design was better",
+      "button": "OK"
+    },
+    {
+      "message": "buttons nowadays are not as clickable as before",
+      "button": "OK"
+    },
+    {
+      "message": "everything made in the past is better",
+      "button": "OK"
+    },
+    {
+      "message": "songs, movies, videogames, politics...",
+      "button": "OK"
+    },
+    {
+      "message": "we're slaves of nostalgia",
+      "button": "OK"
+    },
+    {
+      "message": "past was good",
+      "button": "OK"
+    },
+    {
+      "message": "present is tedious",
+      "button": "OK."
+    },
+    {
+      "message": "past was cozy",
+      "button": "OK"
+    },
+    {
+      "message": "present is tiresome",
+      "button": "OK"
+    },
+    {
+      "message": "we forgot the bad stuff",
+      "button": "OK"
+    },
+    {
+      "message": "but we remember the good time",
+      "button": "O̪͈͇̻̗͎̞K̯̣̯͖̤͈͔̀"
+    },
+    {
+      "message": "like nothing ever happened",
+      "button": "OK"
+    },
+    {
+      "message": "nothing will happen",
+      "button": "ok..."
+    }
+  ]
+}
