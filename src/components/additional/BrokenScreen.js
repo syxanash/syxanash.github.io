@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import easterEggObject from '../../resources/cestino-messages.json';
 
 import circuitAnimation from '../../resources/images/circuit.gif';
-import bugImage from '../../resources/icons/spiderwindow.gif';
+import bugImage from '../../resources/images/bug.png';
 import screenBackground from '../../resources/images/kernelpanic.gif';
 import explosionAnim from '../../resources/images/explosion.gif';
 import viewFinder from '../../resources/icons/viewfinder.gif';
@@ -18,7 +18,7 @@ class BrokenScreen extends Component {
     this.bugRefreshInterval = undefined;
     this.explosionTimeout = undefined;
     this.textAnimationTimeout = undefined;
-    this.backgroundCircuits = parseInt(document.body.clientWidth / 3, 10);
+    this.backgroundCircuits = parseInt(document.body.clientWidth / 4, 10);
     this.bugsInterval = 800;
 
     this.state = {
@@ -157,6 +157,8 @@ class BrokenScreen extends Component {
     if (!isScreenBroken) {
       return null;
     }
+
+    localStorage.setItem('DON\'T YOU DARE YOU FILTHY CHEATER!!!!', 'DON\'T!');
 
     if (!this.bugRefreshInterval) {
       this.bugRefreshInterval = setInterval(this.updateAxis, this.bugsInterval);
