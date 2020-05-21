@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
+import TheAgent from './TheAgent';
+
 import easterEggObject from '../../resources/cestino-messages.json';
 
 import circuitAnimation from '../../resources/images/circuit.gif';
@@ -23,11 +25,11 @@ class BrokenScreen extends Component {
 
     this.state = {
       randomCircuit: undefined,
-      coordinates: [],
+      bugsList: [],
       bugsNumber: easterEggObject.brokenScreenMessages.length,
       bugsMessages: easterEggObject.brokenScreenMessages.reverse(),
       explosionVisibile: false,
-      explosionCoordinates: { x: 0, y: 0 },
+      explosionAxis: { x: 0, y: 0 },
       textAnimation: false,
     };
   }
@@ -71,9 +73,9 @@ class BrokenScreen extends Component {
   }
 
   renderBug = () => {
-    const { coordinates } = this.state;
+    const { bugsList } = this.state;
 
-    return coordinates.map((axis, index) => (<div
+    return bugsList.map((axis, index) => (<div
       id={ `floating_bug_${index}` }
       key={ `bug_${index}` }
       style={ {
@@ -98,7 +100,7 @@ class BrokenScreen extends Component {
     const { bugsNumber } = this.state;
     this.setState({
       bugsNumber: bugsNumber - 1,
-      explosionCoordinates: { x, y },
+      explosionAxis: { x, y },
       explosionVisibile: true,
       textAnimation: true,
     });
@@ -112,15 +114,15 @@ class BrokenScreen extends Component {
   }
 
   renderExplosion() {
-    const { explosionVisibile, explosionCoordinates } = this.state;
+    const { explosionVisibile, explosionAxis } = this.state;
     return (
       <div
         id={ 'bug_exploded' }
         key={ 'bug' }
         style={ {
           position: 'absolute',
-          top: `${explosionCoordinates.y}px`,
-          left: `${explosionCoordinates.x}px`,
+          top: `${explosionAxis.y}px`,
+          left: `${explosionAxis.x}px`,
           marginLeft: '-40px',
           marginTop: '-30px',
           display: explosionVisibile ? 'block' : 'none',
@@ -138,27 +140,48 @@ class BrokenScreen extends Component {
   updateAxis = () => {
     const { bugsNumber } = this.state;
 
-    const newCoordinates = Array(bugsNumber).fill().map(() => ({
+    const newbugsList = Array(bugsNumber).fill().map(() => ({
       bugX: Math.floor(Math.random() * (document.body.clientWidth)),
       bugY: Math.floor(Math.random() * (document.body.clientHeight)),
     }));
 
     this.setState({
-      coordinates: newCoordinates,
+      bugsList: newbugsList,
     });
   }
 
+  renderErrorText = () => {
+    const { bugsMessages, textAnimation, bugsNumber } = this.state;
+
+    return (
+      <React.Fragment>
+        <h1 className='blink'>ERROR</h1>
+        <p>The computer has been permanently damaged!</p>
+        <div className={ textAnimation ? 'shake' : '' }>
+          <span className='error-message'>
+            {bugsMessages[bugsNumber - 1]}
+          </span>
+        </div>
+      </React.Fragment>
+    );
+  }
+
   render() {
-    const {
-      randomCircuit, bugsNumber, bugsMessages, textAnimation,
-    } = this.state;
+    const { randomCircuit, bugsNumber } = this.state;
     const { isScreenBroken } = this.props;
+    const bugsCleaned = bugsNumber <= 0;
+
+    const antiCheatString = 'DON\'T YOU DARE YOU FILTHY CHEATER!!!!';
 
     if (!isScreenBroken) {
       return null;
     }
 
-    localStorage.setItem('DON\'T YOU DARE YOU FILTHY CHEATER!!!!', 'DON\'T!');
+    if (bugsCleaned) {
+      localStorage.removeItem(antiCheatString);
+    }
+
+    localStorage.setItem(antiCheatString, 'DON\'T!');
 
     if (!this.bugRefreshInterval) {
       this.bugRefreshInterval = setInterval(this.updateAxis, this.bugsInterval);
@@ -187,13 +210,11 @@ class BrokenScreen extends Component {
       { randomCircuit }
       <div className='centered-item'>
         <div className='error-items'>
-          <h1 className='blink'>ERROR</h1>
-          <p>The computer has been permanently damaged!</p>
-          <div className={ textAnimation ? 'shake' : '' }>
-            <span className='error-message'>
-              {bugsMessages[bugsNumber - 1]}
-            </span>
-          </div>
+          {
+            bugsCleaned
+              ? <TheAgent displayAgent={ true } negative={ true } />
+              : this.renderErrorText()
+          }
         </div>
       </div>
       { this.renderBug() }

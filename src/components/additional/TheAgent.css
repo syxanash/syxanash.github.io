@@ -9,6 +9,15 @@
   padding-right: 20px;
 }
 
+.continue-button {
+  color: blue;
+  font-weight: bold;
+}
+
+.continue-button:hover {
+  text-decoration: underline;
+}
+
 .agent-speech {
   background: #fffee8;
   padding: 10px;
