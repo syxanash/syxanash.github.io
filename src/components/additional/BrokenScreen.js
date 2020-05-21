@@ -17,6 +17,7 @@ class BrokenScreen extends Component {
 
     this.bugRefreshInterval = undefined;
     this.explosionTimeout = undefined;
+    this.textAnimationTimeout = undefined;
     this.backgroundCircuits = parseInt(document.body.clientWidth / 3, 10);
     this.bugsInterval = 800;
 
@@ -27,6 +28,7 @@ class BrokenScreen extends Component {
       bugsMessages: easterEggObject.brokenScreenMessages.reverse(),
       explosionVisibile: false,
       explosionCoordinates: { x: 0, y: 0 },
+      textAnimation: false,
     };
   }
 
@@ -58,6 +60,10 @@ class BrokenScreen extends Component {
     if (this.explosionTimeout) {
       clearTimeout(this.explosionTimeout);
     }
+
+    if (this.textAnimationTimeout) {
+      clearTimeout(this.textAnimationTimeout);
+    }
   }
 
   componentDidMount = () => {
@@ -80,6 +86,7 @@ class BrokenScreen extends Component {
       onClick={ () => { this.deleteBug(axis.bugX, axis.bugY); } }
     >
       <img
+        style={ { pointerEvents: 'none' } }
         height='50px'
         src={ bugImage }
         alt='icon'
@@ -93,11 +100,15 @@ class BrokenScreen extends Component {
       bugsNumber: bugsNumber - 1,
       explosionCoordinates: { x, y },
       explosionVisibile: true,
+      textAnimation: true,
     });
 
     this.explosionTimeout = setTimeout(() => {
       this.setState({ explosionVisibile: false });
     }, 500);
+    this.textAnimationTimeout = setTimeout(() => {
+      this.setState({ textAnimation: false });
+    }, 2000);
   }
 
   renderExplosion() {
@@ -138,7 +149,9 @@ class BrokenScreen extends Component {
   }
 
   render() {
-    const { randomCircuit, bugsNumber, bugsMessages } = this.state;
+    const {
+      randomCircuit, bugsNumber, bugsMessages, textAnimation,
+    } = this.state;
     const { isScreenBroken } = this.props;
 
     if (!isScreenBroken) {
@@ -174,8 +187,8 @@ class BrokenScreen extends Component {
         <div className='error-items'>
           <h1 className='blink'>ERROR</h1>
           <p>The computer has been permanently damaged!</p>
-          <div className='shake'>
-            <span>
+          <div className={ textAnimation ? 'shake' : '' }>
+            <span className='error-message'>
               {bugsMessages[bugsNumber - 1]}
             </span>
           </div>

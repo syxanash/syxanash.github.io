@@ -14,8 +14,11 @@
   padding: 20px;
 }
 
-.shake {
+.error-message {
   color: greenyellow;
+}
+
+.shake {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 }

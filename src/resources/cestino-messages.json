@@ -1,14 +1,4 @@
 {
-  "brokenScreenMessages": [
-    "You will never squish them all!",
-    "You're no match for my bugs, you poor fool!",
-    "remember జ్ఞా, feel old yet?",
-    "you'll never make it in time! (even though I forgot to implement a timer)",
-    "y2k will happen again in 2038!",
-    "my college teacher used to hate gotos in our code",
-    "all those moments will be lost in time...",
-    "time to die"
-  ],
   "cestinoMessages": [
     {
       "message": "this button does nothing...",
@@ -78,5 +68,15 @@
       "message": "nothing will happen",
       "button": "ok..."
     }
+  ],
+  "brokenScreenMessages": [
+    "You will never squish them all!",
+    "You're no match for my bugs, you poor fool!",
+    "remember జ్ఞా, feel old yet?",
+    "you'll never make it in time! (even though I forgot to implement a timer)",
+    "y2k will happen again in 2038!",
+    "my college teacher used to hate gotos in our code",
+    "all those moments will be lost in time...",
+    "... like tears in rain"
   ]
 }
