@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import Typist from 'react-typist';
 
 import agentImg from '../../resources/images/the_agent.gif';
-import agentImgShut from '../../resources/images/the_agent_shut.gif';
+import agentImgSilent from '../../resources/images/the_agent_shut.gif';
 
 import agentImgNegative from '../../resources/images/the_agent_negative.gif';
-import agentImgShutNegative from '../../resources/images/the_agent_shut_negative.gif';
+import agentImgSilentNegative from '../../resources/images/the_agent_shut_negative.gif';
 
 import 'animate.css';
 import './TheAgent.css';
@@ -23,6 +23,11 @@ class TheAgent extends Component {
 
   imageLoaded = () => {
     this.setState({ imageLoaded: true });
+  }
+
+  increaseSpeechIndex = () => {
+    const { speechIndex } = this.state;
+    this.setState({ speechIndex: speechIndex + 1, stillTalking: true });
   }
 
   renderSpeechBubble = (speechText) => {
@@ -45,11 +50,6 @@ class TheAgent extends Component {
           : <span>{speechText}</span>
       }
     </div>);
-  }
-
-  increaseSpeechIndex = () => {
-    const { speechIndex } = this.state;
-    this.setState({ speechIndex: speechIndex + 1, stillTalking: true });
   }
 
   render() {
@@ -90,19 +90,28 @@ class TheAgent extends Component {
       </span>,
     ];
 
-    const finalSpeechText = localStorage.getItem('fixed') ? speechTextAfterBug : speechTextBeforeBug;
+    let finalSpeechText = localStorage.getItem('fixed') ? speechTextAfterBug : speechTextBeforeBug;
+
+    if (negative) {
+      finalSpeechText = speechesForNegativeAgent[speechIndex];
+    }
+
+    const finalAgentImage = negative
+      ? { talking: agentImgNegative, silent: agentImgSilentNegative }
+      : { talking: agentImg, silent: agentImgSilent };
 
     return (<div className='agent-container'>
       <div className='agent-image'>
         {
-          negative
-            ? <img src={ stillTalking ? agentImgNegative : agentImgShutNegative } onLoad={ this.imageLoaded } style={ { height: '250px' } } alt='the secret agent' />
-            : <img src={ stillTalking ? agentImg : agentImgShut } onLoad={ this.imageLoaded } style={ { height: '250px' } } alt='the secret agent' />
+          <img
+            src={ stillTalking ? finalAgentImage.talking : finalAgentImage.silent }
+            onLoad={ this.imageLoaded }
+            style={ { height: '250px' } }
+            alt='the secret agent'
+          />
         }
       </div>
-      {
-        this.renderSpeechBubble(negative ? speechesForNegativeAgent[speechIndex] : finalSpeechText)
-      }
+      { this.renderSpeechBubble(finalSpeechText) }
     </div>);
   }
 }
