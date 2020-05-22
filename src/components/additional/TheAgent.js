@@ -76,11 +76,13 @@ class TheAgent extends Component {
     const speechesForNegativeAgent = [
       <span>
         You might have deleted the last bug, but this whole computer was built by just one person
-        I'm sure there's still something out there! <span className='continue-button blink' onClick={ this.increaseSpeechIndex }>&gt;Continue&lt;</span>
+        I'm sure there's still something out there!<br />
+        <span className='continue-button blink' onClick={ this.increaseSpeechIndex }>&gt;Continue&lt;</span>
       </span>,
       <span>
         In the end this is just a bunch of hacked javascript,
-        it won't take long before it all becomes obsolete... <span className='continue-button blink' onClick={ this.increaseSpeechIndex }>&gt;Continue&lt;</span>
+        it won't take long before it all becomes obsolete...<br />
+        <span className='continue-button blink' onClick={ this.increaseSpeechIndex }>&gt;Continue&lt;</span>
       </span>,
       <span>
         Well I better go now, the deliveroo driver is downstairs with my sushi!<br />

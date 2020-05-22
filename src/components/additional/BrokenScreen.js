@@ -154,15 +154,15 @@ class BrokenScreen extends Component {
     const { bugsMessages, textAnimation, bugsNumber } = this.state;
 
     return (
-      <React.Fragment>
+      <div className='error-items'>
         <h1 className='blink'>ERROR</h1>
         <p>The computer has been permanently damaged!</p>
         <div className={ textAnimation ? 'shake' : '' }>
-          <span className='error-message'>
+          <span style={ { color: 'greenyellow' } }>
             {bugsMessages[bugsNumber - 1]}
           </span>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 
@@ -209,7 +209,7 @@ class BrokenScreen extends Component {
       </Helmet>
       { randomCircuit }
       <div className='centered-item'>
-        <div className='error-items'>
+        <div style={ { padding: '20px' } }>
           {
             bugsCleaned
               ? <TheAgent displayAgent={ true } negative={ true } />

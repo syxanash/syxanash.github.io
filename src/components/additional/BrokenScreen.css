@@ -2,19 +2,14 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  color: red;
   background-color:black;
   transform: translate(-50%, -50%);
+}
+
+.error-items {
+  color: red;
   text-align: center;
   font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
-}
-
-.error-items { 
-  padding: 20px;
-}
-
-.error-message {
-  color: greenyellow;
 }
 
 .shake {
