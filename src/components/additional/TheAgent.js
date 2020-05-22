@@ -81,7 +81,7 @@ class TheAgent extends Component {
       </span>,
       <span>
         In the end this is just a bunch of hacked javascript,
-        it won't take long before it all becomes obsolete. Just like GeoCities,
+        it won't take long before it all becomes obsolete. Just like GeoCities and
         MSN blogs this will all be gone in a few years...<br />
         <span className='continue-button blink' onClick={ this.increaseSpeechIndex }>&gt;Continue&lt;</span>
       </span>,

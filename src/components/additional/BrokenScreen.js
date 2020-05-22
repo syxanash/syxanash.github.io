@@ -89,7 +89,7 @@ class BrokenScreen extends Component {
     >
       <img
         style={ { pointerEvents: 'none' } }
-        height='50px'
+        height='60px'
         src={ bugImage }
         alt='icon'
       />
@@ -129,7 +129,7 @@ class BrokenScreen extends Component {
         } }
       >
         <img
-          height='60px'
+          height='70px'
           src={ explosionAnim }
           alt='icon'
         />
