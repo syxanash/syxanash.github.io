@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
 import TheAgent from './TheAgent';
+import SoundEffects from './SoundEffects';
 
 import easterEggObject from '../../resources/cestino-messages.json';
 
@@ -182,9 +183,8 @@ class BrokenScreen extends Component {
     }
 
     if (!this.bugRefreshInterval) {
-      document.getElementById('errorSound').play();
+      SoundEffects.errorSound.play();
       localStorage.setItem(antiCheatString, 'DON\'T!');
-
       this.bugRefreshInterval = setInterval(this.updateAxis, this.bugsInterval);
     }
 
