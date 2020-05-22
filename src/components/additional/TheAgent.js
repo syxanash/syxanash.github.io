@@ -76,15 +76,17 @@ class TheAgent extends Component {
     const speechesForNegativeAgent = [
       <span>
         You might have deleted the last bug, but this whole computer was built by just one person
-        I'm sure there's still something out there!<br />
+        I'm sure there's still something hiding out there!<br />
         <span className='continue-button blink' onClick={ this.increaseSpeechIndex }>&gt;Continue&lt;</span>
       </span>,
       <span>
         In the end this is just a bunch of hacked javascript,
-        it won't take long before it all becomes obsolete...<br />
+        it won't take long before it all becomes obsolete. Just like GeoCities,
+        MSN blogs this will all be gone in a few years...<br />
         <span className='continue-button blink' onClick={ this.increaseSpeechIndex }>&gt;Continue&lt;</span>
       </span>,
       <span>
+        I guess it's true what they say about enjoying the ride and not the destination...
         Well I better go now, the deliveroo driver is downstairs with my sushi!<br />
         <span className='continue-button blink'><a href='/#/fixmycomputer'>&gt;Bye now!&lt;</a></span>
       </span>,

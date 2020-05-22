@@ -181,9 +181,10 @@ class BrokenScreen extends Component {
       localStorage.removeItem(antiCheatString);
     }
 
-    localStorage.setItem(antiCheatString, 'DON\'T!');
-
     if (!this.bugRefreshInterval) {
+      document.getElementById('errorSound').play();
+      localStorage.setItem(antiCheatString, 'DON\'T!');
+
       this.bugRefreshInterval = setInterval(this.updateAxis, this.bugsInterval);
     }
 
