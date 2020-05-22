@@ -88,7 +88,7 @@ class TheAgent extends Component {
       <span>
         So have fun playing while it lasts, I guess it's true what they say about
         enjoying the ride and not the destination...
-        Well I better go now, the deliveroo driver is downstairs with my sushi!<br />
+        Well I better go now, my deliveroo driver is downstairs with my sushi!<br />
         <span className='continue-button blink'><a href='/#/fixmycomputer'>&gt;Bye now!&lt;</a></span>
       </span>,
     ];
