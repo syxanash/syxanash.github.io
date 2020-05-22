@@ -7,6 +7,7 @@ import SoundEffects from './SoundEffects';
 import easterEggObject from '../../resources/cestino-messages.json';
 
 import circuitAnimation from '../../resources/images/circuit.gif';
+import circuitAnimation2 from '../../resources/images/circuit2.gif';
 import bugImage from '../../resources/images/bug.png';
 import screenBackground from '../../resources/images/kernelpanic.gif';
 import explosionAnim from '../../resources/images/explosion.gif';
@@ -39,6 +40,7 @@ class BrokenScreen extends Component {
     <div
       id={ `background_circuit_${index}` }
       key={ `background_circuit_${index}` }
+      className={ `${index % 2 === 0 ? 'flip-image' : ''}` }
       style={ {
         position: 'absolute',
         top: `${Math.floor(Math.random() * (document.body.clientHeight))}px`,
@@ -49,7 +51,7 @@ class BrokenScreen extends Component {
     >
       <img
         height='40px'
-        src={ circuitAnimation }
+        src={ index % 2 === 0 ? circuitAnimation2 : circuitAnimation }
         alt='icon'
       />
     </div>
@@ -89,6 +91,7 @@ class BrokenScreen extends Component {
       onClick={ () => { this.deleteBug(axis.bugX, axis.bugY); } }
     >
       <img
+        className={ `${index % 2 === 0 ? 'flip-image' : ''}` }
         style={ { pointerEvents: 'none' } }
         height='60px'
         src={ bugImage }
