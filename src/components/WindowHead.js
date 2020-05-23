@@ -109,6 +109,10 @@ class WindowHead extends Component {
                   if (isCurrentPathRoot) {
                     onRightClick();
                   }
+
+                  if (windowMinimized) {
+                    this.toggleMinimizeIcon();
+                  }
                 } }
               >
                 <span style={ { transform: 'translateY(-1px)' } }>{ rightActionButton }</span>
