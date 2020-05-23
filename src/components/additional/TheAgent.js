@@ -73,40 +73,58 @@ class TheAgent extends Component {
       return null;
     }
 
-    const speechTextBeforeBug = <span>
-      I'm the agent behind the window.
-      I see you're exploring the graphical user interface,
-      click all the buttons as much as you want but
-      be careful to <b>Cestino</b> I'm not able to remove that bug somehow...
-    </span>;
+    const speechTextBeforeBug = [
+      <span>
+        I'm the agent behind the window.
+        I see you're exploring the graphical user interface,
+        click all the buttons as much as you want but...<br />
+        <span className='continue-button blink' onClick={ this.increaseSpeechIndex }>&gt;Continue&lt;</span>
+      </span>,
+      <span>
+        Be careful to <b>Cestino</b> I've been struggling to remove that bug lately,
+        feel free to have a look yourself...
+        I will offer you a reward if you succeed it!
+      </span>,
+    ];
 
-    const speechTextAfterBug = <span>
-      Congratulations buddy! You were able to get rid of that pesky Cestino bug,
-      I'm so grateful for your help. Even though you cannot judge my emotions from this GIF,
-      I'm really happy right now!
-    </span>;
+    const speechTextAfterBug = [
+      <span>
+        Congratulations buddy! You were able to get rid of that pesky Cestino bug,
+        I'm so grateful for your help. Even though you cannot judge my emotions from this GIF,
+        I'm really happy right now!
+        <span className='continue-button blink' onClick={ this.increaseSpeechIndex }>&gt;Continue&lt;</span>
+      </span>,
+      <span>
+        As a reward you should now see on the main window&nbsp;
+        Simone's Famous <b>Pizza Recipe</b>!
+        Have fun making pizza at home
+        and remember to always activate dry yeast before use!
+      </span>,
+    ];
 
     const speechesForNegativeAgent = [
       <span>
         You might have deleted all my bugs, but this whole system was built by just one person
-        I'm sure there's still something hiding out there!<br />
+        I'm sure there's still something hiding out there!
         <span className='continue-button blink' onClick={ this.increaseSpeechIndex }>&gt;Continue&lt;</span>
       </span>,
       <span>
         In the end this is just a bunch of javascript,
         it won't take long before it all becomes obsolete. Just like GeoCities and
-        MSN blogs this whole thing will stop working...<br />
+        MSN blogs this whole thing will stop working...
         <span className='continue-button blink' onClick={ this.increaseSpeechIndex }>&gt;Continue&lt;</span>
       </span>,
       <span>
         So have fun playing while it lasts, I guess it's true what they say about
         enjoying the ride and not the destination...
-        Well I better go now, my deliveroo driver is downstairs with my sushi!<br />
+        Well I better go now, my deliveroo driver is downstairs with my sushi!
         <span className='continue-button blink'><a href='/#/fixmycomputer'>&gt;Bye now!&lt;</a></span>
       </span>,
     ];
 
-    let finalSpeechText = localStorage.getItem('fixed') ? speechTextAfterBug : speechTextBeforeBug;
+    let finalSpeechText = localStorage.getItem('fixed')
+      ? speechTextAfterBug[speechIndex]
+      : speechTextBeforeBug[speechIndex];
 
     if (negative) {
       finalSpeechText = speechesForNegativeAgent[speechIndex];
