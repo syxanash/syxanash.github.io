@@ -65,6 +65,13 @@ class TheAgent extends Component {
     alert(message);
   }
 
+  renderContinueButton = () => <span
+    className='continue-button blink'
+    onClick={ this.increaseSpeechIndex }
+  >
+    &gt;Continue&lt;
+  </span>;
+
   render() {
     const { stillTalking, speechIndex } = this.state;
     const { displayAgent, negative } = this.props;
@@ -77,8 +84,8 @@ class TheAgent extends Component {
       <span>
         I'm the agent behind the window.
         I see you're exploring the graphical user interface,
-        click all the buttons as much as you want but...<br />
-        <span className='continue-button blink' onClick={ this.increaseSpeechIndex }>&gt;Continue&lt;</span>
+        click all the buttons as much as you want but...
+        {this.renderContinueButton()}
       </span>,
       <span>
         Be careful to <b>Cestino</b> I've been struggling to remove that bug lately,
@@ -92,7 +99,7 @@ class TheAgent extends Component {
         Congratulations buddy! You were able to get rid of that pesky Cestino bug,
         I'm so grateful for your help. Even though you cannot judge my emotions from this GIF,
         I'm really happy right now!
-        <span className='continue-button blink' onClick={ this.increaseSpeechIndex }>&gt;Continue&lt;</span>
+        {this.renderContinueButton()}
       </span>,
       <span>
         As a reward you should now see on the main window&nbsp;
@@ -106,13 +113,13 @@ class TheAgent extends Component {
       <span>
         You might have deleted all my bugs, but this whole system was built by just one person
         I'm sure there's still something hiding out there!
-        <span className='continue-button blink' onClick={ this.increaseSpeechIndex }>&gt;Continue&lt;</span>
+        {this.renderContinueButton()}
       </span>,
       <span>
         In the end this is just a bunch of javascript,
         it won't take long before it all becomes obsolete. Just like GeoCities and
         MSN blogs this whole thing will stop working...
-        <span className='continue-button blink' onClick={ this.increaseSpeechIndex }>&gt;Continue&lt;</span>
+        {this.renderContinueButton()}
       </span>,
       <span>
         So have fun playing while it lasts, I guess it's true what they say about
