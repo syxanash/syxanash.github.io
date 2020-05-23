@@ -217,13 +217,11 @@ class BrokenScreen extends Component {
       </Helmet>
       { randomCircuit }
       <div className='centered-item'>
-        <div style={ { padding: '20px' } }>
-          {
-            bugsCleaned
-              ? <TheAgent displayAgent={ true } negative={ true } />
-              : this.renderErrorText()
-          }
-        </div>
+        {
+          bugsCleaned
+            ? <TheAgent displayAgent={ true } negative={ true } />
+            : this.renderErrorText()
+        }
       </div>
       { this.renderBug() }
       { this.renderExplosion() }
