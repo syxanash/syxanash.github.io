@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3d275138c09424138fa2a24e85935a7e",
+    "revision": "41013036c06c475e34963e65020698c7",
     "url": "/index.html"
   },
   {
-    "revision": "89f9b1350f42673664cc",
+    "revision": "8fc37af53e9e6a806e98",
     "url": "/static/css/2.ad458773.chunk.css"
   },
   {
-    "revision": "743ba98f893c28b3cf47",
-    "url": "/static/css/main.4597c1dc.chunk.css"
+    "revision": "29d996d0eaf1563bb946",
+    "url": "/static/css/main.1a996573.chunk.css"
   },
   {
-    "revision": "89f9b1350f42673664cc",
-    "url": "/static/js/2.aefed8f3.chunk.js"
+    "revision": "8fc37af53e9e6a806e98",
+    "url": "/static/js/2.1fe3283f.chunk.js"
   },
   {
-    "revision": "743ba98f893c28b3cf47",
-    "url": "/static/js/main.500c38b9.chunk.js"
+    "revision": "29d996d0eaf1563bb946",
+    "url": "/static/js/main.35c465dc.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -164,6 +164,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/c64.63a13484.gif"
   },
   {
+    "revision": "2505d17c8a0d394c1998ed2e2bfb5d76",
+    "url": "/static/media/circuit.2505d17c.gif"
+  },
+  {
+    "revision": "1e3707a242a9131b81dad6e6a3b44978",
+    "url": "/static/media/circuit2.1e3707a2.gif"
+  },
+  {
     "revision": "3411898c877c2c7283a7869fb1303efa",
     "url": "/static/media/darkforces.3411898c.gif"
   },
@@ -262,10 +270,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8587b02b8332fe5759350b10ce26da05",
     "url": "/static/media/jobs.8587b02b.png"
-  },
-  {
-    "revision": "cced6d4753e35d5046c93ce20a52fe53",
-    "url": "/static/media/kernelpanic.cced6d47.gif"
   },
   {
     "revision": "7383e6da11f2801dbf09980dff20746d",
@@ -432,8 +436,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/the_agent.1218d61f.gif"
   },
   {
+    "revision": "70e368368e5f48264539bbf6e5b987d7",
+    "url": "/static/media/the_agent_negative.70e36836.gif"
+  },
+  {
     "revision": "e8aa422883803c9513e01db213bdd481",
     "url": "/static/media/the_agent_shut.e8aa4228.gif"
+  },
+  {
+    "revision": "c4b6dcc0ca3a48896f735f902e9ddb26",
+    "url": "/static/media/the_agent_shut_negative.c4b6dcc0.gif"
   },
   {
     "revision": "73e25a87af348a927b8f10a5ab524760",
