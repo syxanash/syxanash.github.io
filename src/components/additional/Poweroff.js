@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
+import SoundEffects from './SoundEffects';
+
 import screenMessage from '../../resources/images/screenmessage.gif';
 import screenoff from '../../resources/images/screenoff.gif';
 
@@ -50,7 +52,7 @@ class Poweroff extends Component {
     }
 
     if (!isScreenOff) {
-      document.getElementById('poweroffSound').play();
+      SoundEffects.poweroffSound.play();
 
       this.turnOffTimeout = setTimeout(() => {
         this.setState({ isScreenOff: true });

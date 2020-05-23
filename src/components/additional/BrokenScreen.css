@@ -2,9 +2,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.error-items {
+  padding: 20px;
   color: red;
   background-color:black;
-  transform: translate(-50%, -50%);
   text-align: center;
   font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
 }
@@ -12,6 +16,11 @@
 .shake {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
+}
+
+.flip-image {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 @keyframes shake {

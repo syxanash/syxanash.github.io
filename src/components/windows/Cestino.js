@@ -4,7 +4,7 @@ import { Button, Cutout } from 'react95';
 import './Cestino.css';
 import 'animate.css';
 
-import cestinoMessages from '../../resources/cestino-messages.json';
+import easterEggObject from '../../resources/cestino-messages.json';
 
 import cestinoIcon from '../../resources/icons/trash.gif';
 import spiderWindowIcon from '../../resources/icons/spiderwindow.gif';
@@ -31,13 +31,13 @@ class CestinoBody extends Component {
     const messageCounter = parseInt(sessionStorage.getItem('messageCounter'), 10);
 
     let newMessageCounter = messageCounter;
-    if (messageCounter + 1 < cestinoMessages.length) {
+    if (messageCounter + 1 < easterEggObject.cestinoMessages.length) {
       newMessageCounter += 1;
     }
 
     closeWindow();
 
-    if (messageCounter === cestinoMessages.length - 1) {
+    if (messageCounter === easterEggObject.cestinoMessages.length - 1) {
       sessionStorage.setItem('eggTriggered', true);
     } else {
       openWindow('cestino', true);
@@ -48,7 +48,7 @@ class CestinoBody extends Component {
 
   render = () => {
     const messageCounter = parseInt(sessionStorage.getItem('messageCounter'), 10);
-    const currentMessage = cestinoMessages[messageCounter].message;
+    const currentMessage = easterEggObject.cestinoMessages[messageCounter].message;
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
 
     return (<div>
@@ -65,7 +65,7 @@ class CestinoBody extends Component {
               onClick={ this.increaseClickCount }
               disabled={ eggTriggered }
               style={ { width: '150px' } }
-            >{cestinoMessages[messageCounter].button}</Button>
+            >{easterEggObject.cestinoMessages[messageCounter].button}</Button>
           </div>
         </Cutout>
       </div>

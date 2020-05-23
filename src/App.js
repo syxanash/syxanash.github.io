@@ -9,7 +9,6 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import PopupWindow from './components/PopupWindow';
 import WindowHead from './components/WindowHead';
-import SoundEffects from './components/additional/SoundEffects';
 import { NotFoundBody } from './components/windows/NotFound';
 import Copyright from './components/additional/Copyright';
 import { MainWindowBody } from './components/MainWindow';
@@ -19,6 +18,7 @@ import LoopTV from './components/additional/LoopTV';
 import StoppedProgram from './components/additional/StoppedProgram';
 import BrokenScreen from './components/additional/BrokenScreen';
 import TheAgent from './components/additional/TheAgent';
+import SoundEffects from './components/additional/SoundEffects';
 
 import PippoTheme from './themes/PippoTheme';
 import ThemeContext from './ThemeContext';
@@ -195,7 +195,7 @@ class App extends Component {
   }
 
   turnOnTV = () => {
-    document.getElementById('loopTvSound').play();
+    SoundEffects.loopTVSound.play();
     this.setState({ loopTVon: true });
   }
 
@@ -266,7 +266,6 @@ class App extends Component {
 
     return (
       <HashRouter>
-        <SoundEffects />
         <div className='window-centered'>
           <div style={ { display: poweredOff || isBrokenScreen || loopTVon || stoppedWindowProgram ? 'none' : 'block' } }>
             <Helmet>

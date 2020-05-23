@@ -1,70 +1,75 @@
-[
-  {
-    "message": "this button does nothing...",
-    "button": "OK"
-  },
-  {
-    "message": "nothing is happening...",
-    "button": "OK"
-  },
-  {
-    "message": "you really like this window?",
-    "button": "YES"
-  },
-  {
-    "message": "I know it feels good to click this button",
-    "button": "OK"
-  },
-  {
-    "message": "old design was better",
-    "button": "OK"
-  },
-  {
-    "message": "buttons nowadays are not as clickable as before",
-    "button": "OK"
-  },
-  {
-    "message": "everything made in the past is better",
-    "button": "OK"
-  },
-  {
-    "message": "songs, movies, videogames, politics...",
-    "button": "OK"
-  },
-  {
-    "message": "we're slaves of nostalgia",
-    "button": "OK"
-  },
-  {
-    "message": "past was good",
-    "button": "OK"
-  },
-  {
-    "message": "present is tedious",
-    "button": "OK."
-  },
-  {
-    "message": "past was cozy",
-    "button": "OK"
-  },
-  {
-    "message": "present is tiresome",
-    "button": ".OK"
-  },
-  {
-    "message": "we forgot the bad stuff",
-    "button": "OK"
-  },
-  {
-    "message": "but we remember the good time",
-    "button": "KO"
-  },
-  {
-    "message": "like nothing ever happened",
-    "button": "OK"
-  },
-  {
-    "message": "nothing will happen",
-    "button": "ok..."
-  }
-]
+{
+  "cestinoMessages": [
+    {
+      "message": "this button does nothing...",
+      "button": "OK"
+    },
+    {
+      "message": "nothing is happening...",
+      "button": "OK"
+    },
+    {
+      "message": "you really like this window?",
+      "button": "YES"
+    },
+    {
+      "message": "I know it feels good to click this button",
+      "button": "OK"
+    },
+    {
+      "message": "old design was better",
+      "button": "OK"
+    },
+    {
+      "message": "buttons nowadays are not as clickable as before",
+      "button": "OK"
+    },
+    {
+      "message": "everything made in the past is better",
+      "button": "OK"
+    },
+    {
+      "message": "we're slaves of nostalgia",
+      "button": "OK"
+    },
+    {
+      "message": "past was good",
+      "button": "OK"
+    },
+    {
+      "message": "present is tedious",
+      "button": "🆗"
+    },
+    {
+      "message": "past was cozy",
+      "button": "OK"
+    },
+    {
+      "message": "present is tiresome",
+      "button": "OK"
+    },
+    {
+      "message": "we forgot the bad stuff",
+      "button": "OK"
+    },
+    {
+      "message": "but we remember the good time",
+      "button": "O̪͈͇̻̗͎̞K̯̣̯͖̤͈͔̀"
+    },
+    {
+      "message": "like nothing ever happened",
+      "button": "OK"
+    }
+  ],
+  "brokenScreenMessages": [
+    "You're no match for my bugs, you poor fool!",
+    "I wasn't expecting you to be that good...",
+    "you'll never make it in time! (even though there's no timer)",
+    "you must be a developer!",
+    "no one made it this far...",
+    "that was actually a feature!",
+    "stop hurting them!",
+    "they're living creatures you monster",
+    "LEAVE THAT ONE!"
+  ]
+}

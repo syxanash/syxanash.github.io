@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import Draggable from 'react-draggable';
 import {
-  Cutout, Button,
+  Cutout, Button, Anchor,
 } from 'react95';
 import MainWindowFooter from './additional/Footer';
 
@@ -17,6 +17,7 @@ import linksIcon from '../resources/icons/links.gif';
 import musicIcon from '../resources/icons/music.gif';
 import guestbookIcon from '../resources/icons/guestbook.png';
 import loopTVIcon from '../resources/icons/loopTV.gif';
+import pizzaIcon from '../resources/icons/pizza.gif';
 
 import languages from '../resources/languages.json';
 
@@ -179,6 +180,16 @@ class MainWindowBody extends Component {
               <img src={ loopTVIcon } className='icon' alt="loop TV"/>
               <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
             </Button>
+            <Anchor
+              href='https://gist.github.com/syxanash/7b2d135a566cfb2f03dfceba6b34e61a'
+              target='_blank'
+              style={ { color: '#000000', textDecoration: 'none' } }
+            >
+              <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'inline-block' : 'none' } }>
+                <img src={ pizzaIcon } className='icon' alt="pizza recipe"/>
+                <figcaption className='icon-caption'>Recipe</figcaption>
+              </Button>
+            </Anchor>
           </div>
         </Cutout>
         <MainWindowFooter onClick={ () => openWindow('credits') } active={ isWindowOpened('credits') }/>
