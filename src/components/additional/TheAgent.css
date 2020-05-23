@@ -14,6 +14,14 @@
   font-weight: bold;
 }
 
+.agent-face {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  margin-top: 30px;
+  margin-left: 25px;
+}
+
 .continue-button:hover {
   text-decoration: underline;
 }

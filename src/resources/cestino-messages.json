@@ -30,7 +30,7 @@
     },
     {
       "message": "songs, movies, videogames, politics...",
-      "button": "OK"
+      "button": ".:OK:."
     },
     {
       "message": "we're slaves of nostalgia",
@@ -42,7 +42,7 @@
     },
     {
       "message": "present is tedious",
-      "button": "OK."
+      "button": "🆗"
     },
     {
       "message": "past was cozy",
@@ -71,14 +71,13 @@
   ],
   "brokenScreenMessages": [
     "You're no match for my bugs, you poor fool!",
-    "soon the bugs will spread to the information highway!",
-    "you'll never make it in time! (even though no timer has been implemented)",
+    "soon the bugs will spread to other windows!",
+    "you'll never make it in time! (even though there's no timer)",
     "remember జ్ఞా, feel old yet?",
     "y2k will happen again in 2038!",
-    "just like killing mosquitoes in a southern Italian summer night",
-    "hey that was a production bug!!",
+    "that was actually a feature!",
     "stop hurting them!",
-    "they're living creatures you know",
-    "Please, no!"
+    "they're living creatures you monster",
+    "don't you dare!"
   ]
 }

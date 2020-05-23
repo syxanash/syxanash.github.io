@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
+import 'animate.css';
+
 import TheAgent from './TheAgent';
 import SoundEffects from './SoundEffects';
 
@@ -9,7 +11,8 @@ import easterEggObject from '../../resources/cestino-messages.json';
 import circuitAnimation from '../../resources/images/circuit.gif';
 import circuitAnimation2 from '../../resources/images/circuit2.gif';
 import bugImage from '../../resources/images/bug.png';
-import screenBackground from '../../resources/images/kernelpanic.gif';
+import calmBackground from '../../resources/images/kernelcalm.gif';
+import panicBackground from '../../resources/images/kernelpanic.gif';
 import explosionAnim from '../../resources/images/explosion.gif';
 import viewFinder from '../../resources/icons/viewfinder.gif';
 
@@ -81,6 +84,7 @@ class BrokenScreen extends Component {
     return bugsList.map((axis, index) => (<div
       id={ `floating_bug_${index}` }
       key={ `bug_${index}` }
+      className='animated bounceInDown'
       style={ {
         position: 'absolute',
         top: `${axis.bugY}px`,
@@ -196,7 +200,7 @@ class BrokenScreen extends Component {
         <style>
           {
             `body {
-              background: url(${screenBackground});
+              background: url(${bugsCleaned ? calmBackground : panicBackground});
             }
             * {
               overflow: hidden;

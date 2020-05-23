@@ -52,6 +52,19 @@ class TheAgent extends Component {
     </div>);
   }
 
+  touchFace = () => {
+    const { negative } = this.props;
+
+    let message = 'hey stop touching my face!';
+
+    if (negative) {
+      message = 'stop aiming at my face with that thing!';
+    }
+
+    // eslint-disable-next-line no-alert
+    alert(message);
+  }
+
   render() {
     const { stillTalking, speechIndex } = this.state;
     const { displayAgent, negative } = this.props;
@@ -105,6 +118,10 @@ class TheAgent extends Component {
 
     return (<div className='agent-container'>
       <div className='agent-image'>
+        <div
+          className='agent-face'
+          onMouseEnter={ this.touchFace }
+        />
         {
           <img
             src={ stillTalking ? finalAgentImage.talking : finalAgentImage.silent }
