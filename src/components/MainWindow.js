@@ -104,10 +104,6 @@ class MainWindowBody extends Component {
     const { iconsColliding } = this.state;
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
 
-    if (iconsColliding) {
-      console.info('LINDAAAA?!?');
-    }
-
     return (
       <div>
         <Cutout className='cut-out'>
