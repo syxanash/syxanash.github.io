@@ -4,6 +4,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import {
   Button,
 } from 'react95';
+import 'animate.css';
 
 import './WindowHead.css';
 import { MainWindowHeader } from './MainWindow';
@@ -34,6 +35,11 @@ class WindowHead extends Component {
   toggleMinimizeIcon = () => {
     const { windowMinimized } = this.state;
     const { onClickLeft } = this.props;
+
+    if (localStorage.getItem('fixed') === 'true'
+      && localStorage.getItem('agentVisited') === null) {
+      localStorage.setItem('agentVisited', true);
+    }
 
     onClickLeft();
     this.setState({ windowMinimized: !windowMinimized });
@@ -66,6 +72,9 @@ class WindowHead extends Component {
     const isCurrentPathRoot = this.props.location.pathname === '/';
     const rightActionButton = isCurrentPathRoot ? '◓' : '↵';
 
+    const shouldBeat = localStorage.getItem('fixed') === 'true'
+      && localStorage.getItem('agentVisited') === null;
+
     return (
       <ThemeContext.Consumer>
         {({ changeTheme }) => (
@@ -87,6 +96,7 @@ class WindowHead extends Component {
                 size='sm'
                 square
                 onClick={ this.toggleMinimizeIcon }
+                className={ `${shouldBeat ? 'animated infinite heartBeat delay-1s' : ''}` }
               >
                 <span style={ { transform: 'translateY(-1px)' } }>{ windowMinimized ? '▼' : '▲'}</span>
               </Button>

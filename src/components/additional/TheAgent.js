@@ -105,7 +105,7 @@ class TheAgent extends Component {
         As a reward you should now see on the main window&nbsp;
         Simone's Famous <b>Pizza Recipe</b>!
         Have fun making pizza at home
-        and remember to always activate dry yeast before use!
+        and remember to always activate dry yeast before each use!
       </span>,
     ];
 
@@ -117,8 +117,8 @@ class TheAgent extends Component {
       </span>,
       <span>
         In the end this is just a bunch of javascript,
-        it won't take long before it all becomes obsolete. Just like GeoCities and
-        MSN blogs this whole thing will stop working...
+        it won't take long before it all becomes obsolete. Just like GeoCities
+        and Flash games this whole thing will stop working...
         {this.renderContinueButton()}
       </span>,
       <span>
