@@ -80,7 +80,9 @@ class TheAgent extends Component {
       return null;
     }
 
-    localStorage.setItem('foundAgent', true);
+    if (!negative && speechIndex === 1 && localStorage.getItem('fixed') === null) {
+      localStorage.setItem('foundAgent', true);
+    }
 
     const speechTextBeforeBug = [
       <span>

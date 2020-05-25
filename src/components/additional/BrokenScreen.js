@@ -192,6 +192,7 @@ class BrokenScreen extends Component {
     if (!this.bugRefreshInterval) {
       SoundEffects.errorSound.play();
       localStorage.setItem(antiCheatString, 'DON\'T!');
+      localStorage.removeItem('foundAgent');
       this.bugRefreshInterval = setInterval(this.updateAxis, this.bugsInterval);
     }
 
