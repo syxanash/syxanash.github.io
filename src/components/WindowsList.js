@@ -5,6 +5,7 @@ import { ContactHeader, ContactBody } from './windows/Contact';
 import { GuestbookHeader, GuestbookBody } from './windows/Guestbook';
 import { MusicHeader, MusicBody } from './windows/Music';
 import { CestinoHeader, CestinoBody } from './windows/Cestino';
+import { UnknownHeader, UnknownBody } from './windows/Unknown';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
 import { WebDesktopsHeader, WebDesktopsBody } from './windows/WebDesktops';
 import { OSInfoWindowHeader, OSInfoWindowBody } from './windows/OSInfoWindow';
@@ -106,6 +107,15 @@ export default function WindowsList() {
       header: CestinoHeader,
       body: CestinoBody,
       windowTheme: PippoBleeding,
+    },
+    unknown: {
+      hasFullScreen: false,
+      canCloseWindow: false,
+      opened: false,
+      focused: false,
+      header: UnknownHeader,
+      body: UnknownBody,
+      windowTheme: PippoTheme,
     },
     fixmycomputer: {
       hasFullScreen: true,

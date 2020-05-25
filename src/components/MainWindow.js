@@ -18,6 +18,7 @@ import musicIcon from '../resources/icons/music.gif';
 import guestbookIcon from '../resources/icons/guestbook.png';
 import loopTVIcon from '../resources/icons/loopTV.gif';
 import pizzaIcon from '../resources/icons/pizza.gif';
+import unknownIcon from '../resources/icons/unknown.gif';
 
 import languages from '../resources/languages.json';
 
@@ -175,6 +176,13 @@ class MainWindowBody extends Component {
             >
               <img src={ loopTVIcon } className='icon' alt="loop TV"/>
               <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
+            </Button>
+            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } }
+              onClick={ () => openWindow('unknown') }
+              active={ isWindowOpened('unknown') }
+            >
+              <img src={ unknownIcon } className='icon' alt="unknown icon"/>
+              <figcaption className='icon-caption'></figcaption>
             </Button>
             <Anchor
               href='https://gist.github.com/syxanash/7b2d135a566cfb2f03dfceba6b34e61a'

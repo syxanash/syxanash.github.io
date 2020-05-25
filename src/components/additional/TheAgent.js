@@ -80,9 +80,11 @@ class TheAgent extends Component {
       return null;
     }
 
+    localStorage.setItem('foundAgent', true);
+
     const speechTextBeforeBug = [
       <span>
-        I'm the agent behind the window.
+        I'm the <b>Agent</b> behind the window.
         I see you're exploring the graphical user interface,
         click all the buttons as much as you want but...
         {this.renderContinueButton()}
