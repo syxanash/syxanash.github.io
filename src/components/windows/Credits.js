@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  TabBody, Tab, Tabs, Cutout,
+  TabBody, Tab, Tabs, Cutout, Tooltip,
 } from 'react95';
 
 import licenseText from '../../resources/misc/LICENSE.txt';
@@ -54,7 +54,7 @@ class CreditsBody extends Component {
       </Tabs>
       <TabBody>
         <div style={ { marginTop: '-5px' } }>
-          <Cutout style={ { backgroundColor: '#e9e8ff' } }>
+          <Cutout style={ { backgroundColor: '#e9e8ff' } } shadow={ false }>
             <ul style={ { display: activeTab === 0 ? 'block' : 'none' } }>
               <li className='list-content'>All <b>icons</b> and <b>animated icons</b> were made by myself and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</li>
               <li className='list-content'>The <b>source code</b> is under MIT License. See <a href={ licenseText } target='_blank' rel='noopener noreferrer'>LICENSE.txt</a></li>
@@ -100,7 +100,9 @@ class CreditsBody extends Component {
         </div>
       </TabBody>
       <div style={ { paddingTop: '15px', textAlign: 'center' } }>
-        No <span role="img" aria-label="pizza">🍕</span> was harmed in the making of this website.
+        <Tooltip text='did you find it yet? :)' delay={ 100 }>
+          <span role="img" aria-label="pizza">🍕</span>
+        </Tooltip>
       </div>
     </div>);
   }
