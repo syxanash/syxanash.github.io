@@ -55,7 +55,7 @@ class NotFoundBody extends Component {
 
   renderRedirectHint = replacedLink => <React.Fragment>
     <h1>BUT WAIT</h1>
-    <h2>Looks like the page has actually been moved <a href={ `/#/${replacedLink}` }>here</a>!</h2>
+    <h2>Looks like the page has been moved <a href={ `/#/${replacedLink}` }>here</a>!</h2>
   </React.Fragment>;
 
   render = () => {
