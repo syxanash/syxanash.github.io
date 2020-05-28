@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import brokenLinks from '../../resources/broken-links.json';
 import mainIcon from '../../resources/icons/favicon.gif';
 
 class NotFoundHeader extends Component {
@@ -17,12 +18,17 @@ class NotFoundBody extends Component {
     this.intervalId = undefined;
 
     this.state = {
+      replacedLinks: brokenLinks,
       randomColor: '#000000',
+      pathName: undefined,
     };
   }
 
   componentDidMount() {
     this.intervalId = setInterval(this.generateColor, 100);
+    const urlPath = this.props.location.pathname.replace(/\//g, '');
+
+    this.setState({ pathName: urlPath });
   }
 
   componentWillUnmount() {
@@ -42,13 +48,29 @@ class NotFoundBody extends Component {
     this.setState({ randomColor: this.getRandomColor() });
   }
 
+  renderPhilosophicalMessage = () => <React.Fragment>
+    <h2>Whatever you were looking for is not here.</h2>
+    <h3>Stop using internet, go out and love someone!</h3>
+  </React.Fragment>;
+
+  renderRedirectHint = replacedLink => <React.Fragment>
+    <h1>BUT WAIT</h1>
+    <h2>Looks like the page has actually been moved <a href={ `/#/${replacedLink}` }>here</a>!</h2>
+  </React.Fragment>;
 
   render = () => {
-    const { randomColor } = this.state;
+    const { randomColor, pathName, replacedLinks } = this.state;
+
+    const replacedLink = replacedLinks.find(item => item.from === pathName);
+
     return (<div>
       <h1 style={ { textAlign: 'center', color: randomColor } }>404</h1>
-      <span>Whatever you were looking for is not here.</span>
-      <p>Stop using internet, go out and love someone!</p>
+
+      {
+        replacedLink === undefined
+          ? this.renderPhilosophicalMessage()
+          : this.renderRedirectHint(replacedLink.to)
+      }
     </div>
     );
   }
