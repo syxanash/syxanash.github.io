@@ -98,7 +98,7 @@ class CreditsBody extends Component {
               <li className='list-content'>The error sound was modified from the Windows ME warning chord, original file downloaded from <a href='https://guidebookgallery.org/sounds' target='_blank' rel='noopener noreferrer'>guidebookgallery.org/sounds</a></li>
             </ul>
             <ul style={ { display: activeTab === 5 ? 'block' : 'none' } }>
-              <li className='list-content'>This site uses <a href='https://statcounter.com>' target='_blank' rel='noopener noreferrer'>statcounter.com</a> to get information such as number of <b>daily visitors</b>, <b>country</b> where users connect from, which <b>pages they interact</b> with and what <b>websites linked me</b>.</li>
+              <li className='list-content'>This site uses <a href='https://statcounter.com' target='_blank' rel='noopener noreferrer'>statcounter.com</a> to get information such as number of <b>daily visitors</b>, <b>country</b> where users connect from, which <b>pages they interact</b> with and what <b>websites linked me</b>.</li>
               <li className='list-content'>I have no intention of selling or using this data for commercial purposes, I'm just curious to see who's visiting my website, that's all!</li>
               <li className='list-content'>If you don't agree with this "cookie policy" I encourage you to install browser extensions like <a href='https://en.wikipedia.org/wiki/UBlock_Origin' target='_blank' rel='noopener noreferrer'>uBlock Origin</a> and <a href='https://en.wikipedia.org/wiki/Privacy_Badger' target='_blank' rel='noopener noreferrer'>Privacy Badger</a>, or simply surf away ¯\_(ツ)_/¯</li>
             </ul>
