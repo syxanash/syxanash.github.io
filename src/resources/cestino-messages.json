@@ -55,6 +55,7 @@
   ],
   "brokenScreenMessages": [
     "You're no match for my bugs, you poor fool!",
+    "only a real hacker can defeat me",
     "you'll never make it in time! (even though there's no timer)",
     "I wasn't expecting you to be that good...",
     "you must be a developer!",
@@ -62,6 +63,6 @@
     "that was actually a feature!",
     "stop hurting me!",
     "LEAVE THAT ONE!",
-    "console.log('goodbye world');"
+    "console.log('Goodbye World');"
   ]
 }

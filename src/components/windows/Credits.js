@@ -36,6 +36,10 @@ class CreditsBody extends Component {
   render = () => {
     const { activeTab, codeAnimation } = this.state;
 
+    const tooltipMessage = localStorage.getItem('fixed')
+      ? 'I knew you were smart!'
+      : 'did you find it yet? :)';
+
     return (<div className='credits-window'>
       <div>
         <img src={ codeAnimation } alt='code scrolling animation' className='mascot-picture' />
@@ -106,7 +110,7 @@ class CreditsBody extends Component {
         </div>
       </TabBody>
       <div style={ { paddingTop: '15px', textAlign: 'center' } }>
-        <Tooltip text='did you find it yet? :)' delay={ 100 }>
+        <Tooltip text={ tooltipMessage } delay={ 100 }>
           <span role="img" aria-label="pizza">🍕</span>
         </Tooltip>
       </div>
