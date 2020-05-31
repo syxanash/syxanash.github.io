@@ -25,6 +25,11 @@
     "description": "A small Ruby web app which allows you to control iTunes using a web interface."
   },
   {
+    "name": "SoftScript Parser",
+    "url": "https://github.com/syxanash/college-shtuff/tree/master/Programming%20languages",
+    "description": "This is a parser implemented for an invented programming language called SoftScript, made for a university exam"
+  },
+  {
     "name": "Retrocomputing",
     "url": "https://github.com/syxanash/retrocomputing",
     "description": "This is a repository containing some tests I've made on old computers I was able to recover from thrift shops and online."
