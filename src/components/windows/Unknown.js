@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Cutout, Fieldset } from 'react95';
+import { Button, Cutout } from 'react95';
 
 import './Unknown.css';
 
@@ -67,7 +67,7 @@ class UnknownBody extends Component {
             <div style={ { margin: '15px' } }>{titleText[textCounter % titleText.length]}</div>
           </span>
           <div className='unknown-subtext'>
-            <Fieldset style={ { backgroundColor: 'white' } }>{windowMessage}</Fieldset>
+            <Cutout className='hint-message-style'>{windowMessage}</Cutout>
           </div>
         </div>
         <div className='action-button-container'>
