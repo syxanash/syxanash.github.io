@@ -67,7 +67,7 @@ class UnknownBody extends Component {
             <div style={ { margin: '15px' } }>{titleText[textCounter % titleText.length]}</div>
           </span>
           <div className='unknown-subtext'>
-            <Cutout className='hint-message-style'>{windowMessage}</Cutout>
+            <Cutout className='hint-message-style' style={ { padding: '15px' } }>{windowMessage}</Cutout>
           </div>
         </div>
         <div className='action-button-container'>
