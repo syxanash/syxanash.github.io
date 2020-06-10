@@ -69,7 +69,7 @@ class AboutBody extends Component {
         </p>
         <p>
           I don't have a favorite programming language but in the last few years
-          I've used JavaScript in many different occasions.
+          I've used JavaScript in many different occasions and I gotta say I really dig ReactJS!
           When I code on the back-end instead my heart
           almost always tells me to use Ruby.
         </p>
