@@ -68,9 +68,17 @@ class AboutBody extends Component {
           countryside and hike the amazing <a href='https://en.wikipedia.org/wiki/Wicklow_Mountains' target='_blank' rel='noopener noreferrer'>Wicklow mountains</a>.
         </p>
         <p>
+          I don't have a favorite programming language but in the last few years
+          I've used JavaScript in many different occasions.
+          When I code on the back-end instead my heart
+          almost always tells me to use Ruby.
+        </p>
+        <p>
           I'm passionate about retrocomputing,
           when I get the chance I collect old computers from the
-          80s and I'm really fond of skeuomorphic design of 90s and early 2000s UIs.
+          80s. I try to learn old programming languages and paradigms, imagining
+          what life was like before <code>.js</code> took over the world.
+          I'm also really fond of skeuomorphic design of 90s and early 2000s UIs.
         </p>
       </div>
     );
