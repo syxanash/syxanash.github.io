@@ -18,6 +18,12 @@
   width: 90px;
 }
 
+@media screen and (max-width: 865px) {
+  .single-icon {
+    padding: 5px;
+  }
+}
+
 .single-icon:hover .computer-icon {
   filter: grayscale(100%) brightness(5%) sepia(100%) hue-rotate(170deg)
     brightness(900%) saturate(500%);
