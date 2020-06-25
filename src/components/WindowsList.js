@@ -20,6 +20,7 @@ export default function WindowsList() {
   const windowsList = {
     about: {
       hasFullScreen: true,
+      tiltAnimation: false,
       canCloseWindow: true,
       opened: false,
       focused: false,
@@ -29,6 +30,7 @@ export default function WindowsList() {
     },
     projects: {
       hasFullScreen: true,
+      tiltAnimation: false,
       canCloseWindow: true,
       opened: false,
       focused: false,
@@ -38,6 +40,7 @@ export default function WindowsList() {
     },
     contact: {
       hasFullScreen: true,
+      tiltAnimation: false,
       canCloseWindow: true,
       opened: false,
       focused: false,
@@ -47,6 +50,7 @@ export default function WindowsList() {
     },
     links: {
       hasFullScreen: true,
+      tiltAnimation: false,
       canCloseWindow: true,
       opened: false,
       focused: false,
@@ -56,6 +60,7 @@ export default function WindowsList() {
     },
     guestbook: {
       hasFullScreen: true,
+      tiltAnimation: false,
       canCloseWindow: true,
       opened: false,
       focused: false,
@@ -65,6 +70,7 @@ export default function WindowsList() {
     },
     music: {
       hasFullScreen: true,
+      tiltAnimation: false,
       canCloseWindow: true,
       opened: false,
       focused: false,
@@ -74,6 +80,7 @@ export default function WindowsList() {
     },
     credits: {
       hasFullScreen: true,
+      tiltAnimation: false,
       canCloseWindow: true,
       opened: false,
       focused: false,
@@ -83,6 +90,7 @@ export default function WindowsList() {
     },
     webdesktops: {
       hasFullScreen: true,
+      tiltAnimation: false,
       canCloseWindow: true,
       opened: false,
       focused: false,
@@ -92,6 +100,7 @@ export default function WindowsList() {
     },
     osinfowindow: {
       hasFullScreen: false,
+      tiltAnimation: true,
       canCloseWindow: true,
       opened: false,
       focused: false,
@@ -101,6 +110,7 @@ export default function WindowsList() {
     },
     cestino: {
       hasFullScreen: false,
+      tiltAnimation: true,
       canCloseWindow: true,
       opened: false,
       focused: false,
@@ -110,6 +120,7 @@ export default function WindowsList() {
     },
     unknown: {
       hasFullScreen: false,
+      tiltAnimation: false,
       canCloseWindow: false,
       opened: false,
       focused: false,
@@ -119,6 +130,7 @@ export default function WindowsList() {
     },
     fixmycomputer: {
       hasFullScreen: true,
+      tiltAnimation: false,
       canCloseWindow: true,
       opened: false,
       focused: false,

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Tilt from 'react-tilt';
 import { ThemeProvider } from 'styled-components';
 import { withRouter } from 'react-router-dom';
 import {
@@ -87,7 +88,7 @@ class PopupWindow extends Component {
     this.windowElement.removeEventListener('animationend', this.removeOpeningAnimation);
   }
 
-  render() {
+  renderInnerWindow = () => {
     const { displayWindowBody, openAnimation } = this.state;
     const {
       header, body, displayExtraActions, displayCloseButton,
@@ -98,31 +99,41 @@ class PopupWindow extends Component {
     const PopupWindowBody = body;
 
     return (
+      <ThemeProvider theme={ focused ? windowTheme : PippoDistracted }>
+        <Window className={ openAnimation ? `animated ${displayExtraActions ? 'zoomIn faster' : 'bounceIn faster'}` : '' }>
+          <WindowHeader className="handle">
+            <div className='window-header popup-movable-header'>
+              <span className='window-title-text' >
+                <PopupWindowHeader />
+              </span>
+              <span className='window-title-buttons'>
+                { displayExtraActions ? this.renderExtraActionButtons() : null }
+                { displayCloseButton ? this.renderCloseButton() : null }
+              </span>
+            </div>
+          </WindowHeader>
+          <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
+            <PopupWindowBody
+              closeWindow={ this.closeCurrentWindow }
+              openWindow={ openWindow }
+            />
+          </WindowContent>
+        </Window>
+      </ThemeProvider>
+    );
+  }
+
+  renderAnimatedInnerWindow = () => <Tilt>{this.renderInnerWindow()}</Tilt>
+
+  render() {
+    const { tiltAnimation } = this.props;
+
+    return (
       <Draggable
         handle='.handle'
       >
-        <div className='popup-window-container'>
-          <ThemeProvider theme={ focused ? windowTheme : PippoDistracted }>
-            <Window className={ openAnimation ? `animated ${displayExtraActions ? 'zoomIn faster' : 'bounceIn faster'}` : '' }>
-              <WindowHeader className="handle">
-                <div className='window-header popup-movable-header'>
-                  <span className='window-title-text' >
-                    <PopupWindowHeader />
-                  </span>
-                  <span className='window-title-buttons'>
-                    { displayExtraActions ? this.renderExtraActionButtons() : null }
-                    { displayCloseButton ? this.renderCloseButton() : null }
-                  </span>
-                </div>
-              </WindowHeader>
-              <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
-                <PopupWindowBody
-                  closeWindow={ this.closeCurrentWindow }
-                  openWindow={ openWindow }
-                />
-              </WindowContent>
-            </Window>
-          </ThemeProvider>
+        <div id='window-container' className='popup-window-container'>
+          { tiltAnimation ? this.renderAnimatedInnerWindow() : this.renderInnerWindow() }
         </div>
       </Draggable>
     );
