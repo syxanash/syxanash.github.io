@@ -60,6 +60,10 @@ class WebDesktopsBody extends Component {
     this.openWebsiteURL({ url: randomLink });
   }
 
+  openWebsiteURL = ({ url }) => {
+    window.open(url, '_blank');
+  }
+
   toggleHTTPSFilter = () => {
     const { httpsOnlyEnabled } = this.state;
     this.setState({ httpsOnlyEnabled: !httpsOnlyEnabled });
