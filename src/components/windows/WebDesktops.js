@@ -27,7 +27,7 @@ class WebDesktopsBody extends Component {
     .join(' ')
 
   renderSingleComputerIcon = ({ url, name }) => (
-    <React.Fragment>
+    <a className='website-link' href={ url } target='_blank' rel='noopener noreferrer'>
       <div className='computer-icon'>
         <img style={ { height: '65px' } } src={ computerIcon } alt='single desktop icon' />
       </div>
@@ -37,7 +37,7 @@ class WebDesktopsBody extends Component {
       <div className='website-name'>
         { this.trimLongWords(name) }
       </div>
-    </React.Fragment>
+    </a>
   )
 
   filterURLByHTTPS = (url) => {
@@ -67,14 +67,14 @@ class WebDesktopsBody extends Component {
 
   renderAllIcons = () => {
     const desktopIcons = remoteDesktops.filter(website => this.filterURLByHTTPS(website.url))
-      .map(website => (<a className='website-link' href={ website.url } target='_blank' rel='noopener noreferrer'>
+      .map(website => (
         <div
           className='single-icon'
           key={ `icon_${website.name}` }
         >
           { this.renderSingleComputerIcon(website) }
         </div>
-      </a>));
+      ));
 
     return desktopIcons;
   }
