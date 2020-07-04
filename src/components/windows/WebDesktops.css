@@ -12,6 +12,11 @@
   margin-top: -20px;
 }
 
+.website-link {
+  color: black;
+  text-decoration: none;
+}
+
 .single-icon {
   padding: 10px;
   text-align: center;

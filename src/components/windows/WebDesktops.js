@@ -60,10 +60,6 @@ class WebDesktopsBody extends Component {
     this.openWebsiteURL({ url: randomLink });
   }
 
-  openWebsiteURL = ({ url }) => {
-    window.open(url, '_blank');
-  }
-
   toggleHTTPSFilter = () => {
     const { httpsOnlyEnabled } = this.state;
     this.setState({ httpsOnlyEnabled: !httpsOnlyEnabled });
@@ -71,12 +67,14 @@ class WebDesktopsBody extends Component {
 
   renderAllIcons = () => {
     const desktopIcons = remoteDesktops.filter(website => this.filterURLByHTTPS(website.url))
-      .map(website => (<div
-        className='single-icon'
-        key={ `icon_${website.name}` }
-        onClick={ () => this.openWebsiteURL(website) }>
-        { this.renderSingleComputerIcon(website) }
-      </div>));
+      .map(website => (<a className='website-link' href={ website.url } target='_blank' rel='noopener noreferrer'>
+        <div
+          className='single-icon'
+          key={ `icon_${website.name}` }
+        >
+          { this.renderSingleComputerIcon(website) }
+        </div>
+      </a>));
 
     return desktopIcons;
   }
