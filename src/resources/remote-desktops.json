@@ -274,5 +274,9 @@
 	{
 		"name": "VirusvAV",
 		"url": "https://os.virusav.com"
+	},
+	{
+		"name": "some kind of blog",
+		"url": "https://blog.aimen.me"
 	}
 ]
