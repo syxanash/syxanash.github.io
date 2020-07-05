@@ -278,5 +278,9 @@
 	{
 		"name": "some kind of blog",
 		"url": "https://blog.aimen.me"
+	},
+	{
+		"name": "repeater.space",
+		"url": "https://repeater.space"
 	}
 ]
