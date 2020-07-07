@@ -22,10 +22,6 @@ class WebDesktopsBody extends Component {
     httpsOnlyEnabled: false,
   }
 
-  trimLongWords = text => text.split(' ')
-    .map(word => (word.length > 10 ? `${word.substring(0, 9)}…` : word))
-    .join(' ')
-
   renderSingleComputerIcon = ({ url, name }) => (
     <a className='website-link' href={ url } target='_blank' rel='noopener noreferrer'>
       <div className='computer-icon'>
@@ -35,7 +31,7 @@ class WebDesktopsBody extends Component {
         <img style={ { height: '25px' } } src={ `https://s2.googleusercontent.com/s2/favicons?domain_url=${url}` } alt='computer icon' />
       </div>
       <div className='website-name'>
-        { this.trimLongWords(name) }
+        { name }
       </div>
     </a>
   )
