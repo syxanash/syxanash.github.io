@@ -71,7 +71,7 @@ class ProjectsBody extends Component {
         <br />
         <div style={ { display: pressedEnter ? 'inline-block' : 'none', color: '#ff5d5d' } }>** SHELL CREATED FOR DEMO PURPOSE ONLY **</div>
         <div
-          style={ { display: pressedEnter ? 'none' : 'block' } }
+          style={ { overflow: 'hidden', display: pressedEnter ? 'none' : 'block' } }
           onClick={ this.focusPrompt }>{isZXSpectrum ? '' : `${randomPromptChars} `}
           <div style={ {
             display: 'inline-block',
