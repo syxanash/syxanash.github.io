@@ -7,7 +7,7 @@ import projectsList from '../../resources/projects-list.json';
 
 import './Projects.css';
 
-const PROMPT_CHARS = ['>', '$', '#', ']', 'é'];
+const PROMPT_CHARS = ['>', '$', '#', ']', 'é', 'ZX'];
 
 class ProjectsHeader extends Component {
   render = () => (
@@ -42,7 +42,9 @@ class ProjectsBody extends Component {
         I work on small side projects to create something I need
         or to play with new tech. Here is a list of the ones I really enjoyed building:</div>
         {this.renderProjectsList()}
-        <span>{randomPromptChars} <span className='blink'>█</span></span>
+        <span>{randomPromptChars === 'ZX' ? '' : `${randomPromptChars} `}
+          <span className='blink'>{randomPromptChars === 'ZX' ? '🄺' : '█'}</span>
+        </span>
       </Cutout>
     </div>);
   }
