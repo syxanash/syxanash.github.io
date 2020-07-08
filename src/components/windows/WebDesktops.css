@@ -46,7 +46,7 @@
     brightness(900%) saturate(500%);
 }
 
-.single-icon:hover .website-name {
+.single-icon:hover .website-name span {
   background-color: #008dec;
   color: white;
 }

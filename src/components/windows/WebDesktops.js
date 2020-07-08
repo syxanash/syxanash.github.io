@@ -31,7 +31,7 @@ class WebDesktopsBody extends Component {
         <img style={ { height: '25px' } } src={ `https://s2.googleusercontent.com/s2/favicons?domain_url=${url}` } alt='computer icon' />
       </div>
       <div className='website-name'>
-        { name }
+        <span>{ name }</span>
       </div>
     </a>
   )
