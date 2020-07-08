@@ -79,7 +79,7 @@ class ProjectsBody extends Component {
             outline: 'none',
             border: 'none',
           } } ref="shellText" contentEditable='true'></div>
-          <span style={ { display: isZXSpectrum || showPrompt ? 'inline-block' : 'none' } } className='blink'>{isZXSpectrum ? '🄺' : '█'}</span>
+          <span className={ showPrompt ? 'blink' : '' }>{isZXSpectrum ? '🄺' : '█'}</span>
         </div>
       </Cutout>
     </div>);
