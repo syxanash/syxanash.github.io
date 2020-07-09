@@ -64,6 +64,7 @@ class App extends Component {
             focusWindow={ this.focusWindow }
             closeWindow={ this.closeWindow }
             isWindowOpened={ this.isWindowOpened }
+            isFullscreen={ true }
           /> }
         />;
       });

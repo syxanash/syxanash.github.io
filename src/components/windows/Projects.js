@@ -109,9 +109,13 @@ class ProjectsBody extends Component {
     };
 
     commands.exit = () => {
-      const { closeWindow } = this.props;
+      const { isFullscreen, closeWindow } = this.props;
 
-      closeWindow();
+      if (isFullscreen) {
+        commands.reboot();
+      } else {
+        closeWindow();
+      }
     };
 
     if (showPrompt && event.keyCode === 13) {

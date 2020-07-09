@@ -117,6 +117,7 @@ class PopupWindow extends Component {
               closeWindow={ this.closeCurrentWindow }
               openWindow={ openWindow }
               poweroff={ poweroff }
+              isFullscreen={ false }
             />
           </WindowContent>
         </Window>
