@@ -65,6 +65,7 @@ class App extends Component {
             closeWindow={ this.closeWindow }
             isWindowOpened={ this.isWindowOpened }
             isFullscreen={ true }
+            poweroff={ this.poweroff }
           /> }
         />;
       });
