@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Cutout } from 'react95';
 import Typist from 'react-typist';
-
+import SoundEffects from '../additional/SoundEffects';
 import projectsIcon from '../../resources/icons/development.gif';
 import projectsList from '../../resources/projects-list.json';
 
@@ -76,7 +76,7 @@ class ProjectsBody extends Component {
     };
 
     commands.clear = () => {
-      this.setState({ shellOutput: 'one does not simply erase the past!' });
+      this.setState({ shellOutput: undefined });
     };
 
     commands.goto = () => {
@@ -84,7 +84,12 @@ class ProjectsBody extends Component {
     };
 
     commands.reboot = () => {
-      window.location.href = '/';
+      const sound = SoundEffects.rebootSound;
+      sound.play();
+      this.setState({ shellOutput: 'Pippo OS is rebooting...' });
+      sound.on('end', () => {
+        window.location.href = '/';
+      });
     };
 
     commands.vim = () => {
@@ -130,6 +135,8 @@ class ProjectsBody extends Component {
       if (promptTextDiv !== null) {
         promptTextDiv.innerText = '';
       }
+
+      event.preventDefault();
     }
   }
 
@@ -144,7 +151,7 @@ class ProjectsBody extends Component {
 
   focusPrompt = () => {
     this.setState({ showPrompt: true });
-    document.getElementById('promptText').innerHTML = '<br />';
+    document.getElementById('promptText').innerText = '';
     document.getElementById('promptText').focus();
   }
 
@@ -160,13 +167,11 @@ class ProjectsBody extends Component {
         or to play with new tech. Here is a list of the ones I really enjoyed building:</div>
         {this.renderProjectsList()}
         <br />
-        <div style={ { display: shellOutput !== undefined ? 'inline-block' : 'none', color: 'lime' } }>
+        <div style={ { paddingBottom: '15px', display: shellOutput !== undefined ? 'inline-block' : 'none', color: 'lime' } }>
           <span style={ { color: 'red' } }>{'=>'} </span>
           { shellOutput }
         </div>
-        <div
-          className='prompt-area'
-          onMouseEnter={ this.focusPrompt }>{isZXSpectrum ? '' : `${randomPromptChars} `}
+        <div className='prompt-area'>{isZXSpectrum ? '' : `${randomPromptChars} `}
           <div id='promptText' style={ {
             display: 'inline-block',
             caretColor: 'transparent',
