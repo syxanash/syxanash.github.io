@@ -176,7 +176,7 @@ class ProjectsBody extends Component {
           <span style={ { color: 'red' } }>{'=>'} </span>
           { shellOutput }
         </div>
-        <div onClick={ this.focusPrompt } className='prompt-area animated bounce fast delay-5s'>{isZXSpectrum ? '' : `${randomPromptChars} `}
+        <div onClick={ this.focusPrompt } className={ `prompt-area ${showPrompt ? '' : 'animated bounce fast delay-5s'}` }>{isZXSpectrum ? '' : `${randomPromptChars} `}
           <div id='promptText' style={ {
             display: 'inline-block',
             caretColor: 'transparent',
