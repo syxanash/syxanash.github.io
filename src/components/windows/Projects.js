@@ -166,7 +166,7 @@ class ProjectsBody extends Component {
     const isZXSpectrum = randomPromptChars === 'ZX';
 
     return (<div>
-      <Cutout className='cutout-area' style={ { padding: '10px' } } onClick={ this.focusPrompt }>
+      <Cutout className='cutout-area' style={ { padding: '10px' } }>
         <div className='comment-text' style={ { paddingBottom: '15px' } }>{'//'} Sometimes when I feel motivated and planets are perfectly aligned
         I work on small side projects to create something I need
         or to play with new tech. Here is a list of the ones I really enjoyed building:</div>
@@ -176,7 +176,7 @@ class ProjectsBody extends Component {
           <span style={ { color: 'red' } }>{'=>'} </span>
           { shellOutput }
         </div>
-        <div className='prompt-area'>{isZXSpectrum ? '' : `${randomPromptChars} `}
+        <div onClick={ this.focusPrompt } className='prompt-area animated bounce fast delay-5s'>{isZXSpectrum ? '' : `${randomPromptChars} `}
           <div id='promptText' style={ {
             display: 'inline-block',
             caretColor: 'transparent',
