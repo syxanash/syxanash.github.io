@@ -122,7 +122,7 @@ class ProjectsBody extends Component {
       const { isFullscreen, closeWindow } = this.props;
 
       if (isFullscreen) {
-        commands.reboot();
+        window.location.href = '/';
       } else {
         closeWindow();
       }
