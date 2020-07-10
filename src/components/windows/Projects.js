@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Cutout } from 'react95';
+import _ from 'lodash';
 import Typist from 'react-typist';
 import SoundEffects from '../additional/SoundEffects';
 import projectsIcon from '../../resources/icons/development.gif';
@@ -59,8 +60,12 @@ class ProjectsBody extends Component {
       this.setState({ shellOutput: 'woman' });
     };
 
-    commands.woman = () => {
-      this.setState({ shellOutput: 'What manual page do you want?' });
+    commands.woman = (args) => {
+      if (_.isEmpty(args)) {
+        this.setState({ shellOutput: 'What manual page do you want?' });
+      } else {
+        this.setState({ shellOutput: `No manual entry for ${escape(args[0])}` });
+      }
     };
 
     commands.passwd = () => {
