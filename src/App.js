@@ -64,6 +64,8 @@ class App extends Component {
             focusWindow={ this.focusWindow }
             closeWindow={ this.closeWindow }
             isWindowOpened={ this.isWindowOpened }
+            isFullscreen={ true }
+            poweroff={ this.poweroff }
           /> }
         />;
       });
@@ -245,6 +247,7 @@ class App extends Component {
             ? <PopupWindow
               closeWindow={ () => this.closeWindow(window) }
               openWindow={ this.openWindow }
+              poweroff={ this.poweroff }
               focused={ windowFocused }
               header={ windowHeader }
               body={ windowBody }

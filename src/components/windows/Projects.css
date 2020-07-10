@@ -40,3 +40,8 @@
 .project-item a:visited {
   color: lightskyblue;
 }
+
+.prompt-area {
+  cursor: url(../../resources/images/pointer.gif), auto;
+  overflow: 'hidden';
+}

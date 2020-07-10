@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Cutout } from 'react95';
+import _ from 'lodash';
 import Typist from 'react-typist';
-import ReactDOM from 'react-dom';
-
+import SoundEffects from '../additional/SoundEffects';
 import projectsIcon from '../../resources/icons/development.gif';
 import projectsList from '../../resources/projects-list.json';
 
@@ -21,7 +21,7 @@ class ProjectsHeader extends Component {
 class ProjectsBody extends Component {
   state = {
     showPrompt: false,
-    pressedEnter: false,
+    shellOutput: undefined,
     randomPromptChars: Object.keys(PROMPT_CHARS).map(e => PROMPT_CHARS[e])[
       Math.floor(Math.random() * Object.keys(PROMPT_CHARS).map(e => PROMPT_CHARS[e]).length)
     ],
@@ -38,8 +38,110 @@ class ProjectsBody extends Component {
   enterPressed = (event) => {
     const { showPrompt } = this.state;
 
+    const commands = {};
+
+    commands.help = () => {
+      this.setState({ shellOutput: 'yes, everyone needs it these days...' });
+    };
+
+    commands.ls = () => {
+      this.setState({ shellOutput: 'there\'s already a list above, you blind?' });
+    };
+
+    commands.dir = () => {
+      this.setState({ shellOutput: 'there\'s already a list above, you blind? (oh right, you\'re a windows user...)' });
+    };
+
+    commands.whoami = () => {
+      this.setState({ shellOutput: navigator.userAgent });
+    };
+
+    commands.man = () => {
+      this.setState({ shellOutput: 'woman' });
+    };
+
+    commands.woman = (args) => {
+      if (_.isEmpty(args)) {
+        this.setState({ shellOutput: 'What manual page do you want?' });
+      } else {
+        this.setState({ shellOutput: `No manual entry for ${escape(args[0])}` });
+      }
+    };
+
+    commands.passwd = () => {
+      this.setState({ shellOutput: 'nice try!' });
+    };
+
+    commands.hello = () => {
+      this.setState({ shellOutput: 'hello to you too kind user!' });
+    };
+
+    commands.sudo = () => {
+      this.setState({ shellOutput: 'we don\'t sudo here' });
+    };
+
+    commands.clear = () => {
+      this.setState({ shellOutput: undefined });
+    };
+
+    commands.goto = () => {
+      this.setState({ shellOutput: 'Hokey religions and ancient GOTOs are no match for a good blaster at your side, kid' });
+    };
+
+    commands.reboot = () => {
+      const sound = SoundEffects.rebootSound;
+      sound.play();
+      this.setState({ shellOutput: 'Pippo OS is rebooting...' });
+      sound.on('end', () => {
+        window.location.href = '/';
+      });
+    };
+
+    commands.vim = () => {
+      window.location.href = 'https://www.gnu.org/software/emacs/';
+    };
+
+    commands.emacs = () => {
+      window.location.href = 'https://www.vim.org';
+    };
+
+    commands.format = () => {
+      localStorage.clear();
+      sessionStorage.clear();
+      alert('Pippo OS has been successfully formatted!');
+      commands.reboot();
+    };
+
+    commands.shutdown = () => {
+      const { poweroff } = this.props;
+
+      poweroff();
+    };
+
+    commands.exit = () => {
+      const { isFullscreen, closeWindow } = this.props;
+
+      if (isFullscreen) {
+        commands.reboot();
+      } else {
+        closeWindow();
+      }
+    };
+
     if (showPrompt && event.keyCode === 13) {
-      this.setState({ pressedEnter: true });
+      const cmdString = document.getElementById('promptText').innerText.trim().split(' ');
+
+      if (Object.keys(commands).includes(cmdString[0])) {
+        commands[cmdString[0]](cmdString.slice(1));
+      }
+
+      const promptTextDiv = document.getElementById('promptText');
+
+      if (promptTextDiv !== null) {
+        promptTextDiv.innerText = '';
+      }
+
+      event.preventDefault();
     }
   }
 
@@ -54,31 +156,33 @@ class ProjectsBody extends Component {
 
   focusPrompt = () => {
     this.setState({ showPrompt: true });
-    ReactDOM.findDOMNode(this.refs.shellText).focus();
+    document.getElementById('promptText').innerText = '';
+    document.getElementById('promptText').focus();
   }
 
   render = () => {
-    const { randomPromptChars, showPrompt, pressedEnter } = this.state;
+    const { randomPromptChars, showPrompt, shellOutput } = this.state;
 
     const isZXSpectrum = randomPromptChars === 'ZX';
 
     return (<div>
-      <Cutout className='cutout-area' style={ { padding: '10px' } }>
+      <Cutout className='cutout-area' style={ { padding: '10px' } } onClick={ this.focusPrompt }>
         <div className='comment-text' style={ { paddingBottom: '15px' } }>{'//'} Sometimes when I feel motivated and planets are perfectly aligned
         I work on small side projects to create something I need
         or to play with new tech. Here is a list of the ones I really enjoyed building:</div>
         {this.renderProjectsList()}
         <br />
-        <div style={ { display: pressedEnter ? 'inline-block' : 'none', color: '#ff5d5d' } }>** SHELL CREATED FOR DEMO PURPOSE ONLY **</div>
-        <div
-          style={ { overflow: 'hidden', display: pressedEnter ? 'none' : 'block' } }
-          onClick={ this.focusPrompt }>{isZXSpectrum ? '' : `${randomPromptChars} `}
-          <div style={ {
+        <div style={ { paddingBottom: '15px', display: shellOutput !== undefined ? 'inline-block' : 'none', color: 'lime' } }>
+          <span style={ { color: 'red' } }>{'=>'} </span>
+          { shellOutput }
+        </div>
+        <div className='prompt-area'>{isZXSpectrum ? '' : `${randomPromptChars} `}
+          <div id='promptText' style={ {
             display: 'inline-block',
             caretColor: 'transparent',
             outline: 'none',
             border: 'none',
-          } } ref="shellText" contentEditable='true'></div>
+          } } contentEditable='true'></div>
           <span className={ showPrompt ? 'blink' : '' }>{isZXSpectrum ? '🄺' : '█'}</span>
         </div>
       </Cutout>
