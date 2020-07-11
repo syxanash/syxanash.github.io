@@ -22,6 +22,7 @@ class ProjectsBody extends Component {
   state = {
     showPrompt: false,
     shellOutput: undefined,
+    stdError: false,
     randomPromptChars: Object.keys(PROMPT_CHARS).map(e => PROMPT_CHARS[e])[
       Math.floor(Math.random() * Object.keys(PROMPT_CHARS).map(e => PROMPT_CHARS[e]).length)
     ],
@@ -64,7 +65,7 @@ class ProjectsBody extends Component {
       if (_.isEmpty(args)) {
         this.setState({ shellOutput: 'What manual page do you want?' });
       } else {
-        this.setState({ shellOutput: `No manual entry for ${escape(args[0])}` });
+        this.setState({ shellOutput: `No manual entry for ${args[0]}` });
       }
     };
 
@@ -131,8 +132,14 @@ class ProjectsBody extends Component {
     if (showPrompt && event.keyCode === 13) {
       const cmdString = document.getElementById('promptText').innerText.trim().split(' ');
 
-      if (Object.keys(commands).includes(cmdString[0])) {
+      if (_.isEmpty(cmdString[0])) {
+        commands.clear();
+        this.setState({ stdError: false });
+      } else if (Object.keys(commands).includes(cmdString[0])) {
         commands[cmdString[0]](cmdString.slice(1));
+        this.setState({ stdError: false });
+      } else {
+        this.setState({ shellOutput: 'COMMAND NOT FOUND', stdError: true });
       }
 
       const promptTextDiv = document.getElementById('promptText');
@@ -161,7 +168,9 @@ class ProjectsBody extends Component {
   }
 
   render = () => {
-    const { randomPromptChars, showPrompt, shellOutput } = this.state;
+    const {
+      randomPromptChars, showPrompt, shellOutput, stdError,
+    } = this.state;
 
     const isZXSpectrum = randomPromptChars === 'ZX';
 
@@ -172,8 +181,8 @@ class ProjectsBody extends Component {
         or to play with new tech. Here is a list of the ones I really enjoyed building:</div>
         {this.renderProjectsList()}
         <br />
-        <div style={ { paddingBottom: '15px', display: shellOutput !== undefined ? 'inline-block' : 'none', color: 'lime' } }>
-          <span style={ { color: 'red' } }>{'=>'} </span>
+        <div style={ { paddingBottom: '15px', display: shellOutput !== undefined ? 'inline-block' : 'none', color: stdError ? 'yellow' : 'lime' } }>
+          <span style={ { color: 'red' } }>{ stdError ? '[!]' : '=>' } </span>
           { shellOutput }
         </div>
         <div onClick={ this.focusPrompt } className={ `prompt-area ${showPrompt ? '' : 'animated bounce fast delay-5s'}` }>{isZXSpectrum ? '' : `${randomPromptChars} `}
