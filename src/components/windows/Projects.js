@@ -142,8 +142,8 @@ class ProjectsBody extends Component {
       if (_.isEmpty(cmdString[0])) {
         commands.clear();
         this.setState({ stdError: false });
-      } else if (Object.keys(commands).includes(cmdString[0])) {
-        commands[cmdString[0]](cmdString.slice(1));
+      } else if (Object.keys(commands).includes(cmdString[0].toLowerCase())) {
+        commands[cmdString[0].toLowerCase()](cmdString.slice(1));
         this.setState({ stdError: false });
       } else {
         this.setState({ shellOutput: 'COMMAND NOT FOUND', stdError: true });
