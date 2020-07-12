@@ -23,6 +23,7 @@ class ProjectsBody extends Component {
     showPrompt: false,
     shellOutput: undefined,
     stdError: false,
+    shellWaiting: false,
     randomPromptChars: Object.keys(PROMPT_CHARS).map(e => PROMPT_CHARS[e])[
       Math.floor(Math.random() * Object.keys(PROMPT_CHARS).map(e => PROMPT_CHARS[e]).length)
     ],
@@ -92,25 +93,31 @@ class ProjectsBody extends Component {
     commands.reboot = () => {
       const sound = SoundEffects.rebootSound;
       sound.play();
-      this.setState({ shellOutput: 'Pippo OS is rebooting...' });
+      this.setState({ shellOutput: 'Pippo OS is rebooting...', shellWaiting: true });
       sound.on('end', () => {
         window.location.href = '/';
       });
     };
 
     commands.vim = () => {
+      this.setState({ shellOutput: 'Opening VIM...', shellWaiting: true });
       window.location.href = 'https://www.gnu.org/software/emacs/';
     };
 
     commands.emacs = () => {
+      this.setState({ shellOutput: 'Opening Emacs...', shellWaiting: true });
       window.location.href = 'https://www.vim.org';
     };
 
     commands.format = () => {
       localStorage.clear();
       sessionStorage.clear();
-      alert('Pippo OS has been successfully formatted!');
-      commands.reboot();
+
+      this.setState({ shellOutput: 'Pippo OS has been successfully formatted!', shellWaiting: true });
+
+      setTimeout(() => {
+        commands.reboot();
+      }, 1500);
     };
 
     commands.shutdown = () => {
@@ -169,7 +176,7 @@ class ProjectsBody extends Component {
 
   render = () => {
     const {
-      randomPromptChars, showPrompt, shellOutput, stdError,
+      randomPromptChars, showPrompt, shellOutput, stdError, shellWaiting,
     } = this.state;
 
     const isZXSpectrum = randomPromptChars === 'ZX';
@@ -185,7 +192,11 @@ class ProjectsBody extends Component {
           <span style={ { color: 'red' } }>{ stdError ? '[!]' : '=>' } </span>
           { shellOutput }
         </div>
-        <div onClick={ this.focusPrompt } className={ `prompt-area ${showPrompt ? '' : 'animated bounce fast delay-5s'}` }>{isZXSpectrum ? '' : `${randomPromptChars} `}
+        <div
+          style={ { display: shellWaiting ? 'none' : 'block' } }
+          onClick={ this.focusPrompt }
+          className={ `prompt-area ${showPrompt ? '' : 'animated bounce fast delay-5s'}` }
+        >{isZXSpectrum ? '' : `${randomPromptChars} `}
           <div id='promptText' style={ {
             display: 'inline-block',
             caretColor: 'transparent',
