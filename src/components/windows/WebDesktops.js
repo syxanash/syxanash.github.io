@@ -9,7 +9,7 @@ import remoteDesktops from '../../resources/remote-desktops.json';
 import computerIcon from '../../resources/icons/remote.gif';
 import mainWindowIcon from '../../resources/icons/inceputer.gif';
 import mobileWarningIcon from '../../resources/icons/mobilewarning.gif';
-import smileyIcon from '../../resources/icons/utopia_smiley.png';
+import smileyIcon from '../../resources/images/utopia_smiley.png';
 
 class WebDesktopsHeader extends Component {
   render = () => (
