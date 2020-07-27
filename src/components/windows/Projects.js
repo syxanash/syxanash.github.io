@@ -18,6 +18,38 @@ class ProjectsHeader extends Component {
   )
 }
 
+class CmdLoader extends Component {
+  constructor(props) {
+    super(props);
+
+    this.updaterInterval = undefined;
+
+    this.state = {
+      index: 0,
+      sequence: ['|', '/', '-', '\\'],
+    };
+  }
+
+  componentDidMount() {
+    this.updaterInterval = setInterval(this.characterUpdater, 100);
+  }
+
+  componentWillUnmount() {
+    if (this.updaterInterval) {
+      clearInterval(this.updaterInterval);
+    }
+  }
+
+  characterUpdater = () => {
+    this.setState({ index: this.state.index + 1 });
+  }
+
+  render() {
+    const { index, sequence } = this.state;
+    return <span>{sequence[index % sequence.length]}</span>;
+  }
+}
+
 class ProjectsBody extends Component {
   state = {
     showPrompt: false,
@@ -191,6 +223,7 @@ class ProjectsBody extends Component {
         <div style={ { paddingBottom: '15px', display: shellOutput !== undefined ? 'inline-block' : 'none', color: stdError ? 'yellow' : 'lime' } }>
           <span style={ { color: 'red' } }>{ stdError ? '[!]' : '=>' } </span>
           { shellOutput }
+          <span style={ { display: shellWaiting ? 'inline-block' : 'none' } }>&nbsp;<CmdLoader /></span>
         </div>
         <div
           style={ { display: shellWaiting ? 'none' : 'block' } }
