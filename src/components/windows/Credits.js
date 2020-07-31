@@ -98,7 +98,7 @@ class CreditsBody extends Component {
               </li>
             </ul>
             <ul style={ { display: activeTab === 4 ? 'block' : 'none' } }>
-              <li className='list-content'>The poweroff screen page has a sample sound I modified from the original song <a href='https://www.youtube.com/watch?v=Z0XLzIswI2s' target='_blank' rel='noopener noreferrer'>Grace Jones - Slave to the Rhythm</a></li>
+              <li className='list-content'>The poweroff screen page has a sample sound I modified from the original song <a href='https://www.youtube.com/watch?v=Wl-Xgv7X4ME' target='_blank' rel='noopener noreferrer'>Grace Jones - Slave to the Rhythm</a></li>
               <li className='list-content'>The reboot sound was sampled and modified <a href='https://www.youtube.com/watch?v=qqpTq9_rf_Q' target='_blank' rel='noopener noreferrer'>GTA III theme</a></li>
               <li className='list-content'>The error sound was modified from the Windows ME warning chord, original file downloaded from <a href='https://guidebookgallery.org/sounds' target='_blank' rel='noopener noreferrer'>guidebookgallery.org/sounds</a></li>
             </ul>
