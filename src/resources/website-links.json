@@ -93,6 +93,10 @@
       {
         "url": "https://charlie.bz",
         "description": "a cool VM based personal website!"
+      },
+      {
+        "url": "https://jacobhall.net",
+        "description": "a guy with some interesting projects and links"
       }
     ]
   },
@@ -158,6 +162,14 @@
       {
         "url": "https://www.my90stv.com",
         "description": "go back in time and watch old TV programs"
+      },
+      {
+        "url": "https://www.tasteatlas.com",
+        "description": "a huge map with typical dishes and food recipes from around the world"
+      },
+      {
+        "url": "https://gui.neocities.org",
+        "description": "a collection of movie computer interfaces"
       }
     ]
   },
