@@ -14,9 +14,9 @@ body {
 }
 
 * {
-  cursor: url(../src/resources/images/cursor.gif), auto;
+  cursor: url(../src/resources/icons/pointers/cursor.gif), auto;
 }
 
 a {
-  cursor: url(../src/resources/images/pointer.gif), auto;
+  cursor: url(../src/resources/icons/pointers/pointer.gif), auto;
 }

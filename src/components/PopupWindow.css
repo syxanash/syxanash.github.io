@@ -14,9 +14,9 @@
 }
 
 .popup-movable-header {
-  cursor: url(../resources/images/grab.gif), auto;
+  cursor: url(../resources/icons/pointers/grab.gif), auto;
 }
 
 .popup-movable-header:active {
-  cursor: url(../resources/images/grabbing.gif), auto;
+  cursor: url(../resources/icons/pointers/grabbing.gif), auto;
 }
