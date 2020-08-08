@@ -19,6 +19,7 @@ import StoppedProgram from './components/additional/StoppedProgram';
 import BrokenScreen from './components/additional/BrokenScreen';
 import TheAgent from './components/additional/TheAgent';
 import SoundEffects from './components/additional/SoundEffects';
+import LoaderCursor from './components/additional/LoaderCursor';
 
 import PippoTheme from './themes/PippoTheme';
 import ThemeContext from './ThemeContext';
@@ -30,17 +31,24 @@ import bgList from './resources/backgrounds-list.json';
 const backgroundImages = require.context('./resources/images/backgrounds', true);
 
 class App extends Component {
-  state = {
-    bgWallpapers: _.shuffle(bgList),
-    bgIndex: 0,
-    displayWindowBody: true,
-    pageBodyRoutes: undefined,
-    poweredOff: false,
-    loopTVon: false,
-    stoppedWindowProgram: undefined,
-    isBrokenScreen: false,
-    mainTheme: PippoTheme,
-    windowsList: WindowsList(),
+  constructor(props) {
+    super(props);
+
+    this.loadingIconTimeout = undefined;
+
+    this.state = {
+      bgWallpapers: _.shuffle(bgList),
+      bgIndex: 0,
+      showLoaderPointer: false,
+      displayWindowBody: true,
+      pageBodyRoutes: undefined,
+      poweredOff: false,
+      loopTVon: false,
+      stoppedWindowProgram: undefined,
+      isBrokenScreen: false,
+      mainTheme: PippoTheme,
+      windowsList: WindowsList(),
+    };
   }
 
   componentDidMount() {
@@ -81,6 +89,10 @@ class App extends Component {
   }
 
   componentWillUnmount() {
+    if (this.loadingIconTimeout) {
+      clearTimeout(this.loadingIconTimeout);
+    }
+
     document.removeEventListener('keydown', this.closeTopWindow);
     document.removeEventListener('keydown', this.stoppedProgram);
   }
@@ -110,7 +122,13 @@ class App extends Component {
     if (subWindow) {
       delay(100).then(openWindowFunction);
     } else {
+      this.loadingIconTimeout = setTimeout(() => {
+        this.setState({ showLoaderPointer: false });
+      }, 1200);
+
       openWindowFunction();
+
+      this.setState({ showLoaderPointer: true });
     }
   }
 
@@ -265,7 +283,7 @@ class App extends Component {
 
   render() {
     const {
-      bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes,
+      bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes, showLoaderPointer,
       poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme,
     } = this.state;
 
@@ -314,6 +332,7 @@ class App extends Component {
         <Poweroff shouldPoweroff={ poweredOff } />
         <StoppedProgram shouldStopWindowing={ stoppedWindowProgram } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
+        { showLoaderPointer ? <LoaderCursor /> : null }
         <div className='scan-lines'></div>
       </HashRouter>
     );

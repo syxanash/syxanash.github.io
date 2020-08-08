@@ -3,6 +3,7 @@ import { Cutout } from 'react95';
 import _ from 'lodash';
 import Typist from 'react-typist';
 import SoundEffects from '../additional/SoundEffects';
+import LoaderCursor from '../additional/LoaderCursor';
 import projectsIcon from '../../resources/icons/development.gif';
 import projectsList from '../../resources/projects-list.json';
 
@@ -46,7 +47,16 @@ class CmdLoader extends Component {
 
   render() {
     const { index, sequence } = this.state;
-    return <span>{sequence[index % sequence.length]}</span>;
+    const { isLoading } = this.props;
+
+    if (!isLoading) {
+      return null;
+    }
+
+    return <React.Fragment>
+      <span>{sequence[index % sequence.length]}</span>
+      <LoaderCursor />
+    </React.Fragment>;
   }
 }
 
@@ -223,7 +233,7 @@ class ProjectsBody extends Component {
         <div style={ { paddingBottom: '15px', display: shellOutput !== undefined ? 'inline-block' : 'none', color: stdError ? 'yellow' : 'lime' } }>
           <span style={ { color: 'red' } }>{ stdError ? '[!]' : '=>' } </span>
           { shellOutput }
-          <span style={ { display: shellWaiting ? 'inline-block' : 'none' } }>&nbsp;<CmdLoader /></span>
+          <span style={ { display: shellWaiting ? 'inline-block' : 'none' } }>&nbsp;<CmdLoader isLoading={ shellWaiting } /></span>
         </div>
         <div
           style={ { display: shellWaiting ? 'none' : 'block' } }
