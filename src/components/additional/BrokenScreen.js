@@ -14,7 +14,7 @@ import bugImage from '../../resources/images/bug.png';
 import calmBackground from '../../resources/images/kernelcalm.gif';
 import panicBackground from '../../resources/images/kernelpanic.gif';
 import explosionAnim from '../../resources/images/explosion.gif';
-import viewFinder from '../../resources/icons/viewfinder.gif';
+import viewFinder from '../../resources/icons/pointers/viewfinder.gif';
 
 import './BrokenScreen.css';
 

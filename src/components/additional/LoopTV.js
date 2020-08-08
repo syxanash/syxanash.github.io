@@ -7,7 +7,7 @@ import './LoopTV.css';
 import loopList from '../../resources/loops-list.json';
 import staticImage from '../../resources/images/static.gif';
 import poweroffButton from '../../resources/icons/poweroff_button.png';
-import tvRemote from '../../resources/icons/tv-remote.gif';
+import tvRemote from '../../resources/icons/pointers/tv-remote.gif';
 
 const loopImages = require.context('../../resources/images/loopTV', true);
 
