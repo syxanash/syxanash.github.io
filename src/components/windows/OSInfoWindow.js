@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Cutout } from 'react95';
+import { Button, Cutout, Tooltip } from 'react95';
 import './OSInfoWindow.css';
 import pippoOSlogo from '../../resources/images/pippoOS.gif';
 
@@ -22,7 +22,11 @@ class OSInfoWindowBody extends Component {
         <img src={ pippoOSlogo } alt='Pippo OS logo' height='130px' />
       </Button>
     </Cutout>
-    <div className='os-title'>Pippo OS</div>
+    <div className='os-title'>
+      <Tooltip text="forse è un po' egoista chiamare Pippo un sistema operativo, scusatemi..." delay={ 100 }>
+        Pippo OS
+      </Tooltip>
+    </div>
     <div className='os-subtitle'>The <code><b>foobar</b></code> Desktop Experience</div>
     <div className='os-version'>Version 1.66.6</div>
     <div className='os-copyright'>
