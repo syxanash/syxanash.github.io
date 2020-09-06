@@ -334,5 +334,9 @@
 	{
 		"name": "My Second PC",
 		"url": "https://koas.dev/m2pc/dinamicos/"
+	},
+	{
+		"name": "ToxicCode.com",
+		"url": "http://toxiccode.com"
 	}
 ]
