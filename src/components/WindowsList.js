@@ -8,6 +8,7 @@ import { CestinoHeader, CestinoBody } from './windows/Cestino';
 import { UnknownHeader, UnknownBody } from './windows/Unknown';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
 import { WebDesktopsHeader, WebDesktopsBody } from './windows/WebDesktops';
+import { KonamiHeader, KonamiBody } from './windows/Konami';
 import { OSInfoWindowHeader, OSInfoWindowBody } from './windows/OSInfoWindow';
 import { FixHeader, FixBody } from './windows/Fix';
 
@@ -97,6 +98,16 @@ export default function WindowsList() {
       header: WebDesktopsHeader,
       body: WebDesktopsBody,
       windowTheme: PippoTheme,
+    },
+    konamicode: {
+      hasFullScreen: false,
+      tiltAnimation: true,
+      canCloseWindow: true,
+      opened: false,
+      focused: false,
+      header: KonamiHeader,
+      body: KonamiBody,
+      windowTheme: PippoGoleador,
     },
     osinfowindow: {
       hasFullScreen: false,
