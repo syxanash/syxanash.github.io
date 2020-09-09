@@ -35,6 +35,7 @@ class App extends Component {
     super(props);
 
     this.loadingIconTimeout = undefined;
+    this.konamiKeysEntered = 0;
 
     this.state = {
       bgWallpapers: _.shuffle(bgList),
@@ -54,6 +55,7 @@ class App extends Component {
   componentDidMount() {
     document.addEventListener('keydown', this.closeTopWindow);
     document.addEventListener('keydown', this.stoppedProgram);
+    document.addEventListener('keydown', this.konamiHandler);
     const windowsList = WindowsList();
 
     const pageBodyRoutes = Object.keys(windowsList)
@@ -95,6 +97,7 @@ class App extends Component {
 
     document.removeEventListener('keydown', this.closeTopWindow);
     document.removeEventListener('keydown', this.stoppedProgram);
+    document.removeEventListener('keydown', this.konamiHandler);
   }
 
   onLeftsideButton = () => {
@@ -195,6 +198,40 @@ class App extends Component {
       || (event.ctrlKey && event.key === 'C'))
       && stoppedWindowProgram === undefined && !loopTVon) {
       this.setState({ stoppedWindowProgram: !isBrokenScreen && !poweredOff && !loopTVon });
+    }
+  }
+
+  konamiHandler = (event) => {
+    const {
+      isBrokenScreen, poweredOff, stoppedWindowProgram,
+    } = this.state;
+
+    if (isBrokenScreen || poweredOff || stoppedWindowProgram) {
+      return;
+    }
+
+    const pattern = [
+      'ArrowUp',
+      'ArrowUp',
+      'ArrowDown',
+      'ArrowDown',
+      'ArrowLeft',
+      'ArrowRight',
+      'ArrowLeft',
+      'ArrowRight',
+      'b', 'a',
+    ];
+
+    if (pattern.indexOf(event.key) < 0 || event.key !== pattern[this.konamiKeysEntered]) {
+      this.konamiKeysEntered = 0;
+      return;
+    }
+
+    this.konamiKeysEntered += 1;
+
+    if (pattern.length === this.konamiKeysEntered) {
+      this.konamiKeysEntered = 0;
+      this.openWindow('konamicode');
     }
   }
 
