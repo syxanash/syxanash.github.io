@@ -15,6 +15,7 @@ import dennisAvatar from '../../resources/images/avatars/dennis.jpg';
 import hamiltonAvatar from '../../resources/images/avatars/hamilton.jpg';
 import perottoAvatar from '../../resources/images/avatars/perotto.jpg';
 import jobsAvatar from '../../resources/images/avatars/jobs.png';
+import hashimotoAvatar from '../../resources/images/avatars/hashimoto.png';
 
 import guestbookIcon from '../../resources/icons/guestbook.png';
 import './Guestbook.css';
@@ -215,6 +216,21 @@ class GuestbookBody extends Component {
         </div>
         <div>
           { '<script>alert(\'document.cookie\');</script>' }
+        </div>
+      </div>
+      <Divider />
+      <div className='single-comment-container'>
+        <div style={ { display: 'flex' } }>
+          <span className='avatar-container'>
+            <Avatar src={ hashimotoAvatar } style={ { height: '60px', width: '60px' } } />
+          </span>
+          <div className='comment-author-name'>
+            <div className='comment-name'>橋本和久</div>
+            <div className='comment-date'>on 2020/01/01</div>
+          </div>
+        </div>
+        <div>
+          私がしたいことはすべてです：アップ, アップ, ダウン, ダウン, 左, 正しい, 左, 正しい, B A, 次にスタートを押します
         </div>
       </div>
     </Cutout>
