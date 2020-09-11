@@ -338,5 +338,9 @@
 	{
 		"name": "ToxicCode.com",
 		"url": "http://toxiccode.com"
+	},
+	{
+		"name": "HyNET Geocity",
+		"url": "https://hyena.network/geocity/"
 	}
 ]
