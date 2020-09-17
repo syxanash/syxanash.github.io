@@ -65,7 +65,7 @@ class KonamiBody extends Component {
         <p>To see what data this error report contains,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className='error-report-link' onClick={ this.toggleReport }>click here.</span></p>
       </div>
       <Cutout style={ { display: showReport ? 'block' : 'none' } } className='error-cutout'>
-        <div id='errorReport'>
+        <div className='error-report-space'>
           <p>Line: 69<br />Error: 'TooManyEasterEggsException' @ Konami.js</p>
           <br />
           <br />
