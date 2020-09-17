@@ -1,0 +1,43 @@
+.header-error {
+  padding: 20px;
+  color: black;
+  font-weight: bolder;
+  background-color: white;
+
+  border-bottom: 2px solid grey;
+
+  margin: -17px;
+}
+
+.error-icon {
+  float: right;
+  height: 45px;
+  margin-top: -8px;
+  padding-left: 10px;
+}
+
+.underline-text {
+  border-bottom: 1px solid #000;
+}
+
+.bottom-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.error-cutout {
+  margin-top: -20px;
+  padding-left: 20px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.useless-error-message {
+  padding: 20px;
+}
+
+.error-report-link {  
+  color: blue;
+  text-decoration: underline;
+}

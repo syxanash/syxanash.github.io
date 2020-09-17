@@ -9,7 +9,6 @@ import Draggable from 'react-draggable';
 import 'animate.css';
 
 import ThemeContext from '../ThemeContext';
-import PippoDistracted from '../themes/PippoDistracted';
 
 import './PopupWindow.css';
 
@@ -92,14 +91,14 @@ class PopupWindow extends Component {
     const { displayWindowBody, openAnimation } = this.state;
     const {
       header, body, displayExtraActions, displayCloseButton,
-      focused, windowTheme, openWindow, poweroff,
+      focused, windowTheme, openWindow, poweroff, unfocusedTheme,
     } = this.props;
 
     const PopupWindowHeader = header;
     const PopupWindowBody = body;
 
     return (
-      <ThemeProvider theme={ focused ? windowTheme : PippoDistracted }>
+      <ThemeProvider theme={ focused ? windowTheme : unfocusedTheme }>
         <Window className={ openAnimation ? `animated ${displayExtraActions ? 'zoomIn faster' : 'bounceIn faster'}` : '' }>
           <WindowHeader className="handle">
             <div className='window-header popup-movable-header'>
