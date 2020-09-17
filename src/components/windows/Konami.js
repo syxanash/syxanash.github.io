@@ -28,7 +28,7 @@ class KonamiBody extends Component {
     // discover the Konami Code for the
     // first time. Although I never lived
     // the wild era of old gaming consoles
-    // I want to make you smile by triggering
+    // I want to make you smile by
     // triggering a special hidden window
     // when you enter the Code!!!
     // And also this is totally not a message
