@@ -112,12 +112,11 @@ class WindowHead extends Component {
                 size='sm'
                 square
                 onClick={ () => {
-                  changeTheme('/');
-
-                  this.props.history.push('/');
-
                   if (isCurrentPathRoot) {
                     onRightClick();
+                  } else {
+                    changeTheme('/');
+                    this.props.history.push('/');
                   }
 
                   if (windowMinimized) {
