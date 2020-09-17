@@ -12,7 +12,7 @@ const theme = {
   borderLight: '#dfe0e3',
 
   headerMaterialDark: '#636363',
-  headerMaterialLight: '#636363',
+  headerMaterialLight: '#c6c6c6',
   headerText: '#ffffff',
 
   text: '#050608',
