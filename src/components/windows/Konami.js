@@ -1,3 +1,14 @@
+// This easter egg is dedicated to
+// my old friend Gabriele, who made me
+// discover the Konami Code for the
+// first time. Although I never lived
+// the wild era of old gaming consoles
+// I want to make you smile by
+// triggering a special hidden window
+// when you enter the combination!!!
+// And also this is totally not a message
+// to stretch the code for the line 69 :)
+
 import React, { Component } from 'react';
 import {
   Button, Cutout, Anchor,
@@ -23,17 +34,6 @@ class KonamiBody extends Component {
   }
 
   render = () => {
-    // This easter egg is dedicated to
-    // my old friend Gabriele, who made me
-    // discover the Konami Code for the
-    // first time. Although I never lived
-    // the wild era of old gaming consoles
-    // I want to make you smile by
-    // triggering a special hidden window
-    // when you enter the Code!!!
-    // And also this is totally not a message
-    // to stretch the code for the line 69 :)
-
     const { closeWindow } = this.props;
     const { showReport } = this.state;
 
