@@ -230,7 +230,7 @@ class GuestbookBody extends Component {
           </div>
         </div>
         <div>
-          私がしたいことはすべてです：アップ, アップ, ダウン, ダウン, 左, 正しい, 左, 正しい, B A, 次にスタートを押します
+          私がしたいことはすべてです：上, 上, 下, 下, 左, 右, 左, 右, B A, 次にスタートを押します
         </div>
       </div>
     </Cutout>
