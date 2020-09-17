@@ -292,6 +292,7 @@ class App extends Component {
       const canCloseWindow = _.get(windowsList, `${window}.canCloseWindow`);
       const windowBody = _.get(windowsList, `${window}.body`);
       const windowTheme = _.get(windowsList, `${window}.windowTheme`);
+      const unfocusedTheme = _.get(windowsList, `${window}.unfocusedTheme`);
 
       return <div
         key={ `${window}_${index}` }
@@ -311,6 +312,7 @@ class App extends Component {
               tiltAnimation={ tiltAnimation }
               displayCloseButton={ canCloseWindow }
               windowTheme={ windowTheme }
+              unfocusedTheme={ unfocusedTheme }
             />
             : null
         }
