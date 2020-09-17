@@ -43,6 +43,12 @@ class Poweroff extends Component {
     </Helmet>
   );
 
+  componentWillUnmount() {
+    if (this.turnOffTimeout) {
+      clearTimeout(this.turnOffTimeout);
+    }
+  }
+
   render() {
     const { isScreenOff } = this.state;
     const { shouldPoweroff } = this.props;
@@ -61,7 +67,6 @@ class Poweroff extends Component {
       return this.renderBackgroundPicture(screenMessage);
     }
 
-    clearTimeout(this.turnOffTimeout);
     return this.renderBackgroundPicture(screenoff);
   }
 }
