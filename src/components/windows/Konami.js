@@ -23,6 +23,17 @@ class KonamiBody extends Component {
   }
 
   render = () => {
+    // This easter egg is dedicated to
+    // my old friend Gabriele, who made me
+    // discover the Konami Code for the
+    // first time. Although I never lived
+    // the wild era of old gaming consoles
+    // I want to make you smile by triggering
+    // triggering a special hidden window
+    // when you enter the Code!!!
+    // And also this is totally not a message
+    // to stretch the code for the line 69 :)
+
     const { closeWindow } = this.props;
     const { showReport } = this.state;
 
@@ -66,7 +77,6 @@ class KonamiBody extends Component {
           style={ { color: '#000000', textDecoration: 'none' } }
         >
           <Button
-          // lol 69
             style={ { width: '160px' } }
             size='md'
           ><span className='underline-text'>S</span>end Error Report</Button>
