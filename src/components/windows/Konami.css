@@ -20,6 +20,10 @@
   border-bottom: 1px solid #000;
 }
 
+.error-report-space {
+  padding-left: 15px;
+}
+
 .bottom-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -28,7 +32,6 @@
 
 .error-cutout {
   margin-top: -20px;
-  padding-left: 20px;
   background-color: white;
   margin-bottom: 20px;
 }
