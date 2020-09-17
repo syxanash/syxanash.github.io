@@ -66,7 +66,7 @@ class KonamiBody extends Component {
       </div>
       <Cutout style={ { display: showReport ? 'block' : 'none' } } className='error-cutout'>
         <div id='errorReport'>
-          <p>Line: 69<br />Error: TooManyEasterEggsException</p>
+          <p>Line: 69<br />Error: 'TooManyEasterEggsException' @ Konami.js</p>
           <br />
           <br />
         </div>
