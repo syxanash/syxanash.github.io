@@ -66,7 +66,7 @@ class KonamiBody extends Component {
       </div>
       <Cutout style={ { display: showReport ? 'block' : 'none' } } className='error-cutout'>
         <div className='error-report-space'>
-          <p>Line: 69<br />Error: 'TooManyEasterEggsException' @ Konami.js</p>
+          <p>Line: 69<br />Error: 'TooManyEasterEggsException' <Anchor href="https://raw.githubusercontent.com/syxanash/syxanash.github.io/development/src/components/windows/Konami.js" target="_blank">@ Konami.js</Anchor></p>
           <br />
           <br />
         </div>
