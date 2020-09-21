@@ -34,6 +34,8 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this.scrollTop = React.createRef();
+
     this.loadingIconTimeout = undefined;
     this.konamiKeysEntered = 0;
 
@@ -120,6 +122,10 @@ class App extends Component {
       _.set(windowsList, `${windowName}.opened`, true);
       this.focusWindow(windowName);
       this.setState({ windowsList });
+
+      if (this.scrollTop.current !== null) {
+        this.scrollTop.current.scrollIntoView({ behavior: 'smooth' });
+      }
     };
 
     if (subWindow) {
@@ -328,6 +334,7 @@ class App extends Component {
 
     return (
       <HashRouter>
+        <div ref={ this.scrollTop } />
         <div className='window-centered'>
           <div style={ { display: poweredOff || isBrokenScreen || loopTVon || stoppedWindowProgram ? 'none' : 'block' } }>
             <Helmet>
