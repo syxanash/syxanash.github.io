@@ -152,10 +152,6 @@
         "description": "a game where you have to guess the language spoken by a person"
       },
       {
-        "url": "https://maxbittker.com",
-        "description": "great computer artist"
-      },
-      {
         "url": "https://pointerpointer.com",
         "description": ""
       },
@@ -182,6 +178,14 @@
       {
         "url": "https://www.nicolassassoon.com",
         "description": "great artist full of trippy patterns and designs"
+      },
+      {
+        "url": "https://x20xx.com",
+        "description": "something beyond my understanding"
+      },
+      {
+        "url": "https://www.yyyyyyy.info",
+        "description": "it might be too much even for someone like you!"
       }
     ]
   },
@@ -221,8 +225,12 @@
         "description": ""
       },
       {
-        "url": "https://x20xx.com",
-        "description": "something beyond my understanding"
+        "url": "https://maxbittker.com",
+        "description": ""
+      },
+      {
+        "url": "http://www.peterburr.org",
+        "description": ""
       }
     ]
   },
