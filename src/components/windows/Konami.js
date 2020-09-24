@@ -15,12 +15,11 @@ import {
 } from 'react95';
 import mainIcon from '../../resources/icons/error.png';
 import './Konami.css';
+import SoundEffects from '../additional/SoundEffects';
 
 class KonamiHeader extends Component {
   render = () => (
-    <span>
-      Error
-    </span>
+    <span>Error</span>
   )
 }
 
@@ -29,9 +28,12 @@ class KonamiBody extends Component {
     showReport: false,
   }
 
-  toggleReport = () => {
-    this.setState({ showReport: true });
+  // eslint-disable-next-line class-methods-use-this
+  componentDidMount() {
+    SoundEffects.errorSound.play();
   }
+
+  toggleReport = () => { this.setState({ showReport: true }); }
 
   render = () => {
     const { closeWindow } = this.props;
@@ -45,14 +47,12 @@ class KonamiBody extends Component {
             alt='trembling error'
             className='error-icon shake'
           />
-          Pippo OS has encountered a problem and needs to close.
-          We are sorry for the inconvenience.
+          Pippo OS has encountered a problem and needs to close. We are sorry for the inconvenience.
         </span>
       </div>
       <div className='useless-error-message'>
         <p>
-          if you were in the middle of something,
-          the information you were working on might be lost.
+          if you were in the middle of something, the information you were working on might be lost.
         </p>
         <p>
           <span style={ { fontWeight: 'bolder' } }>Please tell Simone about this problem.</span><br />
