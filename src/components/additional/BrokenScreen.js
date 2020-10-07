@@ -180,6 +180,7 @@ class BrokenScreen extends Component {
     const bugsCleaned = bugsNumber <= 0;
 
     const antiCheatString = 'DON\'T YOU DARE YOU FILTHY CHEATER!!!!';
+    const antiCheatStringSecond = 'YOU THOUGHT IT WOULD BE THAT EASY!?!';
 
     if (!isScreenBroken) {
       return null;
@@ -187,11 +188,17 @@ class BrokenScreen extends Component {
 
     if (bugsCleaned) {
       localStorage.removeItem(antiCheatString);
+      localStorage.removeItem(antiCheatStringSecond);
     }
 
     if (!this.bugRefreshInterval) {
       SoundEffects.errorSound.play();
-      localStorage.setItem(antiCheatString, 'DON\'T!');
+      if (localStorage.getItem('broken') !== 'true') {
+        localStorage.removeItem(antiCheatString);
+        localStorage.setItem(antiCheatStringSecond, 'AHAH!');
+      } else {
+        localStorage.setItem(antiCheatString, 'DON\'T!');
+      }
       localStorage.removeItem('foundAgent');
       this.bugRefreshInterval = setInterval(this.updateAxis, this.bugsInterval);
     }
