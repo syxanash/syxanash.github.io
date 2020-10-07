@@ -17,8 +17,13 @@ class FixHeader extends Component {
 class FixBody extends Component {
   // eslint-disable-next-line class-methods-use-this
   componentDidMount() {
+    const antiCheatString = 'DON\'T YOU DARE YOU FILTHY CHEATER!!!!';
+    const antiCheatStringSecond = 'YOU THOUGHT IT WOULD BE THAT EASY!?!';
+
     if (localStorage.getItem('broken')) {
       localStorage.removeItem('broken');
+      localStorage.removeItem(antiCheatString);
+      localStorage.removeItem(antiCheatStringSecond);
       localStorage.setItem('fixed', true);
       sessionStorage.clear();
       window.location.reload();
