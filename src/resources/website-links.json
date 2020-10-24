@@ -101,6 +101,10 @@
       {
         "url": "https://www.distinctly.pink",
         "description": "a website with some interesting and cool content"
+      },
+      {
+        "url": "https://brkmnd.com",
+        "description": "interesting website with an embeded CLI to navigate it"
       }
     ]
   },
