@@ -17,6 +17,7 @@ import Poweroff from './components/additional/Poweroff';
 import LoopTV from './components/additional/LoopTV';
 import StoppedProgram from './components/additional/StoppedProgram';
 import BrokenScreen from './components/additional/BrokenScreen';
+import XBill from './components/additional/XBill';
 import TheAgent from './components/additional/TheAgent';
 import SoundEffects from './components/additional/SoundEffects';
 import LoaderCursor from './components/additional/LoaderCursor';
@@ -378,6 +379,7 @@ class App extends Component {
         <Poweroff shouldPoweroff={ poweredOff } />
         <StoppedProgram shouldStopWindowing={ stoppedWindowProgram } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
+        <XBill />
         { showLoaderPointer ? <LoaderCursor /> : null }
         <div className='scan-lines'></div>
       </HashRouter>
