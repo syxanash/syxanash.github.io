@@ -375,11 +375,14 @@ class App extends Component {
             <TheAgent displayAgent={ !displayWindowBody } />
           </div>
         </div>
+        <XBill
+          initialX={ document.body.clientWidth / 2 }
+          initialY={ (document.body.clientHeight / 2) - 200 }
+        />
         <LoopTV shouldPowerOn={ loopTVon } turnOff={ this.turnOffTV } />
         <Poweroff shouldPoweroff={ poweredOff } />
         <StoppedProgram shouldStopWindowing={ stoppedWindowProgram } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
-        <XBill />
         { showLoaderPointer ? <LoaderCursor /> : null }
         <div className='scan-lines'></div>
       </HashRouter>
