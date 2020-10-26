@@ -14,11 +14,14 @@ class XBill extends Component {
 
     this.smashFrameIndex = 0;
 
+    const { initialX = 100, initialY = 100 } = this.props;
+
     this.state = {
       billPosition: {
-        x: 200,
-        y: 200,
+        x: initialX,
+        y: initialY,
         forward: true,
+        down: true,
         stopped: false,
       },
       billImage: billImg,
@@ -27,7 +30,7 @@ class XBill extends Component {
 
   componentDidMount() {
     if (!this.positionUpdaterInterval) {
-      this.positionUpdaterInterval = setInterval(this.updateCoordinates, 30);
+      this.positionUpdaterInterval = setInterval(this.updateCoordinates, 25);
     }
   }
 
@@ -81,11 +84,11 @@ class XBill extends Component {
       newVerticalDirection = false;
     }
 
-    if (newXPosition <= 0) {
+    if (newXPosition <= 48) {
       newHorizontalDirection = true;
     }
 
-    if (newYPosition <= 0) {
+    if (newYPosition <= 76) {
       newVerticalDirection = true;
     }
 
@@ -122,8 +125,8 @@ class XBill extends Component {
           position: 'absolute',
           top: `${billPosition.y}px`,
           left: `${billPosition.x}px`,
-          marginLeft: '-40px',
-          marginTop: '-30px',
+          marginLeft: '-48px',
+          marginTop: '-76px',
           transform: billPosition.forward ? 'scaleX(-1)' : '',
         } }
         onClick={ this.killBill }
