@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
 
-import billImg from '../../resources/images/bill.gif';
-
+import billImg from '../../resources/images/bill/bill.gif';
 import './XBill.css';
+
+const smashedFrames = require.context('../../resources/images/bill/smashed', true);
 
 class XBill extends Component {
   constructor(props) {
     super(props);
 
     this.positionUpdaterInterval = undefined;
+    this.smashAnimationInterval = undefined;
+
+    this.smashFrameIndex = 0;
 
     this.state = {
       billPosition: {
         x: 200,
         y: 200,
         forward: true,
+        stopped: false,
       },
+      billImage: billImg,
     };
   }
 
@@ -26,7 +32,25 @@ class XBill extends Component {
   }
 
   componentWillUnmount() {
+    clearInterval(this.smashAnimationInterval);
     clearInterval(this.positionUpdaterInterval);
+  }
+
+  smashAnimationUpdater = () => {
+    if (this.smashFrameIndex + 1 < 6) {
+      this.smashFrameIndex = this.smashFrameIndex + 1;
+    } else {
+      clearInterval(this.smashAnimationInterval);
+      this.setState({
+        billPosition: {
+          stopped: true,
+        },
+      });
+    }
+
+    this.setState({
+      billImage: smashedFrames(`./smash${this.smashFrameIndex}.gif`),
+    });
   }
 
   updateCoordinates = () => {
@@ -75,8 +99,20 @@ class XBill extends Component {
     });
   }
 
+  killBill = () => {
+    clearInterval(this.positionUpdaterInterval);
+
+    if (!this.smashAnimationInterval) {
+      this.smashAnimationInterval = setInterval(this.smashAnimationUpdater, 60);
+    }
+  }
+
   render() {
-    const { billPosition } = this.state;
+    const { billPosition, billImage } = this.state;
+
+    if (billPosition.stopped) {
+      return null;
+    }
 
     return (
       <div
@@ -90,8 +126,9 @@ class XBill extends Component {
           marginTop: '-30px',
           transform: billPosition.forward ? 'scaleX(-1)' : '',
         } }
+        onClick={ this.killBill }
       >
-        <img src={ billImg } alt='xbill'/>
+        <img src={ billImage } alt='xbill' />
       </div>
     );
   }
