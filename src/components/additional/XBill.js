@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-import billImg from '../../resources/images/bill/bill.gif';
+import billWalkingImg from '../../resources/images/bill/bill_walking.gif';
+import billStoppedImg from '../../resources/images/bill/bill_stopped.gif';
+
 import './XBill.css';
 
 const smashedFrames = require.context('../../resources/images/bill/smashed', true);
@@ -29,7 +31,7 @@ class XBill extends Component {
         down: true,
         stopped: false,
       },
-      billImage: billImg,
+      billImage: billStoppedImg,
     };
   }
 
@@ -78,6 +80,10 @@ class XBill extends Component {
     let newXPosition = billPosition.x;
     let newYPosition = billPosition.y;
     let lookingForward = billPosition.forward;
+    let newBillImage = billWalkingImg;
+
+    let isWalkingVertical = true;
+    let isWalkingHorizontal = true;
 
     if (billPosition.x > this.mousePosition.x) {
       newXPosition = billPosition.x - 5;
@@ -100,11 +106,17 @@ class XBill extends Component {
     if (billPosition.x <= (this.mousePosition.x + 5)
       && billPosition.x >= (this.mousePosition.x - 5)) {
       newXPosition = billPosition.x;
+      isWalkingHorizontal = false;
     }
 
     if (billPosition.y <= (this.mousePosition.y + 5)
       && billPosition.y >= (this.mousePosition.y - 5)) {
       newYPosition = billPosition.y;
+      isWalkingVertical = false;
+    }
+
+    if (!isWalkingHorizontal && !isWalkingVertical) {
+      newBillImage = billStoppedImg;
     }
 
     this.setState({
@@ -113,6 +125,7 @@ class XBill extends Component {
         y: newYPosition,
         forward: lookingForward,
       },
+      billImage: newBillImage,
     });
   }
 
