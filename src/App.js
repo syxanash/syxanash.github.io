@@ -333,11 +333,16 @@ class App extends Component {
       poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme,
     } = this.state;
 
+    const isInSpecialState = poweredOff
+      || isBrokenScreen
+      || loopTVon
+      || stoppedWindowProgram;
+
     return (
       <HashRouter>
         <div ref={ this.scrollTop } />
         <div className='window-centered'>
-          <div style={ { display: poweredOff || isBrokenScreen || loopTVon || stoppedWindowProgram ? 'none' : 'block' } }>
+          <div style={ { display: isInSpecialState ? 'none' : 'block' } }>
             <Helmet>
               <style>
                 {
@@ -375,10 +380,12 @@ class App extends Component {
             <TheAgent displayAgent={ !displayWindowBody } />
           </div>
         </div>
-        <XBill
-          initialX={ document.body.clientWidth / 2 }
-          initialY={ (document.body.clientHeight / 2) - 200 }
-        />
+        <div style={ { display: isInSpecialState ? 'none' : 'block' } }>
+          <XBill
+            initialX={ document.body.clientWidth / 2 }
+            initialY={ (document.body.clientHeight / 2) - 200 }
+          />
+        </div>
         <LoopTV shouldPowerOn={ loopTVon } turnOff={ this.turnOffTV } />
         <Poweroff shouldPoweroff={ poweredOff } />
         <StoppedProgram shouldStopWindowing={ stoppedWindowProgram } />

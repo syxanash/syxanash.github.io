@@ -137,7 +137,7 @@ class XBill extends Component {
     clearInterval(this.positionUpdaterInterval);
 
     if (!this.smashAnimationInterval) {
-      this.smashAnimationInterval = setInterval(this.smashAnimationUpdater, 50);
+      this.smashAnimationInterval = setInterval(this.smashAnimationUpdater, 80);
     }
   }
 
