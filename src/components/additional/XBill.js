@@ -9,6 +9,11 @@ class XBill extends Component {
   constructor(props) {
     super(props);
 
+    this.mousePosition = {
+      x: undefined,
+      y: undefined,
+    };
+
     this.positionUpdaterInterval = undefined;
     this.smashAnimationInterval = undefined;
 
@@ -30,13 +35,24 @@ class XBill extends Component {
 
   componentDidMount() {
     if (!this.positionUpdaterInterval) {
-      this.positionUpdaterInterval = setInterval(this.updateCoordinates, 25);
+      this.positionUpdaterInterval = setInterval(this.followMouse, 60);
     }
+
+    document.addEventListener('mousemove', this.onMouseUpdate);
+    document.addEventListener('mouseenter', this.onMouseUpdate);
   }
 
   componentWillUnmount() {
     clearInterval(this.smashAnimationInterval);
     clearInterval(this.positionUpdaterInterval);
+
+    document.removeEventListener('mousemove', this.onMouseUpdate);
+    document.removeEventListener('mouseenter', this.onMouseUpdate);
+  }
+
+  onMouseUpdate = (e) => {
+    this.mousePosition.x = (e.pageX + 24);
+    this.mousePosition.y = (e.pageY + 38);
   }
 
   smashAnimationUpdater = () => {
@@ -53,6 +69,50 @@ class XBill extends Component {
 
     this.setState({
       billImage: smashedFrames(`./smash${this.smashFrameIndex}.gif`),
+    });
+  }
+
+  followMouse = () => {
+    const { billPosition } = this.state;
+
+    let newXPosition = billPosition.x;
+    let newYPosition = billPosition.y;
+    let lookingForward = billPosition.forward;
+
+    if (billPosition.x > this.mousePosition.x) {
+      newXPosition = billPosition.x - 5;
+      lookingForward = false;
+    }
+
+    if (billPosition.x < this.mousePosition.x) {
+      newXPosition = billPosition.x + 5;
+      lookingForward = true;
+    }
+
+    if (billPosition.y > this.mousePosition.y) {
+      newYPosition = billPosition.y - 5;
+    }
+
+    if (billPosition.y < this.mousePosition.y) {
+      newYPosition = billPosition.y + 5;
+    }
+
+    if (billPosition.x <= (this.mousePosition.x + 5)
+      && billPosition.x >= (this.mousePosition.x - 5)) {
+      newXPosition = billPosition.x;
+    }
+
+    if (billPosition.y <= (this.mousePosition.y + 5)
+      && billPosition.y >= (this.mousePosition.y - 5)) {
+      newYPosition = billPosition.y;
+    }
+
+    this.setState({
+      billPosition: {
+        x: newXPosition,
+        y: newYPosition,
+        forward: lookingForward,
+      },
     });
   }
 
@@ -120,7 +180,6 @@ class XBill extends Component {
     return (
       <div
         className='main-bill-div'
-
         style={ {
           position: 'absolute',
           top: `${billPosition.y}px`,
