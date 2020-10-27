@@ -75,32 +75,38 @@ class XBill extends Component {
   }
 
   followMouse = () => {
-    const { billPosition } = this.state;
+    const { billPosition, billImage } = this.state;
 
     let newXPosition = billPosition.x;
     let newYPosition = billPosition.y;
-    let lookingForward = billPosition.forward;
-    let newBillImage = billWalkingImg;
 
-    let isWalkingVertical = true;
-    let isWalkingHorizontal = true;
+    let lookingForward = billPosition.forward;
+
+    let newBillImage = billImage;
+
+    let isWalkingVertical = false;
+    let isWalkingHorizontal = false;
 
     if (billPosition.x > this.mousePosition.x) {
       newXPosition = billPosition.x - 5;
       lookingForward = false;
+      isWalkingHorizontal = true;
     }
 
     if (billPosition.x < this.mousePosition.x) {
       newXPosition = billPosition.x + 5;
       lookingForward = true;
+      isWalkingHorizontal = true;
     }
 
     if (billPosition.y > this.mousePosition.y) {
       newYPosition = billPosition.y - 5;
+      isWalkingVertical = true;
     }
 
     if (billPosition.y < this.mousePosition.y) {
       newYPosition = billPosition.y + 5;
+      isWalkingVertical = true;
     }
 
     if (billPosition.x <= (this.mousePosition.x + 5)
@@ -115,17 +121,13 @@ class XBill extends Component {
       isWalkingVertical = false;
     }
 
-    if (!isWalkingHorizontal && !isWalkingVertical) {
-      newBillImage = billStoppedImg;
-    }
-
     this.setState({
       billPosition: {
         x: newXPosition,
         y: newYPosition,
         forward: lookingForward,
       },
-      billImage: newBillImage,
+      billImage: (!isWalkingHorizontal && !isWalkingVertical) ? billStoppedImg : billWalkingImg,
     });
   }
 
