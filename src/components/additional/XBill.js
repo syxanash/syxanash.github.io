@@ -16,10 +16,15 @@ class XBill extends Component {
       y: undefined,
     };
 
+    this.billImageWidth = 48;
+    this.billImageHeight = 76;
+    this.walkingStepPixelSpeed = 5;
+
     this.positionUpdaterInterval = undefined;
     this.smashAnimationInterval = undefined;
 
     this.smashFrameIndex = 0;
+    this.smashAnimationFrames = 6;
 
     const { initialX = 100, initialY = 100 } = this.props;
 
@@ -28,7 +33,6 @@ class XBill extends Component {
         x: initialX,
         y: initialY,
         forward: true,
-        down: true,
         stopped: false,
       },
       billImage: billStoppedImg,
@@ -37,7 +41,7 @@ class XBill extends Component {
 
   componentDidMount() {
     if (!this.positionUpdaterInterval) {
-      this.positionUpdaterInterval = setInterval(this.followMouse, 60);
+      this.positionUpdaterInterval = setInterval(this.followMouse, 50);
     }
 
     document.addEventListener('mousemove', this.onMouseUpdate);
@@ -53,12 +57,12 @@ class XBill extends Component {
   }
 
   onMouseUpdate = (e) => {
-    this.mousePosition.x = (e.pageX + 24);
-    this.mousePosition.y = (e.pageY + 38);
+    this.mousePosition.x = (e.pageX - (this.billImageWidth / 2));
+    this.mousePosition.y = (e.pageY - (this.billImageHeight / 2));
   }
 
   smashAnimationUpdater = () => {
-    if (this.smashFrameIndex + 1 < 6) {
+    if (this.smashFrameIndex + 1 < this.smashAnimationFrames) {
       this.smashFrameIndex = this.smashFrameIndex + 1;
     } else {
       clearInterval(this.smashAnimationInterval);
@@ -75,48 +79,46 @@ class XBill extends Component {
   }
 
   followMouse = () => {
-    const { billPosition, billImage } = this.state;
+    const { billPosition } = this.state;
 
     let newXPosition = billPosition.x;
     let newYPosition = billPosition.y;
 
     let lookingForward = billPosition.forward;
 
-    let newBillImage = billImage;
-
     let isWalkingVertical = false;
     let isWalkingHorizontal = false;
 
     if (billPosition.x > this.mousePosition.x) {
-      newXPosition = billPosition.x - 5;
+      newXPosition = billPosition.x - this.walkingStepPixelSpeed;
       lookingForward = false;
       isWalkingHorizontal = true;
     }
 
     if (billPosition.x < this.mousePosition.x) {
-      newXPosition = billPosition.x + 5;
+      newXPosition = billPosition.x + this.walkingStepPixelSpeed;
       lookingForward = true;
       isWalkingHorizontal = true;
     }
 
     if (billPosition.y > this.mousePosition.y) {
-      newYPosition = billPosition.y - 5;
+      newYPosition = billPosition.y - this.walkingStepPixelSpeed;
       isWalkingVertical = true;
     }
 
     if (billPosition.y < this.mousePosition.y) {
-      newYPosition = billPosition.y + 5;
+      newYPosition = billPosition.y + this.walkingStepPixelSpeed;
       isWalkingVertical = true;
     }
 
-    if (billPosition.x <= (this.mousePosition.x + 5)
-      && billPosition.x >= (this.mousePosition.x - 5)) {
+    if (billPosition.x <= (this.mousePosition.x + this.walkingStepPixelSpeed)
+      && billPosition.x >= (this.mousePosition.x - this.walkingStepPixelSpeed)) {
       newXPosition = billPosition.x;
       isWalkingHorizontal = false;
     }
 
-    if (billPosition.y <= (this.mousePosition.y + 5)
-      && billPosition.y >= (this.mousePosition.y - 5)) {
+    if (billPosition.y <= (this.mousePosition.y + this.walkingStepPixelSpeed)
+      && billPosition.y >= (this.mousePosition.y - this.walkingStepPixelSpeed)) {
       newYPosition = billPosition.y;
       isWalkingVertical = false;
     }
@@ -131,57 +133,11 @@ class XBill extends Component {
     });
   }
 
-  updateCoordinates = () => {
-    const { billPosition } = this.state;
-
-    let newXPosition;
-    let newYPosition;
-    let newHorizontalDirection = billPosition.forward;
-    let newVerticalDirection = billPosition.down;
-
-    if (billPosition.forward) {
-      newXPosition = billPosition.x + 5;
-    } else {
-      newXPosition = billPosition.x - 5;
-    }
-
-    if (billPosition.down) {
-      newYPosition = billPosition.y + 5;
-    } else {
-      newYPosition = billPosition.y - 5;
-    }
-
-    if (newXPosition >= document.body.clientWidth) {
-      newHorizontalDirection = false;
-    }
-
-    if (newYPosition >= document.body.clientHeight) {
-      newVerticalDirection = false;
-    }
-
-    if (newXPosition <= 48) {
-      newHorizontalDirection = true;
-    }
-
-    if (newYPosition <= 76) {
-      newVerticalDirection = true;
-    }
-
-    this.setState({
-      billPosition: {
-        x: newXPosition,
-        y: newYPosition,
-        forward: newHorizontalDirection,
-        down: newVerticalDirection,
-      },
-    });
-  }
-
   killBill = () => {
     clearInterval(this.positionUpdaterInterval);
 
     if (!this.smashAnimationInterval) {
-      this.smashAnimationInterval = setInterval(this.smashAnimationUpdater, 60);
+      this.smashAnimationInterval = setInterval(this.smashAnimationUpdater, 50);
     }
   }
 
@@ -199,8 +155,6 @@ class XBill extends Component {
           position: 'absolute',
           top: `${billPosition.y}px`,
           left: `${billPosition.x}px`,
-          marginLeft: '-48px',
-          marginTop: '-76px',
           transform: billPosition.forward ? 'scaleX(-1)' : '',
         } }
         onClick={ this.killBill }
