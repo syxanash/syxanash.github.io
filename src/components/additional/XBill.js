@@ -152,7 +152,6 @@ class XBill extends Component {
       <div
         className='main-bill-div'
         style={ {
-          position: 'absolute',
           top: `${billPosition.y}px`,
           left: `${billPosition.x}px`,
           transform: billPosition.forward ? 'scaleX(-1)' : '',
