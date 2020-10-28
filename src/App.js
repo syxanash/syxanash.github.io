@@ -273,6 +273,10 @@ class App extends Component {
     this.setState({ isBrokenScreen: true });
   }
 
+  displayXBill = () => {
+    this.setState({ showXBill: true });
+  }
+
   isInSpecialState = () => {
     const {
       poweredOff, isBrokenScreen, loopTVon, stoppedWindowProgram,
@@ -282,10 +286,6 @@ class App extends Component {
       || isBrokenScreen
       || loopTVon
       || stoppedWindowProgram;
-  }
-
-  displayXBill = () => {
-    this.setState({ showXBill: true });
   }
 
   renderXBill = () => {
