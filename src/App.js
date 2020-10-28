@@ -44,6 +44,7 @@ class App extends Component {
       bgWallpapers: _.shuffle(bgList),
       bgIndex: 0,
       showLoaderPointer: false,
+      showXBill: false,
       displayWindowBody: true,
       pageBodyRoutes: undefined,
       poweredOff: false,
@@ -272,6 +273,39 @@ class App extends Component {
     this.setState({ isBrokenScreen: true });
   }
 
+  isInSpecialState = () => {
+    const {
+      poweredOff, isBrokenScreen, loopTVon, stoppedWindowProgram,
+    } = this.state;
+
+    return poweredOff
+      || isBrokenScreen
+      || loopTVon
+      || stoppedWindowProgram;
+  }
+
+  displayXBill = () => {
+    this.setState({ showXBill: true });
+  }
+
+  renderXBill = () => {
+    const { showXBill } = this.state;
+
+    if (this.isInSpecialState() || !showXBill) {
+      return null;
+    }
+
+    const haflsizeXBill = (76 / 2);
+    const copyrightWatermarkComponent = document.getElementById('copyrightWatermark').getBoundingClientRect();
+
+    return (
+      <XBill
+        initialX={ copyrightWatermarkComponent.x }
+        initialY={ copyrightWatermarkComponent.y - haflsizeXBill }
+      />
+    );
+  };
+
   renderMainWindow = () => {
     const { windowsList } = this.state;
 
@@ -333,16 +367,11 @@ class App extends Component {
       poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme,
     } = this.state;
 
-    const isInSpecialState = poweredOff
-      || isBrokenScreen
-      || loopTVon
-      || stoppedWindowProgram;
-
     return (
       <HashRouter>
         <div ref={ this.scrollTop } />
         <div className='window-centered'>
-          <div style={ { display: isInSpecialState ? 'none' : 'block' } }>
+          <div style={ { display: this.isInSpecialState() ? 'none' : 'block' } }>
             <Helmet>
               <style>
                 {
@@ -372,7 +401,7 @@ class App extends Component {
                       {pageBodyRoutes}
                       <Route component={ NotFoundBody }/>
                     </Switch>
-                    <Copyright />
+                    <Copyright onClickWatermark={ this.displayXBill } />
                   </WindowContent>
                 </Window>
               </ThemeProvider>
@@ -380,12 +409,7 @@ class App extends Component {
             <TheAgent displayAgent={ !displayWindowBody } />
           </div>
         </div>
-        <div style={ { display: isInSpecialState ? 'none' : 'block' } }>
-          <XBill
-            initialX={ document.body.clientWidth / 2 }
-            initialY={ (document.body.clientHeight / 2) - 200 }
-          />
-        </div>
+        { this.renderXBill() }
         <LoopTV shouldPowerOn={ loopTVon } turnOff={ this.turnOffTV } />
         <Poweroff shouldPoweroff={ poweredOff } />
         <StoppedProgram shouldStopWindowing={ stoppedWindowProgram } />
