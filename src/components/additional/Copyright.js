@@ -15,11 +15,10 @@ class Copyright extends Component {
   }
 
   setWatermark = () => {
-    const { displayWatermark } = this.state;
+    const { onClickWatermark } = this.props;
 
-    if (!displayWatermark) {
-      this.setState({ displayWatermark: true });
-    }
+    this.setState({ displayWatermark: true });
+    onClickWatermark();
   }
 
   render() {
@@ -28,7 +27,7 @@ class Copyright extends Component {
     const watermarkString = ` - ${localStorage.getItem('fixed') ? '' : 'Evaluation Copy.'} Build ${buildNumber}`;
 
     return (
-      <div className='copyright' onClick={ this.setWatermark } style={ { cursor: displayWatermark ? 'default' : 'pointer' } }>
+      <div id='copyrightWatermark' className='copyright' onClick={ this.setWatermark }>
         <span>&copy; Simone Marzulli {new Date().getFullYear()}{displayWatermark ? watermarkString : ''}</span>
       </div>
     );
