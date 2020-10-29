@@ -16,6 +16,7 @@ import WindowsList from './components/WindowsList';
 import Poweroff from './components/additional/Poweroff';
 import LoopTV from './components/additional/LoopTV';
 import StoppedProgram from './components/additional/StoppedProgram';
+import ScreenSaver from './components/additional/ScreenSaver';
 import BrokenScreen from './components/additional/BrokenScreen';
 import XBill from './components/additional/XBill';
 import TheAgent from './components/additional/TheAgent';
@@ -48,6 +49,7 @@ class App extends Component {
       displayWindowBody: true,
       pageBodyRoutes: undefined,
       poweredOff: false,
+      screenSaver: true,
       loopTVon: false,
       stoppedWindowProgram: undefined,
       isBrokenScreen: false,
@@ -259,6 +261,14 @@ class App extends Component {
     this.setState({ poweredOff: true });
   }
 
+  setScreenSaver = () => {
+    this.setState({ screenSaver: true });
+  }
+
+  unsetScreenSaver = () => {
+    this.setState({ screenSaver: false });
+  }
+
   turnOnTV = () => {
     SoundEffects.loopTVSound.play();
     this.setState({ loopTVon: true });
@@ -279,12 +289,13 @@ class App extends Component {
 
   isInSpecialState = () => {
     const {
-      poweredOff, isBrokenScreen, loopTVon, stoppedWindowProgram,
+      poweredOff, isBrokenScreen, loopTVon, stoppedWindowProgram, screenSaver,
     } = this.state;
 
     return poweredOff
       || isBrokenScreen
       || loopTVon
+      || screenSaver
       || stoppedWindowProgram;
   }
 
@@ -364,7 +375,7 @@ class App extends Component {
   render() {
     const {
       bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes, showLoaderPointer,
-      poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme,
+      poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme, screenSaver,
     } = this.state;
 
     return (
@@ -411,6 +422,7 @@ class App extends Component {
         </div>
         { this.renderXBill() }
         <LoopTV shouldPowerOn={ loopTVon } turnOff={ this.turnOffTV } />
+        <ScreenSaver shouldLockScreen={ screenSaver } />
         <Poweroff shouldPoweroff={ poweredOff } />
         <StoppedProgram shouldStopWindowing={ stoppedWindowProgram } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
