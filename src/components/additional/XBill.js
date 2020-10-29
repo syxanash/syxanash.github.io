@@ -150,7 +150,7 @@ class XBill extends Component {
 
     return (
       <div
-        className='main-bill-div'
+        className='main-bill-div animated bounceInLeft'
         style={ {
           top: `${billPosition.y}px`,
           left: `${billPosition.x}px`,
