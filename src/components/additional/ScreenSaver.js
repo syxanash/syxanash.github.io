@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
-import smilePicture from '../../resources/images/smile.gif';
+const bouncingSmiles = require.context('../../resources/images/smiles', true);
 
 class ScreenSaver extends Component {
   constructor(props) {
@@ -9,19 +9,28 @@ class ScreenSaver extends Component {
 
     this.walkingStepPixelSpeed = 5;
 
-    this.imageWidth = 278;
-    this.imageHeight = 278;
-
     this.positionUpdaterInterval = undefined;
 
-    this.state = {
-      smilePosition: {
-        x: Math.floor(Math.random() * ((document.body.clientWidth - this.imageWidth))),
-        y: Math.floor(Math.random() * ((document.body.clientHeight - this.imageHeight))),
-        forward: true,
-        down: true,
+    this.bouncingSmile = [
+      {
+        picture: bouncingSmiles('./smile1.gif'),
+        size: 278,
+        numbers: 2,
       },
-      smileImage: smilePicture,
+      {
+        picture: bouncingSmiles('./smile2.gif'),
+        size: 63,
+        numbers: 4,
+      },
+      {
+        picture: bouncingSmiles('./smile3.gif'),
+        size: 209,
+        numbers: 2,
+      },
+    ];
+
+    this.state = {
+      allSmiles: [],
     };
   }
 
@@ -29,6 +38,21 @@ class ScreenSaver extends Component {
     if (!this.positionUpdaterInterval) {
       this.positionUpdaterInterval = setInterval(this.bounce, 20);
     }
+
+    const newSmilesList = this.bouncingSmile.map(mainSmile => Array(mainSmile.numbers)
+      .fill()
+      .map(() => ({
+        x: Math.floor(Math.random() * ((document.body.clientWidth - mainSmile.size))),
+        y: Math.floor(Math.random() * ((document.body.clientHeight - mainSmile.size))),
+        forward: Math.floor(Math.random() * (2)) % 2 === 0,
+        down: Math.floor(Math.random() * (2)) % 2 === 0,
+        image: mainSmile,
+      })))
+      .flat(2);
+
+    this.setState({
+      allSmiles: newSmilesList,
+    });
   }
 
   componentWillUnmount() {
@@ -36,53 +60,77 @@ class ScreenSaver extends Component {
   }
 
   bounce = () => {
-    const { smilePosition } = this.state;
+    const { allSmiles } = this.state;
 
-    let newXPosition;
-    let newYPosition;
-    let newHorizontalDirection = smilePosition.forward;
-    let newVerticalDirection = smilePosition.down;
+    const updatedSmiles = allSmiles.map((smile) => {
+      let newXPosition;
+      let newYPosition;
+      let newHorizontalDirection = smile.forward;
+      let newVerticalDirection = smile.down;
 
-    if (smilePosition.forward) {
-      newXPosition = smilePosition.x + 5;
-    } else {
-      newXPosition = smilePosition.x - 5;
-    }
+      if (smile.forward) {
+        newXPosition = smile.x + this.walkingStepPixelSpeed;
+      } else {
+        newXPosition = smile.x - this.walkingStepPixelSpeed;
+      }
 
-    if (smilePosition.down) {
-      newYPosition = smilePosition.y + 5;
-    } else {
-      newYPosition = smilePosition.y - 5;
-    }
+      if (smile.down) {
+        newYPosition = smile.y + this.walkingStepPixelSpeed;
+      } else {
+        newYPosition = smile.y - this.walkingStepPixelSpeed;
+      }
 
-    if (newXPosition >= (document.body.clientWidth - this.imageWidth)) {
-      newHorizontalDirection = false;
-    }
+      if (newXPosition >= (document.body.clientWidth - smile.image.size)) {
+        newHorizontalDirection = false;
+      }
 
-    if (newYPosition >= (document.body.clientHeight - this.imageHeight)) {
-      newVerticalDirection = false;
-    }
+      if (newYPosition >= (document.body.clientHeight - smile.image.size)) {
+        newVerticalDirection = false;
+      }
 
-    if (newXPosition <= 0) {
-      newHorizontalDirection = true;
-    }
+      if (newXPosition <= 0) {
+        newHorizontalDirection = true;
+      }
 
-    if (newYPosition <= 0) {
-      newVerticalDirection = true;
-    }
+      if (newYPosition <= 0) {
+        newVerticalDirection = true;
+      }
 
-    this.setState({
-      smilePosition: {
+      return {
         x: newXPosition,
         y: newYPosition,
         forward: newHorizontalDirection,
         down: newVerticalDirection,
-      },
+        image: smile.image,
+      };
+    });
+
+    this.setState({
+      allSmiles: updatedSmiles,
     });
   }
 
+  generateSmiles = () => {
+    const { allSmiles } = this.state;
+
+    const smilesComponents = allSmiles.map((smile, index) => (
+      <div
+        key={ `ball_${index}` }
+        style={ {
+          fill: '#fff',
+          position: 'absolute',
+          top: `${smile.y}px`,
+          left: `${smile.x}px`,
+        } }
+      >
+        <img src={ smile.image.picture } alt='pirate smile' />
+      </div>
+    ));
+
+    return smilesComponents;
+  }
+
   render() {
-    const { smilePosition, smileImage } = this.state;
     const { shouldLockScreen } = this.props;
 
     if (!shouldLockScreen) {
@@ -109,16 +157,7 @@ class ScreenSaver extends Component {
           }
         </style>
       </Helmet>
-      <div
-        style={ {
-          fill: '#fff',
-          position: 'absolute',
-          top: `${smilePosition.y}px`,
-          left: `${smilePosition.x}px`,
-        } }
-      >
-        <img src={ smileImage } alt='pirate smile' />
-      </div>
+      { this.generateSmiles() }
     </React.Fragment>);
   }
 }
