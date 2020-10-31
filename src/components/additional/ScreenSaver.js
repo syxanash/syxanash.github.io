@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
+import Util from '../Util';
+
+import './ScreenSaver.css';
+
 const bouncingSmiles = require.context('../../resources/images/smiles', true);
 
 class ScreenSaver extends Component {
   constructor(props) {
     super(props);
 
-    this.walkingStepPixelSpeed = 5;
+    this.walkingStepPixelSpeed = 7;
 
     this.positionUpdaterInterval = undefined;
 
@@ -28,6 +32,21 @@ class ScreenSaver extends Component {
         numbers: 2,
       },
     ];
+
+    if (Util.isMobile()) {
+      this.bouncingSmile = [
+        {
+          picture: bouncingSmiles('./smile2.gif'),
+          size: 63,
+          numbers: 4,
+        },
+        {
+          picture: bouncingSmiles('./smile3.gif'),
+          size: 209,
+          numbers: 1,
+        },
+      ];
+    }
 
     this.state = {
       allSmiles: [],
@@ -115,6 +134,7 @@ class ScreenSaver extends Component {
 
     const smilesComponents = allSmiles.map((smile, index) => (
       <div
+        className={ `${index % 2 === 0 ? 'bouncing-animation' : ''} animated zoomIn fast` }
         key={ `ball_${index}` }
         style={ {
           fill: '#fff',
