@@ -1,0 +1,8 @@
+.bouncing-animation {
+  animation: heartFadeInOut 3s infinite alternate;
+}
+
+@keyframes heartFadeInOut {
+  from { transform: scale(0.7); }
+  to { transform: scale(1.2); }
+}
