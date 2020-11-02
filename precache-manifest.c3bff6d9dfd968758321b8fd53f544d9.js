@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "01194b06da9d869741147d936f99f744",
+    "revision": "b27864454d1af7b03c81363bbaa4b2ef",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.ab8a0683.chunk.css"
   },
   {
-    "revision": "d0b4fa31140a7ea4f2be",
+    "revision": "6f8cc5e52f8238254d29",
     "url": "/static/css/main.3dd50a30.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.c9e69674.chunk.js"
   },
   {
-    "revision": "d0b4fa31140a7ea4f2be",
-    "url": "/static/js/main.4ee81e37.chunk.js"
+    "revision": "6f8cc5e52f8238254d29",
+    "url": "/static/js/main.63496d3e.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -146,6 +146,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "3203e5aba1947fe3b4822a48e6c928af",
     "url": "/static/media/aladdin_snes_rugrun.3203e5ab.gif"
+  },
+  {
+    "revision": "fb1e73a3449b5f9064d85622ca1f842b",
+    "url": "/static/media/andiamo.fb1e73a3.gif"
   },
   {
     "revision": "25324f6f978785471a86046b2eee2185",
