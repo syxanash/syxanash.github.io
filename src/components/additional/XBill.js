@@ -154,11 +154,10 @@ class XBill extends Component {
         style={ {
           top: `${billPosition.y}px`,
           left: `${billPosition.x}px`,
-          transform: billPosition.forward ? 'scaleX(-1)' : '',
         } }
         onClick={ this.killBill }
       >
-        <img src={ billImage } alt='xbill' />
+        <img src={ billImage } alt='xbill' className={ `${billPosition.forward ? 'flip-image' : ''}` } />
       </div>
     );
   }
