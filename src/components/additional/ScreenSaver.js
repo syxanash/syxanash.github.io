@@ -151,12 +151,6 @@ class ScreenSaver extends Component {
   }
 
   render() {
-    const { shouldLockScreen } = this.props;
-
-    if (!shouldLockScreen) {
-      return null;
-    }
-
     return (<React.Fragment>
       <Helmet>
         <style>

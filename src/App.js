@@ -42,6 +42,10 @@ class App extends Component {
     this.loadingIconTimeout = undefined;
     this.konamiKeysEntered = 0;
 
+    this.screenSaverTimeout = undefined;
+    this.activateScreenSaver = false;
+    this.screenSaverTimer = 10;
+
     this.movingCounter = 0;
 
     this.state = {
@@ -66,7 +70,10 @@ class App extends Component {
     document.addEventListener('keydown', this.stoppedProgram);
     document.addEventListener('keydown', this.konamiHandler);
 
-    $(window).blur(this.setScreenSaver);
+    $(window).focus(() => {
+      this.activateScreenSaver = false;
+      clearInterval(this.screenSaverTimeout);
+    }).blur(this.setScreenSaver);
 
     document.addEventListener('mousemove', this.onMouseUpdate);
     document.addEventListener('mouseenter', this.onMouseUpdate);
@@ -119,6 +126,10 @@ class App extends Component {
     document.removeEventListener('mouseenter', this.onMouseUpdate);
 
     document.removeEventListener('click', this.unsetScreenSaver);
+
+    if (this.screenSaverTimeout) {
+      clearTimeout(this.screenSaverTimeout);
+    }
   }
 
   onMouseUpdate = () => {
@@ -302,15 +313,21 @@ class App extends Component {
   setScreenSaver = () => {
     this.movingCounter = 0;
 
-    if (!this.isInSpecialState()) {
-      this.setState({ screenSaverMode: true });
-    }
+    this.activateScreenSaver = true;
+
+    this.screenSaverTimeout = setTimeout(() => {
+      if (!this.isInSpecialState() && this.activateScreenSaver) {
+        this.activateScreenSaver = false;
+        this.setState({ screenSaverMode: true });
+      }
+    }, this.screenSaverTimer * 1000);
   }
 
   unsetScreenSaver = () => {
     const { screenSaverMode } = this.state;
 
     if (screenSaverMode) {
+      this.activateScreenSaver = false;
       this.setState({ screenSaverMode: false });
     }
   }
@@ -456,7 +473,7 @@ class App extends Component {
         </div>
         { this.renderXBill() }
         <LoopTV shouldPowerOn={ loopTVon } turnOff={ this.turnOffTV } />
-        <ScreenSaver shouldLockScreen={ screenSaverMode } />
+        { screenSaverMode ? <ScreenSaver /> : null }
         <Poweroff shouldPoweroff={ poweredOff } />
         <StoppedProgram shouldStopWindowing={ stoppedWindowProgram } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
