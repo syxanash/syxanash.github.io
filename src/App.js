@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import $ from 'jquery';
 import { ThemeProvider } from 'styled-components';
 import Helmet from 'react-helmet';
 import {
@@ -41,6 +42,8 @@ class App extends Component {
     this.loadingIconTimeout = undefined;
     this.konamiKeysEntered = 0;
 
+    this.movingCounter = 0;
+
     this.state = {
       bgWallpapers: _.shuffle(bgList),
       bgIndex: 0,
@@ -49,7 +52,7 @@ class App extends Component {
       displayWindowBody: true,
       pageBodyRoutes: undefined,
       poweredOff: false,
-      screenSaver: true,
+      screenSaverMode: false,
       loopTVon: false,
       stoppedWindowProgram: undefined,
       isBrokenScreen: false,
@@ -62,6 +65,13 @@ class App extends Component {
     document.addEventListener('keydown', this.closeTopWindow);
     document.addEventListener('keydown', this.stoppedProgram);
     document.addEventListener('keydown', this.konamiHandler);
+
+    $(window).blur(this.setScreenSaver);
+
+    document.addEventListener('mousemove', this.onMouseUpdate);
+    document.addEventListener('mouseenter', this.onMouseUpdate);
+    document.addEventListener('click', this.unsetScreenSaver);
+
     const windowsList = WindowsList();
 
     const pageBodyRoutes = Object.keys(windowsList)
@@ -104,6 +114,32 @@ class App extends Component {
     document.removeEventListener('keydown', this.closeTopWindow);
     document.removeEventListener('keydown', this.stoppedProgram);
     document.removeEventListener('keydown', this.konamiHandler);
+
+    document.removeEventListener('mousemove', this.onMouseUpdate);
+    document.removeEventListener('mouseenter', this.onMouseUpdate);
+
+    document.removeEventListener('click', this.unsetScreenSaver);
+  }
+
+  onMouseUpdate = () => {
+    const { screenSaverMode } = this.state;
+    this.movingCounter = this.movingCounter + 1;
+
+    if (this.movingCounter >= 50 && screenSaverMode) {
+      this.unsetScreenSaver();
+    }
+  }
+
+  isInSpecialState = () => {
+    const {
+      poweredOff, isBrokenScreen, loopTVon, stoppedWindowProgram, screenSaverMode,
+    } = this.state;
+
+    return poweredOff
+      || isBrokenScreen
+      || loopTVon
+      || screenSaverMode
+      || stoppedWindowProgram;
   }
 
   onLeftsideButton = () => {
@@ -201,13 +237,15 @@ class App extends Component {
 
   stoppedProgram = (event) => {
     const {
-      isBrokenScreen, poweredOff, loopTVon, stoppedWindowProgram,
+      loopTVon, stoppedWindowProgram,
     } = this.state;
 
     if (((event.ctrlKey && event.key === 'c')
       || (event.ctrlKey && event.key === 'C'))
       && stoppedWindowProgram === undefined && !loopTVon) {
-      this.setState({ stoppedWindowProgram: !isBrokenScreen && !poweredOff && !loopTVon });
+      this.setState({
+        stoppedWindowProgram: !this.isInSpecialState(),
+      });
     }
   }
 
@@ -262,11 +300,19 @@ class App extends Component {
   }
 
   setScreenSaver = () => {
-    this.setState({ screenSaver: true });
+    this.movingCounter = 0;
+
+    if (!this.isInSpecialState()) {
+      this.setState({ screenSaverMode: true });
+    }
   }
 
   unsetScreenSaver = () => {
-    this.setState({ screenSaver: false });
+    const { screenSaverMode } = this.state;
+
+    if (screenSaverMode) {
+      this.setState({ screenSaverMode: false });
+    }
   }
 
   turnOnTV = () => {
@@ -285,18 +331,6 @@ class App extends Component {
 
   displayXBill = () => {
     this.setState({ showXBill: true });
-  }
-
-  isInSpecialState = () => {
-    const {
-      poweredOff, isBrokenScreen, loopTVon, stoppedWindowProgram, screenSaver,
-    } = this.state;
-
-    return poweredOff
-      || isBrokenScreen
-      || loopTVon
-      || screenSaver
-      || stoppedWindowProgram;
   }
 
   renderXBill = () => {
@@ -375,7 +409,7 @@ class App extends Component {
   render() {
     const {
       bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes, showLoaderPointer,
-      poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme, screenSaver,
+      poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme, screenSaverMode,
     } = this.state;
 
     return (
@@ -422,7 +456,7 @@ class App extends Component {
         </div>
         { this.renderXBill() }
         <LoopTV shouldPowerOn={ loopTVon } turnOff={ this.turnOffTV } />
-        <ScreenSaver shouldLockScreen={ screenSaver } />
+        <ScreenSaver shouldLockScreen={ screenSaverMode } />
         <Poweroff shouldPoweroff={ poweredOff } />
         <StoppedProgram shouldStopWindowing={ stoppedWindowProgram } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
