@@ -46,7 +46,7 @@ class App extends Component {
     this.activateScreenSaver = false;
     this.screenSaverTimer = 10;
 
-    this.movingCounter = 0;
+    this.mouseMovingCounter = 0;
 
     this.state = {
       bgWallpapers: _.shuffle(bgList),
@@ -134,9 +134,9 @@ class App extends Component {
 
   onMouseUpdate = () => {
     const { screenSaverMode } = this.state;
-    this.movingCounter = this.movingCounter + 1;
+    this.mouseMovingCounter = this.mouseMovingCounter + 1;
 
-    if (this.movingCounter >= 50 && screenSaverMode) {
+    if (this.mouseMovingCounter >= 50 && screenSaverMode) {
       this.unsetScreenSaver();
     }
   }
@@ -311,7 +311,7 @@ class App extends Component {
   }
 
   setScreenSaver = () => {
-    this.movingCounter = 0;
+    this.mouseMovingCounter = 0;
 
     this.activateScreenSaver = true;
 
