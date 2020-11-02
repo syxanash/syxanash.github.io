@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 
 import {
   Cutout, Toolbar, Button, Fieldset,
@@ -23,6 +24,7 @@ class WebDesktopsHeader extends Component {
 
 class WebDesktopsBody extends Component {
   state = {
+    desktopsList: _.shuffle(remoteDesktops),
     httpsOnlyEnabled: false,
   }
 
@@ -51,7 +53,9 @@ class WebDesktopsBody extends Component {
   }
 
   openRandomURL = () => {
-    const linksList = remoteDesktops.filter(website => this.filterURLByHTTPS(website.url))
+    const { desktopsList } = this.state;
+
+    const linksList = desktopsList.filter(website => this.filterURLByHTTPS(website.url))
       .map(website => website.url);
 
     const randomLink = Object.keys(linksList).map(e => linksList[e])[
@@ -70,7 +74,9 @@ class WebDesktopsBody extends Component {
   }
 
   renderAllIcons = () => {
-    const desktopIcons = remoteDesktops.filter(website => this.filterURLByHTTPS(website.url))
+    const { desktopsList } = this.state;
+
+    const desktopIcons = desktopsList.filter(website => this.filterURLByHTTPS(website.url))
       .map(website => (
         <div
           className='single-icon'
