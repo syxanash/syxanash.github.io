@@ -12,7 +12,6 @@ import remoteDesktops from '../../resources/remote-desktops.json';
 import computerIcon from '../../resources/icons/remote.gif';
 import mainWindowIcon from '../../resources/icons/webdesktops.gif';
 import mobileWarningIcon from '../../resources/icons/mobilewarning.gif';
-import smileyIcon from '../../resources/images/utopia_smiley.png';
 
 class WebDesktopsHeader extends Component {
   render = () => (
@@ -98,7 +97,7 @@ class WebDesktopsBody extends Component {
       <Fieldset>
         <img src={ mobileWarningIcon } alt='mobile warning icon' style={ { float: 'left', paddingRight: '15px' } } />
         While some of these websites offer great mobile layouts I recommend
-        exploring this list using a <b>desktop browser</b> (duh! <img src={ smileyIcon } alt='smile' style={ { height: '20px', marginBottom: '-3px' } } />)
+        exploring this list using a <b>desktop browser</b> (duh!)
       </Fieldset>
     );
   }

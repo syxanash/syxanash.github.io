@@ -57,8 +57,8 @@ class UnknownBody extends Component {
     const foundAgent = localStorage.getItem('foundAgent') === 'true';
 
     const windowMessage = foundAgent
-      ? <span>Investigate the bugs in <b>Cestino</b></span>
-      : <span>Find the <b>Agent</b>, he might know what this is about...</span>;
+      ? <span className='blink'>Investigate the bugs in <b>Cestino</b></span>
+      : <span className='blink'>Find the <b>Agent</b>, he might know what this is about...</span>;
 
     return (
       <div>
