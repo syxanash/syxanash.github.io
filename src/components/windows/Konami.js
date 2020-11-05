@@ -30,6 +30,7 @@ class KonamiBody extends Component {
 
   // eslint-disable-next-line class-methods-use-this
   componentDidMount() {
+    SoundEffects.errorSound.load();
     SoundEffects.errorSound.play();
   }
 

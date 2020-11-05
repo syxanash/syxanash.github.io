@@ -333,6 +333,7 @@ class App extends Component {
   }
 
   turnOnTV = () => {
+    SoundEffects.loopTVSound.load();
     SoundEffects.loopTVSound.play();
     this.setState({ loopTVon: true });
   }
