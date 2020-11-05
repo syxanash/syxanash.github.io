@@ -8,15 +8,19 @@ import rebootSound from '../../resources/sounds/reboot.wav';
 const SoundEffects = {
   errorSound: new Howl({
     src: [errorSound],
+    preload: false,
   }),
   poweroffSound: new Howl({
     src: [poweroffSound],
+    preload: false,
   }),
   loopTVSound: new Howl({
     src: [loopTVSound],
+    preload: false,
   }),
   rebootSound: new Howl({
     src: [rebootSound],
+    preload: false,
   }),
 };
 

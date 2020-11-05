@@ -133,10 +133,11 @@ class ProjectsBody extends Component {
     };
 
     commands.reboot = () => {
-      const sound = SoundEffects.rebootSound;
-      sound.play();
+      const { rebootSound } = SoundEffects;
+      rebootSound.load();
+      rebootSound.play();
       this.setState({ shellOutput: 'Pippo OS is rebooting...', shellWaiting: true });
-      sound.on('end', () => {
+      rebootSound.on('end', () => {
         window.location.href = '/';
       });
     };

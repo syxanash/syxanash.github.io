@@ -58,6 +58,7 @@ class Poweroff extends Component {
     }
 
     if (!isScreenOff) {
+      SoundEffects.poweroffSound.load();
       SoundEffects.poweroffSound.play();
 
       this.turnOffTimeout = setTimeout(() => {

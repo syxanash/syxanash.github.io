@@ -192,6 +192,7 @@ class BrokenScreen extends Component {
     }
 
     if (!this.bugRefreshInterval) {
+      SoundEffects.errorSound.load();
       SoundEffects.errorSound.play();
       if (localStorage.getItem('broken') !== 'true') {
         localStorage.removeItem(antiCheatString);
