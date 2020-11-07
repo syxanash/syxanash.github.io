@@ -47,11 +47,20 @@ class MainWindowHeader extends Component {
 }
 
 class MainWindowBody extends Component {
-  state = {
-    iconsColliding: false,
+  constructor(props) {
+    super(props);
+
+    this.randomCaptionInterval = undefined;
+
+    this.state = {
+      randomUnknownCaption: Math.random().toString(36).substring(8),
+      iconsColliding: false,
+    };
   }
 
   componentDidMount() {
+    this.randomCaptionInterval = setInterval(this.generateRandomCaption, 3000);
+
     $('#computer_icon').bind('mouseup', this.triggerUp);
     $('#computer_icon').bind('touchend', this.triggerUp);
   }
@@ -61,8 +70,16 @@ class MainWindowBody extends Component {
 
     resetWindows();
 
+    clearInterval(this.randomCaptionInterval);
+
     $('#computer_icon').unbind('mouseup', this.triggerUp);
     $('#computer_icon').unbind('touchend', this.triggerUp);
+  }
+
+  generateRandomCaption = () => {
+    this.setState({
+      randomUnknownCaption: Math.random().toString(36).substring(8),
+    });
   }
 
   triggerUp = () => {
@@ -102,7 +119,7 @@ class MainWindowBody extends Component {
 
   render() {
     const { onClickTV, openWindow, isWindowOpened } = this.props;
-    const { iconsColliding } = this.state;
+    const { iconsColliding, randomUnknownCaption } = this.state;
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
 
     return (
@@ -182,7 +199,7 @@ class MainWindowBody extends Component {
               active={ isWindowOpened('unknown') }
             >
               <img src={ unknownIcon } className='icon' alt="unknown icon"/>
-              <figcaption className='icon-caption'></figcaption>
+              <figcaption className='icon-caption'>{ randomUnknownCaption }</figcaption>
             </Button>
             <Anchor
               href='https://gist.github.com/syxanash/7b2d135a566cfb2f03dfceba6b34e61a'
