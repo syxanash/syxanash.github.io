@@ -94,7 +94,7 @@ class TheAgent extends Component {
       <span>
         Be careful to <b>Cestino</b> I've been struggling to remove that bug lately,
         feel free to have a look yourself...
-        I will offer you a reward if you succeed!
+        I will offer a reward if you succeed!
       </span>,
     ];
 
