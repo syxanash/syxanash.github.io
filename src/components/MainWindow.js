@@ -59,7 +59,7 @@ class MainWindowBody extends Component {
   }
 
   componentDidMount() {
-    this.randomCaptionInterval = setInterval(this.generateRandomCaption, 3000);
+    this.randomCaptionInterval = setInterval(this.generateRandomCaption, 1500);
 
     $('#computer_icon').bind('mouseup', this.triggerUp);
     $('#computer_icon').bind('touchend', this.triggerUp);
