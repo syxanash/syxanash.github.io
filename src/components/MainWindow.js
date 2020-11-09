@@ -83,7 +83,7 @@ class MainWindowBody extends Component {
   generateRandomCaption = () => {
     const { randomUnknownCaption } = this.state;
 
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const characters = 'abcdefghijklmnopqrstuvwxyz';
     const randomCharter = characters.charAt(Math.floor(Math.random() * characters.length));
     const randomIndex = Math.floor(Math.random() * randomUnknownCaption.length);
 
