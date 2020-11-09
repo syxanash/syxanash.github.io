@@ -53,13 +53,13 @@ class MainWindowBody extends Component {
     this.randomCaptionInterval = undefined;
 
     this.state = {
-      randomUnknownCaption: Math.random().toString(36).substring(8),
+      randomUnknownCaption: 'recipe',
       iconsColliding: false,
     };
   }
 
   componentDidMount() {
-    this.randomCaptionInterval = setInterval(this.generateRandomCaption, 1500);
+    this.randomCaptionInterval = setInterval(this.generateRandomCaption, 300);
 
     $('#computer_icon').bind('mouseup', this.triggerUp);
     $('#computer_icon').bind('touchend', this.triggerUp);
@@ -77,8 +77,18 @@ class MainWindowBody extends Component {
   }
 
   generateRandomCaption = () => {
+    const { randomUnknownCaption } = this.state;
+
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const randomCharter = characters.charAt(Math.floor(Math.random() * characters.length));
+    const randomIndex = Math.floor(Math.random() * randomUnknownCaption.length);
+
+    const newWord = randomUnknownCaption.substring(0, randomIndex)
+      + randomCharter
+      + randomUnknownCaption.substring(randomIndex + 1);
+
     this.setState({
-      randomUnknownCaption: Math.random().toString(36).substring(8),
+      randomUnknownCaption: newWord,
     });
   }
 
