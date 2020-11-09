@@ -146,7 +146,7 @@ export default function WindowsList() {
     unknown: {
       hasFullScreen: false,
       tiltAnimation: false,
-      canCloseWindow: false,
+      canCloseWindow: true,
       opened: false,
       focused: false,
       header: UnknownHeader,
