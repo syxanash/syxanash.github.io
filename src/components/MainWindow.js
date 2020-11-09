@@ -59,7 +59,9 @@ class MainWindowBody extends Component {
   }
 
   componentDidMount() {
-    this.randomCaptionInterval = setInterval(this.generateRandomCaption, 300);
+    if (!localStorage.getItem('fixed')) {
+      this.randomCaptionInterval = setInterval(this.generateRandomCaption, 300);
+    }
 
     $('#computer_icon').bind('mouseup', this.triggerUp);
     $('#computer_icon').bind('touchend', this.triggerUp);
@@ -70,7 +72,9 @@ class MainWindowBody extends Component {
 
     resetWindows();
 
-    clearInterval(this.randomCaptionInterval);
+    if (this.randomCaptionInterval !== undefined) {
+      clearInterval(this.randomCaptionInterval);
+    }
 
     $('#computer_icon').unbind('mouseup', this.triggerUp);
     $('#computer_icon').unbind('touchend', this.triggerUp);
