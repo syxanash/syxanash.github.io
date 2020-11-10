@@ -15,5 +15,6 @@
   "Pascal": "pas",
   "8086 Assembly": "asm",
   "Basic": "vb",
-  "Batch": "bat"
+  "Batch": "bat",
+  "AutoIt": "au3"
 }
