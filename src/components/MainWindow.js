@@ -4,7 +4,9 @@ import Draggable from 'react-draggable';
 import {
   Cutout, Button, Anchor,
 } from 'react95';
+
 import MainWindowFooter from './additional/Footer';
+import Util from './Util';
 
 import './MainWindow.css';
 
@@ -53,7 +55,7 @@ class MainWindowBody extends Component {
     this.randomCaptionInterval = undefined;
 
     this.state = {
-      randomUnknownCaption: 'recipe',
+      randomUnknownCaption: 'Recipe',
       iconsColliding: false,
     };
   }
@@ -83,16 +85,8 @@ class MainWindowBody extends Component {
   generateRandomCaption = () => {
     const { randomUnknownCaption } = this.state;
 
-    const characters = 'abcdefghijklmnopqrstuvwxyz';
-    const randomCharter = characters.charAt(Math.floor(Math.random() * characters.length));
-    const randomIndex = Math.floor(Math.random() * randomUnknownCaption.length);
-
-    const newWord = randomUnknownCaption.substring(0, randomIndex)
-      + randomCharter
-      + randomUnknownCaption.substring(randomIndex + 1);
-
     this.setState({
-      randomUnknownCaption: newWord,
+      randomUnknownCaption: Util.replaceRandomCharInWord(randomUnknownCaption),
     });
   }
 
