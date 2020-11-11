@@ -473,7 +473,7 @@ class App extends Component {
           </div>
         </div>
         { this.renderXBill() }
-        <LoopTV shouldPowerOn={ loopTVon } turnOff={ this.turnOffTV } />
+        { loopTVon ? <LoopTV turnOff={ this.turnOffTV } /> : null }
         { screenSaverMode ? <ScreenSaver /> : null }
         <Poweroff shouldPoweroff={ poweredOff } />
         <StoppedProgram shouldStopWindowing={ stoppedWindowProgram } />

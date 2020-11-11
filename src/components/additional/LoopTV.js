@@ -25,7 +25,7 @@ class LoopTV extends Component {
     };
   }
 
-  componentWillUmount = () => {
+  componentWillUnmount = () => {
     if (this.tvOutputTimeout) {
       clearTimeout(this.tvOutputTimeout);
     }
@@ -56,11 +56,7 @@ class LoopTV extends Component {
     const {
       imageList, imageIndex, disableTVOutput, imageLoaded,
     } = this.state;
-    const { shouldPowerOn, turnOff } = this.props;
-
-    if (!shouldPowerOn) {
-      return null;
-    }
+    const { turnOff } = this.props;
 
     return (
       <div className='image-container' onClick={ this.changeLoopImage }>
