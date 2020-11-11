@@ -74,11 +74,7 @@ class TheAgent extends Component {
 
   render() {
     const { stillTalking, speechIndex } = this.state;
-    const { displayAgent, negative } = this.props;
-
-    if (!displayAgent) {
-      return null;
-    }
+    const { negative } = this.props;
 
     if (!negative && speechIndex === 1 && localStorage.getItem('fixed') === null) {
       localStorage.setItem('foundAgent', true);
