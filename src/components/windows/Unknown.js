@@ -1,16 +1,50 @@
 import React, { Component } from 'react';
 import { Button, Cutout } from 'react95';
 
+import Util from '../Util';
+
 import './Unknown.css';
 
 import unknownIcon from '../../resources/icons/unknown.gif';
 
 class UnknownHeader extends Component {
-  render = () => (
-    <span>
-      <img src={ unknownIcon } alt='main icon' style={ { height: '15px' } }/>
-    </span>
-  )
+  constructor(props) {
+    super(props);
+
+    this.randomTitleInterval = undefined;
+
+    this.state = {
+      randomUnknownTitle: 'Recipe',
+    };
+  }
+
+  componentDidMount() {
+    this.randomTitleInterval = setInterval(this.generateRandomTitle, 100);
+  }
+
+  componentWillUnmount() {
+    if (this.randomTitleInterval !== undefined) {
+      clearInterval(this.randomTitleInterval);
+    }
+  }
+
+  generateRandomTitle = () => {
+    const { randomUnknownTitle } = this.state;
+
+    this.setState({
+      randomUnknownTitle: Util.replaceRandomCharInWord(randomUnknownTitle),
+    });
+  }
+
+  render = () => {
+    const { randomUnknownTitle } = this.state;
+
+    return (
+      <span>
+        <img src={ unknownIcon } alt='main icon' style={ { height: '15px' } }/> { randomUnknownTitle }
+      </span>
+    );
+  }
 }
 
 class UnknownBody extends Component {
