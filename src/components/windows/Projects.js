@@ -224,7 +224,7 @@ class ProjectsBody extends Component {
 
     const isZXSpectrum = randomPromptChars === 'ZX';
 
-    return (<div>
+    return (<React.Fragment>
       <Cutout className='cutout-area' style={ { padding: '10px' } }>
         <div className='comment-text' style={ { paddingBottom: '15px' } }>{'//'} Sometimes when I feel motivated and planets are perfectly aligned
         I work on small side projects to create something I need
@@ -250,7 +250,7 @@ class ProjectsBody extends Component {
           <span className={ showPrompt ? 'blink' : '' }>{isZXSpectrum ? '🄺' : '█'}</span>
         </div>
       </Cutout>
-    </div>);
+    </React.Fragment>);
   }
 }
 

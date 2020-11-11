@@ -29,7 +29,7 @@ class TheMightyMarquee extends React.Component {
 }
 
 class MusicBody extends Component {
-  render = () => (<div>
+  render = () => (<React.Fragment>
     <div style={ { paddingBottom: '20px' } }>
       I usually save my music on the following online services.
     </div>
@@ -84,7 +84,7 @@ class MusicBody extends Component {
         </Anchor>
       </TabBody>
     </div>
-  </div>)
+  </React.Fragment>)
 }
 
 export { MusicHeader, MusicBody };

@@ -38,9 +38,9 @@ class FixBody extends Component {
     <img src={ warningIcon } style={ { height: '52px' } } alt='warning icon' /><h1>You shouldn't fix what is not broken!</h1>
   </span>
 
-  render = () => (<div>
+  render = () => (<React.Fragment>
     { localStorage.getItem('fixed') ? this.renderFixed() : this.renderWarning() }
-  </div>
+  </React.Fragment>
   )
 }
 

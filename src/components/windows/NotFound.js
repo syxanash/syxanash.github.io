@@ -63,7 +63,7 @@ class NotFoundBody extends Component {
 
     const replacedLink = replacedLinks.find(item => item.from === pathName);
 
-    return (<div>
+    return (<React.Fragment>
       <h1 style={ { textAlign: 'center', color: randomColor } }>404</h1>
 
       {
@@ -71,7 +71,7 @@ class NotFoundBody extends Component {
           ? this.renderPhilosophicalMessage()
           : this.renderRedirectHint(replacedLink.to)
       }
-    </div>
+    </React.Fragment>
     );
   }
 }
