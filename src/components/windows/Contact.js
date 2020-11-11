@@ -27,7 +27,7 @@ class ContactHeader extends Component {
 }
 
 class ContactBody extends Component {
-  render = () => (<div>
+  render = () => (<React.Fragment>
     <span>
       Please feel free to drop me an email or stalk me on the web.
     </span>
@@ -94,7 +94,7 @@ class ContactBody extends Component {
         If you want to keep me updated with the latest tinfoil hat news use my <a target="_blank" rel="noopener noreferrer" href='http://futureboy.us/pgp.html'>PGP</a> public key.
       </Fieldset>
     </div>
-  </div>)
+  </React.Fragment>)
 }
 
 export { ContactHeader, ContactBody };

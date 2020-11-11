@@ -51,7 +51,7 @@ class CestinoBody extends Component {
     const currentMessage = easterEggObject.cestinoMessages[messageCounter].message;
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
 
-    return (<div>
+    return (<React.Fragment>
       <div className='cestino-message-container'>
         <span className='cestino-message-text'>
           <img src={ spiderWindowIcon } alt='spider window icon' /><span style={ { margin: '15px' } }>{currentMessage.charAt(0).toUpperCase() + currentMessage.slice(1)}</span>
@@ -69,7 +69,7 @@ class CestinoBody extends Component {
           </div>
         </Cutout>
       </div>
-    </div>);
+    </React.Fragment>);
   }
 }
 

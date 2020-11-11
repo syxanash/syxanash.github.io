@@ -39,7 +39,7 @@ class GuestbookBody extends Component {
     openWindow('webdesktops', true);
   }
 
-  render = () => (<div>
+  render = () => (<React.Fragment>
     <div style={ { textAlign: 'center' } }>
       If you enjoyed visiting this website leave a comment down here!
     </div>
@@ -237,7 +237,7 @@ class GuestbookBody extends Component {
     <div className='bottom-text'>
       <span role="img" aria-label="warning" className='blink'>⚠️</span> I'm still investigating on the authenticity of some comments. <span role="img" aria-label="warning" className='blink'>⚠️</span>
     </div>
-  </div>
+  </React.Fragment>
   )
 }
 

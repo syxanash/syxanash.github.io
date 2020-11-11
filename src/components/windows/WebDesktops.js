@@ -106,7 +106,7 @@ class WebDesktopsBody extends Component {
     const { httpsOnlyEnabled } = this.state;
 
     return (
-      <div>
+      <React.Fragment>
         <div className='toolbar-container'>
           <Toolbar>
             <Button onClick={ this.openRandomURL } variant="menu">Random</Button>
@@ -126,7 +126,7 @@ class WebDesktopsBody extends Component {
             {this.renderAllIcons()}
           </div>
         </Cutout>
-      </div>
+      </React.Fragment>
     );
   }
 }

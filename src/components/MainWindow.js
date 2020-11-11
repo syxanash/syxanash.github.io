@@ -131,7 +131,7 @@ class MainWindowBody extends Component {
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
 
     return (
-      <div>
+      <React.Fragment>
         <Cutout className='cut-out'>
           <div className='last-row-icons'>
             <Button id='cestino_icon' size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } }
@@ -222,7 +222,7 @@ class MainWindowBody extends Component {
           </div>
         </Cutout>
         <MainWindowFooter onClick={ () => openWindow('credits') } active={ isWindowOpened('credits') }/>
-      </div>
+      </React.Fragment>
     );
   }
 }
