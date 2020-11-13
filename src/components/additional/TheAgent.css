@@ -10,8 +10,6 @@
 }
 
 .continue-button {
-  color: blue;
-  font-weight: bold;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -24,10 +22,6 @@
   height: 55px;
   margin-top: 30px;
   margin-left: 25px;
-}
-
-.continue-button:hover {
-  text-decoration: underline;
 }
 
 .agent-speech {

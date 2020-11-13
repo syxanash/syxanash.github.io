@@ -469,7 +469,7 @@ class App extends Component {
                 </Window>
               </ThemeProvider>
             </ThemeContext.Provider>
-            { displayWindowBody ? null : <TheAgent /> }
+            <TheAgent displayAgent={ !displayWindowBody } />
           </div>
         </div>
         { this.renderXBill() }
