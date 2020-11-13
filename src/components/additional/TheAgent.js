@@ -70,7 +70,12 @@ class TheAgent extends Component {
           size='sm'
           square
           onClick={ () => this.openWebsiteURL({ url: '/#/fixmycomputer' }) }
-          className='continue-button'
+          style={ {
+            position: 'absolute',
+            bottom: '0',
+            right: '0',
+            margin: '10px',
+          } }
         >◓</Button>
       </span>,
     ];
@@ -151,7 +156,12 @@ class TheAgent extends Component {
       square
       onClick={ this.increaseSpeechIndex }
       disabled={ stillTalking }
-      className='continue-button'
+      style={ {
+        position: 'absolute',
+        bottom: '0',
+        right: '0',
+        margin: '10px',
+      } }
     >
       <span style={ { transform: 'translateY(-1px)' } }>⚈</span>
     </Button>);
