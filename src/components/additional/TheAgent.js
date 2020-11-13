@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import Typist from 'react-typist';
+import { ThemeProvider } from 'styled-components';
+import { Button } from 'react95';
 
 import agentImg from '../../resources/images/the_agent.gif';
 import agentImgSilent from '../../resources/images/the_agent_shut.gif';
 
 import agentImgNegative from '../../resources/images/the_agent_negative.gif';
 import agentImgSilentNegative from '../../resources/images/the_agent_shut_negative.gif';
+
+import PippoThemeRedmond from '../../themes/PippoRedmond';
 
 import 'animate.css';
 import './TheAgent.css';
@@ -15,6 +19,71 @@ class TheAgent extends Component {
     stillTalking: true,
     imageLoaded: false,
     speechIndex: 0,
+    speechTextBlob: [],
+  }
+
+  componentDidMount() {
+    const { negative } = this.props;
+
+    const speechTextBeforeBug = [
+      <span>
+        I'm the <b>Agent</b> behind the window.
+        I see you're exploring the graphical user interface,
+        click all the buttons as much as you want but...
+      </span>,
+      <span>
+        Be careful to <b>Cestino</b> I've been struggling to remove that bug lately,
+        feel free to have a look yourself...
+        I will offer a reward if you succeed!
+      </span>,
+    ];
+
+    const speechTextAfterBug = [
+      <span>
+        Congratulations buddy! You were able to get rid of that pesky Cestino bug,
+        I'm so grateful for your help. Even though you cannot judge my emotions from this GIF,
+        I'm really happy right now!
+      </span>,
+      <span>
+        As a reward you should now see on the main window&nbsp;
+        Simone's Famous <b>Pizza Recipe</b>!
+        Have fun making pizza at home
+        and remember to always activate dry yeast before each use!
+      </span>,
+    ];
+
+    const speechesForNegativeAgent = [
+      <span>
+        You might have deleted all my bugs, but this whole system was built by just one person
+        I'm sure there's still something hiding out there!
+      </span>,
+      <span>
+        In the end this is just a bunch of javascript,
+        it won't take long before it all becomes obsolete. Just like GeoCities
+        and Flash games this whole thing will stop working... So have fun playing while it lasts!
+      </span>,
+      <span>
+        I guess it's true what they say about
+        enjoying the ride and not the destination...
+        Well I better go now, my deliveroo driver is downstairs with my sushi!
+        <Button
+          size='sm'
+          square
+          onClick={ () => this.openWebsiteURL({ url: '/#/fixmycomputer' }) }
+          className='continue-button'
+        >◓</Button>
+      </span>,
+    ];
+
+    let finalSpeechTextBlob = localStorage.getItem('fixed')
+      ? speechTextAfterBug
+      : speechTextBeforeBug;
+
+    if (negative) {
+      finalSpeechTextBlob = speechesForNegativeAgent;
+    }
+
+    this.setState({ speechTextBlob: finalSpeechTextBlob });
   }
 
   closeMouth = () => {
@@ -27,7 +96,11 @@ class TheAgent extends Component {
 
   increaseSpeechIndex = () => {
     const { speechIndex } = this.state;
-    this.setState({ speechIndex: speechIndex + 1, stillTalking: true });
+
+    this.setState({
+      speechIndex: speechIndex + 1,
+      stillTalking: true,
+    });
   }
 
   renderSpeechBubble = (speechText) => {
@@ -49,6 +122,7 @@ class TheAgent extends Component {
           </Typist>
           : <span>{speechText}</span>
       }
+      {this.renderContinueButton()}
     </div>);
   }
 
@@ -65,99 +139,63 @@ class TheAgent extends Component {
     alert(message);
   }
 
-  renderContinueButton = () => <span
-    className='continue-button blink'
-    onClick={ this.increaseSpeechIndex }
-  >
-    &gt;Continue&lt;
-  </span>;
+  renderContinueButton = () => {
+    const { stillTalking, speechTextBlob, speechIndex } = this.state;
+
+    if (speechIndex >= (speechTextBlob.length - 1)) {
+      return null;
+    }
+
+    return (<Button
+      size='sm'
+      square
+      onClick={ this.increaseSpeechIndex }
+      disabled={ stillTalking }
+      className='continue-button'
+    >
+      <span style={ { transform: 'translateY(-1px)' } }>⚈</span>
+    </Button>);
+  }
+
+  openWebsiteURL = ({ url }) => {
+    document.location.href = url;
+  }
 
   render() {
-    const { stillTalking, speechIndex } = this.state;
-    const { negative } = this.props;
+    const { stillTalking, speechIndex, speechTextBlob } = this.state;
+    const { displayAgent, negative } = this.props;
+
+    if (!displayAgent) {
+      return null;
+    }
 
     if (!negative && speechIndex === 1 && localStorage.getItem('fixed') === null) {
       localStorage.setItem('foundAgent', true);
-    }
-
-    const speechTextBeforeBug = [
-      <span>
-        I'm the <b>Agent</b> behind the window.
-        I see you're exploring the graphical user interface,
-        click all the buttons as much as you want but...
-        {this.renderContinueButton()}
-      </span>,
-      <span>
-        Be careful to <b>Cestino</b> I've been struggling to remove that bug lately,
-        feel free to have a look yourself...
-        I will offer a reward if you succeed!
-      </span>,
-    ];
-
-    const speechTextAfterBug = [
-      <span>
-        Congratulations buddy! You were able to get rid of that pesky Cestino bug,
-        I'm so grateful for your help. Even though you cannot judge my emotions from this GIF,
-        I'm really happy right now!
-        {this.renderContinueButton()}
-      </span>,
-      <span>
-        As a reward you should now see on the main window&nbsp;
-        Simone's Famous <b>Pizza Recipe</b>!
-        Have fun making pizza at home
-        and remember to always activate dry yeast before each use!
-      </span>,
-    ];
-
-    const speechesForNegativeAgent = [
-      <span>
-        You might have deleted all my bugs, but this whole system was built by just one person
-        I'm sure there's still something hiding out there!
-        {this.renderContinueButton()}
-      </span>,
-      <span>
-        In the end this is just a bunch of javascript,
-        it won't take long before it all becomes obsolete. Just like GeoCities
-        and Flash games this whole thing will stop working...
-        {this.renderContinueButton()}
-      </span>,
-      <span>
-        So have fun playing while it lasts, I guess it's true what they say about
-        enjoying the ride and not the destination...
-        Well I better go now, my deliveroo driver is downstairs with my sushi!
-        <span className='continue-button blink'><a href='/#/fixmycomputer'>&gt;Bye now!&lt;</a></span>
-      </span>,
-    ];
-
-    let finalSpeechText = localStorage.getItem('fixed')
-      ? speechTextAfterBug[speechIndex]
-      : speechTextBeforeBug[speechIndex];
-
-    if (negative) {
-      finalSpeechText = speechesForNegativeAgent[speechIndex];
     }
 
     const finalAgentImage = negative
       ? { talking: agentImgNegative, silent: agentImgSilentNegative }
       : { talking: agentImg, silent: agentImgSilent };
 
-    return (<div className='agent-container'>
-      <div className='agent-image'>
-        <div
-          className='agent-face'
-          onMouseEnter={ this.touchFace }
-        />
-        {
-          <img
-            src={ stillTalking ? finalAgentImage.talking : finalAgentImage.silent }
-            onLoad={ this.imageLoaded }
-            style={ { height: '250px' } }
-            alt='the secret agent'
+    return (<ThemeProvider theme={ PippoThemeRedmond }>
+      <div className='agent-container'>
+        <div className='agent-image'>
+          <div
+            className='agent-face'
+            onMouseEnter={ this.touchFace }
           />
-        }
+          {
+            <img
+              src={ stillTalking ? finalAgentImage.talking : finalAgentImage.silent }
+              onLoad={ this.imageLoaded }
+              style={ { height: '250px' } }
+              alt='the secret agent'
+            />
+          }
+        </div>
+        { this.renderSpeechBubble(speechTextBlob[speechIndex]) }
       </div>
-      { this.renderSpeechBubble(finalSpeechText) }
-    </div>);
+    </ThemeProvider>);
   }
 }
 
