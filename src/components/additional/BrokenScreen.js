@@ -228,7 +228,7 @@ class BrokenScreen extends Component {
       <div className='centered-item'>
         {
           bugsCleaned
-            ? <TheAgent displayAgent={ true } negative={ true } />
+            ? <TheAgent negative={ true } />
             : this.renderErrorText()
         }
       </div>
