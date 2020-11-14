@@ -34,10 +34,11 @@ class TheAgent extends Component {
         Hacker News for more than 12 hours!
       </span>,
       <span>
-        I still remember Simone's mom calling him on the phone she was so proud!
+        I still remember Simone's grandma calling him on the phone when she
+        heard it on the news!
       </span>,
       <span>
-        Anyhows enjoy also the rest of the website and hope you'll have a pleasent
+        Anyways enjoy also the rest of the website and hope you'll have a pleasent
         stay here and maybe discover a few of my easter eggs :)
       </span>,
     ];
