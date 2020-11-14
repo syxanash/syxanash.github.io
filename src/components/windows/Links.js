@@ -71,8 +71,8 @@ class LinksBody extends Component {
         ? <span style={ { fontWeight: 'bold' } } dangerouslySetInnerHTML={ { __html: `(${link.description})` } }></span>
         : '';
 
-      return (<li className='link-style' key={ `${link.url}_${index}` }>
-        <a href={ link.url } target='_blank' rel='noopener noreferrer'>{ link.url }</a> { descriptionContent }
+      return (<li className='link-style' key={ `${link.url}_${index}` } style={ { listStyleImage: `url('https://s2.googleusercontent.com/s2/favicons?domain_url=${link.url}')` } }>
+        <a href={ link.url } target='_blank' rel='noopener noreferrer'>{ link.url.replace(/(^\w+:|^)\/\//, '') }</a> { descriptionContent }
       </li>);
     })}</ul>;
 
