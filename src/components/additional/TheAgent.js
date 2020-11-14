@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Typist from 'react-typist';
+import _ from 'lodash';
 import { ThemeProvider } from 'styled-components';
 import { Button } from 'react95';
 
@@ -24,6 +25,22 @@ class TheAgent extends Component {
 
   componentDidMount() {
     const { negative } = this.props;
+
+    const speechInWebDesktops = [
+      <span>
+        I'm the <b>Agent</b> behind the window.
+        I see you're exploring the graphical user interface.
+        This page is called <b>Web Desktops</b>, it once made it to top of
+        Hacker News for more than 12 hours!
+      </span>,
+      <span>
+        I still remember Simone's mom calling him on the phone she was so proud!
+      </span>,
+      <span>
+        Anyhows enjoy also the rest of the website and hope you'll have a pleasent
+        stay here and maybe discover a few of my easter eggs :)
+      </span>,
+    ];
 
     const speechTextBeforeBug = [
       <span>
@@ -83,6 +100,12 @@ class TheAgent extends Component {
     let finalSpeechTextBlob = localStorage.getItem('fixed')
       ? speechTextAfterBug
       : speechTextBeforeBug;
+
+    const currentPage = _.last(window.location.href.split('/'));
+
+    if (currentPage === 'webdesktops') {
+      finalSpeechTextBlob = speechInWebDesktops;
+    }
 
     if (negative) {
       finalSpeechTextBlob = speechesForNegativeAgent;
@@ -173,11 +196,7 @@ class TheAgent extends Component {
 
   render() {
     const { stillTalking, speechIndex, speechTextBlob } = this.state;
-    const { displayAgent, negative } = this.props;
-
-    if (!displayAgent) {
-      return null;
-    }
+    const { negative } = this.props;
 
     if (!negative && speechIndex === 1 && localStorage.getItem('fixed') === null) {
       localStorage.setItem('foundAgent', true);
