@@ -30,15 +30,15 @@
     },
     {
       "message": "we're slaves of nostalgia",
-      "button": "𝓞𝓚"
+      "button": "◥◤◣◢"
     },
     {
       "message": "past was cozy",
-      "button": "のズ"
+      "button": "OK"
     },
     {
       "message": "present is tiresome",
-      "button": "🅾🅺"
+      "button": "◒◓"
     },
     {
       "message": "we forgot the bad stuff",
@@ -50,7 +50,7 @@
     },
     {
       "message": "like nothing ever happened",
-      "button": "OK"
+      "button": "▘OK▖"
     }
   ],
   "brokenScreenMessages": [
