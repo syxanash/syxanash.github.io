@@ -83,7 +83,7 @@ class TheAgent extends Component {
       <span>
         I guess it's true what they say about
         enjoying the ride and not the destination...
-        Well I better go now, my deliveroo driver is downstairs with my sushi!
+        Well I better go now, I think the sushi I ordered just arrived!
         <Button
           size='sm'
           square
