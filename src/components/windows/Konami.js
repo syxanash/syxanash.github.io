@@ -18,9 +18,7 @@ import './Konami.css';
 import SoundEffects from '../additional/SoundEffects';
 
 class KonamiHeader extends Component {
-  render = () => (
-    <span>Error</span>
-  )
+  render = () => <span>Error</span>
 }
 
 class KonamiBody extends Component {
@@ -63,7 +61,8 @@ class KonamiBody extends Component {
             We will treat this report as confidential and anonymous.
           </span>
         </p>
-        <p>To see what data this error report contains,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className='error-report-link' onClick={ this.toggleReport }>click here.</span></p>
+        <p>
+          To see what data this error report contains,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className='error-report-link' onClick={ this.toggleReport }>click here.</span></p>
       </div>
       <Cutout style={ { display: showReport ? 'block' : 'none' } } className='error-cutout'>
         <div className='error-report-space'>
