@@ -62,12 +62,6 @@ class LinksBody extends Component {
     </div>);
   }
 
-  renderNoHttpsIcon = () => (
-    <div style={ { position: 'absolute', left: '2px' } }>
-      <img src={ noHttpsIcon } title='no https' alt='no https icon' height='20' width='22' />
-    </div>
-  );
-
   generateTabBody = () => {
     const { linksObject, activeTab } = this.state;
 
@@ -79,7 +73,7 @@ class LinksBody extends Component {
         : '';
 
       return (<li className='link-style' key={ `${link.url}_${index}` } style={ { listStyleImage: `url('https://s2.googleusercontent.com/s2/favicons?domain_url=${link.url}')` } }>
-        { link.url.match(/^(https):\/\//g) === null ? this.renderNoHttpsIcon() : '' }
+        { link.url.match(/^(https):\/\//g) === null ? <img src={ noHttpsIcon } title='no https' alt='no https icon' height='20' width='22' /> : '' }
         <a href={ link.url } target='_blank' rel='noopener noreferrer'>{ link.url.replace(/(^\w+:|^)\/\//, '') }</a> { descriptionContent }
       </li>);
     })}</ul>;
