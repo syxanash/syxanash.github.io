@@ -98,29 +98,31 @@ class PopupWindow extends Component {
     const PopupWindowBody = body;
 
     return (
-      <ThemeProvider theme={ focused ? windowTheme : unfocusedTheme }>
-        <Window className={ openAnimation ? `animated ${displayExtraActions ? 'zoomIn faster' : 'bounceIn faster'}` : '' }>
-          <WindowHeader className="handle">
-            <div className='window-header popup-movable-header'>
-              <span className='window-title-text' >
-                <PopupWindowHeader />
-              </span>
-              <span className='window-title-buttons'>
-                { displayExtraActions ? this.renderExtraActionButtons() : null }
-                { displayCloseButton ? this.renderCloseButton() : null }
-              </span>
-            </div>
-          </WindowHeader>
-          <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
-            <PopupWindowBody
-              closeWindow={ this.closeCurrentWindow }
-              openWindow={ openWindow }
-              poweroff={ poweroff }
-              isFullscreen={ false }
-            />
-          </WindowContent>
-        </Window>
-      </ThemeProvider>
+      <div className={ `${focused ? 'window-shadow-primary' : ''} ${openAnimation ? `animated ${displayExtraActions ? 'zoomIn faster' : 'bounceIn faster'}` : ''}` }>
+        <ThemeProvider theme={ focused ? windowTheme : unfocusedTheme }>
+          <Window shadow={ !focused }>
+            <WindowHeader className="handle">
+              <div className='window-header popup-movable-header'>
+                <span className='window-title-text' >
+                  <PopupWindowHeader />
+                </span>
+                <span className='window-title-buttons'>
+                  { displayExtraActions ? this.renderExtraActionButtons() : null }
+                  { displayCloseButton ? this.renderCloseButton() : null }
+                </span>
+              </div>
+            </WindowHeader>
+            <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
+              <PopupWindowBody
+                closeWindow={ this.closeCurrentWindow }
+                openWindow={ openWindow }
+                poweroff={ poweroff }
+                isFullscreen={ false }
+              />
+            </WindowContent>
+          </Window>
+        </ThemeProvider>
+      </div>
     );
   }
 

@@ -9,6 +9,12 @@
   margin-top: -15px;
 }
 
+.window-shadow-primary {
+  -webkit-box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+  -moz-box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+}
+
 .window-title-text {
   padding-right: 20px;
 }
