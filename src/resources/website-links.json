@@ -492,6 +492,10 @@
       {
         "url": "https://copy.sh/life/?pattern=universalturingmachine",
         "description": "a Turing Machine made in Game of Life"
+      },
+      {
+        "url": "http://contemporary-home-computing.org",
+        "description": "website full of interesting reads and essays"
       }
     ]
   }
