@@ -447,7 +447,7 @@ class App extends Component {
             </Helmet>
             <ThemeContext.Provider value={ { changeTheme: this.changeTheme } }>
               <ThemeProvider theme={ mainTheme }>
-                <Window shadow={ false } style={ { width: '100%' } }>
+                <Window shadow={ true } style={ { width: '100%' } }>
                   <WindowHeader>
                     <WindowHead
                       onLeftsideButton={ this.onLeftsideButton }
