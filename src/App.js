@@ -8,6 +8,8 @@ import {
 } from 'react95';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 
+import Util from './components/Util';
+
 import PopupWindow from './components/PopupWindow';
 import WindowHead from './components/WindowHead';
 import { NotFoundBody } from './components/windows/NotFound';
@@ -164,11 +166,6 @@ class App extends Component {
   openWindow = (windowName, subWindow = false) => {
     const { windowsList } = this.state;
 
-    // this delay for the sub window is created to solve an annoying bug:
-    // when open window is called to open a sub window the focus erroneously goes back
-    // to the original window who called the sub window thus hiding the sub window.
-    const delay = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
-
     const openWindowFunction = () => {
       _.set(windowsList, `${windowName}.opened`, true);
       this.focusWindow(windowName);
@@ -180,7 +177,10 @@ class App extends Component {
     };
 
     if (subWindow) {
-      delay(100).then(openWindowFunction);
+      // this delay for the sub window is created to solve an annoying bug:
+      // when open window is called to open a sub window the focus erroneously goes back
+      // to the original window who called the sub window thus hiding the sub window.
+      Util.delay(10).then(openWindowFunction);
     } else {
       this.loadingIconTimeout = setTimeout(() => {
         this.setState({ showLoaderPointer: false });
@@ -196,9 +196,14 @@ class App extends Component {
     const { windowsList } = this.state;
     _.set(windowsList, `${windowName}.opened`, false);
 
-    const currentWindow = document.getElementById(windowName);
-    const backgroundWindow = currentWindow.previousSibling;
-    this.focusWindow(backgroundWindow.id);
+    const parent = document.getElementById('windows-list');
+    const domElements = Array.prototype.slice.call(parent.childNodes).slice().reverse();
+    const topWindowDiv = domElements.find(element => element.hasChildNodes()
+      && element.id !== windowName);
+
+    if (topWindowDiv !== undefined) {
+      Util.delay(10).then(() => this.focusWindow(topWindowDiv.id));
+    }
 
     this.setState({ windowsList });
   }
@@ -209,7 +214,7 @@ class App extends Component {
   }
 
   closeTopWindow = (event) => {
-    if (event.keyCode === 27) {
+    if (event.keyCode === 27) { // pressed ESC key
       const parent = document.getElementById('windows-list');
       const domElements = Array.prototype.slice.call(parent.childNodes).slice().reverse();
       const topWindowDiv = domElements.find(element => element.hasChildNodes());
