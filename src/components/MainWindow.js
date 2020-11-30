@@ -190,6 +190,11 @@ class MainWindowBody extends Component {
               <figcaption className='icon-caption'>Music</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+              onClick={ () => openWindow('foglio') }
+              active={ isWindowOpened('foglio') }>
+              <figcaption className='icon-caption'>Foglio</figcaption>
+            </Button>
+            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => openWindow('guestbook') }
               active={ isWindowOpened('guestbook') }
             >

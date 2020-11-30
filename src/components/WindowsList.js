@@ -6,6 +6,7 @@ import { GuestbookHeader, GuestbookBody } from './windows/Guestbook';
 import { MusicHeader, MusicBody } from './windows/Music';
 import { CestinoHeader, CestinoBody } from './windows/Cestino';
 import { UnknownHeader, UnknownBody } from './windows/Unknown';
+import { FoglioHeader, FoglioBody } from './windows/Foglio';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
 import { WebDesktopsHeader, WebDesktopsBody } from './windows/WebDesktops';
 import { KonamiHeader, KonamiBody } from './windows/Konami';
@@ -151,6 +152,17 @@ export default function WindowsList() {
       focused: false,
       header: UnknownHeader,
       body: UnknownBody,
+      windowTheme: PippoTheme,
+      unfocusedTheme: PippoDistracted,
+    },
+    foglio: {
+      hasFullScreen: true,
+      tiltAnimation: false,
+      canCloseWindow: true,
+      opened: false,
+      focused: false,
+      header: FoglioHeader,
+      body: FoglioBody,
       windowTheme: PippoTheme,
       unfocusedTheme: PippoDistracted,
     },
