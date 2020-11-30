@@ -30,12 +30,12 @@ class TheAgent extends Component {
       <span>
         I'm the <b>Agent</b> behind the window.
         I see you're exploring the graphical user interface.
-        This page is called <b>Web Desktops</b>, it once made it to top of
-        Hacker News for more than 12 hours!
+        This page is called <b>Web Desktops</b>, it even made it to the top
+        of <a href='https://news.ycombinator.com/item?id=23734093' rel='noopener noreferrer' target='_blank'>Hacker News</a> once!
       </span>,
       <span>
-        I still remember Simone's grandma calling him on the phone when she
-        heard it on the news!
+        I still remember Simone's grandma so excited calling him on the phone when she
+        heard it on the television!
       </span>,
       <span>
         Anyways enjoy also the rest of the website and hope you'll have a pleasent
@@ -78,9 +78,10 @@ class TheAgent extends Component {
       <span>
         In the end this is just a bunch of javascript,
         it won't take long before it all becomes obsolete. Just like GeoCities
-        and Flash games this whole thing will stop working... So have fun playing while it lasts!
+        and Flash games this whole thing will stop working...
       </span>,
       <span>
+        So have fun playing while it lasts!
         I guess it's true what they say about
         enjoying the ride and not the destination...
         Well I better go now, I think the sushi I ordered just arrived!
