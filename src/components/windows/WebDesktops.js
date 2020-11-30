@@ -26,10 +26,30 @@ class WebDesktopsBody extends Component {
   state = {
     desktopsList: _.shuffle(remoteDesktops),
     httpsOnlyEnabled: false,
+    sitesExplored: 0,
+  }
+
+  componentDidMount() {
+    if (localStorage.getItem('webdesktopsExplored') === null) {
+      localStorage.setItem('webdesktopsExplored', JSON.stringify([]));
+    } else {
+      const listExplored = JSON.parse(localStorage.getItem('webdesktopsExplored'));
+      this.setState({ sitesExplored: listExplored.length });
+    }
+  }
+
+  registerWebsite = (url) => {
+    const listExplored = JSON.parse(localStorage.getItem('webdesktopsExplored'));
+    if (!listExplored.includes(url)) {
+      listExplored.push(url);
+      localStorage.setItem('webdesktopsExplored', JSON.stringify(listExplored));
+
+      this.setState({ sitesExplored: listExplored.length });
+    }
   }
 
   renderSingleComputerIcon = ({ url, name }) => (
-    <a className='website-link' href={ url } target='_blank' rel='noopener noreferrer'>
+    <a className='website-link' href={ url } target='_blank' onClick={ () => this.registerWebsite(url) } rel='noopener noreferrer'>
       <div className='computer-icon'>
         <img style={ { height: '65px' } } src={ computerIcon } alt='single desktop icon' />
       </div>
@@ -61,6 +81,8 @@ class WebDesktopsBody extends Component {
     const randomLink = Object.keys(linksList).map(e => linksList[e])[
       Math.floor(Math.random() * Object.keys(linksList).map(e => linksList[e]).length)
     ];
+
+    this.registerWebsite(randomLink);
     this.openWebsiteURL({ url: randomLink });
   }
 
@@ -104,7 +126,7 @@ class WebDesktopsBody extends Component {
   }
 
   render = () => {
-    const { httpsOnlyEnabled, desktopsList } = this.state;
+    const { httpsOnlyEnabled, desktopsList, sitesExplored } = this.state;
 
     return (
       <React.Fragment>
@@ -129,7 +151,7 @@ class WebDesktopsBody extends Component {
         </Cutout>
         <Cutout>
           <div className='screen-footer'>
-            <span>{desktopsList.length} items</span>
+            <span>{sitesExplored} of {desktopsList.length} sites explored</span>
           </div>
         </Cutout>
       </React.Fragment>
