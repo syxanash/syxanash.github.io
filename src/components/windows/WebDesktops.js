@@ -12,6 +12,7 @@ import remoteDesktops from '../../resources/remote-desktops.json';
 import computerIcon from '../../resources/icons/remote.gif';
 import mainWindowIcon from '../../resources/icons/webdesktops.gif';
 import mobileWarningIcon from '../../resources/icons/mobilewarning.gif';
+import hyperlinkCursor from '../../resources/icons/pointers/pointer.gif';
 
 class WebDesktopsHeader extends Component {
   render = () => (
@@ -103,15 +104,15 @@ class WebDesktopsBody extends Component {
   }
 
   render = () => {
-    const { httpsOnlyEnabled } = this.state;
+    const { httpsOnlyEnabled, desktopsList } = this.state;
 
     return (
       <React.Fragment>
         <div className='toolbar-container'>
           <Toolbar>
-            <Button onClick={ this.openRandomURL } variant="menu">Random</Button>
+            <Button onClick={ this.openRandomURL } style={ { cursor: `url(${hyperlinkCursor}), auto`, textDecoration: 'underline' } } variant="menu">Random</Button>
             <Button onClick={ this.toggleHTTPSFilter } active={ httpsOnlyEnabled } variant="menu">HTTPS Only</Button>
-            <Button onClick={ () => this.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) } variant="menu">Contribute</Button>
+            <Button onClick={ () => this.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) } style={ { cursor: `url(${hyperlinkCursor}), auto`, textDecoration: 'underline' } } variant="menu">Contribute</Button>
           </Toolbar>
         </div>
         <div style={ { paddingBottom: '10px' } }>
@@ -124,6 +125,11 @@ class WebDesktopsBody extends Component {
         <Cutout className='awesome-gui-cutoutbg'>
           <div className='awesome-gui-icons-container'>
             {this.renderAllIcons()}
+          </div>
+        </Cutout>
+        <Cutout>
+          <div className='screen-footer'>
+            <span>{desktopsList.length} items</span>
           </div>
         </Cutout>
       </React.Fragment>
