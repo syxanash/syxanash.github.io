@@ -97,3 +97,8 @@
 .toolbar-container {
   margin-top: -20px;
 }
+
+.screen-footer {
+  padding: 8px;
+  text-align: center;
+}
