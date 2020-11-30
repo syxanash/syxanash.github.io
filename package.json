@@ -5,6 +5,7 @@
   "homepage": "https://simone.computer",
   "dependencies": {
     "animate.css": "^3.7.2",
+    "axios": "^0.21.0",
     "eslint-utils": "1.4.1",
     "howler": "^2.2.0",
     "husky": "^3.0.2",
@@ -16,6 +17,7 @@
     "react-dom": "^16.8.6",
     "react-draggable": "^3.3.0",
     "react-helmet": "^5.2.1",
+    "react-markdown": "^5.0.3",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-snowfall": "^1.0.2",
