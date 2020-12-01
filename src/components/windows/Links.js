@@ -12,6 +12,7 @@ import noHttpsIcon from '../../resources/icons/nohttps.gif';
 
 import './Links.css';
 import websiteLinks from '../../resources/website-links.json';
+import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 
 class LinksHeader extends Component {
   render = () => (
@@ -58,7 +59,7 @@ class LinksBody extends Component {
 
     return (<div style={ { display: 'flex', flexWrap: 'wrap', justifyContent: 'center' } }>
       {tabsComponent}
-      <Button style={ { margin: '5px', marginRight: '10px' } } className='animated tada delay-1s' onClick={ this.openRandomLink }><b>Open a random website</b></Button>
+      <Button style={ { margin: '5px', marginRight: '10px' } } className='animated tada delay-1s' onClick={ this.openRandomLink }><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } /><b>Open a random website</b></Button>
     </div>);
   }
 
