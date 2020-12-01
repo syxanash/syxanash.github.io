@@ -134,7 +134,7 @@ class WebDesktopsBody extends Component {
         <div className='toolbar-container'>
           <Toolbar>
             <Button onClick={ this.openRandomURL } style={ { cursor: `url(${hyperlinkCursor}), auto` } } variant="menu"><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
-            <Button onClick={ this.toggleHTTPSFilter } active={ httpsOnlyEnabled } variant="menu">HTTPS Only</Button>
+            <Button onClick={ this.toggleHTTPSFilter } active={ httpsOnlyEnabled } variant="menu">HTTPS</Button>
             <Button onClick={ () => this.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) } style={ { cursor: `url(${hyperlinkCursor}), auto` } } variant="menu"><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Contribute</Button>
           </Toolbar>
         </div>
