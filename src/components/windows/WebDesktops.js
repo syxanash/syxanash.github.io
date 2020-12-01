@@ -13,6 +13,7 @@ import computerIcon from '../../resources/icons/remote.gif';
 import mainWindowIcon from '../../resources/icons/webdesktops.gif';
 import mobileWarningIcon from '../../resources/icons/mobilewarning.gif';
 import hyperlinkCursor from '../../resources/icons/pointers/pointer.gif';
+import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 
 class WebDesktopsHeader extends Component {
   render = () => (
@@ -132,9 +133,9 @@ class WebDesktopsBody extends Component {
       <React.Fragment>
         <div className='toolbar-container'>
           <Toolbar>
-            <Button onClick={ this.openRandomURL } style={ { cursor: `url(${hyperlinkCursor}), auto`, textDecoration: 'underline' } } variant="menu">Random</Button>
+            <Button onClick={ this.openRandomURL } style={ { cursor: `url(${hyperlinkCursor}), auto` } } variant="menu"><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
             <Button onClick={ this.toggleHTTPSFilter } active={ httpsOnlyEnabled } variant="menu">HTTPS Only</Button>
-            <Button onClick={ () => this.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) } style={ { cursor: `url(${hyperlinkCursor}), auto`, textDecoration: 'underline' } } variant="menu">Contribute</Button>
+            <Button onClick={ () => this.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) } style={ { cursor: `url(${hyperlinkCursor}), auto` } } variant="menu"><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Contribute</Button>
           </Toolbar>
         </div>
         <div style={ { paddingBottom: '10px' } }>
