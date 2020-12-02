@@ -16,7 +16,7 @@ class FoglioBody extends Component {
   }
 
   componentDidMount = () => {
-    axios.get('https://fogghj.herokuapp.com')
+    axios.get('https://simonesmightybackend.herokuapp.com')
       .then((res) => {
         this.setState({
           textDocument: res.data,
