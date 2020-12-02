@@ -4,18 +4,18 @@ import {
   Divider, Cutout, Avatar, Button,
 } from 'react95';
 
-import timAvatar from '../../resources/images/avatars/tim.jpg';
-import alanTuringAvatar from '../../resources/images/avatars/turing.jpg';
-import khwarizmiAvatar from '../../resources/images/avatars/mrkhwarizmi.jpg';
-import mitnickAvatar from '../../resources/images/avatars/mitnick.jpg';
-import babbageAvatar from '../../resources/images/avatars/babbage.jpg';
-import adaAvatar from '../../resources/images/avatars/ada.jpg';
-import hopperAvatar from '../../resources/images/avatars/hopper.jpg';
-import dennisAvatar from '../../resources/images/avatars/dennis.jpg';
-import hamiltonAvatar from '../../resources/images/avatars/hamilton.jpg';
-import perottoAvatar from '../../resources/images/avatars/perotto.jpg';
-import jobsAvatar from '../../resources/images/avatars/jobs.png';
-import hashimotoAvatar from '../../resources/images/avatars/hashimoto.png';
+import timAvatar from '../../resources/images/avatars/tim.gif';
+import alanTuringAvatar from '../../resources/images/avatars/turing.gif';
+import khwarizmiAvatar from '../../resources/images/avatars/mrkhwarizmi.gif';
+import mitnickAvatar from '../../resources/images/avatars/mitnick.gif';
+import babbageAvatar from '../../resources/images/avatars/babbage.gif';
+import adaAvatar from '../../resources/images/avatars/ada.gif';
+import hopperAvatar from '../../resources/images/avatars/hopper.gif';
+import dennisAvatar from '../../resources/images/avatars/dennis.gif';
+import hamiltonAvatar from '../../resources/images/avatars/hamilton.gif';
+import perottoAvatar from '../../resources/images/avatars/perotto.gif';
+import jobsAvatar from '../../resources/images/avatars/jobs.gif';
+import hashimotoAvatar from '../../resources/images/avatars/hashimoto.gif';
 
 import guestbookIcon from '../../resources/icons/guestbook.png';
 import './Guestbook.css';
