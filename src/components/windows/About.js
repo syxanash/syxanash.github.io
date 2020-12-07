@@ -63,21 +63,15 @@ class AboutBody extends Component {
         </p>
         <p>
           In my free time I like to practice inline skating and roam around
-          the streets of Dublin on my <a href='https://www.rollerblade.com/uk/products/metroblade' target='_blank' rel='noopener noreferrer'>Rollerblades</a>.
+          the streets of Dublin on my <a href='https://i.imgur.com/8gRB2BA.mp4' target='_blank' rel='noopener noreferrer'>Rollerblades</a>.
           Being Ireland such a great hiking location I enjoy exploring the
           countryside and hike the amazing <a href='https://en.wikipedia.org/wiki/Wicklow_Mountains' target='_blank' rel='noopener noreferrer'>Wicklow mountains</a>.
-        </p>
-        <p>
-          I don't have a favorite programming language but in the last few years
-          I've used JavaScript in many different occasions and I gotta say I really dig ReactJS!
-          When I code on the back-end instead my heart
-          almost always tells me to use Ruby.
         </p>
         <p>
           I'm passionate about retrocomputing,
           when I get the chance I collect old computers from the
           80s. I try to learn old programming languages and paradigms, imagining
-          what life was like before <code>.js</code> took over the world.
+          what life was like before the slick miniaturized fancy tech we use today.
           I'm also really fond of skeuomorphic design of 90s and early 2000s UIs.
         </p>
       </div>
