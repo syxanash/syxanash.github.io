@@ -63,7 +63,7 @@ class AboutBody extends Component {
         </p>
         <p>
           In my free time I like to practice inline skating and roam around
-          the streets of Dublin on my <a href='https://i.imgur.com/8gRB2BA.mp4' target='_blank' rel='noopener noreferrer'>Rollerblades</a>.
+          the streets of Dublin on my <a href='https://streamable.com/e/hegpo8' target='_blank' rel='noopener noreferrer'>Rollerblades</a>.
           Being Ireland such a great hiking location I enjoy exploring the
           countryside and hike the amazing <a href='https://en.wikipedia.org/wiki/Wicklow_Mountains' target='_blank' rel='noopener noreferrer'>Wicklow mountains</a>.
         </p>
