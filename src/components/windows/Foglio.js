@@ -20,13 +20,15 @@ class FoglioHeader extends Component {
 class FoglioBody extends Component {
   state = {
     textDocument: 'Loading...',
+    postDate: new Date(),
   }
 
   componentDidMount = () => {
     axios.get('https://themightybackend.herokuapp.com')
       .then((res) => {
         this.setState({
-          textDocument: res.data,
+          textDocument: res.data.post_content,
+          postDate: new Date(res.data.published_date),
         });
       }).catch(() => {
         this.setState({
@@ -36,11 +38,12 @@ class FoglioBody extends Component {
   }
 
   render = () => {
-    const { textDocument } = this.state;
+    const { textDocument, postDate } = this.state;
 
     return (<React.Fragment>
       <Cutout className='foglio-cutout'>
         <div className='document-style'>
+          <p>{ postDate.toDateString() }</p>
           <ReactMarkdown source={ textDocument } escapeHtml={ false } />
         </div>
       </Cutout>
