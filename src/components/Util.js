@@ -9,6 +9,10 @@ function delay(milliseconds) {
   return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
 
+function openWebsiteURL({ url }) {
+  window.open(url, '_blank');
+}
+
 function replaceRandomCharInWord(mainWord) {
   const characters = 'abcdefghijklmnopqrstuvwxyz';
   const randomCharter = characters.charAt(Math.floor(Math.random() * characters.length));
@@ -21,4 +25,9 @@ function replaceRandomCharInWord(mainWord) {
   return newWord.charAt(0).toUpperCase() + newWord.slice(1);
 }
 
-export default { isMobile, replaceRandomCharInWord, delay };
+export default {
+  isMobile,
+  replaceRandomCharInWord,
+  delay,
+  openWebsiteURL,
+};
