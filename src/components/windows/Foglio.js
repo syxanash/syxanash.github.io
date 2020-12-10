@@ -9,9 +9,11 @@ import Util from '../Util';
 
 import './Foglio.css';
 
-import rssIcon from '../../resources/icons/rss.png';
+import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 import questionIcon from '../../resources/icons/question-mark.gif';
 import foglioIcon from '../../resources/icons/blog.gif';
+
+const BACKEND_URL = 'https://themightybackend.herokuapp.com';
 
 class FoglioHeader extends Component {
   render = () => (
@@ -28,7 +30,7 @@ class FoglioBody extends Component {
   }
 
   componentDidMount = () => {
-    axios.get('https://themightybackend.herokuapp.com')
+    axios.get(BACKEND_URL)
       .then((res) => {
         this.setState({
           textDocument: res.data.post_content,
@@ -55,7 +57,7 @@ class FoglioBody extends Component {
           paddingTop: '0px',
           textAlign: 'right',
         } }><i>
-            <span>Published on { postDate.toDateString() }</span>
+            <span>Posted on { postDate.toDateString() }</span>
           </i>
         </div>
       </Cutout>
@@ -63,12 +65,12 @@ class FoglioBody extends Component {
         <div className='foglio-footer-buttons' style={ { float: 'right' } }>
           <Button fullWidth>
             <figcaption><b>What is this</b></figcaption>
-            <img src={ questionIcon } className='small-icon' alt="code"/>
+            <img src={ questionIcon } className='small-icon' alt="question mark"/>
           </Button>
         </div>
         <div className='foglio-footer-buttons' style={ { float: 'left' } }>
-          <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: 'https://themightybackend.herokuapp.com/rss.xml' }) }>
-            <img src={ rssIcon } className='small-icon' alt="code"/>
+          <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${BACKEND_URL}/rss.xml` }) }>
+            <img src={ hyperlinkIcon } className='small-icon' alt="hyperlink icon"/>
             <figcaption>Feed RSS</figcaption>
           </Button>
         </div>
