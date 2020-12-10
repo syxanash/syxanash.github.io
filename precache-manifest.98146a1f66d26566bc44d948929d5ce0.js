@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bdb773fc067af09c880b677475431c28",
+    "revision": "c439947b47072942a68cb394a46ec7db",
     "url": "/index.html"
   },
   {
-    "revision": "f841912062e35867474c",
+    "revision": "ee282e8f05800985c830",
     "url": "/static/css/2.ab8a0683.chunk.css"
   },
   {
-    "revision": "f6a213d25295351c0231",
-    "url": "/static/css/main.16793ef8.chunk.css"
+    "revision": "f2b0897327c2c213f5ab",
+    "url": "/static/css/main.1627855d.chunk.css"
   },
   {
-    "revision": "f841912062e35867474c",
-    "url": "/static/js/2.6eddf88d.chunk.js"
+    "revision": "ee282e8f05800985c830",
+    "url": "/static/js/2.227932ea.chunk.js"
   },
   {
-    "revision": "f6a213d25295351c0231",
-    "url": "/static/js/main.e5d2dfcd.chunk.js"
+    "revision": "f2b0897327c2c213f5ab",
+    "url": "/static/js/main.765e8745.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -162,6 +162,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "4f0c005d574540d2ad555f61b197a555",
     "url": "/static/media/boardsofcanada.4f0c005d.gif"
+  },
+  {
+    "revision": "513ae14d23424c62aa3353fca5f7218b",
+    "url": "/static/media/bootstrap.513ae14d.gif"
   },
   {
     "revision": "63a134841fe6e4b5c265af2f733a6043",
