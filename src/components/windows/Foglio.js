@@ -44,6 +44,7 @@ class FoglioBody extends Component {
   }
 
   render = () => {
+    const { openWindow } = this.props;
     const { textDocument, postDate } = this.state;
 
     return (<React.Fragment>
@@ -63,7 +64,7 @@ class FoglioBody extends Component {
       </Cutout>
       <Cutout className='foglio-footer-cut-out'>
         <div className='foglio-footer-buttons' style={ { float: 'right' } }>
-          <Button fullWidth>
+          <Button fullWidth onClick={ () => openWindow('fogliopopup', true) }>
             <figcaption><b>What is this</b></figcaption>
             <img src={ questionIcon } className='small-icon' alt="question mark"/>
           </Button>
