@@ -21,7 +21,7 @@ class FoglioPopupBody extends Component {
       <React.Fragment>
         <Fieldset className='popup-fieldset'>
           <span>
-            <b>This is not a blog</b>. What I say is not that important it doesn't need to be
+            <b>This is not a blog</b>. What I say is not that important, it doesn't need to be
             remembered or archived somewhere for future generations to read.
             Imagine this as a temporary single post which will be replaced from time
             to time by a new one.
