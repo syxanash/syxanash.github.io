@@ -26,7 +26,7 @@ class Poweroff extends Component {
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
-            margin: 0px
+            margin: 0px;
           }
           * {
             overflow: hidden;
