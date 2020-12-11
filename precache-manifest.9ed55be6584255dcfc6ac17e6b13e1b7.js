@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b058f696411aed297de56e563bf71cd7",
+    "revision": "95786cb169642aaf91c6825323ae5e9d",
     "url": "/index.html"
   },
   {
-    "revision": "f841912062e35867474c",
+    "revision": "ee282e8f05800985c830",
     "url": "/static/css/2.ab8a0683.chunk.css"
   },
   {
-    "revision": "9605cb8aa7621ad19d75",
-    "url": "/static/css/main.5627b8a2.chunk.css"
+    "revision": "496066fa2f38b16ebed8",
+    "url": "/static/css/main.00710b6f.chunk.css"
   },
   {
-    "revision": "f841912062e35867474c",
-    "url": "/static/js/2.6eddf88d.chunk.js"
+    "revision": "ee282e8f05800985c830",
+    "url": "/static/js/2.227932ea.chunk.js"
   },
   {
-    "revision": "9605cb8aa7621ad19d75",
-    "url": "/static/js/main.73e2946f.chunk.js"
+    "revision": "496066fa2f38b16ebed8",
+    "url": "/static/js/main.0d7046c0.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -158,6 +158,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "53555484ce54cd2879cc2caf8634391e",
     "url": "/static/media/backpackgirl.53555484.gif"
+  },
+  {
+    "revision": "1d6b6574894e5aa266be49361aab7efb",
+    "url": "/static/media/bios.1d6b6574.gif"
   },
   {
     "revision": "4f0c005d574540d2ad555f61b197a555",
