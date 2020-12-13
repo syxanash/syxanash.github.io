@@ -23,5 +23,19 @@
     <title>Simone's Computer</title>
   </head>
   <body>
+    <script>
+      const pattern = ['p', 'i', 'z', 'z', 'a'];
+      let combinationEntered = 0;
+      window.addEventListener("keydown", function (event) {
+        if (pattern.indexOf(event.key) < 0 || event.key !== pattern[combinationEntered]) {
+          combinationEntered = 0;
+        }
+        combinationEntered += 1;
+        if (pattern.length === combinationEntered) {
+          combinationEntered = 0;
+          window.location.href = '/';
+        }
+      });
+    </script>
   </body>
 </html>
