@@ -13,7 +13,7 @@ import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 import questionIcon from '../../resources/icons/question-mark.gif';
 import foglioIcon from '../../resources/icons/blog.gif';
 
-const BACKEND_URL = 'https://themightybackend.herokuapp.com';
+const BACKEND_URL = 'https://simonesmightybackend.herokuapp.com';
 
 class FoglioHeader extends Component {
   render = () => (
@@ -30,7 +30,7 @@ class FoglioBody extends Component {
   }
 
   componentDidMount = () => {
-    axios.get(BACKEND_URL)
+    axios.get(`${BACKEND_URL}/post`)
       .then((res) => {
         this.setState({
           textDocument: res.data.post_content,
