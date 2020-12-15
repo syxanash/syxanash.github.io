@@ -17,7 +17,7 @@ class FoglioPopupBody extends Component {
 
     return (
       <React.Fragment>
-        <Fieldset style={ { marginBottom: '20px' } }>
+        <Fieldset style={ { marginBottom: '20px', marginTop: '1px' } }>
           <div style={ { marginTop: '-20px' } }>
             <h2>What is this?</h2>
             <b>This is not a blog</b>. What I say is not that important, it doesn't need to be
@@ -38,6 +38,8 @@ class FoglioPopupBody extends Component {
             So yeah, you better get used to the idea that things will
             be gone and everything is momentary in here...
             </p>
+            <h2>Please disable that fecking scan-line effect</h2>
+            Ahahah yes
           </div>
         </Fieldset>
         <div className='action-button-container'>
