@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {
-  Cutout, Button,
+  Cutout, Button, Progress,
 } from 'react95';
 import ReactMarkdown from 'react-markdown/with-html';
 
@@ -24,15 +24,26 @@ class FoglioHeader extends Component {
 }
 
 class FoglioBody extends Component {
-  state = {
-    textDocument: 'Loading...',
-    postDate: new Date(),
+  constructor(props) {
+    super(props);
+
+    this.loaderInterval = undefined;
+
+    this.state = {
+      loaderInteger: 0,
+      postLoaded: false,
+      textDocument: 'Loading...',
+      postDate: new Date(),
+    };
   }
 
   componentDidMount = () => {
+    this.loaderInterval = setInterval(this.increaseLoader, 15);
+
     axios.get(`${BACKEND_URL}/post`)
       .then((res) => {
         this.setState({
+          postLoaded: true,
           textDocument: res.data.post_content,
           postDate: new Date(res.data.published_date),
         });
@@ -43,9 +54,38 @@ class FoglioBody extends Component {
       });
   }
 
+  componentWillUnmount = () => {
+    if (this.loaderInterval !== undefined) {
+      clearInterval(this.loaderInterval);
+    }
+  }
+
+  increaseLoader = () => {
+    const { loaderInteger } = this.state;
+
+    if (loaderInteger < 99) { // lol
+      this.setState({ loaderInteger: loaderInteger + 1 });
+    } else {
+      clearInterval(this.loaderInterval);
+    }
+  }
+
   render = () => {
     const { openWindow } = this.props;
-    const { textDocument, postDate } = this.state;
+    const {
+      textDocument, postDate, postLoaded, loaderInteger,
+    } = this.state;
+
+    if (!postLoaded) {
+      return (
+        <React.Fragment>
+          <div style={ { textAlign: 'center' } }>
+            <h1 style={ { marginTop: '-10px' } }>Loading Post...</h1>
+            <Progress percent={ loaderInteger } shadow={ false } />
+          </div>
+        </React.Fragment>
+      );
+    }
 
     return (<React.Fragment>
       <Cutout className='foglio-cutout'>
