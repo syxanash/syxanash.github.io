@@ -74,7 +74,7 @@ class App extends Component {
 
     $(window).focus(() => {
       this.activateScreenSaver = false;
-      clearInterval(this.screenSaverTimeout);
+      clearTimeout(this.screenSaverTimeout);
     }).blur(this.setScreenSaver);
 
     document.addEventListener('mousemove', this.onMouseUpdate);
