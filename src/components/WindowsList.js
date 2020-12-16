@@ -164,8 +164,8 @@ export default function WindowsList() {
       focused: false,
       header: FoglioPopupHeader,
       body: FoglioPopupBody,
-      windowTheme: PippoTheme,
-      unfocusedTheme: PippoDistracted,
+      windowTheme: PippoRedmond,
+      unfocusedTheme: PippoRedmondDistracted,
     },
     foglio: {
       hasFullScreen: true,
@@ -175,8 +175,8 @@ export default function WindowsList() {
       focused: false,
       header: FoglioHeader,
       body: FoglioBody,
-      windowTheme: PippoTheme,
-      unfocusedTheme: PippoDistracted,
+      windowTheme: PippoRedmond,
+      unfocusedTheme: PippoRedmondDistracted,
     },
     fixmycomputer: {
       hasFullScreen: true,
