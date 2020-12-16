@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {
-  Cutout, Button, Progress,
+  Cutout, Button, Progress, Anchor,
 } from 'react95';
 import ReactMarkdown from 'react-markdown/with-html';
 
@@ -9,7 +9,6 @@ import Util from '../Util';
 
 import './Foglio.css';
 
-import errorIcon from '../../resources/icons/error.png';
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 import questionIcon from '../../resources/icons/question-mark.gif';
 import foglioIcon from '../../resources/icons/blog.gif';
@@ -29,13 +28,14 @@ class FoglioBody extends Component {
     super(props);
 
     this.loaderInterval = undefined;
+    this.hopeTimeout = undefined;
 
     this.state = {
-      showReport: false,
       loaderInteger: 0,
       postLoaded: undefined,
       backendResponse: undefined,
       postDate: new Date(),
+      headerText: 'LOADING POST...',
     };
   }
 
@@ -50,7 +50,6 @@ class FoglioBody extends Component {
           postDate: new Date(res.data.published_date),
         });
       }).catch((errorObject) => {
-        clearInterval(this.loaderInterval);
         this.setState({
           postLoaded: false,
           backendResponse: errorObject,
@@ -62,79 +61,72 @@ class FoglioBody extends Component {
     if (this.loaderInterval !== undefined) {
       clearInterval(this.loaderInterval);
     }
+
+    if (this.hopeTimeout !== undefined) {
+      clearTimeout(this.hopeTimeout);
+    }
+  }
+
+  startDecreaseLoader = () => {
+    this.setState({ headerText: 'LOADING ABORTED' });
+    this.loaderInterval = setInterval(this.decreaseLoader, 5);
   }
 
   increaseLoader = () => {
+    const { loaderInteger, postLoaded } = this.state;
+
+    const percentageStop = postLoaded === undefined ? 99 : 80;
+
+    if (loaderInteger < percentageStop) { // lol
+      this.setState({ loaderInteger: loaderInteger + 1 });
+    } else {
+      clearInterval(this.loaderInterval);
+      if (!postLoaded && postLoaded !== undefined) {
+        this.hopeTimeout = setTimeout(this.startDecreaseLoader, 1500);
+      }
+    }
+  }
+
+  decreaseLoader = () => {
     const { loaderInteger } = this.state;
 
-    if (loaderInteger < 99) { // lol
-      this.setState({ loaderInteger: loaderInteger + 1 });
+    if (loaderInteger > 0) {
+      this.setState({ loaderInteger: loaderInteger - 1 });
     } else {
       clearInterval(this.loaderInterval);
     }
   }
 
-  toggleReport = () => { this.setState({ showReport: true }); }
-
   render = () => {
     const { openWindow } = this.props;
     const {
-      backendResponse, postDate, postLoaded, loaderInteger, showReport,
+      backendResponse, postDate, postLoaded, loaderInteger, headerText,
     } = this.state;
 
     if (postLoaded === undefined) {
       return (
         <div style={ { textAlign: 'center' } }>
-          <h2 style={ { marginTop: '0' } }>LOADING POST...</h2>
+          <h2 style={ { marginTop: '0' } }>{ headerText }</h2>
           <Progress percent={ loaderInteger } shadow={ false } />
         </div>
       );
     }
 
     if (!postLoaded) {
-      return (<React.Fragment>
-        <div className='header-error'>
-          <span>
-            <img
-              src={ errorIcon }
-              alt='trembling error'
-              className='error-icon shake'
-            />
-            Pippo OS has encountered a problem and needs to close.
-            We are sorry for the inconvenience.
-          </span>
-        </div>
-        <div className='useless-error-message'>
-          <p>
-            if you were in the middle of something,
-            the information you were working on might be lost.
-          </p>
-          <p>
-            <span style={ { fontWeight: 'bolder' } }>Please tell Simone about this problem.</span><br />
-            <span>
-              We have created an error report that you can
-              send to help us improve Pippo OS.
-              We will treat this report as confidential and anonymous.
-            </span>
-          </p>
-          <p>
-            To see what data this error report contains,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className='error-report-link' onClick={ this.toggleReport }>click here.</span></p>
-        </div>
-        <Cutout style={ { display: showReport ? 'block' : 'none' } } className='error-cutout'>
-          <div className='error-report-space'>
-            <p>Error: {backendResponse.message}</p>
-            <br />
-            <br />
+      return (
+        <React.Fragment>
+          <div style={ { textAlign: 'center' } }>
+            <h2 style={ { marginTop: '0' } }>{ headerText }</h2>
+            <Progress percent={ loaderInteger } shadow={ false } />
           </div>
-        </Cutout>
-        <div className='bottom-buttons'>
-          <Button
-            style={ { width: '160px' } }
-            size='md'
-            onClick={ () => { openWindow('contact', true); } }
-          ><span className='underline-text'>S</span>end Error Report</Button>
-        </div>
-      </React.Fragment>);
+          <Cutout style={ { display: loaderInteger === 0 ? 'block' : 'none', backgroundColor: 'white', marginTop: '20px' } }>
+            <div style={ { padding: '15px' } }>
+              <p>Error: { backendResponse.message } <Anchor href="https://github.com/syxanash/syxanash.github.io/blob/development/src/components/windows/Foglio.js" target="_blank">@ Foglio.js</Anchor></p>
+              <br />
+            </div>
+          </Cutout>
+        </React.Fragment>
+      );
     }
 
     return (<React.Fragment>
