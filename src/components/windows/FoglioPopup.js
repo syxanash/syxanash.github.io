@@ -29,16 +29,15 @@ class FoglioPopupBody extends Component {
             make an actual blog, instead I'm spitting out a single markdown file from a
             lonely Heroku instance.
             <h2>Are you proud?</h2>
-            <b>Yeah</b> I kinda liked this idea, something like a meaningless <i>snap</i>!
-            I mean think about it,
+            <b>Yeah</b> I mean <b>no</b>, but I kinda like the idea, something like
+            a meaningless <i>snap!</i> Just think about it,
             so many cool websites and blogs went down in the last decade,
             though maybe something could still be
-            found through <a href='https://archive.org' rel='noopener noreferrer'>archive.org</a> we don't really know if that'll go one day too.
+            found on <a href='https://archive.org' rel='noopener noreferrer'>archive.org</a> we don't really know if that'll go one day too.
             <p>
-            So yeah, you better get used to the idea that things will
-            be gone and everything is momentary in here...
+            So you better get used to the idea that everything is momentary in here...
             </p>
-            <h2>Please disable that fecking scan-line effect</h2>
+            <h2>Please disable that fecking scan line effect</h2>
             Ahah yes, tell that to the poor 90s chaps!
           </div>
         </Fieldset>
@@ -49,7 +48,7 @@ class FoglioPopupBody extends Component {
                 fullWidth
                 onClick={ () => closeWindow() }
                 style={ { width: '150px' } }
-              >okie dokie</Button>
+              >OK</Button>
             </div>
           </Cutout>
         </div>
