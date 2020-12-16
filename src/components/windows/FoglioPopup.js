@@ -39,7 +39,7 @@ class FoglioPopupBody extends Component {
             be gone and everything is momentary in here...
             </p>
             <h2>Please disable that fecking scan-line effect</h2>
-            Ahahah yes
+            Ahah yes, tell that to the poor 90s chaps!
           </div>
         </Fieldset>
         <div className='action-button-container'>
