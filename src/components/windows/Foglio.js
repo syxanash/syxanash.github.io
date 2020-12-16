@@ -80,7 +80,7 @@ class FoglioBody extends Component {
       return (
         <React.Fragment>
           <div style={ { textAlign: 'center' } }>
-            <h1 style={ { marginTop: '-10px' } }>Loading Post...</h1>
+            <h2 style={ { marginTop: '-10px' } }>LOADING POST...</h2>
             <Progress percent={ loaderInteger } shadow={ false } />
           </div>
         </React.Fragment>
