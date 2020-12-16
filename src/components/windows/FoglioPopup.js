@@ -26,10 +26,10 @@ class FoglioPopupBody extends Component {
             to time by a new one.
             <h2>Are you lazy?</h2>
             <b>Generally yes</b>. I could've <s>coded</s> used some nice static blogging app to
-            make an actual blog instead of spitting out a single markdown file from a
+            make an actual blog, instead I'm spitting out a single markdown file from a
             lonely Heroku instance.
-            <h2>But?</h2>
-            <b>But</b> I kinda liked this idea, something like a meaningless <i>snap</i>!
+            <h2>Are you proud?</h2>
+            <b>Yeah</b> I kinda liked this idea, something like a meaningless <i>snap</i>!
             I mean think about it,
             so many cool websites and blogs went down in the last decade,
             though maybe something could still be
