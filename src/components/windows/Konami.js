@@ -13,7 +13,7 @@ import React, { Component } from 'react';
 import {
   Button, Cutout, Anchor,
 } from 'react95';
-import mainIcon from '../../resources/icons/error.png';
+import errorIcon from '../../resources/icons/error.png';
 import './Konami.css';
 import SoundEffects from '../additional/SoundEffects';
 
@@ -42,7 +42,7 @@ class KonamiBody extends Component {
       <div className='header-error'>
         <span>
           <img
-            src={ mainIcon }
+            src={ errorIcon }
             alt='trembling error'
             className='error-icon shake'
           />

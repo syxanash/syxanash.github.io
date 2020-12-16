@@ -17,7 +17,7 @@ class FoglioPopupBody extends Component {
 
     return (
       <React.Fragment>
-        <Fieldset style={ { marginBottom: '20px', marginTop: '1px' } }>
+        <Fieldset style={ { marginBottom: '20px', marginTop: '0' } }>
           <div style={ { marginTop: '-20px' } }>
             <h2>What is this?</h2>
             <b>This is not a blog</b>. What I say is not that important, it doesn't need to be

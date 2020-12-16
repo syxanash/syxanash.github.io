@@ -9,6 +9,7 @@ import Util from '../Util';
 
 import './Foglio.css';
 
+import errorIcon from '../../resources/icons/error.png';
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 import questionIcon from '../../resources/icons/question-mark.gif';
 import foglioIcon from '../../resources/icons/blog.gif';
@@ -30,9 +31,10 @@ class FoglioBody extends Component {
     this.loaderInterval = undefined;
 
     this.state = {
+      showReport: false,
       loaderInteger: 0,
-      postLoaded: false,
-      textDocument: 'Loading...',
+      postLoaded: undefined,
+      backendResponse: undefined,
       postDate: new Date(),
     };
   }
@@ -44,12 +46,14 @@ class FoglioBody extends Component {
       .then((res) => {
         this.setState({
           postLoaded: true,
-          textDocument: res.data.post_content,
+          backendResponse: res.data.post_content,
           postDate: new Date(res.data.published_date),
         });
-      }).catch(() => {
+      }).catch((errorObject) => {
+        clearInterval(this.loaderInterval);
         this.setState({
-          textDocument: 'error occurred while retrieving data...',
+          postLoaded: false,
+          backendResponse: errorObject,
         });
       });
   }
@@ -70,27 +74,73 @@ class FoglioBody extends Component {
     }
   }
 
+  toggleReport = () => { this.setState({ showReport: true }); }
+
   render = () => {
     const { openWindow } = this.props;
     const {
-      textDocument, postDate, postLoaded, loaderInteger,
+      backendResponse, postDate, postLoaded, loaderInteger, showReport,
     } = this.state;
 
-    if (!postLoaded) {
+    if (postLoaded === undefined) {
       return (
-        <React.Fragment>
-          <div style={ { textAlign: 'center' } }>
-            <h2 style={ { marginTop: '-10px' } }>LOADING POST...</h2>
-            <Progress percent={ loaderInteger } shadow={ false } />
-          </div>
-        </React.Fragment>
+        <div style={ { textAlign: 'center' } }>
+          <h2 style={ { marginTop: '0' } }>LOADING POST...</h2>
+          <Progress percent={ loaderInteger } shadow={ false } />
+        </div>
       );
+    }
+
+    if (!postLoaded) {
+      return (<React.Fragment>
+        <div className='header-error'>
+          <span>
+            <img
+              src={ errorIcon }
+              alt='trembling error'
+              className='error-icon shake'
+            />
+            Pippo OS has encountered a problem and needs to close.
+            We are sorry for the inconvenience.
+          </span>
+        </div>
+        <div className='useless-error-message'>
+          <p>
+            if you were in the middle of something,
+            the information you were working on might be lost.
+          </p>
+          <p>
+            <span style={ { fontWeight: 'bolder' } }>Please tell Simone about this problem.</span><br />
+            <span>
+              We have created an error report that you can
+              send to help us improve Pippo OS.
+              We will treat this report as confidential and anonymous.
+            </span>
+          </p>
+          <p>
+            To see what data this error report contains,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className='error-report-link' onClick={ this.toggleReport }>click here.</span></p>
+        </div>
+        <Cutout style={ { display: showReport ? 'block' : 'none' } } className='error-cutout'>
+          <div className='error-report-space'>
+            <p>Error: {backendResponse.message}</p>
+            <br />
+            <br />
+          </div>
+        </Cutout>
+        <div className='bottom-buttons'>
+          <Button
+            style={ { width: '160px' } }
+            size='md'
+            onClick={ () => { openWindow('contact', true); } }
+          ><span className='underline-text'>S</span>end Error Report</Button>
+        </div>
+      </React.Fragment>);
     }
 
     return (<React.Fragment>
       <Cutout className='foglio-cutout'>
         <div className='document-style'>
-          <ReactMarkdown source={ textDocument } escapeHtml={ false } />
+          <ReactMarkdown source={ backendResponse } escapeHtml={ false } />
         </div>
         <div style={ {
           fontWeight: 'bold',
