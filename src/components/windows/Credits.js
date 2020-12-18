@@ -8,6 +8,7 @@ import creditsIcon from '../../resources/icons/favicon.gif';
 import cookieIcon from '../../resources/icons/cookie.gif';
 import codeAnimationDark from '../../resources/images/code_dark.gif';
 import codeAnimationLight from '../../resources/images/code_light.gif';
+import blackCursor from '../../resources/icons/pointers/cursor.gif';
 
 import './Credits.css';
 
@@ -50,12 +51,12 @@ class CreditsBody extends Component {
         </p>
       </div>
       <Tabs value={ activeTab } onChange={ this.handleChangeTab } style={ { paddingTop: '10px' } }>
-        <Tab value={ 0 }>&copy;</Tab>
-        <Tab value={ 1 }>Code</Tab>
-        <Tab value={ 2 }>Images</Tab>
-        <Tab value={ 3 }>Links</Tab>
-        <Tab value={ 4 }>Sounds</Tab>
-        <Tab value={ 5 }><img height='15px' src={ cookieIcon } alt='cookie' />&nbsp;Cookies</Tab>
+        <Tab style={ { cursor: `url(${blackCursor}), auto` } } value={ 0 }>&copy;</Tab>
+        <Tab style={ { cursor: `url(${blackCursor}), auto` } } value={ 1 }>Code</Tab>
+        <Tab style={ { cursor: `url(${blackCursor}), auto` } } value={ 2 }>Images</Tab>
+        <Tab style={ { cursor: `url(${blackCursor}), auto` } } value={ 3 }>Links</Tab>
+        <Tab style={ { cursor: `url(${blackCursor}), auto` } } value={ 4 }>Sounds</Tab>
+        <Tab style={ { cursor: `url(${blackCursor}), auto` } } value={ 5 }><img height='15px' src={ cookieIcon } alt='cookie' />&nbsp;Cookies</Tab>
       </Tabs>
       <TabBody>
         <div style={ { marginTop: '-5px' } }>
