@@ -73,13 +73,20 @@ class WebDesktopsBody extends Component {
   }
 
   openRandomURL = () => {
-    const { desktopsList } = this.state;
+    const { desktopsList, sitesExplored } = this.state;
 
-    const linksList = desktopsList.filter(website => this.filterURLByHTTPS(website.url))
+    const linkListFiltered = desktopsList.filter(website => this.filterURLByHTTPS(website.url))
       .map(website => website.url);
+    let finalList = linkListFiltered;
 
-    const randomLink = Object.keys(linksList).map(e => linksList[e])[
-      Math.floor(Math.random() * Object.keys(linksList).map(e => linksList[e]).length)
+    const listExplored = JSON.parse(localStorage.getItem('webdesktopsExplored'));
+
+    if (sitesExplored < linkListFiltered.length) {
+      finalList = _.difference(linkListFiltered, listExplored);
+    }
+
+    const randomLink = Object.keys(finalList).map(e => finalList[e])[
+      Math.floor(Math.random() * Object.keys(finalList).map(e => finalList[e]).length)
     ];
 
     this.registerWebsite(randomLink);
