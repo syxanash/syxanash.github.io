@@ -20,13 +20,12 @@ class FoglioPopupBody extends Component {
         <Fieldset style={ { marginBottom: '20px', marginTop: '0' } }>
           <div style={ { marginTop: '-20px' } }>
             <h2>What is this?</h2>
-            <b>This is not a blog</b>. What I say is not that important, it doesn't need to be
-            remembered or archived somewhere for future generations to read.
-            Imagine this as a temporary single post which will be replaced from time
+            <b>This is not a blog</b>. But imagine this as a <i>One Post Blog</i>,
+            a temporary single post which will be replaced from time
             to time by a new one.
             <h2>Are you lazy?</h2>
             <b>Generally yes</b>. I could've <s>coded</s> used some nice static blogging app to
-            make an actual blog, instead I'm spitting out a single markdown file from a
+            make an actual blog, instead I'm spitting out a one markdown file from a
             lonely Heroku instance.
             <h2>Are you proud?</h2>
             <b>Yeah</b> I mean <b>no</b>, but I kinda like the idea, something like
