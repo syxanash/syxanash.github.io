@@ -413,6 +413,7 @@ class App extends Component {
             ? <PopupWindow
               closeWindow={ () => this.closeWindow(window) }
               openWindow={ this.openWindow }
+              isWindowOpened={ this.isWindowOpened }
               poweroff={ this.poweroff }
               focused={ windowFocused }
               header={ windowHeader }
