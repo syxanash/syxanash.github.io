@@ -98,7 +98,7 @@ class FoglioBody extends Component {
   }
 
   render = () => {
-    const { openWindow } = this.props;
+    const { openWindow, isWindowOpened } = this.props;
     const {
       backendResponse, postDate, postLoaded, loaderInteger, headerText,
     } = this.state;
@@ -146,7 +146,7 @@ class FoglioBody extends Component {
       </Cutout>
       <Cutout className='foglio-footer-cut-out'>
         <div className='foglio-footer-buttons' style={ { float: 'right' } }>
-          <Button fullWidth onClick={ () => openWindow('fogliopopup', true) }>
+          <Button fullWidth active={ isWindowOpened('fogliopopup') } onClick={ () => openWindow('fogliopopup', true) }>
             <figcaption><b>What is this</b></figcaption>
             <img src={ questionIcon } className='small-icon' alt="question mark"/>
           </Button>
