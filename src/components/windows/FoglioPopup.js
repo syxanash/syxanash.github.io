@@ -27,8 +27,8 @@ class FoglioPopupBody extends Component {
             <b>Generally yes</b>. I could've <s>coded</s> used some nice static blogging app to
             make an actual blog, instead I'm spitting out a one markdown file from a
             lonely Heroku instance.
-            <h2>Are you proud?</h2>
-            <b>Yeah</b> I mean <b>no</b>, but I kinda like the idea, something like
+            <h2>Are you sarcastic?</h2>
+            <b>Nope</b>, I genuinely like the idea, something like
             a meaningless <i>snap!</i> Just think about it,
             so many cool websites and blogs went down in the last decade,
             though maybe something could still be
