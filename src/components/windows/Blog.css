@@ -1,4 +1,4 @@
-.foglio-cutout {
+.blog-cutout {
   background-color: #ffffff;
 }
 
@@ -18,18 +18,18 @@
   margin-top: -20px;
 }
 
-.foglio-footer-buttons {
+.blog-footer-buttons {
   width: 50%;
 }
 
-.foglio-footer-cut-out {
+.blog-footer-cut-out {
   display: flex;
   flex-grow: 1;
   flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 600px)  {
-  .foglio-footer-buttons {
+  .blog-footer-buttons {
     width: 100%;
   }
 }

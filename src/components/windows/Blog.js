@@ -7,23 +7,23 @@ import ReactMarkdown from 'react-markdown/with-html';
 
 import Util from '../Util';
 
-import './Foglio.css';
+import './Blog.css';
 
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 import questionIcon from '../../resources/icons/question-mark.gif';
-import foglioIcon from '../../resources/icons/blog.gif';
+import blogIcon from '../../resources/icons/blog.gif';
 
 const BACKEND_URL = 'https://simonesmightybackend.herokuapp.com';
 
-class FoglioHeader extends Component {
+class BlogHeader extends Component {
   render = () => (
     <span>
-      <img src={ foglioIcon } alt='main logo' style={ { height: '15px' } }/> Foglio
+      <img src={ blogIcon } alt='main logo' style={ { height: '15px' } }/> Simone's Blog
     </span>
   )
 }
 
-class FoglioBody extends Component {
+class BlogBody extends Component {
   constructor(props) {
     super(props);
 
@@ -121,7 +121,7 @@ class FoglioBody extends Component {
           </div>
           <Cutout style={ { display: loaderInteger === 0 ? 'block' : 'none', backgroundColor: 'white', marginTop: '20px' } }>
             <div style={ { padding: '15px' } }>
-              <p>Error: { backendResponse.message } <Anchor href="https://github.com/syxanash/syxanash.github.io/blob/development/src/components/windows/Foglio.js" target="_blank">@ Foglio.js</Anchor></p>
+              <p>Error: { backendResponse.message } <Anchor href="https://github.com/syxanash/syxanash.github.io/blob/development/src/components/windows/Blog.js" target="_blank">@ Blog.js</Anchor></p>
               <br />
             </div>
           </Cutout>
@@ -130,7 +130,7 @@ class FoglioBody extends Component {
     }
 
     return (<React.Fragment>
-      <Cutout className='foglio-cutout'>
+      <Cutout className='blog-cutout'>
         <div className='document-style'>
           <ReactMarkdown source={ backendResponse } escapeHtml={ false } />
         </div>
@@ -144,14 +144,14 @@ class FoglioBody extends Component {
           </i>
         </div>
       </Cutout>
-      <Cutout className='foglio-footer-cut-out'>
-        <div className='foglio-footer-buttons' style={ { float: 'right' } }>
-          <Button fullWidth active={ isWindowOpened('fogliopopup') } onClick={ () => openWindow('fogliopopup', true) }>
+      <Cutout className='blog-footer-cut-out'>
+        <div className='blog-footer-buttons' style={ { float: 'right' } }>
+          <Button fullWidth active={ isWindowOpened('blogpopup') } onClick={ () => openWindow('blogpopup', true) }>
             <figcaption><b>What is this</b></figcaption>
             <img src={ questionIcon } className='small-icon' alt="question mark"/>
           </Button>
         </div>
-        <div className='foglio-footer-buttons' style={ { float: 'left' } }>
+        <div className='blog-footer-buttons' style={ { float: 'left' } }>
           <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${BACKEND_URL}/rss.xml` }) }>
             <img src={ hyperlinkIcon } className='small-icon' alt="hyperlink icon"/>
             <figcaption>Feed RSS</figcaption>
@@ -162,4 +162,4 @@ class FoglioBody extends Component {
   }
 }
 
-export { FoglioHeader, FoglioBody };
+export { BlogHeader, BlogBody };
