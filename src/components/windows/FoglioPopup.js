@@ -25,7 +25,7 @@ class FoglioPopupBody extends Component {
             to time by a new one.
             <h2>Are you lazy?</h2>
             <b>Generally yes</b>. I could've <s>coded</s> used some nice static blogging app to
-            make an actual blog, instead I'm spitting out a one markdown file from a
+            make an actual blog, instead I'm spitting out one markdown file from a
             lonely Heroku instance.
             <h2>Are you sarcastic?</h2>
             <b>Nope</b>, I genuinely like the idea, something like
