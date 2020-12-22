@@ -6,8 +6,8 @@ import { GuestbookHeader, GuestbookBody } from './windows/Guestbook';
 import { MusicHeader, MusicBody } from './windows/Music';
 import { CestinoHeader, CestinoBody } from './windows/Cestino';
 import { UnknownHeader, UnknownBody } from './windows/Unknown';
-import { FoglioPopupHeader, FoglioPopupBody } from './windows/FoglioPopup';
-import { FoglioHeader, FoglioBody } from './windows/Foglio';
+import { BlogPopupHeader, BlogPopupBody } from './windows/BlogPopup';
+import { BlogHeader, BlogBody } from './windows/Blog';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
 import { WebDesktopsHeader, WebDesktopsBody } from './windows/WebDesktops';
 import { KonamiHeader, KonamiBody } from './windows/Konami';
@@ -156,25 +156,25 @@ export default function WindowsList() {
       windowTheme: PippoTheme,
       unfocusedTheme: PippoDistracted,
     },
-    fogliopopup: {
+    blogpopup: {
       hasFullScreen: false,
       tiltAnimation: false,
       canCloseWindow: true,
       opened: false,
       focused: false,
-      header: FoglioPopupHeader,
-      body: FoglioPopupBody,
+      header: BlogPopupHeader,
+      body: BlogPopupBody,
       windowTheme: PippoRedmond,
       unfocusedTheme: PippoRedmondDistracted,
     },
-    foglio: {
+    blog: {
       hasFullScreen: true,
       tiltAnimation: false,
       canCloseWindow: true,
       opened: false,
       focused: false,
-      header: FoglioHeader,
-      body: FoglioBody,
+      header: BlogHeader,
+      body: BlogBody,
       windowTheme: PippoRedmond,
       unfocusedTheme: PippoRedmondDistracted,
     },
