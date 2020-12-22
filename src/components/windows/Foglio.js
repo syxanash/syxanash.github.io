@@ -77,7 +77,7 @@ class FoglioBody extends Component {
 
     const percentageStop = postLoaded === undefined ? 99 : 80;
 
-    if (loaderInteger < percentageStop) { // lol
+    if (loaderInteger < percentageStop) {
       this.setState({ loaderInteger: loaderInteger + 1 });
     } else {
       clearInterval(this.loaderInterval);
