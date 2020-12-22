@@ -7,6 +7,7 @@ import {
   Window, WindowHeader, WindowContent,
 } from 'react95';
 import { HashRouter, Switch, Route } from 'react-router-dom';
+import Snowfall from 'react-snowfall';
 
 import Util from './components/Util';
 
@@ -437,6 +438,7 @@ class App extends Component {
 
     return (
       <HashRouter>
+        <Snowfall snowflakeCount={ new Date().getDate() * 2 } />
         <div ref={ this.scrollTop } />
         <div className='window-centered'>
           <div style={ { display: this.isInSpecialState() ? 'none' : 'block' } }>
