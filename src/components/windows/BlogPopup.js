@@ -28,8 +28,8 @@ class BlogPopupBody extends Component {
             <b>Generally yes</b>. I could've used some nice static blogging app to
             make an actual blog, instead I'm spitting out one markdown file from a
             lonely Heroku instance.
-            <h2>Are you serious?</h2>
-            <b>Yes</b>, I genuinely liked the idea! Just think about it,
+            <h2>Is this a joke?</h2>
+            <b>Nope</b>, I genuinely liked the idea! Just think about it,
             so many cool websites and blogs went down in the last decade,
             though maybe something could still be
             found on <a href='https://archive.org' rel='noopener noreferrer'>archive.org</a> we don't really know if that'll go one day too.
