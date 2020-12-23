@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import {
   Cutout, Button, Progress, Anchor,
 } from 'react95';
@@ -42,12 +41,13 @@ class BlogBody extends Component {
   componentDidMount = () => {
     this.loaderInterval = setInterval(this.increaseLoader, 15);
 
-    axios.get(`${BACKEND_URL}/post`)
-      .then((res) => {
+    fetch(`${BACKEND_URL}/post`)
+      .then(response => response.json())
+      .then((data) => {
         this.setState({
           postLoaded: true,
-          backendResponse: res.data.post_content,
-          postDate: new Date(res.data.published_date),
+          backendResponse: data.post_content,
+          postDate: new Date(data.published_date),
         });
       }).catch((errorObject) => {
         this.setState({
