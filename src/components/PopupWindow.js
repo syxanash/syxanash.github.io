@@ -90,7 +90,7 @@ class PopupWindow extends Component {
   renderInnerWindow = () => {
     const { displayWindowBody, openAnimation } = this.state;
     const {
-      header, body, displayExtraActions, displayCloseButton,
+      header, body, displayExtraActions, displayCloseButton, isWindowOpened,
       focused, windowTheme, openWindow, poweroff, unfocusedTheme,
     } = this.props;
 
@@ -116,6 +116,7 @@ class PopupWindow extends Component {
               <PopupWindowBody
                 closeWindow={ this.closeCurrentWindow }
                 openWindow={ openWindow }
+                isWindowOpened={ isWindowOpened }
                 poweroff={ poweroff }
                 isFullscreen={ false }
               />

@@ -12,6 +12,7 @@ import './MainWindow.css';
 
 import aboutIcon from '../resources/icons/about.gif';
 import contactIcon from '../resources/icons/contact.gif';
+import blogIcon from '../resources/icons/blog.gif';
 import projectsIcon from '../resources/icons/development.gif';
 import trashIcon from '../resources/icons/trash.gif';
 import emptyTrashIcon from '../resources/icons/empty_trash.gif';
@@ -175,6 +176,12 @@ class MainWindowBody extends Component {
             >
               <img src={ contactIcon } className='icon' alt="contact"/>
               <figcaption className='icon-caption'>Contact</figcaption>
+            </Button>
+            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+              onClick={ () => openWindow('blog') }
+              active={ isWindowOpened('blog') }>
+              <img src={ blogIcon } className='icon' alt="blog"/>
+              <figcaption className='icon-caption'>Blog</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => openWindow('links') }

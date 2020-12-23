@@ -27,13 +27,13 @@
 
 @media only screen and (max-width: 865px)  {
   .cut-out {
-    height: 400px;
+    height: 450px;
   }
 }
 
 @media only screen and (max-width: 345px) {
   .cut-out { 
-    height: 500px;
+    height: 490px;
   }
 }
 

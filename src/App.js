@@ -413,6 +413,7 @@ class App extends Component {
             ? <PopupWindow
               closeWindow={ () => this.closeWindow(window) }
               openWindow={ this.openWindow }
+              isWindowOpened={ this.isWindowOpened }
               poweroff={ this.poweroff }
               focused={ windowFocused }
               header={ windowHeader }
@@ -438,7 +439,7 @@ class App extends Component {
 
     return (
       <HashRouter>
-        <Snowfall snowflakeCount={ new Date().getDate() * 2 } />
+        <Snowfall snowflakeCount={ new Date().getDate() } />
         <div ref={ this.scrollTop } />
         <div className='window-centered'>
           <div style={ { display: this.isInSpecialState() ? 'none' : 'block' } }>
