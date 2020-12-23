@@ -439,7 +439,7 @@ class App extends Component {
 
     return (
       <HashRouter>
-        <Snowfall snowflakeCount={ new Date().getDate() } />
+        {this.isInSpecialState() ? null : <Snowfall snowflakeCount={ new Date().getDate() } />}
         <div ref={ this.scrollTop } />
         <div className='window-centered'>
           <div style={ { display: this.isInSpecialState() ? 'none' : 'block' } }>
