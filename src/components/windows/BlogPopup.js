@@ -22,8 +22,7 @@ class BlogPopupBody extends Component {
             <h2>What is this?</h2>
             <b>This is not exactly a blog</b>. But imagine this as a <i>One Post Blog</i>,
             a temporary single post which will be replaced from time
-            to time by a new one. You can keep yourself up to date with
-            new posts using the Feed RSS.
+            to time by a new one. You can keep yourself up to date using the Feed RSS.
             <h2>Are you lazy?</h2>
             <b>Generally yes</b>. I could've used some nice static blogging app to
             make an actual blog, instead I'm spitting out one markdown file from a
