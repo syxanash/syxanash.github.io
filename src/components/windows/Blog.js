@@ -39,7 +39,7 @@ class BlogBody extends Component {
   }
 
   componentDidMount = () => {
-    this.loaderInterval = setInterval(this.increaseLoader, 15);
+    this.loaderInterval = setInterval(this.increaseLoader, 20);
 
     fetch(`${BACKEND_URL}/post`)
       .then(response => response.json())
