@@ -55,13 +55,13 @@
   ],
   "brokenScreenMessages": [
     "You're no match for my bugs, you poor fool!",
-    "only a real hacker can defeat me",
-    "you'll never make it in time! (even though there's no timer)",
+    "only a real fullstack developer can defeat me",
+    "you'll never make it in time before the release!",
+    "you must be a hacker!",
     "I wasn't expecting you to be that good...",
-    "you must be a developer!",
-    "no one made it this far...",
+    "do you even Agile?",
+    "you must be one of those who work until 9pm on Friday",
     "that was actually a feature!",
-    "stop hurting me!",
     "LEAVE THOSE TWO!",
     "console.log('Goodbye World');"
   ]
