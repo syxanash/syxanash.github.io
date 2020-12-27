@@ -75,11 +75,6 @@
   animation: hue 1s infinite linear;
 }
 
-.disabled-icon {
-  opacity: 0.7;
-  filter: alpha(opacity=70);
-}
-
 @keyframes hue {
   from {
     filter: hue-rotate(0deg);

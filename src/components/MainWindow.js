@@ -138,7 +138,6 @@ class MainWindowBody extends Component {
     const { onClickTV, isWindowOpened } = this.props;
     const { iconsColliding, randomUnknownCaption } = this.state;
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
-    const foundAgent = localStorage.getItem('foundAgent') === 'true';
 
     return (
       <React.Fragment>
@@ -147,9 +146,8 @@ class MainWindowBody extends Component {
             <Button id='cestino_icon' size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } }
               onClick={ () => this.openWindowIfNotOpened('cestino') }
               active={ isWindowOpened('cestino') || iconsColliding }
-              disabled={ !foundAgent }
             >
-              <img src={ eggTriggered ? emptyTrashIcon : trashIcon } className={ `icon ${foundAgent ? '' : 'disabled-icon'}` } alt="trash"/>
+              <img src={ eggTriggered ? emptyTrashIcon : trashIcon } className='icon' alt="trash"/>
               <figcaption className='icon-caption'>Cestino</figcaption>
             </Button>
           </div>
