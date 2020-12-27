@@ -72,6 +72,7 @@ class CreditsBody extends Component {
               <li className='list-content'><a href='https://daneden.github.io/animate.css/' target='_blank' rel='noopener noreferrer'>Animate.css</a> → Set of animations used for opening windows and animating stuff</li>
               <li className='list-content'><a href='https://www.npmjs.com/package/react-draggable' target='_blank' rel='noopener noreferrer'>react-draggable</a> → A cool library for dragging items on a page</li>
               <li className='list-content'>The scanlines CSS code was <span style={ { textDecoration: 'line-through' } }>copied</span> highly inspired by <a href='https://neave.tv'>neave.tv</a></li>
+              <li className='list-content'>loop TV animation code forked from <a href='https://codepen.io/lbebber/pen/XJRdrV'>this Pen</a></li>
               <li className='list-content'><a href='https://code.visualstudio.com' target='_blank' rel='noopener noreferrer'>VSCode</a> → wish I told you I built this website using VIM or Emacs like true &#35;10xdeveloper but oh well...</li>
             </ul>
             <ul style={ { display: activeTab === 2 ? 'block' : 'none' } }>
