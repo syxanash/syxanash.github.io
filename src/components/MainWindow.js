@@ -126,20 +126,30 @@ class MainWindowBody extends Component {
     return true;
   }
 
+  openWindowIfNotOpened = (windowName) => {
+    const { openWindow, isWindowOpened } = this.props;
+
+    if (!isWindowOpened(windowName)) {
+      openWindow(windowName);
+    }
+  }
+
   render() {
-    const { onClickTV, openWindow, isWindowOpened } = this.props;
+    const { onClickTV, isWindowOpened } = this.props;
     const { iconsColliding, randomUnknownCaption } = this.state;
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
+    const foundAgent = localStorage.getItem('foundAgent') === 'true';
 
     return (
       <React.Fragment>
         <Cutout className='cut-out'>
           <div className='last-row-icons'>
             <Button id='cestino_icon' size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } }
-              onClick={ () => openWindow('cestino') }
+              onClick={ () => this.openWindowIfNotOpened('cestino') }
               active={ isWindowOpened('cestino') || iconsColliding }
+              disabled={ !foundAgent }
             >
-              <img src={ eggTriggered ? emptyTrashIcon : trashIcon } className='icon' alt="trash"/>
+              <img src={ eggTriggered ? emptyTrashIcon : trashIcon } className={ `icon ${foundAgent ? '' : 'disabled-icon'}` } alt="trash"/>
               <figcaption className='icon-caption'>Cestino</figcaption>
             </Button>
           </div>
@@ -154,7 +164,7 @@ class MainWindowBody extends Component {
                 size='lg'
                 square
                 className={ `button-item ${eggTriggered ? 'movable-icon handle_icon' : ''}` }
-                onClick={ () => openWindow('about') }
+                onClick={ () => this.openWindowIfNotOpened('about') }
                 active={ isWindowOpened('about') }
                 disabled={ eggTriggered }
                 style={ { width: '85px', height: '85px', display: 'inline-block' } }
@@ -164,40 +174,40 @@ class MainWindowBody extends Component {
               </Button>
             </Draggable>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
-              onClick={ () => openWindow('projects') }
+              onClick={ () => this.openWindowIfNotOpened('projects') }
               active={ isWindowOpened('projects') }
             >
               <img src={ projectsIcon } className='icon' alt="projects"/>
               <figcaption className='icon-caption'>Projects</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
-              onClick={ () => openWindow('contact') }
+              onClick={ () => this.openWindowIfNotOpened('contact') }
               active={ isWindowOpened('contact') }
             >
               <img src={ contactIcon } className='icon' alt="contact"/>
               <figcaption className='icon-caption'>Contact</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
-              onClick={ () => openWindow('blog') }
+              onClick={ () => this.openWindowIfNotOpened('blog') }
               active={ isWindowOpened('blog') }>
               <img src={ blogIcon } className='icon' alt="blog"/>
               <figcaption className='icon-caption'>Blog</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
-              onClick={ () => openWindow('links') }
+              onClick={ () => this.openWindowIfNotOpened('links') }
               active={ isWindowOpened('links') }
             >
               <img src={ linksIcon } className='icon' alt="links"/>
               <figcaption className='icon-caption'>Links</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
-              onClick={ () => openWindow('music') }
+              onClick={ () => this.openWindowIfNotOpened('music') }
               active={ isWindowOpened('music') }>
               <img src={ musicIcon } className='icon' alt="music"/>
               <figcaption className='icon-caption'>Music</figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
-              onClick={ () => openWindow('guestbook') }
+              onClick={ () => this.openWindowIfNotOpened('guestbook') }
               active={ isWindowOpened('guestbook') }
             >
               <img src={ guestbookIcon } className='icon' alt="guestbook"/>
@@ -210,7 +220,7 @@ class MainWindowBody extends Component {
               <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
             </Button>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } }
-              onClick={ () => openWindow('unknown') }
+              onClick={ () => this.openWindowIfNotOpened('unknown') }
               active={ isWindowOpened('unknown') }
             >
               <img src={ unknownIcon } className='icon' alt="unknown icon"/>
@@ -228,7 +238,7 @@ class MainWindowBody extends Component {
             </Anchor>
           </div>
         </Cutout>
-        <MainWindowFooter onClick={ () => openWindow('credits') } active={ isWindowOpened('credits') }/>
+        <MainWindowFooter onClick={ () => this.openWindowIfNotOpened('credits') } active={ isWindowOpened('credits') }/>
       </React.Fragment>
     );
   }
