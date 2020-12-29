@@ -1,3 +1,5 @@
+const BLOG_URL = 'https://blog.simone.computer';
+
 // taken from http://detectmobilebrowsers.com
 function isMobile() {
   const a = navigator.userAgent || navigator.vendor || window.opera;
@@ -30,4 +32,5 @@ export default {
   replaceRandomCharInWord,
   delay,
   openWebsiteURL,
+  BLOG_URL,
 };

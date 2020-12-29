@@ -12,8 +12,6 @@ import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 import questionIcon from '../../resources/icons/question-mark.gif';
 import blogIcon from '../../resources/icons/blog.gif';
 
-const BACKEND_URL = 'https://simonesmightybackend.herokuapp.com';
-
 class BlogHeader extends Component {
   render = () => (
     <span>
@@ -41,7 +39,7 @@ class BlogBody extends Component {
   componentDidMount = () => {
     this.loaderInterval = setInterval(this.increaseLoader, 20);
 
-    fetch(`${BACKEND_URL}/post`)
+    fetch(`${Util.BLOG_URL}/post`)
       .then(response => response.json())
       .then((data) => {
         this.setState({
@@ -152,7 +150,7 @@ class BlogBody extends Component {
           </Button>
         </div>
         <div className='blog-footer-buttons' style={ { float: 'left' } }>
-          <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${BACKEND_URL}/rss.xml` }) }>
+          <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${Util.BLOG_URL}/rss.xml` }) }>
             <img src={ hyperlinkIcon } className='small-icon' alt="hyperlink icon"/>
             <figcaption>Feed RSS</figcaption>
           </Button>
