@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Cutout, Fieldset } from 'react95';
 
+import Util from '../Util';
+
 import questionMarkIcon from '../../resources/icons/question-mark.gif';
 
 class BlogPopupHeader extends Component {
@@ -22,7 +24,7 @@ class BlogPopupBody extends Component {
             <h2>What is this?</h2>
             <b>This is not exactly a blog</b>, but more like a <i>one post blog</i>,
             a temporary single post which will be replaced from time
-            to time by a new one. You can keep yourself up to date using the  <a href='https://simonesmightybackend.herokuapp.com/rss.xml' rel='noopener noreferrer'>Feed RSS</a>.
+            to time by a new one. You can keep yourself up to date using the  <a href={ `${Util.BLOG_URL}/rss.xml` } rel='noopener noreferrer'>Feed RSS</a>.
             <h2>But why?</h2>
             I kind of liked the idea! Just think about it,
             so many cool websites and blogs went down in the last decade,
