@@ -1,4 +1,4 @@
-const BLOG_URL = 'https://blog.simone.computer';
+const BACKEND_URL = 'https://system32.simone.computer';
 
 // taken from http://detectmobilebrowsers.com
 function isMobile() {
@@ -32,5 +32,5 @@ export default {
   replaceRandomCharInWord,
   delay,
   openWebsiteURL,
-  BLOG_URL,
+  BACKEND_URL,
 };
