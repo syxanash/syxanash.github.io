@@ -39,7 +39,7 @@ class BlogBody extends Component {
   componentDidMount = () => {
     this.loaderInterval = setInterval(this.increaseLoader, 20);
 
-    fetch(`${Util.BLOG_URL}/post`)
+    fetch(`${Util.BACKEND_URL}/blogpost`)
       .then(response => response.json())
       .then((data) => {
         this.setState({
@@ -150,7 +150,7 @@ class BlogBody extends Component {
           </Button>
         </div>
         <div className='blog-footer-buttons' style={ { float: 'left' } }>
-          <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${Util.BLOG_URL}/rss.xml` }) }>
+          <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${Util.BACKEND_URL}/rss.xml` }) }>
             <img src={ hyperlinkIcon } className='small-icon' alt="hyperlink icon"/>
             <figcaption>Feed RSS</figcaption>
           </Button>
