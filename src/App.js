@@ -156,7 +156,9 @@ class App extends Component {
   }
 
   onLeftsideButton = () => {
-    this.openWindow('osinfowindow');
+    if (!this.isWindowOpened('osinfowindow')) {
+      this.openWindow('osinfowindow');
+    }
   }
 
   resetWindows = () => {
