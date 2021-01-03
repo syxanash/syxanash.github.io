@@ -21,7 +21,8 @@ class Poweroff extends Component {
       <style>
         {
           `body {
-            background: url(${pictureName}) no-repeat center center fixed; 
+            background: url(${pictureName}) no-repeat center center fixed;
+            background-color: #000000;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
