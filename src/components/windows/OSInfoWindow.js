@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Cutout } from 'react95';
 import './OSInfoWindow.css';
-import pippoOSlogo from '../../resources/images/pippoOS.gif';
+import pippoOSlogo from '../../resources/images/pippo.gif';
 
 class OSInfoWindowHeader extends Component {
   render = () => (
@@ -17,8 +17,8 @@ class OSInfoWindowBody extends Component {
   }
 
   render = () => (<div className='main-os-logo-div'>
-    <Cutout style={ { width: '208px', marginLeft: '40px' } }>
-      <Button id='os_logo' size='lg' fullwidth style={ { width: '200px', height: '140px' } } onClick={ this.openYoutubeLink }>
+    <Cutout style={ { width: '203px', marginLeft: '40px' } }>
+      <Button id='os_logo' size='lg' fullwidth style={ { width: '195px', height: '140px' } } onClick={ this.openYoutubeLink }>
         <img src={ pippoOSlogo } alt='Pippo OS logo' height='130px' />
       </Button>
     </Cutout>
