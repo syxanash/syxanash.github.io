@@ -32,13 +32,16 @@
   <body>
     <img src='404.gif' alt='404 screen' class='center-img' />
     <script>
-      const pattern = ['p', 'i', 'z', 'z', 'a'];
+      const pattern = 'pizza'.split('');
+      const upperCasePattern = pattern.map(c => c.toUpperCase());
       let combinationEntered = 0;
+
       window.addEventListener("keydown", function (event) {
-        if (pattern.indexOf(event.key) < 0 || event.key !== pattern[combinationEntered]) {
+        if ((pattern.indexOf(event.key) < 0 || event.key !== pattern[combinationEntered]) &&
+          (upperCasePattern.indexOf(event.key) < 0 || event.key !== upperCasePattern[combinationEntered])) {
           combinationEntered = 0;
         }
-        combinationEntered += 1;
+        combinationEntered += 1;        
         if (pattern.length === combinationEntered) {
           combinationEntered = 0;
           window.location.href = '/';
