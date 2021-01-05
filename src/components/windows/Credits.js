@@ -85,8 +85,6 @@ class CreditsBody extends Component {
               <li className='list-content'><a href='https://www.popot.org' target='_blank' rel='noopener noreferrer'>PoP Backgrounds</a> → Two backgrounds were downloaded from the Prince of Persia modding community website</li>
               <li className='list-content'>The avatars in <b>src/resources/images/avatars/</b>, used
               in the Guestbook page, were found online from various websites</li>
-              <li className='list-content'>The spinning globe in <b>src/resources/images/globe.gif</b> was
-              found online, I wish I knew who made this gif :(</li>
               <li className='list-content'>Almost all of the GIFs in <b>loop TV</b> were made by myself and were
               taken from various games/movies/cartoons.
               Some of these GIFs were also found online.</li>
