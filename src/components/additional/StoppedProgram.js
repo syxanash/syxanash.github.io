@@ -108,7 +108,7 @@ class Poweroff extends Component {
         <div><span className='console-text-blue'>Scanning for Harddisk partitions and creating <span className='console-text-yellow'>/etc/fstab</span>... <span className='console-text-green'>Done.</span></span></div>
         <div>INIT: Entering runlevel: 5</div>
         <br />
-        <div><span className='console-text-red blink'>*** Orekcimdrap Window Manager has been halted ***</span></div>
+        <div><span className='console-text-red blink'>*** Orekkietcimdrap Window Manager has been halted ***</span></div>
         [1]+  Exit 1 ^C<br />
         <span dangerouslySetInnerHTML={ { __html: outputText } }></span>
         <div ref={ this.messagesEndRef } />
