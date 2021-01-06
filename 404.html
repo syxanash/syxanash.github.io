@@ -11,9 +11,14 @@
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <style>
+      html {
+        height: 100%;
+      }
       body {
+        min-height: 100%;
         background-color: #029a9c;
         margin: 0;
+        cursor: none;
       }
       .center-img {
         text-align: center;
@@ -26,11 +31,44 @@
         width: 100%;
         max-height: 100%;
       }
+      .scan-lines {
+        z-index:99999;
+
+        opacity: 0.7;
+        filter: alpha(opacity=70);
+
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+        pointer-events: none;
+
+        background-image: -webkit-radial-gradient( center,ellipse cover,transparent 0%,transparent 60%,rgba(0,0,0,0.25) 100% ),-webkit-repeating-linear-gradient( top,transparent 0px,transparent 1px,rgba(0,0,0,0.35) 3px );
+        background-image: -moz-radial-gradient( center,ellipse cover,transparent 0%,transparent 60%,rgba(0,0,0,0.25) 100% ),-moz-repeating-linear-gradient( top,transparent 0px,transparent 1px,rgba(0,0,0,0.35) 3px );
+        background-image: radial-gradient( ellipse at center,transparent 0%,transparent 60%,rgba(0,0,0,0.25) 100% ),repeating-linear-gradient( 0deg,transparent 0px,transparent 1px,rgba(0,0,0,0.35) 3px );
+        -webkit-background-size: 100% 100%,100% 6px;
+        -moz-background-size: 100% 100%,100% 6px;
+        background-size: 100% 100%,100% 6px;
+        animation: flicker 300ms linear infinite;
+      }
+      @keyframes flicker {
+        50% {
+          opacity: 0.55;
+          filter: alpha(opacity=55);
+        }
+      }
     </style>
     <title>Simone's Computer</title>
   </head>
   <body>
     <img src='/404.gif' alt='404 screen' class='center-img' />
+    <div class='scan-lines'></div>
     <script>
       const pattern = 'pizza'.split('');
       const upperCasePattern = pattern.map(c => c.toUpperCase());
