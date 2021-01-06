@@ -160,7 +160,7 @@ class ScreenSaver extends Component {
             }
             * {
               overflow: hidden;
-              cursor: url(data:image/gif;base64,R0lGODlhAQABAIABAAAAAAD/FywAAAAAAQABAAACAkQBADs=), auto;
+              cursor: none;
               webkit-touch-callout: none; /* iOS Safari */
                -webkit-user-select: none; /* Safari */
                 -khtml-user-select: none; /* Konqueror HTML */
