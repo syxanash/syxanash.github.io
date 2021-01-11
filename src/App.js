@@ -47,6 +47,7 @@ class App extends Component {
     this.screenSaverTimeout = undefined;
     this.activateScreenSaver = false;
     this.screenSaverTimer = 10;
+    this.screenSaverMovingMouseThreshold = 45;
 
     this.mouseMovingCounter = 0;
 
@@ -138,7 +139,7 @@ class App extends Component {
     const { screenSaverMode } = this.state;
     this.mouseMovingCounter = this.mouseMovingCounter + 1;
 
-    if (this.mouseMovingCounter >= 50 && screenSaverMode) {
+    if (this.mouseMovingCounter >= this.screenSaverMovingMouseThreshold && screenSaverMode) {
       this.unsetScreenSaver();
     }
   }
