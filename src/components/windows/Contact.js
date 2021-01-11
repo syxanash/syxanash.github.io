@@ -90,8 +90,8 @@ class ContactBody extends Component {
       </Tooltip>
     </div>
     <div className='contact-info'>
-      <Fieldset label="🔑 Warning:">
-        If you want to keep me updated with the latest tinfoil hat news use my <a target="_blank" rel="noopener noreferrer" href='http://futureboy.us/pgp.html'>PGP</a> public key.
+      <Fieldset label="Info:">
+        You can also contact me using my public key listed above. To know more about PGP click <a target="_blank" rel="noopener noreferrer" href='https://futureboy.us/pgp.html'>here</a>.
       </Fieldset>
     </div>
   </React.Fragment>)
