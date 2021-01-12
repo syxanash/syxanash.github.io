@@ -1,7 +1,7 @@
 [
     {
         "img": "prince_start.gif",
-        "description": "Prince of Persia - could I come downstairs?"
+        "description": "208 - Pà posso scendere giù?"
     },
     {
         "img": "prince.gif",
@@ -13,11 +13,11 @@
     },
     {
         "img": "princess.gif",
-        "description": "Prince of Persia"
+        "description": "arriverò mai alla fine"
     },
     {
         "img": "fight.gif",
-        "description": "Prince of Persia - Alkhaled"
+        "description": "Alkhaled"
     },
     {
         "img": "oddparents.gif",
@@ -238,18 +238,6 @@
     {
         "img": "backpackgirl.gif",
         "description": "Parked Domain Girl"
-    },
-    {
-        "img": "tumblr1.jpg",
-        "description": ""
-    },
-    {
-        "img": "tumblr2.gif",
-        "description": ""
-    },
-    {
-        "img": "tumblr4.gif",
-        "description": ""
     },
     {
         "img": "maze_screensaver.gif",
