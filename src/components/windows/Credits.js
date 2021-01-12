@@ -3,6 +3,8 @@ import {
   TabBody, Tab, Tabs, Cutout, Tooltip,
 } from 'react95';
 
+import Util from '../Util';
+
 import licenseText from '../../resources/misc/LICENSE.txt';
 import creditsIcon from '../../resources/icons/favicon.gif';
 import cookieIcon from '../../resources/icons/cookie.gif';
@@ -27,7 +29,7 @@ class CreditsBody extends Component {
   }
 
   componentDidMount() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (Util.isDarkModeEnabled()) {
       this.setState({ codeAnimation: codeAnimationDark });
     }
   }
