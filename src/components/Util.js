@@ -15,6 +15,10 @@ function openWebsiteURL({ url }) {
   window.open(url, '_blank');
 }
 
+function isDarkModeEnabled() {
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
 function replaceRandomCharInWord(mainWord) {
   const characters = 'abcdefghijklmnopqrstuvwxyz';
   const randomCharter = characters.charAt(Math.floor(Math.random() * characters.length));
@@ -32,5 +36,6 @@ export default {
   replaceRandomCharInWord,
   delay,
   openWebsiteURL,
+  isDarkModeEnabled,
   BACKEND_URL,
 };

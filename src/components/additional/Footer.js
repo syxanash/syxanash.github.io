@@ -3,6 +3,8 @@ import {
   Button, Anchor, Cutout,
 } from 'react95';
 
+import Util from '../Util';
+
 import './Footer.css';
 
 import lastUpdatedFile from '../../resources/last-updated.json';
@@ -17,7 +19,7 @@ class Footer extends Component {
   }
 
   componentDidMount() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (Util.isDarkModeEnabled()) {
       this.setState({ codeIcon: codeIconDark });
     }
   }
