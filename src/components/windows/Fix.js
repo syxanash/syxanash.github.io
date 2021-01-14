@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import mainIcon from '../../resources/icons/favicon.gif';
 import warningIcon from '../../resources/icons/warning.png';
 import checkIcon from '../../resources/icons/check.png';
 
@@ -9,7 +8,7 @@ import './Fix.css';
 class FixHeader extends Component {
   render = () => (
     <span>
-      <img src={ mainIcon } alt='main logo' style={ { height: '15px' } }/> fiks.exe
+      fiks.exe
     </span>
   )
 }

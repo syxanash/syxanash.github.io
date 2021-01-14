@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
 import brokenLinks from '../../resources/broken-links.json';
-import mainIcon from '../../resources/icons/favicon.gif';
 
 class NotFoundHeader extends Component {
   render = () => (
     <span>
-      <img src={ mainIcon } alt='404' style={ { height: '15px' } }/> File Not Found
+      File Not Found
     </span>
   )
 }
