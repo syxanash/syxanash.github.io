@@ -6,7 +6,6 @@ import {
 import Util from '../Util';
 
 import licenseText from '../../resources/misc/LICENSE.txt';
-import creditsIcon from '../../resources/icons/favicon.gif';
 import cookieIcon from '../../resources/icons/cookie.gif';
 import codeAnimationDark from '../../resources/images/code_dark.gif';
 import codeAnimationLight from '../../resources/images/code_light.gif';
@@ -17,7 +16,7 @@ import './Credits.css';
 class CreditsHeader extends Component {
   render = () => (
     <span>
-      <img src={ creditsIcon } alt='main icon' style={ { height: '15px' } }/> Credits
+      Credits
     </span>
   )
 }
