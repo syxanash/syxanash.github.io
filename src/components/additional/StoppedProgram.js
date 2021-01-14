@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
 import lastUpdatedFile from '../../resources/last-updated.json';
-import bootPux from '../../resources/images/pux.gif';
+import happyPippo from '../../resources/images/happy_pippo.gif';
 
 import './StoppedProgram.css';
 
@@ -80,7 +80,7 @@ class Poweroff extends Component {
         </style>
       </Helmet>
       <div className='terminal-style'>
-        <div style={ { paddingBottom: '5px' } }>{ Array.from(Array(window.navigator.hardwareConcurrency).keys()).map(index => <span key={ `item_${index}` }><img height='90' alt='kernel mascot' src={ bootPux } />&nbsp;</span>) }</div>
+        <div style={ { paddingBottom: '5px' } }>{ Array.from(Array(window.navigator.hardwareConcurrency).keys()).map(index => <span key={ `item_${index}` }><img height='60' alt='kernel mascot' src={ happyPippo } />&nbsp;</span>) }</div>
         <div>Welcome to the <span className='console-text-blue'>P</span><span className='console-text-pink'>i</span><span className='console-text-yellow'>p</span><span className='console-text-purple'>p</span><span className='console-text-green'>o</span> <span className='console-text-red'>O</span><span className='console-text-yellow'>S</span> experience!</div><br />
         <div>&nbsp;&nbsp;<span className='console-text-green'>Found SCSI device(s) handled by</span> <span className='console-text-purple'>BusLogic.o.</span></div>
         <div><span className='console-text-blue'>Scanning for USB/Firewire devices... Done. (that was quick)</span></div>
