@@ -8,7 +8,6 @@
 // when you enter the combination!!!
 // And also this is totally not a message
 // to stretch the code for the line 69 :)
-
 import React, { Component } from 'react';
 import {
   Button, Cutout, Anchor,
@@ -16,6 +15,7 @@ import {
 import errorIcon from '../../resources/icons/error.png';
 import './Konami.css';
 import SoundEffects from '../additional/SoundEffects';
+import configUrls from '../../resources/config-urls.json';
 
 class KonamiHeader extends Component {
   render = () => <span>Error</span>
@@ -66,7 +66,7 @@ class KonamiBody extends Component {
       </div>
       <Cutout style={ { display: showReport ? 'block' : 'none' } } className='error-cutout'>
         <div className='error-report-space'>
-          <p>Line: 69<br />Error: 'TooManyEasterEggsException' <Anchor href="https://github.com/syxanash/syxanash.github.io/blob/development/src/components/windows/Konami.js" target="_blank">@ Konami.js</Anchor></p>
+          <p>Line: 69<br />Error: 'TooManyEasterEggsException' <Anchor href={ `${configUrls.repositoryUrl}/blob/development/src/components/windows/Konami.js` } target="_blank">@ Konami.js</Anchor></p>
           <br />
           <br />
         </div>

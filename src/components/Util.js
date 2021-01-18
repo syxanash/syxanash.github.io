@@ -1,5 +1,3 @@
-const BACKEND_URL = 'https://system32.simone.computer';
-
 // taken from http://detectmobilebrowsers.com
 function isMobile() {
   const a = navigator.userAgent || navigator.vendor || window.opera;
@@ -37,5 +35,4 @@ export default {
   delay,
   openWebsiteURL,
   isDarkModeEnabled,
-  BACKEND_URL,
 };

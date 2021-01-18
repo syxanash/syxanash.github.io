@@ -4,6 +4,7 @@ import {
 } from 'react95';
 
 import Util from '../Util';
+import configUrls from '../../resources/config-urls.json';
 
 import licenseText from '../../resources/misc/LICENSE.txt';
 import cookieIcon from '../../resources/icons/cookie.gif';
@@ -47,7 +48,8 @@ class CreditsBody extends Component {
         <img src={ codeAnimation } alt='code scrolling animation' className='mascot-picture' />
         This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>React</a>, if your 'puter is too slow then disable JavaScript you can always use the <i>fallback mode!</i>
         <p>
-          The code is <a href='https://github.com/syxanash/syxanash.github.io'>entirely available</a> on GitHub. If you have any bugfix, suggestions, typos
+          The code is <a href={ configUrls.repositoryUrl } target='_blank' rel='noopener noreferrer'>entirely available</a> on GitHub.
+          If you have any bugfix, suggestions, typos
           feel free to open a pull request!
         </p>
       </div>

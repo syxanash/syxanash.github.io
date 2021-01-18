@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Cutout, Fieldset } from 'react95';
 
-import Util from '../Util';
+import configUrls from '../../resources/config-urls.json';
 
 import questionMarkIcon from '../../resources/icons/question-mark.gif';
 
@@ -27,7 +27,7 @@ class BlogPopupBody extends Component {
             to time by a new one.<br />
             Yeah, you heard me right, this post will
             go away and the actual content deleted, but
-            you can keep yourself up to date using the  <a href={ `${Util.BACKEND_URL}/rss.xml` } rel='noopener noreferrer'>Feed RSS</a> if
+            you can keep yourself up to date using the  <a href={ `${configUrls.backendUrl}/rss.xml` } rel='noopener noreferrer'>Feed RSS</a> if
             you really care that much!
             <h2>But why?</h2>
             I kind of liked the idea! Just think about it,
