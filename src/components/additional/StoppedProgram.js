@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
+import configUrls from '../../resources/config-urls.json';
 import lastUpdatedFile from '../../resources/last-updated.json';
 import happyPippo from '../../resources/images/happy_pippo.gif';
 
@@ -85,7 +86,7 @@ class Poweroff extends Component {
         <div>&nbsp;&nbsp;<span className='console-text-green'>Found SCSI device(s) handled by</span> <span className='console-text-purple'>BusLogic.o.</span></div>
         <div><span className='console-text-blue'>Scanning for USB/Firewire devices... Done. (that was quick)</span></div>
         <div><span className='console-text-blue'>Enabling DMA acceleration for:</span> <span className='console-text-purple'>hdc</span></div>
-        <div>&nbsp;&nbsp;<span className='console-text-green'>Accessing Pippo OS Kernel at</span> <span className='console-text-purple'>github.com/syxanash/syxanash.github.io</span><span className='console-text-green'>....</span></div>
+        <div>&nbsp;&nbsp;<span className='console-text-green'>Accessing Pippo OS Kernel at</span> <span className='console-text-purple'>{ configUrls.repositoryUrl.replace('https://', '') }</span><span className='console-text-green'>....</span></div>
         <div><span className='console-text-blue'>Total memory found : <span className='console-text-yellow'>515124</span> kB</span></div>
         <div><span className='console-text-blue'>Creating <span className='console-text-yellow'>/ramdisk</span> (dynamic size=404516k) on <span className='console-text-purple'>shared memory</span>...Done.</span></div>
         <div><span className='console-text-blue'>Creating directories and symlinks on ramdisk...Done</span></div>
