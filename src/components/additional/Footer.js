@@ -4,6 +4,7 @@ import {
 } from 'react95';
 
 import Util from '../Util';
+import configUrls from '../../resources/config-urls.json';
 
 import './Footer.css';
 
@@ -34,7 +35,7 @@ class Footer extends Component {
 
     return (
       <Anchor
-        href='https://github.com/syxanash/syxanash.github.io/commits/development'
+        href={ `${configUrls.repositoryUrl}/commits/development` }
         target='_blank'
         style={ { color: '#000000', textDecoration: 'none' } }
       >

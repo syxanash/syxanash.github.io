@@ -5,7 +5,7 @@ import {
 import ReactMarkdown from 'react-markdown/with-html';
 
 import Util from '../Util';
-
+import configUrls from '../../resources/config-urls.json';
 import './Blog.css';
 
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
@@ -39,7 +39,7 @@ class BlogBody extends Component {
   componentDidMount = () => {
     this.loaderInterval = setInterval(this.increaseLoader, 20);
 
-    fetch(`${Util.BACKEND_URL}/blogpost`)
+    fetch(`${configUrls.backendUrl}/blogpost`)
       .then(response => response.json())
       .then((data) => {
         this.setState({
@@ -119,7 +119,7 @@ class BlogBody extends Component {
           </div>
           <Cutout style={ { display: loaderInteger === 0 ? 'block' : 'none', backgroundColor: 'white', marginTop: '20px' } }>
             <div style={ { padding: '15px' } }>
-              <p>Error: { backendResponse.message } <Anchor href="https://github.com/syxanash/syxanash.github.io/blob/development/src/components/windows/Blog.js" target="_blank">@ Blog.js</Anchor></p>
+              <p>Error: { backendResponse.message } <Anchor href={ `${configUrls.repositoryUrl}/blob/development/src/components/windows/Blog.js` } target="_blank">@ Blog.js</Anchor></p>
               <br />
             </div>
           </Cutout>
@@ -150,7 +150,7 @@ class BlogBody extends Component {
           </Button>
         </div>
         <div className='blog-footer-buttons' style={ { float: 'left' } }>
-          <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${Util.BACKEND_URL}/rss.xml` }) }>
+          <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/rss.xml` }) }>
             <img src={ hyperlinkIcon } className='small-icon' alt="hyperlink icon"/>
             <figcaption>Feed RSS</figcaption>
           </Button>
