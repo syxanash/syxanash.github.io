@@ -3,6 +3,7 @@ import {
   Button,
   Cutout,
   Fieldset,
+  Hourglass,
 } from 'react95';
 
 import './Bulb.css';
@@ -27,9 +28,9 @@ class BulbBody extends Component {
     super(props);
 
     this.websocket = undefined;
-    this.websocketOpen = false;
 
     this.state = {
+      websocketOpen: false,
       lightOn: false,
     };
   }
@@ -45,23 +46,20 @@ class BulbBody extends Component {
   }
 
   onOpen = () => {
-    this.websocketOpen = true;
-    console.log('opened websocket');
+    console.info('opened websocket');
+    this.setState({ websocketOpen: true });
   }
 
   onClose = () => {
-    console.log('closed websocket');
+    console.info('closed websocket');
   }
 
   onError = (evt) => {
-    console.log('websocket error');
-    console.log(evt.data);
+    console.info('websocket error');
+    console.info(evt.data);
   }
 
   onMessage = (evt) => {
-    console.log('received message');
-    console.log(evt.data);
-
     if (evt.data === '1') {
       this.setState({ lightOn: true });
     } else {
@@ -69,23 +67,46 @@ class BulbBody extends Component {
     }
   }
 
-  doSend = (message) => {
-    console.log('sending message');
-    console.log(message);
+  doSend = () => {
+    const { websocketOpen } = this.state;
 
-    if (this.websocket !== undefined && this.websocketOpen) {
-      this.websocket.send(message);
+    if (websocketOpen) {
+      this.websocket.send('');
     }
   }
 
-  render() {
+  componentWillUnmount = () => {
+    const { websocketOpen } = this.state;
+
+    if (websocketOpen) {
+      this.websocket.close();
+    }
+  }
+
+  renderLightBulbObject = () => {
     const { lightOn } = this.state;
+
+    return (
+      <div className='animated swing'>
+        <div className='lightbulb-container'>
+          <div style={ { display: lightOn ? 'block' : 'none' } } className='lightbulb-shadow'></div>
+          <img src={ lightOn ? lightbulbOn : lightbulbOff } className='lightbulb' style={ { height: '90px' } } alt="lightbulb"/>
+        </div>
+      </div>
+    );
+  }
+
+  render() {
+    const { lightOn, websocketOpen } = this.state;
 
     return (
       <React.Fragment>
         <div>
-          <Fieldset style={ { height: '80px' } }>
-            <img src={ lightOn ? lightbulbOn : lightbulbOff } className='icon' style={ { height: '90px' } } alt="lightbulb"/>
+          <Fieldset style={ { height: '80px', width: '90px', textAlign: 'center' } }>
+            { websocketOpen
+              ? this.renderLightBulbObject()
+              : <Hourglass size={ 48 } style={ { paddingTop: '15px' } } />
+            }
           </Fieldset>
           <br />
           <Cutout className='bulb-cut-out'>
@@ -95,7 +116,7 @@ class BulbBody extends Component {
                 active={ lightOn }
                 fullWidth
                 disabled={ lightOn }
-              >I</Button>
+              ><b>I</b></Button>
             </div>
             <div className='bulb-buttons'>
               <Button square
@@ -103,7 +124,7 @@ class BulbBody extends Component {
                 active={ !lightOn }
                 fullWidth
                 disabled={ !lightOn }
-              >O</Button>
+              ><b>O</b></Button>
             </div>
           </Cutout>
         </div>
