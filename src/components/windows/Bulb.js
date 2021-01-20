@@ -36,6 +36,10 @@ class BulbBody extends Component {
   }
 
   componentDidMount() {
+    this.setupWebsockets();
+  }
+
+  setupWebsockets = () => {
     this.socketUrl = `${configUrls.websocketUrl}/bulb`;
 
     this.websocket = new WebSocket(this.socketUrl);
@@ -52,6 +56,7 @@ class BulbBody extends Component {
 
   onClose = () => {
     console.info('closed websocket');
+    this.setState({ websocketOpen: false });
   }
 
   onError = (evt) => {
@@ -68,18 +73,14 @@ class BulbBody extends Component {
   }
 
   doSend = () => {
-    const { websocketOpen } = this.state;
-
-    if (websocketOpen) {
+    if (this.websocket.readyState === WebSocket.OPEN) {
       this.websocket.send('');
     }
   }
 
   componentWillUnmount = () => {
-    const { websocketOpen } = this.state;
-
-    if (websocketOpen) {
-      this.websocket.close();
+    if (this.websocket !== undefined) {
+      this.websocket.onclose();
     }
   }
 
@@ -114,16 +115,16 @@ class BulbBody extends Component {
               <Button square
                 onClick={ () => { this.doSend(); } }
                 active={ lightOn }
-                fullWidth
                 disabled={ lightOn }
+                fullWidth
               ><b>I</b></Button>
             </div>
             <div className='bulb-buttons'>
               <Button square
                 onClick={ () => { this.doSend(); } }
                 active={ !lightOn }
-                fullWidth
                 disabled={ !lightOn }
+                fullWidth
               ><b>O</b></Button>
             </div>
           </Cutout>
