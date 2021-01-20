@@ -22,6 +22,7 @@ import guestbookIcon from '../resources/icons/guestbook.png';
 import loopTVIcon from '../resources/icons/loopTV.gif';
 import pizzaIcon from '../resources/icons/pizza.gif';
 import unknownIcon from '../resources/icons/unknown.gif';
+import lightbulbIcon from '../resources/icons/lightbulb.gif';
 
 import languages from '../resources/languages.json';
 
@@ -134,6 +135,17 @@ class MainWindowBody extends Component {
     }
   }
 
+  renderBulbButton = () => {
+    const { isWindowOpened } = this.props;
+    return (<Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+      onClick={ () => this.openWindowIfNotOpened('bulb') }
+      active={ isWindowOpened('bulb') }
+    >
+      <img src={ lightbulbIcon } className='icon' alt="Lite Bulb"/>
+      <figcaption className='icon-caption'>Lite Bulb</figcaption>
+    </Button>);
+  }
+
   render() {
     const { onClickTV, isWindowOpened } = this.props;
     const { iconsColliding, randomUnknownCaption } = this.state;
@@ -217,6 +229,7 @@ class MainWindowBody extends Component {
               <img src={ loopTVIcon } className='icon' alt="loop TV"/>
               <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
             </Button>
+            { Util.isWebSocketsSupported() ? this.renderBulbButton() : null }
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } }
               onClick={ () => this.openWindowIfNotOpened('unknown') }
               active={ isWindowOpened('unknown') }

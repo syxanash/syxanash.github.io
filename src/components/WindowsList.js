@@ -5,6 +5,7 @@ import { ContactHeader, ContactBody } from './windows/Contact';
 import { GuestbookHeader, GuestbookBody } from './windows/Guestbook';
 import { MusicHeader, MusicBody } from './windows/Music';
 import { CestinoHeader, CestinoBody } from './windows/Cestino';
+import { BulbHeader, BulbBody } from './windows/Bulb';
 import { UnknownHeader, UnknownBody } from './windows/Unknown';
 import { BlogPopupHeader, BlogPopupBody } from './windows/BlogPopup';
 import { BlogHeader, BlogBody } from './windows/Blog';
@@ -143,6 +144,17 @@ export default function WindowsList() {
       header: CestinoHeader,
       body: CestinoBody,
       windowTheme: PippoBleeding,
+      unfocusedTheme: PippoDistracted,
+    },
+    bulb: {
+      hasFullScreen: false,
+      tiltAnimation: false,
+      canCloseWindow: true,
+      opened: false,
+      focused: false,
+      header: BulbHeader,
+      body: BulbBody,
+      windowTheme: PippoTheme,
       unfocusedTheme: PippoDistracted,
     },
     unknown: {

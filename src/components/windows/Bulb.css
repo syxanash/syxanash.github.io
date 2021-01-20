@@ -1,0 +1,9 @@
+.bulb-buttons {
+  width: 50%;
+}
+
+.bulb-cut-out {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
