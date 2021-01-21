@@ -73,6 +73,9 @@ class BulbBody extends Component {
 
   onClose = () => {
     this.websocketClient.removeEventListener('close', this.onClose);
+
+    const { closeWindow } = this.props;
+    closeWindow();
   }
 
   onError = (evt) => {
