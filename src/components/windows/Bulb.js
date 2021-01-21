@@ -52,8 +52,7 @@ class BulbBody extends Component {
   }
 
   componentWillUnmount = () => {
-    if (this.websocketClient
-        && this.websocketClient.readyState === WebSocket.OPEN) {
+    if (this.websocketClient) {
       this.websocketClient.close();
     }
 
@@ -61,7 +60,6 @@ class BulbBody extends Component {
 
     this.websocketClient.removeEventListener('open', this.onOpen);
     this.websocketClient.removeEventListener('message', this.onMessage);
-    this.websocketClient.removeEventListener('close', this.onClose);
     this.websocketClient.removeEventListener('error', this.onError);
   }
 
@@ -74,8 +72,7 @@ class BulbBody extends Component {
   }
 
   onClose = () => {
-    const { closeWindow } = this.props;
-    closeWindow();
+    this.websocketClient.removeEventListener('close', this.onClose);
   }
 
   onError = (evt) => {
