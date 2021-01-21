@@ -66,30 +66,24 @@ class BulbBody extends Component {
   }
 
   sendPing = () => {
-    console.log('sending ping...');
     this.doSend('PING');
   }
 
   onOpen = () => {
-    console.info('opened websocket');
     this.setState({ websocketOpen: true });
   }
 
   onClose = () => {
     const { closeWindow } = this.props;
-    console.info('closed websocket');
-
     closeWindow();
   }
 
   onError = (evt) => {
-    console.info('websocket error');
-    console.info(evt.data);
+    console.error(evt.data);
   }
 
   onMessage = (evt) => {
     if (evt.data === 'PONG') {
-      console.log('server is keeping you alive...');
       return;
     }
 
