@@ -76,8 +76,10 @@ class BulbBody extends Component {
   }
 
   onClose = () => {
+    const { closeWindow } = this.props;
     console.info('closed websocket');
-    this.setState({ websocketOpen: false });
+
+    closeWindow();
   }
 
   onError = (evt) => {
