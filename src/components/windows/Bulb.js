@@ -27,7 +27,10 @@ class BulbBody extends Component {
   constructor(props) {
     super(props);
 
-    this.websocket = undefined;
+    this.websocketClient = undefined;
+    this.keepAliveInterval = undefined;
+
+    this.pingInterval = 30;
 
     this.state = {
       websocketOpen: false,
@@ -36,17 +39,35 @@ class BulbBody extends Component {
   }
 
   componentDidMount() {
-    this.setupWebsockets();
-  }
-
-  setupWebsockets = () => {
     this.socketUrl = `${configUrls.websocketUrl}/bulb`;
 
-    this.websocket = new WebSocket(this.socketUrl);
-    this.websocket.onopen = (evt) => { this.onOpen(evt); };
-    this.websocket.onclose = (evt) => { this.onClose(evt); };
-    this.websocket.onmessage = (evt) => { this.onMessage(evt); };
-    this.websocket.onerror = (evt) => { this.onError(evt); };
+    this.websocketClient = new WebSocket(this.socketUrl);
+
+    this.websocketClient.addEventListener('open', this.onOpen);
+    this.websocketClient.addEventListener('message', this.onMessage);
+    this.websocketClient.addEventListener('close', this.onClose);
+    this.websocketClient.addEventListener('error', this.onError);
+
+    this.keepAliveInterval = setInterval(this.sendPing, this.pingInterval * 1000);
+  }
+
+  componentWillUnmount = () => {
+    if (this.websocketClient
+        && this.websocketClient.readyState === WebSocket.OPEN) {
+      this.websocketClient.close();
+    }
+
+    clearInterval(this.keepAliveInterval);
+
+    this.websocketClient.removeEventListener('open', this.onOpen);
+    this.websocketClient.removeEventListener('message', this.onMessage);
+    this.websocketClient.removeEventListener('close', this.onClose);
+    this.websocketClient.removeEventListener('error', this.onError);
+  }
+
+  sendPing = () => {
+    console.log('sending ping...');
+    this.doSend('PING');
   }
 
   onOpen = () => {
@@ -65,6 +86,11 @@ class BulbBody extends Component {
   }
 
   onMessage = (evt) => {
+    if (evt.data === 'PONG') {
+      console.log('server is keeping you alive...');
+      return;
+    }
+
     if (evt.data === '1') {
       this.setState({ lightOn: true });
     } else {
@@ -72,15 +98,9 @@ class BulbBody extends Component {
     }
   }
 
-  doSend = () => {
-    if (this.websocket.readyState === WebSocket.OPEN) {
-      this.websocket.send('');
-    }
-  }
-
-  componentWillUnmount = () => {
-    if (this.websocket !== undefined) {
-      this.websocket.onclose();
+  doSend = (msg) => {
+    if (this.websocketClient.readyState === WebSocket.OPEN) {
+      this.websocketClient.send(msg);
     }
   }
 
@@ -113,7 +133,7 @@ class BulbBody extends Component {
           <Cutout className='bulb-cut-out'>
             <div className='bulb-buttons'>
               <Button square
-                onClick={ () => { this.doSend(); } }
+                onClick={ () => { this.doSend('FLICK'); } }
                 active={ lightOn }
                 disabled={ lightOn }
                 fullWidth
@@ -121,7 +141,7 @@ class BulbBody extends Component {
             </div>
             <div className='bulb-buttons'>
               <Button square
-                onClick={ () => { this.doSend(); } }
+                onClick={ () => { this.doSend('FLICK'); } }
                 active={ !lightOn }
                 disabled={ !lightOn }
                 fullWidth
