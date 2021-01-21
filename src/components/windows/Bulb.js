@@ -127,16 +127,16 @@ class BulbBody extends Component {
             <div className='bulb-buttons'>
               <Button square
                 onClick={ () => { this.doSend('FLICK'); } }
-                active={ lightOn }
-                disabled={ lightOn }
+                active={ websocketOpen && lightOn }
+                disabled={ !websocketOpen || lightOn }
                 fullWidth
               ><b>I</b></Button>
             </div>
             <div className='bulb-buttons'>
               <Button square
                 onClick={ () => { this.doSend('FLICK'); } }
-                active={ !lightOn }
-                disabled={ !lightOn }
+                active={ websocketOpen && !lightOn }
+                disabled={ !websocketOpen || !lightOn }
                 fullWidth
               ><b>O</b></Button>
             </div>
