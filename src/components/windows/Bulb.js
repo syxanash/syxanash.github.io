@@ -73,7 +73,6 @@ class BulbBody extends Component {
 
   onClose = () => {
     this.websocketClient.removeEventListener('close', this.onClose);
-    this.setState({ websocketOpen: false });
   }
 
   onError = (evt) => {

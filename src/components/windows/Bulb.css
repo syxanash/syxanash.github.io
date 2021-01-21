@@ -5,9 +5,9 @@
   left: 26px;
   top: 29px;
   border-radius:50%;
-  -webkit-box-shadow: 0px 0px 100px 50px rgba(255,220,0,1);
-  -moz-box-shadow: 0px 0px 100px 50px rgba(255,220,0,1);
-  box-shadow: 0px 0px 100px 50px rgba(255,220,0,1);
+  -webkit-box-shadow: 0px 0px 100px 55px rgba(255,220,0,1);
+  -moz-box-shadow: 0px 0px 100px 55px rgba(255,220,0,1);
+  box-shadow: 0px 0px 100px 55px rgba(255,220,0,1);
 }
 
 .lightbulb {
