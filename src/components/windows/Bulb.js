@@ -31,6 +31,7 @@ class BulbBody extends Component {
     this.keepAliveInterval = undefined;
 
     this.pingInterval = 30;
+    this.checkInterval = 10;
 
     this.state = {
       websocketOpen: false,
@@ -39,16 +40,10 @@ class BulbBody extends Component {
   }
 
   componentDidMount() {
-    this.socketUrl = `${configUrls.websocketUrl}/bulb`;
-
-    this.websocketClient = new WebSocket(this.socketUrl);
-
-    this.websocketClient.addEventListener('open', this.onOpen);
-    this.websocketClient.addEventListener('message', this.onMessage);
-    this.websocketClient.addEventListener('close', this.onClose);
-    this.websocketClient.addEventListener('error', this.onError);
+    this.setupWebsocket();
 
     this.keepAliveInterval = setInterval(this.sendPing, this.pingInterval * 1000);
+    this.checkConnectionInterval = setInterval(this.checkConnection, this.checkInterval * 1000);
   }
 
   componentWillUnmount = () => {
@@ -57,10 +52,28 @@ class BulbBody extends Component {
     }
 
     clearInterval(this.keepAliveInterval);
+    clearInterval(this.checkConnectionInterval);
 
     this.websocketClient.removeEventListener('open', this.onOpen);
     this.websocketClient.removeEventListener('message', this.onMessage);
     this.websocketClient.removeEventListener('error', this.onError);
+  }
+
+  checkConnection = () => {
+    if (this.websocketClient.readyState === WebSocket.CLOSED) {
+      this.setupWebsocket();
+    }
+  }
+
+  setupWebsocket = () => {
+    const socketUrl = `${configUrls.websocketUrl}/bulb`;
+
+    this.websocketClient = new WebSocket(socketUrl);
+
+    this.websocketClient.addEventListener('open', this.onOpen);
+    this.websocketClient.addEventListener('message', this.onMessage);
+    this.websocketClient.addEventListener('close', this.onClose);
+    this.websocketClient.addEventListener('error', this.onError);
   }
 
   sendPing = () => {
