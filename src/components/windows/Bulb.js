@@ -6,12 +6,15 @@ import {
   Hourglass,
 } from 'react95';
 
+import Typist from 'react-typist';
+
 import './Bulb.css';
 
 import configUrls from '../../resources/config-urls.json';
 
 import lightbulbIcon from '../../resources/icons/lightbulb.gif';
 
+import questionIcon from '../../resources/icons/question-mark.gif';
 import lightbulbOn from '../../resources/images/lightbulb/bulb-on.png';
 import lightbulbOff from '../../resources/images/lightbulb/bulb-off.png';
 
@@ -29,13 +32,28 @@ class BulbBody extends Component {
 
     this.websocketClient = undefined;
     this.keepAliveInterval = undefined;
+    this.speechCounterTimeout = undefined;
 
     this.pingInterval = 30;
     this.checkInterval = 10;
 
+    this.tooltipMessages = [
+      <span>
+        This is a shared lightbulb, feel free to turn it <b>on</b> or <b>off</b>
+      </span>,
+      <span>
+        Other people might flick the switch while you're visiting this website
+      </span>,
+      <span>
+        Enjoy!
+      </span>,
+    ];
+
     this.state = {
       websocketOpen: false,
       lightOn: false,
+      tooltipCounter: 0,
+      doneTyping: false,
     };
   }
 
@@ -53,6 +71,7 @@ class BulbBody extends Component {
 
     clearInterval(this.keepAliveInterval);
     clearInterval(this.checkConnectionInterval);
+    clearTimeout(this.speechCounterTimeout);
 
     this.websocketClient.removeEventListener('open', this.onOpen);
     this.websocketClient.removeEventListener('message', this.onMessage);
@@ -123,8 +142,52 @@ class BulbBody extends Component {
     );
   }
 
+  increaseSpeechCounter = () => {
+    this.setState({ tooltipCounter: this.state.tooltipCounter + 1 });
+    this.setState({ doneTyping: false });
+  }
+
+  nextMessage = () => {
+    const { tooltipCounter } = this.state;
+
+    this.setState({ doneTyping: true });
+
+    if (tooltipCounter < this.tooltipMessages.length) {
+      this.speechCounterTimeout = setTimeout(this.increaseSpeechCounter, 3000);
+    }
+  }
+
+  renderSpeechBubble = () => {
+    const { tooltipCounter, doneTyping } = this.state;
+
+    return (
+      doneTyping
+        ? <span>{ this.tooltipMessages[tooltipCounter] }</span>
+        : <Typist
+          avgTypingDelay={ 25 }
+          cursor={ { show: false } }
+          onTypingDone={ this.nextMessage }
+        >
+          { this.tooltipMessages[tooltipCounter] }
+        </Typist>
+    );
+  }
+
+  renderTooltip = () => (
+    <div>
+      <br />
+      <Fieldset
+        label={ <img src={ questionIcon } style={ { height: '20px' } } alt="question mark"/> }
+      >
+        <div className='lightbulb-tips'>
+          { this.renderSpeechBubble() }
+        </div>
+      </Fieldset>
+    </div>
+  )
+
   render() {
-    const { lightOn, websocketOpen } = this.state;
+    const { lightOn, websocketOpen, tooltipCounter } = this.state;
 
     return (
       <React.Fragment>
@@ -154,6 +217,7 @@ class BulbBody extends Component {
               ><b>O</b></Button>
             </div>
           </Cutout>
+          { tooltipCounter >= this.tooltipMessages.length ? null : this.renderTooltip() }
         </div>
       </React.Fragment>
     );

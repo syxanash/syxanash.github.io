@@ -28,3 +28,11 @@
   flex-grow: 1;
   flex-wrap: wrap;
 }
+
+.lightbulb-tips {
+  width: 100px;
+  margin-top: -5px;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: -10px;
+}

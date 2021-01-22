@@ -13,6 +13,7 @@ import emailIcon from '../../resources/icons/social/email.gif';
 import pgpIcon from '../../resources/icons/social/pgp.gif';
 import linkedinIcon from '../../resources/icons/social/linkedin.gif';
 import specialfishIcon from '../../resources/icons/social/specialfish.gif';
+import questionIcon from '../../resources/icons/question-mark.gif';
 
 import pgpKey from '../../resources/misc/public.asc';
 
@@ -90,7 +91,7 @@ class ContactBody extends Component {
       </Tooltip>
     </div>
     <div className='contact-info'>
-      <Fieldset label="Info:">
+      <Fieldset label={ <img src={ questionIcon } style={ { height: '20px' } } alt="question mark"/> }>
         You can also contact me using my public key listed above. To know more about PGP click <a target="_blank" rel="noopener noreferrer" href='https://futureboy.us/pgp.html'>here</a>.
       </Fieldset>
     </div>
