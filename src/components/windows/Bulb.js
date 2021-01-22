@@ -37,23 +37,22 @@ class BulbBody extends Component {
     this.pingInterval = 30;
     this.checkInterval = 10;
 
-    this.tooltipMessages = [
-      <span>
-        This is a shared lightbulb, feel free to turn it <b>on</b> or <b>off</b>
-      </span>,
-      <span>
-        Other people might flick the switch while you're visiting this website
-      </span>,
-      <span>
-        Enjoy!
-      </span>,
-    ];
-
     this.state = {
       websocketOpen: false,
       lightOn: false,
       tooltipCounter: 0,
       doneTyping: false,
+      tooltipMessages: [
+        <span>
+          This is a shared lightbulb, feel free to turn it <b>on</b> or <b>off</b>
+        </span>,
+        <span>
+          you might see other people flick the switch while you keep the window open
+        </span>,
+        <span>
+          Enjoy!
+        </span>,
+      ],
     };
   }
 
@@ -101,6 +100,7 @@ class BulbBody extends Component {
 
   onOpen = () => {
     this.setState({ websocketOpen: true });
+    this.doSend('USERS');
   }
 
   onClose = () => {
@@ -112,14 +112,15 @@ class BulbBody extends Component {
   }
 
   onMessage = (evt) => {
-    if (evt.data === 'PONG') {
-      return;
+    const foundUsersMatch = evt.data.match(/^USERS:(.*?)$/);
+    const bulbStatusMatch = evt.data.match(/^BULB:(.*?)$/);
+
+    if (foundUsersMatch !== null) {
+      this.setState({ usersConnected: foundUsersMatch[1] });
     }
 
-    if (evt.data === '1') {
-      this.setState({ lightOn: true });
-    } else {
-      this.setState({ lightOn: false });
+    if (bulbStatusMatch !== null) {
+      this.setState({ lightOn: bulbStatusMatch[1] === '1' });
     }
   }
 
@@ -148,27 +149,27 @@ class BulbBody extends Component {
   }
 
   nextMessage = () => {
-    const { tooltipCounter } = this.state;
+    const { tooltipCounter, tooltipMessages } = this.state;
 
     this.setState({ doneTyping: true });
 
-    if (tooltipCounter < this.tooltipMessages.length) {
+    if (tooltipCounter < tooltipMessages.length) {
       this.speechCounterTimeout = setTimeout(this.increaseSpeechCounter, 3000);
     }
   }
 
   renderSpeechBubble = () => {
-    const { tooltipCounter, doneTyping } = this.state;
+    const { tooltipCounter, doneTyping, tooltipMessages } = this.state;
 
     return (
       doneTyping
-        ? <span>{ this.tooltipMessages[tooltipCounter] }</span>
+        ? <span>{ tooltipMessages[tooltipCounter] }</span>
         : <Typist
           avgTypingDelay={ 25 }
           cursor={ { show: false } }
           onTypingDone={ this.nextMessage }
         >
-          { this.tooltipMessages[tooltipCounter] }
+          { tooltipMessages[tooltipCounter] }
         </Typist>
     );
   }
@@ -187,7 +188,9 @@ class BulbBody extends Component {
   )
 
   render() {
-    const { lightOn, websocketOpen, tooltipCounter } = this.state;
+    const {
+      lightOn, websocketOpen, tooltipCounter, tooltipMessages,
+    } = this.state;
 
     return (
       <React.Fragment>
@@ -217,7 +220,7 @@ class BulbBody extends Component {
               ><b>O</b></Button>
             </div>
           </Cutout>
-          { tooltipCounter >= this.tooltipMessages.length ? null : this.renderTooltip() }
+          { tooltipCounter >= tooltipMessages.length ? null : this.renderTooltip() }
         </div>
       </React.Fragment>
     );
