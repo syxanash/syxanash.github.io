@@ -49,9 +49,6 @@ class BulbBody extends Component {
         <span>
           you might see other people flick the switch while you keep the window open
         </span>,
-        <span>
-          Enjoy!
-        </span>,
       ],
     };
   }
@@ -120,7 +117,13 @@ class BulbBody extends Component {
     }
 
     if (bulbStatusMatch !== null) {
-      this.setState({ lightOn: bulbStatusMatch[1] === '1' });
+      const lightOn = bulbStatusMatch[1] === '1';
+
+      document.getElementById('lightbulbAnimationContainer').className = lightOn
+        ? 'animated swing'
+        : '';
+
+      this.setState({ lightOn });
     }
   }
 
@@ -134,7 +137,7 @@ class BulbBody extends Component {
     const { lightOn } = this.state;
 
     return (
-      <div className='animated swing'>
+      <div id='lightbulbAnimationContainer'>
         <div className='lightbulb-container'>
           <div style={ { display: lightOn ? 'block' : 'none' } } className='lightbulb-shadow'></div>
           <img src={ lightOn ? lightbulbOn : lightbulbOff } className='lightbulb' style={ { height: '90px' } } alt="lightbulb"/>
