@@ -42,6 +42,7 @@ class BulbBody extends Component {
       lightOn: false,
       tooltipCounter: 0,
       doneTyping: false,
+      usersConnected: undefined,
       tooltipMessages: [
         <span>
           This is a shared lightbulb, feel free to turn it <b>on</b> or <b>off</b>
@@ -177,22 +178,30 @@ class BulbBody extends Component {
     );
   }
 
-  renderTooltip = () => (
-    <div>
-      <br />
-      <Fieldset
-        label={ <img src={ questionIcon } style={ { height: '20px' } } alt="question mark"/> }
-      >
-        <div className='lightbulb-tips'>
-          { this.renderSpeechBubble() }
-        </div>
-      </Fieldset>
-    </div>
-  )
+  renderTooltip = () => {
+    const { tooltipCounter, tooltipMessages } = this.state;
+
+    if (tooltipCounter >= tooltipMessages.length) {
+      return null;
+    }
+
+    return (
+      <div>
+        <br />
+        <Fieldset
+          label={ <img src={ questionIcon } style={ { height: '20px' } } alt="question mark"/> }
+        >
+          <div className='lightbulb-tips'>
+            { this.renderSpeechBubble() }
+          </div>
+        </Fieldset>
+      </div>
+    );
+  }
 
   render() {
     const {
-      lightOn, websocketOpen, tooltipCounter, tooltipMessages,
+      lightOn, websocketOpen,
     } = this.state;
 
     return (
@@ -223,7 +232,7 @@ class BulbBody extends Component {
               ><b>O</b></Button>
             </div>
           </Cutout>
-          { tooltipCounter >= tooltipMessages.length ? null : this.renderTooltip() }
+          { this.renderTooltip() }
         </div>
       </React.Fragment>
     );
