@@ -14,6 +14,7 @@ import configUrls from '../../resources/config-urls.json';
 
 import lightbulbIcon from '../../resources/icons/lightbulb.gif';
 
+import usersIcon from '../../resources/icons/users.gif';
 import questionIcon from '../../resources/icons/question-mark.gif';
 import lightbulbOn from '../../resources/images/lightbulb/bulb-on.png';
 import lightbulbOff from '../../resources/images/lightbulb/bulb-off.png';
@@ -45,7 +46,7 @@ class BulbBody extends Component {
       usersConnected: undefined,
       tooltipMessages: [
         <span>
-          This is a shared lightbulb, feel free to turn it <b>on</b> or <b>off</b>
+          this is a shared lightbulb, feel free to turn it <b>on</b> and <b>off</b>
         </span>,
         <span>
           you might see other people flick the switch while you keep the window open
@@ -98,7 +99,6 @@ class BulbBody extends Component {
 
   onOpen = () => {
     this.setState({ websocketOpen: true });
-    this.doSend('USERS');
   }
 
   onClose = () => {
@@ -147,7 +147,7 @@ class BulbBody extends Component {
     );
   }
 
-  increaseSpeechCounter = () => {
+  increaseTipCounter = () => {
     this.setState({ tooltipCounter: this.state.tooltipCounter + 1 });
     this.setState({ doneTyping: false });
   }
@@ -158,7 +158,7 @@ class BulbBody extends Component {
     this.setState({ doneTyping: true });
 
     if (tooltipCounter < tooltipMessages.length) {
-      this.speechCounterTimeout = setTimeout(this.increaseSpeechCounter, 3000);
+      this.speechCounterTimeout = setTimeout(this.increaseTipCounter, 3000);
     }
   }
 
@@ -178,8 +178,35 @@ class BulbBody extends Component {
     );
   }
 
+  hideUsersConnected = () => {
+    this.setState({ usersConnected: undefined });
+  }
+
   renderTooltip = () => {
-    const { tooltipCounter, tooltipMessages } = this.state;
+    const { tooltipCounter, tooltipMessages, usersConnected } = this.state;
+
+    if (usersConnected !== undefined && tooltipCounter >= tooltipMessages.length) {
+      return (
+        <div>
+          <br />
+          <Fieldset
+            label={ <img src={ usersIcon } style={ { height: '20px' } } alt="users"/> }
+          >
+            <div className='lightbulb-tips'>
+              <Typist
+                avgTypingDelay={ 25 }
+                cursor={ { show: false } }
+                onTypingDone={ () => {
+                  this.speechCounterTimeout = setTimeout(this.hideUsersConnected, 3000);
+                } }
+              >
+                people connected: { usersConnected }
+              </Typist>
+            </div>
+          </Fieldset>
+        </div>
+      );
+    }
 
     if (tooltipCounter >= tooltipMessages.length) {
       return null;
