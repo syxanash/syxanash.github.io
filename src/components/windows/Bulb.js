@@ -39,6 +39,9 @@ class BulbBody extends Component {
 
     this.pingInterval = 30;
     this.checkInterval = 10;
+    this.safetyClickInterval = 150;
+
+    this.defaultFavicon = document.querySelector('link[rel~=\'icon\']').href;
 
     this.state = {
       websocketOpen: false,
@@ -75,9 +78,23 @@ class BulbBody extends Component {
     clearTimeout(this.speechCounterTimeout);
     clearTimeout(this.safetyTimer);
 
+    this.changeFavIcon(this.defaultFavicon);
+
     if (!this.state.brokenBulb) {
       this.disconnectWebsocket();
     }
+  }
+
+  changeFavIcon = (faviconImage) => {
+    let link = document.querySelector('link[rel~=\'icon\']');
+
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'icon';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    }
+
+    link.href = faviconImage;
   }
 
   checkConnection = () => {
@@ -141,6 +158,7 @@ class BulbBody extends Component {
         ? 'animated swing'
         : '';
 
+      this.changeFavIcon(lightOn ? lightbulbOn : lightbulbOff);
       this.setState({ lightOn });
     }
   }
@@ -266,12 +284,13 @@ class BulbBody extends Component {
         sessionStorage.setItem('brokenBulb', JSON.stringify('true'));
         alert('you broke the lightbulb!');
         this.disconnectWebsocket();
+        this.changeFavIcon(this.defaultFavicon);
         this.setState({ brokenBulb: true, websocketOpen: false });
       }
     } else {
       this.doSend('FLICK');
       this.setState({ pressedButton: true });
-      this.safetyTimer = setTimeout(this.checkSafety, 200);
+      this.safetyTimer = setTimeout(this.checkSafety, this.safetyClickInterval);
     }
   }
 
