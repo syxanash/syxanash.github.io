@@ -8,6 +8,8 @@ import {
 import $ from 'jquery';
 import Typist from 'react-typist';
 
+import SoundEffects from '../additional/SoundEffects';
+
 import './Bulb.css';
 
 import configUrls from '../../resources/config-urls.json';
@@ -41,14 +43,13 @@ class BulbBody extends Component {
     this.checkInterval = 10;
     this.spamClickInterval = 150;
 
-    this.defaultFavicon = document.querySelector('link[rel~=\'icon\']').href;
-
     this.state = {
       websocketOpen: false,
       lightOn: false,
       tooltipCounter: 0,
       doneTyping: false,
       usersConnected: undefined,
+      showUsersField: false,
       clickWarnings: 0,
       brokenBulb: !!JSON.parse(localStorage.getItem('brokenBulb')),
       pressedButton: false,
@@ -130,11 +131,18 @@ class BulbBody extends Component {
   }
 
   onMessage = (evt) => {
+    const { usersConnected } = this.state;
+
     const foundUsersMatch = evt.data.match(/^USERS:(.*?)$/);
     const bulbStatusMatch = evt.data.match(/^BULB:(.*?)$/);
 
     if (foundUsersMatch !== null) {
-      this.setState({ usersConnected: foundUsersMatch[1] });
+      this.setState({ usersConnected: foundUsersMatch[1], showUsersField: true });
+
+      if (foundUsersMatch[1] > usersConnected) {
+        SoundEffects.userOnline.load();
+        SoundEffects.userOnline.play();
+      }
     }
 
     if (bulbStatusMatch !== null) {
@@ -211,13 +219,15 @@ class BulbBody extends Component {
   }
 
   hideUsersConnected = () => {
-    this.setState({ usersConnected: undefined });
+    this.setState({ showUsersField: false });
   }
 
   renderTooltip = () => {
-    const { tooltipCounter, tooltipMessages, usersConnected } = this.state;
+    const {
+      tooltipCounter, tooltipMessages, showUsersField, usersConnected,
+    } = this.state;
 
-    if (usersConnected !== undefined && tooltipCounter >= tooltipMessages.length) {
+    if (showUsersField && tooltipCounter >= tooltipMessages.length) {
       return (
         <React.Fragment>
           <br />
