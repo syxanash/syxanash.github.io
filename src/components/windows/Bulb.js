@@ -79,21 +79,8 @@ class BulbBody extends Component {
     clearTimeout(this.safetyTimer);
 
     if (!this.state.brokenBulb) {
-      this.changeFavIcon(this.defaultFavicon);
       this.disconnectWebsocket();
     }
-  }
-
-  changeFavIcon = (faviconImage) => {
-    let link = document.querySelector('link[rel~=\'icon\']');
-
-    if (!link) {
-      link = document.createElement('link');
-      link.rel = 'icon';
-      document.getElementsByTagName('head')[0].appendChild(link);
-    }
-
-    link.href = faviconImage;
   }
 
   checkConnection = () => {
@@ -161,7 +148,6 @@ class BulbBody extends Component {
           });
       }
 
-      this.changeFavIcon(lightOn ? lightbulbOn : lightbulbOff);
       this.setState({ lightOn });
     }
   }
@@ -286,7 +272,6 @@ class BulbBody extends Component {
         localStorage.setItem('brokenBulb', JSON.stringify('true'));
         alert('you broke the lightbulb!');
         this.disconnectWebsocket();
-        this.changeFavIcon(this.defaultFavicon);
         this.setState({ brokenBulb: true, websocketOpen: false });
       } else {
         alert('slow down!');
