@@ -10,6 +10,19 @@
   box-shadow: 0px 0px 100px 55px rgba(255,220,0,1);
 }
 
+.broken-lightbulb-shadow {
+  position: absolute;
+  width: 37px;
+  height: 37px;
+  left: 26px;
+  top: 29px;
+  border-radius:50%;
+  -webkit-box-shadow: 0px 0px 100px 55px rgb(255, 94, 0);
+  -moz-box-shadow: 0px 0px 100px 55px rgb(255, 94, 0);
+  box-shadow: 0px 0px 100px 55px rgb(255, 94, 0);
+  animation: flicker 1000ms linear infinite;
+}
+
 .lightbulb {
   pointer-events: none;
   position: absolute;
