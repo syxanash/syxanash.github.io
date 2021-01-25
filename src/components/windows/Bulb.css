@@ -1,0 +1,51 @@
+.lightbulb-shadow {
+  position: absolute;
+  width: 37px;
+  height: 37px;
+  left: 26px;
+  top: 29px;
+  border-radius:50%;
+  -webkit-box-shadow: 0px 0px 100px 55px rgba(255,220,0,1);
+  -moz-box-shadow: 0px 0px 100px 55px rgba(255,220,0,1);
+  box-shadow: 0px 0px 100px 55px rgba(255,220,0,1);
+}
+
+.broken-lightbulb-shadow {
+  position: absolute;
+  width: 37px;
+  height: 37px;
+  left: 26px;
+  top: 29px;
+  border-radius:50%;
+  -webkit-box-shadow: 0px 0px 100px 55px rgb(255, 94, 0);
+  -moz-box-shadow: 0px 0px 100px 55px rgb(255, 94, 0);
+  box-shadow: 0px 0px 100px 55px rgb(255, 94, 0);
+  animation: flicker 1000ms linear infinite;
+}
+
+.lightbulb {
+  pointer-events: none;
+  position: absolute;
+}
+
+.lightbulb-container {
+  position: absolute;
+}
+
+.bulb-buttons {
+  width: 50%;
+}
+
+.bulb-cut-out {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+.lightbulb-tips {
+  width: 100px;
+  margin-top: -5px;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: -10px;
+}

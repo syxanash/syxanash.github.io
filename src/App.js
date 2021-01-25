@@ -324,7 +324,9 @@ class App extends Component {
     this.activateScreenSaver = true;
 
     this.screenSaverTimeout = setTimeout(() => {
-      if (!this.isInSpecialState() && this.activateScreenSaver) {
+      if (!this.isInSpecialState()
+        && this.activateScreenSaver
+        && !this.isWindowOpened('bulb')) {
         this.activateScreenSaver = false;
         this.setState({ screenSaverMode: true });
       }
