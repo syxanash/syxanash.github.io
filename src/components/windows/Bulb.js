@@ -114,7 +114,7 @@ class BulbBody extends Component {
   }
 
   sendPing = () => {
-    this.doSend('PING');
+    this.doSend('USERS');
   }
 
   onOpen = () => {
