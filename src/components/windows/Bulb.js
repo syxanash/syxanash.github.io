@@ -18,6 +18,7 @@ import usersIcon from '../../resources/icons/users.gif';
 import questionIcon from '../../resources/icons/question-mark.gif';
 import lightbulbOn from '../../resources/images/lightbulb/bulb-on.png';
 import lightbulbOff from '../../resources/images/lightbulb/bulb-off.png';
+import lightbulbBroken from '../../resources/images/lightbulb/bulb-broken.png';
 
 class BulbHeader extends Component {
   render = () => (
@@ -34,6 +35,7 @@ class BulbBody extends Component {
     this.websocketClient = undefined;
     this.keepAliveInterval = undefined;
     this.speechCounterTimeout = undefined;
+    this.safetyTimer = undefined;
 
     this.pingInterval = 30;
     this.checkInterval = 10;
@@ -44,6 +46,9 @@ class BulbBody extends Component {
       tooltipCounter: 0,
       doneTyping: false,
       usersConnected: undefined,
+      clickWarnings: 0,
+      brokenBulb: !!JSON.parse(sessionStorage.getItem('brokenBulb')),
+      pressedButton: false,
       tooltipMessages: [
         <span>
           this is a shared lightbulb, feel free to turn it <b>on</b> and <b>off</b>
@@ -56,30 +61,42 @@ class BulbBody extends Component {
   }
 
   componentDidMount() {
-    this.setupWebsocket();
+    const { brokenBulb } = this.state;
 
-    this.keepAliveInterval = setInterval(this.sendPing, this.pingInterval * 1000);
-    this.checkConnectionInterval = setInterval(this.checkConnection, this.checkInterval * 1000);
+    if (!brokenBulb) {
+      this.setupWebsocket();
+
+      this.keepAliveInterval = setInterval(this.sendPing, this.pingInterval * 1000);
+      this.checkConnectionInterval = setInterval(this.checkConnection, this.checkInterval * 1000);
+    }
   }
 
   componentWillUnmount = () => {
-    if (this.websocketClient) {
-      this.websocketClient.close();
-    }
-
-    clearInterval(this.keepAliveInterval);
-    clearInterval(this.checkConnectionInterval);
     clearTimeout(this.speechCounterTimeout);
+    clearTimeout(this.safetyTimer);
 
-    this.websocketClient.removeEventListener('open', this.onOpen);
-    this.websocketClient.removeEventListener('message', this.onMessage);
-    this.websocketClient.removeEventListener('error', this.onError);
+    if (!this.state.brokenBulb) {
+      this.disconnectWebsocket();
+    }
   }
 
   checkConnection = () => {
     if (this.websocketClient.readyState === WebSocket.CLOSED) {
       this.setupWebsocket();
     }
+  }
+
+  disconnectWebsocket = () => {
+    if (this.websocketClient) {
+      this.websocketClient.close();
+    }
+
+    clearInterval(this.keepAliveInterval);
+    clearInterval(this.checkConnectionInterval);
+
+    this.websocketClient.removeEventListener('open', this.onOpen);
+    this.websocketClient.removeEventListener('message', this.onMessage);
+    this.websocketClient.removeEventListener('error', this.onError);
   }
 
   setupWebsocket = () => {
@@ -135,13 +152,21 @@ class BulbBody extends Component {
   }
 
   renderLightBulbObject = () => {
-    const { lightOn } = this.state;
+    const { lightOn, brokenBulb } = this.state;
+
+    const bulbImage = brokenBulb
+      ? <img src={ lightbulbBroken } className='lightbulb' style={ { height: '90px' } } alt="broken"/>
+      : <img src={ lightOn ? lightbulbOn : lightbulbOff } className='lightbulb' style={ { height: '90px' } } alt="lightbulb"/>;
+
+    const bulbShadow = brokenBulb
+      ? <div className='broken-lightbulb-shadow'></div>
+      : <div style={ { display: lightOn ? 'block' : 'none' } } className='lightbulb-shadow'></div>;
 
     return (
       <div id='lightbulbAnimationContainer'>
         <div className='lightbulb-container'>
-          <div style={ { display: lightOn ? 'block' : 'none' } } className='lightbulb-shadow'></div>
-          <img src={ lightOn ? lightbulbOn : lightbulbOff } className='lightbulb' style={ { height: '90px' } } alt="lightbulb"/>
+          { bulbShadow }
+          { bulbImage }
         </div>
       </div>
     );
@@ -187,7 +212,7 @@ class BulbBody extends Component {
 
     if (usersConnected !== undefined && tooltipCounter >= tooltipMessages.length) {
       return (
-        <div>
+        <React.Fragment>
           <br />
           <Fieldset
             label={ <img src={ usersIcon } style={ { height: '20px' } } alt="users"/> }
@@ -204,7 +229,7 @@ class BulbBody extends Component {
               </Typist>
             </div>
           </Fieldset>
-        </div>
+        </React.Fragment>
       );
     }
 
@@ -213,7 +238,7 @@ class BulbBody extends Component {
     }
 
     return (
-      <div>
+      <React.Fragment>
         <br />
         <Fieldset
           label={ <img src={ questionIcon } style={ { height: '20px' } } alt="question mark"/> }
@@ -222,20 +247,44 @@ class BulbBody extends Component {
             { this.renderSpeechBubble() }
           </div>
         </Fieldset>
-      </div>
+      </React.Fragment>
     );
+  }
+
+  checkSafety = () => {
+    this.setState({ pressedButton: false });
+  }
+
+  sendFlick = () => {
+    const { pressedButton, clickWarnings } = this.state;
+
+    if (pressedButton === true) {
+      alert('slow down!');
+      this.setState({ clickWarnings: clickWarnings + 1 });
+
+      if (clickWarnings + 1 >= 3) {
+        sessionStorage.setItem('brokenBulb', JSON.stringify('true'));
+        alert('you broke the lightbulb!');
+        this.disconnectWebsocket();
+        this.setState({ brokenBulb: true, websocketOpen: false });
+      }
+    } else {
+      this.doSend('FLICK');
+      this.setState({ pressedButton: true });
+      this.safetyTimer = setTimeout(this.checkSafety, 200);
+    }
   }
 
   render() {
     const {
-      lightOn, websocketOpen,
+      lightOn, websocketOpen, brokenBulb,
     } = this.state;
 
     return (
       <React.Fragment>
         <div>
           <Fieldset style={ { height: '80px', width: '90px', textAlign: 'center' } }>
-            { websocketOpen
+            { websocketOpen || brokenBulb
               ? this.renderLightBulbObject()
               : <Hourglass size={ 48 } style={ { paddingTop: '15px' } } />
             }
@@ -244,7 +293,7 @@ class BulbBody extends Component {
           <Cutout className='bulb-cut-out'>
             <div className='bulb-buttons'>
               <Button square
-                onClick={ () => { this.doSend('FLICK'); } }
+                onClick={ this.sendFlick }
                 active={ websocketOpen && lightOn }
                 disabled={ !websocketOpen || lightOn }
                 fullWidth
@@ -252,14 +301,14 @@ class BulbBody extends Component {
             </div>
             <div className='bulb-buttons'>
               <Button square
-                onClick={ () => { this.doSend('FLICK'); } }
+                onClick={ this.sendFlick }
                 active={ websocketOpen && !lightOn }
                 disabled={ !websocketOpen || !lightOn }
                 fullWidth
               ><b>O</b></Button>
             </div>
           </Cutout>
-          { this.renderTooltip() }
+          { brokenBulb ? null : this.renderTooltip() }
         </div>
       </React.Fragment>
     );
