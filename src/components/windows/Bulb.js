@@ -6,6 +6,8 @@ import {
   Hourglass,
 } from 'react95';
 
+import $ from 'jquery';
+
 import Typist from 'react-typist';
 
 import './Bulb.css';
@@ -50,7 +52,7 @@ class BulbBody extends Component {
       doneTyping: false,
       usersConnected: undefined,
       clickWarnings: 0,
-      brokenBulb: !!JSON.parse(sessionStorage.getItem('brokenBulb')),
+      brokenBulb: !!JSON.parse(localStorage.getItem('brokenBulb')),
       pressedButton: false,
       tooltipMessages: [
         <span>
@@ -154,9 +156,13 @@ class BulbBody extends Component {
     if (bulbStatusMatch !== null) {
       const lightOn = bulbStatusMatch[1] === '1';
 
-      document.getElementById('lightbulbAnimationContainer').className = lightOn
-        ? 'animated swing'
-        : '';
+      if (lightOn) {
+        $('#lightbulbAnimationContainer')
+          .addClass('animated swing fast')
+          .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () => {
+            $('#lightbulbAnimationContainer').removeClass();
+          });
+      }
 
       this.changeFavIcon(lightOn ? lightbulbOn : lightbulbOff);
       this.setState({ lightOn });
@@ -281,7 +287,7 @@ class BulbBody extends Component {
       this.setState({ clickWarnings: clickWarnings + 1 });
 
       if (clickWarnings + 1 >= 3) {
-        sessionStorage.setItem('brokenBulb', JSON.stringify('true'));
+        localStorage.setItem('brokenBulb', JSON.stringify('true'));
         alert('you broke the lightbulb!');
         this.disconnectWebsocket();
         this.changeFavIcon(this.defaultFavicon);
