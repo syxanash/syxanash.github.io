@@ -23,7 +23,7 @@ import lightbulbBroken from '../../resources/images/lightbulb/bulb-broken.png';
 class BulbHeader extends Component {
   render = () => (
     <span>
-      <img src={ lightbulbIcon } alt='main icon' style={ { height: '15px' } }/> Lite Bulb
+      <img src={ lightbulbIcon } alt='main icon' style={ { height: '15px' } }/> Lite Bulb (Beta)
     </span>
   )
 }
