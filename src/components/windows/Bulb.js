@@ -5,9 +5,7 @@ import {
   Fieldset,
   Hourglass,
 } from 'react95';
-
 import $ from 'jquery';
-
 import Typist from 'react-typist';
 
 import './Bulb.css';
@@ -41,7 +39,7 @@ class BulbBody extends Component {
 
     this.pingInterval = 30;
     this.checkInterval = 10;
-    this.safetyClickInterval = 150;
+    this.spamClickInterval = 150;
 
     this.defaultFavicon = document.querySelector('link[rel~=\'icon\']').href;
 
@@ -59,7 +57,7 @@ class BulbBody extends Component {
           this is a shared lightbulb, feel free to turn it <b>on</b> and <b>off</b>
         </span>,
         <span>
-          you might see other people flick the switch while you keep the window open
+          you might see other people flick the switch while you keep the window open!
         </span>,
       ],
     };
@@ -80,9 +78,8 @@ class BulbBody extends Component {
     clearTimeout(this.speechCounterTimeout);
     clearTimeout(this.safetyTimer);
 
-    this.changeFavIcon(this.defaultFavicon);
-
     if (!this.state.brokenBulb) {
+      this.changeFavIcon(this.defaultFavicon);
       this.disconnectWebsocket();
     }
   }
@@ -211,7 +208,7 @@ class BulbBody extends Component {
     }
   }
 
-  renderSpeechBubble = () => {
+  renderTypedText = () => {
     const { tooltipCounter, doneTyping, tooltipMessages } = this.state;
 
     return (
@@ -268,14 +265,14 @@ class BulbBody extends Component {
           label={ <img src={ questionIcon } style={ { height: '20px' } } alt="question mark"/> }
         >
           <div className='lightbulb-tips'>
-            { this.renderSpeechBubble() }
+            { this.renderTypedText() }
           </div>
         </Fieldset>
       </React.Fragment>
     );
   }
 
-  checkSafety = () => {
+  spamChecker = () => {
     this.setState({ pressedButton: false });
   }
 
@@ -283,7 +280,6 @@ class BulbBody extends Component {
     const { pressedButton, clickWarnings } = this.state;
 
     if (pressedButton === true) {
-      alert('slow down!');
       this.setState({ clickWarnings: clickWarnings + 1 });
 
       if (clickWarnings + 1 >= 3) {
@@ -292,11 +288,13 @@ class BulbBody extends Component {
         this.disconnectWebsocket();
         this.changeFavIcon(this.defaultFavicon);
         this.setState({ brokenBulb: true, websocketOpen: false });
+      } else {
+        alert('slow down!');
       }
     } else {
       this.doSend('FLICK');
       this.setState({ pressedButton: true });
-      this.safetyTimer = setTimeout(this.checkSafety, this.safetyClickInterval);
+      this.safetyTimer = setTimeout(this.spamChecker, this.spamClickInterval);
     }
   }
 
@@ -307,34 +305,32 @@ class BulbBody extends Component {
 
     return (
       <React.Fragment>
-        <div>
-          <Fieldset style={ { height: '80px', width: '90px', textAlign: 'center' } }>
-            { websocketOpen || brokenBulb
-              ? this.renderLightBulbObject()
-              : <Hourglass size={ 48 } style={ { paddingTop: '15px' } } />
-            }
-          </Fieldset>
-          <br />
-          <Cutout className='bulb-cut-out'>
-            <div className='bulb-buttons'>
-              <Button square
-                onClick={ this.sendFlick }
-                active={ websocketOpen && lightOn }
-                disabled={ !websocketOpen || lightOn }
-                fullWidth
-              ><b>I</b></Button>
-            </div>
-            <div className='bulb-buttons'>
-              <Button square
-                onClick={ this.sendFlick }
-                active={ websocketOpen && !lightOn }
-                disabled={ !websocketOpen || !lightOn }
-                fullWidth
-              ><b>O</b></Button>
-            </div>
-          </Cutout>
-          { brokenBulb ? null : this.renderTooltip() }
-        </div>
+        <Fieldset style={ { height: '80px', width: '90px', textAlign: 'center' } }>
+          { websocketOpen || brokenBulb
+            ? this.renderLightBulbObject()
+            : <Hourglass size={ 48 } style={ { paddingTop: '15px' } } />
+          }
+        </Fieldset>
+        <br />
+        <Cutout className='bulb-cut-out'>
+          <div className='bulb-buttons'>
+            <Button square
+              onClick={ this.sendFlick }
+              active={ websocketOpen && lightOn }
+              disabled={ !websocketOpen || lightOn }
+              fullWidth
+            ><b>I</b></Button>
+          </div>
+          <div className='bulb-buttons'>
+            <Button square
+              onClick={ this.sendFlick }
+              active={ websocketOpen && !lightOn }
+              disabled={ !websocketOpen || !lightOn }
+              fullWidth
+            ><b>O</b></Button>
+          </div>
+        </Cutout>
+        { brokenBulb ? null : this.renderTooltip() }
       </React.Fragment>
     );
   }
