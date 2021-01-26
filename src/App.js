@@ -64,6 +64,7 @@ class App extends Component {
       stoppedWindowProgram: undefined,
       isBrokenScreen: false,
       mainTheme: PippoTheme,
+      mainWindowName: 'main',
       windowsList: WindowsList(),
     };
   }
@@ -106,7 +107,7 @@ class App extends Component {
         />;
       });
 
-    const currentPage = _.last(window.location.href.split('/'));
+    const currentPage = this.getFullscreenWindowName();
     const pageTheme = _.get(windowsList, `${currentPage}.windowTheme`, PippoTheme);
 
     this.setState({
@@ -318,6 +319,11 @@ class App extends Component {
     this.setState({ poweredOff: true });
   }
 
+  getFullscreenWindowName = () => {
+    const currentWindow = _.last(window.location.href.split('/'));
+    return _.isEmpty(currentWindow) ? this.state.mainWindowName : currentWindow;
+  }
+
   setScreenSaver = () => {
     this.mouseMovingCounter = 0;
 
@@ -326,7 +332,8 @@ class App extends Component {
     this.screenSaverTimeout = setTimeout(() => {
       if (!this.isInSpecialState()
         && this.activateScreenSaver
-        && !this.isWindowOpened('bulb')) {
+        && !this.isWindowOpened('bulb')
+        && this.getFullscreenWindowName() !== 'bulb') {
         this.activateScreenSaver = false;
         this.setState({ screenSaverMode: true });
       }
