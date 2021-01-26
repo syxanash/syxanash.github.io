@@ -147,7 +147,7 @@ export default function WindowsList() {
       unfocusedTheme: PippoDistracted,
     },
     bulb: {
-      hasFullScreen: false,
+      hasFullScreen: true,
       tiltAnimation: false,
       canCloseWindow: true,
       opened: false,
