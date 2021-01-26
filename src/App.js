@@ -64,7 +64,6 @@ class App extends Component {
       stoppedWindowProgram: undefined,
       isBrokenScreen: false,
       mainTheme: PippoTheme,
-      mainWindowName: 'main',
       windowsList: WindowsList(),
     };
   }
@@ -107,7 +106,7 @@ class App extends Component {
         />;
       });
 
-    const currentPage = this.getFullscreenWindowName();
+    const currentPage = _.last(window.location.href.split('/'));
     const pageTheme = _.get(windowsList, `${currentPage}.windowTheme`, PippoTheme);
 
     this.setState({
@@ -214,7 +213,8 @@ class App extends Component {
 
   isWindowOpened = (windowName) => {
     const { windowsList } = this.state;
-    return _.get(windowsList, `${windowName}.opened`);
+    return _.get(windowsList, `${windowName}.opened`)
+      || _.last(window.location.href.split('/')) === windowName;
   }
 
   closeTopWindow = (event) => {
@@ -319,21 +319,21 @@ class App extends Component {
     this.setState({ poweredOff: true });
   }
 
-  getFullscreenWindowName = () => {
-    const currentWindow = _.last(window.location.href.split('/'));
-    return _.isEmpty(currentWindow) ? this.state.mainWindowName : currentWindow;
-  }
-
   setScreenSaver = () => {
-    this.mouseMovingCounter = 0;
+    const { windowsList } = this.state;
 
+    this.mouseMovingCounter = 0;
     this.activateScreenSaver = true;
 
     this.screenSaverTimeout = setTimeout(() => {
+      const hasDisabledScreensaverWindows = Object.keys(windowsList)
+        .some(windowName => (
+          !_.get(windowsList, `${windowName}.hasScreensaver`) && this.isWindowOpened(windowName)
+        ));
+
       if (!this.isInSpecialState()
         && this.activateScreenSaver
-        && !this.isWindowOpened('bulb')
-        && this.getFullscreenWindowName() !== 'bulb') {
+        && !hasDisabledScreensaverWindows) {
         this.activateScreenSaver = false;
         this.setState({ screenSaverMode: true });
       }
