@@ -58,7 +58,7 @@ class BulbBody extends Component {
           this is a shared lightbulb, feel free to turn it <b>on</b> and <b>off</b>
         </span>,
         <span>
-          you might see other people flick the switch while you keep the window open!
+          you might see other people flick the switch in real time if you keep the window open!
         </span>,
       ],
     };
