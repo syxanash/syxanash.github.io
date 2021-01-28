@@ -31,8 +31,6 @@ import ThemeContext from './ThemeContext';
 
 import './App.css';
 
-import bgList from './resources/backgrounds-list.json';
-
 const backgroundImages = require.context('./resources/images/backgrounds', true);
 
 class App extends Component {
@@ -51,8 +49,10 @@ class App extends Component {
 
     this.mouseMovingCounter = 0;
 
+    this.wallpapersNumber = 59;
+
     this.state = {
-      bgWallpapers: _.shuffle(bgList),
+      bgWallpapers: _.shuffle([...Array(this.wallpapersNumber).keys()].map(item => `BG_${item + 1}.png`)),
       bgIndex: 0,
       showLoaderPointer: false,
       showXBill: false,
