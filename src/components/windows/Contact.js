@@ -98,7 +98,7 @@ class ContactBody extends Component {
             This is the fingerprint:
           </span>
         </div>
-        <Cutout className='fingerprint-cutout'>
+        <Cutout className='fingerprint-cutout' style={ { padding: '10px' } }>
           <div className='fingerprint-container'>
             <span>{'9324 B79F 563E AB0C 7F60  9368 71DD 7B08 34F2 8CD5'}</span>
           </div>
