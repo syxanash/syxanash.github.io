@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Button, Anchor, Tooltip, Fieldset,
+  Button, Anchor, Tooltip, Fieldset, Cutout,
 } from 'react95';
 
 import contactIcon from '../../resources/icons/contact.gif';
@@ -92,7 +92,17 @@ class ContactBody extends Component {
     </div>
     <div className='contact-info'>
       <Fieldset label={ <img src={ questionIcon } style={ { height: '20px' } } alt="question mark"/> }>
-        You can also contact me using my public key listed above. To know more about PGP click <a target="_blank" rel="noopener noreferrer" href='https://futureboy.us/pgp.html'>here</a>.
+        <div style={ { paddingBottom: '15px' } }>
+          <span>
+            You can also contact me using my public key listed above. To know more about PGP click <a target="_blank" rel="noopener noreferrer" href='https://futureboy.us/pgp.html'>here</a>.
+            This is the fingerprint:
+          </span>
+        </div>
+        <Cutout className='fingerprint-cutout'>
+          <div className='fingerprint-container'>
+            <span>{'9324 B79F 563E AB0C 7F60  9368 71DD 7B08 34F2 8CD5'}</span>
+          </div>
+        </Cutout>
       </Fieldset>
     </div>
   </React.Fragment>)
