@@ -27,7 +27,6 @@ import SoundEffects from './components/additional/SoundEffects';
 import LoaderCursor from './components/additional/LoaderCursor';
 
 import PippoTheme from './themes/PippoTheme';
-import ThemeContext from './ThemeContext';
 
 import './App.css';
 
@@ -69,6 +68,9 @@ class App extends Component {
   }
 
   componentDidMount() {
+    const { windowsList } = this.state;
+
+    window.addEventListener('popstate', this.changeTheme);
     document.addEventListener('keydown', this.closeTopWindow);
     document.addEventListener('keydown', this.stoppedProgram);
     document.addEventListener('keydown', this.konamiHandler);
@@ -81,8 +83,6 @@ class App extends Component {
     document.addEventListener('mousemove', this.onMouseUpdate);
     document.addEventListener('mouseenter', this.onMouseUpdate);
     document.addEventListener('click', this.unsetScreenSaver);
-
-    const windowsList = WindowsList();
 
     const pageBodyRoutes = Object.keys(windowsList)
       .filter(window => _.get(windowsList, `${window}.hasFullScreen`))
@@ -106,11 +106,9 @@ class App extends Component {
         />;
       });
 
-    const currentPage = _.last(window.location.href.split('/'));
-    const pageTheme = _.get(windowsList, `${currentPage}.windowTheme`, PippoTheme);
+    this.changeTheme();
 
     this.setState({
-      mainTheme: pageTheme,
       pageBodyRoutes,
       isBrokenScreen: localStorage.getItem('broken'),
     });
@@ -129,6 +127,7 @@ class App extends Component {
     document.removeEventListener('mouseenter', this.onMouseUpdate);
 
     document.removeEventListener('click', this.unsetScreenSaver);
+    window.removeEventListener('popstate', this.changeTheme);
 
     if (this.screenSaverTimeout) {
       clearTimeout(this.screenSaverTimeout);
@@ -248,8 +247,10 @@ class App extends Component {
     }
   }
 
-  changeTheme = (pageName) => {
-    const windowsList = WindowsList();
+  changeTheme = () => {
+    const { windowsList } = this.state;
+
+    const pageName = _.last(window.location.href.split('/'));
     const newTheme = _.get(windowsList, `${pageName}.windowTheme`, PippoTheme);
 
     this.setState({ mainTheme: newTheme });
@@ -463,30 +464,28 @@ class App extends Component {
                 }
               </style>
             </Helmet>
-            <ThemeContext.Provider value={ { changeTheme: this.changeTheme } }>
-              <ThemeProvider theme={ mainTheme }>
-                <Window shadow={ true } style={ { width: '100%' } }>
-                  <WindowHeader>
-                    <WindowHead
-                      onLeftsideButton={ this.onLeftsideButton }
-                      isLeftsideButtonActive={ this.isWindowOpened('osinfowindow') }
-                      onClickLeft={ this.toggleBody }
-                      onClickMiddle={ this.generateWallpaper }
-                      onRightClick={ this.poweroff }
-                    />
-                  </WindowHeader>
-                  <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
-                    <div id='windows-list'>{this.renderPopupWindows()}</div>
-                    <Switch>
-                      <Route exact path='/' component={ this.renderMainWindow }/>
-                      {pageBodyRoutes}
-                      <Route component={ NotFoundBody }/>
-                    </Switch>
-                    <Copyright onClickWatermark={ this.displayXBill } />
-                  </WindowContent>
-                </Window>
-              </ThemeProvider>
-            </ThemeContext.Provider>
+            <ThemeProvider theme={ mainTheme }>
+              <Window shadow={ true } style={ { width: '100%' } }>
+                <WindowHeader>
+                  <WindowHead
+                    onLeftsideButton={ this.onLeftsideButton }
+                    isLeftsideButtonActive={ this.isWindowOpened('osinfowindow') }
+                    onClickLeft={ this.toggleBody }
+                    onClickMiddle={ this.generateWallpaper }
+                    onRightClick={ this.poweroff }
+                  />
+                </WindowHeader>
+                <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
+                  <div id='windows-list'>{this.renderPopupWindows()}</div>
+                  <Switch>
+                    <Route exact path='/' component={ this.renderMainWindow }/>
+                    {pageBodyRoutes}
+                    <Route component={ NotFoundBody }/>
+                  </Switch>
+                  <Copyright onClickWatermark={ this.displayXBill } />
+                </WindowContent>
+              </Window>
+            </ThemeProvider>
             { displayWindowBody ? null : <TheAgent /> }
           </div>
         </div>

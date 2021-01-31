@@ -10,7 +10,6 @@ import './WindowHead.css';
 import { MainWindowHeader } from './MainWindow';
 import { NotFoundHeader } from './windows/NotFound';
 import WindowsList from './WindowsList';
-import ThemeContext from '../ThemeContext';
 
 class WindowHead extends Component {
   state = {
@@ -76,60 +75,55 @@ class WindowHead extends Component {
       && localStorage.getItem('agentVisited') === null;
 
     return (
-      <ThemeContext.Consumer>
-        {({ changeTheme }) => (
-          <div className='window-header'>
-            <span>
-              <span style={ { marginLeft: '-5px' } }>
-                { isCurrentPathRoot ? this.renderLeftsideButton() : null }
-              </span>
-              <span style={ { marginLeft: '5px' } }>
-                <Switch>
-                  <Route exact path='/' component={ MainWindowHeader }/>
-                  {pageHeaderRoutes}
-                  <Route component={ NotFoundHeader }/>
-                </Switch>
-              </span>
-            </span>
-            <span className='window-title-buttons'>
-              <Button
-                size='sm'
-                square
-                onClick={ this.toggleMinimizeIcon }
-                className={ `${shouldBeat ? 'animated infinite heartBeat delay-1s' : ''}` }
-              >
-                <span style={ { transform: 'translateY(-1px)' } }>{ windowMinimized ? '▼' : '▲'}</span>
-              </Button>
-              <Button
-                size='sm'
-                square
-                onClick={ onClickMiddle }
-                style={ { marginRight: '3px' } }
-              >
-                <span style={ { transform: 'translateY(-1px)' } }>▦</span>
-              </Button>
-              <Button
-                size='sm'
-                square
-                onClick={ () => {
-                  if (isCurrentPathRoot) {
-                    onRightClick();
-                  } else {
-                    changeTheme('/');
-                    this.props.history.push('/');
-                  }
+      <div className='window-header'>
+        <span>
+          <span style={ { marginLeft: '-5px' } }>
+            { isCurrentPathRoot ? this.renderLeftsideButton() : null }
+          </span>
+          <span style={ { marginLeft: '5px' } }>
+            <Switch>
+              <Route exact path='/' component={ MainWindowHeader }/>
+              {pageHeaderRoutes}
+              <Route component={ NotFoundHeader }/>
+            </Switch>
+          </span>
+        </span>
+        <span className='window-title-buttons'>
+          <Button
+            size='sm'
+            square
+            onClick={ this.toggleMinimizeIcon }
+            className={ `${shouldBeat ? 'animated infinite heartBeat delay-1s' : ''}` }
+          >
+            <span style={ { transform: 'translateY(-1px)' } }>{ windowMinimized ? '▼' : '▲'}</span>
+          </Button>
+          <Button
+            size='sm'
+            square
+            onClick={ onClickMiddle }
+            style={ { marginRight: '3px' } }
+          >
+            <span style={ { transform: 'translateY(-1px)' } }>▦</span>
+          </Button>
+          <Button
+            size='sm'
+            square
+            onClick={ () => {
+              if (isCurrentPathRoot) {
+                onRightClick();
+              } else {
+                this.props.history.push('/');
+              }
 
-                  if (windowMinimized) {
-                    this.toggleMinimizeIcon();
-                  }
-                } }
-              >
-                <span style={ { transform: 'translateY(-1px)' } }>{ rightActionButton }</span>
-              </Button>
-            </span>
-          </div>
-        )}
-      </ThemeContext.Consumer>
+              if (windowMinimized) {
+                this.toggleMinimizeIcon();
+              }
+            } }
+          >
+            <span style={ { transform: 'translateY(-1px)' } }>{ rightActionButton }</span>
+          </Button>
+        </span>
+      </div>
     );
   }
 }
