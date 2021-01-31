@@ -8,8 +8,6 @@ import {
 import Draggable from 'react-draggable';
 import 'animate.css';
 
-import ThemeContext from '../ThemeContext';
-
 import './PopupWindow.css';
 
 class PopupWindow extends Component {
@@ -41,35 +39,30 @@ class PopupWindow extends Component {
 
   renderExtraActionButtons = () => {
     const { displayWindowBody } = this.state;
-    const { windowName } = this.props;
+    const { windowName, closeWindow } = this.props;
 
     return (
-      <ThemeContext.Consumer>
-        {({ changeTheme }) => (
-          <React.Fragment>
-            <Button
-              size='sm'
-              square
-              onClick={ this.toggleBody }
-            >
-              <span style={ { transform: 'translateY(-1px)' } }>{displayWindowBody ? '▲' : '▼'}</span>
-            </Button>
-            <Button
-              size='sm'
-              square
-              style={ { marginRight: '3px' } }
-              onClick={ () => {
-                const { history, closeWindow } = this.props;
-                history.push(`/${windowName}`);
-                closeWindow();
-                changeTheme(windowName);
-              } }
-            >
-              <span style={ { transform: 'translateY(-1px)' } }>⌘</span>
-            </Button>
-          </React.Fragment>
-        )}
-      </ThemeContext.Consumer>
+      <React.Fragment>
+        <Button
+          size='sm'
+          square
+          onClick={ this.toggleBody }
+        >
+          <span style={ { transform: 'translateY(-1px)' } }>{displayWindowBody ? '▲' : '▼'}</span>
+        </Button>
+        <Button
+          size='sm'
+          square
+          style={ { marginRight: '3px' } }
+          onClick={ () => {
+            const { history } = this.props;
+            history.push(`/${windowName}`);
+            closeWindow();
+          } }
+        >
+          <span style={ { transform: 'translateY(-1px)' } }>⌘</span>
+        </Button>
+      </React.Fragment>
     );
   }
 
