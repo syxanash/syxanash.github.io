@@ -10,27 +10,22 @@ const SoundEffects = {
   errorSound: new Howl({
     src: [errorSound],
     preload: false,
-    html5: true,
   }),
   poweroffSound: new Howl({
     src: [poweroffSound],
     preload: false,
-    html5: true,
   }),
   loopTVSound: new Howl({
     src: [loopTVSound],
     preload: false,
-    html5: true,
   }),
   rebootSound: new Howl({
     src: [rebootSound],
     preload: false,
-    html5: true,
   }),
   userOnline: new Howl({
     src: [userOnline],
     preload: false,
-    html5: true,
   }),
 };
 
