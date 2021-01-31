@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import 'animate.css';
 
 import TheAgent from './TheAgent';
-import SoundEffects from './SoundEffects';
 
 import easterEggObject from '../../resources/cestino-messages.json';
 
@@ -192,8 +191,6 @@ class BrokenScreen extends Component {
     }
 
     if (!this.bugRefreshInterval) {
-      SoundEffects.errorSound.load();
-      SoundEffects.errorSound.play();
       if (localStorage.getItem('broken') !== 'true') {
         localStorage.removeItem(antiCheatString);
         localStorage.setItem(antiCheatStringSecond, 'AHAH!');
