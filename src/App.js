@@ -300,6 +300,8 @@ class App extends Component {
 
     if (pattern.length === this.konamiKeysEntered) {
       this.konamiKeysEntered = 0;
+      SoundEffects.errorSound.load();
+      SoundEffects.errorSound.play();
       this.openWindow('konamicode');
     }
   }
@@ -317,6 +319,8 @@ class App extends Component {
   }
 
   poweroff = () => {
+    SoundEffects.poweroffSound.load();
+    SoundEffects.poweroffSound.play();
     this.setState({ poweredOff: true });
   }
 
@@ -361,6 +365,8 @@ class App extends Component {
   }
 
   triggerEasterEgg = () => {
+    SoundEffects.errorSound.load();
+    SoundEffects.errorSound.play();
     localStorage.setItem('broken', true);
     this.setState({ isBrokenScreen: true });
   }
