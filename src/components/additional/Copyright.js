@@ -28,7 +28,7 @@ class Copyright extends Component {
 
     return (
       <div id='copyrightWatermark' className='copyright' onClick={ this.setWatermark }>
-        <span>&copy; Simone Marzulli {new Date().getFullYear()}{displayWatermark ? watermarkString : ''}</span>
+        <span>&copy; Simone Marzulli<span className='extra-copyright-info'> {new Date().getFullYear()}{displayWatermark ? watermarkString : ''}</span></span>
       </div>
     );
   }
