@@ -37,8 +37,8 @@ class BlogPopupBody extends Component {
             <p>
             So you better get used to the idea that everything is momentary in here...
             </p>
-            <h2>Please disable that fecking scan line effect</h2>
-            Ahah yes, tell that to the poor 90s chaps.
+            <h2>How to disable the scan-line effect?</h2>
+            Toggle the CRT switch on the bottom right corner on the main window :)
           </div>
         </Fieldset>
         <div className='action-button-container'>
