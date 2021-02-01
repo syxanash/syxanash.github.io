@@ -7,21 +7,21 @@ class CRTSwitch extends Component {
     const { toggle, crtEnabled } = this.props;
 
     return (
-      <div style={ { position: 'absolute', right: '20px', bottom: '2px' } }>
+      <div className='switch-container'>
         <span className='crt-label'>CRT</span>
         <Button
           onClick={ toggle }
           disabled={ crtEnabled }
           active={ crtEnabled }
           size='sm'
-          style={ { opacity: '0.8', height: '14px', width: '23px' } }
+          style={ { height: '14px', width: '23px' } }
         > </Button>
         <Button
           onClick={ toggle }
           active={ !crtEnabled }
           disabled={ !crtEnabled }
           size='sm'
-          style={ { opacity: '0.8', height: '14px', width: '23px' } }
+          style={ { height: '14px', width: '23px' } }
         > </Button>
       </div>
     );
