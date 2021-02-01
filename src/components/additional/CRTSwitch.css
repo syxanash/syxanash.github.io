@@ -1,0 +1,15 @@
+.crt-label {
+  font-size: 12px;
+  position: absolute;
+  right: 50px;
+  bottom: 2px;
+  text-shadow: -1px -1px 1px white;
+  opacity: 0.8;
+  filter: Alpha(opacity=80);
+}
+
+@media only screen and (max-width: 400px)  {
+  .crt-label {
+    font-size: 11px;
+  }
+}

@@ -14,6 +14,7 @@ import PopupWindow from './components/PopupWindow';
 import WindowHead from './components/WindowHead';
 import { NotFoundBody } from './components/windows/NotFound';
 import Copyright from './components/additional/Copyright';
+import CRTSwitch from './components/additional/CRTSwitch';
 import { MainWindowBody } from './components/MainWindow';
 import WindowsList from './components/WindowsList';
 import Poweroff from './components/additional/Poweroff';
@@ -62,6 +63,8 @@ class App extends Component {
       loopTVon: false,
       stoppedWindowProgram: undefined,
       isBrokenScreen: false,
+      crtEnabled: JSON.parse(localStorage.getItem('crt')) === null
+        || !!JSON.parse(localStorage.getItem('crt')),
       mainTheme: PippoTheme,
       windowsList: WindowsList(),
     };
@@ -306,6 +309,12 @@ class App extends Component {
     }
   }
 
+  toggleCRT = () => {
+    const { crtEnabled } = this.state;
+    localStorage.setItem('crt', JSON.stringify(!crtEnabled));
+    this.setState({ crtEnabled: !crtEnabled });
+  }
+
   generateWallpaper = () => {
     const { bgIndex, bgWallpapers } = this.state;
 
@@ -451,7 +460,7 @@ class App extends Component {
 
   render() {
     const {
-      bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes, showLoaderPointer,
+      bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes, showLoaderPointer, crtEnabled,
       poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme, screenSaverMode,
     } = this.state;
 
@@ -489,6 +498,7 @@ class App extends Component {
                     <Route component={ NotFoundBody }/>
                   </Switch>
                   <Copyright onClickWatermark={ this.displayXBill } />
+                  <CRTSwitch toggle={ this.toggleCRT } crtEnabled={ crtEnabled } />
                 </WindowContent>
               </Window>
             </ThemeProvider>
@@ -502,7 +512,7 @@ class App extends Component {
         <StoppedProgram shouldStopWindowing={ stoppedWindowProgram } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
         { showLoaderPointer ? <LoaderCursor /> : null }
-        <div className='scan-lines'></div>
+        { crtEnabled ? <div className='scan-lines'></div> : null }
       </HashRouter>
     );
   }

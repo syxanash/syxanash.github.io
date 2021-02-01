@@ -6,8 +6,16 @@
   filter: Alpha(opacity=60); /* IE8 and earlier */
 }
 
+.extra-copyright-info {
+  display: inline;
+}
+
 @media only screen and (max-width: 400px)  {
   .copyright {
     font-size: 11px;
+  }
+
+  .extra-copyright-info {
+    display: none;
   }
 }
