@@ -16,6 +16,6 @@
   position: absolute;
   right: 20px;
   bottom: 2px;
-  opacity: 0.6;
-  filter: Alpha(opacity=60);
+  opacity: 0.7;
+  filter: Alpha(opacity=70);
 }
