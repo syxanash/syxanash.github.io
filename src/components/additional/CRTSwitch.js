@@ -23,6 +23,7 @@ class CRTSwitch extends Component {
           size='sm'
           style={ { height: '14px', width: '23px' } }
         > </Button>
+        { crtEnabled ? null : <div className='disabled-switch-bg' /> }
       </div>
     );
   }
