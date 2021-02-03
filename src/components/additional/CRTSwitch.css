@@ -19,3 +19,12 @@
   opacity: 0.7;
   filter: Alpha(opacity=70);
 }
+
+.disabled-switch-bg {
+  background-color: orange;
+  position: absolute;
+  width: 16px;
+  height: 7px;
+  right: 3px;
+  bottom: 5px;
+}
