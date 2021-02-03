@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import { Tooltip } from 'react95';
 
 import aboutIcon from '../../resources/icons/about.gif';
 import avatarPicture from '../../resources/images/myavatar.gif';
@@ -54,7 +55,7 @@ class AboutBody extends Component {
         />
         <span style={ { fontWeight: 'bold', fontSize: '1.5em' } }>Hello there!</span>
         <p>
-          I'm <b>Simone</b>, pronounced like `<i>see-mow-nay</i>`<br />
+          I'm <b>Simone</b>, pronounced like <Tooltip text='he/him' delay={ 100 }>`<i>see-mow-nay</i></Tooltip>`<br />
           on the internet my nick name is usually <b>syx</b>.
         </p>
         <p>
