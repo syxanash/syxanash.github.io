@@ -27,4 +27,6 @@
   height: 7px;
   right: 3px;
   bottom: 6px;
+  opacity: 0.8;
+  filter: Alpha(opacity=80);
 }
