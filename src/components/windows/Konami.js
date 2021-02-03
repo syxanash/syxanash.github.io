@@ -14,6 +14,7 @@ import {
 } from 'react95';
 import errorIcon from '../../resources/icons/error.png';
 import './Konami.css';
+import SoundEffects from '../additional/SoundEffects';
 import configUrls from '../../resources/config-urls.json';
 
 class KonamiHeader extends Component {
@@ -23,6 +24,12 @@ class KonamiHeader extends Component {
 class KonamiBody extends Component {
   state = {
     showReport: false,
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  componentDidMount() {
+    SoundEffects.errorSound.load();
+    SoundEffects.errorSound.play();
   }
 
   toggleReport = () => { this.setState({ showReport: true }); }

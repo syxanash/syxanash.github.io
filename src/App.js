@@ -303,8 +303,6 @@ class App extends Component {
 
     if (pattern.length === this.konamiKeysEntered) {
       this.konamiKeysEntered = 0;
-      SoundEffects.errorSound.load();
-      SoundEffects.errorSound.play();
       this.openWindow('konamicode');
     }
   }
