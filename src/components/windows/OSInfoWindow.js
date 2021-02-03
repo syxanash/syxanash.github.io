@@ -25,7 +25,7 @@ class OSInfoWindowBody extends Component {
     <div className='os-title'>
       Pippo OS
     </div>
-    <div className='os-subtitle'>The <code><b>foobar</b></code> Desktop Experience</div>
+    <div className='os-subtitle'>The <span className='code-block'><b>foobar</b></span> Desktop Experience</div>
     <div className='os-version'>Version 1.66.6</div>
     <div className='os-copyright'>
       &trade; and &copy; 2007-{new Date().getFullYear()} Simone's Computer Inc.<br />
