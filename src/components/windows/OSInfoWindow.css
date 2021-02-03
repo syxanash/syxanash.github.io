@@ -21,3 +21,7 @@
   text-shadow: -1px -1px 1px white;
   opacity: 0.6;
 }
+
+.code-block {
+  font-family: 'courier';
+}
