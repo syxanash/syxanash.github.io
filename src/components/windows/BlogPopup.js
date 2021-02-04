@@ -37,6 +37,11 @@ class BlogPopupBody extends Component {
             <p>
             So you better get used to the idea that everything is momentary in here...
             </p>
+            <h2>Can I share this on social media?</h2>
+            <p>
+              Of course you can, but it doesn't make much sense to quote or
+              link to something I said as the post will be replaced eventually.
+            </p>
             <h2>How to disable the scan-line effect?</h2>
             Toggle the CRT switch, bottom right corner on the main window :)
           </div>
