@@ -230,7 +230,7 @@ class BulbBody extends Component {
 
     const textDisplayed = usersConnected > 1
       ? `people connected: ${usersConnected}`
-      : 'you\'re the only at the moment';
+      : 'you\'re the only one at the moment';
 
     if (showUsersField && bottomMessageCounter >= bottomMessages.length) {
       return (
