@@ -4,6 +4,7 @@ import {
   Cutout,
   Fieldset,
   Hourglass,
+  Tooltip,
 } from 'react95';
 import $ from 'jquery';
 import Typist from 'react-typist';
@@ -46,14 +47,14 @@ class BulbBody extends Component {
     this.state = {
       websocketOpen: false,
       lightOn: false,
-      tooltipCounter: 0,
+      bottomMessageCounter: 0,
       doneTyping: false,
       usersConnected: undefined,
       showUsersField: false,
       clickWarnings: 0,
       brokenBulb: !!JSON.parse(localStorage.getItem('brokenBulb')),
       pressedButton: false,
-      tooltipMessages: [
+      bottomMessages: [
         <span>
           this is a shared lightbulb, feel free to turn it <b>on</b> and <b>off</b>
         </span>,
@@ -187,33 +188,33 @@ class BulbBody extends Component {
     );
   }
 
-  increaseTipCounter = () => {
-    this.setState({ tooltipCounter: this.state.tooltipCounter + 1 });
+  increaseMessageCounter = () => {
+    this.setState({ bottomMessageCounter: this.state.bottomMessageCounter + 1 });
     this.setState({ doneTyping: false });
   }
 
   nextMessage = () => {
-    const { tooltipCounter, tooltipMessages } = this.state;
+    const { bottomMessageCounter, bottomMessages } = this.state;
 
     this.setState({ doneTyping: true });
 
-    if (tooltipCounter < tooltipMessages.length) {
-      this.speechCounterTimeout = setTimeout(this.increaseTipCounter, 3000);
+    if (bottomMessageCounter < bottomMessages.length) {
+      this.speechCounterTimeout = setTimeout(this.increaseMessageCounter, 3000);
     }
   }
 
   renderTypedText = () => {
-    const { tooltipCounter, doneTyping, tooltipMessages } = this.state;
+    const { bottomMessageCounter, doneTyping, bottomMessages } = this.state;
 
     return (
       doneTyping
-        ? <span>{ tooltipMessages[tooltipCounter] }</span>
+        ? <span>{ bottomMessages[bottomMessageCounter] }</span>
         : <Typist
           avgTypingDelay={ 25 }
           cursor={ { show: false } }
           onTypingDone={ this.nextMessage }
         >
-          { tooltipMessages[tooltipCounter] }
+          { bottomMessages[bottomMessageCounter] }
         </Typist>
     );
   }
@@ -222,12 +223,16 @@ class BulbBody extends Component {
     this.setState({ showUsersField: false });
   }
 
-  renderTooltip = () => {
+  renderMessagebox = () => {
     const {
-      tooltipCounter, tooltipMessages, showUsersField, usersConnected,
+      bottomMessageCounter, bottomMessages, showUsersField, usersConnected,
     } = this.state;
 
-    if (showUsersField && tooltipCounter >= tooltipMessages.length) {
+    const textDisplayed = usersConnected > 1
+      ? `people connected: ${usersConnected}`
+      : 'you\'re the only at the moment';
+
+    if (showUsersField && bottomMessageCounter >= bottomMessages.length) {
       return (
         <div className='typing-text-container'>
           <Fieldset
@@ -241,7 +246,7 @@ class BulbBody extends Component {
                   this.speechCounterTimeout = setTimeout(this.hideUsersConnected, 5000);
                 } }
               >
-                people connected: { usersConnected }
+                { textDisplayed }
               </Typist>
             </div>
           </Fieldset>
@@ -249,7 +254,7 @@ class BulbBody extends Component {
       );
     }
 
-    if (tooltipCounter >= tooltipMessages.length) {
+    if (bottomMessageCounter >= bottomMessages.length) {
       return null;
     }
 
@@ -291,45 +296,68 @@ class BulbBody extends Component {
     }
   }
 
+  renderLiveDot = () => {
+    const { usersConnected } = this.state;
+
+    const tooltipMessage = usersConnected > 1
+      ? 'someone else is connected'
+      : 'no one is connected';
+
+    const liveDotClass = usersConnected > 1
+      ? 'live-dot-online'
+      : 'live-dot-offline';
+
+    return (
+      <div className='live-dot-tooltip'>
+        <Tooltip text={ tooltipMessage } delay={ 100 }>
+          <div className={ liveDotClass } />
+        </Tooltip>
+      </div>
+    );
+  }
+
   render() {
     const {
       lightOn, websocketOpen, brokenBulb,
     } = this.state;
 
     return (
-      <div className='bulb-window'>
-        <div>
-          <Fieldset style={ { height: '90px', width: '100px', textAlign: 'center' } }>
-            { websocketOpen || brokenBulb
-              ? this.renderLightBulbObject()
-              : <Hourglass size={ 48 } style={ { paddingTop: '20px' } } />
-            }
-          </Fieldset>
+      <React.Fragment>
+        { this.renderLiveDot() }
+        <div className='bulb-window'>
+          <div>
+            <Fieldset style={ { height: '90px', width: '100px', textAlign: 'center' } }>
+              { websocketOpen || brokenBulb
+                ? this.renderLightBulbObject()
+                : <Hourglass size={ 48 } style={ { paddingTop: '20px' } } />
+              }
+            </Fieldset>
+          </div>
+          <div className='switch-buttons-container'>
+            <Cutout className='bulb-buttons-cut-out'>
+              <div className='bulb-buttons'>
+                <Button square
+                  onClick={ this.sendFlick }
+                  active={ websocketOpen && lightOn }
+                  disabled={ !websocketOpen || lightOn }
+                  fullWidth
+                  style={ { height: '42px' } }
+                ><b>I</b></Button>
+              </div>
+              <div className='bulb-buttons'>
+                <Button square
+                  onClick={ this.sendFlick }
+                  active={ websocketOpen && !lightOn }
+                  disabled={ !websocketOpen || !lightOn }
+                  fullWidth
+                  style={ { height: '42px' } }
+                ><b>O</b></Button>
+              </div>
+            </Cutout>
+          </div>
+          { brokenBulb ? null : this.renderMessagebox() }
         </div>
-        <div className='switch-buttons-container'>
-          <Cutout className='bulb-buttons-cut-out'>
-            <div className='bulb-buttons'>
-              <Button square
-                onClick={ this.sendFlick }
-                active={ websocketOpen && lightOn }
-                disabled={ !websocketOpen || lightOn }
-                fullWidth
-                style={ { height: '42px' } }
-              ><b>I</b></Button>
-            </div>
-            <div className='bulb-buttons'>
-              <Button square
-                onClick={ this.sendFlick }
-                active={ websocketOpen && !lightOn }
-                disabled={ !websocketOpen || !lightOn }
-                fullWidth
-                style={ { height: '42px' } }
-              ><b>O</b></Button>
-            </div>
-          </Cutout>
-        </div>
-        { brokenBulb ? null : this.renderTooltip() }
-      </div>
+      </React.Fragment>
     );
   }
 }
