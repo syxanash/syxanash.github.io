@@ -238,7 +238,7 @@ class BulbBody extends Component {
                 avgTypingDelay={ 25 }
                 cursor={ { show: false } }
                 onTypingDone={ () => {
-                  this.speechCounterTimeout = setTimeout(this.hideUsersConnected, 3000);
+                  this.speechCounterTimeout = setTimeout(this.hideUsersConnected, 5000);
                 } }
               >
                 people connected: { usersConnected }
