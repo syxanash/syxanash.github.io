@@ -116,7 +116,7 @@ class BulbBody extends Component {
   }
 
   sendPing = () => {
-    this.doSend('USERS');
+    this.doSend('PING');
   }
 
   onOpen = () => {
@@ -228,26 +228,22 @@ class BulbBody extends Component {
       bottomMessageCounter, bottomMessages, showUsersField, usersConnected,
     } = this.state;
 
-    const textDisplayed = usersConnected > 1
-      ? `people connected: ${usersConnected}`
-      : 'you\'re the only one at the moment';
-
     if (showUsersField && bottomMessageCounter >= bottomMessages.length) {
+      const textDisplayed = usersConnected > 1
+        ? `people connected: ${usersConnected}`
+        : 'you\'re the only one at the moment';
+
+      if (usersConnected <= 1) {
+        this.speechCounterTimeout = setTimeout(this.hideUsersConnected, 5000);
+      }
+
       return (
         <div className='typing-text-container'>
           <Fieldset
             label={ <img src={ usersIcon } style={ { height: '20px' } } alt="users"/> }
           >
-            <div className='lightbulb-tips'>
-              <Typist
-                avgTypingDelay={ 25 }
-                cursor={ { show: false } }
-                onTypingDone={ () => {
-                  this.speechCounterTimeout = setTimeout(this.hideUsersConnected, 5000);
-                } }
-              >
-                { textDisplayed }
-              </Typist>
+            <div className='lightbulb-messages'>
+              <span>{ textDisplayed }</span>
             </div>
           </Fieldset>
         </div>
@@ -263,7 +259,7 @@ class BulbBody extends Component {
         <Fieldset
           label={ <img src={ questionIcon } style={ { height: '20px' } } alt="question mark"/> }
         >
-          <div className='lightbulb-tips'>
+          <div className='lightbulb-messages'>
             { this.renderTypedText() }
           </div>
         </Fieldset>
@@ -300,8 +296,8 @@ class BulbBody extends Component {
     const { usersConnected } = this.state;
 
     const tooltipMessage = usersConnected > 1
-      ? 'someone else is connected'
-      : 'no one is connected';
+      ? 'someone else is online'
+      : 'everyone is offline';
 
     const liveDotClass = usersConnected > 1
       ? 'live-dot-online'
@@ -322,42 +318,40 @@ class BulbBody extends Component {
     } = this.state;
 
     return (
-      <React.Fragment>
-        { this.renderLiveDot() }
-        <div className='bulb-window'>
-          <div>
-            <Fieldset style={ { height: '90px', width: '100px', textAlign: 'center' } }>
-              { websocketOpen || brokenBulb
-                ? this.renderLightBulbObject()
-                : <Hourglass size={ 48 } style={ { paddingTop: '20px' } } />
-              }
-            </Fieldset>
-          </div>
-          <div className='switch-buttons-container'>
-            <Cutout className='bulb-buttons-cut-out'>
-              <div className='bulb-buttons'>
-                <Button square
-                  onClick={ this.sendFlick }
-                  active={ websocketOpen && lightOn }
-                  disabled={ !websocketOpen || lightOn }
-                  fullWidth
-                  style={ { height: '42px' } }
-                ><b>I</b></Button>
-              </div>
-              <div className='bulb-buttons'>
-                <Button square
-                  onClick={ this.sendFlick }
-                  active={ websocketOpen && !lightOn }
-                  disabled={ !websocketOpen || !lightOn }
-                  fullWidth
-                  style={ { height: '42px' } }
-                ><b>O</b></Button>
-              </div>
-            </Cutout>
-          </div>
-          { brokenBulb ? null : this.renderMessagebox() }
+      <div className='bulb-window'>
+        { brokenBulb ? null : this.renderLiveDot() }
+        <div>
+          <Fieldset style={ { height: '90px', width: '100px', textAlign: 'center' } }>
+            { websocketOpen || brokenBulb
+              ? this.renderLightBulbObject()
+              : <Hourglass size={ 48 } style={ { paddingTop: '20px' } } />
+            }
+          </Fieldset>
         </div>
-      </React.Fragment>
+        <div className='switch-buttons-container'>
+          <Cutout className='bulb-buttons-cut-out'>
+            <div className='bulb-buttons'>
+              <Button square
+                onClick={ this.sendFlick }
+                active={ websocketOpen && lightOn }
+                disabled={ !websocketOpen || lightOn }
+                fullWidth
+                style={ { height: '42px' } }
+              ><b>I</b></Button>
+            </div>
+            <div className='bulb-buttons'>
+              <Button square
+                onClick={ this.sendFlick }
+                active={ websocketOpen && !lightOn }
+                disabled={ !websocketOpen || !lightOn }
+                fullWidth
+                style={ { height: '42px' } }
+              ><b>O</b></Button>
+            </div>
+          </Cutout>
+        </div>
+        { brokenBulb ? null : this.renderMessagebox() }
+      </div>
     );
   }
 }
