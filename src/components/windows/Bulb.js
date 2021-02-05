@@ -220,7 +220,7 @@ class BulbBody extends Component {
   }
 
   hideUsersConnected = () => {
-    this.setState({ showUsersField: false });
+    this.setState({ showUsersField: this.state.usersConnected > 1 });
   }
 
   renderMessagebox = () => {
