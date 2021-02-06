@@ -10,6 +10,7 @@ import $ from 'jquery';
 import Typist from 'react-typist';
 
 import SoundEffects from '../additional/SoundEffects';
+import Util from '../Util';
 
 import './Bulb.css';
 
@@ -22,6 +23,7 @@ import questionIcon from '../../resources/icons/question-mark.gif';
 import lightbulbOn from '../../resources/images/lightbulb/bulb-on.png';
 import lightbulbOff from '../../resources/images/lightbulb/bulb-off.png';
 import lightbulbBroken from '../../resources/images/lightbulb/bulb-broken.png';
+import warningIcon from '../../resources/icons/warning.png';
 
 class BulbHeader extends Component {
   render = () => (
@@ -68,7 +70,7 @@ class BulbBody extends Component {
   componentDidMount() {
     const { brokenBulb } = this.state;
 
-    if (!brokenBulb) {
+    if (!brokenBulb && Util.isWebSocketsSupported()) {
       this.setupWebsocket();
 
       this.keepAliveInterval = setInterval(this.sendPing, this.pingInterval * 1000);
@@ -80,7 +82,7 @@ class BulbBody extends Component {
     clearTimeout(this.speechCounterTimeout);
     clearTimeout(this.safetyTimer);
 
-    if (!this.state.brokenBulb) {
+    if (!this.state.brokenBulb && Util.isWebSocketsSupported()) {
       this.disconnectWebsocket();
     }
   }
@@ -316,6 +318,14 @@ class BulbBody extends Component {
     const {
       lightOn, websocketOpen, brokenBulb,
     } = this.state;
+
+
+    if (!Util.isWebSocketsSupported()) {
+      return (<span className='message-container'>
+        <img src={ warningIcon } style={ { height: '52px' } } alt='warning icon' /><h1>Sorry your browser doesn't support WebSocket!</h1>
+      </span>
+      );
+    }
 
     return (
       <div className='bulb-window'>
