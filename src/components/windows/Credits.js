@@ -10,6 +10,7 @@ import licenseText from '../../resources/misc/LICENSE.txt';
 import cookieIcon from '../../resources/icons/cookie.gif';
 import codeAnimationDark from '../../resources/images/code_dark.gif';
 import codeAnimationLight from '../../resources/images/code_light.gif';
+import pizzaSlice from '../../resources/images/slice.gif';
 import blackCursor from '../../resources/icons/pointers/cursor.gif';
 
 import './Credits.css';
@@ -114,7 +115,7 @@ class CreditsBody extends Component {
       </TabBody>
       <div style={ { paddingTop: '15px', textAlign: 'center' } }>
         <Tooltip text={ tooltipMessage } delay={ 100 }>
-          <span role="img" aria-label="pizza">🍕</span>
+          <img src={ pizzaSlice } alt='pizza slice' />
         </Tooltip>
       </div>
     </div>);

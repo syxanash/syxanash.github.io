@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import Draggable from 'react-draggable';
 import {
-  Cutout, Button, Anchor,
+  Cutout, Button, Anchor, Tooltip,
 } from 'react95';
 
 import MainWindowFooter from './additional/Footer';
@@ -21,7 +21,7 @@ import musicIcon from '../resources/icons/music.gif';
 import guestbookIcon from '../resources/icons/guestbook.png';
 import loopTVIcon from '../resources/icons/loopTV.gif';
 import pizzaIcon from '../resources/icons/pizza.gif';
-import unknownIcon from '../resources/icons/unknown.gif';
+import corruptedFileIcon from '../resources/icons/corrupted.gif';
 import lightbulbIcon from '../resources/icons/lightbulb.gif';
 
 import languages from '../resources/languages.json';
@@ -57,7 +57,7 @@ class MainWindowBody extends Component {
     this.randomCaptionInterval = undefined;
 
     this.state = {
-      randomUnknownCaption: 'Recipe',
+      randomCaption: 'Recipe',
       iconsColliding: false,
     };
   }
@@ -85,10 +85,10 @@ class MainWindowBody extends Component {
   }
 
   generateRandomCaption = () => {
-    const { randomUnknownCaption } = this.state;
+    const { randomCaption } = this.state;
 
     this.setState({
-      randomUnknownCaption: Util.replaceRandomCharInWord(randomUnknownCaption),
+      randomCaption: Util.replaceRandomCharInWord(randomCaption),
     });
   }
 
@@ -148,7 +148,7 @@ class MainWindowBody extends Component {
 
   render() {
     const { onClickTV, isWindowOpened } = this.props;
-    const { iconsColliding, randomUnknownCaption } = this.state;
+    const { iconsColliding, randomCaption } = this.state;
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
 
     return (
@@ -230,13 +230,12 @@ class MainWindowBody extends Component {
               <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
             </Button>
             { Util.isWebSocketsSupported() ? this.renderBulbButton() : null }
-            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } }
-              onClick={ () => this.openWindowIfNotOpened('unknown') }
-              active={ isWindowOpened('unknown') }
-            >
-              <img src={ unknownIcon } className='icon' alt="unknown icon"/>
-              <figcaption className='icon-caption'>{ randomUnknownCaption }</figcaption>
-            </Button>
+            <Tooltip text={ 'file corrupted' } delay={ 1000 }>
+              <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } } disabled={ true }>
+                <img src={ corruptedFileIcon } className='icon' alt="corrupted file icon" style={ { filter: 'opacity(50%)' } } />
+                <figcaption className='icon-caption'>{ randomCaption }</figcaption>
+              </Button>
+            </Tooltip>
             <Anchor
               href='https://gist.github.com/syxanash/7b2d135a566cfb2f03dfceba6b34e61a'
               target='_blank'
