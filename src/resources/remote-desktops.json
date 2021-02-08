@@ -368,10 +368,6 @@
 		"url": "https://dayjob.work"
 	},
 	{
-		"name": "Kalil Haddad",
-		"url": "https://kalilhaddad.com"
-	},
-	{
 		"name": "PUBLIC DOMAIN",
 		"url": "https://public---domain.com"
 	},
@@ -386,5 +382,9 @@
 	{
 		"name": "Big Desk Energy",
 		"url": "https://www.bigdeskenergy.com"
+	},
+	{
+		"name": "Github95",
+		"url": "https://github95.now.sh"
 	}
 ]
