@@ -17,6 +17,7 @@ import perottoAvatar from '../../resources/images/avatars/perotto.gif';
 import jobsAvatar from '../../resources/images/avatars/jobs.gif';
 import hashimotoAvatar from '../../resources/images/avatars/hashimoto.gif';
 
+import warningSign from '../../resources/icons/warning.png';
 import guestbookIcon from '../../resources/icons/guestbook.png';
 import './Guestbook.css';
 
@@ -235,7 +236,7 @@ class GuestbookBody extends Component {
       </div>
     </Cutout>
     <div className='bottom-text'>
-      <span role="img" aria-label="warning" className='blink'>⚠️</span> I'm still investigating on the authenticity of some comments. <span role="img" aria-label="warning" className='blink'>⚠️</span>
+      <img src={ warningSign } alt='warning sign' className='blink' style={ { height: '20px' } } /> I'm still investigating on the authenticity of some comments. <img src={ warningSign } alt='warning sign' className='blink' style={ { height: '20px' } } />
     </div>
   </React.Fragment>
   )

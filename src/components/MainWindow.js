@@ -230,7 +230,7 @@ class MainWindowBody extends Component {
               <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
             </Button>
             { Util.isWebSocketsSupported() ? this.renderBulbButton() : null }
-            <Tooltip text={ 'file corrupted' } delay={ 1000 }>
+            <Tooltip text={ 'file corrupted' } delay={ 500 }>
               <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } } disabled={ true }>
                 <img src={ corruptedFileIcon } className='icon' alt="corrupted file icon" style={ { filter: 'opacity(50%)' } } />
                 <figcaption className='icon-caption'>{ randomCaption }</figcaption>
