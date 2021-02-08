@@ -66,7 +66,7 @@ class KonamiBody extends Component {
       </div>
       <Cutout style={ { display: showReport ? 'block' : 'none' } } className='error-cutout'>
         <div className='error-report-space'>
-          <p>Line: 69<br />Error: 'TooManyEasterEggsException' <Anchor href={ `${configUrls.repositoryUrl}/blob/development/src/components/windows/Konami.js` } target="_blank">@ Konami.js</Anchor></p>
+          <p>Line: 69<br />Error: 'TooManyEasterEggsException' <Anchor href={ `${configUrls.repositoryUrl}/blob/development/src/components/windows/Konami.js#L69` } target="_blank">@ Konami.js</Anchor></p>
           <br />
           <br />
         </div>
