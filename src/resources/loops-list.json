@@ -1,7 +1,7 @@
 [
     {
         "img": "prince_start.gif",
-        "description": "208 - Pà posso scendere giù?"
+        "description": "208"
     },
     {
         "img": "prince.gif",
@@ -314,5 +314,13 @@
     {
         "img": "windows-sound-remix.gif",
         "description": "https://www.newgrounds.com/portal/view/163139"
+    },
+    {
+        "img": "skitchin1.gif",
+        "description": "Skitchin'"
+    },
+    {
+        "img": "skitchin2.gif",
+        "description": "Skitchin'"
     }
 ]
