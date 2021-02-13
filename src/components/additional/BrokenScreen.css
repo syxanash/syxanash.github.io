@@ -18,6 +18,30 @@
   animation-iteration-count: infinite;
 }
 
+.greenlines-properties {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+
+  overflow: hidden;
+  pointer-events: none;
+
+  position: absolute;
+  background:rgb(145, 255, 0);
+}
+
+.greenlines-vertical {
+  width:10px;
+  height:5000px;
+  margin-top: -2500px;
+}
+
+
+.greenlines-horizontal {
+  width:5000px;
+  height:10px;
+  margin-left: -2500px;
+}
+
 .flip-image {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
