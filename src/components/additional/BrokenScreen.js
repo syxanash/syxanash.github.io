@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import 'animate.css';
 
 import TheAgent from './TheAgent';
-import Util from '../Util';
 
 import easterEggObject from '../../resources/cestino-messages.json';
 
@@ -29,7 +28,6 @@ class BrokenScreen extends Component {
     this.bugsInterval = 800;
 
     this.state = {
-      mouseCoordinates: undefined,
       randomCircuit: undefined,
       bugsList: [],
       bugsNumber: easterEggObject.brokenScreenMessages.length,
@@ -62,8 +60,6 @@ class BrokenScreen extends Component {
   ));
 
   componentWillUnmount() {
-    document.removeEventListener('mousemove', this.onMouseUpdate);
-
     if (this.bugRefreshInterval) {
       clearInterval(this.bugRefreshInterval);
     }
@@ -78,7 +74,6 @@ class BrokenScreen extends Component {
   }
 
   componentDidMount = () => {
-    document.addEventListener('mousemove', this.onMouseUpdate);
     this.setState({ randomCircuit: this.generateBackgroundCircuit() });
   }
 
@@ -106,15 +101,6 @@ class BrokenScreen extends Component {
         alt='icon'
       />
     </div>));
-  }
-
-  onMouseUpdate = (event) => {
-    this.setState({
-      mouseCoordinates: {
-        x: event.clientX,
-        y: event.clientY,
-      },
-    });
   }
 
   deleteBug = (x, y) => {
@@ -187,29 +173,6 @@ class BrokenScreen extends Component {
     );
   }
 
-  renderGreenLines = () => {
-    const { mouseCoordinates, bugsNumber } = this.state;
-
-    if (mouseCoordinates === undefined || bugsNumber <= 0 || Util.isMobile()) {
-      return null;
-    }
-
-    return (
-      <React.Fragment>
-        <div className='greenlines-properties greenlines-vertical' style={ {
-          top: `${mouseCoordinates.y - 5}px`,
-          left: `${mouseCoordinates.x - 5}px`,
-        } }
-        />
-        <div className='greenlines-properties greenlines-horizontal' style={ {
-          top: `${mouseCoordinates.y - 5}px`,
-          left: `${mouseCoordinates.x - 5}px`,
-        } }
-        />
-      </React.Fragment>
-    );
-  }
-
   render() {
     const { randomCircuit, bugsNumber } = this.state;
     const { isScreenBroken } = this.props;
@@ -268,7 +231,6 @@ class BrokenScreen extends Component {
       </div>
       { this.renderBug() }
       { this.renderExplosion() }
-      { this.renderGreenLines() }
     </React.Fragment>);
   }
 }
