@@ -50,8 +50,6 @@ class CreditsBody extends Component {
         This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>React</a>, if your 'puter is too slow then disable JavaScript you can always use the <i>fallback mode!</i>
         <p>
           The code is <a href={ configUrls.repositoryUrl } target='_blank' rel='noopener noreferrer'>entirely available</a> on GitHub.
-          If you have any bugfix, suggestions, typos
-          feel free to open a pull request!
         </p>
       </div>
       <Tabs value={ activeTab } onChange={ this.handleChangeTab } style={ { paddingTop: '10px' } }>
@@ -97,7 +95,7 @@ class CreditsBody extends Component {
               <li className='list-content'>
                 This site is not affiliated, associated, authorized, endorsed by,
                 or in any way officially connected (except with hyperlinks lol)
-                to the websites listed in the page <b>Links</b>.
+                to the websites listed in the pages <b>Links</b> and <b>Web Desktops</b>.
               </li>
             </ul>
             <ul style={ { display: activeTab === 4 ? 'block' : 'none' } }>
