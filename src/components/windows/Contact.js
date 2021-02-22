@@ -83,7 +83,7 @@ class ContactBody extends Component {
         </Anchor>
       </Tooltip>
       <Tooltip text='Webring' delay={ 100 }>
-        <Anchor href='https://webring.xxiivv.com/#random' target='_blank'>
+        <Anchor href='https://webring.xxiivv.com' target='_blank'>
           <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ webringIcon } style={ { height: '40px' } } alt="webring"/>
           </Button>
