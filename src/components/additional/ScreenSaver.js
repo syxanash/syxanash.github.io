@@ -134,7 +134,7 @@ class ScreenSaver extends Component {
 
     const smilesComponents = allSmiles.map((smile, index) => (
       <div
-        className={ `${index % 2 === 0 ? 'bouncing-animation' : ''}` }
+        className={ `animated zoomIn fast ${index % 2 === 0 ? 'bouncing-animation' : ''}` }
         key={ `ball_${index}` }
         style={ {
           fill: '#fff',
