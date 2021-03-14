@@ -402,5 +402,9 @@
 	{
 		"name": "jQuery Desktop",
 		"url": "https://desktop.sonspring.com"
+	},
+	{
+		"name": "Windows 96",
+		"url": "https://windows96.net"
 	}
 ]
