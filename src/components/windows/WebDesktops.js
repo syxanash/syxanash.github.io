@@ -131,6 +131,10 @@ class WebDesktopsBody extends Component {
   render = () => {
     const { httpsOnlyEnabled, desktopsList, sitesExplored } = this.state;
 
+    const promptMessage = sitesExplored === desktopsList.length
+      ? <span className='header-message-green'>&gt; WOW you explored all { desktopsList.length } sites in the list!<span style={ { paddingLeft: '3px', marginTop: '5px' } } className={ 'blink' }>█</span></span>
+      : <span>&gt; {sitesExplored} of {desktopsList.length} sites explored<span style={ { paddingLeft: '3px', marginTop: '5px' } } className={ 'blink' }>█</span></span>;
+
     return (
       <React.Fragment>
         <div className='toolbar-container'>
@@ -141,20 +145,17 @@ class WebDesktopsBody extends Component {
           </Toolbar>
         </div>
         <div style={ { paddingBottom: '10px' } }>
-          <Fieldset>
-            If you are a fan of websites, web apps and portfolios which
-            resemble desktop graphical user interfaces here is a curated list
-          </Fieldset>
+          <Cutout className='header-message' style={ { padding: '10px' } }>
+            This is a curated list of websites, web apps and portfolios which
+            resemble desktop graphical user interfaces
+            <br /><br />
+            { promptMessage }
+          </Cutout>
           { this.renderMobileMessage() }
         </div>
         <Cutout className='awesome-gui-cutoutbg'>
           <div className='awesome-gui-icons-container'>
             {this.renderAllIcons()}
-          </div>
-        </Cutout>
-        <Cutout>
-          <div className='screen-footer'>
-            <span>{sitesExplored} of {desktopsList.length} sites explored</span>
           </div>
         </Cutout>
       </React.Fragment>
