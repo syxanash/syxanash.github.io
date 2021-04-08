@@ -101,4 +101,19 @@
 .screen-footer {
   padding: 8px;
   text-align: center;
+  position: relative;
+  text-shadow: -1px -1px 1px white;
+}
+
+.progress-content {
+  height: 100%;
+  line-height: 35px;
+
+  position: absolute;
+  
+  top: 0;
+  left: 0;
+  
+  overflow: hidden;
+  background: #9c99c7;
 }

@@ -131,6 +131,8 @@ class WebDesktopsBody extends Component {
   render = () => {
     const { httpsOnlyEnabled, desktopsList, sitesExplored } = this.state;
 
+    const exploredPercentage = Math.floor((sitesExplored * 100) / desktopsList.length);
+
     return (
       <React.Fragment>
         <div className='toolbar-container'>
@@ -152,7 +154,8 @@ class WebDesktopsBody extends Component {
             {this.renderAllIcons()}
           </div>
         </Cutout>
-        <Cutout>
+        <Cutout style={ { backgroundColor: '#c7c7df' } }>
+          <div className='progress-content' style={ { width: `${exploredPercentage}%` } }></div>
           <div className='screen-footer'>
             <span>{sitesExplored} of {desktopsList.length} sites explored</span>
           </div>
