@@ -154,7 +154,7 @@ class WebDesktopsBody extends Component {
             {this.renderAllIcons()}
           </div>
         </Cutout>
-        <Cutout style={ { backgroundColor: '#c7c7df' } }>
+        <Cutout style={ { backgroundColor: '#c7c7df', marginBottom: '3px' } }>
           <div className='progress-content' style={ { width: `${exploredPercentage}%` } }></div>
           <div className='screen-footer'>
             <span>{sitesExplored} of {desktopsList.length} sites explored</span>
