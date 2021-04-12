@@ -495,7 +495,7 @@
     ]
   },
   {
-    "section": "Programming",
+    "section": "misc",
     "links": [
       {
         "url": "http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html",
@@ -536,6 +536,10 @@
       {
         "url": "http://contemporary-home-computing.org",
         "description": "website full of interesting reads and essays"
+      },
+      {
+        "url": "https://suricrasia.online/iceberg/",
+        "description": "interesting collection of computer science topics"
       }
     ]
   }
