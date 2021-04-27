@@ -45,7 +45,7 @@ class App extends Component {
     this.screenSaverTimeout = undefined;
     this.activateScreenSaver = false;
     this.screenSaverTimer = 10;
-    this.screenSaverMovingMouseThreshold = 20;
+    this.screenSaverMovingMouseThreshold = 25;
 
     this.mouseMovingCounter = 0;
 
