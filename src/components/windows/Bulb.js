@@ -55,6 +55,8 @@ class BulbBody extends Component {
       showUsersField: false,
       clickWarnings: 0,
       brokenBulb: !!JSON.parse(localStorage.getItem('brokenBulb')),
+      pressedButtonSpam: false,
+      firstSocketMessage: true,
       pressedButton: false,
       bottomMessages: [
         <span>
@@ -72,6 +74,11 @@ class BulbBody extends Component {
 
     if (!brokenBulb && Util.isWebSocketsSupported()) {
       this.setupWebsocket();
+
+      SoundEffects.switchSound.load();
+      SoundEffects.alienSound.load();
+      SoundEffects.disconnectSound.load();
+      SoundEffects.userOnline.load();
 
       this.keepAliveInterval = setInterval(this.sendPing, this.pingInterval * 1000);
       this.checkConnectionInterval = setInterval(this.checkConnection, this.checkInterval * 1000);
@@ -134,7 +141,7 @@ class BulbBody extends Component {
   }
 
   onMessage = (evt) => {
-    const { usersConnected } = this.state;
+    const { usersConnected, pressedButton, firstSocketMessage } = this.state;
 
     const foundUsersMatch = evt.data.match(/^USERS:(.*?)$/);
     const bulbStatusMatch = evt.data.match(/^BULB:(.*?)$/);
@@ -143,12 +150,19 @@ class BulbBody extends Component {
       this.setState({ usersConnected: foundUsersMatch[1], showUsersField: true });
 
       if (foundUsersMatch[1] > usersConnected) {
-        SoundEffects.userOnline.load();
         SoundEffects.userOnline.play();
+      }
+
+      if (foundUsersMatch[1] < usersConnected) {
+        SoundEffects.disconnectSound.play();
       }
     }
 
     if (bulbStatusMatch !== null) {
+      if (!pressedButton && !firstSocketMessage) {
+        SoundEffects.alienSound.play();
+      }
+
       const lightOn = bulbStatusMatch[1] === '1';
 
       if (lightOn) {
@@ -159,7 +173,7 @@ class BulbBody extends Component {
           });
       }
 
-      this.setState({ lightOn });
+      this.setState({ lightOn, pressedButton: false, firstSocketMessage: false });
     }
   }
 
@@ -270,13 +284,13 @@ class BulbBody extends Component {
   }
 
   spamChecker = () => {
-    this.setState({ pressedButton: false });
+    this.setState({ pressedButtonSpam: false });
   }
 
   sendFlick = () => {
-    const { pressedButton, clickWarnings } = this.state;
+    const { pressedButtonSpam, clickWarnings } = this.state;
 
-    if (pressedButton === true) {
+    if (pressedButtonSpam === true) {
       this.setState({ clickWarnings: clickWarnings + 1 });
 
       if (clickWarnings + 1 >= 3) {
@@ -288,8 +302,11 @@ class BulbBody extends Component {
         alert('slow down!');
       }
     } else {
+      SoundEffects.switchSound.play();
+
       this.doSend('FLICK');
-      this.setState({ pressedButton: true });
+      this.setState({ pressedButtonSpam: true, pressedButton: true });
+
       this.safetyTimer = setTimeout(this.spamChecker, this.spamClickInterval);
     }
   }
