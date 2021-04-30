@@ -213,6 +213,14 @@ class App extends Component {
     this.setState({ windowsList });
   }
 
+  closeAllWindows = () => {
+    const { windowsList } = this.state;
+
+    Object.keys(windowsList).forEach((window) => {
+      this.closeWindow(window);
+    });
+  }
+
   isWindowOpened = (windowName) => {
     const { windowsList } = this.state;
     return _.get(windowsList, `${windowName}.opened`)
@@ -267,6 +275,7 @@ class App extends Component {
     if (((event.ctrlKey && event.key === 'c')
       || (event.ctrlKey && event.key === 'C'))
       && stoppedWindowProgram === undefined && !loopTVon) {
+      this.closeAllWindows();
       this.setState({
         stoppedWindowProgram: !this.isInSpecialState(),
       });
@@ -326,6 +335,8 @@ class App extends Component {
   }
 
   poweroff = () => {
+    this.closeAllWindows();
+
     SoundEffects.poweroffSound.play();
     this.setState({ poweredOff: true });
   }
@@ -372,6 +383,9 @@ class App extends Component {
   triggerEasterEgg = () => {
     SoundEffects.errorSound.load();
     SoundEffects.errorSound.play();
+
+    this.closeAllWindows();
+
     localStorage.setItem('broken', true);
     this.setState({ isBrokenScreen: true });
   }
