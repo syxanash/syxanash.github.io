@@ -10,6 +10,7 @@ import Util from './Util';
 
 import './MainWindow.css';
 
+import SoundEffects from './additional/SoundEffects';
 import aboutIcon from '../resources/icons/about.gif';
 import contactIcon from '../resources/icons/contact.gif';
 import blogIcon from '../resources/icons/blog.gif';
@@ -146,6 +147,10 @@ class MainWindowBody extends Component {
     </Button>);
   }
 
+  loadLoopTVSound = () => {
+    SoundEffects.loopTVSound.load();
+  }
+
   render() {
     const { onClickTV, isWindowOpened } = this.props;
     const { iconsColliding, randomCaption } = this.state;
@@ -163,7 +168,7 @@ class MainWindowBody extends Component {
               <figcaption className='icon-caption'>Cestino</figcaption>
             </Button>
           </div>
-          <div className='first-row-icons'>
+          <div className='first-row-icons' onMouseEnter={ this.loadLoopTVSound }>
             <Draggable
               handle='.handle_icon'
               onDrag={ this.checkCollision }

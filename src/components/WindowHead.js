@@ -5,6 +5,7 @@ import {
   Button,
 } from 'react95';
 import 'animate.css';
+import SoundEffects from './additional/SoundEffects';
 
 import './WindowHead.css';
 import { MainWindowHeader } from './MainWindow';
@@ -65,6 +66,10 @@ class WindowHead extends Component {
     );
   }
 
+  loadPowerOffSound = () => {
+    SoundEffects.poweroffSound.load();
+  }
+
   render() {
     const { windowMinimized, pageHeaderRoutes } = this.state;
     const { onClickMiddle, onRightClick } = this.props;
@@ -75,7 +80,7 @@ class WindowHead extends Component {
       && localStorage.getItem('agentVisited') === null;
 
     return (
-      <div className='window-header'>
+      <div className='window-header' onMouseEnter={ this.loadPowerOffSound }>
         <span>
           <span style={ { marginLeft: '-5px' } }>
             { isCurrentPathRoot ? this.renderLeftsideButton() : null }

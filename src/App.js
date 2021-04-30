@@ -326,7 +326,6 @@ class App extends Component {
   }
 
   poweroff = () => {
-    SoundEffects.poweroffSound.load();
     SoundEffects.poweroffSound.play();
     this.setState({ poweredOff: true });
   }
@@ -362,7 +361,6 @@ class App extends Component {
   }
 
   turnOnTV = () => {
-    SoundEffects.loopTVSound.load();
     SoundEffects.loopTVSound.play();
     this.setState({ loopTVon: true });
   }
