@@ -66,8 +66,14 @@ class WindowHead extends Component {
     );
   }
 
-  loadPowerOffSound = () => {
-    SoundEffects.poweroffSound.load();
+  preloadAssets = () => {
+    const { assetsLoaded } = this.state;
+
+    if (!assetsLoaded) {
+      SoundEffects.poweroffSound.load();
+
+      this.setState({ assetsLoaded: true });
+    }
   }
 
   render() {
@@ -80,7 +86,7 @@ class WindowHead extends Component {
       && localStorage.getItem('agentVisited') === null;
 
     return (
-      <div className='window-header' onMouseEnter={ this.loadPowerOffSound }>
+      <div className='window-header' onMouseEnter={ this.preloadAssets }>
         <span>
           <span style={ { marginLeft: '-5px' } }>
             { isCurrentPathRoot ? this.renderLeftsideButton() : null }

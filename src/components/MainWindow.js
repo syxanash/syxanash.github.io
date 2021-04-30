@@ -31,6 +31,7 @@ import languages from '../resources/languages.json';
 class MainWindowHeader extends Component {
   state = {
     programmingLanguage: undefined,
+    assetsLoaded: false,
   }
 
   componentDidMount() {
@@ -148,9 +149,15 @@ class MainWindowBody extends Component {
     </Button>);
   }
 
-  loadLoopTVSound = () => {
-    SoundEffects.loopTVSound.load();
-    new Image().src = staticImage;
+  preloadAssets = () => {
+    const { assetsLoaded } = this.state;
+
+    if (!assetsLoaded) {
+      SoundEffects.loopTVSound.load();
+      new Image().src = staticImage;
+
+      this.setState({ assetsLoaded: true });
+    }
   }
 
   render() {
@@ -170,7 +177,7 @@ class MainWindowBody extends Component {
               <figcaption className='icon-caption'>Cestino</figcaption>
             </Button>
           </div>
-          <div className='first-row-icons' onMouseEnter={ this.loadLoopTVSound }>
+          <div className='first-row-icons' onMouseEnter={ this.preloadAssets }>
             <Draggable
               handle='.handle_icon'
               onDrag={ this.checkCollision }
