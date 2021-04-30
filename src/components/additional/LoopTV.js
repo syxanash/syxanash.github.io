@@ -34,20 +34,18 @@ class LoopTV extends Component {
   changeLoopImage = () => {
     const { imageIndex, imageList } = this.state;
 
-    const currentIndex = imageIndex + 1;
-
-    // load the next image in the meantime
-    const nextImageIndex = (currentIndex + 1) % imageList.length;
-    new Image().src = loopImages(`./${imageList[nextImageIndex].img}`);
-
     this.setState({
-      imageIndex: currentIndex % imageList.length,
+      imageIndex: (imageIndex + 1) % imageList.length,
       imageLoaded: false,
     });
   }
 
   imageLoaded = () => {
-    const { disableTVOutput } = this.state;
+    const { disableTVOutput, imageIndex, imageList } = this.state;
+
+    // load the next image in the meantime
+    const nextImageIndex = (imageIndex + 1) % imageList.length;
+    new Image().src = loopImages(`./${imageList[nextImageIndex].img}`);
 
     this.setState({ imageLoaded: true });
 
