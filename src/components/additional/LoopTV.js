@@ -34,8 +34,14 @@ class LoopTV extends Component {
   changeLoopImage = () => {
     const { imageIndex, imageList } = this.state;
 
+    const currentIndex = imageIndex + 1;
+
+    // load the next image in the meantime
+    const nextImageIndex = (currentIndex + 1) % imageList.length;
+    new Image().src = loopImages(`./${imageList[nextImageIndex].img}`);
+
     this.setState({
-      imageIndex: (imageIndex + 1) % imageList.length,
+      imageIndex: currentIndex % imageList.length,
       imageLoaded: false,
     });
   }

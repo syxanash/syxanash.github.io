@@ -24,6 +24,7 @@ import loopTVIcon from '../resources/icons/loopTV.gif';
 import pizzaIcon from '../resources/icons/pizza.gif';
 import corruptedFileIcon from '../resources/icons/corrupted.gif';
 import lightbulbIcon from '../resources/icons/lightbulb.gif';
+import staticImage from '../resources/images/static.gif';
 
 import languages from '../resources/languages.json';
 
@@ -149,6 +150,7 @@ class MainWindowBody extends Component {
 
   loadLoopTVSound = () => {
     SoundEffects.loopTVSound.load();
+    new Image().src = staticImage;
   }
 
   render() {
