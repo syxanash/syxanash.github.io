@@ -3,7 +3,6 @@ import { Howl } from 'howler';
 import poweroffSound from '../../resources/sounds/poweroff.wav';
 import errorSound from '../../resources/sounds/error.wav';
 import loopTVSound from '../../resources/sounds/looptv_chime.wav';
-import rebootSound from '../../resources/sounds/reboot.wav';
 import userOnline from '../../resources/sounds/online.wav';
 import switchSound from '../../resources/sounds/switch.wav';
 import alienSound from '../../resources/sounds/blip.wav';
@@ -20,10 +19,6 @@ const SoundEffects = {
   }),
   loopTVSound: new Howl({
     src: [loopTVSound],
-    preload: false,
-  }),
-  rebootSound: new Howl({
-    src: [rebootSound],
     preload: false,
   }),
   userOnline: new Howl({

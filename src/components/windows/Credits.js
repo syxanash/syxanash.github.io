@@ -100,8 +100,8 @@ class CreditsBody extends Component {
             </ul>
             <ul style={ { display: activeTab === 4 ? 'block' : 'none' } }>
               <li className='list-content'>The poweroff screen page has a sample sound I modified from the original song <a href='https://www.youtube.com/watch?v=Wl-Xgv7X4ME' target='_blank' rel='noopener noreferrer'>Grace Jones - Slave to the Rhythm</a></li>
-              <li className='list-content'>The reboot sound was sampled and modified <a href='https://www.youtube.com/watch?v=qqpTq9_rf_Q' target='_blank' rel='noopener noreferrer'>GTA III theme</a></li>
-              <li className='list-content'>The error sound was modified from the Windows ME warning chord, original file downloaded from <a href='https://guidebookgallery.org/sounds' target='_blank' rel='noopener noreferrer'>guidebookgallery.org/sounds</a></li>
+              <li className='list-content'>The error sound taken from Windows ME warning chord, original file downloaded from <a href='https://guidebookgallery.org/sounds' target='_blank' rel='noopener noreferrer'>guidebookgallery.org/sounds</a></li>
+              <li className='list-content'>Lite Bulb chimes were taken from <a href='https://en.wikipedia.org/wiki/Star_Wars:_Yoda_Stories' target='_blank' rel='noopener noreferrer'>Yoda Stories</a> game assets, Disney please don't sue me :)</li>
             </ul>
             <ul style={ { display: activeTab === 5 ? 'block' : 'none' } }>
               <li className='list-content'>This site uses <a href='https://statcounter.com' target='_blank' rel='noopener noreferrer'>statcounter.com</a> to get information such as number of <b>daily visitors</b>, <b>country</b> where users connect from, which <b>pages they interact</b> with and what <b>websites linked me</b>.</li>
