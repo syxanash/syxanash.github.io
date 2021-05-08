@@ -56,6 +56,8 @@ class Poweroff extends Component {
       return null;
     }
 
+    new Image().src = screenoff;
+
     if (!isScreenOff) {
       this.turnOffTimeout = setTimeout(() => {
         this.setState({ isScreenOff: true });
