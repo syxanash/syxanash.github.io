@@ -426,5 +426,9 @@
 	{
 		"name": "Xiaohan Zou's Portfolio",
 		"url": "https://portfolio.zxh.io"
+	},
+	{
+		"name": "macOS in Preact",
+		"url": "https://macos.vercel.app"
 	}
 ]
