@@ -71,11 +71,18 @@
   </head>
   <body>
     <img src='/404.gif' alt='404 screen' class='center-img' />
-    <div class='scan-lines'></div>
+    <div id='scan-lines' class='scan-lines'></div>
     <script>
       const pattern = 'pizza'.split('');
       const upperCasePattern = pattern.map(c => c.toUpperCase());
       let combinationEntered = 0;
+
+      const CRTEnabled = JSON.parse(localStorage.getItem('crt')) === null
+        || !!JSON.parse(localStorage.getItem('crt'))
+
+      if (!CRTEnabled) {
+        document.getElementById('scan-lines').remove();
+      }
 
       window.addEventListener("keydown", function (event) {
         if ((pattern.indexOf(event.key) < 0 || event.key !== pattern[combinationEntered]) &&
