@@ -28,8 +28,10 @@
     "react-tilt": "^0.1.4",
     "react-typist": "^2.0.5",
     "react95": "^2.0.0",
+    "sockjs": "^0.3.20",
     "ssri": "^8.0.1",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "y18n": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
