@@ -430,5 +430,9 @@
 	{
 		"name": "macOS in Preact",
 		"url": "https://macos.vercel.app"
+	},
+	{
+		"name": "Deepin Linux",
+		"url": "https://goodmanwen.github.io"
 	}
 ]
