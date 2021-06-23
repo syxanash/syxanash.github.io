@@ -446,5 +446,9 @@
 	{
 		"name": "Fizzygum",
 		"url": "http://fizzygum.org/sandboxes/latest-stable/"
+	},
+	{
+		"name": "RexOS",
+		"url": "https://itzrex.neocities.org"
 	}
 ]
