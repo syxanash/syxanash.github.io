@@ -60,7 +60,7 @@ class BulbBody extends Component {
       pressedButton: false,
       bottomMessages: [
         <span>
-          this is a shared lightbulb, feel free to turn it <b>on</b> and <b>off</b>
+          this is a public lightbulb, feel free to turn it <b>on</b> and <b>off</b>
         </span>,
         <span>
           you might see other people flick the switch in real time if you keep the window open!
