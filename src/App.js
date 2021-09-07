@@ -337,6 +337,7 @@ class App extends Component {
   poweroff = () => {
     this.closeAllWindows();
 
+    SoundEffects.poweroffSound.load();
     SoundEffects.poweroffSound.play();
     this.setState({ poweredOff: true });
   }

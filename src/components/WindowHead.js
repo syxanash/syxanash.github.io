@@ -66,16 +66,6 @@ class WindowHead extends Component {
     );
   }
 
-  preloadAssets = () => {
-    const { assetsLoaded } = this.state;
-
-    if (!assetsLoaded) {
-      SoundEffects.poweroffSound.load();
-
-      this.setState({ assetsLoaded: true });
-    }
-  }
-
   render() {
     const { windowMinimized, pageHeaderRoutes } = this.state;
     const { onClickMiddle, onRightClick } = this.props;
@@ -86,7 +76,7 @@ class WindowHead extends Component {
       && localStorage.getItem('agentVisited') === null;
 
     return (
-      <div className='window-header' onMouseEnter={ this.preloadAssets }>
+      <div className='window-header'>
         <span>
           <span style={ { marginLeft: '-5px' } }>
             { isCurrentPathRoot ? this.renderLeftsideButton() : null }
