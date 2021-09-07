@@ -5,7 +5,6 @@ import {
   Button,
 } from 'react95';
 import 'animate.css';
-import SoundEffects from './additional/SoundEffects';
 
 import './WindowHead.css';
 import { MainWindowHeader } from './MainWindow';
