@@ -50,10 +50,10 @@ class WebDesktopsBody extends Component {
     }
   }
 
-  renderSingleComputerIcon = ({ url, name, os }) => (
+  renderSingleComputerIcon = ({ url, name, icon }) => (
     <a className='website-link' href={ url } target='_blank' onClick={ () => this.registerWebsite(url) } rel='noopener noreferrer'>
       <div className='computer-icon'>
-        <img style={ { height: '65px' } } src={ webDesktopsIcons(`./${os}`) } alt='single desktop icon' />
+        <img style={ { height: '65px' } } src={ webDesktopsIcons(`./${icon}`) } alt='single desktop icon' />
       </div>
       <div className='website-favicon'>
         <img style={ { height: '25px' } } src={ `https://s2.googleusercontent.com/s2/favicons?domain_url=${url}` } alt='computer icon' />
