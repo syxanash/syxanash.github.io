@@ -1,466 +1,577 @@
 [
 	{
 		"name": "WorldWideWeb",
-		"url": "https://worldwideweb.cern.ch/browser"
+		"url": "https://worldwideweb.cern.ch/browser",
+		"os": "next.gif"
 	},
 	{
 		"name": "Poolsuite",
-		"url": "https://poolsuite.net"
+		"url": "https://poolsuite.net",
+		"os": "mac.gif"
 	},
 	{
 		"name": "Nightwave Plaza",
-		"url": "https://plaza.one"
+		"url": "https://plaza.one",
+		"os": "windows.gif"
 	},
 	{
 		"name": "Ash Kyd",
-		"url": "https://ash.ms"
+		"url": "https://ash.ms",
+		"os": "windows.gif"
 	},
 	{
 		"name": "Cyberspace & Time",
-		"url": "http://cyberspaceandtime.com/Gaano9Y6KAU.video+related"
+		"url": "http://cyberspaceandtime.com/Gaano9Y6KAU.video+related",
+		"os": "unix.gif"
 	},
 	{
 		"name": "WWWTXT",
-		"url": "https://wwwtxt.org/about"
+		"url": "https://wwwtxt.org/about",
+		"os": "mac.gif"
 	},
 	{
 		"name": "Windows 93",
-		"url": "https://www.windows93.net"
+		"url": "https://www.windows93.net",
+		"os": "windows.gif"
 	},
 	{
 		"name": "Artur Bień",
-		"url": "https://www.expensive.toys"
+		"url": "https://www.expensive.toys",
+		"os": "windows.gif"
 	},
 	{
 		"name": "The Restart Page",
-		"url": "http://www.therestartpage.com"
+		"url": "http://www.therestartpage.com",
+		"os": "other.gif"
 	},
 	{
 		"name": "Webamp",
-		"url": "https://webamp.org"
+		"url": "https://webamp.org",
+		"os": "windows.gif"
 	},
 	{
 		"name": "It is as if you were doing work",
-		"url": "https://pippinbarr.github.io/itisasifyouweredoingwork"
+		"url": "https://pippinbarr.github.io/itisasifyouweredoingwork",
+		"os": "other.gif"
 	},
 	{
 		"name": "frankenSim",
-		"url": "http://frankensim.animade.tv"
+		"url": "http://frankensim.animade.tv",
+		"os": "mac_new.png"
 	},
 	{
 		"name": "Jack Kim",
-		"url": "https://www.jackk.im"
+		"url": "https://www.jackk.im",
+		"os": "next.gif"
 	},
 	{
 		"name": "Geek Prank",
-		"url": "https://geekprank.com"
+		"url": "https://geekprank.com",
+		"os": "windows_new.png"
 	},
 	{
 		"name": "Eric Bernacchi",
-		"url": "http://eeerik.com"
+		"url": "http://eeerik.com",
+		"os": "mac_new.png"
 	},
 	{
 		"name": "OS.js Demonstration",
-		"url": "https://demo.os-js.org"
+		"url": "https://demo.os-js.org",
+		"os": "unix.gif"
 	},
 	{
 		"name": "Mariano Pascual",
-		"url": "http://www.marianopascual.me"
+		"url": "http://www.marianopascual.me",
+		"os": "mac_new.png"
 	},
 	{
 		"name": "AfterStep WM",
-		"url": "http://www.afterstep.org"
+		"url": "http://www.afterstep.org",
+		"os": "next.gif"
 	},
 	{
 		"name": "98.js",
-		"url": "https://98.js.org"
+		"url": "https://98.js.org",
+		"os": "windows.gif"
 	},
 	{
 		"name": "Broken Reality",
-		"url": "https://brokenrealitygame.tumblr.com"
+		"url": "https://brokenrealitygame.tumblr.com",
+		"os": "windows.gif"
 	},
 	{
 		"name": "WindowMaker",
-		"url": "https://www.windowmaker.org"
+		"url": "https://www.windowmaker.org",
+		"os": "next.gif"
 	},
 	{
 		"name": "Whimsy Space",
-		"url": "https://whimsy.space"
+		"url": "https://whimsy.space",
+		"os": "unix.gif"
 	},
 	{
 		"name": "WinXP",
-		"url": "https://winxp.now.sh"
+		"url": "https://winxp.now.sh",
+		"os": "windows_new.png"
 	},
 	{
 		"name": "Denzel Curry x Kenny Beats",
-		"url": "https://ultimatedenzelcurry.com"
+		"url": "https://ultimatedenzelcurry.com",
+		"os": "windows.gif"
 	},
 	{
 		"name": "zach.dev // Software & Adventure",
-		"url": "https://zach.dev"
-	},
-	{
-		"name": "Eat Sleep Work",
-		"url": "https://www.eatsleepwork.com"
+		"url": "https://zach.dev",
+		"os": "windows.gif"
 	},
 	{
 		"name": "www.chiptune.com",
-		"url": "http://www.chiptune.com"
+		"url": "http://www.chiptune.com",
+		"os": "other.gif"
 	},
 	{
 		"name": "Virtual Desktop",
-		"url": "http://www.virtualdesktop.org"
+		"url": "http://www.virtualdesktop.org",
+		"os": "other.gif"
 	},
 	{
 		"name": "mattOS",
-		"url": "https://mattos-1.webflow.io"
+		"url": "https://mattos-1.webflow.io",
+		"os": "mac.gif"
 	},
 	{
 		"name": "waller.is",
-		"url": "https://waller.is"
+		"url": "https://waller.is",
+		"os": "windows.gif"
 	},
 	{
 		"name": "Windows 98 Icon Viewer",
-		"url": "https://win98icons.alexmeub.com"
+		"url": "https://win98icons.alexmeub.com",
+		"os": "windows.gif"
 	},
 	{
 		"name": "Jurassic Systems",
-		"url": "https://jurassicsystems.com"
+		"url": "https://jurassicsystems.com",
+		"os": "unix.gif"
 	},
 	{
 		"name": "The Macpaint Gallery",
-		"url": "http://www.macpaint.org"
+		"url": "http://www.macpaint.org",
+		"os": "mac.gif"
 	},
 	{
 		"name": "N10.AS RADIO",
-		"url": "http://www.n10.as"
+		"url": "http://www.n10.as",
+		"os": "unix.gif"
 	},
 	{
 		"name": "Rahul.io",
-		"url": "https://rahul.io"
+		"url": "https://rahul.io",
+		"os": "windows.gif"
 	},
 	{
 		"name": "EmuOS",
-		"url": "https://emupedia.net/beta/emuos/"
+		"url": "https://emupedia.net/beta/emuos/",
+		"os": "windows.gif"
 	},
 	{
 		"name": "AaronOS",
-		"url": "https://aaronos.dev/AaronOS/aosBeta.php"
+		"url": "https://aaronos.dev/AaronOS/aosBeta.php",
+		"os": "unix.gif"
 	},
 	{
 		"name": "CloudDesk",
-		"url": "http://altaica.altervista.org/"
+		"url": "http://altaica.altervista.org/",
+		"os": "other.gif"
 	},
 	{
 		"name": "Windows 98 -- Packard Belle",
-		"url": "https://packard-belle.netlify.com"
+		"url": "https://packard-belle.netlify.com",
+		"os": "windows.gif"
 	},
 	{
 		"name": "vue win3.1",
-		"url": "https://disjfa.github.io/vue-win-3.1"
+		"url": "https://disjfa.github.io/vue-win-3.1",
+		"os": "windows.gif"
 	},
 	{
 		"name": "Welcome to Agora Road",
-		"url": "http://agoraroad.com"
+		"url": "http://agoraroad.com",
+		"os": "mac.gif"
 	},
 	{
 		"name": "Minesweeper",
-		"url": "https://winmine-exe.now.sh"
+		"url": "https://winmine-exe.now.sh",
+		"os": "windows.gif"
 	},
 	{
 		"name": "Gamithra OS",
-		"url": "https://gamithra.com"
+		"url": "https://gamithra.com",
+		"os": "mac_new.png"
 	},
 	{
 		"name": "maple's website!",
-		"url": "https://maple.pet"
+		"url": "https://maple.pet",
+		"os": "mac.gif"
 	},
 	{
 		"name": "baz's PC",
-		"url": "https://niceware.neocities.org"
+		"url": "https://niceware.neocities.org",
+		"os": "other.gif"
 	},
 	{
 		"name": "TrueSchool Ascii",
-		"url": "https://www.trueschool.se"
+		"url": "https://www.trueschool.se",
+		"os": "other.gif"
 	},
 	{
 		"name": "Victor Ribeiro",
-		"url": "https://victorribeiro.com"
+		"url": "https://victorribeiro.com",
+		"os": "windows.gif"
 	},
 	{
 		"name": "Nirrius Creative Studio",
-		"url": "https://nirri.us"
+		"url": "https://nirri.us",
+		"os": "unix.gif"
 	},
 	{
 		"name": "Hillary Churchill - Copywriter",
-		"url": "http://hillarychurchill.com"
+		"url": "http://hillarychurchill.com",
+		"os": "mac_new.png"
 	},
 	{
 		"name": "Bill's Wold Wide Boutique",
-		"url": "https://billsworld.neocities.org"
+		"url": "https://billsworld.neocities.org",
+		"os": "windows.gif"
 	},
 	{
 		"name": "NyjaOS",
-		"url": "https://signal3.neocities.org"
+		"url": "https://signal3.neocities.org",
+		"os": "other.gif"
 	},
 	{
 		"name": "Windows 95 Replica",
-		"url": "https://derplayer.neocities.org/repo/win/"
+		"url": "https://derplayer.neocities.org/repo/win/",
+		"os": "windows.gif"
 	},
 	{
 		"name": "The Indie Web",
-		"url": "https://theindieweb.com"
+		"url": "https://theindieweb.com",
+		"os": "unix.gif"
 	},
 	{
 		"name": "hannah blair | developer & designer",
-		"url": "https://hannahblair.co.uk"
+		"url": "https://hannahblair.co.uk",
+		"os": "windows.gif"
 	},
 	{
 		"name": "98 KAGE",
-		"url": "https://ka.ge"
+		"url": "https://ka.ge",
+		"os": "windows.gif"
 	},
 	{
 		"name": "erdOS",
-		"url": "https://erd-os.iamerd.xyz"
+		"url": "https://erd-os.iamerd.xyz",
+		"os": "mac_new.png"
 	},
 	{
 		"name": "Windows 1.0",
-		"url": "https://win1.krnl386.com"
+		"url": "https://win1.krnl386.com",
+		"os": "windows.gif"
 	},
 	{
 		"name": "glenda.party",
-		"url": "https://glenda.0x46.net"
+		"url": "https://glenda.0x46.net",
+		"os": "unix.gif"
 	},
 	{
 		"name": "Maxime Elkael - portfolio",
-		"url": "https://elkael.com"
+		"url": "https://elkael.com",
+		"os": "windows_new.png"
 	},
 	{
 		"name": "VirusvAV",
-		"url": "https://os.virusav.com"
+		"url": "https://os.virusav.com",
+		"os": "unix.gif"
 	},
 	{
 		"name": "some kind of blog",
-		"url": "https://blog.aimen.me"
+		"url": "https://blog.aimen.me",
+		"os": "mac_new.png"
 	},
 	{
 		"name": "Repeater",
-		"url": "https://repeater.space"
+		"url": "https://repeater.space",
+		"os": "mac.gif"
 	},
 	{
 		"name": "WuerfelDev",
-		"url": "https://wuerfeldev.de"
+		"url": "https://wuerfeldev.de",
+		"os": "unix.gif"
 	},
 	{
 		"name": "Glass Animals OPEN SOURCE",
-		"url": "https://opensource.glassanimals.com"
+		"url": "https://opensource.glassanimals.com",
+		"os": "windows.gif"
 	},
 	{
 		"name": "Make WordArt",
-		"url": "https://makewordart.com"
+		"url": "https://makewordart.com",
+		"os": "windows.gif"
 	},
 	{
 		"name": "ytOS",
-		"url": "https://ytcracker.com"
+		"url": "https://ytcracker.com",
+		"os": "next.gif"
 	},
 	{
 		"name": "Windows XP",
-		"url": "https://windows-xp.netlify.app"
+		"url": "https://windows-xp.netlify.app",
+		"os": "windows_new.png"
 	},
 	{
 		"name": "56k-modem",
-		"url": "https://56k-modem.online"
+		"url": "https://56k-modem.online",
+		"os": "windows.gif"
 	},
 	{
 		"name": "RACER TRASH",
-		"url": "https://racertrash.com"
+		"url": "https://racertrash.com",
+		"os": "windows.gif"
 	},
 	{
 		"name": "CutOut Fest",
-		"url": "https://cutoutfest.com"
+		"url": "https://cutoutfest.com",
+		"os": "windows.gif"
 	},
 	{
 		"name": "Vuindows",
-		"url": "https://marcmascarell.github.io/Vuindows"
+		"url": "https://marcmascarell.github.io/Vuindows",
+		"os": "windows_new.png"
 	},
 	{
 		"name": "Gustavo Chico",
-		"url": "https://gustavochico.com/desktop"
+		"url": "https://gustavochico.com/desktop",
+		"os": "mac.gif"
 	},
 	{
 		"name": "digital-r41n",
-		"url": "https://digital-r41n.neocities.org"
+		"url": "https://digital-r41n.neocities.org",
+		"os": "windows.gif"
 	},
 	{
 		"name": "𝕂𝕣𝕪𝕡𝕥 𝕆𝕊",
-		"url": "https://kryptonaut.neocities.org"
+		"url": "https://kryptonaut.neocities.org",
+		"os": "other.gif"
 	},
 	{
 		"name": "Online Hacker Simulator",
-		"url": "https://hacker-simulator.com"
+		"url": "https://hacker-simulator.com",
+		"os": "other.gif"
 	},
 	{
 		"name": "Tetrageddon Games",
-		"url": "http://tetrageddon.com"
+		"url": "http://tetrageddon.com",
+		"os": "windows.gif"
 	},
 	{
 		"name": "AWGE - Forum",
-		"url": "https://forums.awgeshit.com"
+		"url": "https://forums.awgeshit.com",
+		"os": "windows.gif"
 	},
 	{
 		"name": "My Second PC",
-		"url": "https://koas.dev/m2pc/dinamicos/"
+		"url": "https://koas.dev/m2pc/dinamicos/",
+		"os": "unix.gif"
 	},
 	{
 		"name": "ToxicCode.com",
-		"url": "http://toxiccode.com"
+		"url": "http://toxiccode.com",
+		"os": "unix.gif"
 	},
 	{
 		"name": "HyNET Geocity",
-		"url": "https://hyena.network/geocity/"
+		"url": "https://hyena.network/geocity/",
+		"os": "next.gif"
 	},
 	{
 		"name": "Unremarkable Garden",
-		"url": "https://unremarkablegarden.com"
+		"url": "https://unremarkablegarden.com",
+		"os": "mac.gif"
 	},
 	{
 		"name": "FLEXEDUPSHAWTY.COM",
-		"url": "https://flexedupshawty.com"
+		"url": "https://flexedupshawty.com",
+		"os": "windows.gif"
 	},
 	{
 		"name": "aconfuseddragon's art and nostalgia corner",
-		"url": "https://aconfuseddragon.neocities.org"
+		"url": "https://aconfuseddragon.neocities.org",
+		"os": "windows.gif"
 	},
 	{
 		"name": "RaccOS 9",
-		"url": "https://violet.pm"
+		"url": "https://violet.pm",
+		"os": "mac_new.png"
 	},
 	{
 		"name": "x",
-		"url": "https://x.dustinbrett.com"
+		"url": "https://x.dustinbrett.com",
+		"os": "windows_new.png"
 	},
 	{
 		"name": "MSOS Concept",
-		"url": "https://msos.midspike.com"
+		"url": "https://msos.midspike.com",
+		"os": "windows_new.png"
 	},
 	{
 		"name": "Novov - Software I use",
-		"url": "https://novov.neocities.org/liked/software.html"
+		"url": "https://novov.neocities.org/liked/software.html",
+		"os": "mac.gif"
 	},
 	{
 		"name": "Team3D",
-		"url": "https://team3d.io"
+		"url": "https://team3d.io",
+		"os": "windows_new.png"
 	},
 	{
 		"name": "Day Job",
-		"url": "https://dayjob.work"
+		"url": "https://dayjob.work",
+		"os": "windows.gif"
 	},
 	{
 		"name": "PUBLIC DOMAIN",
-		"url": "https://public---domain.com"
+		"url": "https://public---domain.com",
+		"os": "mac_new.png"
 	},
 	{
 		"name": "WE=LINK",
-		"url": "http://we-link.chronusartcenter.org"
+		"url": "http://we-link.chronusartcenter.org",
+		"os": "windows.gif"
 	},
 	{
 		"name": "Thoughts On Glitch[Art]v2.0",
-		"url": "http://nickbriz.com/thoughtsonglitchart"
+		"url": "http://nickbriz.com/thoughtsonglitchart",
+		"os": "unix.gif"
 	},
 	{
 		"name": "Big Desk Energy",
-		"url": "https://www.bigdeskenergy.com"
+		"url": "https://www.bigdeskenergy.com",
+		"os": "windows.gif"
 	},
 	{
 		"name": "Github95",
-		"url": "https://github95.now.sh"
+		"url": "https://github95.now.sh",
+		"os": "windows.gif"
 	},
 	{
 		"name": "An Ordinary Portfolio Page of Derya",
-		"url": "https://deryasdesktop.com"
+		"url": "https://deryasdesktop.com",
+		"os": "mac_new.png"
 	},
 	{
 		"name": "linuxWeb",
-		"url": "https://manthee1.github.io/linuxWeb/dist/"
+		"url": "https://manthee1.github.io/linuxWeb/dist/",
+		"os": "unix.gif"
 	},
 	{
 		"name": "Yahya J. Aifit",
-		"url": "https://yja.me"
+		"url": "https://yja.me",
+		"os": "mac_new.png"
 	},
 	{
 		"name": "jQuery Desktop",
-		"url": "https://desktop.sonspring.com"
+		"url": "https://desktop.sonspring.com",
+		"os": "unix.gif"
 	},
 	{
 		"name": "Windows 96",
-		"url": "https://windows96.net"
+		"url": "https://windows96.net",
+		"os": "windows.gif"
 	},
 	{
 		"name": "The Coding Forge",
-		"url": "https://thecodingforge.com.au"
+		"url": "https://thecodingforge.com.au",
+		"os": "next.gif"
 	},
 	{
 		"name": "Vivek Patel - Computer Science Student",
-		"url": "https://vivek9patel.github.io"
+		"url": "https://vivek9patel.github.io",
+		"os": "unix.gif"
 	},
 	{
 		"name": "Winampify",
-		"url": "https://winampify.io"
+		"url": "https://winampify.io",
+		"os": "other.gif"
 	},
 	{
 		"name": "Try Andy's Desk",
-		"url": "https://desk.glitchy.website"
+		"url": "https://desk.glitchy.website",
+		"os": "windows_new.png"
 	},
 	{
 		"name": "tildeOS",
-		"url": "https://tilde.town/~selfsame/"
+		"url": "https://tilde.town/~selfsame/",
+		"os": "mac.gif"
 	},
 	{
 		"name": "Jack Adam",
-		"url": "https://jackadam.cc"
+		"url": "https://jackadam.cc",
+		"os": "mac.gif"
 	},
 	{
 		"name": "Xiaohan Zou's Portfolio",
-		"url": "https://portfolio.zxh.io"
+		"url": "https://portfolio.zxh.io",
+		"os": "mac_new.png"
 	},
 	{
 		"name": "macOS in Preact",
-		"url": "https://macos.vercel.app"
+		"url": "https://macos.vercel.app",
+		"os": "mac_new.png"
 	},
 	{
 		"name": "Deepin Linux",
-		"url": "https://goodmanwen.github.io"
+		"url": "https://goodmanwen.github.io",
+		"os": "unix.gif"
 	},
 	{
 		"name": "Windows 7",
-		"url": "https://khang-nd.github.io/windows7"
+		"url": "https://khang-nd.github.io/windows7",
+		"os": "windows_new.png"
 	},
 	{
 		"name": "Heather Vandervecht",
-		"url": "https://heathervv.com"
+		"url": "https://heathervv.com",
+		"os": "windows.gif"
 	},
 	{
 		"name": "Tony Dinh",
-		"url": "https://dinhquangtrung.net/windows7/"
+		"url": "https://dinhquangtrung.net/windows7/",
+		"os": "windows_new.png"
 	},
 	{
 		"name": "Fizzygum",
-		"url": "http://fizzygum.org/sandboxes/latest-stable/"
+		"url": "http://fizzygum.org/sandboxes/latest-stable/",
+		"os": "other.gif"
 	},
 	{
 		"name": "RexOS",
-		"url": "https://itzrex.neocities.org"
+		"url": "https://itzrex.neocities.org",
+		"os": "unix.gif"
 	},
 	{
 		"name": "Joeyonng's Backyard",
-		"url": "https://joeyonng.github.io"
+		"url": "https://joeyonng.github.io",
+		"os": "mac_new.png"
 	},
 	{
 		"name": "Windows 11 in React",
-		"url": "https://win11.blueedge.me"
+		"url": "https://win11.blueedge.me",
+		"os": "windows_new.png"
 	},
 	{
 		"name": "Win7 Simu",
-		"url": "https://win7simu.visnalize.com"
+		"url": "https://win7simu.visnalize.com",
+		"os": "windows_new.png"
 	}
 ]
