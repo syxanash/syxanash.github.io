@@ -578,5 +578,10 @@
 		"name": "Rimet Desktop",
 		"url": "https://ethanf44.xyz/rimet/",
 		"icon": "windows"
+	},
+	{
+		"name": "AtheOS",
+		"url": "https://ethanf44.xyz/rimet/",
+		"icon": "other"
 	}
 ]
