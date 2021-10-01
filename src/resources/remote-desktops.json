@@ -573,5 +573,10 @@
 		"name": "Win7 Simu",
 		"url": "https://win7simu.visnalize.com",
 		"icon": "windows_new"
+	},
+	{
+		"name": "Rimet Desktop",
+		"url": "https://ethanf44.xyz/rimet/",
+		"icon": "windows"
 	}
 ]
