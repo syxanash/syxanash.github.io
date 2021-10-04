@@ -77,7 +77,7 @@
 	{
 		"name": "OS.js Demonstration",
 		"url": "https://demo.os-js.org",
-		"icon": "unix"
+		"icon": "linux"
 	},
 	{
 		"name": "Mariano Pascual",
@@ -177,7 +177,7 @@
 	{
 		"name": "AaronOS",
 		"url": "https://aaronos.dev/AaronOS/aosBeta.php",
-		"icon": "unix"
+		"icon": "linux"
 	},
 	{
 		"name": "CloudDesk",
@@ -307,7 +307,7 @@
 	{
 		"name": "WuerfelDev",
 		"url": "https://wuerfeldev.de",
-		"icon": "unix"
+		"icon": "linux"
 	},
 	{
 		"name": "Glass Animals OPEN SOURCE",
@@ -382,7 +382,7 @@
 	{
 		"name": "My Second PC",
 		"url": "https://koas.dev/m2pc/dinamicos/",
-		"icon": "unix"
+		"icon": "linux"
 	},
 	{
 		"name": "ToxicCode.com",
@@ -472,7 +472,7 @@
 	{
 		"name": "linuxWeb",
 		"url": "https://manthee1.github.io/linuxWeb/dist/",
-		"icon": "unix"
+		"icon": "linux"
 	},
 	{
 		"name": "Yahya J. Aifit",
@@ -482,7 +482,7 @@
 	{
 		"name": "jQuery Desktop",
 		"url": "https://desktop.sonspring.com",
-		"icon": "unix"
+		"icon": "linux"
 	},
 	{
 		"name": "Windows 96",
@@ -492,12 +492,12 @@
 	{
 		"name": "The Coding Forge",
 		"url": "https://thecodingforge.com.au",
-		"icon": "unix"
+		"icon": "linux"
 	},
 	{
 		"name": "Vivek Patel - Computer Science Student",
 		"url": "https://vivek9patel.github.io",
-		"icon": "unix"
+		"icon": "linux"
 	},
 	{
 		"name": "Winampify",
@@ -532,7 +532,7 @@
 	{
 		"name": "Deepin Linux",
 		"url": "https://goodmanwen.github.io",
-		"icon": "unix"
+		"icon": "linux"
 	},
 	{
 		"name": "Windows 7",
@@ -557,7 +557,7 @@
 	{
 		"name": "RexOS",
 		"url": "https://itzrex.neocities.org",
-		"icon": "unix"
+		"icon": "linux"
 	},
 	{
 		"name": "Joeyonng's Backyard",
