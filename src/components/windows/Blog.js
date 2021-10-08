@@ -98,16 +98,10 @@ class BlogBody extends Component {
     }
   }
 
-  writeEmailComment = () => {
-    const { postTitle } = this.state;
-
-    window.location = `mailto:${configUrls.email}?subject=Blog Post Comment: ${postTitle}`;
-  }
-
   render = () => {
     const { openWindow, isWindowOpened } = this.props;
     const {
-      backendResponse, postDate, postLoaded, loaderInteger, headerText,
+      backendResponse, postDate, postLoaded, loaderInteger, headerText, postTitle,
     } = this.state;
 
     if (postLoaded === undefined) {
@@ -153,10 +147,12 @@ class BlogBody extends Component {
       </Cutout>
       <Cutout className='blog-footer-cut-out'>
         <div className='blog-footer-buttons' style={ { float: 'right' } }>
-          <Button fullWidth onClick={ this.writeEmailComment }>
-            <img src={ commentIcon } className='small-icon' alt="speech bubble"/>
-            <figcaption><b>Write a comment</b></figcaption>
-          </Button>
+          <Anchor href={ `mailto:${configUrls.email}?subject=Blog Post Comment: ${postTitle}` } style={ { textDecoration: 'none' } } target='_blank'>
+            <Button fullWidth>
+              <img src={ commentIcon } className='small-icon' alt="speech bubble"/>
+              <figcaption><b>Write a comment</b></figcaption>
+            </Button>
+          </Anchor>
         </div>
         <div className='blog-footer-buttons' style={ { float: 'left' } }>
           <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/rss.xml` }) }>
