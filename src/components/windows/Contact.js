@@ -3,6 +3,8 @@ import {
   Button, Anchor, Tooltip, Fieldset, Cutout,
 } from 'react95';
 
+import configUrls from '../../resources/config-urls.json';
+
 import contactIcon from '../../resources/icons/contact.gif';
 
 import githubIcon from '../../resources/icons/social/github.gif';
@@ -34,7 +36,7 @@ class ContactBody extends Component {
     </span>
     <div className='social-icons-container'>
       <Tooltip text='Email' delay={ 100 }>
-        <Anchor href='mailto:hello@simone.computer?subject=Hi%20Mr.%20Awesome%20Dude' target='_blank'>
+        <Anchor href={ `mailto:${configUrls.email}?subject=Hi%20Mr.%20Awesome%20Dude` } target='_blank'>
           <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ emailIcon } style={ { height: '40px' } } alt="email"/>
           </Button>

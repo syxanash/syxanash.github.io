@@ -10,6 +10,7 @@ import './Blog.css';
 
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 import questionIcon from '../../resources/icons/question-mark.gif';
+import commentIcon from '../../resources/icons/comment.gif';
 import blogIcon from '../../resources/icons/blog.gif';
 
 class BlogHeader extends Component {
@@ -30,6 +31,7 @@ class BlogBody extends Component {
     this.state = {
       loaderInteger: 0,
       postLoaded: undefined,
+      postTitle: undefined,
       backendResponse: undefined,
       postDate: new Date(),
       headerText: 'LOADING POST...',
@@ -44,6 +46,7 @@ class BlogBody extends Component {
       .then((data) => {
         this.setState({
           postLoaded: true,
+          postTitle: data.title,
           backendResponse: data.post_content,
           postDate: new Date(data.published_date),
         });
@@ -95,6 +98,12 @@ class BlogBody extends Component {
     }
   }
 
+  writeEmailComment = () => {
+    const { postTitle } = this.state;
+
+    window.location = `mailto:${configUrls.email}?subject=Blog Post Comment: ${postTitle}`;
+  }
+
   render = () => {
     const { openWindow, isWindowOpened } = this.props;
     const {
@@ -144,15 +153,21 @@ class BlogBody extends Component {
       </Cutout>
       <Cutout className='blog-footer-cut-out'>
         <div className='blog-footer-buttons' style={ { float: 'right' } }>
-          <Button fullWidth active={ isWindowOpened('blogpopup') } onClick={ () => openWindow('blogpopup', true) }>
-            <figcaption><b>What is this</b></figcaption>
-            <img src={ questionIcon } className='small-icon' alt="question mark"/>
+          <Button fullWidth onClick={ this.writeEmailComment }>
+            <img src={ commentIcon } className='small-icon' alt="speech bubble"/>
+            <figcaption><b>Write a comment</b></figcaption>
           </Button>
         </div>
         <div className='blog-footer-buttons' style={ { float: 'left' } }>
           <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/rss.xml` }) }>
             <img src={ hyperlinkIcon } className='small-icon' alt="hyperlink icon"/>
-            <figcaption>Feed RSS</figcaption>
+            <figcaption><b>Feed RSS</b></figcaption>
+          </Button>
+        </div>
+        <div className='blog-footer-buttons' style={ { float: 'right' } }>
+          <Button fullWidth active={ isWindowOpened('blogpopup') } onClick={ () => openWindow('blogpopup', true) }>
+            <figcaption><b>What is this</b></figcaption>
+            <img src={ questionIcon } className='small-icon' alt="question mark"/>
           </Button>
         </div>
       </Cutout>
