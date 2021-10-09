@@ -588,5 +588,10 @@
 		"name": "NeXT",
 		"url": "https://www.levenez.com/NeXTSTEP/",
 		"icon": "next"
+	},
+	{
+		"name": "Hunter Hodnett XP",
+		"url": "https://hunterhodnett.dev",
+		"icon": "windows_new"
 	}
 ]
