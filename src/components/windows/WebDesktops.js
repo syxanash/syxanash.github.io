@@ -147,7 +147,7 @@ class WebDesktopsBody extends Component {
         <div style={ { paddingBottom: '10px' } }>
           <Fieldset>
             If you are a fan of websites, web apps and portfolios which
-            resemble desktop graphical user interfaces here is a curated list
+            resemble desktop operating systems here is a curated list
           </Fieldset>
           { this.renderMobileMessage() }
         </div>
