@@ -38,7 +38,7 @@ class TheAgent extends Component {
         heard it on the television!
       </span>,
       <span>
-        Anyways enjoy also the rest of the website and hope you'll have a pleasent
+        Anyways hope you also enjoy the rest of the website, have a pleasent
         stay here and maybe discover a few of my easter eggs :)
       </span>,
     ];
