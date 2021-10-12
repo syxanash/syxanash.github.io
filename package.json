@@ -23,6 +23,7 @@
     "react-draggable": "^3.3.0",
     "react-helmet": "^5.2.1",
     "react-markdown": "^5.0.3",
+    "react-player": "^2.9.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-tilt": "^0.1.4",

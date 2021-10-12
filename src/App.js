@@ -19,6 +19,7 @@ import { MainWindowBody } from './components/MainWindow';
 import WindowsList from './components/WindowsList';
 import Poweroff from './components/additional/Poweroff';
 import LoopTV from './components/additional/LoopTV';
+import UnoMattina from './components/additional/UnoMattina';
 import StoppedProgram from './components/additional/StoppedProgram';
 import ScreenSaver from './components/additional/ScreenSaver';
 import BrokenScreen from './components/additional/BrokenScreen';
@@ -43,6 +44,7 @@ class App extends Component {
     this.konamiKeysEntered = 0;
 
     this.screenSaverTimeout = undefined;
+    this.unoMattinaTimeout = undefined;
     this.activateScreenSaver = false;
     this.screenSaverTimer = 10;
     this.screenSaverMovingMouseThreshold = 25;
@@ -61,6 +63,7 @@ class App extends Component {
       poweredOff: false,
       screenSaverMode: false,
       loopTVon: false,
+      unoMattinaOn: false,
       stoppedWindowProgram: undefined,
       isBrokenScreen: false,
       crtEnabled: JSON.parse(localStorage.getItem('crt')) === null
@@ -111,6 +114,24 @@ class App extends Component {
 
     this.changeTheme();
 
+    // riproduci la sigla di Uno Mattina alle 6:50am tutti i giorni finche' non muori
+    function setTargetTime(hour, minute, secs) {
+      const t = new Date();
+      t.setHours(hour);
+      t.setMinutes(minute);
+      t.setSeconds(secs);
+      t.setMilliseconds(0);
+      return t;
+    }
+
+    const timetarget = setTargetTime(6, 50, 0).getTime();
+    const timenow = new Date().getTime();
+    const offsetmilliseconds = timetarget - timenow;
+
+    if (offsetmilliseconds >= 0) {
+      this.unoMattinaTimeout = setTimeout(this.apriUnoMattina, offsetmilliseconds);
+    }
+
     this.setState({
       pageBodyRoutes,
       isBrokenScreen: localStorage.getItem('broken'),
@@ -135,6 +156,10 @@ class App extends Component {
     if (this.screenSaverTimeout) {
       clearTimeout(this.screenSaverTimeout);
     }
+
+    if (this.unoMattinaTimeout) {
+      clearTimeout(this.unoMattinaTimeout);
+    }
   }
 
   onMouseUpdate = () => {
@@ -149,11 +174,13 @@ class App extends Component {
   isInSpecialState = () => {
     const {
       poweredOff, isBrokenScreen, loopTVon, stoppedWindowProgram, screenSaverMode,
+      unoMattinaOn,
     } = this.state;
 
     return poweredOff
       || isBrokenScreen
       || loopTVon
+      || unoMattinaOn
       || screenSaverMode
       || stoppedWindowProgram;
   }
@@ -269,12 +296,12 @@ class App extends Component {
 
   stoppedProgram = (event) => {
     const {
-      loopTVon, stoppedWindowProgram,
+      loopTVon, stoppedWindowProgram, unoMattinaOn,
     } = this.state;
 
     if (((event.ctrlKey && event.key === 'c')
       || (event.ctrlKey && event.key === 'C'))
-      && stoppedWindowProgram === undefined && !loopTVon) {
+      && stoppedWindowProgram === undefined && !loopTVon && !unoMattinaOn) {
       this.closeAllWindows();
       this.setState({
         stoppedWindowProgram: !this.isInSpecialState(),
@@ -381,6 +408,15 @@ class App extends Component {
     this.setState({ loopTVon: false });
   }
 
+  chiudiUnoMattina = () => {
+    this.setState({ unoMattinaOn: false });
+  }
+
+  apriUnoMattina = () => {
+    this.unsetScreenSaver();
+    this.setState({ unoMattinaOn: true });
+  }
+
   triggerEasterEgg = () => {
     SoundEffects.errorSound.load();
     SoundEffects.errorSound.play();
@@ -473,6 +509,7 @@ class App extends Component {
     const {
       bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes, showLoaderPointer, crtEnabled,
       poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme, screenSaverMode,
+      unoMattinaOn,
     } = this.state;
 
     return (
@@ -522,6 +559,7 @@ class App extends Component {
         <Poweroff shouldPoweroff={ poweredOff } />
         <StoppedProgram shouldStopWindowing={ stoppedWindowProgram } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
+        { unoMattinaOn ? <UnoMattina chiudiUnoMattina={ this.chiudiUnoMattina } /> : null }
         { showLoaderPointer ? <LoaderCursor /> : null }
         { crtEnabled ? <div className='scan-lines'></div> : null }
       </HashRouter>
