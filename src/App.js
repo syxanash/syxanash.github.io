@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import $ from 'jquery';
+import moment from 'moment';
 import { ThemeProvider } from 'styled-components';
 import Helmet from 'react-helmet';
 import {
@@ -115,18 +116,9 @@ class App extends Component {
     this.changeTheme();
 
     // riproduci la sigla di Uno Mattina alle 6:50am tutti i giorni finche' non muori
-    function setTargetTime(hour, minute, secs) {
-      const t = new Date();
-      t.setHours(hour);
-      t.setMinutes(minute);
-      t.setSeconds(secs);
-      t.setMilliseconds(0);
-      return t;
-    }
-
-    const timetarget = setTargetTime(6, 50, 0).getTime();
-    const timenow = new Date().getTime();
-    const offsetmilliseconds = timetarget - timenow;
+    const timeNow = moment();
+    const scheduledTime = moment({ hour: 6, minute: 50, second: 0 });
+    const offsetmilliseconds = scheduledTime.diff(timeNow);
 
     if (offsetmilliseconds >= 0) {
       this.unoMattinaTimeout = setTimeout(this.apriUnoMattina, offsetmilliseconds);

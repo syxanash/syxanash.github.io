@@ -4,6 +4,7 @@ import ReactPlayer from 'react-player';
 import 'animate.css';
 
 import UnoMattinaVideo from '../../resources/video/unomattina.mp4';
+import tvRemote from '../../resources/icons/pointers/tv-remote.gif';
 
 import './UnoMattina.css';
 
@@ -45,6 +46,7 @@ class UnoMattina extends Component {
             {
               `* {
                 overflow: hidden;
+                cursor: url(${tvRemote}), auto;
               }`
             }
           </style>
