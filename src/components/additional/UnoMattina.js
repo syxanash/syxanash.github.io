@@ -59,6 +59,7 @@ class UnoMattina extends Component {
           playing muted playsinline
           controls
           onEnded={ chiudiUnoMattina }
+          onPause={ (e) => { e.srcElement.play(); } }
         />
         <div className={ `TV-output ${disableTVOutput ? 'animated fadeOut slower' : ''}` }>AV-1</div>
       </div>
