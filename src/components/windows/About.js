@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 import { Tooltip } from 'react95';
 
 import aboutIcon from '../../resources/icons/about.gif';
@@ -23,11 +22,11 @@ class AboutBody extends Component {
   };
 
   getDateDiff = () => {
-    const now = moment();
-    const then = moment([2017, 4, 15]);
-    const years = now.diff(then, 'year');
+    const timeThen = new Date(2017, 4, 15);
+    const timeNow = new Date();
+    const yearsDifference = timeNow.getFullYear() - timeThen.getFullYear();
 
-    const timePassed = `${years} years`;
+    const timePassed = `${yearsDifference} years`;
     this.setState({ timePassed });
   }
 
