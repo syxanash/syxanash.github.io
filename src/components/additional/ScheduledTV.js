@@ -3,10 +3,7 @@ import Helmet from 'react-helmet';
 import ReactPlayer from 'react-player';
 import 'animate.css';
 
-import UnoMattinaVideo from '../../resources/video/unomattina.mp4';
-import LunediFilmVideo from '../../resources/video/lunedifilm.mp4';
-import TassoniVideo from '../../resources/video/tassoni.mp4';
-
+import configUrls from '../../resources/config-urls.json';
 import tvRemote from '../../resources/icons/pointers/tv-remote.gif';
 
 import './ScheduledTV.css';
@@ -23,7 +20,8 @@ class ScheduledTV extends Component {
 
     this.state = {
       scheduledTVOn: false,
-      disableTVOutput: false,
+      tvSignalDisabled: false,
+      videoLoaded: false,
       videoToPlay: undefined,
     };
   }
@@ -63,25 +61,17 @@ class ScheduledTV extends Component {
   }
 
   componentDidMount = () => {
-    const { disableTVOutput } = this.state;
-
     this.unoMattinaTimeout = setTimeout(() => {
-      this.turnOnScheduledTV(UnoMattinaVideo);
+      this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/tassoni.mp4`);
     }, this.getOffsetMillisecondsDate(6, 50, 0));
 
     this.lunediFilmTimeout = setTimeout(() => {
-      this.turnOnScheduledTV(LunediFilmVideo);
+      this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/lunedifilm.mp4`);
     }, this.getOffsetMillisecondsDate(21, 20, 0, 1));
 
     this.tassoniTimeout = setTimeout(() => {
-      this.turnOnScheduledTV(TassoniVideo);
+      this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/tassoni.mp4`);
     }, this.getOffsetMillisecondsDate(12, 0, 0));
-
-    if (!disableTVOutput) {
-      this.tvOutputTimeout = setTimeout(() => {
-        this.setState({ disableTVOutput: true });
-      }, 3 * 1000);
-    }
   }
 
   componentWillUnmount = () => {
@@ -100,6 +90,14 @@ class ScheduledTV extends Component {
     if (this.tvOutputTimeout) {
       clearTimeout(this.tvOutputTimeout);
     }
+  }
+
+  videoFinishedLoading = () => {
+    this.setState({ videoLoaded: true });
+
+    this.tvOutputTimeout = setTimeout(() => {
+      this.setState({ tvSignalDisabled: true });
+    }, 3 * 1000);
   }
 
   turnOnScheduledTV = (videoToPlay) => {
@@ -121,7 +119,9 @@ class ScheduledTV extends Component {
   }
 
   render() {
-    const { disableTVOutput, scheduledTVOn, videoToPlay } = this.state;
+    const {
+      tvSignalDisabled, scheduledTVOn, videoToPlay, videoLoaded,
+    } = this.state;
 
     if (!scheduledTVOn) {
       return null;
@@ -148,8 +148,13 @@ class ScheduledTV extends Component {
           controls
           onEnded={ this.turnOffScheduledTV }
           onPause={ this.interceptPauseEvent }
+          onReady={ this.videoFinishedLoading }
         />
-        <div className={ `TV-output ${disableTVOutput ? 'animated fadeOut slower' : ''}` }>AV-1</div>
+        <div
+          style={ { display: videoLoaded ? 'none' : 'block' } }
+          className='black-screen-tv'
+        />
+        <div className={ `TV-output ${tvSignalDisabled ? 'animated fadeOut slower' : ''}` }>AV-1</div>
       </div>
     );
   }
