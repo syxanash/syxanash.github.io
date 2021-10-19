@@ -4,6 +4,7 @@ import ReactPlayer from 'react-player';
 import 'animate.css';
 
 import UnoMattinaVideo from '../../resources/video/unomattina.mp4';
+import LunediFilmVideo from '../../resources/video/lunedifilm.mp4';
 import tvRemote from '../../resources/icons/pointers/tv-remote.gif';
 
 import './ScheduledTV.css';
@@ -13,6 +14,7 @@ class ScheduledTV extends Component {
     super(props);
 
     this.unoMattinaTimeout = undefined;
+    this.lunediFilmTimeout = undefined;
     this.tvOutputTimeout = undefined;
 
     this.state = {
@@ -25,30 +27,46 @@ class ScheduledTV extends Component {
   componentDidMount = () => {
     const { disableTVOutput } = this.state;
 
-    function getOffsetMillisecondsDate(hour, minute, secs) {
+    function getOffsetMillisecondsDate(hour, minute, secs, day = undefined) {
       const targetDate = new Date();
-      const currentDate = new Date();
+      const now = new Date();
 
       targetDate.setHours(hour);
       targetDate.setMinutes(minute);
       targetDate.setSeconds(secs);
       targetDate.setMilliseconds(0);
 
-      const offesetMilliseconds = targetDate.getTime() - currentDate.getTime();
-
-      if (offesetMilliseconds < 0) {
-        const daytoset = (currentDate.getDay() + 1) % 7;
+      if (day === undefined) {
+        const offesetMilliseconds = targetDate.getTime() - now.getTime();
+        if (offesetMilliseconds < 0) {
+          const daytoset = (now.getDay() + 1) % 7;
+          const currentDay = targetDate.getDay();
+          const distance = (daytoset + 7 - currentDay) % 7;
+          targetDate.setDate(targetDate.getDate() + distance);
+        }
+      } else {
+        const daytoset = day;
         const currentDay = targetDate.getDay();
         const distance = (daytoset + 7 - currentDay) % 7;
         targetDate.setDate(targetDate.getDate() + distance);
+        const offesetMilliseconds = targetDate.getTime() - now.getTime();
+        if (offesetMilliseconds < 0) {
+          // set the timer to next week if in the current day we already
+          // passed the time of the schedule
+          targetDate.setDate(now.getDate() + 1 * 7);
+        }
       }
 
-      return targetDate.getTime() - currentDate.getTime();
+      return targetDate.getTime() - now.getTime();
     }
 
     this.unoMattinaTimeout = setTimeout(() => {
       this.turnOnScheduledTV(UnoMattinaVideo);
     }, getOffsetMillisecondsDate(6, 50, 0));
+
+    this.lunediFilmTimeout = setTimeout(() => {
+      this.turnOnScheduledTV(LunediFilmVideo);
+    }, getOffsetMillisecondsDate(21, 20, 0, 1));
 
     if (!disableTVOutput) {
       this.tvOutputTimeout = setTimeout(() => {
@@ -60,6 +78,10 @@ class ScheduledTV extends Component {
   componentWillUnmount = () => {
     if (this.unoMattinaTimeout) {
       clearTimeout(this.unoMattinaTimeout);
+    }
+
+    if (this.lunediFilmTimeout) {
+      clearTimeout(this.lunediFilmTimeout);
     }
 
     if (this.tvOutputTimeout) {
