@@ -75,7 +75,7 @@ class ScheduledTV extends Component {
 
     this.tassoniTimeout = setTimeout(() => {
       this.turnOnScheduledTV(TassoniVideo);
-    }, this.getOffsetMillisecondsDate(11, 35, 0));
+    }, this.getOffsetMillisecondsDate(12, 0, 0));
 
     if (!disableTVOutput) {
       this.tvOutputTimeout = setTimeout(() => {
