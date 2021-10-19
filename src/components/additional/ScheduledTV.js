@@ -113,6 +113,10 @@ class ScheduledTV extends Component {
   }
 
   interceptPauseEvent = (e) => {
+    if (e.srcElement.muted) {
+      e.srcElement.muted = false;
+    }
+
     if (!e.currentTarget.ended) {
       e.srcElement.play();
     }
