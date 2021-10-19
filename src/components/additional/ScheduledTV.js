@@ -112,13 +112,9 @@ class ScheduledTV extends Component {
     closeScheduledTV();
   }
 
-  interceptPauseEvent = (e) => {
-    if (e.srcElement.muted) {
-      e.srcElement.muted = false;
-    }
-
-    if (!e.currentTarget.ended) {
-      e.srcElement.play();
+  unmute = (e) => {
+    if (e.target.muted) {
+      e.target.muted = false;
     }
   }
 
@@ -149,10 +145,10 @@ class ScheduledTV extends Component {
           className='scheduledtv-video-container'
           url={ videoToPlay }
           playing muted playsinline
-          controls
+          controls={ false }
           onEnded={ this.turnOffScheduledTV }
-          onPause={ this.interceptPauseEvent }
           onReady={ this.videoFinishedLoading }
+          onClick={ this.unmute }
         />
         <div
           style={ { display: videoLoaded ? 'none' : 'block' } }
