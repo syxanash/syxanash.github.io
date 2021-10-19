@@ -62,7 +62,7 @@ class ScheduledTV extends Component {
 
   componentDidMount = () => {
     this.unoMattinaTimeout = setTimeout(() => {
-      this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/tassoni.mp4`);
+      this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/unomattina.mp4`);
     }, this.getOffsetMillisecondsDate(6, 50, 0));
 
     this.lunediFilmTimeout = setTimeout(() => {
