@@ -1,4 +1,4 @@
-.unomattina-container {
+.scheduledtv-container {
   height: 100%;
   position: absolute;    
   margin:auto;
@@ -24,7 +24,7 @@
   position: absolute;
 }
 
-.unomattina-video-container {
+.scheduledtv-video-container {
   max-width: 100%;
   max-height: 100%;
   position: absolute;

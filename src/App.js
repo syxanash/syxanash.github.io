@@ -19,7 +19,7 @@ import { MainWindowBody } from './components/MainWindow';
 import WindowsList from './components/WindowsList';
 import Poweroff from './components/additional/Poweroff';
 import LoopTV from './components/additional/LoopTV';
-import UnoMattina from './components/additional/UnoMattina';
+import ScheduledTV from './components/additional/ScheduledTV';
 import StoppedProgram from './components/additional/StoppedProgram';
 import ScreenSaver from './components/additional/ScreenSaver';
 import BrokenScreen from './components/additional/BrokenScreen';
@@ -44,7 +44,6 @@ class App extends Component {
     this.konamiKeysEntered = 0;
 
     this.screenSaverTimeout = undefined;
-    this.unoMattinaTimeout = undefined;
     this.activateScreenSaver = false;
     this.screenSaverTimer = 10;
     this.screenSaverMovingMouseThreshold = 25;
@@ -63,7 +62,7 @@ class App extends Component {
       poweredOff: false,
       screenSaverMode: false,
       loopTVon: false,
-      unoMattinaOn: false,
+      scheduledTVOn: false,
       stoppedWindowProgram: undefined,
       isBrokenScreen: false,
       crtEnabled: JSON.parse(localStorage.getItem('crt')) === null
@@ -114,24 +113,6 @@ class App extends Component {
 
     this.changeTheme();
 
-    // riproduci la sigla di Uno Mattina alle 6:50am tutti i giorni finche' non muori
-    function setTargetTime(hour, minute, secs) {
-      const t = new Date();
-      t.setHours(hour);
-      t.setMinutes(minute);
-      t.setSeconds(secs);
-      t.setMilliseconds(0);
-      return t;
-    }
-
-    const scheduledTime = setTargetTime(6, 50, 0).getTime();
-    const timeNow = new Date().getTime();
-    const offsetmilliseconds = scheduledTime - timeNow;
-
-    if (offsetmilliseconds >= 0) {
-      this.unoMattinaTimeout = setTimeout(this.apriUnoMattina, offsetmilliseconds);
-    }
-
     this.setState({
       pageBodyRoutes,
       isBrokenScreen: localStorage.getItem('broken'),
@@ -156,10 +137,6 @@ class App extends Component {
     if (this.screenSaverTimeout) {
       clearTimeout(this.screenSaverTimeout);
     }
-
-    if (this.unoMattinaTimeout) {
-      clearTimeout(this.unoMattinaTimeout);
-    }
   }
 
   onMouseUpdate = () => {
@@ -174,13 +151,13 @@ class App extends Component {
   isInSpecialState = () => {
     const {
       poweredOff, isBrokenScreen, loopTVon, stoppedWindowProgram, screenSaverMode,
-      unoMattinaOn,
+      scheduledTVOn,
     } = this.state;
 
     return poweredOff
       || isBrokenScreen
       || loopTVon
-      || unoMattinaOn
+      || scheduledTVOn
       || screenSaverMode
       || stoppedWindowProgram;
   }
@@ -296,12 +273,12 @@ class App extends Component {
 
   stoppedProgram = (event) => {
     const {
-      loopTVon, stoppedWindowProgram, unoMattinaOn,
+      loopTVon, stoppedWindowProgram, scheduledTVOn,
     } = this.state;
 
     if (((event.ctrlKey && event.key === 'c')
       || (event.ctrlKey && event.key === 'C'))
-      && stoppedWindowProgram === undefined && !loopTVon && !unoMattinaOn) {
+      && stoppedWindowProgram === undefined && !loopTVon && !scheduledTVOn) {
       this.closeAllWindows();
       this.setState({
         stoppedWindowProgram: !this.isInSpecialState(),
@@ -408,13 +385,13 @@ class App extends Component {
     this.setState({ loopTVon: false });
   }
 
-  chiudiUnoMattina = () => {
-    this.setState({ unoMattinaOn: false });
+  closeScheduledTV = () => {
+    this.setState({ scheduledTVOn: false });
   }
 
-  apriUnoMattina = () => {
+  openScheduledTV = () => {
     this.unsetScreenSaver();
-    this.setState({ unoMattinaOn: true });
+    this.setState({ scheduledTVOn: true });
   }
 
   triggerEasterEgg = () => {
@@ -509,7 +486,6 @@ class App extends Component {
     const {
       bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes, showLoaderPointer, crtEnabled,
       poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme, screenSaverMode,
-      unoMattinaOn,
     } = this.state;
 
     return (
@@ -559,7 +535,10 @@ class App extends Component {
         <Poweroff shouldPoweroff={ poweredOff } />
         <StoppedProgram shouldStopWindowing={ stoppedWindowProgram } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
-        { unoMattinaOn ? <UnoMattina chiudiUnoMattina={ this.chiudiUnoMattina } /> : null }
+        <ScheduledTV
+          openScheduledTV={ this.openScheduledTV }
+          closeScheduledTV={ this.closeScheduledTV }
+        />
         { showLoaderPointer ? <LoaderCursor /> : null }
         { crtEnabled ? <div className='scan-lines'></div> : null }
       </HashRouter>
