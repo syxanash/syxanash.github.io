@@ -15,6 +15,7 @@ class ScheduledTV extends Component {
     this.unoMattinaTimeout = undefined;
     this.lunediFilmTimeout = undefined;
     this.tassoniTimeout = undefined;
+    this.angelusTimeout = undefined;
 
     this.tvOutputTimeout = undefined;
 
@@ -61,6 +62,18 @@ class ScheduledTV extends Component {
   }
 
   componentDidMount = () => {
+    fetch(`${configUrls.backendUrl}/country`)
+      .then(response => response.json())
+      .then((data) => {
+        if (data.country === 'IE') {
+          this.angelusTimeout = setTimeout(() => {
+            this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/angelus.mp4`);
+          }, this.getOffsetMillisecondsDate(18, 0, 0));
+        }
+      }).catch((errorObject) => {
+        console.error(errorObject);
+      });
+
     this.unoMattinaTimeout = setTimeout(() => {
       this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/unomattina.mp4`);
     }, this.getOffsetMillisecondsDate(6, 50, 0));
@@ -85,6 +98,10 @@ class ScheduledTV extends Component {
 
     if (this.tassoniTimeout) {
       clearTimeout(this.tassoniTimeout);
+    }
+
+    if (this.angelusTimeout) {
+      clearTimeout(this.angelusTimeout);
     }
 
     if (this.tvOutputTimeout) {
