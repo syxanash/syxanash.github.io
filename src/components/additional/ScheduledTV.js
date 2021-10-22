@@ -62,17 +62,19 @@ class ScheduledTV extends Component {
   }
 
   componentDidMount = () => {
-    fetch(`${configUrls.backendUrl}/country`)
-      .then(response => response.json())
-      .then((data) => {
-        if (data.country === 'IE') {
-          this.angelusTimeout = setTimeout(() => {
-            this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/angelus.mp4`);
-          }, this.getOffsetMillisecondsDate(18, 0, 0));
-        }
-      }).catch((errorObject) => {
-        console.error(errorObject);
-      });
+    if (new Date().getHours() === 17) {
+      fetch(`${configUrls.backendUrl}/country`)
+        .then(response => response.json())
+        .then((data) => {
+          if (data.country === 'IE') {
+            this.angelusTimeout = setTimeout(() => {
+              this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/angelus.mp4`);
+            }, this.getOffsetMillisecondsDate(18, 0, 0));
+          }
+        }).catch((errorObject) => {
+          console.error(errorObject);
+        });
+    }
 
     this.unoMattinaTimeout = setTimeout(() => {
       this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/unomattina.mp4`);
