@@ -27,67 +27,57 @@ class ScheduledTV extends Component {
     };
   }
 
-  getOffsetMillisecondsDate = (hour, minute, secs, day = undefined) => {
+  getOffsetMilliseconds = (hour, minute, secs) => {
     const targetDate = new Date();
-    const now = new Date();
 
     targetDate.setHours(hour);
     targetDate.setMinutes(minute);
     targetDate.setSeconds(secs);
     targetDate.setMilliseconds(0);
 
-    if (day === undefined) {
-      const offesetMilliseconds = targetDate.getTime() - now.getTime();
-      // if scheduled time has already passed then set it to next day of the week
-      if (offesetMilliseconds < 0) {
-        const daytoset = (now.getDay() + 1) % 7;
-        const currentDay = targetDate.getDay();
-        const distance = (daytoset + 7 - currentDay) % 7;
-        targetDate.setDate(targetDate.getDate() + distance);
-      }
-    } else {
-      const daytoset = day;
-      const currentDay = targetDate.getDay();
-      const distance = (daytoset + 7 - currentDay) % 7;
-      targetDate.setDate(targetDate.getDate() + distance);
-      const offesetMilliseconds = targetDate.getTime() - now.getTime();
-      if (offesetMilliseconds < 0) {
-        // set the timer to next week if in the current day we already
-        // passed the time of the schedule
-        targetDate.setDate(now.getDate() + 1 * 7);
-      }
-    }
-
-    return targetDate.getTime() - now.getTime();
+    return targetDate.getTime() - new Date().getTime();
   }
 
   componentDidMount = () => {
+    const today = new Date();
+    const unoMattinaOffest = this.getOffsetMilliseconds(6, 50, 0);
+    const lunedifilmOffset = this.getOffsetMilliseconds(21, 20, 0);
+    const tassoniOffset = this.getOffsetMilliseconds(12, 0, 0);
+
     if (new Date().getHours() === 17
       && new Date().getMinutes() <= 59 && new Date().getMinutes() >= 55) {
       fetch(`${configUrls.backendUrl}/country`)
         .then(response => response.json())
         .then((data) => {
-          if (data.country === 'IE') {
-            this.angelusTimeout = setTimeout(() => {
+          const angelusOffset = this.getOffsetMilliseconds(18, 0, 0);
+          this.angelusTimeout = data.country === 'IE' && angelusOffset > 0
+            ? setTimeout(() => {
               this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/angelus.mp4`);
-            }, this.getOffsetMillisecondsDate(18, 0, 0));
-          }
-        }).catch((errorObject) => {
+            }, angelusOffset)
+            : undefined;
+        })
+        .catch((errorObject) => {
           console.error(errorObject);
         });
     }
 
-    this.unoMattinaTimeout = setTimeout(() => {
-      this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/unomattina.mp4`);
-    }, this.getOffsetMillisecondsDate(6, 50, 0));
+    this.unoMattinaTimeout = unoMattinaOffest > 0
+      ? setTimeout(() => {
+        this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/unomattina.mp4`);
+      }, unoMattinaOffest)
+      : undefined;
 
-    this.lunediFilmTimeout = setTimeout(() => {
-      this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/lunedifilm.mp4`);
-    }, this.getOffsetMillisecondsDate(21, 20, 0, 1));
+    this.lunediFilmTimeout = lunedifilmOffset > 0 && today.getDay() === 1
+      ? setTimeout(() => {
+        this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/lunedifilm.mp4`);
+      }, lunedifilmOffset)
+      : undefined;
 
-    this.tassoniTimeout = setTimeout(() => {
-      this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/tassoni.mp4`);
-    }, this.getOffsetMillisecondsDate(12, 0, 0));
+    this.tassoniTimeout = tassoniOffset > 0
+      ? setTimeout(() => {
+        this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/tassoni.mp4`);
+      }, tassoniOffset)
+      : undefined;
   }
 
   componentWillUnmount = () => {
