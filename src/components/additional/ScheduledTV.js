@@ -62,7 +62,7 @@ class ScheduledTV extends Component {
   }
 
   componentDidMount = () => {
-    if (new Date().getHours() === 17) {
+    if (new Date().getHours() === 17 && new Date().getMinutes() === 59) {
       fetch(`${configUrls.backendUrl}/country`)
         .then(response => response.json())
         .then((data) => {
