@@ -107,9 +107,7 @@ class MainWindowBody extends Component {
   checkCollision = () => {
     const iconsColliding = this.divCollision($('#computer_icon'), $('#cestino_icon'));
 
-    if (iconsColliding) {
-      this.setState({ iconsColliding });
-    }
+    this.setState({ iconsColliding });
   }
 
   divCollision = (div1, div2) => {
@@ -171,10 +169,11 @@ class MainWindowBody extends Component {
           <div className='last-row-icons'>
             <Button id='cestino_icon' size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } }
               onClick={ () => this.openWindowIfNotOpened('cestino') }
+              disabled={ eggTriggered }
               active={ isWindowOpened('cestino') || iconsColliding }
             >
               <img src={ eggTriggered ? emptyTrashIcon : trashIcon } className='icon' alt="trash"/>
-              <figcaption className='icon-caption'>Cestino</figcaption>
+              { eggTriggered ? null : <figcaption className='icon-caption'>Cestino</figcaption> }
             </Button>
           </div>
           <div className='first-row-icons' onMouseEnter={ this.preloadAssets }>
@@ -194,7 +193,7 @@ class MainWindowBody extends Component {
                 style={ { width: '85px', height: '85px', display: 'inline-block' } }
               >
                 <img src={ aboutIcon } className={ `icon ${eggTriggered ? 'animated infinite bounce fast' : ''}` } alt="about"/>
-                <figcaption className='icon-caption'>About</figcaption>
+                { eggTriggered ? null : <figcaption className='icon-caption'>About</figcaption> }
               </Button>
             </Draggable>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }

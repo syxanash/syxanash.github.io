@@ -10,11 +10,19 @@ import cestinoIcon from '../../resources/icons/trash.gif';
 import spiderWindowIcon from '../../resources/icons/spiderwindow.gif';
 
 class CestinoHeader extends Component {
-  render = () => (
-    <span>
-      <img src={ cestinoIcon } alt='main icon' style={ { height: '15px' } }/> Cestino
-    </span>
-  )
+  render = () => {
+    let counter = '';
+    if (sessionStorage.getItem('messageCounter') !== null) {
+      const messageCounter = parseInt(sessionStorage.getItem('messageCounter'), 10);
+      counter = ` ${messageCounter + 1}/${easterEggObject.cestinoMessages.length}`;
+    }
+
+    return (
+      <span>
+        <img src={ cestinoIcon } alt='main icon' style={ { height: '15px' } }/> Cestino{ counter }
+      </span>
+    );
+  }
 }
 
 class CestinoBody extends Component {
@@ -49,7 +57,6 @@ class CestinoBody extends Component {
   render = () => {
     const messageCounter = parseInt(sessionStorage.getItem('messageCounter'), 10);
     const currentMessage = easterEggObject.cestinoMessages[messageCounter].message;
-    const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
 
     return (<React.Fragment>
       <div className='cestino-message-container'>
@@ -63,7 +70,6 @@ class CestinoBody extends Component {
             <Button
               fullWidth
               onClick={ this.increaseClickCount }
-              disabled={ eggTriggered }
               style={ { width: '150px' } }
             >{easterEggObject.cestinoMessages[messageCounter].button}</Button>
           </div>
