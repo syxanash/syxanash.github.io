@@ -39,7 +39,7 @@ class MusicBody extends Component {
 
   render = () => (<div className='music-window-container'>
     <div className='head-container'>
-      <img src={ headPlayer } alt='media player skin' style={ { pointerEvents: 'none', userSelect: 'none' } } />
+      <div className='handle'><img src={ headPlayer } alt='media player skin' style={ { pointerEvents: 'none', userSelect: 'none' } }/></div>
       <div className='head-left-ear' onClick={ this.touchEar } />
       <div className='head-right-ear' onClick={ this.touchEar } />
       <div className='player-head'>
