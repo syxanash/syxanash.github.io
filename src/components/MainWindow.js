@@ -25,6 +25,7 @@ import pizzaIcon from '../resources/icons/pizza.gif';
 import corruptedFileIcon from '../resources/icons/corrupted.gif';
 import lightbulbIcon from '../resources/icons/lightbulb.gif';
 import staticImage from '../resources/images/static.gif';
+import playerHeadImage from '../resources/images/head.gif';
 
 import languages from '../resources/languages.json';
 
@@ -153,6 +154,7 @@ class MainWindowBody extends Component {
     if (!assetsLoaded) {
       SoundEffects.loopTVSound.load();
       new Image().src = staticImage;
+      new Image().src = playerHeadImage;
 
       this.setState({ assetsLoaded: true });
     }
