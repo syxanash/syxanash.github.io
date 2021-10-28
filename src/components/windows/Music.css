@@ -1,16 +1,48 @@
-.music-cutout {
-  display: flex;
-  flex-wrap: wrap;
+.music-window-container {
+  width: 330px;
 }
 
-.music-button {
-  width: 33.33%;
-  width: calc(100% / 3);
-  display: inline-block;
+.head-container {
+  position: absolute;
+  top: 35px;
+}
+
+.head-left-ear {
+  position: absolute;
+  width: 45px;
+  height: 165px;
+  top: 85px;
+}
+
+.head-right-ear {
+  position: absolute;
+  width: 45px;
+  height: 165px;
+  top: 85px;
+  right: 2px;
+}
+
+.player-head {
+  position: absolute;
+  width: 180px;
+  bottom: 194px;
+  left: 82px;
+}
+
+.social-button-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+  padding-bottom: 10px;
+}
+
+.social-button {
+  cursor: url(../../resources/icons/pointers/pointer.gif), auto;
 }
 
 .music-track-text {
   color: yellow;
+  font-weight: bold;
   font-size: 20px;
   cursor: url(../../resources/icons/pointers/pointer.gif), auto;
 }

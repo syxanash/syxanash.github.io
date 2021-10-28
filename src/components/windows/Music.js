@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Button, Cutout, Anchor, TabBody,
+  Anchor, Tooltip,
 } from 'react95';
 
 import musicIcon from '../../resources/icons/music.gif';
@@ -8,6 +8,7 @@ import musicIcon from '../../resources/icons/music.gif';
 import spotifyIcon from '../../resources/icons/social/spotify.gif';
 import bandcampIcon from '../../resources/icons/social/bandcamp.gif';
 import soundcloudIcon from '../../resources/icons/social/soundcloud.gif';
+import headPlayer from '../../resources/images/head.gif';
 
 import discoveredMusic from '../../resources/recently-discovered-music.json';
 
@@ -29,62 +30,56 @@ class TheMightyMarquee extends React.Component {
 }
 
 class MusicBody extends Component {
-  render = () => (<React.Fragment>
-    <div style={ { paddingBottom: '20px' } }>
-      I usually save my music on the following online services.
-    </div>
-    <Cutout className='music-cutout'>
-      <div className='music-button'>
-        <Anchor
-          href='https://open.spotify.com/user/1192532714?si=_Z9kVqrCRJWOaJlWAE-hqA'
-          target='_blank'
-          style={ { color: '#000000', textDecoration: 'none' } }
-        >
-          <Button fullWidth size='lg' style={ { height: '95px', display: 'inline-block', backgroundColor: '#fffee8' } }>
-            <img src={ spotifyIcon } className='icon' alt="Spotify link"/>
-            <figcaption className='icon-caption'>Spotify</figcaption>
-          </Button>
-        </Anchor>
-      </div>
-      <div className='music-button'>
-        <Anchor
-          href='https://bandcamp.com/syxa'
-          target='_blank'
-          style={ { color: '#000000', textDecoration: 'none' } }
-        >
-          <Button fullWidth size='lg' style={ { height: '95px', display: 'inline-block', backgroundColor: '#fffee8' } }>
-            <img src={ bandcampIcon } className='icon' alt="Bandcamp link"/>
-            <figcaption className='icon-caption'>Bandcamp</figcaption>
-          </Button>
-        </Anchor>
-      </div>
-      <div className='music-button'>
-        <Anchor
-          href='https://soundcloud.com/someonewholovesmymind'
-          target='_blank'
-          style={ { color: '#000000', textDecoration: 'none' } }
-        >
-          <Button fullWidth size='lg' style={ { height: '95px', display: 'inline-block', backgroundColor: '#fffee8' } }>
-            <img src={ soundcloudIcon } className='icon' alt="Bandcamp link"/>
-            <figcaption className='icon-caption'>SoundCloud</figcaption>
-          </Button>
-        </Anchor>
-      </div>
-    </Cutout>
-    <div style={ { paddingBottom: '10px', paddingTop: '20px' } }>
-      <TabBody>
-        <div style={ { marginTop: '-20px', paddingBottom: '5px' } }>Recently Discovered</div>
+  touchEar = () => {
+    const message = 'DO NOT touch my ears, they are very sensitive!';
+
+    // eslint-disable-next-line no-alert
+    alert(message);
+  }
+
+  render = () => (<div className='music-window-container'>
+    <div className='head-container'>
+      <img src={ headPlayer } alt='media player skin' style={ { pointerEvents: 'none', userSelect: 'none' } } />
+      <div className='head-left-ear' onClick={ this.touchEar } />
+      <div className='head-right-ear' onClick={ this.touchEar } />
+      <div className='player-head'>
+        <span style={ { color: 'white' } }>Social links:</span>
+        <div className='social-button-container'>
+          <Tooltip text='Spotify' delay={ 500 }>
+            <Anchor
+              href='https://open.spotify.com/user/1192532714?si=_Z9kVqrCRJWOaJlWAE-hqA'
+              target='_blank'
+            >
+              <img src={ spotifyIcon } className='social-button' alt="Spotify link"/>
+            </Anchor>
+          </Tooltip>
+          <Tooltip text='Bancamp' delay={ 500 }>
+            <Anchor
+              href='https://bandcamp.com/syxa'
+              target='_blank'
+            >
+              <img src={ bandcampIcon } className='social-button' alt="Bandcamp link"/>
+            </Anchor>
+          </Tooltip>
+          <Tooltip text='SoundCloud' delay={ 500 }>
+            <Anchor
+              href='https://soundcloud.com/someonewholovesmymind'
+              target='_blank'
+            >
+              <img src={ soundcloudIcon } className='social-button' alt="SoundCloud link"/>
+            </Anchor>
+          </Tooltip>
+        </div>
+        <span style={ { color: 'white', paddingBottom: '10px' } }>Recently discovered:</span>
         <Anchor
           href={ discoveredMusic.url }
           target='_blank'
         >
-          <Cutout style={ { backgroundColor: 'black', textDecoration: 'none' } }>
-            <TheMightyMarquee text={ discoveredMusic.name } />
-          </Cutout>
+          <TheMightyMarquee text={ discoveredMusic.name } />
         </Anchor>
-      </TabBody>
+      </div>
     </div>
-  </React.Fragment>)
+  </div>)
 }
 
 export { MusicHeader, MusicBody };

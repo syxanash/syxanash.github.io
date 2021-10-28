@@ -449,6 +449,7 @@ class App extends Component {
       const windowFocused = _.get(windowsList, `${window}.focused`);
       const windowHeader = _.get(windowsList, `${window}.header`);
       const hasFullScreen = _.get(windowsList, `${window}.hasFullScreen`);
+      const hideWindowBody = _.get(windowsList, `${window}.hideWindowBody`);
       const tiltAnimation = _.get(windowsList, `${window}.tiltAnimation`);
       const canCloseWindow = _.get(windowsList, `${window}.canCloseWindow`);
       const windowBody = _.get(windowsList, `${window}.body`);
@@ -470,6 +471,7 @@ class App extends Component {
               header={ windowHeader }
               body={ windowBody }
               windowName={ window }
+              hideWindowBody={ hideWindowBody }
               displayExtraActions={ hasFullScreen }
               tiltAnimation={ tiltAnimation }
               displayCloseButton={ canCloseWindow }

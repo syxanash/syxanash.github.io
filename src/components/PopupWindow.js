@@ -80,15 +80,33 @@ class PopupWindow extends Component {
     this.windowElement.removeEventListener('animationend', this.removeOpeningAnimation);
   }
 
+  renderPopupWindowBody = () => {
+    const {
+      body, isWindowOpened,
+      openWindow, poweroff,
+    } = this.props;
+
+    const PopupWindowBody = body;
+
+    return (
+      <PopupWindowBody
+        closeWindow={ this.closeCurrentWindow }
+        openWindow={ openWindow }
+        isWindowOpened={ isWindowOpened }
+        poweroff={ poweroff }
+        isFullscreen={ false }
+      />
+    );
+  }
+
   renderInnerWindow = () => {
     const { displayWindowBody, openAnimation } = this.state;
     const {
-      header, body, displayExtraActions, displayCloseButton, isWindowOpened,
-      focused, windowTheme, openWindow, poweroff, unfocusedTheme,
+      header, displayExtraActions, displayCloseButton,
+      focused, windowTheme, unfocusedTheme, hideWindowBody,
     } = this.props;
 
     const PopupWindowHeader = header;
-    const PopupWindowBody = body;
 
     return (
       <div className={ `${focused ? 'window-shadow-primary' : ''} ${openAnimation ? `animated ${displayExtraActions ? 'zoomIn faster' : 'bounceIn faster'}` : ''}` }>
@@ -105,15 +123,12 @@ class PopupWindow extends Component {
                 </span>
               </div>
             </WindowHeader>
-            <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
-              <PopupWindowBody
-                closeWindow={ this.closeCurrentWindow }
-                openWindow={ openWindow }
-                isWindowOpened={ isWindowOpened }
-                poweroff={ poweroff }
-                isFullscreen={ false }
-              />
-            </WindowContent>
+            { hideWindowBody
+              ? this.renderPopupWindowBody()
+              : <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
+                {this.renderPopupWindowBody()}
+              </WindowContent>
+            }
           </Window>
         </ThemeProvider>
       </div>
