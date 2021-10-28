@@ -11,11 +11,13 @@ import spiderWindowIcon from '../../resources/icons/spiderwindow.gif';
 
 class CestinoHeader extends Component {
   render = () => {
-    let counter = '';
+    let messageCounter = 0;
+
     if (sessionStorage.getItem('messageCounter') !== null) {
-      const messageCounter = parseInt(sessionStorage.getItem('messageCounter'), 10);
-      counter = ` ${messageCounter + 1}/${easterEggObject.cestinoMessages.length}`;
+      messageCounter = parseInt(sessionStorage.getItem('messageCounter'), 10);
     }
+
+    const counter = ` ${messageCounter + 1}/${easterEggObject.cestinoMessages.length}`;
 
     return (
       <span>
