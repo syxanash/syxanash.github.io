@@ -5,6 +5,11 @@
 .head-container {
   position: absolute;
   top: 35px;
+  width: 342px;
+  height: 394px;
+  background: url(../../resources/images/head.gif) no-repeat;
+
+  pointer-events: none;
 }
 
 .head-left-ear {
@@ -12,6 +17,8 @@
   width: 45px;
   height: 165px;
   top: 85px;
+
+  pointer-events: all;
 }
 
 .head-right-ear {
@@ -20,13 +27,26 @@
   height: 165px;
   top: 85px;
   right: 2px;
+
+  pointer-events: all;
+}
+
+.head-overlay {
+  position: absolute;
+  width: 246px;
+  height: 395px;
+  left: 47px;
+  border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+
+  pointer-events: all;
 }
 
 .player-head {
   position: absolute;
   width: 185px;
-  bottom: 194px;
+  bottom: 192px;
   left: 80px;
+  pointer-events: all;
 }
 
 .social-button-container {

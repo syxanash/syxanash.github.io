@@ -8,7 +8,6 @@ import musicIcon from '../../resources/icons/music.gif';
 import spotifyIcon from '../../resources/icons/social/spotify.gif';
 import bandcampIcon from '../../resources/icons/social/bandcamp.gif';
 import soundcloudIcon from '../../resources/icons/social/soundcloud.gif';
-import headPlayer from '../../resources/images/head.gif';
 
 import discoveredMusic from '../../resources/recently-discovered-music.json';
 
@@ -39,7 +38,7 @@ class MusicBody extends Component {
 
   render = () => (<div className='music-window-container'>
     <div className='head-container'>
-      <div className='handle'><img src={ headPlayer } alt='media player skin' style={ { pointerEvents: 'none', userSelect: 'none' } }/></div>
+      <div className='head-overlay handle' />
       <div className='head-left-ear' onClick={ this.touchEar } />
       <div className='head-right-ear' onClick={ this.touchEar } />
       <div className='player-head'>
