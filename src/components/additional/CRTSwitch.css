@@ -1,13 +1,32 @@
 .crt-label {
   font-size: 12px;
   position: absolute;
-  right: 50px;
+  right: 80px;
   bottom: 2px;
   text-shadow: -1px -1px 1px white;
 }
 
+.lcd-label {
+  font-size: 12px;
+  position: absolute;
+  right: 0px;
+  bottom: 2px;
+  text-shadow: -1px -1px 1px white;
+}
+
+.switch-button-container {
+  display: flex;
+  position: absolute;
+  bottom: 2px;
+  right: 30px;
+}
+
 @media only screen and (max-width: 400px)  {
   .crt-label {
+    font-size: 11px;
+  }
+
+  .lcd-label {
     font-size: 11px;
   }
 }
@@ -26,7 +45,7 @@
   width: 16px;
   height: 7px;
   right: 3px;
-  bottom: 6px;
+  bottom: 4px;
   opacity: 0.8;
   filter: Alpha(opacity=80);
 }

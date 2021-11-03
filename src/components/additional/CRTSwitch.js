@@ -9,21 +9,24 @@ class CRTSwitch extends Component {
     return (
       <div className='switch-container'>
         <span className='crt-label'>CRT</span>
-        <Button
-          onClick={ toggle }
-          disabled={ crtEnabled }
-          active={ crtEnabled }
-          size='sm'
-          style={ { height: '14px', width: '23px' } }
-        > </Button>
-        <Button
-          onClick={ toggle }
-          active={ !crtEnabled }
-          disabled={ !crtEnabled }
-          size='sm'
-          style={ { height: '14px', width: '23px' } }
-        > </Button>
-        { crtEnabled ? null : <div className='disabled-switch-bg' /> }
+        <div className='switch-button-container'>
+          <Button
+            onClick={ toggle }
+            disabled={ crtEnabled }
+            active={ crtEnabled }
+            size='sm'
+            style={ { height: '14px', width: '23px' } }
+          > </Button>
+          <Button
+            onClick={ toggle }
+            active={ !crtEnabled }
+            disabled={ !crtEnabled }
+            size='sm'
+            style={ { height: '14px', width: '23px' } }
+          > </Button>
+          { crtEnabled ? null : <div className='disabled-switch-bg' /> }
+        </div>
+        <span className='lcd-label'>LCD</span>
       </div>
     );
   }
