@@ -29,13 +29,20 @@ class ScheduledTV extends Component {
 
   getOffsetMilliseconds = (hour, minute, secs) => {
     const targetDate = new Date();
+    const currentDate = new Date();
 
     targetDate.setHours(hour);
     targetDate.setMinutes(minute);
     targetDate.setSeconds(secs);
     targetDate.setMilliseconds(0);
 
-    return targetDate.getTime() - new Date().getTime();
+    const offset = targetDate.getTime() - currentDate.getTime();
+
+    if (offset < 0 && Math.abs(Math.floor(offset / 1000)) < 30) {
+      return 1;
+    }
+
+    return offset;
   }
 
   componentDidMount = () => {
