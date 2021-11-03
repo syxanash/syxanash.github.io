@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.c26beefa.chunk.css",
-    "main.js": "/static/js/main.aa53229a.chunk.js",
-    "main.js.map": "/static/js/main.aa53229a.chunk.js.map",
+    "main.js": "/static/js/main.e7e21d10.chunk.js",
+    "main.js.map": "/static/js/main.e7e21d10.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
     "static/css/2.ad458773.chunk.css": "/static/css/2.ad458773.chunk.css",
-    "static/js/2.33f6572f.chunk.js": "/static/js/2.33f6572f.chunk.js",
-    "static/js/2.33f6572f.chunk.js.map": "/static/js/2.33f6572f.chunk.js.map",
+    "static/js/2.162b707e.chunk.js": "/static/js/2.162b707e.chunk.js",
+    "static/js/2.162b707e.chunk.js.map": "/static/js/2.162b707e.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.217b2be777c87b6f51ce79be450acad4.js": "/precache-manifest.217b2be777c87b6f51ce79be450acad4.js",
+    "precache-manifest.91c5b64fd77b63b98c4d487470945bb5.js": "/precache-manifest.91c5b64fd77b63b98c4d487470945bb5.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.ad458773.chunk.css.map": "/static/css/2.ad458773.chunk.css.map",
     "static/css/main.c26beefa.chunk.css.map": "/static/css/main.c26beefa.chunk.css.map",
@@ -100,6 +100,7 @@
     "static/media/oddparents3.gif": "/static/media/oddparents3.925aa313.gif",
     "static/media/online.wav": "/static/media/online.6c2ed93f.wav",
     "static/media/perotto.gif": "/static/media/perotto.939ed86d.gif",
+    "static/media/pirateiscrime.gif": "/static/media/pirateiscrime.a3aafd73.gif",
     "static/media/poweroff.wav": "/static/media/poweroff.71bcb386.wav",
     "static/media/prince.gif": "/static/media/prince.217044a7.gif",
     "static/media/prince_of_persia_castle.png": "/static/media/prince_of_persia_castle.c7689cad.png",
@@ -147,6 +148,7 @@
     "static/media/yodastories.gif": "/static/media/yodastories.6b2e5110.gif",
     "static/media/yodastories1.gif": "/static/media/yodastories1.e9ae89c7.gif",
     "static/media/yodastories2.gif": "/static/media/yodastories2.efd24ad8.gif",
+    "static/media/youwouldntstealacar.gif": "/static/media/youwouldntstealacar.78cfc553.gif",
     "static/media/yrose.png": "/static/media/yrose.69f7330d.png",
     "static/media/zx-spec.gif": "/static/media/zx-spec.afea36fe.gif"
   }

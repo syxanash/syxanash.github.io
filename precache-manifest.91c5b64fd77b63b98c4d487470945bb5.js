@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "db9d7da382cba76dbb08e88f5b966ef6",
+    "revision": "672e0fd4c9947101e844341553c80cc9",
     "url": "/index.html"
   },
   {
-    "revision": "b09db762b2cfae5cef1c",
+    "revision": "21b3f55777487e777281",
     "url": "/static/css/2.ad458773.chunk.css"
   },
   {
-    "revision": "6c5defa44cf8098fd04b",
+    "revision": "f7f0cc98b3cd68c9285a",
     "url": "/static/css/main.c26beefa.chunk.css"
   },
   {
-    "revision": "b09db762b2cfae5cef1c",
-    "url": "/static/js/2.33f6572f.chunk.js"
+    "revision": "21b3f55777487e777281",
+    "url": "/static/js/2.162b707e.chunk.js"
   },
   {
-    "revision": "6c5defa44cf8098fd04b",
-    "url": "/static/js/main.aa53229a.chunk.js"
+    "revision": "f7f0cc98b3cd68c9285a",
+    "url": "/static/js/main.e7e21d10.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -372,6 +372,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/perotto.939ed86d.gif"
   },
   {
+    "revision": "a3aafd7349bf8edca7dcbdbcd3780072",
+    "url": "/static/media/pirateiscrime.a3aafd73.gif"
+  },
+  {
     "revision": "71bcb3869e8ec6da71193d5b700c7feb",
     "url": "/static/media/poweroff.71bcb386.wav"
   },
@@ -558,6 +562,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "efd24ad8cb38ec528dccbf055bd4e499",
     "url": "/static/media/yodastories2.efd24ad8.gif"
+  },
+  {
+    "revision": "78cfc55369736552a03b56c434e16470",
+    "url": "/static/media/youwouldntstealacar.78cfc553.gif"
   },
   {
     "revision": "69f7330d5eb6c2479f107b50e904ad1d",
