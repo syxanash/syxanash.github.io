@@ -6,7 +6,6 @@ import { GuestbookHeader, GuestbookBody } from './windows/Guestbook';
 import { MusicHeader, MusicBody } from './windows/Music';
 import { CestinoHeader, CestinoBody } from './windows/Cestino';
 import { BulbHeader, BulbBody } from './windows/Bulb';
-import { BlogPopupHeader, BlogPopupBody } from './windows/BlogPopup';
 import { BlogHeader, BlogBody } from './windows/Blog';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
 import { WebDesktopsHeader, WebDesktopsBody } from './windows/WebDesktops';
@@ -179,19 +178,6 @@ export default function WindowsList() {
       body: BulbBody,
       windowTheme: PippoTheme,
       unfocusedTheme: PippoDistracted,
-    },
-    blogpopup: {
-      hasFullScreen: false,
-      hideWindowBody: false,
-      tiltAnimation: false,
-      canCloseWindow: true,
-      hasScreensaver: true,
-      opened: false,
-      focused: false,
-      header: BlogPopupHeader,
-      body: BlogPopupBody,
-      windowTheme: PippoRedmond,
-      unfocusedTheme: PippoRedmondDistracted,
     },
     blog: {
       hasFullScreen: true,

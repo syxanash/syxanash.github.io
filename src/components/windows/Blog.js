@@ -9,8 +9,11 @@ import configUrls from '../../resources/config-urls.json';
 import './Blog.css';
 
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
-import questionIcon from '../../resources/icons/question-mark.gif';
-import commentIcon from '../../resources/icons/comment.gif';
+import prevArrowIcon from '../../resources/icons/prev_white.gif';
+import prevArrowBlueIcon from '../../resources/icons/prev_blue.gif';
+import nextArrowIcon from '../../resources/icons/next_white.gif';
+import nextArrowBlueIcon from '../../resources/icons/next_blue.gif';
+
 import blogIcon from '../../resources/icons/blog.gif';
 
 class BlogHeader extends Component {
@@ -25,11 +28,15 @@ class BlogBody extends Component {
   constructor(props) {
     super(props);
 
+    this.scrollTopBlog = React.createRef();
+
     this.loaderInterval = undefined;
     this.hopeTimeout = undefined;
 
     this.state = {
       loaderInteger: 0,
+      maxPostsNumber: undefined,
+      currentPostIndex: undefined,
       postLoaded: undefined,
       postTitle: undefined,
       backendResponse: undefined,
@@ -49,6 +56,20 @@ class BlogBody extends Component {
           postTitle: data.title,
           backendResponse: data.post_content,
           postDate: new Date(data.published_date),
+        });
+      }).catch((errorObject) => {
+        this.setState({
+          postLoaded: false,
+          backendResponse: errorObject,
+        });
+      });
+
+    fetch(`${configUrls.backendUrl}/blogposts`)
+      .then(response => response.json())
+      .then((data) => {
+        this.setState({
+          maxPostsNumber: data.posts,
+          currentPostIndex: data.posts,
         });
       }).catch((errorObject) => {
         this.setState({
@@ -98,10 +119,43 @@ class BlogBody extends Component {
     }
   }
 
+  loadBlogPost = (postIndex) => {
+    fetch(`${configUrls.backendUrl}/blogpost/${postIndex}`)
+      .then(response => response.json())
+      .then((data) => {
+        this.setState({
+          currentPostIndex: postIndex,
+          postLoaded: true,
+          postTitle: data.title,
+          backendResponse: data.post_content,
+          postDate: new Date(data.published_date),
+        });
+
+        if (this.scrollTopBlog.current !== null) {
+          this.scrollTopBlog.current.scrollIntoView({ behavior: 'smooth' });
+        }
+      }).catch((errorObject) => {
+        this.setState({
+          postLoaded: false,
+          backendResponse: errorObject,
+        });
+      });
+  }
+
+  previousPost = () => {
+    const { currentPostIndex } = this.state;
+    this.loadBlogPost(currentPostIndex - 1);
+  }
+
+  nextPost = () => {
+    const { currentPostIndex } = this.state;
+    this.loadBlogPost(currentPostIndex + 1);
+  }
+
   render = () => {
-    const { openWindow, isWindowOpened } = this.props;
     const {
-      backendResponse, postDate, postLoaded, loaderInteger, headerText, postTitle,
+      backendResponse, postDate, postLoaded, loaderInteger, headerText,
+      currentPostIndex, maxPostsNumber,
     } = this.state;
 
     if (postLoaded === undefined) {
@@ -131,6 +185,7 @@ class BlogBody extends Component {
     }
 
     return (<React.Fragment>
+      <div ref={ this.scrollTopBlog } />
       <Cutout className='blog-cutout'>
         <div className='document-style'>
           <ReactMarkdown source={ backendResponse } escapeHtml={ false } />
@@ -146,24 +201,40 @@ class BlogBody extends Component {
         </div>
       </Cutout>
       <Cutout className='blog-footer-cut-out'>
-        <div className='blog-footer-buttons' style={ { float: 'right' } }>
-          <Anchor href={ `mailto:${configUrls.email}?subject=Blog Post Comment: ${postTitle}` } style={ { textDecoration: 'none' } } target='_blank'>
-            <Button fullWidth>
-              <img src={ commentIcon } className='small-icon' alt="speech bubble"/>
-              <figcaption><b>Write a comment</b></figcaption>
-            </Button>
-          </Anchor>
+        <div className='blog-footer-buttons'>
+          <Button
+            fullWidth
+            onClick={ this.nextPost }
+            disabled={ currentPostIndex + 1 > maxPostsNumber }
+            style={ { textDecoration: 'none' } }
+          >
+            <img
+              src={ currentPostIndex + 1 > maxPostsNumber ? nextArrowIcon : nextArrowBlueIcon }
+              className='small-icon'
+              alt="left arrow"
+            />
+            <figcaption><b>Next post</b></figcaption>
+          </Button>
         </div>
-        <div className='blog-footer-buttons' style={ { float: 'left' } }>
+        <div className='blog-footer-buttons'>
           <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/rss.xml` }) }>
             <img src={ hyperlinkIcon } className='small-icon' alt="hyperlink icon"/>
             <figcaption><b>Feed RSS</b></figcaption>
           </Button>
         </div>
-        <div className='blog-footer-buttons' style={ { float: 'right' } }>
-          <Button fullWidth active={ isWindowOpened('blogpopup') } onClick={ () => openWindow('blogpopup', true) }>
-            <figcaption><b>What is this</b></figcaption>
-            <img src={ questionIcon } className='small-icon' alt="question mark"/>
+        <div className='blog-footer-buttons'>
+          <Button
+            fullWidth
+            onClick={ this.previousPost }
+            disabled={ currentPostIndex - 1 === 0 }
+            style={ { textDecoration: 'none' } }
+          >
+            <figcaption><b>Previous post</b></figcaption>&nbsp;
+            <img
+              src={ currentPostIndex - 1 === 0 ? prevArrowIcon : prevArrowBlueIcon }
+              className='small-icon'
+              alt="right arrow"
+            />
           </Button>
         </div>
       </Cutout>
