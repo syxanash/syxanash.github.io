@@ -38,7 +38,6 @@ class BlogBody extends Component {
       maxPostsNumber: undefined,
       currentPostIndex: undefined,
       postLoaded: undefined,
-      postTitle: undefined,
       backendResponse: undefined,
       headerText: 'LOADING POST...',
     };
@@ -52,7 +51,6 @@ class BlogBody extends Component {
       .then((data) => {
         this.setState({
           postLoaded: true,
-          postTitle: data.title,
           backendResponse: data.post_content,
         });
       }).catch((errorObject) => {
@@ -124,7 +122,6 @@ class BlogBody extends Component {
         this.setState({
           currentPostIndex: postIndex,
           postLoaded: true,
-          postTitle: data.title,
           backendResponse: data.post_content,
         });
 
