@@ -40,7 +40,6 @@ class BlogBody extends Component {
       postLoaded: undefined,
       postTitle: undefined,
       backendResponse: undefined,
-      postDate: new Date(),
       headerText: 'LOADING POST...',
     };
   }
@@ -55,7 +54,6 @@ class BlogBody extends Component {
           postLoaded: true,
           postTitle: data.title,
           backendResponse: data.post_content,
-          postDate: new Date(data.published_date),
         });
       }).catch((errorObject) => {
         this.setState({
@@ -128,7 +126,6 @@ class BlogBody extends Component {
           postLoaded: true,
           postTitle: data.title,
           backendResponse: data.post_content,
-          postDate: new Date(data.published_date),
         });
 
         if (this.scrollTopBlog.current !== null) {
@@ -154,7 +151,7 @@ class BlogBody extends Component {
 
   render = () => {
     const {
-      backendResponse, postDate, postLoaded, loaderInteger, headerText,
+      backendResponse, postLoaded, loaderInteger, headerText,
       currentPostIndex, maxPostsNumber,
     } = this.state;
 
@@ -189,15 +186,6 @@ class BlogBody extends Component {
       <Cutout className='blog-cutout'>
         <div className='document-style'>
           <ReactMarkdown source={ backendResponse } escapeHtml={ false } />
-        </div>
-        <div style={ {
-          fontWeight: 'bold',
-          padding: '15px',
-          paddingTop: '0px',
-          textAlign: 'right',
-        } }><i>
-            <span>Posted on { postDate.toDateString() }</span>
-          </i>
         </div>
       </Cutout>
       <Cutout className='blog-footer-cut-out'>
