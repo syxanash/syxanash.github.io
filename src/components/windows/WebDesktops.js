@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 
 import {
-  Cutout, Toolbar, Button, Fieldset,
+  Cutout, Toolbar, Button, Fieldset, Tooltip,
 } from 'react95';
 
 import Util from '../Util';
@@ -13,6 +13,7 @@ import remoteDesktops from '../../resources/remote-desktops.json';
 import mainWindowIcon from '../../resources/icons/webdesktops.gif';
 import mobileWarningIcon from '../../resources/icons/mobilewarning.gif';
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
+import httpsIcon from '../../resources/icons/https.gif';
 
 const webDesktopsIcons = require.context('../../resources/icons/webdesktops', true);
 
@@ -140,8 +141,10 @@ class WebDesktopsBody extends Component {
         <div className='toolbar-container'>
           <Toolbar>
             <Button onClick={ this.openRandomURL } variant="menu"><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
-            <Button onClick={ this.toggleHTTPSFilter } active={ httpsOnlyEnabled } variant="menu">HTTPS</Button>
             <Button onClick={ () => Util.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) } variant="menu"><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Contribute</Button>
+            <Tooltip text='show only HTTPS websites' delay={ 500 }>
+              <Button onClick={ this.toggleHTTPSFilter } active={ httpsOnlyEnabled } variant="menu"><img src={ httpsIcon } alt='https' style={ { paddingRight: '2px' } } />HTTPS</Button>
+            </Tooltip>
           </Toolbar>
         </div>
         <div style={ { paddingBottom: '10px' } }>
