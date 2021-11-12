@@ -14,7 +14,6 @@ import twitterIcon from '../../resources/icons/social/twitter.gif';
 import emailIcon from '../../resources/icons/social/email.gif';
 import pgpIcon from '../../resources/icons/social/pgp.gif';
 import linkedinIcon from '../../resources/icons/social/linkedin.gif';
-import specialfishIcon from '../../resources/icons/social/specialfish.gif';
 import questionIcon from '../../resources/icons/question-mark.gif';
 
 import pgpKey from '../../resources/misc/public.asc';
@@ -60,13 +59,6 @@ class ContactBody extends Component {
         <Anchor href='https://twitter.com/syxanash' target='_blank'>
           <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ twitterIcon } style={ { height: '30px' } } alt="twitter"/>
-          </Button>
-        </Anchor>
-      </Tooltip>
-      <Tooltip text='Special Fish' delay={ 100 }>
-        <Anchor href='https://special.fish/syx' target='_blank'>
-          <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
-            <img src={ specialfishIcon } style={ { height: '40px' } } alt="special fish"/>
           </Button>
         </Anchor>
       </Tooltip>
