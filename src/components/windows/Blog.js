@@ -52,20 +52,8 @@ class BlogBody extends Component {
         this.setState({
           postLoaded: true,
           backendResponse: data.post_content,
-        });
-      }).catch((errorObject) => {
-        this.setState({
-          postLoaded: false,
-          backendResponse: errorObject,
-        });
-      });
-
-    fetch(`${configUrls.backendUrl}/blogposts`)
-      .then(response => response.json())
-      .then((data) => {
-        this.setState({
-          maxPostsNumber: data.posts,
-          currentPostIndex: data.posts,
+          maxPostsNumber: data.posts_count,
+          currentPostIndex: data.posts_count,
         });
       }).catch((errorObject) => {
         this.setState({
