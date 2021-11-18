@@ -170,12 +170,12 @@ class ProjectsBody extends Component {
     };
 
     commands.exit = () => {
-      const { isFullscreen, closeWindow } = this.props;
+      const { isFullscreen, closeCurrentWindow } = this.props;
 
       if (isFullscreen) {
         window.location.href = '/';
       } else {
-        closeWindow();
+        closeCurrentWindow();
       }
     };
 

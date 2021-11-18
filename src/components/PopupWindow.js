@@ -23,8 +23,8 @@ class PopupWindow extends Component {
   }
 
   closeCurrentWindow = () => {
-    const { closeWindow } = this.props;
-    closeWindow();
+    const { closeWindow, windowName } = this.props;
+    closeWindow(windowName);
   }
 
   renderCloseButton = () => (
@@ -39,7 +39,7 @@ class PopupWindow extends Component {
 
   renderExtraActionButtons = () => {
     const { displayWindowBody } = this.state;
-    const { windowName, closeWindow } = this.props;
+    const { windowName } = this.props;
 
     return (
       <React.Fragment>
@@ -57,7 +57,7 @@ class PopupWindow extends Component {
           onClick={ () => {
             const { history } = this.props;
             history.push(`/${windowName}`);
-            closeWindow();
+            this.closeCurrentWindow();
           } }
         >
           <span style={ { transform: 'translateY(-1px)' } }>⌘</span>
@@ -83,14 +83,15 @@ class PopupWindow extends Component {
   renderPopupWindowBody = () => {
     const {
       body, isWindowOpened,
-      openWindow, poweroff,
+      openWindow, poweroff, closeWindow,
     } = this.props;
 
     const PopupWindowBody = body;
 
     return (
       <PopupWindowBody
-        closeWindow={ this.closeCurrentWindow }
+        closeWindow={ closeWindow }
+        closeCurrentWindow={ this.closeCurrentWindow }
         openWindow={ openWindow }
         isWindowOpened={ isWindowOpened }
         poweroff={ poweroff }
