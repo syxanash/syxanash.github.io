@@ -593,5 +593,15 @@
 		"name": "Hunter Hodnett XP",
 		"url": "https://hunterhodnett.dev",
 		"icon": "windows_new"
+	},
+	{
+		"name": "ANOTHER TEE",
+		"url": "https://www.anothertee.xyz",
+		"icon": "mac"
+	},
+	{
+		"name": "Rauno Freiberg",
+		"url": "https://rauno.me",
+		"icon": "mac_new"
 	}
 ]
