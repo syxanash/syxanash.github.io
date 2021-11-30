@@ -2,46 +2,46 @@
   {
     "name": "Joshua_bot",
     "url": "https://github.com/syxanash/joshua_bot",
-    "description": "A general purpose plugins based Telegram bot written in Ruby."
+    "description": "A general purpose plugins based Telegram bot written in Ruby"
   },
   {
     "name": "Gitron",
     "url": "https://gitron.herokuapp.com",
-    "description": "A web game using GitHub APIs based on Tron movies."
+    "description": "A web game using GitHub APIs based on Tron movies"
   },
   {
     "name": "Spioncino",
     "url": "https://github.com/syxanash/joshua_bot/blob/master/SPIONCINO.md",
-    "description": "A Telegram bot connected to a Raspberry Pi camera and a motion sensor to watch over your room."
+    "description": "A Telegram bot connected to a Raspberry Pi camera and a motion sensor to watch over your college dorm room"
   },
   {
     "name": "Pumping Wars",
     "url": "https://github.com/syxanash/college-shtuff/tree/master/Videogames%20developement",
-    "description": "A game about two university professors who have to fight each other until one of them eventually becomes the ultimate computer science god."
+    "description": "A game about two university professors who have to fight each other until one of them eventually becomes the ultimate computer science god"
   },
   {
     "name": "Rubomote",
     "url": "https://github.com/syxanash/rubomote",
-    "description": "A small Ruby web app which allows you to control iTunes using a web interface."
+    "description": "A small Ruby web app which allows you to control iTunes using a web interface"
   },
   {
     "name": "SoftScript Parser",
     "url": "https://github.com/syxanash/college-shtuff/tree/master/Programming%20languages",
-    "description": "This is a parser for an invented programming language called SoftScript, made for a university exam."
+    "description": "This is a parser for an invented programming language called SoftScript, made for a university exam"
   },
   {
     "name": "Retrocomputing",
     "url": "https://github.com/syxanash/retrocomputing",
-    "description": "This is a repository containing some tests I've made on old computers I was able to recover from thrift shops and online."
+    "description": "This is a repository containing some tests I've made on old computers I was able to recover from thrift shops and online"
   },
   {
     "name": "Logosweeper",
     "url": "https://logosweeper.surge.sh",
-    "description": "My very first React JS app, mostly made to learn the library and to have some fun with Gil Barbara's SVG repository."
+    "description": "My very first React JS app, mostly made to learn the library and to have some fun with Gil Barbara's SVG repository"
   },
   {
     "name": "Mookloh",
     "url": "https://mookloh.com",
-    "description": "Not coding related, but I designed some inline-skating T-shirts for a charity project."
+    "description": "Not coding related, but I designed some inline-skating T-shirts for a charity project"
   }
 ]
