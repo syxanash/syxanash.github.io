@@ -316,7 +316,7 @@ class App extends Component {
 
     if (pattern.length === this.konamiKeysEntered) {
       this.konamiKeysEntered = 0;
-      this.openWindow('konamicode');
+      this.openWindow('gabrieleswindow');
     }
   }
 

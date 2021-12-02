@@ -13,15 +13,15 @@ import {
   Button, Cutout, Anchor,
 } from 'react95';
 import errorIcon from '../../resources/icons/error.png';
-import './Konami.css';
+import './Gabriele.css';
 import SoundEffects from '../additional/SoundEffects';
 import configUrls from '../../resources/config-urls.json';
 
-class KonamiHeader extends Component {
+class GabrieleHeader extends Component {
   render = () => <span>Error</span>
 }
 
-class KonamiBody extends Component {
+class GabrieleBody extends Component {
   state = {
     showReport: false,
   }
@@ -66,7 +66,7 @@ class KonamiBody extends Component {
       </div>
       <Cutout style={ { display: showReport ? 'block' : 'none' } } className='error-cutout'>
         <div className='error-report-space'>
-          <p>Line: 69<br />Error: 'TooManyEasterEggsException' <Anchor href={ `${configUrls.repositoryUrl}/blob/development/src/components/windows/Konami.js#L69` } target="_blank">@ Konami.js</Anchor></p>
+          <p>Line: 69<br />Error: 'TooManyEasterEggsException' <Anchor href={ `${configUrls.repositoryUrl}/blob/development/src/components/windows/Gabriele.js#L69` } target="_blank">@ Gabriele.js</Anchor></p>
           <br />
           <br />
         </div>
@@ -92,4 +92,4 @@ class KonamiBody extends Component {
   }
 }
 
-export { KonamiHeader, KonamiBody };
+export { GabrieleHeader, GabrieleBody };

@@ -9,7 +9,7 @@ import { BulbHeader, BulbBody } from './windows/Bulb';
 import { BlogHeader, BlogBody } from './windows/Blog';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
 import { WebDesktopsHeader, WebDesktopsBody } from './windows/WebDesktops';
-import { KonamiHeader, KonamiBody } from './windows/Konami';
+import { GabrieleHeader, GabrieleBody } from './windows/Gabriele';
 import { OSInfoWindowHeader, OSInfoWindowBody } from './windows/OSInfoWindow';
 import { FixHeader, FixBody } from './windows/Fix';
 
@@ -127,7 +127,7 @@ export default function WindowsList() {
       windowTheme: PippoTheme,
       unfocusedTheme: PippoDistracted,
     },
-    konamicode: {
+    gabrieleswindow: {
       hasFullScreen: false,
       hideWindowBody: false,
       tiltAnimation: false,
@@ -135,8 +135,8 @@ export default function WindowsList() {
       hasScreensaver: true,
       opened: false,
       focused: false,
-      header: KonamiHeader,
-      body: KonamiBody,
+      header: GabrieleHeader,
+      body: GabrieleBody,
       windowTheme: PippoRedmond,
       unfocusedTheme: PippoRedmondDistracted,
     },
