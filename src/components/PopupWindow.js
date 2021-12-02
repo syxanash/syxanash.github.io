@@ -104,7 +104,7 @@ class PopupWindow extends Component {
     const { displayWindowBody, openAnimation } = this.state;
     const {
       header, displayExtraActions, displayCloseButton,
-      focused, windowTheme, unfocusedTheme, hideWindowBody,
+      focused, windowTheme, unfocusedTheme, hasCustomBody,
     } = this.props;
 
     const PopupWindowHeader = header;
@@ -124,7 +124,7 @@ class PopupWindow extends Component {
                 </span>
               </div>
             </WindowHeader>
-            { hideWindowBody
+            { hasCustomBody
               ? this.renderPopupWindowBody()
               : <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
                 {this.renderPopupWindowBody()}

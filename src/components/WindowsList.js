@@ -25,7 +25,7 @@ export default function WindowsList() {
   const windowsList = {
     about: {
       hasFullScreen: true,
-      hideWindowBody: false,
+      hasCustomBody: false,
       tiltAnimation: false,
       canCloseWindow: true,
       hasScreensaver: true,
@@ -38,7 +38,7 @@ export default function WindowsList() {
     },
     projects: {
       hasFullScreen: true,
-      hideWindowBody: false,
+      hasCustomBody: false,
       tiltAnimation: false,
       canCloseWindow: true,
       hasScreensaver: true,
@@ -51,7 +51,7 @@ export default function WindowsList() {
     },
     contact: {
       hasFullScreen: true,
-      hideWindowBody: false,
+      hasCustomBody: false,
       tiltAnimation: false,
       canCloseWindow: true,
       hasScreensaver: true,
@@ -64,7 +64,7 @@ export default function WindowsList() {
     },
     links: {
       hasFullScreen: true,
-      hideWindowBody: false,
+      hasCustomBody: false,
       tiltAnimation: false,
       canCloseWindow: true,
       hasScreensaver: true,
@@ -77,7 +77,7 @@ export default function WindowsList() {
     },
     guestbook: {
       hasFullScreen: true,
-      hideWindowBody: false,
+      hasCustomBody: false,
       tiltAnimation: false,
       canCloseWindow: true,
       hasScreensaver: true,
@@ -90,7 +90,7 @@ export default function WindowsList() {
     },
     music: {
       hasFullScreen: false,
-      hideWindowBody: true,
+      hasCustomBody: true,
       tiltAnimation: false,
       canCloseWindow: true,
       hasScreensaver: true,
@@ -103,7 +103,7 @@ export default function WindowsList() {
     },
     credits: {
       hasFullScreen: true,
-      hideWindowBody: false,
+      hasCustomBody: false,
       tiltAnimation: false,
       canCloseWindow: true,
       hasScreensaver: true,
@@ -116,7 +116,7 @@ export default function WindowsList() {
     },
     webdesktops: {
       hasFullScreen: true,
-      hideWindowBody: false,
+      hasCustomBody: false,
       tiltAnimation: false,
       canCloseWindow: true,
       hasScreensaver: true,
@@ -129,7 +129,7 @@ export default function WindowsList() {
     },
     gabrieleswindow: {
       hasFullScreen: false,
-      hideWindowBody: false,
+      hasCustomBody: false,
       tiltAnimation: false,
       canCloseWindow: false,
       hasScreensaver: true,
@@ -142,7 +142,7 @@ export default function WindowsList() {
     },
     osinfowindow: {
       hasFullScreen: false,
-      hideWindowBody: false,
+      hasCustomBody: false,
       tiltAnimation: true,
       canCloseWindow: true,
       hasScreensaver: true,
@@ -155,7 +155,7 @@ export default function WindowsList() {
     },
     cestino: {
       hasFullScreen: false,
-      hideWindowBody: false,
+      hasCustomBody: false,
       tiltAnimation: true,
       canCloseWindow: true,
       hasScreensaver: true,
@@ -168,7 +168,7 @@ export default function WindowsList() {
     },
     bulb: {
       hasFullScreen: true,
-      hideWindowBody: false,
+      hasCustomBody: false,
       tiltAnimation: false,
       canCloseWindow: true,
       hasScreensaver: false,
@@ -181,7 +181,7 @@ export default function WindowsList() {
     },
     blog: {
       hasFullScreen: true,
-      hideWindowBody: false,
+      hasCustomBody: false,
       tiltAnimation: false,
       canCloseWindow: true,
       hasScreensaver: true,
@@ -194,7 +194,7 @@ export default function WindowsList() {
     },
     fixmycomputer: {
       hasFullScreen: true,
-      hideWindowBody: false,
+      hasCustomBody: false,
       tiltAnimation: false,
       canCloseWindow: true,
       hasScreensaver: false,
