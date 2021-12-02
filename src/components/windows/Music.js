@@ -52,7 +52,7 @@ class MusicBody extends Component {
               <img src={ spotifyIcon } className='social-button' alt="Spotify link"/>
             </Anchor>
           </Tooltip>
-          <Tooltip text='Bancamp' delay={ 500 }>
+          <Tooltip text='Bandcamp' delay={ 500 }>
             <Anchor
               href='https://bandcamp.com/syxa'
               target='_blank'
