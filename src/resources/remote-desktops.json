@@ -598,5 +598,10 @@
 		"name": "Rauno Freiberg",
 		"url": "https://rauno.me",
 		"icon": "mac_new"
+	},
+	{
+		"name": "Don Chia",
+		"url": "https://www.donchia.tech",
+		"icon": "windows"
 	}
 ]
