@@ -226,6 +226,10 @@
       {
         "url": "https://smallseasons.guide",
         "description": "a small guide to seasons throughout the year"
+      },
+      {
+        "url": "https://labyr.in",
+        "description": ""
       }
     ]
   },
@@ -279,10 +283,6 @@
       {
         "url": "http://nickbriz.com",
         "description": "has made lots of interesting videos and essays about net.art"
-      },
-      {
-        "url": "https://jameshancock.art",
-        "description": "has a gallery worth exploring, also the creator of labyr.in"
       }
     ]
   },
@@ -343,10 +343,6 @@
       },
       {
         "url": "https://www.sonniesedge.net/articles",
-        "description": ""
-      },
-      {
-        "url": "https://organicplastics.net/index.html",
         "description": ""
       }
     ]
