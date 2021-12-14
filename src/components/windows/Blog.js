@@ -3,6 +3,8 @@ import {
   Cutout, Button, Progress, Anchor,
 } from 'react95';
 import ReactMarkdown from 'react-markdown/with-html';
+import { withRouter } from 'react-router-dom';
+import _ from 'lodash';
 
 import Util from '../Util';
 import configUrls from '../../resources/config-urls.json';
@@ -46,21 +48,27 @@ class BlogBody extends Component {
   componentDidMount = () => {
     this.loaderInterval = setInterval(this.increaseLoader, 20);
 
-    fetch(`${configUrls.backendUrl}/blogpost`)
-      .then(response => response.json())
-      .then((data) => {
-        this.setState({
-          postLoaded: true,
-          backendResponse: data.post_content,
-          maxPostsNumber: data.posts_count,
-          currentPostIndex: data.posts_count,
+    const blogIdParam = _.get(this, 'props.match.params.routeId', undefined);
+
+    if (blogIdParam !== undefined) {
+      this.loadBlogPost(blogIdParam);
+    } else {
+      fetch(`${configUrls.backendUrl}/blogpost`)
+        .then(response => response.json())
+        .then((data) => {
+          this.setState({
+            postLoaded: true,
+            backendResponse: data.post_content,
+            maxPostsNumber: data.posts_count,
+            currentPostIndex: data.posts_count,
+          });
+        }).catch((errorObject) => {
+          this.setState({
+            postLoaded: false,
+            backendResponse: errorObject,
+          });
         });
-      }).catch((errorObject) => {
-        this.setState({
-          postLoaded: false,
-          backendResponse: errorObject,
-        });
-      });
+    }
   }
 
   componentWillUnmount = () => {
@@ -215,4 +223,10 @@ class BlogBody extends Component {
   }
 }
 
-export { BlogHeader, BlogBody };
+const BlogHeaderWithRouter = withRouter(BlogHeader);
+const BlogBodyWithRouter = withRouter(BlogBody);
+
+export {
+  BlogHeaderWithRouter as BlogHeader,
+  BlogBodyWithRouter as BlogBody,
+};

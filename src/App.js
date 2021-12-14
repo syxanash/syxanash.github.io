@@ -97,7 +97,7 @@ class App extends Component {
         return <Route
           exact
           key={ `${window}_${index}` }
-          path={ `/${window}` }
+          path={ `/${window}/:routeId?` }
           component={ () => <WindowBodyComponent
             windowsList={ windowsList }
             resetWindows={ this.resetWindows }

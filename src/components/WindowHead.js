@@ -25,7 +25,7 @@ class WindowHead extends Component {
       .map((window, index) => {
         const WindowHeaderComponent = _.get(windowsList, `${window}.header`);
 
-        return <Route exact key={ `${window}_${index}` } path={ `/${window}` } component={ () => <WindowHeaderComponent /> } />;
+        return <Route exact key={ `${window}_${index}` } path={ `/${window}/:id?` } component={ () => <WindowHeaderComponent /> } />;
       });
 
     this.setState({ pageHeaderRoutes });
