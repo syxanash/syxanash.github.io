@@ -31,6 +31,11 @@ blockquote {
   width: 33.3%;
 }
 
+.blog-footer-center-buttons {
+  display: flex;
+  width: 100%;
+}
+
 .blog-footer-cut-out {
   display: flex;
   flex-grow: 1;

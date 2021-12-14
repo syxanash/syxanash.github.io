@@ -8,6 +8,7 @@ import Util from '../Util';
 import configUrls from '../../resources/config-urls.json';
 import './Blog.css';
 
+import directlinkIcon from '../../resources/icons/directlink.gif';
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 import prevArrowIcon from '../../resources/icons/prev_white.gif';
 import prevArrowBlueIcon from '../../resources/icons/prev_blue.gif';
@@ -190,10 +191,16 @@ class BlogBody extends Component {
           </Button>
         </div>
         <div className='blog-footer-buttons'>
-          <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/rss.xml` }) }>
-            <img src={ hyperlinkIcon } className='small-icon' alt="hyperlink icon"/>
-            <figcaption><b>Feed RSS</b></figcaption>
-          </Button>
+          <div className='blog-footer-center-buttons'>
+            <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/rss.xml` }) }>
+              <img src={ hyperlinkIcon } className='small-icon' alt="hyperlink icon"/>
+              <figcaption><b>RSS</b></figcaption>
+            </Button>
+            <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/fancyblogpost/${currentPostIndex}` }) }>
+              <img src={ directlinkIcon } className='small-icon' alt="direct link icon"/>
+              <figcaption><b>Link</b></figcaption>
+            </Button>
+          </div>
         </div>
         <div className='blog-footer-buttons'>
           <Button
