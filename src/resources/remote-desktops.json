@@ -603,5 +603,15 @@
 		"name": "Don Chia",
 		"url": "https://www.donchia.tech",
 		"icon": "windows"
+	},
+	{
+		"name": "clickbecause.net",
+		"url": "https://clickbecause.net",
+		"icon": "mac_new"
+	},
+	{
+		"name": "LUMISET",
+		"url": "https://lumiset.se",
+		"icon": "IBM"
 	}
 ]
