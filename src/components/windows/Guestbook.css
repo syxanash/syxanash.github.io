@@ -2,14 +2,6 @@
   background-color: #ffffcc;
 }
 
-.guestbook-hidden-link {
-  font-weight: bold;
-  font-style: italic;
-  text-decoration: underline;
-  font-size: 20px;
-  cursor: url(../../resources/icons/pointers/pointer.gif), auto;
-}
-
 .avatar-container {
   padding-right: 10px;
   padding-bottom: 10px;

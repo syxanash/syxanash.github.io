@@ -60,7 +60,13 @@ class GuestbookBody extends Component {
         </div>
         <div>
           WOW a website which looks like a computer!&nbsp;
-          <span className='guestbook-hidden-link' onClick={ this.handleOpenWindow }>no one</span>
+          <Button
+            style={ { padding: '8px', margin: 0, userSelect: 'text' } }
+            size='md'
+            onClick={ this.handleOpenWindow }
+          >
+            <b>no one</b>
+          </Button>
           &nbsp;ever thought about it,
           this is so cool, welcome to the world wide web my friend!
         </div>
