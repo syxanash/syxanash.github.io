@@ -4,7 +4,6 @@ import {
 } from 'react95';
 import ReactMarkdown from 'react-markdown/with-html';
 
-import Util from '../Util';
 import configUrls from '../../resources/config-urls.json';
 import './Blog.css';
 
@@ -192,14 +191,18 @@ class BlogBody extends Component {
         </div>
         <div className='blog-footer-buttons'>
           <div className='blog-footer-center-buttons'>
-            <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/rss.xml` }) }>
-              <img src={ hyperlinkIcon } className='small-icon' alt="hyperlink icon"/>
-              <figcaption><b>RSS</b></figcaption>
-            </Button>
-            <Button fullWidth onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/fancyblogpost/${currentPostIndex}` }) }>
-              <img src={ htmlLinkIcon } className='small-icon' alt="direct link icon"/>
-              <figcaption><b>html</b></figcaption>
-            </Button>
+            <a href={ `${configUrls.backendUrl}/rss.xml` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
+              <Button fullWidth>
+                <img src={ hyperlinkIcon } className='small-icon' alt="hyperlink icon"/>
+                <figcaption><b>RSS</b></figcaption>
+              </Button>
+            </a>
+            <a href={ `${configUrls.backendUrl}/fancyblogpost/${currentPostIndex}` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
+              <Button fullWidth>
+                <img src={ htmlLinkIcon } className='small-icon' alt="direct link icon"/>
+                <figcaption><b>html</b></figcaption>
+              </Button>
+            </a>
           </div>
         </div>
         <div className='blog-footer-buttons'>
