@@ -197,7 +197,7 @@ class BlogBody extends Component {
                 <figcaption><b>RSS</b></figcaption>
               </Button>
             </a>
-            <a href={ `${configUrls.backendUrl}/fancyblogpost/${currentPostIndex}` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
+            <a href={ `${configUrls.backendUrl}/fancyformat/${currentPostIndex}` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
               <Button fullWidth>
                 <img src={ htmlLinkIcon } className='small-icon' alt="direct link icon"/>
                 <figcaption><b>html</b></figcaption>
