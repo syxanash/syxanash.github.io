@@ -77,7 +77,7 @@ class CreditsBody extends Component {
               <li className='list-content'>loop TV animation code forked from <a href='https://codepen.io/lbebber/pen/XJRdrV'>this Pen</a></li>
             </ul>
             <ul style={ { display: activeTab === 2 ? 'block' : 'none' } }>
-              <li className='list-content'><a href='https://www.gimp.org' target='_blank' rel='noopener noreferrer'>GIMP</a> → All icons and GIFs on this site have been created using GIMP</li>
+              <li className='list-content'><a href='https://www.gimp.org' target='_blank' rel='noopener noreferrer'>GIMP</a> → Used for creating all icons and GIFs on this site</li>
               <li className='list-content'><a href='https://ezgif.com/video-to-gif' target='_blank' rel='noopener noreferrer'>Ezgif</a> → Amazing web app for editing gifs and converting videos to GIF</li>
               <li className='list-content'><a href='https://win98icons.alexmeub.com' target='_blank' rel='noopener noreferrer'>Windows 98 Icons</a> → original Windows 98 icons were downloaded from here</li>
               <li className='list-content'><a href='https://www.youtube.com/watch?v=-MH6JZdGZcI' target='_blank' rel='noopener noreferrer'>TV turn off GIF</a> → The TV turn off GIF was taken from this video</li>
