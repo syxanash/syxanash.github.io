@@ -329,6 +329,9 @@ class App extends Component {
   generateWallpaper = () => {
     const { bgIndex, bgWallpapers } = this.state;
 
+    const nextImageIndex = (bgIndex + 2) % bgWallpapers.length;
+    new Image().src = backgroundImages(`./${bgWallpapers[nextImageIndex]}`);
+
     this.setState({ bgIndex: (bgIndex + 1) % bgWallpapers.length });
   }
 
