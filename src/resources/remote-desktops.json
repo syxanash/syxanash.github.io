@@ -195,11 +195,6 @@
 		"icon": "windows"
 	},
 	{
-		"name": "Welcome to Agora Road",
-		"url": "http://agoraroad.com",
-		"icon": "mac"
-	},
-	{
 		"name": "Minesweeper",
 		"url": "https://winmine-exe.now.sh",
 		"icon": "windows"
