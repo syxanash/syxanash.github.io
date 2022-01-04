@@ -611,7 +611,12 @@
 	},
 	{
 		"name": "9/11 Realtime",
-		"url": "https://911realtime.org/",
+		"url": "https://911realtime.org",
 		"icon": "mac"
+	},
+	{
+		"name": "Core-OS",
+		"url": "https://coreos.io",
+		"icon": "unix"
 	}
 ]
