@@ -623,5 +623,10 @@
 		"name": "Frank Force - Generative Art",
 		"url": "https://generative.3d2k.com",
 		"icon": "linux"
+	},
+	{
+		"name": "Noam Rubin",
+		"url": "https://noam-rubin.com",
+		"icon": "windows"
 	}
 ]
