@@ -46,7 +46,7 @@ class BlogBody extends Component {
   componentDidMount = () => {
     this.loaderInterval = setInterval(this.increaseLoader, 20);
 
-    fetch(`${configUrls.backendUrl}/blogpost`)
+    fetch(`${configUrls.backendUrl}/blogpostapi`)
       .then(response => response.json())
       .then((data) => {
         this.setState({
@@ -104,7 +104,7 @@ class BlogBody extends Component {
   }
 
   loadBlogPost = (postIndex) => {
-    fetch(`${configUrls.backendUrl}/blogpost/${postIndex}`)
+    fetch(`${configUrls.backendUrl}/blogpostapi/${postIndex}`)
       .then(response => response.json())
       .then((data) => {
         this.setState({
@@ -197,7 +197,7 @@ class BlogBody extends Component {
                 <figcaption><b>RSS</b></figcaption>
               </Button>
             </a>
-            <a href={ `${configUrls.backendUrl}/fancyformat/${currentPostIndex}` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
+            <a href={ `${configUrls.backendUrl}/post/${currentPostIndex}` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
               <Button fullWidth>
                 <img src={ htmlLinkIcon } className='small-icon' alt="direct link icon"/>
                 <figcaption><b>html</b></figcaption>
