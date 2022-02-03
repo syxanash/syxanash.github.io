@@ -36,7 +36,18 @@ class WebDesktopsBody extends Component {
     if (localStorage.getItem('webdesktopsExplored') === null) {
       localStorage.setItem('webdesktopsExplored', JSON.stringify([]));
     } else {
-      const listExplored = JSON.parse(localStorage.getItem('webdesktopsExplored'));
+      let listExplored = [];
+      const previousListExplored = JSON.parse(localStorage.getItem('webdesktopsExplored'));
+      const webDesktopsList = this.state.desktopsList.map(website => website.url);
+      const websitesRemoved = _.difference(previousListExplored, webDesktopsList);
+
+      listExplored = previousListExplored;
+
+      if (websitesRemoved.length > 0) {
+        listExplored = _.difference(previousListExplored, websitesRemoved);
+        localStorage.setItem('webdesktopsExplored', JSON.stringify(listExplored));
+      }
+
       this.setState({ sitesExplored: listExplored.length });
     }
   }
