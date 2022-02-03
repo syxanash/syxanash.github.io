@@ -66,7 +66,7 @@ class ProjectsBody extends Component {
     shellOutput: undefined,
     stdError: false,
     shellWaiting: false,
-    randomPromptChars: _.first(_.shuffle(PROMPT_CHARS)),
+    randomPromptChars: _.sample(PROMPT_CHARS),
   }
 
   componentDidMount() {

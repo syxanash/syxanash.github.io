@@ -38,7 +38,7 @@ class MainWindowHeader extends Component {
 
   componentDidMount() {
     this.setState({
-      programmingLanguage: _.first(_.shuffle(languages)),
+      programmingLanguage: _.sample(languages),
     });
   }
 

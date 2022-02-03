@@ -33,7 +33,7 @@ class LinksBody extends Component {
     const { linksObject } = this.state;
 
     const linksList = _.flatten(linksObject.map(linkItem => linkItem.links));
-    const randomLink = _.first(_.shuffle(linksList));
+    const randomLink = _.sample(linksList);
 
     window.open(randomLink.url, '_blank');
   }
