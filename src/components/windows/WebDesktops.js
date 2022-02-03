@@ -99,9 +99,7 @@ class WebDesktopsBody extends Component {
       finalList = _.difference(linkListFiltered, listExplored);
     }
 
-    const randomLink = Object.keys(finalList).map(e => finalList[e])[
-      Math.floor(Math.random() * Object.keys(finalList).map(e => finalList[e]).length)
-    ];
+    const randomLink = _.first(_.shuffle(finalList));
 
     this.registerWebsite(randomLink);
     Util.openWebsiteURL({ url: randomLink });

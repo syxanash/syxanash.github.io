@@ -66,9 +66,7 @@ class ProjectsBody extends Component {
     shellOutput: undefined,
     stdError: false,
     shellWaiting: false,
-    randomPromptChars: Object.keys(PROMPT_CHARS).map(e => PROMPT_CHARS[e])[
-      Math.floor(Math.random() * Object.keys(PROMPT_CHARS).map(e => PROMPT_CHARS[e]).length)
-    ],
+    randomPromptChars: _.first(_.shuffle(PROMPT_CHARS)),
   }
 
   componentDidMount() {

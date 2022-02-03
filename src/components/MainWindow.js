@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import Draggable from 'react-draggable';
+import _ from 'lodash';
 import {
   Cutout, Button, Anchor, Tooltip,
 } from 'react95';
@@ -37,9 +38,7 @@ class MainWindowHeader extends Component {
 
   componentDidMount() {
     this.setState({
-      programmingLanguage: Object.keys(languages).map(e => languages[e])[
-        Math.floor(Math.random() * Object.keys(languages).map(e => languages[e]).length)
-      ],
+      programmingLanguage: _.first(_.shuffle(languages)),
     });
   }
 
