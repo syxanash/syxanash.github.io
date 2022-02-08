@@ -50,7 +50,7 @@ class App extends Component {
 
     this.mouseMovingCounter = 0;
 
-    this.wallpapersNumber = 60;
+    this.wallpapersNumber = 61;
 
     this.state = {
       bgWallpapers: _.shuffle([...Array(this.wallpapersNumber).keys()].map(item => `BG_${item + 1}.png`)),
