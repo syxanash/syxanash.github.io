@@ -7,9 +7,6 @@ import { Button } from 'react95';
 import agentImg from '../../resources/images/the_agent.gif';
 import agentImgSilent from '../../resources/images/the_agent_shut.gif';
 
-import agentImgNegative from '../../resources/images/the_agent_negative.gif';
-import agentImgSilentNegative from '../../resources/images/the_agent_shut_negative.gif';
-
 import PippoThemeRedmond from '../../themes/PippoRedmond';
 
 import 'animate.css';
@@ -204,10 +201,6 @@ class TheAgent extends Component {
       localStorage.setItem('foundAgent', true);
     }
 
-    const finalAgentImage = negative
-      ? { talking: agentImgNegative, silent: agentImgSilentNegative }
-      : { talking: agentImg, silent: agentImgSilent };
-
     return (<ThemeProvider theme={ PippoThemeRedmond }>
       <div className='agent-container'>
         <div className='agent-image'>
@@ -217,9 +210,9 @@ class TheAgent extends Component {
           />
           {
             <img
-              src={ stillTalking ? finalAgentImage.talking : finalAgentImage.silent }
+              src={ stillTalking ? agentImg : agentImgSilent }
               onLoad={ this.imageLoaded }
-              style={ { height: '250px' } }
+              style={ { height: '250px', filter: negative ? 'invert(1)' : 'invert(0)' } }
               alt='the secret agent'
             />
           }
