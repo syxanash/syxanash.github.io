@@ -638,5 +638,10 @@
 		"name": "Cobra!'s Website",
 		"url": "https://cobradile.neocities.org",
 		"icon": "mac"
+	},
+	{
+		"name": "Jonathan Zavialov",
+		"url": "http://jonzav.me",
+		"icon": "windows"
 	}
 ]
