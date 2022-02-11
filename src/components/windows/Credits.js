@@ -50,6 +50,7 @@ class CreditsBody extends Component {
         This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>React</a>, if your 'puter is too slow then disable JavaScript you can always use the <i>fallback mode!</i>
         <p>
           The code is <a href={ configUrls.repositoryUrl } target='_blank' rel='noopener noreferrer'>entirely available</a> on GitHub.
+          You are more than welcome to add this site to your linkroll or links page, here's a <a href='https://system32.simone.computer/assets/88x31.gif'>88x31 button</a> if you're fond of the aul web.
         </p>
       </div>
       <Tabs value={ activeTab } onChange={ this.handleChangeTab } style={ { paddingTop: '10px' } }>
