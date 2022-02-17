@@ -75,8 +75,9 @@ class MusicBody extends Component {
         <div className='head-left-ear' onClick={ this.touchEar } />
         <div className='head-right-ear' onClick={ this.touchEar } />
         <div className='head-buttons-container'>
-          <Button size={ 'md' } disabled={ trackIndex - 1 < 0 } onClick={ this.recentTrack } square>◀</Button>
-          <Button size={ 'md' } disabled={ trackIndex + 1 >= discoveredMusic.length } onClick={ this.previousTrack } square>▶</Button>
+          <Button style={ { borderRadius: '25px' } } size={ 'md' } disabled={ trackIndex - 1 < 0 } onClick={ this.recentTrack } square>◀</Button>
+          &nbsp;
+          <Button style={ { borderRadius: '25px' } } size={ 'md' } disabled={ trackIndex + 1 >= discoveredMusic.length } onClick={ this.previousTrack } square>▶</Button>
         </div>
         <div className='player-head'>
           <span id='discoveredHeader' style={ { color: 'white', paddingBottom: '10px' } }>Recently discovered:</span>
