@@ -14,7 +14,7 @@
     "jquery": "^3.4.1",
     "lodash": "^4.17.21",
     "lodash.template": "^4.5.0",
-    "node-forge": "^0.10.0",
+    "node-forge": "^1.0.0",
     "node-notifier": "^8.0.1",
     "react": "^16.8.6",
     "react-dev-utils": "^11.0.4",
