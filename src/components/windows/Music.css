@@ -44,16 +44,27 @@
 .player-head {
   position: absolute;
   width: 185px;
-  bottom: 192px;
+  bottom: 188px;
   left: 80px;
   pointer-events: all;
+}
+
+.head-buttons-container {
+  display: flex;
+  position: absolute;
+  top: 14px;
+  left: 136px;
+  pointer-events: all;
+}
+
+.recently-discovered {
+  padding-bottom: 10px;
 }
 
 .social-button-container {
   display: flex;
   justify-content: space-between;
   padding-top: 8px;
-  padding-bottom: 10px;
 }
 
 .social-button {
