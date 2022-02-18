@@ -168,6 +168,10 @@
         "description": "The Secret of Monkey Island"
     },
     {
+        "img": "monkeyisland2.gif",
+        "description": "Monkey Island 2: LeChuck's Revenge"
+    },
+    {
         "img": "yodastories.gif",
         "description": "Star Wars: Yoda Stories"
     },
