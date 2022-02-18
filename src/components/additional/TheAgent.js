@@ -203,7 +203,7 @@ class TheAgent extends Component {
 
     return (<ThemeProvider theme={ PippoThemeRedmond }>
       <div className='agent-container'>
-        <div className='agent-image'>
+        <div className='agent-image' style={ { filter: negative ? 'invert(1)' : 'invert(0)' } }>
           <div
             className='agent-face'
             onMouseEnter={ this.touchFace }
@@ -212,7 +212,7 @@ class TheAgent extends Component {
             <img
               src={ stillTalking ? agentImg : agentImgSilent }
               onLoad={ this.imageLoaded }
-              style={ { height: '250px', filter: negative ? 'invert(1)' : 'invert(0)' } }
+              style={ { height: '250px' } }
               alt='the secret agent'
             />
           }
