@@ -18,7 +18,7 @@ import './Music.css';
 
 class MusicHeader extends Component {
   render = () => (
-    <span>
+    <span className='window-title-text'>
       <img src={ musicIcon } alt='icon' style={ { height: '15px' } }/> Music
     </span>
   )

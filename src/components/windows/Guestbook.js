@@ -23,7 +23,7 @@ import './Guestbook.css';
 
 class GuestbookHeader extends Component {
   render = () => (
-    <span>
+    <span className='window-title-text'>
       <img src={ guestbookIcon } alt='guestbook icon' style={ { height: '15px' } }/> Guestbook
     </span>
   )

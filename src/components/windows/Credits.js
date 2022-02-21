@@ -17,7 +17,7 @@ import './Credits.css';
 
 class CreditsHeader extends Component {
   render = () => (
-    <span>
+    <span className='window-title-text'>
       Credits
     </span>
   )

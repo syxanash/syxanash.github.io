@@ -27,7 +27,7 @@ import warningIcon from '../../resources/icons/warning.png';
 
 class BulbHeader extends Component {
   render = () => (
-    <span>
+    <span className='window-title-text'>
       <img src={ lightbulbIcon } alt='main icon' style={ { height: '15px' } }/> Lite Bulb
     </span>
   )

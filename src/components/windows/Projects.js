@@ -13,7 +13,7 @@ const PROMPT_CHARS = ['>', '$', '#', ']', 'é', 'ZX'];
 
 class ProjectsHeader extends Component {
   render = () => (
-    <span>
+    <span className='window-title-text'>
       <img src={ projectsIcon } alt='Projects' style={ { height: '15px' } }/> Projects
     </span>
   )

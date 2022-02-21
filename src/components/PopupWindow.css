@@ -17,6 +17,15 @@
 
 .window-title-text {
   padding-right: 20px;
+  cursor: url(../resources/icons/pointers/grab.gif), auto;
+}
+
+.window-title-text:active {
+  cursor: url(../resources/icons/pointers/grabbing.gif), auto;
+}
+
+.window-title-text img {
+  pointer-events: none;
 }
 
 .popup-movable-header {

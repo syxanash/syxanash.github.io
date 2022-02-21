@@ -115,9 +115,7 @@ class PopupWindow extends Component {
           <Window shadow={ !focused }>
             <WindowHeader className="handle">
               <div className='window-header popup-movable-header'>
-                <span className='window-title-text' >
-                  <PopupWindowHeader />
-                </span>
+                <PopupWindowHeader />
                 <span className='window-title-buttons'>
                   { displayExtraActions ? this.renderExtraActionButtons() : null }
                   { displayCloseButton ? this.renderCloseButton() : null }

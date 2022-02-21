@@ -22,7 +22,7 @@ import './Contact.css';
 
 class ContactHeader extends Component {
   render = () => (
-    <span>
+    <span className='window-title-text'>
       <img src={ contactIcon } alt='icon' style={ { height: '15px' } }/> Contact
     </span>
   )

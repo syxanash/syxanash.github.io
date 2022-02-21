@@ -35,7 +35,7 @@ class LoaderCursor extends Component {
           {
             `
             * {
-              cursor: url(${loaderFrames(`./frame${frameIndex % loaderIconFrames}.gif`)}), auto;
+              cursor: url(${loaderFrames(`./frame${frameIndex % loaderIconFrames}.gif`)}), auto !important;
             }
             `
           }

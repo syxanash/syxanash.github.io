@@ -18,7 +18,7 @@ import blogIcon from '../../resources/icons/blog.gif';
 
 class BlogHeader extends Component {
   render = () => (
-    <span>
+    <span className='window-title-text'>
       <img src={ blogIcon } alt='main logo' style={ { height: '15px' } }/> Simone's Blog
     </span>
   )

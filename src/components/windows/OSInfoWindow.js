@@ -5,7 +5,7 @@ import pippoOSlogo from '../../resources/images/pippo.gif';
 
 class OSInfoWindowHeader extends Component {
   render = () => (
-    <span>
+    <span className='window-title-text'>
       Pippo Operating System
     </span>
   )

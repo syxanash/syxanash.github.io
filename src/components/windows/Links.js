@@ -16,7 +16,7 @@ import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 
 class LinksHeader extends Component {
   render = () => (
-    <span>
+    <span className='window-title-text'>
       <img src={ linksIcon } alt='Links' style={ { height: '15px' } }/> Links
     </span>
   )

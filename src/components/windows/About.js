@@ -9,7 +9,7 @@ import './About.css';
 
 class AboutHeader extends Component {
   render = () => (
-    <span>
+    <span className='window-title-text'>
       <img src={ aboutIcon } alt='about' style={ { height: '15px' } }/> About
     </span>
   )
