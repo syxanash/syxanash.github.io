@@ -18,9 +18,9 @@ import blogIcon from '../../resources/icons/blog.gif';
 
 class BlogHeader extends Component {
   render = () => (
-    <span className='window-title-text'>
+    <React.Fragment>
       <img src={ blogIcon } alt='main logo' style={ { height: '15px' } }/> Simone's Blog
-    </span>
+    </React.Fragment>
   )
 }
 

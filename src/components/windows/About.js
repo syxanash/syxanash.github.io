@@ -9,9 +9,9 @@ import './About.css';
 
 class AboutHeader extends Component {
   render = () => (
-    <span className='window-title-text'>
+    <React.Fragment>
       <img src={ aboutIcon } alt='about' style={ { height: '15px' } }/> About
-    </span>
+    </React.Fragment>
   )
 }
 

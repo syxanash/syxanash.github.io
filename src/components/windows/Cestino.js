@@ -20,9 +20,9 @@ class CestinoHeader extends Component {
     const counter = ` ${messageCounter + 1}/${easterEggObject.cestinoMessages.length}`;
 
     return (
-      <span className='window-title-text'>
+      <React.Fragment>
         <img src={ cestinoIcon } alt='main icon' style={ { height: '15px' } }/> Cestino{ counter }
-      </span>
+      </React.Fragment>
     );
   }
 }

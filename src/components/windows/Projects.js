@@ -13,9 +13,9 @@ const PROMPT_CHARS = ['>', '$', '#', ']', 'é', 'ZX'];
 
 class ProjectsHeader extends Component {
   render = () => (
-    <span className='window-title-text'>
+    <React.Fragment>
       <img src={ projectsIcon } alt='Projects' style={ { height: '15px' } }/> Projects
-    </span>
+    </React.Fragment>
   )
 }
 

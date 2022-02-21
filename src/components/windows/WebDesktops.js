@@ -19,9 +19,9 @@ const webDesktopsIcons = require.context('../../resources/icons/webdesktops', tr
 
 class WebDesktopsHeader extends Component {
   render = () => (
-    <span className='window-title-text'>
+    <React.Fragment>
       <img src={ mainWindowIcon } alt='remote desktops icon' style={ { height: '15px' } }/> Web Desktops
-    </span>
+    </React.Fragment>
   )
 }
 

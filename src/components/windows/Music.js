@@ -18,9 +18,9 @@ import './Music.css';
 
 class MusicHeader extends Component {
   render = () => (
-    <span className='window-title-text'>
+    <React.Fragment>
       <img src={ musicIcon } alt='icon' style={ { height: '15px' } }/> Music
-    </span>
+    </React.Fragment>
   )
 }
 

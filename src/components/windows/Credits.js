@@ -17,9 +17,9 @@ import './Credits.css';
 
 class CreditsHeader extends Component {
   render = () => (
-    <span className='window-title-text'>
+    <React.Fragment>
       Credits
-    </span>
+    </React.Fragment>
   )
 }
 

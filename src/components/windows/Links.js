@@ -16,9 +16,9 @@ import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 
 class LinksHeader extends Component {
   render = () => (
-    <span className='window-title-text'>
+    <React.Fragment>
       <img src={ linksIcon } alt='Links' style={ { height: '15px' } }/> Links
-    </span>
+    </React.Fragment>
   )
 }
 

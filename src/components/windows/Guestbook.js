@@ -23,9 +23,9 @@ import './Guestbook.css';
 
 class GuestbookHeader extends Component {
   render = () => (
-    <span className='window-title-text'>
+    <React.Fragment>
       <img src={ guestbookIcon } alt='guestbook icon' style={ { height: '15px' } }/> Guestbook
-    </span>
+    </React.Fragment>
   )
 }
 

@@ -7,9 +7,9 @@ import './Fix.css';
 
 class FixHeader extends Component {
   render = () => (
-    <span className='window-title-text'>
+    <React.Fragment>
       fiks.exe
-    </span>
+    </React.Fragment>
   )
 }
 

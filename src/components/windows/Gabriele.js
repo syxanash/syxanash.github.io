@@ -18,7 +18,7 @@ import SoundEffects from '../additional/SoundEffects';
 import configUrls from '../../resources/config-urls.json';
 
 class GabrieleHeader extends Component {
-  render = () => <span className='window-title-text'>Error</span>
+  render = () => <React.Fragment>Error</React.Fragment>
 }
 
 class GabrieleBody extends Component {
