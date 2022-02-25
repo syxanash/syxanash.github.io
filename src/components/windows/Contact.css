@@ -3,8 +3,6 @@
 }
 
 .social-icons-container {
-  padding-top: 10px;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -12,7 +10,7 @@
 
 .contact-info {
   padding-bottom: 10px;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 .fingerprint-cutout {

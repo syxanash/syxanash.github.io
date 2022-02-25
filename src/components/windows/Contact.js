@@ -30,9 +30,6 @@ class ContactHeader extends Component {
 
 class ContactBody extends Component {
   render = () => (<React.Fragment>
-    <span>
-      Please feel free to drop me an email or stalk me on the web.
-    </span>
     <div className='social-icons-container'>
       <Tooltip text='Email' delay={ 100 }>
         <Anchor href={ `mailto:${configUrls.email}?subject=Hi%20Mr.%20Awesome%20Dude` } target='_blank'>
@@ -88,8 +85,9 @@ class ContactBody extends Component {
       <Fieldset label={ <img src={ questionIcon } style={ { height: '20px' } } alt="question mark"/> }>
         <div style={ { paddingBottom: '15px' } }>
           <span>
-            You can also contact me using my public key listed above. To know more about PGP click <a target="_blank" rel="noopener noreferrer" href='https://futureboy.us/pgp.html'>here</a>.
-            This is the fingerprint:
+            Please feel free to drop me an email, I always appreciate when people connect!
+            You can also contact me using my public key listed above.<br />
+            To know more about PGP click <a target="_blank" rel="noopener noreferrer" href='https://futureboy.us/pgp.html'>here</a>.
           </span>
         </div>
         <Cutout className='fingerprint-cutout' style={ { padding: '10px' } }>
