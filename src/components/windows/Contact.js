@@ -85,9 +85,8 @@ class ContactBody extends Component {
       <Fieldset label={ <img src={ questionIcon } style={ { height: '20px' } } alt="question mark"/> }>
         <div style={ { paddingBottom: '15px' } }>
           <span>
-            Please feel free to drop me an email, I always appreciate when people connect!
-            You can also contact me using my public key listed above.<br />
-            To know more about PGP click <a target="_blank" rel="noopener noreferrer" href='https://futureboy.us/pgp.html'>here</a>.
+            Please feel free to drop me an email, I always appreciate when people connect,
+            here's the <a target="_blank" rel="noopener noreferrer" href='https://futureboy.us/pgp.html'>PGP</a> fingerprint:
           </span>
         </div>
         <Cutout className='fingerprint-cutout' style={ { padding: '10px' } }>
