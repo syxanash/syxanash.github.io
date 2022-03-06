@@ -28,6 +28,8 @@ import TheAgent from './components/additional/TheAgent';
 import SoundEffects from './components/additional/SoundEffects';
 import LoaderCursor from './components/additional/LoaderCursor';
 
+import hackedBackground from './resources/images/hack_bg.gif';
+
 import PippoTheme from './themes/PippoTheme';
 
 import './App.css';
@@ -50,7 +52,7 @@ class App extends Component {
 
     this.mouseMovingCounter = 0;
 
-    this.wallpapersNumber = 61;
+    this.wallpapersNumber = 63;
 
     this.state = {
       bgWallpapers: _.shuffle([...Array(this.wallpapersNumber).keys()].map(item => `BG_${item + 1}.png`)),
@@ -493,6 +495,8 @@ class App extends Component {
       poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme, screenSaverMode,
     } = this.state;
 
+    const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
+
     return (
       <HashRouter>
         <div ref={ this.scrollTop } />
@@ -502,7 +506,7 @@ class App extends Component {
               <style>
                 {
                   `body {
-                    background: url(${backgroundImages(`./${bgWallpapers[bgIndex]}`)});
+                    background: url(${eggTriggered ? hackedBackground : backgroundImages(`./${bgWallpapers[bgIndex]}`)});
                     background-color : #a1a3ca;
                   }`
                 }
