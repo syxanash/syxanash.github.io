@@ -78,7 +78,7 @@ class WindowHead extends Component {
       <div className='window-header'>
         <span>
           <span style={ { marginLeft: '-5px' } }>
-            { isCurrentPathRoot ? this.renderLeftsideButton() : null }
+            { isCurrentPathRoot && this.renderLeftsideButton() }
           </span>
           <span style={ { marginLeft: '5px' } }>
             <Switch>

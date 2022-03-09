@@ -24,7 +24,7 @@ class CRTSwitch extends Component {
             size='sm'
             style={ { height: '14px', width: '23px' } }
           > </Button>
-          { crtEnabled ? null : <div className='disabled-switch-bg' /> }
+          { !crtEnabled && <div className='disabled-switch-bg' /> }
         </div>
         <span className='lcd-label'>LCD</span>
       </div>

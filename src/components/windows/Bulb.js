@@ -346,7 +346,7 @@ class BulbBody extends Component {
 
     return (
       <div className='bulb-window'>
-        { brokenBulb ? null : this.renderLiveDot() }
+        { !brokenBulb && this.renderLiveDot() }
         <div>
           <Fieldset style={ { height: '90px', width: '100px', textAlign: 'center' } }>
             { websocketOpen || brokenBulb
@@ -377,7 +377,7 @@ class BulbBody extends Component {
             </div>
           </Cutout>
         </div>
-        { brokenBulb ? null : this.renderMessagebox() }
+        { !brokenBulb && this.renderMessagebox() }
       </div>
     );
   }

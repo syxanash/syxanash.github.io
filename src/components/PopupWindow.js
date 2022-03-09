@@ -119,8 +119,8 @@ class PopupWindow extends Component {
                   <PopupWindowHeader />
                 </span>
                 <span className='window-title-buttons'>
-                  { displayExtraActions ? this.renderExtraActionButtons() : null }
-                  { displayCloseButton ? this.renderCloseButton() : null }
+                  { displayExtraActions && this.renderExtraActionButtons() }
+                  { displayCloseButton && this.renderCloseButton() }
                 </span>
               </div>
             </WindowHeader>

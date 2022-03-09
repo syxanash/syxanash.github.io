@@ -174,7 +174,7 @@ class MainWindowBody extends Component {
               active={ isWindowOpened('cestino') || iconsColliding }
             >
               <img src={ eggTriggered ? emptyTrashIcon : trashIcon } className='icon' alt="trash"/>
-              { eggTriggered ? null : <figcaption className='icon-caption'>Cestino</figcaption> }
+              { !eggTriggered && <figcaption className='icon-caption'>Cestino</figcaption> }
             </Button>
           </div>
           <div className='first-row-icons' onMouseEnter={ this.preloadAssets }>
@@ -194,7 +194,7 @@ class MainWindowBody extends Component {
                 style={ { width: '85px', height: '85px', display: 'inline-block' } }
               >
                 <img src={ aboutIcon } className={ `icon ${eggTriggered ? 'animated infinite bounce fast' : ''}` } alt="about"/>
-                { eggTriggered ? null : <figcaption className='icon-caption'>About</figcaption> }
+                { !eggTriggered && <figcaption className='icon-caption'>About</figcaption> }
               </Button>
             </Draggable>
             <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
@@ -243,7 +243,7 @@ class MainWindowBody extends Component {
               <img src={ loopTVIcon } className='icon' alt="loop TV"/>
               <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
             </Button>
-            { Util.isWebSocketsSupported() ? this.renderBulbButton() : null }
+            { Util.isWebSocketsSupported() && this.renderBulbButton() }
             <Tooltip text={ 'file corrupted' } delay={ 500 }>
               <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } } disabled={ true }>
                 <img src={ corruptedFileIcon } className='icon' alt="corrupted file icon" style={ { filter: 'opacity(50%)' } } />

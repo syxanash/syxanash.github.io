@@ -467,7 +467,7 @@ class App extends Component {
         onClick={ () => this.focusWindow(window) }
       >{
           windowOpened
-            ? <PopupWindow
+            && <PopupWindow
               closeWindow={ this.closeWindow }
               openWindow={ this.openWindow }
               isWindowOpened={ this.isWindowOpened }
@@ -483,7 +483,6 @@ class App extends Component {
               windowTheme={ windowTheme }
               unfocusedTheme={ unfocusedTheme }
             />
-            : null
         }
       </div>;
     });
@@ -535,12 +534,12 @@ class App extends Component {
                 </WindowContent>
               </Window>
             </ThemeProvider>
-            { displayWindowBody ? null : <TheAgent /> }
+            { !displayWindowBody && <TheAgent /> }
           </div>
         </div>
         { this.renderXBill() }
-        { loopTVon ? <LoopTV turnOff={ this.turnOffTV } /> : null }
-        { screenSaverMode ? <ScreenSaver /> : null }
+        { loopTVon && <LoopTV turnOff={ this.turnOffTV } /> }
+        { screenSaverMode && <ScreenSaver /> }
         <Poweroff shouldPoweroff={ poweredOff } />
         <StoppedProgram shouldStopWindowing={ stoppedWindowProgram } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
@@ -548,8 +547,8 @@ class App extends Component {
           openScheduledTV={ this.openScheduledTV }
           closeScheduledTV={ this.closeScheduledTV }
         />
-        { showLoaderPointer ? <LoaderCursor /> : null }
-        { crtEnabled ? <div className='scan-lines'></div> : null }
+        { showLoaderPointer && <LoaderCursor /> }
+        { crtEnabled && <div className='scan-lines'></div> }
       </HashRouter>
     );
   }
