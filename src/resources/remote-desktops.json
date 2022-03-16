@@ -1,5 +1,10 @@
 [
 	{
+		"name": "WorldWideWeb",
+		"url": "https://worldwideweb.cern.ch/browser",
+		"icon": "next"
+	},
+	{
 		"name": "Nightwave Plaza",
 		"url": "https://plaza.one",
 		"icon": "windows"
