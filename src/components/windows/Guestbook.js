@@ -67,7 +67,7 @@ class GuestbookBody extends Component {
           >
             <b>no one</b>
           </Button>
-          &nbsp;ever thought about it,
+          &nbsp;ever thought about it before,
           this is so cool, welcome to the world wide web my friend!
         </div>
       </div>
