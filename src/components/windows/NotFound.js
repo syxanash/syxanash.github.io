@@ -47,10 +47,7 @@ class NotFoundBody extends Component {
     this.setState({ randomColor: this.getRandomColor() });
   }
 
-  renderPhilosophicalMessage = () => <React.Fragment>
-    <h2>Whatever you were looking for is not here.</h2>
-    <h3>Stop using internet, go out and love someone!</h3>
-  </React.Fragment>;
+  redirectTo404 = () => { window.location.href = '/'; };
 
   renderRedirectHint = replacedLink => <React.Fragment>
     <h1>BUT WAIT</h1>
@@ -67,7 +64,7 @@ class NotFoundBody extends Component {
 
       {
         replacedLink === undefined
-          ? this.renderPhilosophicalMessage()
+          ? this.redirectTo404()
           : this.renderRedirectHint(replacedLink.to)
       }
     </React.Fragment>
