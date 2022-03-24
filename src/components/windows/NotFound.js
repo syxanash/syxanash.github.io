@@ -47,7 +47,7 @@ class NotFoundBody extends Component {
     this.setState({ randomColor: this.getRandomColor() });
   }
 
-  redirectTo404 = () => { window.location.href = '/'; };
+  redirectTo404 = () => { window.location.href = '/404.html'; };
 
   renderRedirectHint = replacedLink => <React.Fragment>
     <h1>BUT WAIT</h1>
