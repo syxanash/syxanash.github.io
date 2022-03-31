@@ -31,6 +31,7 @@ import LoaderCursor from './components/additional/LoaderCursor';
 import hackedBackground from './resources/images/hack_bg.gif';
 
 import PippoTheme from './themes/PippoTheme';
+import PippoDistracted from './themes/PippoDistracted';
 
 import './App.css';
 
@@ -70,6 +71,7 @@ class App extends Component {
       crtEnabled: JSON.parse(localStorage.getItem('crt')) === null
         || !!JSON.parse(localStorage.getItem('crt')),
       mainTheme: PippoTheme,
+      mainUnfocusedTheme: PippoDistracted,
       windowsList: WindowsList(),
     };
   }
@@ -227,6 +229,18 @@ class App extends Component {
     });
   }
 
+  isMainUnfocused = () => {
+    const { windowsList, displayWindowBody } = this.state;
+
+    const fullscreenWindow = _.last(window.location.href.split('/'));
+    const windowsOpened = Object.keys(windowsList)
+      .filter(windowName => this.isWindowOpened(windowName));
+
+    return windowsOpened.length > 0
+      && !(windowsOpened.length === 1 && _.first(windowsOpened) === fullscreenWindow)
+      && displayWindowBody;
+  }
+
   isWindowOpened = (windowName) => {
     const { windowsList } = this.state;
     return _.get(windowsList, `${windowName}.opened`)
@@ -269,8 +283,9 @@ class App extends Component {
 
     const pageName = _.last(window.location.href.split('/'));
     const newTheme = _.get(windowsList, `${pageName}.windowTheme`, PippoTheme);
+    const newUnfocusedTheme = _.get(windowsList, `${pageName}.unfocusedTheme`, PippoDistracted);
 
-    this.setState({ mainTheme: newTheme });
+    this.setState({ mainTheme: newTheme, mainUnfocusedTheme: newUnfocusedTheme });
   }
 
   stoppedProgram = (event) => {
@@ -492,6 +507,7 @@ class App extends Component {
     const {
       bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes, showLoaderPointer, crtEnabled,
       poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme, screenSaverMode,
+      mainUnfocusedTheme,
     } = this.state;
 
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
@@ -511,7 +527,7 @@ class App extends Component {
                 }
               </style>
             </Helmet>
-            <ThemeProvider theme={ mainTheme }>
+            <ThemeProvider theme={ this.isMainUnfocused() ? mainUnfocusedTheme : mainTheme }>
               <Window shadow={ true } style={ { width: '100%' } }>
                 <WindowHeader>
                   <WindowHead
