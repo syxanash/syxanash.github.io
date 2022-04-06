@@ -653,5 +653,15 @@
 		"name": "KANYE 2049",
 		"url": "https://kanye2049.com",
 		"icon": "mac"
+	},
+	{
+		"name": "Windows 11 in Preact",
+		"url": "https://win11.vercel.app",
+		"icon": "windows_new"
+	},
+	{
+		"name": "RebornXP",
+		"url": "https://rebornxp.js.org",
+		"icon": "windows_new"
 	}
 ]
