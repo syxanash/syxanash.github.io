@@ -8,7 +8,6 @@ import 'animate.css';
 
 import linksIcon from '../../resources/icons/links.gif';
 import spinningGlobe from '../../resources/images/globe.gif';
-import noHttpsIcon from '../../resources/icons/nohttps.gif';
 
 import './Links.css';
 import websiteLinks from '../../resources/website-links.json';
@@ -71,7 +70,6 @@ class LinksBody extends Component {
         : '';
 
       return (<li className='link-style' key={ `${link.url}_${index}` } style={ { listStyleImage: `url('https://s2.googleusercontent.com/s2/favicons?domain_url=${link.url}')` } }>
-        { link.url.match(/^(https):\/\//g) === null ? <img src={ noHttpsIcon } title='no https' alt='no https icon' height='20' width='22' /> : '' }
         <a href={ link.url } target='_blank' rel='noopener noreferrer'>{ link.url.replace(/(^\w+:|^)\/\//, '') }</a> { descriptionContent }
       </li>);
     })}</ul>;

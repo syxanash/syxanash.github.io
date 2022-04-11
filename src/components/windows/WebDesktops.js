@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 
 import {
-  Cutout, Toolbar, Button, Fieldset, Tooltip,
+  Cutout, Toolbar, Button, Fieldset,
 } from 'react95';
 
 import Util from '../Util';
@@ -13,7 +13,6 @@ import remoteDesktops from '../../resources/remote-desktops.json';
 import mainWindowIcon from '../../resources/icons/webdesktops.gif';
 import mobileWarningIcon from '../../resources/icons/mobilewarning.gif';
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
-import httpsIcon from '../../resources/icons/https.gif';
 
 const webDesktopsIcons = require.context('../../resources/icons/webdesktops', true);
 
@@ -28,7 +27,6 @@ class WebDesktopsHeader extends Component {
 class WebDesktopsBody extends Component {
   state = {
     desktopsList: _.shuffle(remoteDesktops),
-    httpsOnlyEnabled: false,
     sitesExplored: 0,
   }
 
@@ -76,27 +74,16 @@ class WebDesktopsBody extends Component {
     </a>
   )
 
-  filterURLByHTTPS = (url) => {
-    const { httpsOnlyEnabled } = this.state;
-
-    if (httpsOnlyEnabled) {
-      return url.match(/^(https):\/\//g) !== null;
-    }
-
-    return true;
-  }
-
   openRandomURL = () => {
     const { desktopsList, sitesExplored } = this.state;
 
-    const linkListFiltered = desktopsList.filter(website => this.filterURLByHTTPS(website.url))
-      .map(website => website.url);
-    let finalList = linkListFiltered;
+    const linksListUrls = desktopsList.map(website => website.url);
+    let finalList = desktopsList;
 
     const listExplored = JSON.parse(localStorage.getItem('webdesktopsExplored'));
 
-    if (sitesExplored < linkListFiltered.length) {
-      finalList = _.difference(linkListFiltered, listExplored);
+    if (sitesExplored < linksListUrls.length) {
+      finalList = _.difference(linksListUrls, listExplored);
     }
 
     const randomLink = _.sample(finalList);
@@ -105,23 +92,17 @@ class WebDesktopsBody extends Component {
     Util.openWebsiteURL({ url: randomLink });
   }
 
-  toggleHTTPSFilter = () => {
-    const { httpsOnlyEnabled } = this.state;
-    this.setState({ httpsOnlyEnabled: !httpsOnlyEnabled });
-  }
-
   renderAllIcons = () => {
     const { desktopsList } = this.state;
 
-    const desktopIcons = desktopsList.filter(website => this.filterURLByHTTPS(website.url))
-      .map(website => (
-        <div
-          className='single-icon'
-          key={ `icon_${website.name}` }
-        >
-          { this.renderSingleComputerIcon(website) }
-        </div>
-      ));
+    const desktopIcons = desktopsList.map(website => (
+      <div
+        className='single-icon'
+        key={ `icon_${website.name}` }
+      >
+        { this.renderSingleComputerIcon(website) }
+      </div>
+    ));
 
     return desktopIcons;
   }
@@ -141,7 +122,7 @@ class WebDesktopsBody extends Component {
   }
 
   render = () => {
-    const { httpsOnlyEnabled, desktopsList, sitesExplored } = this.state;
+    const { desktopsList, sitesExplored } = this.state;
 
     const exploredPercentage = Math.floor((sitesExplored * 100) / desktopsList.length);
 
@@ -151,9 +132,6 @@ class WebDesktopsBody extends Component {
           <Toolbar>
             <Button onClick={ this.openRandomURL } variant="menu"><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
             <Button onClick={ () => Util.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) } variant="menu"><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Contribute</Button>
-            <Tooltip text='show only HTTPS websites' delay={ 500 }>
-              <Button onClick={ this.toggleHTTPSFilter } active={ httpsOnlyEnabled } variant="menu"><img src={ httpsIcon } alt='https' style={ { paddingRight: '2px' } } />HTTPS</Button>
-            </Tooltip>
           </Toolbar>
         </div>
         <div style={ { paddingBottom: '10px' } }>
