@@ -66,7 +66,7 @@ class LinksBody extends Component {
 
     const LinksListComponent = <ul>{linksList.map((link, index) => {
       const descriptionContent = link.description
-        ? <span style={ { fontWeight: 'bold' } } dangerouslySetInnerHTML={ { __html: `(${link.description})` } }></span>
+        ? <span style={ { fontWeight: 'bold' } } dangerouslySetInnerHTML={ { __html: `${link.description}` } }></span>
         : '';
 
       return (<li className='link-style' key={ `${link.url}_${index}` } style={ { listStyleImage: `url('https://s2.googleusercontent.com/s2/favicons?domain_url=${link.url}')` } }>

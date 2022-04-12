@@ -9,7 +9,10 @@
 }
 
 .link-list a {
-  color: yellow;
+  color: #3968C2;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: lightgray;
 
   /* https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
   overflow-wrap: break-word;
@@ -20,11 +23,8 @@
 }
 
 .link-list a:hover {
-  color: red;
-}
-
-.link-list a:visited {
-  color: lightgray;
+  color: white;
+  background-color: lightseagreen;
 }
 
 .link-style {
