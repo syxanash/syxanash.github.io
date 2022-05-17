@@ -658,5 +658,10 @@
 		"name": "RebornXP",
 		"url": "https://rebornxp.js.org",
 		"icon": "windows_new"
+	},
+	{
+		"name": "WWWerd",
+		"url": "https://theoldnet.com/desktop/",
+		"icon": "IBM"
 	}
 ]
