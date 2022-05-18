@@ -78,7 +78,7 @@ class WebDesktopsBody extends Component {
     const { desktopsList, sitesExplored } = this.state;
 
     const linksListUrls = desktopsList.map(website => website.url);
-    let finalList = desktopsList;
+    let finalList = linksListUrls;
 
     const listExplored = JSON.parse(localStorage.getItem('webdesktopsExplored'));
 
