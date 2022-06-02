@@ -663,5 +663,10 @@
 		"name": "WWWerd",
 		"url": "https://theoldnet.com/desktop/",
 		"icon": "IBM"
+	},
+	{
+		"name": "Puter",
+		"url": "https://puter.com",
+		"icon": "linux"
 	}
 ]
