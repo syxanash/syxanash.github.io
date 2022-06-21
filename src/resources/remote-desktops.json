@@ -668,5 +668,10 @@
 		"name": "Puter",
 		"url": "https://puter.com",
 		"icon": "linux"
+	},
+	{
+		"name": "Things",
+		"url": "https://things.inc",
+		"icon": "unix"
 	}
 ]
