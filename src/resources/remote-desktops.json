@@ -673,5 +673,10 @@
 		"name": "Things",
 		"url": "https://things.inc",
 		"icon": "unix"
+	},
+	{
+		"name": "1997box",
+		"url": "https://1997.pooftie.me",
+		"icon": "windows"
 	}
 ]
