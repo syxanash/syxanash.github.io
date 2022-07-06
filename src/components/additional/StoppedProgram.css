@@ -33,11 +33,11 @@
 }
 
 .blink {
-	-webkit-animation: blink .75s linear infinite;
-	-moz-animation: blink .75s linear infinite;
-	-ms-animation: blink .75s linear infinite;
-	-o-animation: blink .75s linear infinite;
-	 animation: blink .75s linear infinite;
+	-webkit-animation: blink .8s linear infinite;
+	-moz-animation: blink .8s linear infinite;
+	-ms-animation: blink .8s linear infinite;
+	-o-animation: blink .8s linear infinite;
+	animation: blink .8s linear infinite;
 }
 @-webkit-keyframes blink {
 	0% { opacity: 1; }
