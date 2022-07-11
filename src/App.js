@@ -56,8 +56,8 @@ class App extends Component {
     this.wallpapersNumber = 63;
 
     this.state = {
-      bgWallpapers: _.shuffle([...Array(this.wallpapersNumber).keys()].map(item => `BG_${item + 1}.png`)),
-      bgIndex: 0,
+      bgWallpapers: [...Array(this.wallpapersNumber).keys()].map(item => `BG_${item + 1}.png`),
+      bgIndex: JSON.parse(localStorage.getItem('bgIndex')) === null ? 0 : JSON.parse(localStorage.getItem('bgIndex')),
       showLoaderPointer: false,
       showXBill: false,
       displayWindowBody: true,
@@ -349,6 +349,7 @@ class App extends Component {
     const nextImageIndex = (bgIndex + 2) % bgWallpapers.length;
     new Image().src = backgroundImages(`./${bgWallpapers[nextImageIndex]}`);
 
+    localStorage.setItem('bgIndex', JSON.stringify(bgIndex + 1));
     this.setState({ bgIndex: (bgIndex + 1) % bgWallpapers.length });
   }
 
