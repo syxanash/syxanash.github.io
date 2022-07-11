@@ -36,6 +36,7 @@ import PippoDistracted from './themes/PippoDistracted';
 import './App.css';
 
 const backgroundImages = require.context('./resources/images/backgrounds', true);
+const wallpapersNumber = 63;
 
 class App extends Component {
   constructor(props) {
@@ -53,10 +54,8 @@ class App extends Component {
 
     this.mouseMovingCounter = 0;
 
-    this.wallpapersNumber = 63;
-
     this.state = {
-      bgWallpapers: [...Array(this.wallpapersNumber).keys()].map(item => `BG_${item + 1}.png`),
+      bgWallpapers: [...Array(wallpapersNumber).keys()].map(item => `BG_${item + 1}.png`),
       bgIndex: JSON.parse(localStorage.getItem('bgIndex')) === null ? 0 : JSON.parse(localStorage.getItem('bgIndex')),
       showLoaderPointer: false,
       showXBill: false,
