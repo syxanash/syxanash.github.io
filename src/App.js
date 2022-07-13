@@ -56,7 +56,9 @@ class App extends Component {
 
     this.state = {
       bgWallpapers: [...Array(wallpapersNumber).keys()].map(item => `BG_${item + 1}.png`),
-      bgIndex: JSON.parse(localStorage.getItem('bgIndex')) === null ? 0 : JSON.parse(localStorage.getItem('bgIndex')),
+      bgIndex: JSON.parse(localStorage.getItem('bgIndex')) === null
+        ? Math.floor(Math.random() * wallpapersNumber)
+        : JSON.parse(localStorage.getItem('bgIndex')),
       showLoaderPointer: false,
       showXBill: false,
       displayWindowBody: true,
