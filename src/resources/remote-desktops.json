@@ -673,5 +673,10 @@
 		"name": "1997box",
 		"url": "https://1997.pooftie.me",
 		"icon": "windows"
+	},
+	{
+		"name": "FoundationOS",
+		"url": "https://os.foundation.app",
+		"icon": "mac_new"
 	}
 ]
