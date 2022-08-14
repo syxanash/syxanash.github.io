@@ -678,5 +678,10 @@
 		"name": "FoundationOS",
 		"url": "https://os.foundation.app",
 		"icon": "mac_new"
+	},
+	{
+		"name": "Orb",
+		"url": "https://desktop.leisink.net",
+		"icon": "linux"
 	}
 ]
