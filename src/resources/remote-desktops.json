@@ -688,5 +688,15 @@
 		"name": "RobbieByrd.com",
 		"url": "https://robbiebyrd.com",
 		"icon": "mac"
+	},
+	{
+		"name": "HeadOffice",
+		"url": "http://www.headofffice.com",
+		"icon": "mac"
+	},
+	{
+		"name": "Browso",
+		"url": "https://www.browso.app",
+		"icon": "mac"
 	}
 ]
