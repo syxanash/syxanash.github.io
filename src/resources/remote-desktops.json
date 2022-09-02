@@ -555,11 +555,6 @@
 		"icon": "windows_new"
 	},
 	{
-		"name": "Rimet Desktop",
-		"url": "https://fasdesktop.neocities.org/rimet",
-		"icon": "IBM"
-	},
-	{
 		"name": "AtheOS",
 		"url": "https://al1-ce.dev",
 		"icon": "other"
