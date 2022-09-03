@@ -27,6 +27,9 @@ class BrokenScreen extends Component {
     this.backgroundCircuits = parseInt(document.body.clientWidth / 4, 10);
     this.bugsInterval = 800;
 
+    this.antiCheatString = 'DON\'T YOU DARE YOU FILTHY CHEATER!!!!';
+    this.antiCheatStringSecond = 'YOU THOUGHT IT WOULD BE THAT EASY!?!';
+
     this.state = {
       randomCircuit: undefined,
       bugsList: [],
@@ -178,24 +181,21 @@ class BrokenScreen extends Component {
     const { isScreenBroken } = this.props;
     const bugsCleaned = bugsNumber <= 0;
 
-    const antiCheatString = 'DON\'T YOU DARE YOU FILTHY CHEATER!!!!';
-    const antiCheatStringSecond = 'YOU THOUGHT IT WOULD BE THAT EASY!?!';
-
     if (!isScreenBroken) {
       return null;
     }
 
     if (bugsCleaned) {
-      localStorage.removeItem(antiCheatString);
-      localStorage.removeItem(antiCheatStringSecond);
+      localStorage.removeItem(this.antiCheatString);
+      localStorage.removeItem(this.antiCheatStringSecond);
     }
 
     if (!this.bugRefreshInterval) {
       if (localStorage.getItem('broken') !== 'true') {
-        localStorage.removeItem(antiCheatString);
-        localStorage.setItem(antiCheatStringSecond, 'AHAH!');
+        localStorage.removeItem(this.antiCheatString);
+        localStorage.setItem(this.antiCheatStringSecond, 'AHAH!');
       } else {
-        localStorage.setItem(antiCheatString, 'DON\'T!');
+        localStorage.setItem(this.antiCheatString, 'DON\'T!');
       }
       localStorage.removeItem('foundAgent');
       this.bugRefreshInterval = setInterval(this.updateAxis, this.bugsInterval);
