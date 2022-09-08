@@ -693,5 +693,10 @@
 		"name": "Browso",
 		"url": "https://www.browso.app",
 		"icon": "mac"
+	},
+	{
+		"name": "Harrison's Home",
+		"url": "https://harrisonm.com",
+		"icon": "windows"
 	}
 ]
