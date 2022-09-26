@@ -346,7 +346,7 @@
 	},
 	{
 		"name": "Online Hacker Simulator",
-		"url": "https://hacker-simulator.com",
+		"url": "https://pranx.com/hacker/",
 		"icon": "other"
 	},
 	{
@@ -553,6 +553,11 @@
 		"name": "Win7 Simu",
 		"url": "https://win7simu.visnalize.com",
 		"icon": "windows_new"
+	},
+	{
+		"name": "Rimet Desktop",
+		"url": "https://geocities.ws/rimet/",
+		"icon": "IBM"
 	},
 	{
 		"name": "AtheOS",
