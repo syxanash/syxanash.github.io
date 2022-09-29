@@ -703,5 +703,15 @@
 		"name": "Harrison's Home",
 		"url": "https://harrisonm.com",
 		"icon": "windows"
+	},
+	{
+		"name": "Janne Koivisto",
+		"url": "https://janneilkka.com",
+		"icon": "windows"
+	},
+	{
+		"name": "Kayo Felipe Silva",
+		"url": "https://kaiofelipejs.dev",
+		"icon": "windows"
 	}
 ]
