@@ -28,6 +28,7 @@ class WebDesktopsBody extends Component {
   state = {
     desktopsList: _.shuffle(remoteDesktops),
     sitesExplored: 0,
+    showHelp: JSON.parse(localStorage.getItem('showInfoFieldset')) === null,
   }
 
   componentDidMount() {
@@ -121,8 +122,16 @@ class WebDesktopsBody extends Component {
     );
   }
 
+  toggleShowHelp = () => {
+    const firstDisplay = JSON.parse(localStorage.getItem('showInfoFieldset')) === null;
+    if (firstDisplay) {
+      localStorage.setItem('showInfoFieldset', false);
+    }
+    this.setState({ showHelp: !this.state.showHelp });
+  }
+
   render = () => {
-    const { desktopsList, sitesExplored } = this.state;
+    const { desktopsList, sitesExplored, showHelp } = this.state;
 
     const exploredPercentage = Math.floor((sitesExplored * 100) / desktopsList.length);
 
@@ -132,12 +141,14 @@ class WebDesktopsBody extends Component {
           <Toolbar>
             <Button onClick={ this.openRandomURL } variant="menu"><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
             <Button onClick={ () => Util.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) } variant="menu"><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Contribute</Button>
+            <Button onClick={ this.toggleShowHelp } active={ showHelp } variant="menu">About</Button>
           </Toolbar>
         </div>
-        <div style={ { paddingBottom: '10px' } }>
+        <div style={ { paddingBottom: '10px', display: showHelp ? 'block' : 'none' } }>
           <Fieldset>
             If you are a fan of websites, web apps and portfolios which
-            resemble desktop operating systems here is a curated list
+            resemble desktop operating systems here is a curated list ready
+            to be explored
           </Fieldset>
           { this.renderMobileMessage() }
         </div>
@@ -149,7 +160,7 @@ class WebDesktopsBody extends Component {
         <Cutout style={ { backgroundColor: '#c7c7df', marginBottom: '3px' } }>
           <div className='progress-content' style={ { width: `${exploredPercentage}%` } }></div>
           <div className='screen-footer'>
-            <span>{sitesExplored} of {desktopsList.length} sites explored</span>
+            <span>{sitesExplored} of {desktopsList.length} sites visited</span>
           </div>
         </Cutout>
       </React.Fragment>
