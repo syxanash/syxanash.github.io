@@ -718,5 +718,10 @@
 		"name": "H4ACK1NG G00GL3",
 		"url": "https://h4ck1ng.google",
 		"icon": "other"
+	},
+	{
+		"name": "Hudson Mohawke",
+		"url": "https://www.hudsonmohawke.com",
+		"icon": "windows_new"
 	}
 ]
