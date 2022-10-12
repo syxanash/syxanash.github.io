@@ -723,5 +723,10 @@
 		"name": "Hudson Mohawke",
 		"url": "https://www.hudsonmohawke.com",
 		"icon": "windows_new"
+	},
+	{
+		"name": "Sam Likes Code",
+		"url": "https://www.samlikescode.dev",
+		"icon": "other"
 	}
 ]
