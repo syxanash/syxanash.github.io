@@ -20,7 +20,7 @@ import WindowsList from './components/WindowsList';
 import Poweroff from './components/additional/Poweroff';
 import LoopTV from './components/additional/LoopTV';
 import ScheduledTV from './components/additional/ScheduledTV';
-import StoppedProgram from './components/additional/StoppedProgram';
+import BootScreen from './components/additional/BootScreen';
 import ScreenSaver from './components/additional/ScreenSaver';
 import BrokenScreen from './components/additional/BrokenScreen';
 import XBill from './components/additional/XBill';
@@ -67,7 +67,7 @@ class App extends Component {
       screenSaverMode: false,
       loopTVon: false,
       scheduledTVOn: false,
-      stoppedWindowProgram: undefined,
+      bootScreenMode: undefined,
       isBrokenScreen: false,
       crtEnabled: JSON.parse(localStorage.getItem('crt')) === null
         || !!JSON.parse(localStorage.getItem('crt')),
@@ -82,7 +82,7 @@ class App extends Component {
 
     window.addEventListener('popstate', this.changeTheme);
     document.addEventListener('keydown', this.closeTopWindow);
-    document.addEventListener('keydown', this.stoppedProgram);
+    document.addEventListener('keydown', this.bootScreen);
     document.addEventListener('keydown', this.konamiHandler);
 
     $(window).focus(() => {
@@ -130,7 +130,7 @@ class App extends Component {
     }
 
     document.removeEventListener('keydown', this.closeTopWindow);
-    document.removeEventListener('keydown', this.stoppedProgram);
+    document.removeEventListener('keydown', this.bootScreen);
     document.removeEventListener('keydown', this.konamiHandler);
 
     document.removeEventListener('mousemove', this.onMouseUpdate);
@@ -155,7 +155,7 @@ class App extends Component {
 
   isInSpecialState = () => {
     const {
-      poweredOff, isBrokenScreen, loopTVon, stoppedWindowProgram, screenSaverMode,
+      poweredOff, isBrokenScreen, loopTVon, bootScreenMode, screenSaverMode,
       scheduledTVOn,
     } = this.state;
 
@@ -164,7 +164,7 @@ class App extends Component {
       || loopTVon
       || scheduledTVOn
       || screenSaverMode
-      || stoppedWindowProgram;
+      || bootScreenMode;
   }
 
   onLeftsideButton = () => {
@@ -289,27 +289,27 @@ class App extends Component {
     this.setState({ mainTheme: newTheme, mainUnfocusedTheme: newUnfocusedTheme });
   }
 
-  stoppedProgram = (event) => {
+  bootScreen = (event) => {
     const {
-      loopTVon, stoppedWindowProgram, scheduledTVOn,
+      loopTVon, bootScreenMode, scheduledTVOn,
     } = this.state;
 
     if (((event.ctrlKey && event.key === 'c')
       || (event.ctrlKey && event.key === 'C'))
-      && stoppedWindowProgram === undefined && !loopTVon && !scheduledTVOn) {
+      && bootScreenMode === undefined && !loopTVon && !scheduledTVOn) {
       this.closeAllWindows();
       this.setState({
-        stoppedWindowProgram: !this.isInSpecialState(),
+        bootScreenMode: !this.isInSpecialState(),
       });
     }
   }
 
   konamiHandler = (event) => {
     const {
-      isBrokenScreen, poweredOff, stoppedWindowProgram,
+      isBrokenScreen, poweredOff, bootScreenMode,
     } = this.state;
 
-    if (isBrokenScreen || poweredOff || stoppedWindowProgram) {
+    if (isBrokenScreen || poweredOff || bootScreenMode) {
       return;
     }
 
@@ -508,7 +508,7 @@ class App extends Component {
   render() {
     const {
       bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes, showLoaderPointer, crtEnabled,
-      poweredOff, loopTVon, isBrokenScreen, stoppedWindowProgram, mainTheme, screenSaverMode,
+      poweredOff, loopTVon, isBrokenScreen, bootScreenMode, mainTheme, screenSaverMode,
       mainUnfocusedTheme,
     } = this.state;
 
@@ -559,7 +559,7 @@ class App extends Component {
         { loopTVon && <LoopTV turnOff={ this.turnOffTV } /> }
         { screenSaverMode && <ScreenSaver /> }
         <Poweroff shouldPoweroff={ poweredOff } />
-        <StoppedProgram shouldStopWindowing={ stoppedWindowProgram } />
+        <BootScreen shouldStopWindowing={ bootScreenMode } />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
         <ScheduledTV
           openScheduledTV={ this.openScheduledTV }

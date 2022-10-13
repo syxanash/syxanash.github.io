@@ -5,9 +5,9 @@ import configUrls from '../../resources/config-urls.json';
 import lastUpdatedFile from '../../resources/last-updated.json';
 import happyPippo from '../../resources/images/happy_pippo.gif';
 
-import './StoppedProgram.css';
+import './BootScreen.css';
 
-class Poweroff extends Component {
+class BootScreen extends Component {
   state = {
     shouldStopWindowing: false,
     outputText: '',
@@ -114,4 +114,4 @@ class Poweroff extends Component {
   }
 }
 
-export default Poweroff;
+export default BootScreen;
