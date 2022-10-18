@@ -122,7 +122,7 @@
 	{
 		"name": "www.chiptune.com",
 		"url": "http://www.chiptune.com",
-		"icon": "other"
+		"icon": "amiga"
 	},
 	{
 		"name": "Virtual Desktop",
@@ -732,21 +732,21 @@
 	{
 		"name": "The Amiga Workbench Simulation",
 		"url": "https://taws.ch",
-		"icon": "other"
+		"icon": "amiga"
 	},
 	{
 		"name": "The Amiga Museum",
 		"url": "https://theamigamuseum.com",
-		"icon": "other"
+		"icon": "amiga"
 	},
 	{
 		"name": "TAWS@aSCIIaRENA",
 		"url": "https://workbench.asciiarena.se",
-		"icon": "other"
+		"icon": "amiga"
 	},
 	{
 		"name": "Amiga37 Germany",
-		"url": "hhttps://amigaevent.de",
-		"icon": "other"
+		"url": "https://amigaevent.de",
+		"icon": "amiga"
 	}
 ]
