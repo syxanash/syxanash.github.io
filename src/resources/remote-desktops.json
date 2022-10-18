@@ -728,5 +728,25 @@
 		"name": "Sam Likes Code",
 		"url": "https://www.samlikescode.dev",
 		"icon": "other"
+	},
+	{
+		"name": "The Amiga Workbench Simulation",
+		"url": "https://taws.ch",
+		"icon": "other"
+	},
+	{
+		"name": "The Amiga Museum",
+		"url": "https://theamigamuseum.com",
+		"icon": "other"
+	},
+	{
+		"name": "TAWS@aSCIIaRENA",
+		"url": "https://workbench.asciiarena.se",
+		"icon": "other"
+	},
+	{
+		"name": "Amiga37 Germany",
+		"url": "hhttps://amigaevent.de",
+		"icon": "other"
 	}
 ]
