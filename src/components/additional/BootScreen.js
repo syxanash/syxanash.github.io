@@ -28,7 +28,16 @@ class CliLoader extends Component {
   };
 
   componentDidMount() {
-    this.loaderInterval = setInterval(this.increaseLoader, 50);
+    const { loaded } = this.props;
+    if (!loaded) {
+      this.loaderInterval = setInterval(this.increaseLoader, 80);
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.loaderInterval !== undefined) {
+      clearInterval(this.loaderInterval);
+    }
   }
 
   reachedMaxLoader = () => this.state.loaderText.length < this.state.maxLoaderSize;
@@ -46,11 +55,15 @@ class CliLoader extends Component {
   }
 
   render() {
-    const { loaderText } = this.state;
+    const { loaded, endText } = this.props;
+    const { loaderText, maxLoaderSize } = this.state;
 
     return <span>
-      <span className='console-text-green'>{loaderText}</span>
-      { this.reachedMaxLoader() ? <ShellSpinner /> : ' Done' }
+      { loaded
+        ? <span className='console-text-green'>{Array(maxLoaderSize).fill(0).map(() => loaderText)}</span>
+        : <span className='console-text-green'>{loaderText}</span>
+      }
+      { this.reachedMaxLoader() && !loaded ? <ShellSpinner /> : endText }
     </span>;
   }
 }
@@ -58,6 +71,8 @@ class CliLoader extends Component {
 class BootScreen extends Component {
   constructor(props) {
     super(props);
+
+    this.rowWithLoader = 15;
 
     this.state = {
       outputText: '',
@@ -80,7 +95,7 @@ class BootScreen extends Component {
         <div>&nbsp;&nbsp;<span className='console-text-green'>ACPI Bios found, activating modules: <span className='console-text-yellow'>ac battery button fan processor thermal</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>USB found, managed by <span className='console-text-purple'>hotplug</span>: <span className='console-text-yellow'>(Re-)scanning USB devices...
           you never know[001 ] Done.</span></span></div>,
-        <div>Autoconfiguring devices... <CliLoader toggleLoading={ this.toggleLoading }/></div>,
+        <div>Autoconfiguring devices... <CliLoader toggleLoading={ this.toggleLoading } endText={ ' Done' } /></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Mouse is <span className='console-text-yellow'>a mouse (with wheel hopefully) at /dev/psaux</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Video is <span className='console-text-yellow'>{`${window.screen.width}x${window.screen.height}`}</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>User Agent is <span className='console-text-yellow'>{navigator.userAgent}</span></span></div>,
@@ -93,15 +108,6 @@ class BootScreen extends Component {
 
   toggleLoading = (loadingState) => {
     this.setState({ isLoading: loadingState });
-  }
-
-  renderLoader = () => {
-    const { loaderText } = this.state;
-
-    return <span>
-      <span className='console-text-green'>{loaderText}</span>
-      { this.reachedMaxLoader() ? <ShellSpinner /> : ' Done' }
-    </span>;
   }
 
   messagesEndRef = React.createRef();
@@ -124,16 +130,21 @@ class BootScreen extends Component {
   }
 
   showNextMessage = () => {
-    const { bootMessageCounter, isLoading } = this.state;
+    const { bootMessageCounter, isLoading, bootMessages } = this.state;
     const { showBootScreen } = this.props;
 
     if (bootMessageCounter >= this.state.bootMessages.length) {
       clearInterval(this.bootMessageInterval);
+
+      const newBootMessages = bootMessages;
+      newBootMessages[this.rowWithLoader] = <div key='reloaded'>Autoconfiguring devices... <CliLoader loaded={ true } endText={ ' Done' }/></div>;
+      this.setState({ bootMessages: newBootMessages });
+
       showBootScreen(false);
       return;
     }
 
-    if (bootMessageCounter < 16 || !isLoading) {
+    if (bootMessageCounter <= this.rowWithLoader || !isLoading) {
       this.setState({ bootMessageCounter: bootMessageCounter + 1 });
     }
   }
@@ -157,9 +168,9 @@ class BootScreen extends Component {
   }
 
   renderBootMessages = () => {
-    const { bootMessageCounter } = this.state;
+    const { bootMessageCounter, bootMessages } = this.state;
 
-    return this.state.bootMessages.map((message, index) => <span key={ `key_${index}` }>{message}</span>)
+    return bootMessages.map((message, index) => <span key={ `key_${index}` }>{message}</span>)
       .slice(0, bootMessageCounter);
   }
 
