@@ -49,7 +49,7 @@ class App extends Component {
 
     this.screenSaverTimeout = undefined;
     this.activateScreenSaver = false;
-    this.screenSaverTimer = 10;
+    this.screenSaverTimer = 1000000;
     this.screenSaverMovingMouseThreshold = 25;
 
     this.mouseMovingCounter = 0;
@@ -67,7 +67,8 @@ class App extends Component {
       screenSaverMode: false,
       loopTVon: false,
       scheduledTVOn: false,
-      bootScreenMode: undefined,
+      bootScreenMode: true,
+      hasCrashedWM: false,
       isBrokenScreen: false,
       crtEnabled: JSON.parse(localStorage.getItem('crt')) === null
         || !!JSON.parse(localStorage.getItem('crt')),
@@ -291,17 +292,22 @@ class App extends Component {
 
   bootScreen = (event) => {
     const {
-      loopTVon, bootScreenMode, scheduledTVOn,
+      loopTVon, scheduledTVOn, hasCrashedWM,
     } = this.state;
 
     if (((event.ctrlKey && event.key === 'c')
       || (event.ctrlKey && event.key === 'C'))
-      && bootScreenMode === undefined && !loopTVon && !scheduledTVOn) {
+      && hasCrashedWM === false && !loopTVon && !scheduledTVOn) {
       this.closeAllWindows();
       this.setState({
         bootScreenMode: !this.isInSpecialState(),
+        hasCrashedWM: true,
       });
     }
+  }
+
+  toggleBootScreen = (mode) => {
+    this.setState({ bootScreenMode: mode });
   }
 
   konamiHandler = (event) => {
@@ -509,7 +515,7 @@ class App extends Component {
     const {
       bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes, showLoaderPointer, crtEnabled,
       poweredOff, loopTVon, isBrokenScreen, bootScreenMode, mainTheme, screenSaverMode,
-      mainUnfocusedTheme,
+      mainUnfocusedTheme, hasCrashedWM,
     } = this.state;
 
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
@@ -559,7 +565,11 @@ class App extends Component {
         { loopTVon && <LoopTV turnOff={ this.turnOffTV } /> }
         { screenSaverMode && <ScreenSaver /> }
         <Poweroff shouldPoweroff={ poweredOff } />
-        <BootScreen shouldStopWindowing={ bootScreenMode } />
+        <BootScreen
+          bootScreen={ bootScreenMode }
+          hasCrashed={ hasCrashedWM }
+          showBootScreen={ this.toggleBootScreen }
+        />
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
         <ScheduledTV
           openScheduledTV={ this.openScheduledTV }

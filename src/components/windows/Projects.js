@@ -4,6 +4,7 @@ import _ from 'lodash';
 import Typist from 'react-typist';
 import SoundEffects from '../additional/SoundEffects';
 import LoaderCursor from '../additional/LoaderCursor';
+import ShellSpinner from '../additional/ShellSpinner';
 import projectsIcon from '../../resources/icons/development.gif';
 import projectsList from '../../resources/projects-list.json';
 
@@ -20,33 +21,7 @@ class ProjectsHeader extends Component {
 }
 
 class CmdLoader extends Component {
-  constructor(props) {
-    super(props);
-
-    this.updaterInterval = undefined;
-
-    this.state = {
-      index: 0,
-      sequence: ['|', '/', '-', '\\'],
-    };
-  }
-
-  componentDidMount() {
-    this.updaterInterval = setInterval(this.characterUpdater, 100);
-  }
-
-  componentWillUnmount() {
-    if (this.updaterInterval) {
-      clearInterval(this.updaterInterval);
-    }
-  }
-
-  characterUpdater = () => {
-    this.setState({ index: this.state.index + 1 });
-  }
-
   render() {
-    const { index, sequence } = this.state;
     const { isLoading } = this.props;
 
     if (!isLoading) {
@@ -54,7 +29,7 @@ class CmdLoader extends Component {
     }
 
     return <React.Fragment>
-      <span>{sequence[index % sequence.length]}</span>
+      <ShellSpinner />
       <LoaderCursor />
     </React.Fragment>;
   }
