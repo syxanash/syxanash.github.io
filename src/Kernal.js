@@ -33,12 +33,12 @@ import hackedBackground from './resources/images/hack_bg.gif';
 import PippoTheme from './themes/PippoTheme';
 import PippoDistracted from './themes/PippoDistracted';
 
-import './App.css';
+import './Kernal.css';
 
 const backgroundImages = require.context('./resources/images/backgrounds', true);
 const wallpapersNumber = 63;
 
-class App extends Component {
+class Kernal extends Component {
   constructor(props) {
     super(props);
 
@@ -293,8 +293,6 @@ class App extends Component {
     const {
       loopTVon, scheduledTVOn, hasCrashedWM,
     } = this.state;
-
-    console.log('crashed');
 
     if (hasCrashedWM === false && !loopTVon && !scheduledTVOn) {
       this.closeAllWindows();
@@ -581,4 +579,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Kernal;

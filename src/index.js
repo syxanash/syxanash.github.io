@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Kernal from './Kernal';
 
 console.info(`
   << 🥏 >>
@@ -17,4 +17,4 @@ console.info(`
        and I fight for the users! ~
 `);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Kernal />, document.getElementById('root'));

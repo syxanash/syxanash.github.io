@@ -49,7 +49,6 @@ class CliLoader extends Component {
     if (this.reachedMaxLoader()) {
       this.setState({ loaderText: `${loaderText}▓` });
     } else {
-      clearInterval(this.loaderInterval);
       toggleLoading(false);
     }
   }
@@ -131,10 +130,6 @@ class BootScreen extends Component {
     if (this.bootMessageInterval !== undefined) {
       clearInterval(this.bootMessageInterval);
     }
-
-    if (this.loaderInterval !== undefined) {
-      clearInterval(this.loaderInterval);
-    }
   }
 
   showNextMessage = () => {
@@ -142,13 +137,12 @@ class BootScreen extends Component {
     const { toggleBootScreen } = this.props;
 
     if (bootMessageCounter >= this.state.bootMessages.length) {
-      clearInterval(this.bootMessageInterval);
-
       const newBootMessages = bootMessages;
       newBootMessages[this.rowWithLoader] = <div key='reloaded'>Autoconfiguring devices... <CliLoader loaded={ true } endText={ ' Done' }/></div>;
       this.setState({ bootMessages: newBootMessages, doneFirstBoot: true });
       localStorage.setItem('doneFirstBoot', true);
       toggleBootScreen(false);
+      return;
     }
 
     if (bootMessageCounter <= this.rowWithLoader || !isLoading) {
