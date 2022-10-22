@@ -49,7 +49,7 @@ class App extends Component {
 
     this.screenSaverTimeout = undefined;
     this.activateScreenSaver = false;
-    this.screenSaverTimer = 10;
+    this.screenSaverTimer = 100000;
     this.screenSaverMovingMouseThreshold = 25;
 
     this.mouseMovingCounter = 0;
@@ -67,7 +67,7 @@ class App extends Component {
       screenSaverMode: false,
       loopTVon: false,
       scheduledTVOn: false,
-      bootScreenMode: true,
+      bootScreenMode: JSON.parse(localStorage.getItem('doneFirstBoot')) === null,
       hasCrashedWM: false,
       isBrokenScreen: false,
       crtEnabled: JSON.parse(localStorage.getItem('crt')) === null
@@ -83,7 +83,6 @@ class App extends Component {
 
     window.addEventListener('popstate', this.changeTheme);
     document.addEventListener('keydown', this.closeTopWindow);
-    document.addEventListener('keydown', this.bootScreen);
     document.addEventListener('keydown', this.konamiHandler);
 
     $(window).focus(() => {
@@ -113,6 +112,7 @@ class App extends Component {
             isWindowOpened={ this.isWindowOpened }
             isFullscreen={ true }
             poweroff={ this.poweroff }
+            crashWindow={ this.kernelPanic }
           /> }
         />;
       });
@@ -131,7 +131,6 @@ class App extends Component {
     }
 
     document.removeEventListener('keydown', this.closeTopWindow);
-    document.removeEventListener('keydown', this.bootScreen);
     document.removeEventListener('keydown', this.konamiHandler);
 
     document.removeEventListener('mousemove', this.onMouseUpdate);
@@ -290,14 +289,14 @@ class App extends Component {
     this.setState({ mainTheme: newTheme, mainUnfocusedTheme: newUnfocusedTheme });
   }
 
-  bootScreen = (event) => {
+  kernelPanic = () => {
     const {
       loopTVon, scheduledTVOn, hasCrashedWM,
     } = this.state;
 
-    if (((event.ctrlKey && event.key === 'c')
-      || (event.ctrlKey && event.key === 'C'))
-      && hasCrashedWM === false && !loopTVon && !scheduledTVOn) {
+    console.log('crashed');
+
+    if (hasCrashedWM === false && !loopTVon && !scheduledTVOn) {
       this.closeAllWindows();
       this.setState({
         bootScreenMode: !this.isInSpecialState(),
@@ -495,6 +494,7 @@ class App extends Component {
               openWindow={ this.openWindow }
               isWindowOpened={ this.isWindowOpened }
               poweroff={ this.poweroff }
+              crashWindow={ this.kernelPanic }
               focused={ windowFocused }
               header={ windowHeader }
               body={ windowBody }

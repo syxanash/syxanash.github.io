@@ -83,7 +83,7 @@ class PopupWindow extends Component {
   renderPopupWindowBody = () => {
     const {
       body, isWindowOpened,
-      openWindow, poweroff, closeWindow,
+      openWindow, poweroff, closeWindow, crashWindow
     } = this.props;
 
     const PopupWindowBody = body;
@@ -95,6 +95,7 @@ class PopupWindow extends Component {
         openWindow={ openWindow }
         isWindowOpened={ isWindowOpened }
         poweroff={ poweroff }
+        crashWindow={ crashWindow }
         isFullscreen={ false }
       />
     );

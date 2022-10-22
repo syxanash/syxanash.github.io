@@ -24,7 +24,7 @@ function getOSName() {
 class CliLoader extends Component {
   state = {
     loaderText: '▓',
-    maxLoaderSize: 40,
+    maxLoaderSize: 30,
   };
 
   componentDidMount() {
@@ -74,10 +74,13 @@ class BootScreen extends Component {
 
     this.rowWithLoader = 15;
 
+    const doneFirstBoot = !!JSON.parse(localStorage.getItem('doneFirstBoot'));
+
     this.state = {
       outputText: '',
       bootMessageCounter: 0,
       isLoading: !Util.isMobile(),
+      doneFirstBoot,
       bootMessages: [
         <div style={ { paddingBottom: '5px' } }>{ Array.from(Array(window.navigator.hardwareConcurrency).keys()).map(index => <span key={ `item_${index}` }><img height='60' alt='kernel mascot' src={ happyPippo } />&nbsp;</span>) }</div>,
         <div>Welcome to the <span className='console-text-blue'>P</span><span className='console-text-pink'>i</span><span className='console-text-yellow'>p</span><span className='console-text-purple'>p</span><span className='console-text-green'>o</span> <span className='console-text-red'>O</span><span className='console-text-yellow'>S</span> experience!<br /></div>,
@@ -95,7 +98,7 @@ class BootScreen extends Component {
         <div>&nbsp;&nbsp;<span className='console-text-green'>ACPI Bios found, activating modules: <span className='console-text-yellow'>ac battery button fan processor thermal</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>USB found, managed by <span className='console-text-purple'>hotplug</span>: <span className='console-text-yellow'>(Re-)scanning USB devices...
           you never know[001 ] Done.</span></span></div>,
-        <div>Autoconfiguring devices... <CliLoader toggleLoading={ this.toggleLoading } endText={ ' Done' } /></div>,
+        <div>Autoconfiguring devices... <CliLoader toggleLoading={ this.toggleLoading } loaded={ doneFirstBoot } endText={ ' Done' } /></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Mouse is <span className='console-text-yellow'>a mouse (with wheel hopefully) at /dev/psaux</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Video is <span className='console-text-yellow'>{`${window.screen.width}x${window.screen.height}`}</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>User Agent is <span className='console-text-yellow'>{navigator.userAgent}</span></span></div>,
@@ -113,8 +116,13 @@ class BootScreen extends Component {
   messagesEndRef = React.createRef();
 
   componentDidMount() {
+    const { doneFirstBoot } = this.state;
+
+    if (!doneFirstBoot) {
+      this.bootMessageInterval = setInterval(this.showNextMessage, 50);
+    }
+
     document.addEventListener('keydown', this.addCtrlC);
-    this.bootMessageInterval = setInterval(this.showNextMessage, 50);
     this.scrollToBottom();
   }
 
@@ -138,10 +146,9 @@ class BootScreen extends Component {
 
       const newBootMessages = bootMessages;
       newBootMessages[this.rowWithLoader] = <div key='reloaded'>Autoconfiguring devices... <CliLoader loaded={ true } endText={ ' Done' }/></div>;
-      this.setState({ bootMessages: newBootMessages });
-
+      this.setState({ bootMessages: newBootMessages, doneFirstBoot: true });
+      localStorage.setItem('doneFirstBoot', true);
       showBootScreen(false);
-      return;
     }
 
     if (bootMessageCounter <= this.rowWithLoader || !isLoading) {
@@ -150,9 +157,10 @@ class BootScreen extends Component {
   }
 
   addCtrlC = (event) => {
+    const { hasCrashed } = this.props;
     const { outputText } = this.state;
 
-    if (event.ctrlKey && event.key === 'c') {
+    if (event.ctrlKey && event.key === 'c' && hasCrashed) {
       this.setState({ outputText: `${outputText} ^C<br />` });
     }
   }
@@ -168,10 +176,10 @@ class BootScreen extends Component {
   }
 
   renderBootMessages = () => {
-    const { bootMessageCounter, bootMessages } = this.state;
+    const { bootMessageCounter, bootMessages, doneFirstBoot } = this.state;
 
     return bootMessages.map((message, index) => <span key={ `key_${index}` }>{message}</span>)
-      .slice(0, bootMessageCounter);
+      .slice(0, doneFirstBoot ? bootMessages.length : bootMessageCounter);
   }
 
   kernelPanic = () => {
@@ -180,8 +188,8 @@ class BootScreen extends Component {
     return (
       <span>
         <br />
-        <div><span className='console-text-red blink'>*** Orekkietcimdrap Window Manager has been halted ***</span></div>
-        [1]+  Exit 1 ^C<br />
+        <div><span className='console-text-red blink'>*** Kernel Panic Window Manager has been halted ***</span></div>
+        [1]+  Exit 1
         <span dangerouslySetInnerHTML={ { __html: outputText } }></span>
       </span>
     );

@@ -35,7 +35,7 @@ class GabrieleBody extends Component {
   toggleReport = () => { this.setState({ showReport: true }); }
 
   render = () => {
-    const { closeCurrentWindow } = this.props;
+    const { crashWindow } = this.props;
     const { showReport } = this.state;
 
     return (<React.Fragment>
@@ -84,7 +84,7 @@ class GabrieleBody extends Component {
         <Button
           style={ { marginLeft: '10px', width: '120px' } }
           size='md'
-          onClick={ closeCurrentWindow }
+          onClick={ crashWindow }
         ><span className='underline-text'>D</span>on't Send</Button>
       </div>
     </React.Fragment>
