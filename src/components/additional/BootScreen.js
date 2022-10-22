@@ -139,7 +139,7 @@ class BootScreen extends Component {
 
   showNextMessage = () => {
     const { bootMessageCounter, isLoading, bootMessages } = this.state;
-    const { showBootScreen } = this.props;
+    const { toggleBootScreen } = this.props;
 
     if (bootMessageCounter >= this.state.bootMessages.length) {
       clearInterval(this.bootMessageInterval);
@@ -148,7 +148,7 @@ class BootScreen extends Component {
       newBootMessages[this.rowWithLoader] = <div key='reloaded'>Autoconfiguring devices... <CliLoader loaded={ true } endText={ ' Done' }/></div>;
       this.setState({ bootMessages: newBootMessages, doneFirstBoot: true });
       localStorage.setItem('doneFirstBoot', true);
-      showBootScreen(false);
+      toggleBootScreen(false);
     }
 
     if (bootMessageCounter <= this.rowWithLoader || !isLoading) {
@@ -196,11 +196,7 @@ class BootScreen extends Component {
   }
 
   render() {
-    const { bootScreen, hasCrashed } = this.props;
-
-    if (!bootScreen) {
-      return null;
-    }
+    const { hasCrashed } = this.props;
 
     return (<React.Fragment>
       <Helmet>

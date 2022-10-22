@@ -49,7 +49,7 @@ class App extends Component {
 
     this.screenSaverTimeout = undefined;
     this.activateScreenSaver = false;
-    this.screenSaverTimer = 100000;
+    this.screenSaverTimer = 10;
     this.screenSaverMovingMouseThreshold = 25;
 
     this.mouseMovingCounter = 0;
@@ -565,11 +565,10 @@ class App extends Component {
         { loopTVon && <LoopTV turnOff={ this.turnOffTV } /> }
         { screenSaverMode && <ScreenSaver /> }
         <Poweroff shouldPoweroff={ poweredOff } />
-        <BootScreen
-          bootScreen={ bootScreenMode }
+        { bootScreenMode && <BootScreen
           hasCrashed={ hasCrashedWM }
-          showBootScreen={ this.toggleBootScreen }
-        />
+          toggleBootScreen={ this.toggleBootScreen }
+        /> }
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
         <ScheduledTV
           openScheduledTV={ this.openScheduledTV }
