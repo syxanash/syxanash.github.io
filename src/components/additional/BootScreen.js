@@ -71,7 +71,7 @@ class BootScreen extends Component {
   constructor(props) {
     super(props);
 
-    this.rowWithLoader = 15;
+    this.rowWithLoader = 17;
 
     const doneFirstBoot = !!JSON.parse(localStorage.getItem('doneFirstBoot'));
 
@@ -82,11 +82,12 @@ class BootScreen extends Component {
       doneFirstBoot,
       bootMessages: [
         <div style={ { paddingBottom: '5px' } }>{ Array.from(Array(window.navigator.hardwareConcurrency).keys()).map(index => <span key={ `item_${index}` }><img height='60' alt='kernel mascot' src={ happyPippo } />&nbsp;</span>) }</div>,
-        <div>Welcome to the <span className='console-text-blue'>P</span><span className='console-text-pink'>i</span><span className='console-text-yellow'>p</span><span className='console-text-purple'>p</span><span className='console-text-green'>o</span> <span className='console-text-red'>O</span><span className='console-text-yellow'>S</span> experience!<br /></div>,
-        <div>&nbsp;&nbsp;<span className='console-text-green'>Found SCSI device(s) handled by</span> <span className='console-text-purple'>BusLogic.o.</span></div>,
+        <div>Welcome to the <span className='console-text-blue'>P</span><span className='console-text-pink'>i</span><span className='console-text-yellow'>p</span><span className='console-text-purple'>p</span><span className='console-text-green'>o</span> <span className='console-text-red'>O</span><span className='console-text-yellow'>S</span> experience!</div>,
+        <div><br />&nbsp;&nbsp;<span className='console-text-green'>Found SCSI device(s) handled by</span> <span className='console-text-purple'>BusLogic.o.</span></div>,
         <div><span className='console-text-blue'>Scanning for USB/Firewire devices... Done. (that was quick)</span></div>,
         <div><span className='console-text-blue'>Enabling DMA acceleration for:</span> <span className='console-text-purple'>hdc</span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Accessing Pippo OS Kernel at</span> <span className='console-text-purple'>{ configUrls.repositoryUrl.replace('https://', '') }</span><span className='console-text-green'>....</span></div>,
+        <div>&nbsp;&nbsp;<span className='console-text-green'>Found backend filesystem at</span> <span className='console-text-purple'>{ configUrls.backendUrl.replace('https://', '') }</span><span className='console-text-green'>.</span></div>,
         <div><span className='console-text-blue'>Total memory found : <span className='console-text-yellow'>515124</span> kB</span></div>,
         <div><span className='console-text-blue'>Creating <span className='console-text-yellow'>/ramdisk</span> (dynamic size=404516k) on <span className='console-text-purple'>shared memory</span>...Done.</span></div>,
         <div><span className='console-text-blue'>Creating directories and symlinks on ramdisk...Done</span></div>,
@@ -97,13 +98,24 @@ class BootScreen extends Component {
         <div>&nbsp;&nbsp;<span className='console-text-green'>ACPI Bios found, activating modules: <span className='console-text-yellow'>ac battery button fan processor thermal</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>USB found, managed by <span className='console-text-purple'>hotplug</span>: <span className='console-text-yellow'>(Re-)scanning USB devices...
           you never know[001 ] Done.</span></span></div>,
+        <div><span className='console-text-blue'>Starting </span><span className='console-text-purple'>udev </span><span className='console-text-green'>hot-plug hardware detection... </span><span className='console-text-blue'>Started.</span></div>,
         <div>Autoconfiguring devices... <CliLoader toggleLoading={ this.toggleLoading } loaded={ doneFirstBoot } endText={ ' Done' } /></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Mouse is <span className='console-text-yellow'>a mouse (with wheel hopefully) at /dev/psaux</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Video is <span className='console-text-yellow'>{`${window.screen.width}x${window.screen.height}`}</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>User Agent is <span className='console-text-yellow'>{navigator.userAgent}</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Host OS is <span className='console-text-yellow'>{getOSName()}</span></span></div>,
         <div><span className='console-text-blue'>Scanning for Harddisk partitions and creating <span className='console-text-yellow'>/etc/fstab</span>... <span className='console-text-green'>Done.</span></span></div>,
+        <div><span className='console-text-green'>Network device <span className='console-text-purple'>eth0</span> detected, DHCP broadcasting for IP. <span className='console-text-blue'>(Backgrounding)</span></span></div>,
         <div>INIT: Entering runlevel: 5</div>,
+        <div>-----------------------------------------------------------------------</div>,
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;Pippo OS Web Desktop :-)</div>,
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;Please stand by a few seconds while the optimal
+          configuration</div>,
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;is being determined</div>,
+        <div><br /></div>,
+        <div>After this session terminates, the system will automatically shut down.</div>,
+        <div>-----------------------------------------------------------------------</div>,
+        <div><span className='console-text-blue'>Starting the Web Desktop...</span></div>,
       ],
     };
   }
@@ -111,8 +123,6 @@ class BootScreen extends Component {
   toggleLoading = (loadingState) => {
     this.setState({ isLoading: loadingState });
   }
-
-  messagesEndRef = React.createRef();
 
   componentDidMount() {
     const { doneFirstBoot } = this.state;
@@ -164,9 +174,7 @@ class BootScreen extends Component {
   }
 
   scrollToBottom = () => {
-    if (this.messagesEndRef.current !== null) {
-      this.messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.querySelector('#terminalBottom').scrollIntoView({ behavior: 'smooth' });
   }
 
   renderBootMessages = () => {
@@ -182,7 +190,7 @@ class BootScreen extends Component {
     return (
       <span>
         <br />
-        <div><span className='console-text-red blink'>*** Kernel Panic Window Manager has been halted ***</span></div>
+        <div><span className='console-text-red blink'>*** Kernel Panic Web Desktop has been halted ***</span></div>
         [1]+  Exit 1
         <span dangerouslySetInnerHTML={ { __html: outputText } }></span>
       </span>
@@ -201,7 +209,7 @@ class BootScreen extends Component {
               background-color: black;
             }
             * {
-              overflow: hidden;
+              overflow: auto;
               cursor: none;
               pointer-events: none;
             }`
@@ -211,7 +219,7 @@ class BootScreen extends Component {
       <div className='terminal-style'>
         {this.renderBootMessages()}
         { hasCrashed && this.kernelPanic() }
-        <div ref={ this.messagesEndRef } />
+        <div id='terminalBottom' />
       </div>
     </React.Fragment>);
   }
