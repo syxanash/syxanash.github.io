@@ -68,7 +68,7 @@ class Kernal extends Component {
       loopTVon: false,
       scheduledTVOn: false,
       bootScreenMode: JSON.parse(localStorage.getItem('doneFirstBoot')) === null,
-      hasCrashedWM: false,
+      hasCrashed: false,
       isBrokenScreen: false,
       crtEnabled: JSON.parse(localStorage.getItem('crt')) === null
         || !!JSON.parse(localStorage.getItem('crt')),
@@ -291,14 +291,14 @@ class Kernal extends Component {
 
   kernelPanic = () => {
     const {
-      loopTVon, scheduledTVOn, hasCrashedWM,
+      loopTVon, scheduledTVOn, hasCrashed,
     } = this.state;
 
-    if (hasCrashedWM === false && !loopTVon && !scheduledTVOn) {
+    if (!hasCrashed && !loopTVon && !scheduledTVOn) {
       this.closeAllWindows();
       this.setState({
         bootScreenMode: !this.isInSpecialState(),
-        hasCrashedWM: true,
+        hasCrashed: true,
       });
     }
   }
@@ -513,7 +513,7 @@ class Kernal extends Component {
     const {
       bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes, showLoaderPointer, crtEnabled,
       poweredOff, loopTVon, isBrokenScreen, bootScreenMode, mainTheme, screenSaverMode,
-      mainUnfocusedTheme, hasCrashedWM,
+      mainUnfocusedTheme, hasCrashed,
     } = this.state;
 
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
@@ -564,7 +564,7 @@ class Kernal extends Component {
         { screenSaverMode && <ScreenSaver /> }
         <Poweroff shouldPoweroff={ poweredOff } />
         { bootScreenMode && <BootScreen
-          hasCrashed={ hasCrashedWM }
+          hasCrashed={ hasCrashed }
           toggleBootScreen={ this.toggleBootScreen }
         /> }
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
