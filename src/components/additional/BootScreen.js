@@ -22,15 +22,22 @@ function getOSName() {
 }
 
 class CliLoader extends Component {
-  state = {
-    loaderText: '▓',
-    maxLoaderSize: 30,
-  };
+  constructor(props) {
+    super(props);
+
+    this.cliLoaderSpeed = 80;
+    this.cliLoaderCharacter = '▓';
+
+    this.state = {
+      loaderText: this.cliLoaderCharacter,
+      maxLoaderSize: 30,
+    };
+  }
 
   componentDidMount() {
     const { loaded } = this.props;
     if (!loaded) {
-      this.loaderInterval = setInterval(this.increaseLoader, 80);
+      this.loaderInterval = setInterval(this.increaseLoader, this.cliLoaderSpeed);
     }
   }
 
@@ -47,14 +54,14 @@ class CliLoader extends Component {
     const { toggleLoading } = this.props;
 
     if (this.reachedMaxLoader()) {
-      this.setState({ loaderText: `${loaderText}▓` });
+      this.setState({ loaderText: `${loaderText + this.cliLoaderCharacter}` });
     } else {
       toggleLoading(false);
     }
   }
 
   render() {
-    const { loaded, endText } = this.props;
+    const { loaded, endText = '' } = this.props;
     const { loaderText, maxLoaderSize } = this.state;
 
     return <span>
@@ -72,6 +79,7 @@ class BootScreen extends Component {
     super(props);
 
     this.rowWithLoader = 17;
+    this.bootMessageSpeed = 50;
 
     const doneFirstBoot = !!JSON.parse(localStorage.getItem('doneFirstBoot'));
 
@@ -108,7 +116,7 @@ class BootScreen extends Component {
         <div><span className='console-text-green'>Network device <span className='console-text-purple'>eth0</span> detected, DHCP broadcasting for IP. <span className='console-text-blue'>(Backgrounding)</span></span></div>,
         <div>INIT: Entering runlevel: 5</div>,
         <div>-----------------------------------------------------------------------</div>,
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;Pippo OS Web Desktop :-)</div>,
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;Pippo OS Web Deskt☺p</div>,
         <div>&nbsp;&nbsp;&nbsp;&nbsp;Please stand by a few seconds while the optimal
           configuration</div>,
         <div>&nbsp;&nbsp;&nbsp;&nbsp;is being determined</div>,
@@ -120,15 +128,12 @@ class BootScreen extends Component {
     };
   }
 
-  toggleLoading = (loadingState) => {
-    this.setState({ isLoading: loadingState });
-  }
-
   componentDidMount() {
     const { doneFirstBoot } = this.state;
+    localStorage.setItem('doneFirstBoot', true);
 
     if (!doneFirstBoot) {
-      this.bootMessageInterval = setInterval(this.showNextMessage, 50);
+      this.bootMessageInterval = setInterval(this.showNextMessage, this.bootMessageSpeed);
     }
 
     document.addEventListener('keydown', this.addCtrlC);
@@ -142,6 +147,18 @@ class BootScreen extends Component {
     }
   }
 
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom = () => {
+    document.querySelector('#terminalBottom').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  toggleLoading = (loadingState) => {
+    this.setState({ isLoading: loadingState });
+  }
+
   showNextMessage = () => {
     const { bootMessageCounter, isLoading, bootMessages } = this.state;
     const { toggleBootScreen } = this.props;
@@ -150,7 +167,6 @@ class BootScreen extends Component {
       const newBootMessages = bootMessages;
       newBootMessages[this.rowWithLoader] = <div key='reloaded'>Autoconfiguring devices... <CliLoader loaded={ true } endText={ ' Done' }/></div>;
       this.setState({ bootMessages: newBootMessages, doneFirstBoot: true });
-      localStorage.setItem('doneFirstBoot', true);
       toggleBootScreen(false);
       return;
     }
@@ -169,21 +185,6 @@ class BootScreen extends Component {
     }
   }
 
-  componentDidUpdate() {
-    this.scrollToBottom();
-  }
-
-  scrollToBottom = () => {
-    document.querySelector('#terminalBottom').scrollIntoView({ behavior: 'smooth' });
-  }
-
-  renderBootMessages = () => {
-    const { bootMessageCounter, bootMessages, doneFirstBoot } = this.state;
-
-    return bootMessages.map((message, index) => <span key={ `key_${index}` }>{message}</span>)
-      .slice(0, doneFirstBoot ? bootMessages.length : bootMessageCounter);
-  }
-
   kernelPanic = () => {
     const { outputText } = this.state;
 
@@ -195,6 +196,13 @@ class BootScreen extends Component {
         <span dangerouslySetInnerHTML={ { __html: outputText } }></span>
       </span>
     );
+  }
+
+  renderBootMessages = () => {
+    const { bootMessageCounter, bootMessages, doneFirstBoot } = this.state;
+
+    return bootMessages.map((message, index) => <span key={ `key_${index}` }>{message}</span>)
+      .slice(0, doneFirstBoot ? bootMessages.length : bootMessageCounter);
   }
 
   render() {
