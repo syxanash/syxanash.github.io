@@ -185,9 +185,7 @@ class Kernal extends Component {
       this.focusWindow(windowName);
       this.setState({ windowsList });
 
-      if (this.scrollTop.current !== null) {
-        this.scrollTop.current.scrollIntoView({ behavior: 'smooth' });
-      }
+      this.scrollToTop();
     };
 
     if (subWindow) {
@@ -304,7 +302,17 @@ class Kernal extends Component {
   }
 
   toggleBootScreen = (mode) => {
+    if (!mode) {
+      this.scrollToTop();
+    }
+
     this.setState({ bootScreenMode: mode });
+  }
+
+  scrollToTop = () => {
+    if (this.scrollTop.current !== null) {
+      this.scrollTop.current.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   konamiHandler = (event) => {
