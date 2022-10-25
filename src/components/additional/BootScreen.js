@@ -26,11 +26,10 @@ class CliLoader extends Component {
     super(props);
 
     this.cliLoaderSpeed = 80;
-    this.cliLoaderCharacter = '▓';
 
     this.state = {
-      loaderText: this.cliLoaderCharacter,
-      maxLoaderSize: 30,
+      loaderText: this.props.loaderCharacter,
+      maxLoaderSize: 25,
     };
   }
 
@@ -51,10 +50,10 @@ class CliLoader extends Component {
 
   increaseLoader = () => {
     const { loaderText } = this.state;
-    const { toggleLoading } = this.props;
+    const { toggleLoading, loaderCharacter } = this.props;
 
     if (this.reachedMaxLoader()) {
-      this.setState({ loaderText: `${loaderText + this.cliLoaderCharacter}` });
+      this.setState({ loaderText: `${loaderText + loaderCharacter}` });
     } else {
       toggleLoading(false);
     }
@@ -107,7 +106,7 @@ class BootScreen extends Component {
         <div>&nbsp;&nbsp;<span className='console-text-green'>USB found, managed by <span className='console-text-purple'>hotplug</span>: <span className='console-text-yellow'>(Re-)scanning USB devices...
           you never know[001 ] Done.</span></span></div>,
         <div><span className='console-text-blue'>Starting </span><span className='console-text-purple'>udev </span><span className='console-text-green'>hot-plug hardware detection... </span><span className='console-text-blue'>Started.</span></div>,
-        <div>Autoconfiguring devices... <CliLoader toggleLoading={ this.toggleLoading } loaded={ doneFirstBoot } endText={ ' Done' } /></div>,
+        <div>Autoconfiguring devices... <CliLoader loaderCharacter='▓' toggleLoading={ this.toggleLoading } loaded={ doneFirstBoot } endText={ ' Done' } /></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Mouse is <span className='console-text-yellow'>a mouse (with wheel hopefully) at /dev/psaux</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Video is <span className='console-text-yellow'>{`${window.screen.width}x${window.screen.height}`}</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>User Agent is <span className='console-text-yellow'>{navigator.userAgent}</span></span></div>,
@@ -165,7 +164,7 @@ class BootScreen extends Component {
 
     if (bootMessageCounter >= this.state.bootMessages.length) {
       const newBootMessages = bootMessages;
-      newBootMessages[this.rowWithLoader] = <div key='reloaded'>Autoconfiguring devices... <CliLoader loaded={ true } endText={ ' Done' }/></div>;
+      newBootMessages[this.rowWithLoader] = <div key='reloaded'>Autoconfiguring devices... <CliLoader loaderCharacter='▓' loaded={ true } endText={ ' Done' }/></div>;
       this.setState({ bootMessages: newBootMessages, doneFirstBoot: true });
       toggleBootScreen(false);
       return;
