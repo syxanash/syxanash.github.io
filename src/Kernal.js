@@ -424,6 +424,7 @@ class Kernal extends Component {
 
   openScheduledTV = () => {
     this.unsetScreenSaver();
+    this.toggleBootScreen(false);
     this.setState({ scheduledTVOn: true });
   }
 
