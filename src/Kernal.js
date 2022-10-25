@@ -453,6 +453,7 @@ class Kernal extends Component {
 
     return (
       <XBill
+        kernelPanic={ this.kernelPanic }
         initialX={ copyrightWatermarkComponent.x }
         initialY={ copyrightWatermarkComponent.y - haflsizeXBill }
       />

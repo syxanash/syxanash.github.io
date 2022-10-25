@@ -62,6 +62,8 @@ class XBill extends Component {
   }
 
   smashAnimationUpdater = () => {
+    const { kernelPanic } = this.props;
+
     if (this.smashFrameIndex + 1 < this.smashAnimationFrames) {
       this.smashFrameIndex = this.smashFrameIndex + 1;
     } else {
@@ -71,6 +73,12 @@ class XBill extends Component {
           stopped: true,
         },
       });
+
+      if (kernelPanic) {
+        kernelPanic();
+      }
+
+      return;
     }
 
     this.setState({
