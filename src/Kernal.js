@@ -67,7 +67,7 @@ class Kernal extends Component {
       screenSaverMode: false,
       loopTVon: false,
       scheduledTVOn: false,
-      bootScreenMode: JSON.parse(localStorage.getItem('doneFirstBoot')) === null,
+      bootScreenMode: JSON.parse(localStorage.getItem('firstBootDone')) === null,
       hasCrashed: false,
       isBrokenScreen: false,
       crtEnabled: JSON.parse(localStorage.getItem('crt')) === null

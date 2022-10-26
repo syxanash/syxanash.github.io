@@ -80,13 +80,13 @@ class BootScreen extends Component {
     this.rowWithLoader = 17;
     this.bootMessageSpeed = 50;
 
-    const doneFirstBoot = !!JSON.parse(localStorage.getItem('doneFirstBoot'));
+    const firstBootDone = !!JSON.parse(localStorage.getItem('firstBootDone'));
 
     this.state = {
       outputText: '',
       bootMessageCounter: 0,
       isLoading: !Util.isMobile(),
-      doneFirstBoot,
+      firstBootDone,
       bootMessages: [
         <div style={ { paddingBottom: '5px' } }>{ Array.from(Array(window.navigator.hardwareConcurrency).keys()).map(index => <span key={ `item_${index}` }><img height='60' alt='kernel mascot' src={ happyPippo } />&nbsp;</span>) }</div>,
         <div>Welcome to the <span className='console-text-blue'>P</span><span className='console-text-pink'>i</span><span className='console-text-yellow'>p</span><span className='console-text-purple'>p</span><span className='console-text-green'>o</span> <span className='console-text-red'>O</span><span className='console-text-yellow'>S</span> experience!</div>,
@@ -106,7 +106,7 @@ class BootScreen extends Component {
         <div>&nbsp;&nbsp;<span className='console-text-green'>USB found, managed by <span className='console-text-purple'>hotplug</span>: <span className='console-text-yellow'>(Re-)scanning USB devices...
           you never know[001 ] Done.</span></span></div>,
         <div><span className='console-text-blue'>Starting </span><span className='console-text-purple'>udev </span><span className='console-text-green'>hot-plug hardware detection... </span><span className='console-text-blue'>Started.</span></div>,
-        <div>Autoconfiguring devices... <CliLoader loaderCharacter='▓' toggleLoading={ this.toggleLoading } loaded={ doneFirstBoot } endText={ ' Done' } /></div>,
+        <div>Autoconfiguring devices... <CliLoader loaderCharacter='▓' toggleLoading={ this.toggleLoading } loaded={ firstBootDone } endText={ ' Done' } /></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Mouse is <span className='console-text-yellow'>a mouse (with wheel hopefully) at /dev/psaux</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Video is <span className='console-text-yellow'>{`${window.screen.width}x${window.screen.height}`}</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>User Agent is <span className='console-text-yellow'>{navigator.userAgent}</span></span></div>,
@@ -128,10 +128,10 @@ class BootScreen extends Component {
   }
 
   componentDidMount() {
-    const { doneFirstBoot } = this.state;
-    localStorage.setItem('doneFirstBoot', true);
+    const { firstBootDone } = this.state;
+    localStorage.setItem('firstBootDone', true);
 
-    if (!doneFirstBoot) {
+    if (!firstBootDone) {
       this.bootMessageInterval = setInterval(this.showNextMessage, this.bootMessageSpeed);
     }
 
@@ -165,7 +165,7 @@ class BootScreen extends Component {
     if (bootMessageCounter >= this.state.bootMessages.length) {
       const newBootMessages = bootMessages;
       newBootMessages[this.rowWithLoader] = <div key='reloaded'>Autoconfiguring devices... <CliLoader loaderCharacter='▓' loaded={ true } endText={ ' Done' }/></div>;
-      this.setState({ bootMessages: newBootMessages, doneFirstBoot: true });
+      this.setState({ bootMessages: newBootMessages, firstBootDone: true });
       toggleBootScreen(false);
       return;
     }
@@ -198,10 +198,10 @@ class BootScreen extends Component {
   }
 
   renderBootMessages = () => {
-    const { bootMessageCounter, bootMessages, doneFirstBoot } = this.state;
+    const { bootMessageCounter, bootMessages, firstBootDone } = this.state;
 
     return bootMessages.map((message, index) => <span key={ `key_${index}` }>{message}</span>)
-      .slice(0, doneFirstBoot ? bootMessages.length : bootMessageCounter);
+      .slice(0, firstBootDone ? bootMessages.length : bootMessageCounter);
   }
 
   render() {
