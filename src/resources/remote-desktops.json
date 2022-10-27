@@ -325,11 +325,6 @@
 		"icon": "windows"
 	},
 	{
-		"name": "Vuindows",
-		"url": "https://marcmascarell.github.io/Vuindows",
-		"icon": "windows_new"
-	},
-	{
 		"name": "Gustavo Chico",
 		"url": "https://gustavochico.com/desktop",
 		"icon": "mac"
@@ -743,5 +738,10 @@
 		"name": "Amiga37 Germany",
 		"url": "https://amigaevent.de",
 		"icon": "amiga"
+	},
+	{
+		"name": "Money Simulator",
+		"url": "https://simulator.money/play",
+		"icon": "windows_new"
 	}
 ]
