@@ -83,7 +83,6 @@ class BootScreen extends Component {
     const firstBootDone = !!JSON.parse(localStorage.getItem('firstBootDone'));
 
     this.state = {
-      outputText: '',
       bootMessageCounter: 0,
       isLoading: !Util.isMobile(),
       firstBootDone,
@@ -135,12 +134,10 @@ class BootScreen extends Component {
       this.bootMessageInterval = setInterval(this.showNextMessage, this.bootMessageSpeed);
     }
 
-    document.addEventListener('keydown', this.addCtrlC);
     this.scrollToBottom();
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.addCtrlC);
     if (this.bootMessageInterval !== undefined) {
       clearInterval(this.bootMessageInterval);
     }
@@ -159,13 +156,11 @@ class BootScreen extends Component {
   }
 
   showNextMessage = () => {
-    const { bootMessageCounter, isLoading, bootMessages } = this.state;
+    const { bootMessageCounter, isLoading } = this.state;
     const { toggleBootScreen } = this.props;
 
     if (bootMessageCounter >= this.state.bootMessages.length) {
-      const newBootMessages = bootMessages;
-      newBootMessages[this.rowWithLoader] = <div key='reloaded'>Autoconfiguring devices... <CliLoader loaderCharacter='▓' loaded={ true } endText={ ' Done' }/></div>;
-      this.setState({ bootMessages: newBootMessages, firstBootDone: true });
+      this.setState({ firstBootDone: true });
       toggleBootScreen(false);
       return;
     }
@@ -175,27 +170,13 @@ class BootScreen extends Component {
     }
   }
 
-  addCtrlC = (event) => {
-    const { hasCrashed } = this.props;
-    const { outputText } = this.state;
-
-    if (event.ctrlKey && event.key === 'c' && hasCrashed) {
-      this.setState({ outputText: `${outputText} ^C<br />` });
-    }
-  }
-
-  kernelPanic = () => {
-    const { outputText } = this.state;
-
-    return (
-      <span>
-        <br />
-        <div><span className='console-text-red blink'>*** Kernel Panic Web Desktop has been halted ***</span></div>
-        [1]+  Exit 1
-        <span dangerouslySetInnerHTML={ { __html: outputText } }></span>
-      </span>
-    );
-  }
+  kernelPanic = () => (
+    <span>
+      <br />
+      <div><span className='console-text-red blink'>*** Kernel Panic Web Desktop has been halted ***</span></div>
+      [1]+  Exit 1
+    </span>
+  )
 
   renderBootMessages = () => {
     const { bootMessageCounter, bootMessages, firstBootDone } = this.state;
