@@ -743,5 +743,10 @@
 		"name": "Money Simulator",
 		"url": "https://simulator.money/play",
 		"icon": "windows_new"
+	},
+	{
+		"name": "Pangolin Desktop",
+		"url": "https://web.dahliaos.io",
+		"icon": "linux"
 	}
 ]
