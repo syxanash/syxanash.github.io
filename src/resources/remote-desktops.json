@@ -42,7 +42,7 @@
 	{
 		"name": "The Restart Page",
 		"url": "http://www.therestartpage.com",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "Webamp",
@@ -127,7 +127,7 @@
 	{
 		"name": "Virtual Desktop",
 		"url": "http://www.virtualdesktop.org",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "mattOS",
@@ -207,7 +207,7 @@
 	{
 		"name": "baz's PC",
 		"url": "https://niceware.neocities.org",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "TrueSchool Ascii",
@@ -237,7 +237,7 @@
 	{
 		"name": "NyjaOS",
 		"url": "https://signal3.neocities.org",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "Windows 95 Replica",
@@ -337,12 +337,12 @@
 	{
 		"name": "KryptOS",
 		"url": "https://kry.pt/#OSVERSIONS",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "Online Hacker Simulator",
 		"url": "https://pranx.com/hacker/",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "Tetrageddon Games",
@@ -527,7 +527,7 @@
 	{
 		"name": "Fizzygum",
 		"url": "http://fizzygum.org/sandboxes/latest-stable/",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "RexOS",
@@ -557,7 +557,7 @@
 	{
 		"name": "AtheOS",
 		"url": "https://al1-ce.dev",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "NeXT",
@@ -570,8 +570,8 @@
 		"icon": "windows_new"
 	},
 	{
-		"name": "ANOTHER TEE",
-		"url": "https://www.anothertee.xyz",
+		"name": "ANobscure TEE",
+		"url": "https://www.anobscuretee.xyz",
 		"icon": "mac"
 	},
 	{
@@ -632,7 +632,7 @@
 	{
 		"name": "Alina Sava",
 		"url": "https://sava.io",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "KANYE 2049",
@@ -712,7 +712,7 @@
 	{
 		"name": "H4ACK1NG G00GL3",
 		"url": "https://h4ck1ng.google",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "Hudson Mohawke",
@@ -722,7 +722,7 @@
 	{
 		"name": "Sam Likes Code",
 		"url": "https://www.samlikescode.dev",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "The Amiga Workbench Simulation",
@@ -753,5 +753,15 @@
 		"name": "SantaOS",
 		"url": "http://jeremymakes.com/SantaOS/",
 		"icon": "mac_new"
+	},
+	{
+		"name": "WebXP",
+		"url": "https://konsti.club/webxp/",
+		"icon": "windows_new"
+	},
+	{
+		"name": "HoleNet Cobalt",
+		"url": "https://holenet.info",
+		"icon": "obscure"
 	}
 ]
