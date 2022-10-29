@@ -39,12 +39,12 @@
   filter: Alpha(opacity=70);
 }
 
-.disabled-switch-bg {
+.enabled-switch-bg {
   background-color: orange;
   position: absolute;
   width: 15px;
   height: 6px;
-  right: 4px;
+  right: 27px;
   bottom: 4px;
   opacity: 0.9;
   filter: Alpha(opacity=90);
