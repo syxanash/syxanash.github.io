@@ -29,7 +29,7 @@ class CliLoader extends Component {
 
     this.state = {
       loaderText: this.props.loaderCharacter,
-      maxLoaderSize: 25,
+      loaderBarSize: 30,
     };
   }
 
@@ -46,7 +46,7 @@ class CliLoader extends Component {
     }
   }
 
-  reachedMaxLoader = () => this.state.loaderText.length < this.state.maxLoaderSize;
+  reachedMaxLoader = () => this.state.loaderText.length < this.state.loaderBarSize;
 
   increaseLoader = () => {
     const { loaderText } = this.state;
@@ -61,11 +61,11 @@ class CliLoader extends Component {
 
   render() {
     const { loaded, endText = '' } = this.props;
-    const { loaderText, maxLoaderSize } = this.state;
+    const { loaderText, loaderBarSize } = this.state;
 
     return <span>
       { loaded
-        ? <span className='console-text-green'>{Array(maxLoaderSize).fill(0).map(() => loaderText)}</span>
+        ? <span className='console-text-green'>{Array(loaderBarSize).fill(0).map(() => loaderText)}</span>
         : <span className='console-text-green'>{loaderText}</span>
       }
       { this.reachedMaxLoader() && !loaded ? <ShellSpinner /> : endText }
@@ -121,7 +121,6 @@ class BootScreen extends Component {
         <div><br /></div>,
         <div>After this session terminates, the system will automatically shut down.</div>,
         <div>-----------------------------------------------------------------------</div>,
-        <div><span className='console-text-blue'>Starting the Web Desktop...</span></div>,
       ],
     };
   }
