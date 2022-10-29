@@ -325,6 +325,11 @@
 		"icon": "windows"
 	},
 	{
+		"name": "Vuindows",
+		"url": "https://marcmascarell.github.io/Vuindows/",
+		"icon": "windows_new"
+	},
+	{
 		"name": "Gustavo Chico",
 		"url": "https://gustavochico.com/desktop",
 		"icon": "mac"
