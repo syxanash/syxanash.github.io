@@ -748,5 +748,10 @@
 		"name": "Pangolin Desktop",
 		"url": "https://web.dahliaos.io",
 		"icon": "linux"
+	},
+	{
+		"name": "SantaOS",
+		"url": "http://jeremymakes.com/SantaOS/",
+		"icon": "mac_new"
 	}
 ]
