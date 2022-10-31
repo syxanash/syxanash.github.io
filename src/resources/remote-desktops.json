@@ -735,8 +735,13 @@
 		"icon": "amiga"
 	},
 	{
-		"name": "Amiga37 Germany",
-		"url": "https://amigaevent.de",
+		"name": "Amiga34 Germany",
+		"url": "http://www.amiga34.de",
+		"icon": "amiga"
+	},
+	{
+		"name": "Richard Eisenmenger",
+		"url": "https://amiga.richard-eisenmenger.com",
 		"icon": "amiga"
 	},
 	{
