@@ -70,7 +70,7 @@ class Kernal extends Component {
       bootScreenMode: JSON.parse(localStorage.getItem('firstBootDone')) === null,
       hasCrashed: false,
       isBrokenScreen: false,
-      crtEnabled: JSON.parse(localStorage.getItem('crt')) !== null
+      crtEnabled: JSON.parse(localStorage.getItem('crt')) === null
         || !!JSON.parse(localStorage.getItem('crt')),
       mainTheme: PippoTheme,
       mainUnfocusedTheme: PippoDistracted,
