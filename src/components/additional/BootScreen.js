@@ -25,18 +25,15 @@ class CliLoader extends Component {
   constructor(props) {
     super(props);
 
-    this.cliLoaderSpeed = 80;
-
     this.state = {
       loaderText: this.props.loaderCharacter,
-      loaderBarSize: 30,
     };
   }
 
   componentDidMount() {
-    const { loaded } = this.props;
+    const { loaded, cliLoaderSpeed } = this.props;
     if (!loaded) {
-      this.loaderInterval = setInterval(this.increaseLoader, this.cliLoaderSpeed);
+      this.loaderInterval = setInterval(this.increaseLoader, cliLoaderSpeed);
     }
   }
 
@@ -46,7 +43,7 @@ class CliLoader extends Component {
     }
   }
 
-  reachedMaxLoader = () => this.state.loaderText.length < this.state.loaderBarSize;
+  reachedMaxLoader = () => this.state.loaderText.length < this.props.loaderBarSize;
 
   increaseLoader = () => {
     const { loaderText } = this.state;
@@ -55,13 +52,14 @@ class CliLoader extends Component {
     if (this.reachedMaxLoader()) {
       this.setState({ loaderText: `${loaderText + loaderCharacter}` });
     } else {
+      clearInterval(this.loaderInterval);
       toggleLoading(false);
     }
   }
 
   render() {
-    const { loaded, endText = '' } = this.props;
-    const { loaderText, loaderBarSize } = this.state;
+    const { loaded, endText = '', loaderBarSize } = this.props;
+    const { loaderText } = this.state;
 
     return <span>
       { loaded
@@ -77,14 +75,14 @@ class BootScreen extends Component {
   constructor(props) {
     super(props);
 
-    this.rowWithLoader = 17;
+    this.rowsWithLoader = [17];
     this.bootMessageSpeed = 50;
 
     const firstBootDone = !!JSON.parse(localStorage.getItem('firstBootDone'));
 
     this.state = {
       bootMessageCounter: 0,
-      isLoading: !Util.isMobile(),
+      isLoading: false,
       firstBootDone,
       bootMessages: [
         <div style={ { paddingBottom: '5px' } }>{ Array.from(Array(window.navigator.hardwareConcurrency).keys()).map(index => <span key={ `item_${index}` }><img height='60' alt='kernel mascot' src={ happyPippo } />&nbsp;</span>) }</div>,
@@ -105,7 +103,7 @@ class BootScreen extends Component {
         <div>&nbsp;&nbsp;<span className='console-text-green'>USB found, managed by <span className='console-text-purple'>hotplug</span>: <span className='console-text-yellow'>(Re-)scanning USB devices...
           you never know[001 ] Done.</span></span></div>,
         <div><span className='console-text-blue'>Starting </span><span className='console-text-purple'>udev </span><span className='console-text-green'>hot-plug hardware detection... </span><span className='console-text-blue'>Started.</span></div>,
-        <div>Autoconfiguring devices... <CliLoader loaderCharacter='▓' toggleLoading={ this.toggleLoading } loaded={ firstBootDone } endText={ ' Done' } /></div>,
+        <div>Autoconfiguring devices... <CliLoader loaderCharacter='▓' loaderBarSize={ 30 } cliLoaderSpeed={ 80 } toggleLoading={ this.toggleLoading } loaded={ firstBootDone } endText={ ' Done' } /></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Mouse is <span className='console-text-yellow'>a mouse (with wheel hopefully) at /dev/psaux</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Video is <span className='console-text-yellow'>{`${window.screen.width}x${window.screen.height}`}</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>User Agent is <span className='console-text-yellow'>{navigator.userAgent}</span></span></div>,
@@ -159,12 +157,15 @@ class BootScreen extends Component {
     const { toggleBootScreen } = this.props;
 
     if (bootMessageCounter >= this.state.bootMessages.length) {
-      this.setState({ firstBootDone: true });
       toggleBootScreen(false);
       return;
     }
 
-    if (bootMessageCounter <= this.rowWithLoader || !isLoading) {
+    if (this.rowsWithLoader.includes(bootMessageCounter)) {
+      this.setState({ bootMessageCounter: bootMessageCounter + 1, isLoading: true });
+    }
+
+    if (Util.isMobile() || !isLoading) {
       this.setState({ bootMessageCounter: bootMessageCounter + 1 });
     }
   }
