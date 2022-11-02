@@ -133,9 +133,10 @@ class BootScreen extends Component {
         toggleBootScreen(false);
       } else {
         this.bootMessageInterval = setInterval(this.showNextMessage, this.bootMessageSpeed);
-        this.scrollToBottom();
       }
     }
+
+    this.scrollToBottom();
   }
 
   componentWillUnmount() {
