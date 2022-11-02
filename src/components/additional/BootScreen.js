@@ -128,15 +128,14 @@ class BootScreen extends Component {
     const { toggleBootScreen } = this.props;
     const { firstBootDone } = this.state;
 
-    if (Util.isMobile() && !firstBootDone) {
-      toggleBootScreen(false);
-    }
-
     if (!firstBootDone) {
-      this.bootMessageInterval = setInterval(this.showNextMessage, this.bootMessageSpeed);
+      if (Util.isMobile()) {
+        toggleBootScreen(false);
+      } else {
+        this.bootMessageInterval = setInterval(this.showNextMessage, this.bootMessageSpeed);
+        this.scrollToBottom();
+      }
     }
-
-    this.scrollToBottom();
   }
 
   componentWillUnmount() {
