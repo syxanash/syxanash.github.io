@@ -161,16 +161,15 @@ class BootScreen extends Component {
     const { bootMessageCounter, isLoading, bootMessages } = this.state;
     const { toggleBootScreen } = this.props;
 
-    if (bootMessageCounter >= this.state.bootMessages.length && !isLoading) {
-      toggleBootScreen(false);
+    if (isLoading) {
       return;
     }
 
-    if (bootMessages[bootMessageCounter].props.className === 'hasLoader') {
+    if (bootMessageCounter >= bootMessages.length) {
+      toggleBootScreen(false);
+    } else if (bootMessages[bootMessageCounter].props.className === 'hasLoader') {
       this.setState({ bootMessageCounter: bootMessageCounter + 1, isLoading: true });
-    }
-
-    if (!isLoading) {
+    } else {
       this.setState({ bootMessageCounter: bootMessageCounter + 1 });
     }
   }
