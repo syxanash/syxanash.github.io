@@ -13,7 +13,7 @@ class ShellSpinner extends Component {
   }
 
   componentDidMount() {
-    this.spinnerInterval = setInterval(this.characterUpdater, 100);
+    this.spinnerInterval = setInterval(this.characterUpdater, 150);
   }
 
   componentWillUnmount() {

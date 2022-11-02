@@ -103,7 +103,7 @@ class BootScreen extends Component {
         <div>&nbsp;&nbsp;<span className='console-text-green'>USB found, managed by <span className='console-text-purple'>hotplug</span>: <span className='console-text-yellow'>(Re-)scanning USB devices...
           you never know[001 ] Done.</span></span></div>,
         <div><span className='console-text-blue'>Starting </span><span className='console-text-purple'>udev </span><span className='console-text-green'>hot-plug hardware detection... </span><span className='console-text-blue'>Started.</span></div>,
-        <div>Autoconfiguring devices... <CliLoader loaderCharacter='▓' loaderBarSize={ 30 } cliLoaderSpeed={ 80 } toggleLoading={ this.toggleLoading } loaded={ firstBootDone } endText={ ' Done' } /></div>,
+        <div>Autoconfiguring devices... <CliLoader loaderCharacter='▓' loaderBarSize={ 30 } cliLoaderSpeed={ 60 } toggleLoading={ this.toggleLoading } loaded={ firstBootDone } endText={ ' Done' } /></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Mouse is <span className='console-text-yellow'>a mouse (with wheel hopefully) at /dev/psaux</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Video is <span className='console-text-yellow'>{`${window.screen.width}x${window.screen.height}`}</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>User Agent is <span className='console-text-yellow'>{navigator.userAgent}</span></span></div>,
