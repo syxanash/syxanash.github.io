@@ -42,7 +42,7 @@ class Kernal extends Component {
   constructor(props) {
     super(props);
 
-    this.scrollTop = React.createRef();
+    this.scrollTopElement = React.createRef();
 
     this.loadingIconTimeout = undefined;
     this.konamiKeysEntered = 0;
@@ -167,6 +167,12 @@ class Kernal extends Component {
       || bootScreenMode;
   }
 
+  scrollToTop = () => {
+    if (this.scrollTopElement.current !== null) {
+      this.scrollTopElement.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   onLeftsideButton = () => {
     if (!this.isWindowOpened('osinfowindow')) {
       this.openWindow('osinfowindow');
@@ -185,9 +191,7 @@ class Kernal extends Component {
       this.focusWindow(windowName);
       this.setState({ windowsList });
 
-      if (this.scrollTop.current !== null) {
-        this.scrollTop.current.scrollIntoView({ behavior: 'smooth' });
-      }
+      this.scrollToTop();
     };
 
     if (subWindow) {
@@ -300,6 +304,10 @@ class Kernal extends Component {
   }
 
   toggleBootScreen = (mode) => {
+    if (!mode) {
+      this.scrollToTop();
+    }
+
     this.setState({ bootScreenMode: mode });
   }
 
@@ -521,7 +529,7 @@ class Kernal extends Component {
 
     return (
       <HashRouter>
-        <div ref={ this.scrollTop } />
+        <div ref={ this.scrollTopElement } />
         <div className='window-centered'>
           <div style={ { display: this.isInSpecialState() ? 'none' : 'block' } }>
             <Helmet>
