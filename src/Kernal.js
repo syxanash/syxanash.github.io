@@ -290,14 +290,10 @@ class Kernal extends Component {
   }
 
   kernelPanic = () => {
-    const {
-      loopTVon, scheduledTVOn, hasCrashed,
-    } = this.state;
-
-    if (!hasCrashed && !loopTVon && !scheduledTVOn) {
+    if (!this.isInSpecialState()) {
       this.closeAllWindows();
       this.setState({
-        bootScreenMode: !this.isInSpecialState(),
+        bootScreenMode: true,
         hasCrashed: true,
       });
     }
@@ -364,11 +360,14 @@ class Kernal extends Component {
   }
 
   poweroff = () => {
-    this.closeAllWindows();
+    if (!this.isInSpecialState()) {
+      this.closeAllWindows();
 
-    SoundEffects.poweroffSound.load();
-    SoundEffects.poweroffSound.play();
-    this.setState({ poweredOff: true });
+      SoundEffects.poweroffSound.load();
+      SoundEffects.poweroffSound.play();
+
+      this.setState({ poweredOff: true });
+    }
   }
 
   setScreenSaver = () => {

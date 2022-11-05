@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 
 import configUrls from '../../resources/config-urls.json';
 import lastUpdatedFile from '../../resources/last-updated.json';
+import webDesktops from '../../resources/remote-desktops.json';
 import happyPippo from '../../resources/images/happy_pippo.gif';
 import ShellSpinner from './ShellSpinner';
 import Util from '../Util';
@@ -78,6 +79,7 @@ class BootScreen extends Component {
     this.bootMessageSpeed = 50;
 
     const firstBootDone = !!JSON.parse(localStorage.getItem('firstBootDone'));
+    const crtEnabled = !!JSON.parse(localStorage.getItem('crt'));
 
     this.state = {
       bootMessageCounter: 0,
@@ -99,16 +101,15 @@ class BootScreen extends Component {
         <div>&nbsp;&nbsp;<span className='console-text-green'>Running Pippo OS Kernel</span> <span className='console-text-yellow'>1.66.6 Build. {lastUpdatedFile.buildNumber.substr(0, 5)}</span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Logical processors found: <span className='console-text-yellow'>{ window.navigator.hardwareConcurrency }</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>ACPI Bios found, activating modules: <span className='console-text-yellow'>ac battery button fan processor thermal</span></span></div>,
-        <div>&nbsp;&nbsp;<span className='console-text-green'>USB found, managed by <span className='console-text-purple'>hotplug</span>: <span className='console-text-yellow'>(Re-)scanning USB devices...
-          you never know[001 ] Done.</span></span></div>,
         <div><span className='console-text-blue'>Starting </span><span className='console-text-purple'>udev </span><span className='console-text-green'>hot-plug hardware detection... </span><span className='console-text-blue'>Started.</span></div>,
         <div className='hasLoader'>Autoconfiguring devices... <CliLoader loaderCharacter='▓' loaderBarSize={ 30 } cliLoaderSpeed={ 60 } toggleLoading={ this.toggleLoading } loaded={ firstBootDone } endText={ ' Done' } /></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Mouse is <span className='console-text-yellow'>a mouse (with wheel hopefully) at /dev/psaux</span></span></div>,
-        <div>&nbsp;&nbsp;<span className='console-text-green'>Video is <span className='console-text-yellow'>{`${window.screen.width}x${window.screen.height}`}</span></span></div>,
+        <div>&nbsp;&nbsp;<span className='console-text-green'>Video is <span className='console-text-yellow'>{`${window.screen.width}x${window.screen.height}`}</span> using {crtEnabled ? 'CRT' : 'LCD'} monitor</span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>User Agent is <span className='console-text-yellow'>{navigator.userAgent}</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Host OS is <span className='console-text-yellow'>{getOSName()}</span></span></div>,
         <div><span className='console-text-blue'>Scanning for Harddisk partitions and creating <span className='console-text-yellow'>/etc/fstab</span>... <span className='console-text-green'>Done.</span></span></div>,
         <div><span className='console-text-green'>Network device <span className='console-text-purple'>eth0</span> detected, DHCP broadcasting for IP. <span className='console-text-blue'>(Backgrounding)</span></span></div>,
+        <div><span className='console-text-green'>Loading <span className='console-text-purple'>Web Desktops</span> Network............ <span className='console-text-yellow'>{webDesktops.length} Desktops</span> found.</span></div>,
         <div>INIT: Entering runlevel: 5</div>,
         <div>-----------------------------------------------------------------------</div>,
         <div>&nbsp;&nbsp;&nbsp;&nbsp;Pippo OS Web Deskt☺p</div>,
