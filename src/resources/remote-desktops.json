@@ -42,7 +42,7 @@
 	{
 		"name": "The Restart Page",
 		"url": "http://www.therestartpage.com",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "Webamp",
@@ -127,7 +127,7 @@
 	{
 		"name": "Virtual Desktop",
 		"url": "http://www.virtualdesktop.org",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "mattOS",
@@ -207,12 +207,7 @@
 	{
 		"name": "baz's PC",
 		"url": "https://niceware.neocities.org",
-		"icon": "other"
-	},
-	{
-		"name": "TrueSchool Ascii",
-		"url": "https://www.trueschool.se",
-		"icon": "amiga"
+		"icon": "obscure"
 	},
 	{
 		"name": "Victor Ribeiro",
@@ -237,7 +232,7 @@
 	{
 		"name": "NyjaOS",
 		"url": "https://signal3.neocities.org",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "Windows 95 Replica",
@@ -326,7 +321,7 @@
 	},
 	{
 		"name": "Vuindows",
-		"url": "https://marcmascarell.github.io/Vuindows",
+		"url": "https://marcmascarell.github.io/Vuindows/",
 		"icon": "windows_new"
 	},
 	{
@@ -342,12 +337,12 @@
 	{
 		"name": "KryptOS",
 		"url": "https://kry.pt/#OSVERSIONS",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "Online Hacker Simulator",
 		"url": "https://pranx.com/hacker/",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "Tetrageddon Games",
@@ -532,7 +527,7 @@
 	{
 		"name": "Fizzygum",
 		"url": "http://fizzygum.org/sandboxes/latest-stable/",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "RexOS",
@@ -562,7 +557,7 @@
 	{
 		"name": "AtheOS",
 		"url": "https://al1-ce.dev",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "NeXT",
@@ -637,7 +632,7 @@
 	{
 		"name": "Alina Sava",
 		"url": "https://sava.io",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "KANYE 2049",
@@ -717,7 +712,7 @@
 	{
 		"name": "H4ACK1NG G00GL3",
 		"url": "https://h4ck1ng.google",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "Hudson Mohawke",
@@ -727,7 +722,7 @@
 	{
 		"name": "Sam Likes Code",
 		"url": "https://www.samlikescode.dev",
-		"icon": "other"
+		"icon": "obscure"
 	},
 	{
 		"name": "The Amiga Workbench Simulation",
@@ -740,8 +735,38 @@
 		"icon": "amiga"
 	},
 	{
-		"name": "Amiga37 Germany",
-		"url": "https://amigaevent.de",
+		"name": "Amiga34 Germany",
+		"url": "http://www.amiga34.de",
 		"icon": "amiga"
+	},
+	{
+		"name": "Richard Eisenmenger",
+		"url": "https://amiga.richard-eisenmenger.com",
+		"icon": "amiga"
+	},
+	{
+		"name": "Money Simulator",
+		"url": "https://simulator.money/play",
+		"icon": "windows_new"
+	},
+	{
+		"name": "Pangolin Desktop",
+		"url": "https://web.dahliaos.io",
+		"icon": "linux"
+	},
+	{
+		"name": "SantaOS",
+		"url": "http://jeremymakes.com/SantaOS/",
+		"icon": "mac_new"
+	},
+	{
+		"name": "WebXP",
+		"url": "https://konsti.club/webxp/",
+		"icon": "windows_new"
+	},
+	{
+		"name": "HoleNet Cobalt",
+		"url": "https://holenet.info",
+		"icon": "obscure"
 	}
 ]
