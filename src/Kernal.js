@@ -33,12 +33,12 @@ import hackedBackground from './resources/images/hack_bg.gif';
 import PippoTheme from './themes/PippoTheme';
 import PippoDistracted from './themes/PippoDistracted';
 
-import './App.css';
+import './Kernal.css';
 
 const backgroundImages = require.context('./resources/images/backgrounds', true);
 const wallpapersNumber = 63;
 
-class App extends Component {
+class Kernal extends Component {
   constructor(props) {
     super(props);
 
@@ -67,7 +67,8 @@ class App extends Component {
       screenSaverMode: false,
       loopTVon: false,
       scheduledTVOn: false,
-      bootScreenMode: undefined,
+      bootScreenMode: JSON.parse(localStorage.getItem('firstBootDone')) === null,
+      hasCrashed: false,
       isBrokenScreen: false,
       crtEnabled: JSON.parse(localStorage.getItem('crt')) === null
         || !!JSON.parse(localStorage.getItem('crt')),
@@ -82,7 +83,6 @@ class App extends Component {
 
     window.addEventListener('popstate', this.changeTheme);
     document.addEventListener('keydown', this.closeTopWindow);
-    document.addEventListener('keydown', this.bootScreen);
     document.addEventListener('keydown', this.konamiHandler);
 
     $(window).focus(() => {
@@ -112,6 +112,7 @@ class App extends Component {
             isWindowOpened={ this.isWindowOpened }
             isFullscreen={ true }
             poweroff={ this.poweroff }
+            crashWindow={ this.kernelPanic }
           /> }
         />;
       });
@@ -130,7 +131,6 @@ class App extends Component {
     }
 
     document.removeEventListener('keydown', this.closeTopWindow);
-    document.removeEventListener('keydown', this.bootScreen);
     document.removeEventListener('keydown', this.konamiHandler);
 
     document.removeEventListener('mousemove', this.onMouseUpdate);
@@ -289,19 +289,18 @@ class App extends Component {
     this.setState({ mainTheme: newTheme, mainUnfocusedTheme: newUnfocusedTheme });
   }
 
-  bootScreen = (event) => {
-    const {
-      loopTVon, bootScreenMode, scheduledTVOn,
-    } = this.state;
-
-    if (((event.ctrlKey && event.key === 'c')
-      || (event.ctrlKey && event.key === 'C'))
-      && bootScreenMode === undefined && !loopTVon && !scheduledTVOn) {
+  kernelPanic = () => {
+    if (!this.isInSpecialState()) {
       this.closeAllWindows();
       this.setState({
-        bootScreenMode: !this.isInSpecialState(),
+        bootScreenMode: true,
+        hasCrashed: true,
       });
     }
+  }
+
+  toggleBootScreen = (mode) => {
+    this.setState({ bootScreenMode: mode });
   }
 
   konamiHandler = (event) => {
@@ -361,11 +360,14 @@ class App extends Component {
   }
 
   poweroff = () => {
-    this.closeAllWindows();
+    if (!this.isInSpecialState()) {
+      this.closeAllWindows();
 
-    SoundEffects.poweroffSound.load();
-    SoundEffects.poweroffSound.play();
-    this.setState({ poweredOff: true });
+      SoundEffects.poweroffSound.load();
+      SoundEffects.poweroffSound.play();
+
+      this.setState({ poweredOff: true });
+    }
   }
 
   setScreenSaver = () => {
@@ -413,6 +415,7 @@ class App extends Component {
 
   openScheduledTV = () => {
     this.unsetScreenSaver();
+    this.toggleBootScreen(false);
     this.setState({ scheduledTVOn: true });
   }
 
@@ -442,6 +445,7 @@ class App extends Component {
 
     return (
       <XBill
+        kernelPanic={ this.kernelPanic }
         initialX={ copyrightWatermarkComponent.x }
         initialY={ copyrightWatermarkComponent.y - haflsizeXBill }
       />
@@ -489,6 +493,7 @@ class App extends Component {
               openWindow={ this.openWindow }
               isWindowOpened={ this.isWindowOpened }
               poweroff={ this.poweroff }
+              crashWindow={ this.kernelPanic }
               focused={ windowFocused }
               header={ windowHeader }
               body={ windowBody }
@@ -509,7 +514,7 @@ class App extends Component {
     const {
       bgWallpapers, bgIndex, displayWindowBody, pageBodyRoutes, showLoaderPointer, crtEnabled,
       poweredOff, loopTVon, isBrokenScreen, bootScreenMode, mainTheme, screenSaverMode,
-      mainUnfocusedTheme,
+      mainUnfocusedTheme, hasCrashed,
     } = this.state;
 
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
@@ -559,7 +564,10 @@ class App extends Component {
         { loopTVon && <LoopTV turnOff={ this.turnOffTV } /> }
         { screenSaverMode && <ScreenSaver /> }
         <Poweroff shouldPoweroff={ poweredOff } />
-        <BootScreen shouldStopWindowing={ bootScreenMode } />
+        { bootScreenMode && <BootScreen
+          hasCrashed={ hasCrashed }
+          toggleBootScreen={ this.toggleBootScreen }
+        /> }
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
         <ScheduledTV
           openScheduledTV={ this.openScheduledTV }
@@ -572,4 +580,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Kernal;
