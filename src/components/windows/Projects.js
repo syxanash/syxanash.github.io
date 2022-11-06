@@ -199,9 +199,9 @@ class ProjectsBody extends Component {
 
     return (<React.Fragment>
       <Cutout className='cutout-area' style={ { padding: '10px' } }>
-        <div className='comment-text' style={ { paddingBottom: '15px' } }>{'//'} Sometimes when I feel motivated and planets are perfectly aligned
+        <div className='comment-text' style={ { paddingBottom: '15px' } }>{'/*'} Sometimes when I feel motivated and planets are perfectly aligned
         I work on small side projects to create something I need
-        or to play with new tech. Here is a list of the ones I really enjoyed building:</div>
+        or to play with new tech. Here is a list of the ones I really enjoyed building {'*/'}</div>
         {this.renderProjectsList()}
         <br />
         <div style={ { paddingBottom: '15px', display: shellOutput !== undefined ? 'inline-block' : 'none', color: stdError ? 'yellow' : 'lime' } }>
