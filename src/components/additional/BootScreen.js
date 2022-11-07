@@ -111,14 +111,8 @@ class BootScreen extends Component {
         <div><span className='console-text-green'>Network device <span className='console-text-purple'>eth0</span> detected, DHCP broadcasting for IP. <span className='console-text-blue'>(Backgrounding)</span></span></div>,
         <div><span className='console-text-green'>Loading <span className='console-text-purple'>Web Desktops</span> Network............ <span className='console-text-yellow'>{webDesktops.length} Desktops</span> found.</span></div>,
         <div>INIT: Entering runlevel: 5</div>,
-        <div>-----------------------------------------------------------------------</div>,
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;Pippo OS Web Deskt☺p</div>,
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;Please stand by a few seconds while the optimal
-          configuration</div>,
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;is being determined</div>,
-        <div><br /></div>,
-        <div>After this session terminates, the system will automatically shut down.</div>,
-        <div>-----------------------------------------------------------------------</div>,
+        // eslint-disable-next-line max-len
+        <div>-----------------------------------------------------------------------<br />&nbsp;&nbsp;&nbsp;&nbsp;Pippo OS Web Deskt☺p<br />&nbsp;&nbsp;&nbsp;&nbsp;Please stand by a few seconds while the optimal configuration<br />&nbsp;&nbsp;&nbsp;&nbsp;is being determined<br /><br />After this session terminates, the system will automatically shut down.<br />-----------------------------------------------------------------------</div>,
       ],
     };
   }
