@@ -10,7 +10,7 @@ import contactIcon from '../../resources/icons/contact.gif';
 import githubIcon from '../../resources/icons/social/github.gif';
 import dribbbleIcon from '../../resources/icons/social/dribbble.gif';
 import webringIcon from '../../resources/icons/social/webring.gif';
-import twitterIcon from '../../resources/icons/social/twitter.gif';
+import mastodonIcon from '../../resources/icons/social/mastodon.png';
 import emailIcon from '../../resources/icons/social/email.gif';
 import pgpIcon from '../../resources/icons/social/pgp.gif';
 import linkedinIcon from '../../resources/icons/social/linkedin.gif';
@@ -52,10 +52,10 @@ class ContactBody extends Component {
           </Button>
         </Anchor>
       </Tooltip>
-      <Tooltip text='Twitter' delay={ 100 }>
-        <Anchor href='https://twitter.com/syxanash' target='_blank'>
+      <Tooltip text='Mastodon' delay={ 100 }>
+        <Anchor href='https://indieweb.social/@syx' target='_blank'>
           <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
-            <img src={ twitterIcon } style={ { height: '30px' } } alt="twitter"/>
+            <img src={ mastodonIcon } style={ { height: '30px' } } alt="mastodon"/>
           </Button>
         </Anchor>
       </Tooltip>
