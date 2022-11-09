@@ -357,8 +357,10 @@ class Kernal extends Component {
     const nextImageIndex = (bgIndex + 2) % bgWallpapers.length;
     new Image().src = backgroundImages(`./${bgWallpapers[nextImageIndex]}`);
 
-    localStorage.setItem('bgIndex', JSON.stringify(bgIndex + 1));
-    this.setState({ bgIndex: (bgIndex + 1) % bgWallpapers.length });
+    const nextIndex = (bgIndex + 1) % bgWallpapers.length;
+
+    localStorage.setItem('bgIndex', JSON.stringify(nextIndex));
+    this.setState({ bgIndex: nextIndex });
   }
 
   toggleBody = () => {
