@@ -7,6 +7,7 @@ import Util from '../Util';
 import configUrls from '../../resources/config-urls.json';
 
 import licenseText from '../../resources/misc/LICENSE.txt';
+import banner88x31 from '../../resources/images/88x31.gif';
 import cookieIcon from '../../resources/icons/cookie.gif';
 import codeAnimationDark from '../../resources/images/code_dark.gif';
 import codeAnimationLight from '../../resources/images/code_light.gif';
@@ -50,7 +51,7 @@ class CreditsBody extends Component {
         This website was written using <a href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>React</a>, if your 'puter is too slow then disable JavaScript you can always use the <i>fallback mode!</i>
         <p>
           The code is <a href={ configUrls.repositoryUrl } target='_blank' rel='noopener noreferrer'>entirely available</a> on GitHub.
-          You are more than welcome to add this site to your linkroll or links page, here's a <a href='https://system32.fly.dev/assets/88x31.gif' target='_blank' rel='noopener noreferrer'>88x31 button</a> if you're fond of the aul web.
+          You are more than welcome to add this site to your linkroll or links page, here's a <a href={ banner88x31 } target='_blank' rel='noopener noreferrer'>88x31 button</a> if you're fond of the aul web.
         </p>
       </div>
       <Tabs value={ activeTab } onChange={ this.handleChangeTab } style={ { paddingTop: '10px' } }>
