@@ -1,6 +1,6 @@
 {
-    "backendUrl": "https://system32.simone.computer",
-    "websocketUrl": "wss://system32.simone.computer",
+    "backendUrl": "https://system32.fly.dev",
+    "websocketUrl": "wss://system32.fly.dev",
     "repositoryUrl": "https://github.com/syxanash/syxanash.github.io",
     "email": "hello@simone.computer"
 }
