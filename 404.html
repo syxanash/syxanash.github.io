@@ -77,7 +77,7 @@
       const upperCasePattern = pattern.map(c => c.toUpperCase());
       let combinationEntered = 0;
 
-      const CRTEnabled = JSON.parse(localStorage.getItem('crt')) === null
+      const CRTEnabled = localStorage.getItem('crt') === null
         || !!JSON.parse(localStorage.getItem('crt'))
 
       if (!CRTEnabled) {
