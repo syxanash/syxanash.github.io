@@ -28,7 +28,7 @@ class WebDesktopsBody extends Component {
   state = {
     desktopsList: _.shuffle(remoteDesktops),
     sitesExplored: 0,
-    showHelp: JSON.parse(localStorage.getItem('showInfoFieldset')) === null,
+    showHelp: localStorage.getItem('showInfoFieldset') === null,
   }
 
   componentDidMount() {

@@ -56,7 +56,7 @@ class Kernal extends Component {
 
     this.state = {
       bgWallpapers: [...Array(wallpapersNumber).keys()].map(item => `BG_${item + 1}.png`),
-      bgIndex: JSON.parse(localStorage.getItem('bgIndex')) === null
+      bgIndex: localStorage.getItem('bgIndex') === null
         ? Math.floor(Math.random() * wallpapersNumber)
         : JSON.parse(localStorage.getItem('bgIndex')),
       showLoaderPointer: false,
@@ -67,10 +67,10 @@ class Kernal extends Component {
       screenSaverMode: false,
       loopTVon: false,
       scheduledTVOn: false,
-      bootScreenMode: JSON.parse(localStorage.getItem('firstBootDone')) === null,
+      bootScreenMode: localStorage.getItem('firstBootDone') === null,
       hasCrashed: false,
       isBrokenScreen: false,
-      crtEnabled: JSON.parse(localStorage.getItem('crt')) === null
+      crtEnabled: localStorage.getItem('crt') === null
         || !!JSON.parse(localStorage.getItem('crt')),
       mainTheme: PippoTheme,
       mainUnfocusedTheme: PippoDistracted,
