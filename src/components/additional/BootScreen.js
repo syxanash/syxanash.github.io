@@ -80,6 +80,7 @@ class BootScreen extends Component {
 
     const firstBootDone = !!JSON.parse(localStorage.getItem('firstBootDone'));
     const crtEnabled = !!JSON.parse(localStorage.getItem('crt'));
+    const computerFixed = !!JSON.parse(localStorage.getItem('fixed'));
 
     this.state = {
       bootMessageCounter: 0,
@@ -100,6 +101,9 @@ class BootScreen extends Component {
         <div>INIT version 1.66.6 booting</div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Running Pippo OS Kernel</span> <span className='console-text-yellow'>1.66.6 Build. {lastUpdatedFile.buildNumber.substr(0, 5)}</span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>Logical processors found: <span className='console-text-yellow'>{ window.navigator.hardwareConcurrency }</span></span></div>,
+        computerFixed
+          ? <div>&nbsp;&nbsp;<span className='console-text-green'>Found pizza recipe at: <span className='console-text-yellow'>root/Desktop/Recipe</span></span></div>
+          : <div>&nbsp;&nbsp;<span className='console-text-green'>Found kernel anomaly at: <span className='console-text-yellow'>root/.workspace/.cestino.</span></span></div>,
         <div>&nbsp;&nbsp;<span className='console-text-green'>ACPI Bios found, activating modules: <span className='console-text-yellow'>ac battery button fan processor thermal</span></span></div>,
         <div><span className='console-text-blue'>Starting </span><span className='console-text-purple'>udev </span><span className='console-text-green'>hot-plug hardware detection... </span><span className='console-text-blue'>Started.</span></div>,
         <div className='hasLoader'>Autoconfiguring devices... <CliLoader loaderCharacter='▓' loaderBarSize={ 30 } cliLoaderSpeed={ 60 } toggleLoading={ this.toggleLoading } loaded={ firstBootDone } endText={ ' Done' } /></div>,
