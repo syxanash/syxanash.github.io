@@ -8,7 +8,7 @@ import configUrls from '../../resources/config-urls.json';
 import './Blog.css';
 
 import htmlLinkIcon from '../../resources/icons/htmlLink.gif';
-import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
+import RSSIcon from '../../resources/icons/RSS.png';
 import prevArrowIcon from '../../resources/icons/prev_white.gif';
 import prevArrowBlueIcon from '../../resources/icons/prev_blue.gif';
 import nextArrowIcon from '../../resources/icons/next_white.gif';
@@ -193,7 +193,7 @@ class BlogBody extends Component {
           <div className='blog-footer-center-buttons'>
             <a href={ `${configUrls.backendUrl}/rss.xml` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
               <Button fullWidth>
-                <img src={ hyperlinkIcon } className='small-icon' alt="hyperlink icon"/>
+                <img src={ RSSIcon } className='small-icon' alt="RSS icon"/>
                 <figcaption><b>RSS</b></figcaption>
               </Button>
             </a>
