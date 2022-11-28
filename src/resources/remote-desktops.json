@@ -350,11 +350,6 @@
 		"icon": "windows"
 	},
 	{
-		"name": "AWGE - Forum",
-		"url": "https://forums.awgeshit.com",
-		"icon": "windows"
-	},
-	{
 		"name": "My Second PC",
 		"url": "https://koas.dev/m2pc/dinamicos/",
 		"icon": "linux"
@@ -568,11 +563,6 @@
 		"name": "Hunter Hodnett XP",
 		"url": "https://hunterhodnett.dev",
 		"icon": "windows_new"
-	},
-	{
-		"name": "ANOTHER TEE",
-		"url": "https://www.anothertee.xyz",
-		"icon": "mac"
 	},
 	{
 		"name": "Rauno Freiberg",
