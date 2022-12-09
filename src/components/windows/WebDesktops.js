@@ -146,9 +146,8 @@ class WebDesktopsBody extends Component {
         </div>
         <div style={ { paddingBottom: '10px', display: showHelp ? 'block' : 'none' } }>
           <Fieldset>
-            If you are a fan of websites, web apps and portfolios which
-            resemble desktop operating systems here is a curated list ready
-            to be explored
+            This is a hand curated directory of websites, web apps and portfolios
+            that mimic the appearance and functionality of desktop operating systems
           </Fieldset>
           { this.renderMobileMessage() }
         </div>
