@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1a6092061888faa41718b08c4e1c07e4",
+    "revision": "0dd7ee3d6eb2a0f3409bbbf165a1d1fb",
     "url": "/index.html"
   },
   {
-    "revision": "e116ebc9fb3e7ae85a92",
+    "revision": "ca98b73de8ae9506dd94",
     "url": "/static/css/2.ad458773.chunk.css"
   },
   {
-    "revision": "cdb4f633eeaec97f1ef4",
+    "revision": "b94f1f5266788c08afa8",
     "url": "/static/css/main.ba90720d.chunk.css"
   },
   {
-    "revision": "e116ebc9fb3e7ae85a92",
-    "url": "/static/js/2.79cbdda5.chunk.js"
+    "revision": "ca98b73de8ae9506dd94",
+    "url": "/static/js/2.36c01163.chunk.js"
   },
   {
-    "revision": "cdb4f633eeaec97f1ef4",
-    "url": "/static/js/main.6ce8526d.chunk.js"
+    "revision": "b94f1f5266788c08afa8",
+    "url": "/static/js/main.2761c2ca.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -338,6 +338,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7383e6da11f2801dbf09980dff20746d",
     "url": "/static/media/knoppix.7383e6da.jpg"
+  },
+  {
+    "revision": "0f55e45a0a9427b47ef6b07091292e79",
+    "url": "/static/media/la_freccia_azzurra.0f55e45a.gif"
   },
   {
     "revision": "aacbe77f3cd3989b03784096751b208a",
