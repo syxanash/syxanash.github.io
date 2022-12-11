@@ -346,5 +346,9 @@
     {
         "img": "la_freccia_azzurra.jpeg",
         "description": "La freccia azzurra"
+    },
+    {
+        "img": "la_freccia_azzurra.gif",
+        "description": "La freccia azzurra"
     }
 ]
