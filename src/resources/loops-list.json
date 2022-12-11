@@ -342,5 +342,13 @@
     {
         "img": "evangelion_screen3.gif",
         "description": "新世紀エヴァンゲリオン"
+    },
+    {
+        "img": "la_freccia_azzurra.gif",
+        "description": "La freccia azzurra"
+    },
+    {
+        "img": "la_freccia_azzurra2.jpeg",
+        "description": "La freccia azzurra"
     }
 ]
