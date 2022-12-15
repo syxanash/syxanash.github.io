@@ -758,5 +758,10 @@
 		"name": "Hugo Doueli | Portfolio 2022",
 		"url": "https://hugodoueil.fr",
 		"icon": "obscure"
+	},
+	{
+		"name": "Chrisbin's MacBook Pro",
+		"url": "https://chrisbinsunny.github.io/chrishub",
+		"icon": "mac_new"
 	}
 ]
