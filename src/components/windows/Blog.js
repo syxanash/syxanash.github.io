@@ -35,10 +35,13 @@ class BlogBody extends Component {
 
     this.state = {
       loaderInteger: 0,
-      maxPostsNumber: undefined,
-      currentPostIndex: undefined,
       postLoaded: undefined,
       backendResponse: undefined,
+
+      previousPost: undefined,
+      nextPost: undefined,
+      currentPost: undefined,
+
       headerText: 'LOADING POST...',
     };
   }
@@ -46,17 +49,27 @@ class BlogBody extends Component {
   componentDidMount = () => {
     this.loaderInterval = setInterval(this.increaseLoader, 20);
 
-    fetch(`${configUrls.backendUrl}/blogpostapi`)
+    fetch(`${configUrls.backendUrl}/blogapi`)
+      .then((response) => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        return response;
+      })
       .then(response => response.json())
       .then((data) => {
         this.setState({
           postLoaded: true,
           backendResponse: data.post_content,
-          maxPostsNumber: data.posts_count,
-          currentPostIndex: data.posts_count,
+          currentPost: data.current,
+          previousPost: data.previous,
+          nextPost: data.next,
         });
-      }).catch((errorObject) => {
+      })
+      .catch((errorObject) => {
         this.setState({
+          loaderInteger: 0,
+          headerText: 'ERROR',
           postLoaded: false,
           backendResponse: errorObject,
         });
@@ -71,6 +84,46 @@ class BlogBody extends Component {
     if (this.hopeTimeout !== undefined) {
       clearTimeout(this.hopeTimeout);
     }
+  }
+
+  loadBlogPost = (postId) => {
+    fetch(`${configUrls.backendUrl}/blogapi/${postId}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        return response;
+      })
+      .then(response => response.json())
+      .then((data) => {
+        this.setState({
+          postLoaded: true,
+          backendResponse: data.post_content,
+          currentPost: data.current,
+          previousPost: data.previous,
+          nextPost: data.next,
+        });
+
+        if (this.scrollTopBlog.current !== null) {
+          this.scrollTopBlog.current.scrollIntoView({ behavior: 'smooth' });
+        }
+      })
+      .catch((errorObject) => {
+        this.setState({
+          loaderInteger: 0,
+          headerText: 'ERROR',
+          postLoaded: false,
+          backendResponse: errorObject,
+        });
+      });
+  }
+
+  clickPreviousPost = () => {
+    this.loadBlogPost(this.state.previousPost);
+  }
+
+  clickNextPost = () => {
+    this.loadBlogPost(this.state.nextPost);
   }
 
   startDecreaseLoader = () => {
@@ -103,41 +156,10 @@ class BlogBody extends Component {
     }
   }
 
-  loadBlogPost = (postIndex) => {
-    fetch(`${configUrls.backendUrl}/blogpostapi/${postIndex}`)
-      .then(response => response.json())
-      .then((data) => {
-        this.setState({
-          currentPostIndex: postIndex,
-          postLoaded: true,
-          backendResponse: data.post_content,
-        });
-
-        if (this.scrollTopBlog.current !== null) {
-          this.scrollTopBlog.current.scrollIntoView({ behavior: 'smooth' });
-        }
-      }).catch((errorObject) => {
-        this.setState({
-          postLoaded: false,
-          backendResponse: errorObject,
-        });
-      });
-  }
-
-  previousPost = () => {
-    const { currentPostIndex } = this.state;
-    this.loadBlogPost(currentPostIndex - 1);
-  }
-
-  nextPost = () => {
-    const { currentPostIndex } = this.state;
-    this.loadBlogPost(currentPostIndex + 1);
-  }
-
   render = () => {
     const {
       backendResponse, postLoaded, loaderInteger, headerText,
-      currentPostIndex, maxPostsNumber,
+      previousPost, nextPost, currentPost,
     } = this.state;
 
     if (postLoaded === undefined) {
@@ -177,12 +199,12 @@ class BlogBody extends Component {
         <div className='blog-footer-buttons'>
           <Button
             fullWidth
-            onClick={ this.nextPost }
-            disabled={ currentPostIndex + 1 > maxPostsNumber }
+            onClick={ this.clickNextPost }
+            disabled={ nextPost === null }
             style={ { textDecoration: 'none' } }
           >
             <img
-              src={ currentPostIndex + 1 > maxPostsNumber ? nextArrowIcon : nextArrowBlueIcon }
+              src={ nextPost === null ? nextArrowIcon : nextArrowBlueIcon }
               className='small-icon'
               alt="left arrow"
             />
@@ -197,7 +219,7 @@ class BlogBody extends Component {
                 <figcaption><b>RSS</b></figcaption>
               </Button>
             </a>
-            <a href={ `${configUrls.backendUrl}/post/${currentPostIndex}` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
+            <a href={ `${configUrls.backendUrl}/post/${currentPost}` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
               <Button fullWidth>
                 <img src={ htmlLinkIcon } className='small-icon' alt="direct link icon"/>
                 <figcaption><b>html</b></figcaption>
@@ -208,13 +230,13 @@ class BlogBody extends Component {
         <div className='blog-footer-buttons'>
           <Button
             fullWidth
-            onClick={ this.previousPost }
-            disabled={ currentPostIndex - 1 === 0 }
+            onClick={ this.clickPreviousPost }
+            disabled={ previousPost === null }
             style={ { textDecoration: 'none' } }
           >
             <figcaption><b>Previous post</b></figcaption>&nbsp;
             <img
-              src={ currentPostIndex - 1 === 0 ? prevArrowIcon : prevArrowBlueIcon }
+              src={ previousPost === null ? prevArrowIcon : prevArrowBlueIcon }
               className='small-icon'
               alt="right arrow"
             />
