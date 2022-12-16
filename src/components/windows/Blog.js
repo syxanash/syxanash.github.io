@@ -69,7 +69,6 @@ class BlogBody extends Component {
       .catch((errorObject) => {
         this.setState({
           loaderInteger: 0,
-          headerText: 'ERROR',
           postLoaded: false,
           backendResponse: errorObject,
         });
@@ -111,7 +110,6 @@ class BlogBody extends Component {
       .catch((errorObject) => {
         this.setState({
           loaderInteger: 0,
-          headerText: 'ERROR',
           postLoaded: false,
           backendResponse: errorObject,
         });
