@@ -135,7 +135,6 @@ class BlogBody extends Component {
     const { loaderInteger, postLoaded } = this.state;
 
     const percentageStop = postLoaded === undefined ? 99 : 80;
-    console.log(loaderInteger);
 
     if (loaderInteger < percentageStop) {
       this.setState({ loaderInteger: loaderInteger + 1 });
