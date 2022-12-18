@@ -86,6 +86,8 @@ class BlogBody extends Component {
   }
 
   loadBlogPost = (postId) => {
+    this.loaderInterval = setInterval(this.increaseLoader, 20);
+
     fetch(`${configUrls.backendUrl}/blogapi/${postId}`)
       .then((response) => {
         if (!response.ok) {
@@ -133,6 +135,7 @@ class BlogBody extends Component {
     const { loaderInteger, postLoaded } = this.state;
 
     const percentageStop = postLoaded === undefined ? 99 : 80;
+    console.log(loaderInteger);
 
     if (loaderInteger < percentageStop) {
       this.setState({ loaderInteger: loaderInteger + 1 });
