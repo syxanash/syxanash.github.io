@@ -87,6 +87,7 @@ class BlogBody extends Component {
 
   loadBlogPost = (postId) => {
     this.loaderInterval = setInterval(this.increaseLoader, 20);
+    this.setState({ postLoaded: undefined, loaderInteger: 0 });
 
     fetch(`${configUrls.backendUrl}/blogapi/${postId}`)
       .then((response) => {
@@ -111,7 +112,6 @@ class BlogBody extends Component {
       })
       .catch((errorObject) => {
         this.setState({
-          loaderInteger: 0,
           postLoaded: false,
           backendResponse: errorObject,
         });
