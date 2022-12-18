@@ -28,8 +28,6 @@ class BlogBody extends Component {
   constructor(props) {
     super(props);
 
-    this.scrollTopBlog = React.createRef();
-
     this.loaderInterval = undefined;
     this.hopeTimeout = undefined;
 
@@ -108,10 +106,6 @@ class BlogBody extends Component {
           previousPost: data.previous,
           nextPost: data.next,
         });
-
-        if (this.scrollTopBlog.current !== null) {
-          this.scrollTopBlog.current.scrollIntoView({ behavior: 'smooth' });
-        }
       })
       .catch((errorObject) => {
         this.setState({
@@ -192,7 +186,6 @@ class BlogBody extends Component {
     }
 
     return (<React.Fragment>
-      <div ref={ this.scrollTopBlog } />
       <Cutout className='blog-cutout'>
         <div className='document-style'>
           <ReactMarkdown source={ backendResponse } escapeHtml={ false } />
