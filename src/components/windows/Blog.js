@@ -38,6 +38,7 @@ class BlogBody extends Component {
       postLoaded: undefined,
       backendResponse: undefined,
 
+      publishedDate: undefined,
       previousPost: undefined,
       nextPost: undefined,
       currentPost: undefined,
@@ -61,6 +62,7 @@ class BlogBody extends Component {
         this.setState({
           postLoaded: true,
           backendResponse: data.post_content,
+          publishedDate: new Date(data.published_date),
           currentPost: data.current,
           previousPost: data.previous,
           nextPost: data.next,
@@ -101,6 +103,7 @@ class BlogBody extends Component {
         this.setState({
           postLoaded: true,
           backendResponse: data.post_content,
+          publishedDate: new Date(data.published_date),
           currentPost: data.current,
           previousPost: data.previous,
           nextPost: data.next,
@@ -159,7 +162,7 @@ class BlogBody extends Component {
   render = () => {
     const {
       backendResponse, postLoaded, loaderInteger, headerText,
-      previousPost, nextPost, currentPost,
+      previousPost, nextPost, currentPost, publishedDate,
     } = this.state;
 
     if (postLoaded === undefined) {
@@ -193,6 +196,9 @@ class BlogBody extends Component {
       <Cutout className='blog-cutout'>
         <div className='document-style'>
           <ReactMarkdown source={ backendResponse } escapeHtml={ false } />
+          <div style={ { textAlign: 'right' } }>
+            <span style={ { fontWeight: 'bold', fontStyle: 'italic' } }>Posted on {publishedDate.toLocaleString('en-GB', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+          </div>
         </div>
       </Cutout>
       <Cutout className='blog-footer-cut-out'>
