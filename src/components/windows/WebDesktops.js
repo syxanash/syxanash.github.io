@@ -12,7 +12,6 @@ import remoteDesktops from '../../resources/remote-desktops.json';
 
 import mainWindowIcon from '../../resources/icons/webdesktops.gif';
 import mobileWarningIcon from '../../resources/icons/mobilewarning.gif';
-import logoIcon from '../../resources/icons/AWDLogo.png';
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 
 const webDesktopsIcons = require.context('../../resources/icons/webdesktops', true);
@@ -147,11 +146,6 @@ class WebDesktopsBody extends Component {
         </div>
         <div style={ { paddingBottom: '10px', display: showHelp ? 'block' : 'none', fontStyle: 'bold' } }>
           <Fieldset>
-            <img src={ logoIcon } alt='mobile warning icon'
-              style={ {
-                float: 'left', height: '60px', paddingRight: '15px', paddingBottom: '5px',
-              } }
-            />
             This is a hand curated directory of websites, web apps and portfolios
             that mimic the appearance and functionality of desktop operating systems
           </Fieldset>
