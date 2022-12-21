@@ -4,6 +4,8 @@ import {
 } from 'react95';
 import ReactMarkdown from 'react-markdown/with-html';
 
+import BlogContext from '../../BlogContext';
+
 import configUrls from '../../resources/config-urls.json';
 import './Blog.css';
 
@@ -154,6 +156,7 @@ class BlogBody extends Component {
   }
 
   render = () => {
+    console.log('render');
     const {
       backendResponse, postLoaded, loaderInteger, headerText,
       previousPost, nextPost, currentPost, publishedDate,
@@ -245,5 +248,7 @@ class BlogBody extends Component {
     </React.Fragment>);
   }
 }
+
+BlogBody.contextType = BlogContext;
 
 export { BlogHeader, BlogBody };

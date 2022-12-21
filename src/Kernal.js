@@ -10,6 +10,8 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import Util from './components/Util';
 
+import BlogContext from './BlogContext';
+
 import PopupWindow from './components/PopupWindow';
 import WindowHead from './components/WindowHead';
 import { NotFoundBody } from './components/windows/NotFound';
@@ -75,6 +77,9 @@ class Kernal extends Component {
       mainTheme: PippoTheme,
       mainUnfocusedTheme: PippoDistracted,
       windowsList: WindowsList(),
+
+      blogPost: undefined,
+      setBlogPost: blogPost => this.setState({ blogPost }),
     };
   }
 
@@ -113,8 +118,8 @@ class Kernal extends Component {
             isFullscreen={ true }
             poweroff={ this.poweroff }
             crashWindow={ this.kernelPanic }
-          /> }
-        />;
+                            /> }
+               />;
       });
 
     this.changeTheme();
@@ -474,7 +479,7 @@ class Kernal extends Component {
       isWindowOpened={ this.isWindowOpened }
       onClickEgg={ this.triggerEasterEgg }
       onClickTV={ this.turnOnTV }
-    />);
+            />);
   }
 
   renderPopupWindows = () => {
@@ -496,7 +501,7 @@ class Kernal extends Component {
         key={ `${window}_${index}` }
         id={ window }
         onClick={ () => this.focusWindow(window) }
-      >{
+             >{
           windowOpened
             && <PopupWindow
               closeWindow={ this.closeWindow }
@@ -514,7 +519,7 @@ class Kernal extends Component {
               displayCloseButton={ canCloseWindow }
               windowTheme={ windowTheme }
               unfocusedTheme={ unfocusedTheme }
-            />
+               />
         }
       </div>;
     });
@@ -545,27 +550,29 @@ class Kernal extends Component {
               </style>
             </Helmet>
             <ThemeProvider theme={ this.isMainUnfocused() ? mainUnfocusedTheme : mainTheme }>
-              <Window shadow={ true } style={ { width: '100%' } }>
-                <WindowHeader>
-                  <WindowHead
-                    onLeftsideButton={ this.onLeftsideButton }
-                    isLeftsideButtonActive={ this.isWindowOpened('osinfowindow') }
-                    onClickLeft={ this.toggleBody }
-                    onClickMiddle={ this.generateWallpaper }
-                    onRightClick={ this.poweroff }
-                  />
-                </WindowHeader>
-                <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
-                  <div id='windows-list'>{this.renderPopupWindows()}</div>
-                  <Switch>
-                    <Route exact path='/' component={ this.renderMainWindow }/>
-                    {pageBodyRoutes}
-                    <Route component={ NotFoundBody }/>
-                  </Switch>
-                  <Copyright onClickWatermark={ this.displayXBill } />
-                  <CRTSwitch toggle={ this.toggleCRT } crtEnabled={ crtEnabled } />
-                </WindowContent>
-              </Window>
+              <BlogContext.Provider value={ this.state }>
+                <Window shadow={ true } style={ { width: '100%' } }>
+                  <WindowHeader>
+                    <WindowHead
+                      onLeftsideButton={ this.onLeftsideButton }
+                      isLeftsideButtonActive={ this.isWindowOpened('osinfowindow') }
+                      onClickLeft={ this.toggleBody }
+                      onClickMiddle={ this.generateWallpaper }
+                      onRightClick={ this.poweroff }
+                    />
+                  </WindowHeader>
+                  <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
+                    <div id='windows-list'>{this.renderPopupWindows()}</div>
+                    <Switch>
+                      <Route exact path='/' component={ this.renderMainWindow }/>
+                      {pageBodyRoutes}
+                      <Route component={ NotFoundBody }/>
+                    </Switch>
+                    <Copyright onClickWatermark={ this.displayXBill } />
+                    <CRTSwitch toggle={ this.toggleCRT } crtEnabled={ crtEnabled } />
+                  </WindowContent>
+                </Window>
+              </BlogContext.Provider>
             </ThemeProvider>
             { !displayWindowBody && <TheAgent /> }
           </div>
@@ -577,7 +584,7 @@ class Kernal extends Component {
         { bootScreenMode && <BootScreen
           hasCrashed={ hasCrashed }
           toggleBootScreen={ this.toggleBootScreen }
-        /> }
+                            /> }
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
         <ScheduledTV
           openScheduledTV={ this.openScheduledTV }

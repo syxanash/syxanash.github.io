@@ -194,7 +194,7 @@ export default function WindowsList() {
       unfocusedTheme: PippoRedmondDistracted,
     },
     blogList: {
-      hasFullScreen: true,
+      hasFullScreen: false,
       hasCustomBody: false,
       tiltAnimation: false,
       canCloseWindow: true,

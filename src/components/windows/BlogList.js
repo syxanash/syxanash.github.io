@@ -3,6 +3,8 @@ import {
   Table, TableBody, TableHead, TableRow, TableHeadCell, TableDataCell,
 } from 'react95';
 
+import BlogContext from '../../BlogContext';
+
 import configUrls from '../../resources/config-urls.json';
 import './Blog.css';
 
@@ -50,14 +52,25 @@ class BlogListBody extends Component {
       });
   }
 
+  selectPost = (postId) => {
+    const { setBlogPost } = this.context;
+    setBlogPost(postId);
+  }
+
   generateTableRows = () => {
     const { blogPostList } = this.state;
 
-    return blogPostList.map(post => <TableRow>
-      <TableDataCell style={ { textAlign: 'center' } }>{post.published_date}</TableDataCell>
-      <TableDataCell>{post.title}</TableDataCell>
-      <TableDataCell>{post.description}</TableDataCell>
-    </TableRow>);
+    return blogPostList.map((post, index) => {
+      const formatDate = new Date(post.published_date).toLocaleDateString('en-GB');
+      const formatDescription = post.description.charAt(0).toUpperCase()
+        + post.description.slice(1);
+
+      return <TableRow onClick={ () => this.selectPost(post.id) } key={ `row_${index}` }>
+        <TableDataCell style={ { textAlign: 'center' } }>{formatDate}</TableDataCell>
+        <TableDataCell style={ { width: '200px', fontWeight: 'bold' } }>{post.title}</TableDataCell>
+        <TableDataCell><em>{formatDescription}</em></TableDataCell>
+      </TableRow>;
+    });
   }
 
   render = () => {
@@ -83,5 +96,7 @@ class BlogListBody extends Component {
     </React.Fragment>);
   }
 }
+
+BlogListBody.contextType = BlogContext;
 
 export { BlogListHeader, BlogListBody };
