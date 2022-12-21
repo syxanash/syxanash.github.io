@@ -10,7 +10,7 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import Util from './components/Util';
 
-import BlogContext from './BlogContext';
+import { BlogContextProvider } from './BlogContext';
 
 import PopupWindow from './components/PopupWindow';
 import WindowHead from './components/WindowHead';
@@ -77,9 +77,6 @@ class Kernal extends Component {
       mainTheme: PippoTheme,
       mainUnfocusedTheme: PippoDistracted,
       windowsList: WindowsList(),
-
-      blogPost: undefined,
-      setBlogPost: blogPost => this.setState({ blogPost }),
     };
   }
 
@@ -479,7 +476,7 @@ class Kernal extends Component {
       isWindowOpened={ this.isWindowOpened }
       onClickEgg={ this.triggerEasterEgg }
       onClickTV={ this.turnOnTV }
-            />);
+    />);
   }
 
   renderPopupWindows = () => {
@@ -501,7 +498,7 @@ class Kernal extends Component {
         key={ `${window}_${index}` }
         id={ window }
         onClick={ () => this.focusWindow(window) }
-             >{
+      >{
           windowOpened
             && <PopupWindow
               closeWindow={ this.closeWindow }
@@ -519,7 +516,7 @@ class Kernal extends Component {
               displayCloseButton={ canCloseWindow }
               windowTheme={ windowTheme }
               unfocusedTheme={ unfocusedTheme }
-               />
+            />
         }
       </div>;
     });
@@ -550,7 +547,7 @@ class Kernal extends Component {
               </style>
             </Helmet>
             <ThemeProvider theme={ this.isMainUnfocused() ? mainUnfocusedTheme : mainTheme }>
-              <BlogContext.Provider value={ this.state }>
+              <BlogContextProvider>
                 <Window shadow={ true } style={ { width: '100%' } }>
                   <WindowHeader>
                     <WindowHead
@@ -572,7 +569,7 @@ class Kernal extends Component {
                     <CRTSwitch toggle={ this.toggleCRT } crtEnabled={ crtEnabled } />
                   </WindowContent>
                 </Window>
-              </BlogContext.Provider>
+              </BlogContextProvider>
             </ThemeProvider>
             { !displayWindowBody && <TheAgent /> }
           </div>
@@ -584,7 +581,7 @@ class Kernal extends Component {
         { bootScreenMode && <BootScreen
           hasCrashed={ hasCrashed }
           toggleBootScreen={ this.toggleBootScreen }
-                            /> }
+        /> }
         <BrokenScreen isScreenBroken={ isBrokenScreen } />
         <ScheduledTV
           openScheduledTV={ this.openScheduledTV }

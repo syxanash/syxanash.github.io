@@ -156,7 +156,8 @@ class BlogBody extends Component {
   }
 
   render = () => {
-    console.log('render');
+    console.log(this.context);
+
     const {
       backendResponse, postLoaded, loaderInteger, headerText,
       previousPost, nextPost, currentPost, publishedDate,
