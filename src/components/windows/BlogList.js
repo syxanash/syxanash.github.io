@@ -14,7 +14,7 @@ import calendarIcon from '../../resources/icons/calendar.gif';
 class BlogListHeader extends Component {
   render = () => (
     <React.Fragment>
-      <img src={ calendarIcon } alt='main logo' style={ { height: '15px' } }/> Simone's Blog
+      <img src={ calendarIcon } alt='main logo' style={ { height: '15px' } }/> Post List
     </React.Fragment>
   )
 }
@@ -43,7 +43,7 @@ class BlogListBody extends Component {
       .then((data) => {
         this.setState({
           listLoaded: true,
-          blogPostList: data,
+          blogPostList: _.reverse(data),
         });
       })
       .catch((errorObject) => {
@@ -113,7 +113,7 @@ class BlogListBody extends Component {
     blogPostList.sort((a, b) => {
       const dateA = new Date(a.published_date);
       const dateB = new Date(b.published_date);
-      return dateSorted ? dateA - dateB : dateB - dateA;
+      return dateSorted ? dateB - dateA : dateA - dateB;
     });
 
     this.setState({ blogPostList, dateSorted: !dateSorted });

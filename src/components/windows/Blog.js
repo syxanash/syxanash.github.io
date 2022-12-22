@@ -80,6 +80,9 @@ class BlogBody extends Component {
   }
 
   componentWillUnmount = () => {
+    const { setSharedContext, sharedContext } = this.context;
+    const { isWindowOpened, closeWindow } = this.props;
+
     if (this.loaderInterval !== undefined) {
       clearInterval(this.loaderInterval);
     }
@@ -88,7 +91,10 @@ class BlogBody extends Component {
       clearTimeout(this.hopeTimeout);
     }
 
-    const { setSharedContext, sharedContext } = this.context;
+    if (isWindowOpened('blogList')) {
+      closeWindow('blogList');
+    }
+
     _.set(sharedContext, 'blog', {});
     setSharedContext(sharedContext);
   }
@@ -244,20 +250,10 @@ class BlogBody extends Component {
           </Button>
         </div>
         <div className='blog-footer-buttons'>
-          <div className='blog-footer-center-buttons'>
-            <a href={ `${configUrls.backendUrl}/rss.xml` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
-              <Button fullWidth>
-                <img src={ RSSIcon } className='small-icon' alt="RSS icon"/>
-                <figcaption><b>RSS</b></figcaption>
-              </Button>
-            </a>
-            <a href={ `${configUrls.backendUrl}/blog/${currentPost}` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
-              <Button fullWidth>
-                <img src={ htmlLinkIcon } className='small-icon' alt="direct link icon"/>
-                <figcaption><b>html</b></figcaption>
-              </Button>
-            </a>
-          </div>
+          <Button fullWidth onClick={ this.openPostList }>
+            <img src={ calendarIcon } className='small-icon' alt="blog post list"/>
+            <figcaption><b>Post List</b></figcaption>
+          </Button>
         </div>
         <div className='blog-footer-buttons'>
           <Button
@@ -275,10 +271,20 @@ class BlogBody extends Component {
           </Button>
         </div>
         <div style={ { width: '100%' } }>
-          <Button fullWidth onClick={ this.openPostList }>
-            <img src={ calendarIcon } className='small-icon' alt="blog post list"/>
-            <figcaption><b>Post List</b></figcaption>
-          </Button>
+          <div className='blog-footer-center-buttons'>
+            <a href={ `${configUrls.backendUrl}/rss.xml` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
+              <Button fullWidth>
+                <img src={ RSSIcon } className='small-icon' alt="RSS icon"/>
+                <figcaption><b>RSS</b></figcaption>
+              </Button>
+            </a>
+            <a href={ `${configUrls.backendUrl}/blog/${currentPost}` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
+              <Button fullWidth>
+                <img src={ htmlLinkIcon } className='small-icon' alt="direct link icon"/>
+                <figcaption><b>html</b></figcaption>
+              </Button>
+            </a>
+          </div>
         </div>
       </Cutout>
     </React.Fragment>);
