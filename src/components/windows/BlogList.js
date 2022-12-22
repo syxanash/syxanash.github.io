@@ -9,12 +9,12 @@ import WindowsContext from '../../WindowsContext';
 import configUrls from '../../resources/config-urls.json';
 import './Blog.css';
 
-import blogIcon from '../../resources/icons/blog.gif';
+import calendarIcon from '../../resources/icons/calendar.gif';
 
 class BlogListHeader extends Component {
   render = () => (
     <React.Fragment>
-      <img src={ blogIcon } alt='main logo' style={ { height: '15px' } }/> Simone's Blog
+      <img src={ calendarIcon } alt='main logo' style={ { height: '15px' } }/> Simone's Blog
     </React.Fragment>
   )
 }
@@ -27,6 +27,7 @@ class BlogListBody extends Component {
       blogPostList: undefined,
       listLoaded: false,
       backendResponse: undefined,
+      dateSorted: false,
     };
   }
 
@@ -106,6 +107,18 @@ class BlogListBody extends Component {
     });
   }
 
+  sortByDate = () => {
+    const { blogPostList, dateSorted } = this.state;
+
+    blogPostList.sort((a, b) => {
+      const dateA = new Date(a.published_date);
+      const dateB = new Date(b.published_date);
+      return dateSorted ? dateA - dateB : dateB - dateA;
+    });
+
+    this.setState({ blogPostList, dateSorted: !dateSorted });
+  }
+
   render = () => {
     const { listLoaded } = this.state;
 
@@ -117,7 +130,7 @@ class BlogListBody extends Component {
       <Table>
         <TableHead>
           <TableRow head>
-            <TableHeadCell>Date</TableHeadCell>
+            <TableHeadCell onClick={ this.sortByDate }>Date</TableHeadCell>
             <TableHeadCell>Title</TableHeadCell>
             <TableHeadCell>Description</TableHeadCell>
           </TableRow>

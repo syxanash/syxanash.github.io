@@ -12,6 +12,7 @@ import './Blog.css';
 
 import htmlLinkIcon from '../../resources/icons/htmlLink.gif';
 import RSSIcon from '../../resources/icons/RSS.png';
+import calendarIcon from '../../resources/icons/calendar.gif';
 import prevArrowIcon from '../../resources/icons/prev_white.gif';
 import prevArrowBlueIcon from '../../resources/icons/prev_blue.gif';
 import nextArrowIcon from '../../resources/icons/next_white.gif';
@@ -174,6 +175,11 @@ class BlogBody extends Component {
     }
   }
 
+  openPostList = () => {
+    const { openWindow } = this.props;
+    openWindow('blogList', true);
+  }
+
   render = () => {
     const { sharedContext } = this.context;
 
@@ -266,6 +272,12 @@ class BlogBody extends Component {
               className='small-icon'
               alt="right arrow"
             />
+          </Button>
+        </div>
+        <div style={ { width: '100%' } }>
+          <Button fullWidth onClick={ this.openPostList }>
+            <img src={ calendarIcon } className='small-icon' alt="blog post list"/>
+            <figcaption><b>Post List</b></figcaption>
           </Button>
         </div>
       </Cutout>

@@ -199,7 +199,7 @@ export default function WindowsList() {
       tiltAnimation: false,
       canCloseWindow: true,
       hasScreensaver: true,
-      opened: true,
+      opened: false,
       focused: true,
       header: BlogListHeader,
       body: BlogListBody,
