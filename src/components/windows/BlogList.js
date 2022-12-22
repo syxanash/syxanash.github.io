@@ -95,12 +95,14 @@ class BlogListBody extends Component {
     const { blogPostList } = this.state;
 
     return blogPostList.map((post, index) => {
-      const formatDate = new Date(post.published_date).toLocaleDateString('en-GB');
+      const dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
+
+      const formatDate = new Date(post.published_date).toLocaleDateString('en-GB', dateOptions);
       const formatDescription = post.description.charAt(0).toUpperCase()
         + post.description.slice(1);
 
       return <TableRow onClick={ () => this.selectPost(post.id) } key={ `row_${index}` }>
-        <TableDataCell style={ { textAlign: 'center' } }>{formatDate}</TableDataCell>
+        <TableDataCell style={ { width: '100px', textAlign: 'center' } }>{formatDate}</TableDataCell>
         <TableDataCell style={ { width: '200px', fontWeight: 'bold' } }>{post.title}</TableDataCell>
         <TableDataCell><em>{formatDescription}</em></TableDataCell>
       </TableRow>;
@@ -123,7 +125,7 @@ class BlogListBody extends Component {
     const { listLoaded } = this.state;
 
     if (!listLoaded) {
-      return <p>Error Loading Blog List!</p>;
+      return <p>Can't load the post list at this time :&#40;</p>;
     }
 
     return (<React.Fragment>

@@ -100,9 +100,10 @@ class BlogBody extends Component {
   }
 
   loadBlogPost = (postId) => {
-    const { setSharedContext } = this.context;
+    const { setSharedContext, sharedContext } = this.context;
 
-    setSharedContext({});
+    _.set(sharedContext, 'blog', {});
+    setSharedContext(sharedContext);
 
     this.loaderInterval = setInterval(this.increaseLoader, 20);
     this.setState({ postLoaded: undefined, loaderInteger: 0 });
@@ -190,7 +191,6 @@ class BlogBody extends Component {
     const { sharedContext } = this.context;
 
     const blogObject = _.get(sharedContext, 'blog');
-
     const isCacheEmpty = _.isEmpty(blogObject);
 
     const {
