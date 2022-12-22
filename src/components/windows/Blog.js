@@ -3,8 +3,9 @@ import {
   Cutout, Button, Progress, Anchor,
 } from 'react95';
 import ReactMarkdown from 'react-markdown/with-html';
+import _ from 'lodash';
 
-import BlogContext from '../../BlogContext';
+import WindowsContext from '../../WindowsContext';
 
 import configUrls from '../../resources/config-urls.json';
 import './Blog.css';
@@ -85,9 +86,17 @@ class BlogBody extends Component {
     if (this.hopeTimeout !== undefined) {
       clearTimeout(this.hopeTimeout);
     }
+
+    const { setSharedContext, sharedContext } = this.context;
+    _.set(sharedContext, 'blog', {});
+    setSharedContext(sharedContext);
   }
 
   loadBlogPost = (postId) => {
+    const { setSharedContext } = this.context;
+
+    setSharedContext({});
+
     this.loaderInterval = setInterval(this.increaseLoader, 20);
     this.setState({ postLoaded: undefined, loaderInteger: 0 });
 
@@ -118,11 +127,21 @@ class BlogBody extends Component {
   }
 
   clickPreviousPost = () => {
-    this.loadBlogPost(this.state.previousPost);
+    const { sharedContext } = this.context;
+    const blogObject = _.get(sharedContext, 'blog');
+
+    const { previousPost } = _.isEmpty(blogObject) ? this.state : blogObject;
+
+    this.loadBlogPost(previousPost);
   }
 
   clickNextPost = () => {
-    this.loadBlogPost(this.state.nextPost);
+    const { sharedContext } = this.context;
+    const blogObject = _.get(sharedContext, 'blog');
+
+    const { nextPost } = _.isEmpty(blogObject) ? this.state : blogObject;
+
+    this.loadBlogPost(nextPost);
   }
 
   startDecreaseLoader = () => {
@@ -156,12 +175,16 @@ class BlogBody extends Component {
   }
 
   render = () => {
-    console.log(this.context);
+    const { sharedContext } = this.context;
+
+    const blogObject = _.get(sharedContext, 'blog');
+
+    const isCacheEmpty = _.isEmpty(blogObject);
 
     const {
       backendResponse, postLoaded, loaderInteger, headerText,
       previousPost, nextPost, currentPost, publishedDate,
-    } = this.state;
+    } = isCacheEmpty ? this.state : blogObject;
 
     if (postLoaded === undefined) {
       return (
@@ -250,6 +273,6 @@ class BlogBody extends Component {
   }
 }
 
-BlogBody.contextType = BlogContext;
+BlogBody.contextType = WindowsContext;
 
 export { BlogHeader, BlogBody };

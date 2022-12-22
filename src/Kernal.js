@@ -10,7 +10,7 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import Util from './components/Util';
 
-import { BlogContextProvider } from './BlogContext';
+import { WindowsContextProvider } from './WindowsContext';
 
 import PopupWindow from './components/PopupWindow';
 import WindowHead from './components/WindowHead';
@@ -115,8 +115,8 @@ class Kernal extends Component {
             isFullscreen={ true }
             poweroff={ this.poweroff }
             crashWindow={ this.kernelPanic }
-                            /> }
-               />;
+          /> }
+        />;
       });
 
     this.changeTheme();
@@ -547,7 +547,7 @@ class Kernal extends Component {
               </style>
             </Helmet>
             <ThemeProvider theme={ this.isMainUnfocused() ? mainUnfocusedTheme : mainTheme }>
-              <BlogContextProvider>
+              <WindowsContextProvider>
                 <Window shadow={ true } style={ { width: '100%' } }>
                   <WindowHeader>
                     <WindowHead
@@ -569,7 +569,7 @@ class Kernal extends Component {
                     <CRTSwitch toggle={ this.toggleCRT } crtEnabled={ crtEnabled } />
                   </WindowContent>
                 </Window>
-              </BlogContextProvider>
+              </WindowsContextProvider>
             </ThemeProvider>
             { !displayWindowBody && <TheAgent /> }
           </div>

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import {
   Table, TableBody, TableHead, TableRow, TableHeadCell, TableDataCell,
 } from 'react95';
+import _ from 'lodash';
 
-import BlogContext from '../../BlogContext';
+import WindowsContext from '../../WindowsContext';
 
 import configUrls from '../../resources/config-urls.json';
 import './Blog.css';
@@ -53,8 +54,40 @@ class BlogListBody extends Component {
   }
 
   selectPost = (postId) => {
-    const { setBlogPost } = this.context;
-    setBlogPost(postId);
+    const { setSharedContext, sharedContext } = this.context;
+
+    _.set(sharedContext, 'blog', { postLoaded: undefined, loaderInteger: 0 });
+
+    fetch(`${configUrls.backendUrl}/blogapi/${postId}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        return response;
+      })
+      .then(response => response.json())
+      .then((data) => {
+        _.set(sharedContext, 'blog', {
+          postLoaded: true,
+          backendResponse: data.post_content,
+          publishedDate: new Date(data.published_date),
+          currentPost: data.current,
+          previousPost: data.previous,
+          nextPost: data.next,
+        });
+
+        setSharedContext(sharedContext);
+      })
+      .catch((errorObject) => {
+        _.set(sharedContext, 'blog', {
+          postLoaded: false,
+          backendResponse: errorObject,
+        });
+
+        setSharedContext(sharedContext);
+      });
+
+    setSharedContext(sharedContext);
   }
 
   generateTableRows = () => {
@@ -97,6 +130,6 @@ class BlogListBody extends Component {
   }
 }
 
-BlogListBody.contextType = BlogContext;
+BlogListBody.contextType = WindowsContext;
 
 export { BlogListHeader, BlogListBody };
