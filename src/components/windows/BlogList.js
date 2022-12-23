@@ -93,15 +93,22 @@ class BlogListBody extends Component {
 
   generateTableRows = () => {
     const { blogPostList } = this.state;
+    const { sharedContext } = this.context;
+
+    const currentPost = _.get(sharedContext, 'blog.currentPost', undefined);
 
     return blogPostList.map((post, index) => {
       const dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
+      const isCurrentPostSelected = currentPost === post.id;
 
       const formatDate = new Date(post.published_date).toLocaleDateString('en-GB', dateOptions);
       const formatDescription = post.description.charAt(0).toUpperCase()
         + post.description.slice(1);
 
-      return <TableRow onClick={ () => this.selectPost(post.id) } key={ `row_${index}` }>
+      return <TableRow
+        onClick={ isCurrentPostSelected ? null : () => this.selectPost(post.id) } key={ `row_${index}` }
+        style={ { backgroundColor: isCurrentPostSelected ? '#080883' : undefined, color: isCurrentPostSelected ? 'white' : undefined } }
+      >
         <TableDataCell style={ { width: '100px', textAlign: 'center' } }>{formatDate}</TableDataCell>
         <TableDataCell style={ { width: '200px', fontWeight: 'bold' } }>{post.title}</TableDataCell>
         <TableDataCell><em>{formatDescription}</em></TableDataCell>

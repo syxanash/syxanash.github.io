@@ -52,6 +52,7 @@ class BlogBody extends Component {
   componentDidMount = () => {
     this.loaderInterval = setInterval(this.increaseLoader, 20);
 
+    this.updateSharedContext({ postLoaded: undefined, loaderInteger: 0 });
     fetch(`${configUrls.backendUrl}/blogapi`)
       .then((response) => {
         if (!response.ok) {
@@ -61,7 +62,7 @@ class BlogBody extends Component {
       })
       .then(response => response.json())
       .then((data) => {
-        this.setState({
+        this.updateSharedContext({
           postLoaded: true,
           backendResponse: data.post_content,
           publishedDate: new Date(data.published_date),
@@ -71,8 +72,7 @@ class BlogBody extends Component {
         });
       })
       .catch((errorObject) => {
-        this.setState({
-          loaderInteger: 0,
+        this.updateSharedContext({
           postLoaded: false,
           backendResponse: errorObject,
         });
@@ -99,14 +99,19 @@ class BlogBody extends Component {
     setSharedContext(sharedContext);
   }
 
-  loadBlogPost = (postId) => {
+  updateSharedContext = (object) => {
     const { setSharedContext, sharedContext } = this.context;
 
-    _.set(sharedContext, 'blog', {});
+    _.set(sharedContext, 'blog', object);
     setSharedContext(sharedContext);
 
+    this.setState({ ...object });
+  }
+
+  loadBlogPost = (postId) => {
     this.loaderInterval = setInterval(this.increaseLoader, 20);
-    this.setState({ postLoaded: undefined, loaderInteger: 0 });
+
+    this.updateSharedContext({ postLoaded: undefined, loaderInteger: 0 });
 
     fetch(`${configUrls.backendUrl}/blogapi/${postId}`)
       .then((response) => {
@@ -117,7 +122,7 @@ class BlogBody extends Component {
       })
       .then(response => response.json())
       .then((data) => {
-        this.setState({
+        this.updateSharedContext({
           postLoaded: true,
           backendResponse: data.post_content,
           publishedDate: new Date(data.published_date),
@@ -127,7 +132,7 @@ class BlogBody extends Component {
         });
       })
       .catch((errorObject) => {
-        this.setState({
+        this.updateSharedContext({
           postLoaded: false,
           backendResponse: errorObject,
         });
