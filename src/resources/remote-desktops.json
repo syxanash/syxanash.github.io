@@ -763,5 +763,15 @@
 		"name": "Chrisbin's MacBook Pro",
 		"url": "https://chrisbinsunny.github.io/chrishub",
 		"icon": "mac_new"
+	},
+	{
+		"name": "Ignasi Monreal",
+		"url": "https://www.ignasimonreal.com",
+		"icon": "mac_new"
+	},
+	{
+		"name": "Jazmin Jones",
+		"url": "https://www.jazminjones.com",
+		"icon": "mac_new"
 	}
 ]
