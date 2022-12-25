@@ -52,7 +52,9 @@ class BlogBody extends Component {
   componentDidMount = () => {
     this.loaderInterval = setInterval(this.increaseLoader, 20);
 
-    this.updateSharedContext({ postLoaded: undefined, loaderInteger: 0 });
+    this.updateSharedContext({ postLoaded: undefined });
+    this.setState({ loaderInteger: 0 });
+
     fetch(`${configUrls.backendUrl}/blogapi`)
       .then((response) => {
         if (!response.ok) {
@@ -111,7 +113,8 @@ class BlogBody extends Component {
   loadBlogPost = (postId) => {
     this.loaderInterval = setInterval(this.increaseLoader, 20);
 
-    this.updateSharedContext({ postLoaded: undefined, loaderInteger: 0 });
+    this.updateSharedContext({ postLoaded: undefined });
+    this.setState({ loaderInteger: 0 });
 
     fetch(`${configUrls.backendUrl}/blogapi/${postId}`)
       .then((response) => {
@@ -199,9 +202,11 @@ class BlogBody extends Component {
     const isCacheEmpty = _.isEmpty(blogObject);
 
     const {
-      backendResponse, postLoaded, loaderInteger, headerText,
+      backendResponse, postLoaded,
       previousPost, nextPost, currentPost, publishedDate,
     } = isCacheEmpty ? this.state : blogObject;
+
+    const { loaderInteger, headerText } = this.state;
 
     if (postLoaded === undefined) {
       return (

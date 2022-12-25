@@ -9,6 +9,7 @@ import WindowsContext from '../../WindowsContext';
 import configUrls from '../../resources/config-urls.json';
 import './Blog.css';
 
+import blackCursor from '../../resources/icons/pointers/cursor.gif';
 import calendarIcon from '../../resources/icons/calendar.gif';
 
 class BlogListHeader extends Component {
@@ -107,7 +108,10 @@ class BlogListBody extends Component {
 
       return <TableRow
         onClick={ isCurrentPostSelected ? null : () => this.selectPost(post.id) } key={ `row_${index}` }
-        style={ { backgroundColor: isCurrentPostSelected ? '#080883' : undefined, color: isCurrentPostSelected ? 'white' : undefined } }
+        style={ {
+          backgroundColor: isCurrentPostSelected ? '#080883' : undefined,
+          color: isCurrentPostSelected ? 'white' : undefined,
+        } }
       >
         <TableDataCell style={ { width: '100px', textAlign: 'center' } }>{formatDate}</TableDataCell>
         <TableDataCell style={ { width: '200px', fontWeight: 'bold' } }>{post.title}</TableDataCell>
@@ -139,9 +143,9 @@ class BlogListBody extends Component {
       <Table>
         <TableHead>
           <TableRow head>
-            <TableHeadCell onClick={ this.sortByDate }>Date</TableHeadCell>
-            <TableHeadCell>Title</TableHeadCell>
-            <TableHeadCell>Description</TableHeadCell>
+            <TableHeadCell style={ { cursor: `url(${blackCursor}), auto` } } onClick={ this.sortByDate }>Date</TableHeadCell>
+            <TableHeadCell style={ { cursor: `url(${blackCursor}), auto` } }>Title</TableHeadCell>
+            <TableHeadCell style={ { cursor: `url(${blackCursor}), auto` } }>Description</TableHeadCell>
           </TableRow>
         </TableHead>
         <TableBody>
