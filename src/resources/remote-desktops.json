@@ -773,5 +773,10 @@
 		"name": "Jazmin Jones",
 		"url": "https://www.jazminjones.com",
 		"icon": "mac_new"
+	},
+	{
+		"name": "Mastodon Flock",
+		"url": "https://mastodon-flock.vercel.app/desktop",
+		"icon": "windows"
 	}
 ]
