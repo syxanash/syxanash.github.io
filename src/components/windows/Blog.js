@@ -5,7 +5,7 @@ import {
 import ReactMarkdown from 'react-markdown/with-html';
 import _ from 'lodash';
 
-import WindowsContext from '../../WindowsContext';
+import DesktopContext from '../../DesktopContext';
 
 import configUrls from '../../resources/config-urls.json';
 import './Blog.css';
@@ -93,8 +93,8 @@ class BlogBody extends Component {
       clearTimeout(this.hopeTimeout);
     }
 
-    if (isWindowOpened('blogList')) {
-      closeWindow('blogList');
+    if (isWindowOpened('postList')) {
+      closeWindow('postList');
     }
 
     _.set(sharedContext, 'blog', {});
@@ -192,7 +192,7 @@ class BlogBody extends Component {
 
   openPostList = () => {
     const { openWindow } = this.props;
-    openWindow('blogList', true);
+    openWindow('postList', true);
   }
 
   render = () => {
@@ -301,6 +301,6 @@ class BlogBody extends Component {
   }
 }
 
-BlogBody.contextType = WindowsContext;
+BlogBody.contextType = DesktopContext;
 
 export { BlogHeader, BlogBody };

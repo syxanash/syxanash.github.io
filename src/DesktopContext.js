@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-const WindowsContext = React.createContext();
+const DesktopContext = React.createContext();
 
-class WindowsContextProvider extends Component {
+class DesktopContextProvider extends Component {
   state = {
     sharedContext: {},
   }
@@ -17,18 +17,18 @@ class WindowsContextProvider extends Component {
     const { setSharedContext } = this;
 
     return (
-      <WindowsContext.Provider
+      <DesktopContext.Provider
         value={ {
           sharedContext,
           setSharedContext,
         } }
       >
         {children}
-      </WindowsContext.Provider>
+      </DesktopContext.Provider>
     );
   }
 }
 
-export { WindowsContextProvider };
+export { DesktopContextProvider };
 
-export default WindowsContext;
+export default DesktopContext;

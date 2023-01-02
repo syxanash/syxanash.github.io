@@ -7,7 +7,7 @@ import { MusicHeader, MusicBody } from './windows/Music';
 import { CestinoHeader, CestinoBody } from './windows/Cestino';
 import { BulbHeader, BulbBody } from './windows/Bulb';
 import { BlogHeader, BlogBody } from './windows/Blog';
-import { BlogListHeader, BlogListBody } from './windows/BlogList';
+import { PostListHeader, PostListBody } from './windows/PostList';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
 import { WebDesktopsHeader, WebDesktopsBody } from './windows/WebDesktops';
 import { GabrieleHeader, GabrieleBody } from './windows/Gabriele';
@@ -193,7 +193,7 @@ export default function WindowsList() {
       windowTheme: PippoRedmond,
       unfocusedTheme: PippoRedmondDistracted,
     },
-    blogList: {
+    postList: {
       hasFullScreen: false,
       hasCustomBody: false,
       tiltAnimation: false,
@@ -201,8 +201,8 @@ export default function WindowsList() {
       hasScreensaver: true,
       opened: false,
       focused: true,
-      header: BlogListHeader,
-      body: BlogListBody,
+      header: PostListHeader,
+      body: PostListBody,
       windowTheme: PippoRedmond,
       unfocusedTheme: PippoRedmondDistracted,
     },

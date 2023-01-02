@@ -4,7 +4,7 @@ import {
 } from 'react95';
 import _ from 'lodash';
 
-import WindowsContext from '../../WindowsContext';
+import DesktopContext from '../../DesktopContext';
 
 import configUrls from '../../resources/config-urls.json';
 import './Blog.css';
@@ -12,7 +12,7 @@ import './Blog.css';
 import blackCursor from '../../resources/icons/pointers/cursor.gif';
 import calendarIcon from '../../resources/icons/calendar.gif';
 
-class BlogListHeader extends Component {
+class PostListHeader extends Component {
   render = () => (
     <React.Fragment>
       <img src={ calendarIcon } alt='main logo' style={ { height: '15px' } }/> Post List
@@ -20,7 +20,7 @@ class BlogListHeader extends Component {
   )
 }
 
-class BlogListBody extends Component {
+class PostListBody extends Component {
   constructor(props) {
     super(props);
 
@@ -156,6 +156,6 @@ class BlogListBody extends Component {
   }
 }
 
-BlogListBody.contextType = WindowsContext;
+PostListBody.contextType = DesktopContext;
 
-export { BlogListHeader, BlogListBody };
+export { PostListHeader, PostListBody };

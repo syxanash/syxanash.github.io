@@ -10,7 +10,7 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import Util from './components/Util';
 
-import { WindowsContextProvider } from './WindowsContext';
+import { DesktopContextProvider } from './DesktopContext';
 
 import PopupWindow from './components/PopupWindow';
 import WindowHead from './components/WindowHead';
@@ -547,7 +547,7 @@ class Kernal extends Component {
               </style>
             </Helmet>
             <ThemeProvider theme={ this.isMainUnfocused() ? mainUnfocusedTheme : mainTheme }>
-              <WindowsContextProvider>
+              <DesktopContextProvider>
                 <Window shadow={ true } style={ { width: '100%' } }>
                   <WindowHeader>
                     <WindowHead
@@ -569,7 +569,7 @@ class Kernal extends Component {
                     <CRTSwitch toggle={ this.toggleCRT } crtEnabled={ crtEnabled } />
                   </WindowContent>
                 </Window>
-              </WindowsContextProvider>
+              </DesktopContextProvider>
             </ThemeProvider>
             { !displayWindowBody && <TheAgent /> }
           </div>
