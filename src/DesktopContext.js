@@ -4,9 +4,7 @@ const DesktopContext = React.createContext();
 
 class DesktopContextProvider extends Component {
   state = {
-    desktopContext: {
-      blog: {},
-    },
+    desktopContext: {},
   }
 
   setDesktopContext = (desktopContext) => {
