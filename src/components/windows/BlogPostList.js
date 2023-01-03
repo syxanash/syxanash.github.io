@@ -7,7 +7,6 @@ import _ from 'lodash';
 import DesktopContext from '../../DesktopContext';
 
 import configUrls from '../../resources/config-urls.json';
-import './Blog.css';
 
 import blackCursor from '../../resources/icons/pointers/cursor.gif';
 import calendarIcon from '../../resources/icons/calendar.gif';
@@ -115,7 +114,9 @@ class BlogPostListBody extends Component {
       >
         <TableDataCell style={ { width: '100px', textAlign: 'center' } }>{formatDate}</TableDataCell>
         <TableDataCell style={ { width: '200px', fontWeight: 'bold' } }>{post.title}</TableDataCell>
-        <TableDataCell><em>{formatDescription}</em></TableDataCell>
+        { document.body.clientWidth > 600
+          ? <TableDataCell><em>{formatDescription}</em></TableDataCell>
+          : null }
       </TableRow>;
     });
   }
@@ -145,7 +146,10 @@ class BlogPostListBody extends Component {
           <TableRow head>
             <TableHeadCell style={ { cursor: `url(${blackCursor}), auto` } } onClick={ this.sortByDate }>Date</TableHeadCell>
             <TableHeadCell style={ { cursor: `url(${blackCursor}), auto` } }>Title</TableHeadCell>
-            <TableHeadCell style={ { cursor: `url(${blackCursor}), auto` } }>Description</TableHeadCell>
+            { document.body.clientWidth > 600
+              ? <TableHeadCell style={ { cursor: `url(${blackCursor}), auto` } }>Description</TableHeadCell>
+              : null
+            }
           </TableRow>
         </TableHead>
         <TableBody>
