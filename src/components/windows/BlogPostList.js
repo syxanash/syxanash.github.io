@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Table, TableBody, TableHead, TableRow, TableHeadCell, TableDataCell,
+  Table, TableBody, TableHead, TableRow, TableHeadCell, TableDataCell, Hourglass, Button,
 } from 'react95';
 import _ from 'lodash';
 
@@ -25,7 +25,7 @@ class BlogPostListBody extends Component {
 
     this.state = {
       blogPostList: undefined,
-      listLoaded: false,
+      listLoaded: undefined,
       backendResponse: undefined,
       dateSorted: false,
     };
@@ -134,10 +134,18 @@ class BlogPostListBody extends Component {
   }
 
   render = () => {
+    const { closeCurrentWindow } = this.props;
     const { listLoaded } = this.state;
 
+    if (listLoaded === undefined) {
+      return <div style={ { textAlign: 'center' } }><h2 style={ { marginTop: '0' } }>LOADING LIST</h2><Hourglass size={ 50 } /></div>;
+    }
+
     if (!listLoaded) {
-      return <p>Can't load the post list at this time :&#40;</p>;
+      return <div style={ { textAlign: 'center' } }>
+        <h2>Can't load the post list at this time :&#40;</h2><br />
+        <Button onClick={ closeCurrentWindow } style={ { width: '150px' } }>Ok</Button>
+      </div>;
     }
 
     return (<React.Fragment>
