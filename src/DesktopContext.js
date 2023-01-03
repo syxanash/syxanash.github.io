@@ -4,23 +4,23 @@ const DesktopContext = React.createContext();
 
 class DesktopContextProvider extends Component {
   state = {
-    sharedContext: {},
+    desktopContext: {},
   }
 
-  setSharedContext = (sharedContext) => {
-    this.setState({ sharedContext });
+  setDesktopContext = (desktopContext) => {
+    this.setState({ desktopContext });
   }
 
   render() {
     const { children } = this.props;
-    const { sharedContext } = this.state;
-    const { setSharedContext } = this;
+    const { desktopContext } = this.state;
+    const { setDesktopContext } = this;
 
     return (
       <DesktopContext.Provider
         value={ {
-          sharedContext,
-          setSharedContext,
+          desktopContext,
+          setDesktopContext,
         } }
       >
         {children}

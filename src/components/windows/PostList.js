@@ -56,9 +56,9 @@ class PostListBody extends Component {
   }
 
   selectPost = (postId) => {
-    const { setSharedContext, sharedContext } = this.context;
+    const { setDesktopContext, desktopContext } = this.context;
 
-    _.set(sharedContext, 'blog', { postLoaded: undefined, loaderInteger: 0 });
+    _.set(desktopContext, 'blog', { postLoaded: undefined, loaderInteger: 0 });
 
     fetch(`${configUrls.backendUrl}/blogapi/${postId}`)
       .then((response) => {
@@ -69,7 +69,7 @@ class PostListBody extends Component {
       })
       .then(response => response.json())
       .then((data) => {
-        _.set(sharedContext, 'blog', {
+        _.set(desktopContext, 'blog', {
           postLoaded: true,
           backendResponse: data.post_content,
           publishedDate: new Date(data.published_date),
@@ -78,25 +78,25 @@ class PostListBody extends Component {
           nextPost: data.next,
         });
 
-        setSharedContext(sharedContext);
+        setDesktopContext(desktopContext);
       })
       .catch((errorObject) => {
-        _.set(sharedContext, 'blog', {
+        _.set(desktopContext, 'blog', {
           postLoaded: false,
           backendResponse: errorObject,
         });
 
-        setSharedContext(sharedContext);
+        setDesktopContext(desktopContext);
       });
 
-    setSharedContext(sharedContext);
+    setDesktopContext(desktopContext);
   }
 
   generateTableRows = () => {
     const { blogPostList } = this.state;
-    const { sharedContext } = this.context;
+    const { desktopContext } = this.context;
 
-    const currentPost = _.get(sharedContext, 'blog.currentPost', undefined);
+    const currentPost = _.get(desktopContext, 'blog.currentPost', undefined);
 
     return blogPostList.map((post, index) => {
       const dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };

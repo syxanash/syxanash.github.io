@@ -52,7 +52,7 @@ class BlogBody extends Component {
   componentDidMount = () => {
     this.loaderInterval = setInterval(this.increaseLoader, 20);
 
-    this.updateSharedContext({ postLoaded: undefined });
+    this.updateDesktopContext({ postLoaded: undefined });
     this.setState({ loaderInteger: 0 });
 
     fetch(`${configUrls.backendUrl}/blogapi`)
@@ -64,7 +64,7 @@ class BlogBody extends Component {
       })
       .then(response => response.json())
       .then((data) => {
-        this.updateSharedContext({
+        this.updateDesktopContext({
           postLoaded: true,
           backendResponse: data.post_content,
           publishedDate: new Date(data.published_date),
@@ -74,7 +74,7 @@ class BlogBody extends Component {
         });
       })
       .catch((errorObject) => {
-        this.updateSharedContext({
+        this.updateDesktopContext({
           postLoaded: false,
           backendResponse: errorObject,
         });
@@ -82,7 +82,7 @@ class BlogBody extends Component {
   }
 
   componentWillUnmount = () => {
-    const { setSharedContext, sharedContext } = this.context;
+    const { setDesktopContext, desktopContext } = this.context;
     const { isWindowOpened, closeWindow } = this.props;
 
     if (this.loaderInterval !== undefined) {
@@ -97,15 +97,15 @@ class BlogBody extends Component {
       closeWindow('postList');
     }
 
-    _.set(sharedContext, 'blog', {});
-    setSharedContext(sharedContext);
+    _.set(desktopContext, 'blog', {});
+    setDesktopContext(desktopContext);
   }
 
-  updateSharedContext = (object) => {
-    const { setSharedContext, sharedContext } = this.context;
+  updateDesktopContext = (object) => {
+    const { setDesktopContext, desktopContext } = this.context;
 
-    _.set(sharedContext, 'blog', object);
-    setSharedContext(sharedContext);
+    _.set(desktopContext, 'blog', object);
+    setDesktopContext(desktopContext);
 
     this.setState({ ...object });
   }
@@ -113,7 +113,7 @@ class BlogBody extends Component {
   loadBlogPost = (postId) => {
     this.loaderInterval = setInterval(this.increaseLoader, 20);
 
-    this.updateSharedContext({ postLoaded: undefined });
+    this.updateDesktopContext({ postLoaded: undefined });
     this.setState({ loaderInteger: 0 });
 
     fetch(`${configUrls.backendUrl}/blogapi/${postId}`)
@@ -125,7 +125,7 @@ class BlogBody extends Component {
       })
       .then(response => response.json())
       .then((data) => {
-        this.updateSharedContext({
+        this.updateDesktopContext({
           postLoaded: true,
           backendResponse: data.post_content,
           publishedDate: new Date(data.published_date),
@@ -135,7 +135,7 @@ class BlogBody extends Component {
         });
       })
       .catch((errorObject) => {
-        this.updateSharedContext({
+        this.updateDesktopContext({
           postLoaded: false,
           backendResponse: errorObject,
         });
@@ -143,8 +143,8 @@ class BlogBody extends Component {
   }
 
   clickPreviousPost = () => {
-    const { sharedContext } = this.context;
-    const blogObject = _.get(sharedContext, 'blog');
+    const { desktopContext } = this.context;
+    const blogObject = _.get(desktopContext, 'blog');
 
     const { previousPost } = _.isEmpty(blogObject) ? this.state : blogObject;
 
@@ -152,8 +152,8 @@ class BlogBody extends Component {
   }
 
   clickNextPost = () => {
-    const { sharedContext } = this.context;
-    const blogObject = _.get(sharedContext, 'blog');
+    const { desktopContext } = this.context;
+    const blogObject = _.get(desktopContext, 'blog');
 
     const { nextPost } = _.isEmpty(blogObject) ? this.state : blogObject;
 
@@ -196,9 +196,9 @@ class BlogBody extends Component {
   }
 
   render = () => {
-    const { sharedContext } = this.context;
+    const { desktopContext } = this.context;
 
-    const blogObject = _.get(sharedContext, 'blog');
+    const blogObject = _.get(desktopContext, 'blog');
     const isCacheEmpty = _.isEmpty(blogObject);
 
     const {
