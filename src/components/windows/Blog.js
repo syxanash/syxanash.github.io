@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   Cutout, Button, Progress, Anchor,
 } from 'react95';
-import ReactMarkdown from 'react-markdown/with-html';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 import _ from 'lodash';
 
 import DesktopContext from '../../DesktopContext';
@@ -237,7 +238,7 @@ class BlogBody extends Component {
     return (<React.Fragment>
       <Cutout className='blog-cutout'>
         <div className='document-style'>
-          <ReactMarkdown source={ backendResponse } escapeHtml={ false } />
+          <ReactMarkdown children={ backendResponse } rehypePlugins={ [rehypeRaw] } />
           <div style={ { textAlign: 'right' } }>
             <span style={ { fontWeight: 'bold', fontStyle: 'italic' } }>Posted on {publishedDate.toLocaleString('en-GB', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
           </div>
