@@ -10,6 +10,8 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import Util from './components/Util';
 
+import { DesktopContextProvider } from './DesktopContext';
+
 import PopupWindow from './components/PopupWindow';
 import WindowHead from './components/WindowHead';
 import { NotFoundBody } from './components/windows/NotFound';
@@ -545,27 +547,29 @@ class Kernal extends Component {
               </style>
             </Helmet>
             <ThemeProvider theme={ this.isMainUnfocused() ? mainUnfocusedTheme : mainTheme }>
-              <Window shadow={ true } style={ { width: '100%' } }>
-                <WindowHeader>
-                  <WindowHead
-                    onLeftsideButton={ this.onLeftsideButton }
-                    isLeftsideButtonActive={ this.isWindowOpened('osinfowindow') }
-                    onClickLeft={ this.toggleBody }
-                    onClickMiddle={ this.generateWallpaper }
-                    onRightClick={ this.poweroff }
-                  />
-                </WindowHeader>
-                <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
-                  <div id='windows-list'>{this.renderPopupWindows()}</div>
-                  <Switch>
-                    <Route exact path='/' component={ this.renderMainWindow }/>
-                    {pageBodyRoutes}
-                    <Route component={ NotFoundBody }/>
-                  </Switch>
-                  <Copyright onClickWatermark={ this.displayXBill } />
-                  <CRTSwitch toggle={ this.toggleCRT } crtEnabled={ crtEnabled } />
-                </WindowContent>
-              </Window>
+              <DesktopContextProvider>
+                <Window shadow={ true } style={ { width: '100%' } }>
+                  <WindowHeader>
+                    <WindowHead
+                      onLeftsideButton={ this.onLeftsideButton }
+                      isLeftsideButtonActive={ this.isWindowOpened('osinfowindow') }
+                      onClickLeft={ this.toggleBody }
+                      onClickMiddle={ this.generateWallpaper }
+                      onRightClick={ this.poweroff }
+                    />
+                  </WindowHeader>
+                  <WindowContent style={ { display: displayWindowBody ? 'block' : 'none' } }>
+                    <div id='windows-list'>{this.renderPopupWindows()}</div>
+                    <Switch>
+                      <Route exact path='/' component={ this.renderMainWindow }/>
+                      {pageBodyRoutes}
+                      <Route component={ NotFoundBody }/>
+                    </Switch>
+                    <Copyright onClickWatermark={ this.displayXBill } />
+                    <CRTSwitch toggle={ this.toggleCRT } crtEnabled={ crtEnabled } />
+                  </WindowContent>
+                </Window>
+              </DesktopContextProvider>
             </ThemeProvider>
             { !displayWindowBody && <TheAgent /> }
           </div>

@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import {
   Cutout, Button, Progress, Anchor,
 } from 'react95';
-import ReactMarkdown from 'react-markdown/with-html';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import _ from 'lodash';
+
+import DesktopContext from '../../DesktopContext';
 
 import configUrls from '../../resources/config-urls.json';
 import './Blog.css';
 
 import htmlLinkIcon from '../../resources/icons/htmlLink.gif';
 import RSSIcon from '../../resources/icons/RSS.png';
+import calendarIcon from '../../resources/icons/calendar.gif';
 import prevArrowIcon from '../../resources/icons/prev_white.gif';
 import prevArrowBlueIcon from '../../resources/icons/prev_blue.gif';
 import nextArrowIcon from '../../resources/icons/next_white.gif';
@@ -48,6 +53,9 @@ class BlogBody extends Component {
   componentDidMount = () => {
     this.loaderInterval = setInterval(this.increaseLoader, 20);
 
+    this.updateDesktopContext({ postLoaded: undefined });
+    this.setState({ loaderInteger: 0 });
+
     fetch(`${configUrls.backendUrl}/blogapi`)
       .then((response) => {
         if (!response.ok) {
@@ -57,7 +65,7 @@ class BlogBody extends Component {
       })
       .then(response => response.json())
       .then((data) => {
-        this.setState({
+        this.updateDesktopContext({
           postLoaded: true,
           backendResponse: data.post_content,
           publishedDate: new Date(data.published_date),
@@ -67,8 +75,7 @@ class BlogBody extends Component {
         });
       })
       .catch((errorObject) => {
-        this.setState({
-          loaderInteger: 0,
+        this.updateDesktopContext({
           postLoaded: false,
           backendResponse: errorObject,
         });
@@ -76,6 +83,9 @@ class BlogBody extends Component {
   }
 
   componentWillUnmount = () => {
+    const { setDesktopContext, desktopContext } = this.context;
+    const { isWindowOpened, closeWindow } = this.props;
+
     if (this.loaderInterval !== undefined) {
       clearInterval(this.loaderInterval);
     }
@@ -83,11 +93,29 @@ class BlogBody extends Component {
     if (this.hopeTimeout !== undefined) {
       clearTimeout(this.hopeTimeout);
     }
+
+    if (isWindowOpened('blogPostList')) {
+      closeWindow('blogPostList');
+    }
+
+    _.set(desktopContext, 'blog', {});
+    setDesktopContext(desktopContext);
+  }
+
+  updateDesktopContext = (object) => {
+    const { setDesktopContext, desktopContext } = this.context;
+
+    _.set(desktopContext, 'blog', object);
+    setDesktopContext(desktopContext);
+
+    this.setState({ ...object });
   }
 
   loadBlogPost = (postId) => {
     this.loaderInterval = setInterval(this.increaseLoader, 20);
-    this.setState({ postLoaded: undefined, loaderInteger: 0 });
+
+    this.updateDesktopContext({ postLoaded: undefined });
+    this.setState({ loaderInteger: 0 });
 
     fetch(`${configUrls.backendUrl}/blogapi/${postId}`)
       .then((response) => {
@@ -98,7 +126,7 @@ class BlogBody extends Component {
       })
       .then(response => response.json())
       .then((data) => {
-        this.setState({
+        this.updateDesktopContext({
           postLoaded: true,
           backendResponse: data.post_content,
           publishedDate: new Date(data.published_date),
@@ -108,7 +136,7 @@ class BlogBody extends Component {
         });
       })
       .catch((errorObject) => {
-        this.setState({
+        this.updateDesktopContext({
           postLoaded: false,
           backendResponse: errorObject,
         });
@@ -116,11 +144,21 @@ class BlogBody extends Component {
   }
 
   clickPreviousPost = () => {
-    this.loadBlogPost(this.state.previousPost);
+    const { desktopContext } = this.context;
+    const blogObject = _.get(desktopContext, 'blog');
+
+    const { previousPost } = _.isEmpty(blogObject) ? this.state : blogObject;
+
+    this.loadBlogPost(previousPost);
   }
 
   clickNextPost = () => {
-    this.loadBlogPost(this.state.nextPost);
+    const { desktopContext } = this.context;
+    const blogObject = _.get(desktopContext, 'blog');
+
+    const { nextPost } = _.isEmpty(blogObject) ? this.state : blogObject;
+
+    this.loadBlogPost(nextPost);
   }
 
   startDecreaseLoader = () => {
@@ -153,11 +191,23 @@ class BlogBody extends Component {
     }
   }
 
+  openPostList = () => {
+    const { openWindow } = this.props;
+    openWindow('blogPostList', true);
+  }
+
   render = () => {
+    const { desktopContext } = this.context;
+
+    const blogObject = _.get(desktopContext, 'blog');
+    const isCacheEmpty = _.isEmpty(blogObject);
+
     const {
-      backendResponse, postLoaded, loaderInteger, headerText,
+      backendResponse, postLoaded,
       previousPost, nextPost, currentPost, publishedDate,
-    } = this.state;
+    } = isCacheEmpty ? this.state : blogObject;
+
+    const { loaderInteger, headerText } = this.state;
 
     if (postLoaded === undefined) {
       return (
@@ -188,7 +238,7 @@ class BlogBody extends Component {
     return (<React.Fragment>
       <Cutout className='blog-cutout'>
         <div className='document-style'>
-          <ReactMarkdown source={ backendResponse } escapeHtml={ false } />
+          <ReactMarkdown children={ backendResponse } rehypePlugins={ [rehypeRaw] } />
           <div style={ { textAlign: 'right' } }>
             <span style={ { fontWeight: 'bold', fontStyle: 'italic' } }>Posted on {publishedDate.toLocaleString('en-GB', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
           </div>
@@ -211,20 +261,10 @@ class BlogBody extends Component {
           </Button>
         </div>
         <div className='blog-footer-buttons'>
-          <div className='blog-footer-center-buttons'>
-            <a href={ `${configUrls.backendUrl}/rss.xml` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
-              <Button fullWidth>
-                <img src={ RSSIcon } className='small-icon' alt="RSS icon"/>
-                <figcaption><b>RSS</b></figcaption>
-              </Button>
-            </a>
-            <a href={ `${configUrls.backendUrl}/blog/${currentPost}` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
-              <Button fullWidth>
-                <img src={ htmlLinkIcon } className='small-icon' alt="direct link icon"/>
-                <figcaption><b>html</b></figcaption>
-              </Button>
-            </a>
-          </div>
+          <Button fullWidth onClick={ this.openPostList }>
+            <img src={ calendarIcon } className='small-icon' alt="blog post list"/>
+            <figcaption><b>Post List</b></figcaption>
+          </Button>
         </div>
         <div className='blog-footer-buttons'>
           <Button
@@ -241,9 +281,27 @@ class BlogBody extends Component {
             />
           </Button>
         </div>
+        <div style={ { width: '100%' } }>
+          <div className='blog-footer-center-buttons'>
+            <a href={ `${configUrls.backendUrl}/rss.xml` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
+              <Button fullWidth>
+                <img src={ RSSIcon } className='small-icon' alt="RSS icon"/>
+                <figcaption><b>RSS</b></figcaption>
+              </Button>
+            </a>
+            <a href={ `${configUrls.backendUrl}/blog/${currentPost}` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
+              <Button fullWidth>
+                <img src={ htmlLinkIcon } className='small-icon' alt="direct link icon"/>
+                <figcaption><b>html</b></figcaption>
+              </Button>
+            </a>
+          </div>
+        </div>
       </Cutout>
     </React.Fragment>);
   }
 }
+
+BlogBody.contextType = DesktopContext;
 
 export { BlogHeader, BlogBody };
