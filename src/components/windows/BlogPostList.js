@@ -12,7 +12,7 @@ import './Blog.css';
 import blackCursor from '../../resources/icons/pointers/cursor.gif';
 import calendarIcon from '../../resources/icons/calendar.gif';
 
-class PostListHeader extends Component {
+class BlogPostListHeader extends Component {
   render = () => (
     <React.Fragment>
       <img src={ calendarIcon } alt='main logo' style={ { height: '15px' } }/> Post List
@@ -20,7 +20,7 @@ class PostListHeader extends Component {
   )
 }
 
-class PostListBody extends Component {
+class BlogPostListBody extends Component {
   constructor(props) {
     super(props);
 
@@ -156,6 +156,6 @@ class PostListBody extends Component {
   }
 }
 
-PostListBody.contextType = DesktopContext;
+BlogPostListBody.contextType = DesktopContext;
 
-export { PostListHeader, PostListBody };
+export { BlogPostListHeader, BlogPostListBody };

@@ -93,8 +93,8 @@ class BlogBody extends Component {
       clearTimeout(this.hopeTimeout);
     }
 
-    if (isWindowOpened('postList')) {
-      closeWindow('postList');
+    if (isWindowOpened('blogPostList')) {
+      closeWindow('blogPostList');
     }
 
     _.set(desktopContext, 'blog', {});
@@ -192,7 +192,7 @@ class BlogBody extends Component {
 
   openPostList = () => {
     const { openWindow } = this.props;
-    openWindow('postList', true);
+    openWindow('blogPostList', true);
   }
 
   render = () => {
