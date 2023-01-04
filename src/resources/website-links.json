@@ -310,80 +310,172 @@
     "section": "Blogs",
     "links": [
       {
-        "url": "https://www.jordanmechner.com/articles/",
-        "description": "Creator of Prince of Persia"
+        "url": "http://0ut3r.space/",
+        "description": "0ut3r Space"
       },
       {
-        "url": "https://zachholman.com",
-        "description": ""
+          "url": "https://aelkus.github.io/",
+          "description": "Adam Elkus"
       },
       {
-        "url": "https://www.youtube.com/user/breakingitaly",
-        "description": "the best informative Italian youtube channel"
+          "url": "https://hacdias.com/articles",
+          "description": "Articles - Henrique Dias"
       },
       {
-        "url": "https://blog.webb.page",
-        "description": ""
+          "url": "https://austinhenley.com/blog.html",
+          "description": "Austin Z. Henley's Blog"
       },
       {
-        "url": "https://aelkus.github.io/archive",
-        "description": ""
+          "url": "https://be-mag.com",
+          "description": "Be-Mag"
       },
       {
-        "url": "https://jvns.ca",
-        "description": ""
+          "url": "https://earthly.dev/blog/",
+          "description": "Earthly Blog"
       },
       {
-        "url": "https://www.evilsocket.net",
-        "description": ""
+          "url": "https://blog.flipperzero.one/",
+          "description": "Flipper Zero Blog"
       },
       {
-        "url": "",
-        "description": "Kicks Condor, look for it online!"
+          "url": "https://gossipsweb.net",
+          "description": "Gossip's Web"
       },
       {
-        "url": "https://rarlindseysmash.com/archive",
-        "description": ""
+          "url": "https://www.jamez.it",
+          "description": "G̶i̶a̶c̶o̶m̶o̶ ̶M̶i̶c̶e̶l̶i̶"
       },
       {
-        "url": "https://neustadt.fr",
-        "description": ""
+          "url": "https://ianbicking.org/",
+          "description": "Ian Bicking: a blog"
       },
       {
-        "url": "https://hacdias.com/articles/",
-        "description": ""
+          "url": "https://www.joshwcomeau.com/",
+          "description": "Josh Comeau's blog"
       },
       {
-        "url": "https://christine.website/blog",
-        "description": ""
+          "url": "http://jvns.ca/",
+          "description": "Julia Evans"
       },
       {
-        "url": "https://www.ianbicking.org/blog/",
-        "description": ""
+          "url": "https://www.kickscondor.com",
+          "description": "Kicks Condor"
       },
       {
-        "url": "http://morrick.me",
-        "description": ""
+          "url": "https://frankforce.com",
+          "description": "Killed By A Pixel"
       },
       {
-        "url": "https://austinhenley.com/blog.html",
-        "description": ""
+          "url": "https://cyber.dabamos.de/blog/",
+          "description": "Lazy Reading | The Cyber Vanguard"
       },
       {
-        "url": "https://frankforce.com",
-        "description": ""
+          "url": "https://rarlindseysmash.com/",
+          "description": "Lindsey Bieda"
       },
       {
-        "url": "https://blog.thoughtspile.tech",
-        "description": ""
+          "url": "https://nadim.computer",
+          "description": "Nadim Kobeissi"
       },
       {
-        "url": "https://surma.dev",
-        "description": ""
+          "url": "https://owlink.org/",
+          "description": "Open Wireless Link"
       },
       {
-        "url": "https://memalign.github.io/index.html",
-        "description": ""
+          "url": "https://neustadt.fr/",
+          "description": "Parimal Satyal - Neustadt.fr"
+      },
+      {
+          "url": "https://passo.uno/",
+          "description": "Passo uno"
+      },
+      {
+          "url": "https://sonnet.io/",
+          "description": "Rafał Pastuszak"
+      },
+      {
+          "url": "https://morrick.me",
+          "description": "Riccardo Mori"
+      },
+      {
+          "url": "https://sidebar.io",
+          "description": "Sidebar"
+      },
+      {
+          "url": "https://simone.computer",
+          "description": "Simone's Computer"
+      },
+      {
+          "url": "https://steveklabnik.com/",
+          "description": "Steve Klabnik"
+      },
+      {
+          "url": "https://blog.thoughtspile.tech/",
+          "description": "Vladimir Klepov as a Coder"
+      },
+      {
+          "url": "https://waxy.org/",
+          "description": "Waxy.org"
+      },
+      {
+          "url": "https://briefs.video/",
+          "description": "Webbed Briefs"
+      },
+      {
+          "url": "https://xeiaso.net/blog",
+          "description": "Xe's Blog"
+      },
+      {
+          "url": "http://zachholman.com/",
+          "description": "Zach Holman"
+      },
+      {
+          "url": "https://bert.org/",
+          "description": "bertrand fan"
+      },
+      {
+          "url": "https://pointers.dailywebthing.com",
+          "description": "dailywebthing daily pointers"
+      },
+      {
+          "url": "https://www.evilsocket.net/",
+          "description": "evilsocket"
+      },
+      {
+          "url": "https://loadmo.re/",
+          "description": "https://loadmo.re/"
+      },
+      {
+          "url": "https://matthewrayfield.com/articles/",
+          "description": "https://matthewrayfield.com/articles/"
+      },
+      {
+          "url": "https://www.are.na/tg-z/internet-escape",
+          "description": "internet escape"
+      },
+      {
+          "url": "https://drawings.jvns.ca/",
+          "description": "julia's drawings"
+      },
+      {
+          "url": "https://www.jwz.org/blog/",
+          "description": "jwz"
+      },
+      {
+          "url": "http://kottke.org/",
+          "description": "kottke.org"
+      },
+      {
+          "url": "https://memalign.github.io/index.html",
+          "description": "memalign.github.io"
+      },
+      {
+          "url": "https://nathanwentworth.co",
+          "description": "nathan wentworth ✨ - posts"
+      },
+      {
+          "url": "https://surma.dev/",
+          "description": "surma.dev"
       }
     ]
   },
