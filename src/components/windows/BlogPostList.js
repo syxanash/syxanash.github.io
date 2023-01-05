@@ -153,9 +153,9 @@ class BlogPostListBody extends Component {
         <TableHead>
           <TableRow head>
             <TableHeadCell style={ { cursor: `url(${blackCursor}), auto` } } onClick={ this.sortByDate }>Date</TableHeadCell>
-            <TableHeadCell style={ { cursor: `url(${blackCursor}), auto` } }>Title</TableHeadCell>
+            <TableHeadCell style={ { cursor: `url(${blackCursor}), auto`, pointerEvents: 'none' } }>Title</TableHeadCell>
             { document.body.clientWidth > 600
-              ? <TableHeadCell style={ { cursor: `url(${blackCursor}), auto` } }>Description</TableHeadCell>
+              ? <TableHeadCell style={ { cursor: `url(${blackCursor}), auto`, pointerEvents: 'none' } }>Description</TableHeadCell>
               : null
             }
           </TableRow>
