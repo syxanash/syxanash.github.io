@@ -177,8 +177,8 @@ class GuestbookBody extends Component {
           </div>
         </div>
         <div>
-          Jesus, glad I didn’t use JavaScript back in the 60s...
-          this website is slow and bloated, build/ folder is like {lastUpdatedFile.buildSize}B!!!
+          Jesus, glad I didn't use JavaScript back in the 60s...
+          this website is slow and bloated, build/ folder is {lastUpdatedFile.buildSize}B!!!
         </div>
       </div>
       <Divider />
