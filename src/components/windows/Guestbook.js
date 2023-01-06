@@ -4,6 +4,8 @@ import {
   Divider, Cutout, Avatar, Button,
 } from 'react95';
 
+import lastUpdatedFile from '../../resources/last-updated.json';
+
 import timAvatar from '../../resources/images/avatars/tim.gif';
 import alanTuringAvatar from '../../resources/images/avatars/turing.gif';
 import khwarizmiAvatar from '../../resources/images/avatars/mrkhwarizmi.gif';
@@ -176,7 +178,7 @@ class GuestbookBody extends Component {
         </div>
         <div>
           Jesus, glad I didn’t use JavaScript back in the 60s...
-          this website is slow and bloated, build/ folder is like 100MB!!!
+          this website is slow and bloated, build/ folder is like {lastUpdatedFile.buildSize}B!!!
         </div>
       </div>
       <Divider />
