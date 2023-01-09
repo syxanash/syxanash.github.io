@@ -560,11 +560,6 @@
 		"icon": "windows_new"
 	},
 	{
-		"name": "Rauno Freiberg",
-		"url": "https://rauno.me",
-		"icon": "mac_new"
-	},
-	{
 		"name": "Don Chia",
 		"url": "https://www.donchia.tech",
 		"icon": "windows"
@@ -777,6 +772,11 @@
 	{
 		"name": "Mastodon Flock",
 		"url": "https://mastodon-flock.vercel.app/desktop",
+		"icon": "windows"
+	},
+	{
+		"name": "Ɀeus' Stadt",
+		"url": "https://zeusofthecrows.neocities.org/stadt/",
 		"icon": "windows"
 	}
 ]
