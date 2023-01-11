@@ -330,11 +330,6 @@
 		"icon": "windows"
 	},
 	{
-		"name": "KryptOS",
-		"url": "https://kry.pt/#OSVERSIONS",
-		"icon": "obscure"
-	},
-	{
 		"name": "Online Hacker Simulator",
 		"url": "https://pranx.com/hacker/",
 		"icon": "obscure"
