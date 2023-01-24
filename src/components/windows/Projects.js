@@ -120,6 +120,11 @@ class ProjectsBody extends Component {
       window.location.href = 'https://www.gnu.org/software/emacs/';
     };
 
+    commands.prince = () => {
+      this.setState({ shellOutput: 'LOADING...', shellWaiting: true });
+      window.location.href = 'https://archive.org/embed/msdos_Prince_of_Persia_1990';
+    };
+
     commands.emacs = () => {
       this.setState({ shellOutput: 'Opening Emacs...', shellWaiting: true });
       window.location.href = 'https://www.vim.org';
