@@ -113,6 +113,10 @@
       {
         "url": "https://www.lzbrito.com",
         "description": ""
+      },
+      {
+        "url": "https://matthewrayfield.com",
+        "description": "when I grow up I'd like to be like him"
       }
     ]
   },
@@ -294,164 +298,180 @@
         "description": "0ut3r Space"
       },
       {
-          "url": "https://aelkus.github.io/",
-          "description": "Adam Elkus"
+        "url": "https://aelkus.github.io/",
+        "description": "Adam Elkus"
       },
       {
-          "url": "https://hacdias.com/articles",
-          "description": "Articles - Henrique Dias"
+        "url": "https://hacdias.com/articles",
+        "description": "Articles - Henrique Dias"
       },
       {
-          "url": "https://austinhenley.com/blog.html",
-          "description": "Austin Z. Henley's Blog"
+        "url": "https://austinhenley.com/blog.html",
+        "description": "Austin Z. Henley's Blog"
       },
       {
-          "url": "https://be-mag.com",
-          "description": "Be-Mag"
+        "url": "https://ciechanow.ski/",
+        "description": "Bartosz Ciechanowski"
       },
       {
-          "url": "https://earthly.dev/blog/",
-          "description": "Earthly Blog"
+        "url": "https://be-mag.com",
+        "description": "Be-Mag"
       },
       {
-          "url": "https://blog.flipperzero.one/",
-          "description": "Flipper Zero Blog"
+        "url": "https://earthly.dev/blog/",
+        "description": "Earthly Blog"
       },
       {
-          "url": "https://gossipsweb.net",
-          "description": "Gossip's Web"
+        "url": "https://blog.flipperzero.one/",
+        "description": "Flipper Zero Blog"
       },
       {
-          "url": "https://www.jamez.it",
-          "description": "G̶i̶a̶c̶o̶m̶o̶ ̶M̶i̶c̶e̶l̶i̶"
+        "url": "https://gossipsweb.net",
+        "description": "Gossip’s Web"
       },
       {
-          "url": "https://ianbicking.org/",
-          "description": "Ian Bicking: a blog"
+        "url": "https://www.jamez.it",
+        "description": "G̶i̶a̶c̶o̶m̶o̶ ̶M̶i̶c̶e̶l̶i̶"
       },
       {
-          "url": "https://www.joshwcomeau.com/",
-          "description": "Josh Comeau's blog"
+        "url": "https://ianbicking.org/",
+        "description": "Ian Bicking: a blog"
       },
       {
-          "url": "http://jvns.ca/",
-          "description": "Julia Evans"
+        "url": "https://www.joshwcomeau.com/",
+        "description": "Josh Comeau's blog"
       },
       {
-          "url": "https://www.kickscondor.com",
-          "description": "Kicks Condor"
+        "url": "http://jvns.ca/",
+        "description": "Julia Evans"
       },
       {
-          "url": "https://frankforce.com",
-          "description": "Killed By A Pixel"
+        "url": "https://www.kickscondor.com",
+        "description": "Kicks Condor"
       },
       {
-          "url": "https://cyber.dabamos.de/blog/",
-          "description": "Lazy Reading | The Cyber Vanguard"
+        "url": "https://frankforce.com",
+        "description": "Killed By A Pixel"
       },
       {
-          "url": "https://rarlindseysmash.com/",
-          "description": "Lindsey Bieda"
+        "url": "https://cyber.dabamos.de/blog/",
+        "description": "Lazy Reading | The Cyber Vanguard"
       },
       {
-          "url": "https://nadim.computer",
-          "description": "Nadim Kobeissi"
+        "url": "https://rarlindseysmash.com/",
+        "description": "Lindsey Bieda"
       },
       {
-          "url": "https://owlink.org/",
-          "description": "Open Wireless Link"
+        "url": "https://N-O-D-E.net",
+        "description": "N O D E"
       },
       {
-          "url": "https://neustadt.fr/",
-          "description": "Parimal Satyal - Neustadt.fr"
+        "url": "https://nadim.computer",
+        "description": "Nadim Kobeissi"
       },
       {
-          "url": "https://passo.uno/",
-          "description": "Passo uno"
+        "url": "https://owlink.org/",
+        "description": "Open Wireless Link"
       },
       {
-          "url": "https://sonnet.io/",
-          "description": "Rafał Pastuszak"
+        "url": "https://neustadt.fr/",
+        "description": "Parimal Satyal - Neustadt.fr"
       },
       {
-          "url": "https://morrick.me",
-          "description": "Riccardo Mori"
+        "url": "https://passo.uno/",
+        "description": "Passo uno"
       },
       {
-          "url": "https://sidebar.io",
-          "description": "Sidebar"
+        "url": "https://sonnet.io/",
+        "description": "Rafał Pastuszak"
       },
       {
-          "url": "https://steveklabnik.com/",
-          "description": "Steve Klabnik"
+        "url": "https://morrick.me",
+        "description": "Riccardo Mori"
       },
       {
-          "url": "https://blog.thoughtspile.tech/",
-          "description": "Vladimir Klepov as a Coder"
+        "url": "https://sidebar.io",
+        "description": "Sidebar"
       },
       {
-          "url": "https://waxy.org/",
-          "description": "Waxy.org"
+        "url": "https://steveklabnik.com/",
+        "description": "Steve Klabnik"
       },
       {
-          "url": "https://briefs.video/",
-          "description": "Webbed Briefs"
+        "url": "https://thehackerblog.com/",
+        "description": "The Hacker Blog"
       },
       {
-          "url": "https://xeiaso.net/blog",
-          "description": "Xe's Blog"
+        "url": "https://www.troyhunt.com/",
+        "description": "Troy Hunt"
       },
       {
-          "url": "http://zachholman.com/",
-          "description": "Zach Holman"
+        "url": "https://blog.thoughtspile.tech/",
+        "description": "Vladimir Klepov as a Coder"
       },
       {
-          "url": "https://bert.org/",
-          "description": "bertrand fan"
+        "url": "https://waxy.org/",
+        "description": "Waxy.org"
       },
       {
-          "url": "https://pointers.dailywebthing.com",
-          "description": "dailywebthing daily pointers"
+        "url": "https://briefs.video/",
+        "description": "Webbed Briefs"
       },
       {
-          "url": "https://www.evilsocket.net/",
-          "description": "evilsocket"
+        "url": "https://xeiaso.net/blog",
+        "description": "Xe's Blog"
       },
       {
-          "url": "https://loadmo.re/",
-          "description": "LOADMORE"
+        "url": "http://zachholman.com/",
+        "description": "Zach Holman"
       },
       {
-          "url": "https://matthewrayfield.com/articles/",
-          "description": "Matthew Rayfield"
+        "url": "https://zhenghao.io",
+        "description": "Zhenghao's blog"
       },
       {
-          "url": "https://www.are.na/tg-z/internet-escape",
-          "description": "internet escape"
+        "url": "https://bert.org/",
+        "description": "bertrand fan"
       },
       {
-          "url": "https://drawings.jvns.ca/",
-          "description": "julia's drawings"
+        "url": "https://pointers.dailywebthing.com",
+        "description": "dailywebthing daily pointers"
       },
       {
-          "url": "https://www.jwz.org/blog/",
-          "description": "jwz"
+        "url": "https://www.evilsocket.net/",
+        "description": "evilsocket"
       },
       {
-          "url": "http://kottke.org/",
-          "description": "kottke.org"
+        "url": "https://www.are.na/tg-z/internet-escape",
+        "description": "internet escape"
       },
       {
-          "url": "https://memalign.github.io/index.html",
-          "description": "memalign.github.io"
+        "url": "https://drawings.jvns.ca/",
+        "description": "julia's drawings"
       },
       {
-          "url": "https://nathanwentworth.co",
-          "description": "nathan wentworth ✨ - posts"
+        "url": "https://www.jwz.org/blog/",
+        "description": "jwz"
       },
       {
-          "url": "https://surma.dev/",
-          "description": "surma.dev"
+        "url": "http://kottke.org/",
+        "description": "kottke.org"
+      },
+      {
+        "url": "https://localghost.dev/",
+        "description": "localghost.dev"
+      },
+      {
+        "url": "https://memalign.github.io/index.html",
+        "description": "memalign.github.io"
+      },
+      {
+        "url": "https://nathanwentworth.co",
+        "description": "nathan wentworth ✨ - posts"
+      },
+      {
+        "url": "https://surma.dev/",
+        "description": "surma.dev"
       }
     ]
   },
@@ -701,6 +721,10 @@
       {
         "url": "https://www.youtube.com/watch?v=HeQX2HjkcNo",
         "description": "There's a Hole at the Bottom of Math"
+      },
+      {
+        "url": "https://loadmo.re",
+        "description": ""
       }
     ]
   }
