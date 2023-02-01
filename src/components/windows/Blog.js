@@ -292,7 +292,7 @@ class BlogBody extends Component {
             <a href={ `${configUrls.backendUrl}/blog/${currentPost}` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
               <Button fullWidth>
                 <img src={ htmlLinkIcon } className='small-icon' alt="direct link icon"/>
-                <figcaption><b>html</b></figcaption>
+                <figcaption><b>Direct link</b></figcaption>
               </Button>
             </a>
           </div>
