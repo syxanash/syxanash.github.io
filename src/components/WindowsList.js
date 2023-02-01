@@ -185,7 +185,7 @@ export default function WindowsList() {
       hasCustomBody: false,
       tiltAnimation: false,
       canCloseWindow: true,
-      hasScreensaver: true,
+      hasScreensaver: false,
       opened: false,
       focused: false,
       header: BlogHeader,
