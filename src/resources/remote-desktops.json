@@ -763,5 +763,10 @@
 		"name": "Ɀeus' Stadt",
 		"url": "https://zeusofthecrows.neocities.org",
 		"icon": "windows"
+	},
+	{
+		"name": "Win11 Svelte",
+		"url": "https://win11-svelte.vercel.app",
+		"icon": "windows_new"
 	}
 ]
