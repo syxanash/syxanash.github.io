@@ -768,5 +768,20 @@
 		"name": "Win11 Svelte",
 		"url": "https://win11-svelte.vercel.app",
 		"icon": "windows_new"
+	},
+	{
+		"name": "Sergio Diaz Schiaffino",
+		"url": "https://www.sergiodiazschiaffino.com",
+		"icon": "mac"
+	},
+	{
+		"name": "holidayOS | tonik",
+		"url": "https://holidayos.tonik.com",
+		"icon": "mac"
+	},
+	{
+		"name": "chloédigital",
+		"url": "https://chloedigital.com",
+		"icon": "mac"
 	}
 ]
