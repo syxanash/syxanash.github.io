@@ -350,5 +350,13 @@
     {
         "img": "la_freccia_azzurra.gif",
         "description": "La freccia azzurra"
+    },
+    {
+        "img": "small-soldiers1.gif",
+        "description": "Small Soldiers"
+    },
+    {
+        "img": "small-soldiers2.gif",
+        "description": "Small Soldiers - Gizmo"
     }
 ]
