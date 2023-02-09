@@ -358,5 +358,9 @@
     {
         "img": "small-soldiers2.gif",
         "description": "Small Soldiers - Gizmo"
+    },
+    {
+        "img": "small-soldiers3.gif",
+        "description": "Small Soldiers"
     }
 ]
