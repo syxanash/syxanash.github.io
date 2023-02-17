@@ -53,7 +53,7 @@ class ContactBody extends Component {
         </Anchor>
       </Tooltip>
       <Tooltip text='Mastodon' delay={ 100 }>
-        <Anchor href='https://indieweb.social/@syx' target='_blank'>
+        <Anchor href='https://hachyderm.io/@syx' target='_blank'>
           <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ mastodonIcon } style={ { height: '30px' } } alt="mastodon"/>
           </Button>
