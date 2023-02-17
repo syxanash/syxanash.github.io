@@ -169,12 +169,6 @@ class Kernal extends Component {
       || bootScreenMode;
   }
 
-  scrollToTop = () => {
-    if (this.scrollTopElement.current !== null) {
-      this.scrollTopElement.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
   onLeftsideButton = () => {
     if (!this.isWindowOpened('osinfowindow')) {
       this.openWindow('osinfowindow');
@@ -193,7 +187,9 @@ class Kernal extends Component {
       this.focusWindow(windowName);
       this.setState({ windowsList });
 
-      this.scrollToTop();
+      if (this.scrollTopElement.current !== null) {
+        this.scrollTopElement.current.scrollIntoView({ behavior: 'smooth' });
+      }
     };
 
     if (subWindow) {
@@ -307,7 +303,7 @@ class Kernal extends Component {
 
   toggleBootScreen = (mode) => {
     if (!mode) {
-      this.scrollToTop();
+      window.scrollTo(0, 0);
     }
 
     this.setState({ bootScreenMode: mode });

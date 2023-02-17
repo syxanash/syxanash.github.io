@@ -149,7 +149,7 @@ class BootScreen extends Component {
   }
 
   scrollToBottom = () => {
-    document.querySelector('#terminalBottom').scrollIntoView({ behavior: 'smooth' });
+    window.scrollTo(0, document.body.scrollHeight);
   }
 
   toggleLoading = (loadingState) => {
@@ -210,7 +210,6 @@ class BootScreen extends Component {
       <div className='terminal-style'>
         {this.renderBootMessages()}
         { hasCrashed && this.kernelPanic() }
-        <div id='terminalBottom' />
       </div>
     </React.Fragment>);
   }
