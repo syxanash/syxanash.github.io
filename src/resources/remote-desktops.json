@@ -255,11 +255,6 @@
 		"icon": "windows"
 	},
 	{
-		"name": "glenda.party",
-		"url": "https://glenda.0x46.net",
-		"icon": "unix"
-	},
-	{
 		"name": "VirusvAV",
 		"url": "https://os.virusav.com",
 		"icon": "obscure"
