@@ -45,7 +45,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "./deployment/updated_last.sh && git add src/resources/last-updated.json"
+      "post-commit": "./deployment/updated_last.sh && git add src/resources/last-updated.json"
     }
   },
   "eslintConfig": {
