@@ -783,5 +783,15 @@
 		"name": "The Secret History of Mac Gaming",
 		"url": "https://secrethistoryofmacgaming.com",
 		"icon": "mac"
+	},
+	{
+		"name": "Mohamed Wafy | Portfolio",
+		"url": "https://mowafy001.github.io/portfolio",
+		"icon": "obscure"
+	},
+	{
+		"name": "Ubuntu Tour",
+		"url": "https://malisipi.github.io/ubuntu-tour",
+		"icon": "linux"
 	}
 ]
