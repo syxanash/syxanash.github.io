@@ -785,13 +785,13 @@
 		"icon": "mac"
 	},
 	{
-		"name": "Mohamed Wafy | Portfolio",
-		"url": "https://mowafy001.github.io/portfolio",
-		"icon": "obscure"
-	},
-	{
 		"name": "Ubuntu Tour",
 		"url": "https://malisipi.github.io/ubuntu-tour",
 		"icon": "linux"
+	},
+	{
+		"name": "KeYGeN!!!",
+		"url": "https://keyge.nz",
+		"icon": "windows"
 	}
 ]
