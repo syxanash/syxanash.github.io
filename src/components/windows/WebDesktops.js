@@ -13,6 +13,7 @@ import remoteDesktops from '../../resources/remote-desktops.json';
 import mainWindowIcon from '../../resources/icons/webdesktops.gif';
 import mobileWarningIcon from '../../resources/icons/mobilewarning.gif';
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
+import infoIcon from '../../resources/icons/info.png';
 
 const webDesktopsIcons = require.context('../../resources/icons/webdesktops', true);
 
@@ -141,13 +142,14 @@ class WebDesktopsBody extends Component {
           <Toolbar>
             <Button onClick={ this.openRandomURL } variant="menu"><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
             <Button onClick={ () => Util.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) } variant="menu"><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Contribute</Button>
-            <Button onClick={ this.toggleShowHelp } active={ showHelp } variant="menu">About</Button>
+            <Button onClick={ this.toggleShowHelp } active={ showHelp } variant="menu"><img src={ infoIcon } alt='info' style={ { paddingRight: '4px' } } />About</Button>
           </Toolbar>
         </div>
         <div style={ { paddingBottom: '10px', display: showHelp ? 'block' : 'none', fontStyle: 'bold' } }>
           <Fieldset>
-            This is a hand curated directory of websites, web apps and portfolios
-            that mimic the appearance and functionality of desktop operating systems
+            This is a hand curated directory of web apps, portfolios and experiments
+            that mimic the appearance and functionality of
+            desktop operating systems, these are commonly known as <b>Web Desktops</b>
           </Fieldset>
           { this.renderMobileMessage() }
         </div>
