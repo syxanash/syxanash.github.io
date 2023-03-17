@@ -803,5 +803,15 @@
 		"name": "sue roh",
 		"url": "https://sueroh.com",
 		"icon": "IBM"
+	},
+	{
+		"name": "Windows 11 Web",
+		"url": "https://rajaniraiyn.github.io/windows11/",
+		"icon": "windows_new"
+	},
+	{
+		"name": "SilveOS.com",
+		"url": "https://www.silveos.com",
+		"icon": "windows_new"
 	}
 ]
