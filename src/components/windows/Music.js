@@ -88,7 +88,7 @@ class MusicBody extends Component {
               style={ { textDecoration: 'none' } }
             >
               <Marquee
-                speed={ 100 }
+                speed={ 20 }
                 delay={ 0.5 }
                 gradient={ false }
               >
