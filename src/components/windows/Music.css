@@ -7,9 +7,25 @@
   top: 35px;
   width: 342px;
   height: 394px;
-  background: url(../../resources/images/head.gif) no-repeat;
-
   pointer-events: none;
+}
+
+.head-background {
+  background: url(../../resources/images/head.gif) no-repeat;
+  animation: hue 20s infinite linear;
+  position: absolute;
+  width: 342px;
+  height: 394px;
+}
+
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  
+  to {
+    filter: hue-rotate(360deg);
+  }
 }
 
 .head-left-ear {
@@ -35,7 +51,8 @@
   position: absolute;
   width: 246px;
   height: 395px;
-  left: 47px;
+  left: 48px;
+  transform: rotate(1deg);
   border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
 
   pointer-events: all;

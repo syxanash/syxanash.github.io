@@ -71,6 +71,7 @@ class MusicBody extends Component {
 
     return (<div className='music-window-container'>
       <div className='head-container'>
+        <div className='head-background' />
         <div className='head-overlay handle' />
         <div className='head-left-ear' onClick={ this.touchEar } />
         <div className='head-right-ear' onClick={ this.touchEar } />
