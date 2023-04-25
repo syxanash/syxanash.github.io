@@ -38,5 +38,10 @@
     "name": "Logosweeper",
     "url": "https://logosweeper.surge.sh",
     "description": "My very first React JS app, mostly made to learn the library and to have some fun with Gil Barbara's SVG repository"
+  },
+  {
+    "name": "Mookloh",
+    "url": "https://my-store-be44b1.creator-spring.com",
+    "description": "Not coding related, but I designed some inline-skating T-shirts for a charity project"
   }
 ]
