@@ -793,5 +793,10 @@
 		"name": "Sophia's Time Capsule",
 		"url": "https://sosophia10.github.io/Time-Capsule/index/desktop.html",
 		"icon": "windows"
+	},
+	{
+		"name": "Quentin OS/2",
+		"url": "https://www.quentin.xyz",
+		"icon": "obscure"
 	}
 ]
