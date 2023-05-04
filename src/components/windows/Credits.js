@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  TabBody, Tab, Tabs, Cutout, Tooltip,
+  TabBody, Tab, Tabs, Cutout, Button,
 } from 'react95';
 
 import Util from '../Util';
@@ -11,7 +11,7 @@ import banner88x31 from '../../resources/images/88x31.gif';
 import cookieIcon from '../../resources/icons/cookie.gif';
 import codeAnimationDark from '../../resources/images/code_dark.gif';
 import codeAnimationLight from '../../resources/images/code_light.gif';
-import pizzaSlice from '../../resources/images/slice.gif';
+import pizzaSlice from '../../resources/icons/slice.gif';
 import blackCursor from '../../resources/icons/pointers/cursor.gif';
 
 import './Credits.css';
@@ -40,10 +40,6 @@ class CreditsBody extends Component {
 
   render = () => {
     const { activeTab, codeAnimation } = this.state;
-
-    const tooltipMessage = localStorage.getItem('fixed')
-      ? 'I knew you were smart!'
-      : 'did you find it yet? :)';
 
     return (<div className='credits-window'>
       <div>
@@ -113,9 +109,7 @@ class CreditsBody extends Component {
         </div>
       </TabBody>
       <div style={ { paddingTop: '15px', textAlign: 'center' } }>
-        <Tooltip text={ tooltipMessage } delay={ 100 }>
-          <img src={ pizzaSlice } alt='pizza slice' />
-        </Tooltip>
+        <Button onClick={ () => Util.openWebsiteURL({ url: 'https://www.buymeacoffee.com/syxmone' }) }><img src={ pizzaSlice } alt='pizza slice' style={ { paddingRight: '7px' } } />Wanna support me?</Button>
       </div>
     </div>);
   }

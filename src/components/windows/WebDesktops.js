@@ -14,6 +14,8 @@ import mainWindowIcon from '../../resources/icons/webdesktops.gif';
 import mobileWarningIcon from '../../resources/icons/mobilewarning.gif';
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 import infoIcon from '../../resources/icons/info.png';
+import sourceIcon from '../../resources/icons/script.png';
+import pizzaSlice from '../../resources/icons/slice.gif';
 
 const webDesktopsIcons = require.context('../../resources/icons/webdesktops', true);
 
@@ -141,7 +143,8 @@ class WebDesktopsBody extends Component {
         <div className='toolbar-container'>
           <Toolbar>
             <Button onClick={ this.openRandomURL } variant="menu"><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
-            <Button onClick={ () => Util.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) } variant="menu"><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Contribute</Button>
+            <Button onClick={ () => Util.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) } variant="menu"><img src={ sourceIcon } alt='hyperlink' style={ { paddingRight: '4px', height: '17px' } } />Contribute</Button>
+            <Button onClick={ () => Util.openWebsiteURL({ url: 'https://www.buymeacoffee.com/syxmone' }) } variant="menu"><img src={ pizzaSlice } alt='hyperlink' style={ { paddingRight: '7px' } } />Support</Button>
             <Button onClick={ this.toggleShowHelp } active={ showHelp } variant="menu"><img src={ infoIcon } alt='info' style={ { paddingRight: '4px' } } />About</Button>
           </Toolbar>
         </div>
