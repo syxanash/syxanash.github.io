@@ -964,5 +964,11 @@
 		"url": "https://www.quentin.xyz",
 		"icon": "obscure",
 		"source": ""
+	},
+	{
+		"name": "Hypertalking",
+		"url": "https://www.hypertalking.com",
+		"icon": "mac",
+		"source": ""
 	}
 ]
