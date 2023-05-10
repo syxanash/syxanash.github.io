@@ -38,7 +38,7 @@ import PippoDistracted from './themes/PippoDistracted';
 import './Kernal.css';
 
 const backgroundImages = require.context('./resources/images/backgrounds', true);
-const wallpapersNumber = 64;
+const wallpapersNumber = 65;
 
 class Kernal extends Component {
   constructor(props) {
