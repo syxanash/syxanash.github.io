@@ -61,7 +61,7 @@ class GuestbookBody extends Component {
           </div>
         </div>
         <div>
-          WOW a website which looks like a computer!&nbsp;
+          WOW a website that looks like a computer!&nbsp;
           <Button
             style={ { padding: '8px', margin: 0, userSelect: 'text' } }
             size='md'
@@ -69,8 +69,8 @@ class GuestbookBody extends Component {
           >
             <b>no one</b>
           </Button>
-          &nbsp;ever thought about it before,
-          this is so cool, welcome to the world wide web my friend!
+          &nbsp; has ever thought of this before.
+          It's so cool, welcome to the World Wide Web, my friend!
         </div>
       </div>
       <Divider />
@@ -85,8 +85,8 @@ class GuestbookBody extends Component {
           </div>
         </div>
         <div className='comment-item'>
-          This site is truly a masterpiece of our times,
-          makes me very proud for having invented the first computer!
+          This site is truly a masterpiece of our times.
+          It makes me very proud to have invented the first computer!
         </div>
       </div>
       <Divider />
