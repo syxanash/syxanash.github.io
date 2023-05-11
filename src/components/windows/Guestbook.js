@@ -101,7 +101,7 @@ class GuestbookBody extends Component {
           </div>
         </div>
         <div>
-          Yeah great website! Hey Turing boy you for real??
+          Excellent website! Excuse me, Mr. Turing, if I may ask, are you being serious?
         </div>
       </div>
       <Divider />
@@ -131,7 +131,8 @@ class GuestbookBody extends Component {
           </div>
         </div>
         <div>
-          Well said my dear Ada! very nice website, but comment section is poison...
+          Well said, Ada! very nice impressive, but alas,
+          the comment section leaves much to be desired.
         </div>
       </div>
       <Divider />
