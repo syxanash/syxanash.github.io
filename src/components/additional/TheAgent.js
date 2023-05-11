@@ -27,12 +27,11 @@ class TheAgent extends Component {
       <span>
         I'm the <b>Agent</b> behind the window.
         I see you're exploring the graphical user interface.
-        This page is called <b>Web Desktops</b>, it even made it to the top
-        of <a href='https://news.ycombinator.com/item?id=23734093' rel='noopener noreferrer' target='_blank'>Hacker News</a> once!
+        This page is called <b>Web Desktops</b>, careful not to procrastinate too much in here!
       </span>,
       <span>
-        I still remember Simone's grandma so excited calling him on the phone when she
-        heard it on the television!
+        I still remember Simone's grandma being so excited when she
+        called him on the phone after seeing this page on top of <a href='https://news.ycombinator.com/item?id=23734093' rel='noopener noreferrer' target='_blank'>Hacker News</a>!
       </span>,
       <span>
         Anyways hope you also enjoy the rest of the website, have a pleasent
