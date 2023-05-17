@@ -808,5 +808,10 @@
 		"name": "Hypertalking",
 		"url": "https://www.hypertalking.com",
 		"icon": "mac"
+	},
+	{
+		"name": "DOODAD",
+		"url": "https://doodad.dev",
+		"icon": "linux"
 	}
 ]
