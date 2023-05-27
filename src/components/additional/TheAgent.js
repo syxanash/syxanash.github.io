@@ -30,8 +30,8 @@ class TheAgent extends Component {
         This page is called <b>Web Desktops</b>, careful not to procrastinate too much in here!
       </span>,
       <span>
-        I still remember Simone's grandma being so excited when she
-        saw this page on top of <a href='https://news.ycombinator.com/item?id=23734093' rel='noopener noreferrer' target='_blank'>Hacker News</a>!
+        I still remember how excited Simone's grandma was when she
+        saw this page on the top of <a href='https://news.ycombinator.com/item?id=23734093' rel='noopener noreferrer' target='_blank'>Hacker News</a>!
       </span>,
       <span>
         Anyways hope you also enjoy the rest of the website, have a pleasent
