@@ -31,7 +31,7 @@ class TheAgent extends Component {
       </span>,
       <span>
         I still remember Simone's grandma being so excited when she
-        called him on the phone after seeing this page on top of <a href='https://news.ycombinator.com/item?id=23734093' rel='noopener noreferrer' target='_blank'>Hacker News</a>!
+        saw this page on top of <a href='https://news.ycombinator.com/item?id=23734093' rel='noopener noreferrer' target='_blank'>Hacker News</a>!
       </span>,
       <span>
         Anyways hope you also enjoy the rest of the website, have a pleasent
