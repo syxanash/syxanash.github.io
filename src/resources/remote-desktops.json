@@ -970,5 +970,11 @@
 		"url": "https://doodad.dev",
 		"icon": "linux",
 		"source": ""
+	},
+	{
+		"name": "Joy Yiu",
+		"url": "https://www.joyyiu.com",
+		"icon": "obscure",
+		"source": ""
 	}
 ]
