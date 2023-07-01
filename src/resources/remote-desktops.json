@@ -970,5 +970,11 @@
 		"url": "https://www.joyyiu.com",
 		"icon": "obscure",
 		"source": ""
+	},
+	{
+		"name": "DROPS",
+		"url": "https://www.maxvphillips.com/drops/",
+		"icon": "obscure",
+		"source": "https://github.com/maxvp/drops"
 	}
 ]
