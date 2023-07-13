@@ -970,5 +970,17 @@
 		"url": "https://www.maxvphillips.com/drops/",
 		"icon": "obscure",
 		"source": "https://github.com/maxvp/drops"
+	},
+	{
+		"name": "DeskPortal",
+		"url": "https://demo.deskportal.com",
+		"icon": "linux",
+		"source": ""
+	},
+	{
+		"name": "lover.os",
+		"url": "https://lostlove.neocities.org",
+		"icon": "windows",
+		"source": ""
 	}
 ]
