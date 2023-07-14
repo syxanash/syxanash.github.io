@@ -982,5 +982,11 @@
 		"url": "https://lostlove.neocities.org",
 		"icon": "windows",
 		"source": ""
+	},
+	{
+		"name": "Buddy Pond",
+		"url": "https://buddypond.com",
+		"icon": "linux",
+		"source": "https://github.com/marak/buddypond"
 	}
 ]
