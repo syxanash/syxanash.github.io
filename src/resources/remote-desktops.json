@@ -988,5 +988,11 @@
 		"url": "https://buddypond.com",
 		"icon": "linux",
 		"source": "https://github.com/marak/buddypond"
+	},
+	{
+		"name": "thatDaria",
+		"url": "https://thatdaria.com",
+		"icon": "windows",
+		"source": ""
 	}
 ]
