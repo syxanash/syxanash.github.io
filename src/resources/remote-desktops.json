@@ -994,5 +994,11 @@
 		"url": "https://thatdaria.com",
 		"icon": "windows",
 		"source": ""
+	},
+	{
+		"name": "Chads Desktop",
+		"url": "https://www.chadhill.dev",
+		"icon": "obscure",
+		"source": "https://github.com/chad2320/chadhill-dev"
 	}
 ]
