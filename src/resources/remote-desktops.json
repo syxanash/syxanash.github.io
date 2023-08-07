@@ -552,8 +552,8 @@
 		"source": "https://github.com/Renovamen/playground-macos"
 	},
 	{
-		"name": "macOS in Preact",
-		"url": "https://macos.vercel.app",
+		"name": "macOS in Svelte",
+		"url": "https://macos-web.app",
 		"icon": "mac_new",
 		"source": "https://github.com/puruvj/macos-web"
 	},
