@@ -55,7 +55,7 @@ class AboutBody extends Component {
         <span style={ { fontWeight: 'bold', fontSize: '1.5em' } }>Hello there!</span>
         <p>
           I'm <b>Simone</b>, pronounced like <Tooltip text='he/him' delay={ 100 }>`<i>see-mow-nay</i></Tooltip>`<br />
-          on the internet my nick name is usually <b>syx</b>.
+          on the internet my nick name is usually <b>syx</b>
         </p>
         <p>
           I was born in <a href='https://en.wikipedia.org/wiki/Taranto' target='_blank' rel='noopener noreferrer'>Taranto (Italy)</a> where I lived most of my life. I moved to Dublin (Ireland) { timePassed } ago where I currently work as a software engineer.

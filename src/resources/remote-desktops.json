@@ -1000,5 +1000,11 @@
 		"url": "https://www.chadhill.dev",
 		"icon": "obscure",
 		"source": "https://github.com/chad2320/chadhill-dev"
+	},
+	{
+		"name": "Game Database",
+		"url": "https://refuge.tokyo",
+		"icon": "obscure",
+		"source": ""
 	}
 ]
