@@ -200,7 +200,7 @@
 	{
 		"name": "CloudDesk",
 		"url": "http://altaica.altervista.org/",
-		"icon": "linux",
+		"icon": "unix",
 		"source": ""
 	},
 	{
@@ -590,7 +590,7 @@
 	{
 		"name": "RexOS",
 		"url": "https://itzrex.neocities.org",
-		"icon": "linux",
+		"icon": "IBM",
 		"source": ""
 	},
 	{
@@ -956,7 +956,7 @@
 	{
 		"name": "DOODAD",
 		"url": "https://doodad.dev",
-		"icon": "linux",
+		"icon": "unix",
 		"source": ""
 	},
 	{
