@@ -1006,5 +1006,11 @@
 		"url": "https://refuge.tokyo",
 		"icon": "obscure",
 		"source": ""
+	},
+	{
+		"name": "GreyOS",
+		"url": "https://greyos.gr",
+		"icon": "linux",
+		"source": "https://github.com/g0d/GreyOS"
 	}
 ]
