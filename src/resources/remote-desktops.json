@@ -1006,5 +1006,11 @@
 		"url": "https://greyos.gr",
 		"icon": "linux",
 		"source": "https://github.com/g0d/GreyOS"
+	},
+	{
+		"name": "Henry Heffernan",
+		"url": "https://henryheffernan.com",
+		"icon": "windows",
+		"source": "https://github.com/henryjeff/portfolio-website"
 	}
 ]
