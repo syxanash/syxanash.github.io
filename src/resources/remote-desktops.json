@@ -1012,5 +1012,11 @@
 		"url": "https://henryheffernan.com",
 		"icon": "windows",
 		"source": "https://github.com/henryjeff/portfolio-website"
+	},
+	{
+		"name": "Alec Babala",
+		"url": "https://www.alecbabala.com",
+		"icon": "obscure",
+		"source": ""
 	}
 ]
