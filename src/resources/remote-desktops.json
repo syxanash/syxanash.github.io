@@ -1012,5 +1012,11 @@
 		"url": "https://www.alecbabala.com",
 		"icon": "obscure",
 		"source": ""
+	},
+	{
+		"name": "win32.run",
+		"url": "https://win32.run",
+		"icon": "windows_new",
+		"source": ""
 	}
 ]
