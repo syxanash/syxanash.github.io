@@ -1018,5 +1018,11 @@
 		"url": "https://win32.run",
 		"icon": "windows_new",
 		"source": ""
+	},
+	{
+		"name": "Pretty Diff",
+		"url": "ttps://prettydiff.com",
+		"icon": "unix",
+		"source": "https://github.com/prettydiff/share-file-systems"
 	}
 ]
