@@ -1021,7 +1021,7 @@
 	},
 	{
 		"name": "Pretty Diff",
-		"url": "ttps://prettydiff.com",
+		"url": "https://prettydiff.com",
 		"icon": "unix",
 		"source": "https://github.com/prettydiff/share-file-systems"
 	}
