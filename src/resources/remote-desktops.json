@@ -1024,5 +1024,11 @@
 		"url": "https://prettydiff.com",
 		"icon": "unix",
 		"source": "https://github.com/prettydiff/share-file-systems"
+	},
+	{
+		"name": "Slashdiv OS",
+		"url": "https://slashdiv.neocities.org",
+		"icon": "IBM",
+		"source": ""
 	}
 ]
