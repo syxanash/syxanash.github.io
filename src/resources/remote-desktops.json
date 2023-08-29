@@ -1017,7 +1017,7 @@
 		"name": "win32.run",
 		"url": "https://win32.run",
 		"icon": "windows_new",
-		"source": ""
+		"source": "https://github.com/ducbao414/win32.run"
 	},
 	{
 		"name": "Pretty Diff",
