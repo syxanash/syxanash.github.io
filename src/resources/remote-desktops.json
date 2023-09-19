@@ -1030,5 +1030,11 @@
 		"url": "https://slashdiv.neocities.org",
 		"icon": "IBM",
 		"source": ""
+	},
+	{
+		"name": "MacOS Big Sur Clone",
+		"url": "https://macos-big-sur-clone.vercel.app",
+		"icon": "mac",
+		"source": "https://github.com/mirayatech/macos-big-sur-clone"
 	}
 ]
