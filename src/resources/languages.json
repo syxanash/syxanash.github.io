@@ -14,7 +14,8 @@
   "Bash": "sh",
   "Pascal": "pas",
   "8086 Assembly": "asm",
-  "Basic": "vb",
+  "Visual Basic": "vb",
+  "Basic": "BAS",
   "Batch": "bat",
   "AutoIt": "au3"
 }
