@@ -588,12 +588,6 @@
 		"source": "https://github.com/davidedc/Fizzygum"
 	},
 	{
-		"name": "RexOS",
-		"url": "https://itzrex.neocities.org",
-		"icon": "IBM",
-		"source": ""
-	},
-	{
 		"name": "Joeyonng's Backyard",
 		"url": "https://joeyonng.github.io",
 		"icon": "mac_new",
@@ -916,12 +910,6 @@
 		"url": "https://rajaniraiyn.github.io/windows11/",
 		"icon": "windows_new",
 		"source": "https://github.com/Rajaniraiyn/windows11"
-	},
-	{
-		"name": "SilveOS.com",
-		"url": "https://www.silveos.com",
-		"icon": "windows_new",
-		"source": "https://github.com/SilveOS"
 	},
 	{
 		"name": "Sophia's Time Capsule",
