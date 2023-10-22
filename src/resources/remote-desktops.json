@@ -1024,5 +1024,11 @@
 		"url": "https://macos-big-sur-clone.vercel.app",
 		"icon": "mac_new",
 		"source": "https://github.com/mirayatech/macos-big-sur-clone"
+	},
+	{
+		"name": "NENRIKIDO",
+		"url": "https://nenrikido.neocities.org",
+		"icon": "obscure",
+		"source": ""
 	}
 ]
