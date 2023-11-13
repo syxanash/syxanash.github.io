@@ -39,7 +39,7 @@
 		"name": "Windows 93",
 		"url": "https://www.windows93.net",
 		"icon": "windows",
-		"source": ""
+		"source": "https://github.com/windows93dotnet/sys42"
 	},
 	{
 		"name": "The Restart Page",
