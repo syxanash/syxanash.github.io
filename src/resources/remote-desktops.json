@@ -1030,5 +1030,11 @@
 		"url": "https://holidayos-tonik-showcase.webflow.io",
 		"icon": "mac",
 		"source": ""
+	},
+	{
+		"name": "Nao",
+		"url": "https://nao.gg",
+		"icon": "windows",
+		"source": ""
 	}
 ]
