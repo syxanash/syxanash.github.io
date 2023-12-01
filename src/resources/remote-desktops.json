@@ -582,12 +582,6 @@
 		"source": "https://github.com/davidedc/Fizzygum"
 	},
 	{
-		"name": "Joeyonng's Backyard",
-		"url": "https://joeyonng.github.io",
-		"icon": "mac_new",
-		"source": "https://github.com/Joeyonng/joeyonng-backyard"
-	},
-	{
 		"name": "Win11React",
 		"url": "https://win11.blueedge.me",
 		"icon": "windows_new",
@@ -658,12 +652,6 @@
 		"url": "https://insafkhamzin.com",
 		"icon": "windows",
 		"source": "https://github.com/InsafKhamzin/portfolio"
-	},
-	{
-		"name": "Cobra!'s Website",
-		"url": "https://cobradile.neocities.org",
-		"icon": "mac",
-		"source": ""
 	},
 	{
 		"name": "Jonathan Zavialov",
@@ -886,12 +874,6 @@
 		"url": "https://malisipi.github.io/ubuntu-tour",
 		"icon": "linux",
 		"source": "https://github.com/malisipi/ubuntu-tour"
-	},
-	{
-		"name": "KeYGeN",
-		"url": "https://keyge.nz",
-		"icon": "windows",
-		"source": ""
 	},
 	{
 		"name": "sue roh",
