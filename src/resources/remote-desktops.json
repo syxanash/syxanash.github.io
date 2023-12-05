@@ -1024,5 +1024,11 @@
 		"url": "https://nao.gg",
 		"icon": "windows",
 		"source": ""
+	},
+	{
+		"name": "Rimet Desktop",
+		"url": "http://geocities.ws/rimet/",
+		"icon": "IBM",
+		"source": ""
 	}
 ]
