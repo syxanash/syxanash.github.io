@@ -1030,5 +1030,11 @@
 		"url": "http://geocities.ws/rimet/",
 		"icon": "IBM",
 		"source": ""
+	},
+	{
+		"name": "FullStacked",
+		"url": "https://fullstacked.org/demo/",
+		"icon": "linux",
+		"source": "https://github.com/fullstackedorg/workspace"
 	}
 ]
