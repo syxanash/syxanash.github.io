@@ -1042,5 +1042,11 @@
 		"url": "https://www.exaequos.com",
 		"icon": "obscure",
 		"source": "https://github.com/baudaux/exa-kernel"
+	},
+	{
+		"name": "vue-95",
+		"url": "https://johnuberbacher.com/vue95",
+		"icon": "windows",
+		"source": "https://github.com/johnuberbacher/vue-95"
 	}
 ]
