@@ -15,6 +15,7 @@ class ScheduledTV extends Component {
     this.unoMattinaTimeout = undefined;
     this.lunediFilmTimeout = undefined;
     this.tassoniTimeout = undefined;
+    this.rocknrodentTimeout = undefined;
 
     this.tvOutputTimeout = undefined;
 
@@ -49,6 +50,7 @@ class ScheduledTV extends Component {
     const unoMattinaOffest = this.getOffsetMilliseconds(6, 50, 0);
     const lunedifilmOffset = this.getOffsetMilliseconds(21, 20, 0);
     const tassoniOffset = this.getOffsetMilliseconds(12, 0, 0);
+    const rocknrodentOffset = this.getOffsetMilliseconds(3, 0, 0);
 
     this.unoMattinaTimeout = unoMattinaOffest > 0
       ? setTimeout(() => {
@@ -67,6 +69,12 @@ class ScheduledTV extends Component {
         this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/tassoni.mp4`);
       }, tassoniOffset)
       : undefined;
+
+    this.rocknrodentTimeout = rocknrodentOffset > 0
+      ? setTimeout(() => {
+        this.turnOnScheduledTV(`${configUrls.backendUrl}/assets/video/rocknrodent.mp4`);
+      }, rocknrodentOffset)
+      : undefined;
   }
 
   componentWillUnmount = () => {
@@ -80,6 +88,10 @@ class ScheduledTV extends Component {
 
     if (this.tassoniTimeout) {
       clearTimeout(this.tassoniTimeout);
+    }
+
+    if (this.rocknrodentTimeout) {
+      clearTimeout(this.rocknrodentTimeout);
     }
 
     if (this.tvOutputTimeout) {
