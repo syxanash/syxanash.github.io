@@ -1048,5 +1048,11 @@
 		"url": "https://johnuberbacher.com/vue95",
 		"icon": "windows",
 		"source": "https://github.com/johnuberbacher/vue-95"
+	},
+	{
+		"name": "mingde",
+		"url": "https://mingde.prussia.dev",
+		"icon": "windows",
+		"source": "https://github.com/stjet/mingde"
 	}
 ]
