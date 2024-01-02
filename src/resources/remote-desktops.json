@@ -1048,5 +1048,11 @@
 		"url": "https://mingde.prussia.dev",
 		"icon": "windows",
 		"source": "https://github.com/stjet/mingde"
+	},
+	{
+		"name": "BénOS",
+		"url": "https://mingde.prussia.dev",
+		"icon": "obscure",
+		"source": ""
 	}
 ]
