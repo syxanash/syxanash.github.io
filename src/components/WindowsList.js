@@ -99,7 +99,7 @@ export default function WindowsList() {
       focused: false,
       header: MusicHeader,
       body: MusicBody,
-      windowTheme: PippoTheme,
+      windowTheme: PippoDarkPro,
       unfocusedTheme: PippoDistracted,
     },
     credits: {
