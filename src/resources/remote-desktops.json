@@ -1014,12 +1014,6 @@
 		"source": ""
 	},
 	{
-		"name": "Nao",
-		"url": "https://nao.gg",
-		"icon": "windows",
-		"source": ""
-	},
-	{
 		"name": "Rimet Desktop",
 		"url": "http://geocities.ws/rimet/",
 		"icon": "IBM",
@@ -1054,5 +1048,11 @@
 		"url": "https://benlacroix.com",
 		"icon": "obscure",
 		"source": ""
+	},
+	{
+		"name": "Pluto",
+		"url": "https://pluto.zeon.dev",
+		"icon": "linux",
+		"source": "https://github.com/zeondev/pluto"
 	}
 ]
