@@ -2,8 +2,6 @@ const theme = {
   hatchedBackground:
     'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIElEQVQYV2P8////fwYGBgZGRkZGMI0hABIFAbgEugAAQFQP/QfjEPcAAAAASUVORK5CYII=)',
 
-  // background: '#CCF5AC',
-  // background: '#416165',
   background: '#4C6663',
 
   canvas: '#c7c7df',

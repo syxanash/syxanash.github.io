@@ -1,7 +1,6 @@
-const theme = {
-  hatchedBackground:
-    'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIElEQVQYV2P8////fwYGBgZGRkZGMI0hABIFAbgEugAAQFQP/QfjEPcAAAAASUVORK5CYII=)',
+import baseTheme from './PippoTheme';
 
+const theme = {
   canvas: '#ffffff',
   material: '#ced0cf',
   materialDark: '#9a9e9c',
@@ -20,15 +19,7 @@ const theme = {
   textDisabled: '#888c8f',
   textDisabledShadow: '#ffffff',
 
-  inputText: '#050608',
-  inputTextInvert: '#ffffff',
-  inputTextDisabled: '#888c8f',
-  inputTextDisabledShadow: '#ffffff',
-
-  tooltip: '#fefbcc',
-
   anchor: '#1034a6',
-  anchorVisited: '#440381',
 
   hoverBackground: '#000080',
   checkmark: '#050608',
@@ -38,4 +29,4 @@ const theme = {
   flatDark: '#9e9e9e',
 };
 
-export default theme;
+export default { ...baseTheme, ...theme };
