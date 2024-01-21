@@ -1051,7 +1051,7 @@
 	},
 	{
 		"name": "Pluto",
-		"url": "https://pluto.zeon.dev",
+		"url": "https://pluto-app.zeon.dev",
 		"icon": "linux",
 		"source": "https://github.com/zeondev/pluto"
 	}
