@@ -1054,5 +1054,11 @@
 		"url": "https://pluto-app.zeon.dev",
 		"icon": "linux",
 		"source": "https://github.com/zeondev/pluto"
+	},
+	{
+		"name": "webKDE",
+		"url": "https://baroxyton.github.io/webKDE/",
+		"icon": "linux",
+		"source": "https://github.com/baroxyton/webKDE"
 	}
 ]
