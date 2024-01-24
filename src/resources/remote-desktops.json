@@ -1060,5 +1060,11 @@
 		"url": "https://baroxyton.github.io/webKDE/",
 		"icon": "linux",
 		"source": "https://github.com/baroxyton/webKDE"
+	},
+	{
+		"name": "Laurus Edelbacher",
+		"url": "https://www.laurusedelbacher.com/new_page.html",
+		"icon": "mac_new",
+		"source": ""
 	}
 ]
