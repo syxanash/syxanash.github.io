@@ -1066,5 +1066,11 @@
 		"url": "https://www.laurusedelbacher.com/new_page.html",
 		"icon": "mac_new",
 		"source": ""
+	},
+	{
+		"name": ".solutionsOS",
+		"url": "https://gleb.solutions",
+		"icon": "mac",
+		"source": ""
 	}
 ]
