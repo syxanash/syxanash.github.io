@@ -594,12 +594,6 @@
 		"source": ""
 	},
 	{
-		"name": "AtheOS",
-		"url": "https://al1-ce.dev",
-		"icon": "obscure",
-		"source": ""
-	},
-	{
 		"name": "NeXT",
 		"url": "https://www.levenez.com/NeXTSTEP/",
 		"icon": "next",
@@ -720,12 +714,6 @@
 		"source": "https://gitlab.com/hsleisink/orb"
 	},
 	{
-		"name": "Platinum",
-		"url": "https://robbiebyrd.github.io/platinum/",
-		"icon": "mac",
-		"source": "https://github.com/robbiebyrd/platinum"
-	},
-	{
 		"name": "Browso",
 		"url": "https://www.browso.app",
 		"icon": "mac",
@@ -796,12 +784,6 @@
 		"url": "https://web.dahliaos.io",
 		"icon": "linux",
 		"source": "https://github.com/dahliaOS/pangolin_desktop"
-	},
-	{
-		"name": "SantaOS",
-		"url": "http://jeremymakes.com/SantaOS/",
-		"icon": "mac_new",
-		"source": ""
 	},
 	{
 		"name": "WebXP",
