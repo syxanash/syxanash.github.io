@@ -714,6 +714,12 @@
 		"source": "https://gitlab.com/hsleisink/orb"
 	},
 	{
+		"name": "Platinum",
+		"url": "https://robbiebyrd.github.io/platinum/",
+		"icon": "mac",
+		"source": "https://github.com/robbiebyrd/platinum"
+	},
+	{
 		"name": "Browso",
 		"url": "https://www.browso.app",
 		"icon": "mac",
