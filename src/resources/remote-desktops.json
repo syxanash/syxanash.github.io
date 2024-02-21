@@ -318,12 +318,6 @@
 		"source": ""
 	},
 	{
-		"name": "Glass Animals OPEN SOURCE",
-		"url": "https://opensource.glassanimals.com",
-		"icon": "windows",
-		"source": ""
-	},
-	{
 		"name": "Make WordArt",
 		"url": "https://makewordart.com",
 		"icon": "windows",
@@ -720,12 +714,6 @@
 		"source": "https://github.com/robbiebyrd/platinum"
 	},
 	{
-		"name": "Browso",
-		"url": "https://www.browso.app",
-		"icon": "mac",
-		"source": ""
-	},
-	{
 		"name": "Harrison's Home",
 		"url": "https://harrisonm.com",
 		"icon": "windows",
@@ -1059,6 +1047,18 @@
 		"name": ".solutionsOS",
 		"url": "https://gleb.solutions",
 		"icon": "mac",
+		"source": ""
+	},
+	{
+		"name": "Digital New Era",
+		"url": "https://newwwera.com",
+		"icon": "obscure",
+		"source": ""
+	},
+	{
+		"name": "C'est l'IA ou Célia",
+		"url": "https://voeux2024.castoretpollux.com",
+		"icon": "mac_new",
 		"source": ""
 	}
 ]
