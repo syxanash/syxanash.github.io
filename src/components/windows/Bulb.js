@@ -40,11 +40,9 @@ class BulbBody extends Component {
     this.websocketClient = undefined;
     this.keepAliveInterval = undefined;
     this.speechCounterTimeout = undefined;
-    this.safetyTimer = undefined;
 
     this.pingInterval = 30;
     this.checkInterval = 10;
-    this.spamClickInterval = 150;
 
     this.state = {
       websocketOpen: false,
@@ -53,9 +51,7 @@ class BulbBody extends Component {
       doneTyping: false,
       usersConnected: undefined,
       showUsersField: false,
-      clickWarnings: 0,
       brokenBulb: !!JSON.parse(localStorage.getItem('brokenBulb')),
-      pressedButtonSpam: false,
       firstSocketMessage: true,
       pressedButton: false,
       bottomMessages: [
@@ -87,7 +83,6 @@ class BulbBody extends Component {
 
   componentWillUnmount = () => {
     clearTimeout(this.speechCounterTimeout);
-    clearTimeout(this.safetyTimer);
 
     if (!this.state.brokenBulb && Util.isWebSocketsSupported()) {
       this.disconnectWebsocket();
@@ -145,6 +140,19 @@ class BulbBody extends Component {
 
     const foundUsersMatch = evt.data.match(/^USERS:(.*?)$/);
     const bulbStatusMatch = evt.data.match(/^BULB:(.*?)$/);
+    const spamWarn = evt.data.match(/^SPAM_WARN$/);
+    const spamJail = evt.data.match(/^SPAM_JAIL$/);
+
+    if (spamWarn !== null) {
+      alert('slow down!');
+    }
+
+    if (spamJail !== null) {
+      localStorage.setItem('brokenBulb', JSON.stringify('true'));
+      alert('you broke the lightbulb!');
+      this.disconnectWebsocket();
+      this.setState({ brokenBulb: true, websocketOpen: false });
+    }
 
     if (foundUsersMatch !== null) {
       this.setState({ usersConnected: foundUsersMatch[1], showUsersField: true });
@@ -283,32 +291,11 @@ class BulbBody extends Component {
     );
   }
 
-  spamChecker = () => {
-    this.setState({ pressedButtonSpam: false });
-  }
-
   sendFlick = () => {
-    const { pressedButtonSpam, clickWarnings } = this.state;
+    SoundEffects.switchSound.play();
 
-    if (pressedButtonSpam === true) {
-      this.setState({ clickWarnings: clickWarnings + 1 });
-
-      if (clickWarnings + 1 >= 3) {
-        localStorage.setItem('brokenBulb', JSON.stringify('true'));
-        alert('you broke the lightbulb!');
-        this.disconnectWebsocket();
-        this.setState({ brokenBulb: true, websocketOpen: false });
-      } else {
-        alert('slow down!');
-      }
-    } else {
-      SoundEffects.switchSound.play();
-
-      this.doSend('FLICK');
-      this.setState({ pressedButtonSpam: true, pressedButton: true });
-
-      this.safetyTimer = setTimeout(this.spamChecker, this.spamClickInterval);
-    }
+    this.doSend('FLICK');
+    this.setState({ pressedButton: true });
   }
 
   renderLiveDot = () => {
