@@ -51,7 +51,7 @@ class BulbBody extends Component {
       doneTyping: false,
       usersConnected: undefined,
       showUsersField: false,
-      brokenBulb: !!JSON.parse(localStorage.getItem('brokenBulb')),
+      brokenBulb: !!JSON.parse(sessionStorage.getItem('brokenBulb')),
       firstSocketMessage: true,
       pressedButton: false,
       bottomMessages: [
@@ -148,7 +148,7 @@ class BulbBody extends Component {
     }
 
     if (spamJail !== null) {
-      localStorage.setItem('brokenBulb', JSON.stringify('true'));
+      sessionStorage.setItem('brokenBulb', JSON.stringify('true'));
       alert('you broke the lightbulb!');
       this.disconnectWebsocket();
       this.setState({ brokenBulb: true, websocketOpen: false });
