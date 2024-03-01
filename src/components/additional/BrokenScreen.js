@@ -108,8 +108,11 @@ class BrokenScreen extends Component {
 
   deleteBug = (x, y) => {
     const { bugsNumber } = this.state;
+
+    const newBugsNumber = bugsNumber - 1;
+
     this.setState({
-      bugsNumber: bugsNumber - 1,
+      bugsNumber: newBugsNumber,
       explosionAxis: { x, y },
       explosionVisibile: true,
       textAnimation: true,
@@ -118,9 +121,12 @@ class BrokenScreen extends Component {
     this.explosionTimeout = setTimeout(() => {
       this.setState({ explosionVisibile: false });
     }, 500);
-    this.textAnimationTimeout = setTimeout(() => {
-      this.setState({ textAnimation: false });
-    }, 2000);
+
+    if (newBugsNumber > 1) {
+      this.textAnimationTimeout = setTimeout(() => {
+        this.setState({ textAnimation: false });
+      }, 2000);
+    }
   }
 
   renderExplosion() {
