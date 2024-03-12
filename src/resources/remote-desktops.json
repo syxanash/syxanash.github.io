@@ -1060,5 +1060,41 @@
 		"url": "https://voeux2024.castoretpollux.com",
 		"icon": "mac_new",
 		"source": ""
+	},
+	{
+		"name": "HeavenComputerOS",
+		"url": "https://heaven.computer",
+		"icon": "windows",
+		"source": ""
+	},
+	{
+		"name": "Kaitlyn Chai",
+		"url": "https://kaitlynchai.work",
+		"icon": "obscure",
+		"source": ""
+	},
+	{
+		"name": "Bianca Mkaila",
+		"url": "https://bianca.digital",
+		"icon": "windows_new",
+		"source": ""
+	},
+	{
+		"name": "racOS",
+		"url": "https://rac.fm",
+		"icon": "mac",
+		"source": ""
+	},
+	{
+		"name": "HIFI Labs OS",
+		"url": "https://hifilabs.co",
+		"icon": "mac",
+		"source": ""
+	},
+	{
+		"name": "Based",
+		"url": "https://www.based.gg",
+		"icon": "IBM",
+		"source": ""
 	}
 ]
