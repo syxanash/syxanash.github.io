@@ -1102,5 +1102,11 @@
 		"url": "https://www.based.gg",
 		"icon": "IBM",
 		"source": ""
+	},
+	{
+		"name": "ModernActiveDesktop",
+		"url": "https://www.ingan121.com/mad/",
+		"icon": "windows",
+		"source": ""
 	}
 ]
