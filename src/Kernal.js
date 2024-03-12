@@ -1,3 +1,8 @@
+// Hey if you'd like to hire me but you're not sure about
+// the quality of this code shoot me an email...
+// HOLD ON I CAN EXPLAIN!
+// DON'T GO!
+
 import React, { Component } from 'react';
 import _ from 'lodash';
 import $ from 'jquery';
