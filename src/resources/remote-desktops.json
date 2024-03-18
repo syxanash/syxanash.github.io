@@ -1114,5 +1114,11 @@
 		"url": "https://www.lesgrosmots.com",
 		"icon": "IBM",
 		"source": ""
+	},
+	{
+		"name": "csOS",
+		"url": "https://csos.constraint.systems",
+		"icon": "unix",
+		"source": "https://github.com/constraint-systems/csOS"
 	}
 ]
