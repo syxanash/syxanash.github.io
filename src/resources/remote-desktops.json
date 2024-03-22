@@ -1002,12 +1002,6 @@
 		"source": ""
 	},
 	{
-		"name": "FullStacked",
-		"url": "https://fullstacked.org/demo/",
-		"icon": "linux",
-		"source": "https://github.com/fullstackedorg/workspace"
-	},
-	{
 		"name": "exaequOS",
 		"url": "https://www.exaequos.com",
 		"icon": "obscure",
