@@ -11,9 +11,9 @@
   left: 29px;
   top: 33px;
   border-radius:50%;
-  -webkit-box-shadow: 0px 0px 100px 55px rgba(255,220,0,1);
-  -moz-box-shadow: 0px 0px 100px 55px rgba(255,220,0,1);
-  box-shadow: 0px 0px 100px 55px rgba(255,220,0,1);
+  -webkit-box-shadow: 0px 0px 100px 65px rgba(255,220,0,1);
+  -moz-box-shadow: 0px 0px 100px 65px rgba(255,220,0,1);
+  box-shadow: 0px 0px 100px 65px rgba(255,220,0,1);
 }
 
 .broken-lightbulb-shadow {

@@ -61,6 +61,9 @@ class BulbBody extends Component {
         <span>
           you might see other people flick the switch in real time if you keep the window open!
         </span>,
+        <span>
+          oh and this light bulb is connected to Simone's <a href="https://system31.simone.computer/blog/websocket-to-lightbulbs">physical desk</a> :)
+        </span>,
       ],
     };
   }

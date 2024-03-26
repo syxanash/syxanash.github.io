@@ -239,7 +239,7 @@ class BlogBody extends Component {
       <Cutout className='blog-cutout'>
         <div className='document-style'>
           <ReactMarkdown children={ backendResponse } rehypePlugins={ [rehypeRaw] } />
-          <div style={ { textAlign: 'right' } }>
+          <div style={ { textAlign: 'right', paddingTop: '10px' } }>
             <span style={ { fontWeight: 'bold', fontStyle: 'italic' } }>Posted on {publishedDate.toLocaleString('en-GB', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
           </div>
         </div>
