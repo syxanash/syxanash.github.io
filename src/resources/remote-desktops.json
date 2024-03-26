@@ -1110,7 +1110,7 @@
 		"source": ""
 	},
 	{
-		"name": "csOS",
+		"name": "constraint systems OS",
 		"url": "https://csos.constraint.systems",
 		"icon": "unix",
 		"source": "https://github.com/constraint-systems/csOS"
