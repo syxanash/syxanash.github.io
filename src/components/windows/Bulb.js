@@ -71,6 +71,10 @@ class BulbBody extends Component {
   componentDidMount() {
     const { brokenBulb } = this.state;
 
+    // load both lightbulbs images on mount
+    new Image().src = lightbulbOn;
+    new Image().src = lightbulbOff;
+
     if (!brokenBulb && Util.isWebSocketsSupported()) {
       this.setupWebsocket();
 
