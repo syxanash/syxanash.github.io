@@ -1108,5 +1108,11 @@
 		"url": "https://csos.constraint.systems",
 		"icon": "unix",
 		"source": "https://github.com/constraint-systems/csOS"
+	},
+	{
+		"name": "PeOS",
+		"url": "https://picturelements.github.io",
+		"icon": "windows_new",
+		"source": "https://github.com/PicturElements/picturelements.github.io"
 	}
 ]
