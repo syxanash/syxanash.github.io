@@ -50,7 +50,7 @@ class BulbBody extends Component {
       bottomMessageCounter: 0,
       doneTyping: false,
       usersConnected: undefined,
-      showUsersField: false,
+      deskLampConnected: false,
       brokenBulb: !!JSON.parse(sessionStorage.getItem('brokenBulb')),
       firstSocketMessage: true,
       pressedButton: false,
@@ -62,7 +62,7 @@ class BulbBody extends Component {
           you might see other people flick the switch in real time if you keep the window open!
         </span>,
         <span>
-          oh and this light bulb is connected to Simone's <a href={ `${configUrls.backendUrl}/blog/websocket-to-lightbulbs` } rel='noopener noreferrer' target='_blank'>physical desk</a> :)
+          oh and this light bulb is connected to Simone's <a href={ `${configUrls.backendUrl}/blog/websocket-to-lightbulbs` } rel='noopener noreferrer' target='_blank'>desk lamp</a>
         </span>,
       ],
     };
@@ -147,6 +147,7 @@ class BulbBody extends Component {
 
     const foundUsersMatch = evt.data.match(/^USERS:(.*?)$/);
     const bulbStatusMatch = evt.data.match(/^BULB:(.*?)$/);
+    const deskLampMatch = evt.data.match(/^DESK_LAMP:(.*?)$/);
     const spamWarn = evt.data.match(/^SPAM_WARN$/);
     const spamJail = evt.data.match(/^SPAM_JAIL$/);
 
@@ -161,8 +162,18 @@ class BulbBody extends Component {
       this.setState({ brokenBulb: true, websocketOpen: false });
     }
 
+    if (deskLampMatch !== null) {
+      const deskLampConnected = deskLampMatch[1] === 'true';
+
+      if (deskLampConnected) {
+        SoundEffects.userOnline.play();
+      }
+
+      this.setState({ deskLampConnected });
+    }
+
     if (foundUsersMatch !== null) {
-      this.setState({ usersConnected: foundUsersMatch[1], showUsersField: true });
+      this.setState({ usersConnected: Number(foundUsersMatch[1]) });
 
       if (foundUsersMatch[1] > usersConnected) {
         SoundEffects.userOnline.play();
@@ -250,22 +261,24 @@ class BulbBody extends Component {
     );
   }
 
-  hideUsersConnected = () => {
-    this.setState({ showUsersField: this.state.usersConnected > 1 });
-  }
-
   renderMessagebox = () => {
     const {
-      bottomMessageCounter, bottomMessages, showUsersField, usersConnected,
+      bottomMessageCounter, bottomMessages, usersConnected, deskLampConnected,
     } = this.state;
 
-    if (showUsersField && bottomMessageCounter >= bottomMessages.length) {
-      const textDisplayed = usersConnected > 1
-        ? `people connected: ${usersConnected}`
-        : 'you\'re the only one at the moment';
+    if (bottomMessageCounter >= bottomMessages.length) {
+      let textDisplayed = 'you\'re the only one at the moment';
 
-      if (usersConnected <= 1) {
-        this.speechCounterTimeout = setTimeout(this.hideUsersConnected, 5000);
+      if (usersConnected > 1) {
+        textDisplayed = `People connected: ${usersConnected}`;
+      }
+
+      if (deskLampConnected && usersConnected === 1) {
+        textDisplayed = <span>Simone's <b>desk lamp</b> is connected right now :)</span>;
+      } else if (deskLampConnected && usersConnected > 1) {
+        textDisplayed = <span>
+          {textDisplayed}<br /><br />Simone's <b>desk lamp</b> is also connected right now :)
+        </span>;
       }
 
       return (
@@ -306,13 +319,13 @@ class BulbBody extends Component {
   }
 
   renderLiveDot = () => {
-    const { usersConnected } = this.state;
+    const { usersConnected, deskLampConnected } = this.state;
 
-    const tooltipMessage = usersConnected > 1
+    const tooltipMessage = usersConnected > 1 || deskLampConnected
       ? 'someone else is online'
       : 'everyone is offline';
 
-    const liveDotClass = usersConnected > 1
+    const liveDotClass = usersConnected > 1 || deskLampConnected
       ? 'live-dot-online'
       : 'live-dot-offline';
 
