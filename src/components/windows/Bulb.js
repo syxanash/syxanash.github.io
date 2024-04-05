@@ -274,10 +274,10 @@ class BulbBody extends Component {
       }
 
       if (deskLampConnected && usersConnected === 1) {
-        textDisplayed = <span>Simone's <b>desk lamp</b> is connected right now :)</span>;
+        textDisplayed = <span>Simone's <b>desk lamp</b> is online right now :)</span>;
       } else if (deskLampConnected && usersConnected > 1) {
         textDisplayed = <span>
-          {textDisplayed}<br /><br />Simone's <b>desk lamp</b> is also connected right now :)
+          {textDisplayed}<br /><br />Simone's <b>desk lamp</b> is also online right now :)
         </span>;
       }
 
