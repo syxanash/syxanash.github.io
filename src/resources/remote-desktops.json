@@ -1114,5 +1114,11 @@
 		"url": "https://picturelements.github.io",
 		"icon": "windows_new",
 		"source": "https://github.com/PicturElements/picturelements.github.io"
+	},
+	{
+		"name": "Tansoftware OS",
+		"url": "https://tansoftware.com",
+		"icon": "mac_new",
+		"source": ""
 	}
 ]
