@@ -17,5 +17,6 @@
   "Visual Basic": "vb",
   "Basic": "BAS",
   "Batch": "bat",
-  "AutoIt": "au3"
+  "AutoIt": "au3",
+  "Typescript": "ts"
 }
