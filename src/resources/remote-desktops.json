@@ -1120,5 +1120,11 @@
 		"url": "https://tansoftware.com",
 		"icon": "mac_new",
 		"source": ""
+	},
+	{
+		"name": "Brunc.io",
+		"url": "https://brunc.io",
+		"icon": "mac",
+		"source": "https://github.com/bamanczak/bruncio"
 	}
 ]
