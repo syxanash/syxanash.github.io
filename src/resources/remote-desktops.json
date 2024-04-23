@@ -1126,5 +1126,11 @@
 		"url": "https://brunc.io",
 		"icon": "mac",
 		"source": "https://github.com/bamanczak/bruncio"
+	},
+	{
+		"name": "KRAZAM OS",
+		"url": "https://www.krazam.tv",
+		"icon": "windows",
+		"source": ""
 	}
 ]
