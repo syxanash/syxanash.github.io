@@ -354,7 +354,7 @@ class BulbBody extends Component {
     return (
       <div className='bulb-window'>
         { !brokenBulb && this.renderLiveDot() }
-        <div>
+        <div style={ { zIndex: 1 } }>
           <Fieldset style={ { height: '90px', width: '100px', textAlign: 'center' } }>
             { websocketOpen || brokenBulb
               ? this.renderLightBulbObject()
