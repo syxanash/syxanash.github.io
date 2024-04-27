@@ -62,7 +62,7 @@ class BulbBody extends Component {
           you might see other people flick the switch in real time if you keep the window open!
         </span>,
         <span>
-          oh and this light bulb is connected to <a href={ `${configUrls.backendUrl}/blog/websocket-to-lightbulbs` } rel='noopener noreferrer' target='_blank'>Simone's desk lamp</a>
+          oh and this light bulb is sometimes connected to <a href={ `${configUrls.backendUrl}/blog/websocket-to-lightbulbs` } rel='noopener noreferrer' target='_blank'>Simone's desk lamp</a>
         </span>,
       ],
     };
