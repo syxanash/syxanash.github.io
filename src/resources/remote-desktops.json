@@ -1126,5 +1126,11 @@
 		"url": "https://www.krazam.tv",
 		"icon": "windows",
 		"source": ""
+	},
+	{
+		"name": "FrugalOS",
+		"url": "https://www.thefrugalgamer.net/programming/FrugalOS/",
+		"icon": "IBM",
+		"source": "https://github.com/FrugalGamer/FrugalOS"
 	}
 ]
