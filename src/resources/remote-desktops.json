@@ -199,7 +199,7 @@
 	},
 	{
 		"name": "Windows 98 -- Packard Belle",
-		"url": "https://packard-belle.netlify.com",
+		"url": "https://packard-belle.netlify.app",
 		"icon": "windows",
 		"source": "https://github.com/padraigfl/packard-belle-desktop"
 	},
@@ -535,7 +535,7 @@
 	},
 	{
 		"name": "Xiaohan Zou's Portfolio",
-		"url": "https://portfolio.zxh.io",
+		"url": "https://portfolio.zxh.me",
 		"icon": "mac_new",
 		"source": "https://github.com/Renovamen/playground-macos"
 	},
