@@ -1132,5 +1132,17 @@
 		"url": "https://www.thefrugalgamer.net/programming/FrugalOS/",
 		"icon": "IBM",
 		"source": "https://github.com/FrugalGamer/FrugalOS"
+	},
+	{
+		"name": "32by32",
+		"url": "https://32by32.com",
+		"icon": "mac",
+		"source": ""
+	},
+	{
+		"name": "Melati Diran",
+		"url": "https://melati.world",
+		"icon": "mac_new",
+		"source": ""
 	}
 ]
