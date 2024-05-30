@@ -708,10 +708,10 @@
 		"source": "https://gitlab.com/hsleisink/orb"
 	},
 	{
-		"name": "Platinum",
-		"url": "https://robbiebyrd.github.io/platinum/",
+		"name": "Classicy",
+		"url": "https://robbiebyrd.github.io/classicy/",
 		"icon": "mac",
-		"source": "https://github.com/robbiebyrd/platinum"
+		"source": "https://github.com/robbiebyrd/classicy"
 	},
 	{
 		"name": "Harrison's Home",
