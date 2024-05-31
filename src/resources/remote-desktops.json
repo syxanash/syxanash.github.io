@@ -1144,5 +1144,11 @@
 		"url": "https://melati.world",
 		"icon": "mac_new",
 		"source": ""
+	},
+	{
+		"name": "Yosub Kim",
+		"url": "https://www.yoyosub.com",
+		"icon": "windows",
+		"source": ""
 	}
 ]
