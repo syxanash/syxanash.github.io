@@ -1156,5 +1156,11 @@
 		"url": "https://www.yoyosub.com",
 		"icon": "windows",
 		"source": ""
+	},
+	{
+		"name": "louisthings.OS",
+		"url": "https://portfolio.louisthings.com",
+		"icon": "mac",
+		"source": ""
 	}
 ]
