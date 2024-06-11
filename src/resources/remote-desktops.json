@@ -126,12 +126,6 @@
 		"source": ""
 	},
 	{
-		"name": "www.chiptune.com",
-		"url": "http://www.chiptune.com",
-		"icon": "amiga",
-		"source": ""
-	},
-	{
 		"name": "Virtual Desktop",
 		"url": "http://www.virtualdesktop.org",
 		"icon": "obscure",
@@ -646,12 +640,6 @@
 		"url": "https://insafkhamzin.com",
 		"icon": "windows",
 		"source": "https://github.com/InsafKhamzin/portfolio"
-	},
-	{
-		"name": "Cobra!'s Website",
-		"url": "https://cobradile.neocities.org",
-		"icon": "mac",
-		"source": ""
 	},
 	{
 		"name": "Jonathan Zavialov",
