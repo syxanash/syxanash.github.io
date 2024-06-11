@@ -1150,5 +1150,11 @@
 		"url": "https://portfolio.louisthings.com",
 		"icon": "mac",
 		"source": ""
+	},
+	{
+		"name": "Windo 8_1",
+		"url": "https://cseriestechhero.github.io/kiosk-setup/services/redir/basepage8_1/session",
+		"icon": "windows_new",
+		"source": "https://github.com/CSeriestechhero/kiosk-setup/tree/main/services/redir/"
 	}
 ]
