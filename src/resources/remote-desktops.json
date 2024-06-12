@@ -1162,5 +1162,17 @@
 		"url": "https://cseriestechhero.github.io/kiosk-setup/services/redir/basepage8_1/session",
 		"icon": "windows_new",
 		"source": "https://github.com/CSeriestechhero/kiosk-setup/tree/main/services/redir/"
+	},
+	{
+		"name": "Joey de Ruiter",
+		"url": "https://joeyderuiter.me",
+		"icon": "IBM",
+		"source": "https://github.com/0xJ0EY/Portfolio-next"
+	},
+	{
+		"name": "Grovy Website",
+		"url": "https://grovy.space",
+		"icon": "windows",
+		"source": ""
 	}
 ]
