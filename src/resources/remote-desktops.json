@@ -126,6 +126,12 @@
 		"source": ""
 	},
 	{
+		"name": "www.chiptune.com",
+		"url": "http://www.chiptune.com",
+		"icon": "amiga",
+		"source": ""
+	},
+	{
 		"name": "Virtual Desktop",
 		"url": "http://www.virtualdesktop.org",
 		"icon": "obscure",
