@@ -991,7 +991,7 @@
 	},
 	{
 		"name": "exaequOS",
-		"url": "https://www.exaequos.com",
+		"url": "https://www.exaequos.com/start.php",
 		"icon": "obscure",
 		"source": "https://github.com/baudaux/exa-kernel"
 	},
