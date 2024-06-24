@@ -238,8 +238,8 @@ class BulbBody extends Component {
 
     if (aboutPressed) {
       textDisplayed = <span>
-    this is a public lightbulb, feel free to turn it <b>on</b> and <b>off</b>,<br />
-        you might see other people flick the switch in real time if you keep the window open!<br />
+        This public lightbulb can be turned <b>on</b> and <b>off</b>.
+        Keep the window open to see other users toggling it in real time!<br />
         <b>oh</b> and this light bulb is sometimes connected to <a href={ `${configUrls.backendUrl}/blog/websocket-to-lightbulbs` } rel='noopener noreferrer' target='_blank'>Simone's desk lamp</a>
       </span>;
     }
@@ -342,7 +342,7 @@ class BulbBody extends Component {
           active={ aboutPressed }
           onClick={ this.toggleAbout }
         >
-          <span>EXPLAIN</span>
+          <span>{ aboutPressed ? '▲' : '▼' } EXPLAIN</span>
         </Button>
       </div>
     );
