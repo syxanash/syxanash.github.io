@@ -1174,5 +1174,17 @@
 		"url": "https://grovy.space",
 		"icon": "windows",
 		"source": ""
+	},
+	{
+		"name": "ProzillaOS",
+		"url": "https://os.prozilla.dev",
+		"icon": "linux",
+		"source": "https://github.com/prozilla-os/ProzillaOS"
+	},
+	{
+		"name": "JSDesk",
+		"url": "https://mmuii.github.io/jsdesk/",
+		"icon": "unix",
+		"source": "https://github.com/MMuii/jsdesk"
 	}
 ]
