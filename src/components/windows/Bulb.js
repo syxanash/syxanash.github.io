@@ -7,7 +7,6 @@ import {
   Tooltip,
 } from 'react95';
 import $ from 'jquery';
-import Typist from 'react-typist';
 
 import SoundEffects from '../additional/SoundEffects';
 import Util from '../Util';
@@ -47,24 +46,12 @@ class BulbBody extends Component {
     this.state = {
       websocketOpen: false,
       lightOn: false,
-      bottomMessageCounter: 0,
-      doneTyping: false,
+      aboutPressed: false,
       usersConnected: undefined,
       deskLampConnected: false,
       brokenBulb: !!JSON.parse(sessionStorage.getItem('brokenBulb')),
       firstSocketMessage: true,
       pressedButton: false,
-      bottomMessages: [
-        <span>
-          this is a public lightbulb, feel free to turn it <b>on</b> and <b>off</b>
-        </span>,
-        <span>
-          you might see other people flick the switch in real time if you keep the window open!
-        </span>,
-        <span>
-          oh and this light bulb is sometimes connected to <a href={ `${configUrls.backendUrl}/blog/websocket-to-lightbulbs` } rel='noopener noreferrer' target='_blank'>Simone's desk lamp</a>
-        </span>,
-      ],
     };
   }
 
@@ -230,81 +217,40 @@ class BulbBody extends Component {
     );
   }
 
-  increaseMessageCounter = () => {
-    this.setState({ bottomMessageCounter: this.state.bottomMessageCounter + 1 });
-    this.setState({ doneTyping: false });
-  }
-
-  nextMessage = () => {
-    const { bottomMessageCounter, bottomMessages } = this.state;
-
-    this.setState({ doneTyping: true });
-
-    if (bottomMessageCounter < bottomMessages.length) {
-      this.speechCounterTimeout = setTimeout(this.increaseMessageCounter, 3000);
-    }
-  }
-
-  renderTypedText = () => {
-    const { bottomMessageCounter, doneTyping, bottomMessages } = this.state;
-
-    return (
-      doneTyping
-        ? <span>{ bottomMessages[bottomMessageCounter] }</span>
-        : <Typist
-          avgTypingDelay={ 25 }
-          cursor={ { show: false } }
-          onTypingDone={ this.nextMessage }
-        >
-          { bottomMessages[bottomMessageCounter] }
-        </Typist>
-    );
-  }
-
   renderMessagebox = () => {
     const {
-      bottomMessageCounter, bottomMessages, usersConnected, deskLampConnected,
+      usersConnected, deskLampConnected, aboutPressed,
     } = this.state;
 
-    if (bottomMessageCounter >= bottomMessages.length) {
-      let textDisplayed = 'you\'re the only one at the moment';
+    let textDisplayed = 'you\'re the only one connected at the moment';
 
-      if (usersConnected > 1) {
-        textDisplayed = `People connected: ${usersConnected}`;
-      }
-
-      if (deskLampConnected && usersConnected === 1) {
-        textDisplayed = <span>Simone's <b>desk lamp</b> is online right now :)</span>;
-      } else if (deskLampConnected && usersConnected > 1) {
-        textDisplayed = <span>
-          {textDisplayed}<br /><br />Simone's <b>desk lamp</b> is also online right now :)
-        </span>;
-      }
-
-      return (
-        <div className='typing-text-container'>
-          <Fieldset
-            label={ <img src={ usersIcon } style={ { height: '20px' } } alt="users"/> }
-          >
-            <div className='lightbulb-messages'>
-              <span>{ textDisplayed }</span>
-            </div>
-          </Fieldset>
-        </div>
-      );
+    if (usersConnected > 1) {
+      textDisplayed = `People connected: ${usersConnected}`;
     }
 
-    if (bottomMessageCounter >= bottomMessages.length) {
-      return null;
+    if (deskLampConnected && usersConnected === 1) {
+      textDisplayed = <span>Simone's <b>desk lamp</b> is online right now :)</span>;
+    } else if (deskLampConnected && usersConnected > 1) {
+      textDisplayed = <span>
+        {textDisplayed}<br /><br />Simone's <b>desk lamp</b> is also online right now :)
+      </span>;
+    }
+
+    if (aboutPressed) {
+      textDisplayed = <span>
+    this is a public lightbulb, feel free to turn it <b>on</b> and <b>off</b>,<br />
+        you might see other people flick the switch in real time if you keep the window open!<br />
+        <b>oh</b> and this light bulb is sometimes connected to <a href={ `${configUrls.backendUrl}/blog/websocket-to-lightbulbs` } rel='noopener noreferrer' target='_blank'>Simone's desk lamp</a>
+      </span>;
     }
 
     return (
       <div className='typing-text-container'>
         <Fieldset
-          label={ <img src={ questionIcon } style={ { height: '20px' } } alt="question mark"/> }
+          label={ <img src={ aboutPressed ? questionIcon : usersIcon } style={ { height: '20px' } } alt={ aboutPressed ? 'about' : 'users' }/> }
         >
           <div className='lightbulb-messages'>
-            { this.renderTypedText() }
+            { <span>{ textDisplayed }</span> }
           </div>
         </Fieldset>
       </div>
@@ -338,9 +284,15 @@ class BulbBody extends Component {
     );
   }
 
+  toggleAbout = () => {
+    const { aboutPressed } = this.state;
+
+    this.setState({ aboutPressed: !aboutPressed });
+  }
+
   render() {
     const {
-      lightOn, websocketOpen, brokenBulb,
+      lightOn, websocketOpen, brokenBulb, aboutPressed,
     } = this.state;
 
 
@@ -385,6 +337,13 @@ class BulbBody extends Component {
           </Cutout>
         </div>
         { !brokenBulb && this.renderMessagebox() }
+        <Button
+          size='sm'
+          active={ aboutPressed }
+          onClick={ this.toggleAbout }
+        >
+          <span>EXPLAIN</span>
+        </Button>
       </div>
     );
   }

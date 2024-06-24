@@ -60,10 +60,11 @@
 
 .switch-buttons-container {
   padding-top: 23px;
+  margin-bottom: 20px;
 }
 
 .typing-text-container {
-  padding-top: 20px;
+  padding-bottom: 15px;
   width: 175px;
 }
 
