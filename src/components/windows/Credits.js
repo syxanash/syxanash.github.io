@@ -109,7 +109,7 @@ class CreditsBody extends Component {
         </div>
       </TabBody>
       <div style={ { paddingTop: '15px', textAlign: 'center' } }>
-        <Button onClick={ () => Util.openWebsiteURL({ url: 'https://www.paypal.com/donate/?hosted_button_id=VCCZ37PVRT8C8' }) }><img src={ pizzaSlice } alt='pizza slice' style={ { paddingRight: '7px' } } />Wanna support me?</Button>
+        <Button onClick={ () => Util.openWebsiteURL({ url: 'https://ko-fi.com/syxanash' }) }><img src={ pizzaSlice } alt='pizza slice' style={ { paddingRight: '7px' } } />Wanna support me?</Button>
       </div>
     </div>);
   }
