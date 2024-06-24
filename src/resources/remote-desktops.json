@@ -1184,7 +1184,13 @@
 	{
 		"name": "JSDesk",
 		"url": "https://mmuii.github.io/jsdesk/",
-		"icon": "unix",
+		"icon": "obscure",
 		"source": "https://github.com/MMuii/jsdesk"
+	},
+	{
+		"name": "Kasius Next",
+		"url": "https://bobuxstation.github.io/Kasius-Next/",
+		"icon": "linux",
+		"source": "https://github.com/Bobuxstation/Kasius-Next"
 	}
 ]
