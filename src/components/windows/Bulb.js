@@ -238,8 +238,8 @@ class BulbBody extends Component {
 
     if (aboutPressed) {
       textDisplayed = <span>
-        This public lightbulb can be turned <b>on</b> and <b>off</b>.
-        Keep the window open to see other users toggling it in real time!<br />
+        This lightbulb can be turned <b>on</b> and <b>off</b>, if you keep
+        the window open you might see other users toggling it in real time!<br />
         <b>oh</b> and this light bulb is sometimes connected to <a href={ `${configUrls.backendUrl}/blog/websocket-to-lightbulbs` } rel='noopener noreferrer' target='_blank'>Simone's desk lamp</a>
       </span>;
     }
