@@ -342,7 +342,7 @@ class BulbBody extends Component {
           active={ aboutPressed }
           onClick={ this.toggleAbout }
         >
-          <span>{ aboutPressed ? '▲' : '▼' } EXPLAIN</span>
+          <span>{ aboutPressed ? '▲' : '▼' } { aboutPressed ? 'COOL' : 'EXPLAIN' }</span>
         </Button>
       </div>
     );
