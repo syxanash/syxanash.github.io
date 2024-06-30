@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import Tilt from 'react-tilt';
+import _ from 'lodash';
 import { ThemeProvider } from 'styled-components';
 import { withRouter } from 'react-router-dom';
 import {
   Button, Window, WindowHeader, WindowContent,
 } from 'react95';
 import Draggable from 'react-draggable';
+import DesktopContext from '../DesktopContext';
+import configUrls from '../resources/config-urls.json';
 import 'animate.css';
 
 import './PopupWindow.css';
@@ -37,9 +40,23 @@ class PopupWindow extends Component {
     </Button>
   );
 
+  clickMiddleButton = () => {
+    const { history, windowName } = this.props;
+    const { desktopContext } = this.context;
+
+    const currentBlogPost = _.get(desktopContext, 'blog.currentPost', undefined);
+
+    if (currentBlogPost === undefined) {
+      history.push(`/${windowName}`);
+    } else {
+      window.location.href = `${configUrls.backendUrl}/blog/${currentBlogPost}`;
+    }
+
+    this.closeCurrentWindow();
+  }
+
   renderExtraActionButtons = () => {
     const { displayWindowBody } = this.state;
-    const { windowName } = this.props;
 
     return (
       <React.Fragment>
@@ -54,11 +71,7 @@ class PopupWindow extends Component {
           size='sm'
           square
           style={ { marginRight: '3px' } }
-          onClick={ () => {
-            const { history } = this.props;
-            history.push(`/${windowName}`);
-            this.closeCurrentWindow();
-          } }
+          onClick={ this.clickMiddleButton }
         >
           <span style={ { transform: 'translateY(-1px)' } }>⌘</span>
         </Button>
@@ -153,5 +166,7 @@ class PopupWindow extends Component {
     );
   }
 }
+
+PopupWindow.contextType = DesktopContext;
 
 export default withRouter(PopupWindow);

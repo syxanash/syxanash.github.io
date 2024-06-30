@@ -22,7 +22,7 @@ blockquote {
   background-color: #ffffff;
 }
 
-.document-style {
+.blogpost-wrapper {
   /* https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -31,7 +31,6 @@ blockquote {
   word-break: break-word;
 
   padding: 15px;
-  margin-top: -20px;
 }
 
 .blog-footer-buttons {
