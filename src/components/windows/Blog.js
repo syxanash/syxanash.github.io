@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Cutout, Button, Progress, Anchor,
+  Cutout, Button, Progress, Anchor, Toolbar,
 } from 'react95';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -10,6 +10,8 @@ import DesktopContext from '../../DesktopContext';
 
 import configUrls from '../../resources/config-urls.json';
 import './Blog.css';
+
+import Util from '../Util';
 
 import htmlLinkIcon from '../../resources/icons/htmlLink.gif';
 import RSSIcon from '../../resources/icons/RSS.png';
@@ -51,6 +53,8 @@ class BlogBody extends Component {
   }
 
   componentDidMount = () => {
+    const { isFullscreen, openWindow } = this.props;
+
     this.loaderInterval = setInterval(this.increaseLoader, 20);
 
     this.updateDesktopContext({ postLoaded: undefined });
@@ -80,6 +84,10 @@ class BlogBody extends Component {
           backendResponse: errorObject,
         });
       });
+
+    if (isFullscreen) {
+      openWindow('blogPostList', true);
+    }
   }
 
   componentWillUnmount = () => {
@@ -236,11 +244,20 @@ class BlogBody extends Component {
     }
 
     return (<React.Fragment>
+      <div className='toolbar-container'>
+        <Toolbar>
+          <Button onClick={ this.openPostList } variant="menu"><img src={ calendarIcon } className='small-icon' alt="blog post list"/> Post list</Button>
+          <Button onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/rss.xml` }) } variant="menu"><img src={ RSSIcon } className='small-icon' alt="RSS icon"/> RSS</Button>
+          <Button onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/blog/${currentPost}` }) } variant="menu"><img src={ htmlLinkIcon } className='small-icon' alt="RSS icon"/> Post link</Button>
+        </Toolbar>
+      </div>
       <Cutout className='blog-cutout'>
-        <div className='document-style'>
-          <ReactMarkdown children={ backendResponse } rehypePlugins={ [rehypeRaw] } />
-          <div style={ { textAlign: 'right', paddingTop: '10px' } }>
-            <span style={ { fontWeight: 'bold', fontStyle: 'italic' } }>Posted on {publishedDate.toLocaleString('en-GB', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+        <div className='blogpost-wrapper'>
+          <div style={ { marginTop: '-20px' } }>
+            <ReactMarkdown children={ backendResponse } rehypePlugins={ [rehypeRaw] } />
+            <div style={ { textAlign: 'right', paddingTop: '10px' } }>
+              <span style={ { fontWeight: 'bold', fontStyle: 'italic' } }>Posted on {publishedDate.toLocaleString('en-GB', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+            </div>
           </div>
         </div>
       </Cutout>
@@ -280,22 +297,6 @@ class BlogBody extends Component {
               alt="right arrow"
             />
           </Button>
-        </div>
-        <div style={ { width: '100%' } }>
-          <div className='blog-footer-center-buttons'>
-            <a href={ `${configUrls.backendUrl}/rss.xml` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
-              <Button fullWidth>
-                <img src={ RSSIcon } className='small-icon' alt="RSS icon"/>
-                <figcaption><b>RSS</b></figcaption>
-              </Button>
-            </a>
-            <a href={ `${configUrls.backendUrl}/blog/${currentPost}` } style={ { width: '100%', textDecoration: 'none' } } rel='noopener noreferrer'>
-              <Button fullWidth>
-                <img src={ htmlLinkIcon } className='small-icon' alt="direct link icon"/>
-                <figcaption><b>Direct link</b></figcaption>
-              </Button>
-            </a>
-          </div>
         </div>
       </Cutout>
     </React.Fragment>);
