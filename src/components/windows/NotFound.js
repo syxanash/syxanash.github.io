@@ -53,7 +53,7 @@ class NotFoundBody extends Component {
   </React.Fragment>;
 
   renderRedirectHint = replacedLink => <React.Fragment>
-    <h1>BUT WAIT</h1>
+    <h1>WAIT</h1>
     <h2>Looks like the page has been moved <a href={ `/#/${replacedLink}` }>here</a>!</h2>
   </React.Fragment>;
 
@@ -62,8 +62,10 @@ class NotFoundBody extends Component {
 
     const replacedLink = replacedLinks.find(item => item.from === pathName);
 
+    const codeNumber = replacedLink === undefined ? 404 : 301;
+
     return (<React.Fragment>
-      <h1 style={ { textAlign: 'center', color: randomColor } }>404</h1>
+      <h1 style={ { textAlign: 'center', color: randomColor } }>{codeNumber}</h1>
 
       {
         replacedLink === undefined
