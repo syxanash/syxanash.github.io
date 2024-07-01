@@ -53,8 +53,6 @@ class BlogBody extends Component {
   }
 
   componentDidMount = () => {
-    const { isFullscreen, openWindow } = this.props;
-
     this.loaderInterval = setInterval(this.increaseLoader, 20);
 
     this.updateDesktopContext({ postLoaded: undefined });
@@ -84,10 +82,6 @@ class BlogBody extends Component {
           backendResponse: errorObject,
         });
       });
-
-    if (isFullscreen) {
-      openWindow('blogPostList', true);
-    }
   }
 
   componentWillUnmount = () => {
