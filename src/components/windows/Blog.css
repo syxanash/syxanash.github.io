@@ -1,8 +1,4 @@
 code {
-  color: #000;
-  background-color: #f8f9fa;
-  border: 1px solid #eaecf0;
-  border-radius: 2px;
   font-family: monospace,monospace;
 }
 
@@ -12,6 +8,7 @@ pre {
   white-space: -pre-wrap;
   white-space: -o-pre-wrap;
   word-wrap: break-word;
+  padding-left: 20px;
 }
 
 blockquote {
