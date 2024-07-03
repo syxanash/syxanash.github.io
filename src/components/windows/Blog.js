@@ -240,7 +240,7 @@ class BlogBody extends Component {
     return (<React.Fragment>
       <div className='toolbar-container'>
         <Toolbar>
-          <Button onClick={ this.openPostList } variant="menu"><img src={ calendarIcon } className='small-icon' alt="blog post list"/> Post list</Button>
+          <Button onClick={ this.openPostList } variant="menu"><img src={ calendarIcon } className='small-icon' alt="blog post list"/> All Posts</Button>
           <Button onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/rss.xml` }) } variant="menu"><img src={ RSSIcon } className='small-icon' alt="RSS icon"/> RSS</Button>
           <Button onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/blog/${currentPost}` }) } variant="menu"><img src={ htmlLinkIcon } className='small-icon' alt="RSS icon"/> Post link</Button>
         </Toolbar>

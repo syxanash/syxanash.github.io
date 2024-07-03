@@ -14,7 +14,7 @@ import calendarIcon from '../../resources/icons/calendar.gif';
 class BlogPostListHeader extends Component {
   render = () => (
     <React.Fragment>
-      <img src={ calendarIcon } alt='main logo' style={ { height: '15px' } }/> Blog Posts
+      <img src={ calendarIcon } alt='main logo' style={ { height: '15px' } }/> List of Posts
     </React.Fragment>
   )
 }
