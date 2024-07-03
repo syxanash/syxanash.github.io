@@ -273,8 +273,8 @@ class BlogBody extends Component {
         </div>
         <div className='blog-footer-buttons'>
           <Button fullWidth onClick={ this.openPostList }>
-            <img src={ calendarIcon } className='small-icon' alt="blog post list"/>
-            <figcaption><b>Post List</b></figcaption>
+            <img src={ calendarIcon } className='small-icon' alt="list of posts"/>
+            <figcaption><b>All Posts</b></figcaption>
           </Button>
         </div>
         <div className='blog-footer-buttons'>
