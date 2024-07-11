@@ -19,10 +19,6 @@
         "description": "this guy inspired me to make a personal website"
       },
       {
-        "url": "https://vikkio.me",
-        "description": "an old internet acquaintance :D"
-      },
-      {
         "url": "https://neave.com",
         "description": "spent way too much time on this website"
       },
@@ -113,10 +109,6 @@
       {
         "url": "https://dimden.dev",
         "description": "beautiful personal website full of interesting stuff"
-      },
-      {
-        "url": "https://fsturmat.net",
-        "description": "Felix's personal website oh and it runs on MS-DOS somehow!"
       }
     ]
   },
@@ -230,6 +222,10 @@
       {
         "url": "https://s-n-d.si",
         "description": "doomscrolling through various apocalyptic scenarios"
+      },
+      {
+        "url": "https://kry.pt",
+        "description": "I love his projects and web creations"
       }
     ]
   },
@@ -672,6 +668,10 @@
       {
         "url": "http://www.typewritten.org/Media/",
         "description": "Historical workstation desktops interface showcase"
+      },
+      {
+        "url": "https://www.youtube.com/@fsturmat",
+        "description": "Felix's YT channel, has few great vids on retro tech!"
       }
     ]
   },
