@@ -681,7 +681,7 @@
 		"name": "Puter",
 		"url": "https://puter.com",
 		"icon": "linux",
-		"source": ""
+		"source": "https://github.com/heyPuter/puter/"
 	},
 	{
 		"name": "Things",
