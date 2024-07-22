@@ -1192,5 +1192,11 @@
 		"url": "https://bobuxstation.github.io/Kasius-Next/",
 		"icon": "linux",
 		"source": "https://github.com/Bobuxstation/Kasius-Next"
+	},
+	{
+		"name": "Nestor Siré",
+		"url": "https://nestorsire.com",
+		"icon": "IBM",
+		"source": ""
 	}
 ]
