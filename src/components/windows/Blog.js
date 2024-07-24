@@ -248,7 +248,14 @@ class BlogBody extends Component {
       <Cutout className='blog-cutout'>
         <div className='blogpost-wrapper'>
           <div style={ { marginTop: '-20px' } }>
-            <ReactMarkdown children={ backendResponse } rehypePlugins={ [rehypeRaw] } />
+            <ReactMarkdown components={
+              {
+                h1(props) {
+                  const { node, ...rest } = props;
+                  return <h1 className='blog-post-title' { ...rest } >{props.children}</h1>;
+                },
+              }
+            } children={ backendResponse } rehypePlugins={ [rehypeRaw] } />
             <div style={ { textAlign: 'right', paddingTop: '10px' } }>
               <span style={ { fontWeight: 'bold', fontStyle: 'italic' } }>Posted on {publishedDate.toLocaleString('en-GB', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
             </div>
