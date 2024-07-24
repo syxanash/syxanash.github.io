@@ -10,7 +10,7 @@ import projectsList from '../../resources/projects-list.json';
 
 import './Projects.css';
 
-const PROMPT_CHARS = ['>', '$', '#', ']', 'é', 'ZX'];
+const PROMPT_CHARS = ['>', '$', '#', ']', 'é', 'ZX', ''];
 
 class ProjectsHeader extends Component {
   render = () => (
@@ -102,7 +102,7 @@ class ProjectsBody extends Component {
     };
 
     commands.goto = () => {
-      this.setState({ shellOutput: 'Hokey religions and ancient GOTOs are no match for a good blaster at your side, kid' });
+      this.setState({ shellOutput: 'Hokey religions and ancient GOTOs are no match for a good Perl interpreter at your side, kid' });
     };
 
     commands.reboot = () => {
