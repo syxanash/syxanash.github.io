@@ -985,7 +985,7 @@
 	},
 	{
 		"name": "Rimet Desktop",
-		"url": "http://geocities.ws/rimet/",
+		"url": "http://geocities.ws/nooz/rimet/",
 		"icon": "IBM",
 		"source": ""
 	},
@@ -1198,5 +1198,23 @@
 		"url": "https://nestorsire.com",
 		"icon": "IBM",
 		"source": ""
+	},
+	{
+		"name": "mountainOS",
+		"url": "https://broimluna.github.io/mountainOS/",
+		"icon": "windows_new",
+		"source": "https://github.com/broimluna/mountainOS"
+	},
+	{
+		"name": "skyOS",
+		"url": "https://broimluna.github.io/skyos/",
+		"icon": "windows_new",
+		"source": "https://github.com/broimluna/skyos"
+	},
+	{
+		"name": "mellyeliu",
+		"url": "https://mellyeliu.online",
+		"icon": "obscure",
+		"source": "https://github.com/mellyeliu/new-personal-website"
 	}
 ]
