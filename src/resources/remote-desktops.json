@@ -578,7 +578,7 @@
 	{
 		"name": "Win11React",
 		"url": "https://win11.blueedge.me",
-		"icon": "windows_new",
+		"icon": "windows11",
 		"source": "https://github.com/blueedgetechno/win11React"
 	},
 	{
@@ -662,7 +662,7 @@
 	{
 		"name": "Windows 11 in Preact",
 		"url": "https://win11.vercel.app",
-		"icon": "windows_new",
+		"icon": "windows11",
 		"source": "https://github.com/piyushsuthar/windows-11-web"
 	},
 	{
@@ -818,7 +818,7 @@
 	{
 		"name": "Win11 Svelte",
 		"url": "https://win11-svelte.vercel.app",
-		"icon": "windows_new",
+		"icon": "windows11",
 		"source": "https://github.com/yashash-pugalia/win11-svelte"
 	},
 	{
@@ -854,7 +854,7 @@
 	{
 		"name": "Windows 11 Web",
 		"url": "https://rajaniraiyn.github.io/windows11/",
-		"icon": "windows_new",
+		"icon": "windows11",
 		"source": "https://github.com/Rajaniraiyn/windows11"
 	},
 	{
@@ -1202,7 +1202,7 @@
 	{
 		"name": "mountainOS",
 		"url": "https://broimluna.github.io/mountainOS/",
-		"icon": "windows_new",
+		"icon": "windows11",
 		"source": "https://github.com/broimluna/mountainOS"
 	},
 	{
