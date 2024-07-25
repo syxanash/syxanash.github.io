@@ -102,7 +102,7 @@ class ProjectsBody extends Component {
     };
 
     commands.goto = () => {
-      this.setState({ shellOutput: 'Hokey religions and ancient GOTOs are no match for a good Perl interpreter at your side, kid' });
+      this.setState({ shellOutput: 'Hokey religions and ancient GOTOs are no match for a good perl interpreter at your side, kid' });
     };
 
     commands.reboot = () => {
