@@ -46,10 +46,10 @@ class PopupWindow extends Component {
 
     const currentBlogPost = _.get(desktopContext, 'blog.currentPost', undefined);
 
-    if (currentBlogPost === undefined) {
-      history.push(`/${windowName}`);
-    } else {
+    if (windowName === 'blog' && currentBlogPost !== undefined) {
       window.location.href = `${configUrls.backendUrl}/blog/${currentBlogPost}`;
+    } else {
+      history.push(`/${windowName}`);
     }
 
     this.closeCurrentWindow();
