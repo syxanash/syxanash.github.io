@@ -9,7 +9,7 @@
 		"name": "Nightwave Plaza",
 		"url": "https://plaza.one",
 		"icon": "windows",
-		"source": ""
+		"source": "https://github.com/nightwaveplaza"
 	},
 	{
 		"name": "Poolsuite",
@@ -434,7 +434,7 @@
 	{
 		"name": "MSOS Concept",
 		"url": "https://msos.midspike.com",
-		"icon": "windows_new",
+		"icon": "obscure",
 		"source": ""
 	},
 	{
