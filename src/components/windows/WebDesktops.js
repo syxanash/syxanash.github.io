@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 
 import {
-  Cutout, Toolbar, Button, Fieldset,
+  Cutout, Toolbar, Button, Fieldset, Checkbox,
 } from 'react95';
 
 import Util from '../Util';
@@ -16,6 +16,9 @@ import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 import infoIcon from '../../resources/icons/info.png';
 import sourceIcon from '../../resources/icons/script.png';
 import pizzaSlice from '../../resources/icons/slice.gif';
+import gearIcon from '../../resources/icons/gear.gif';
+
+import blackCursor from '../../resources/icons/pointers/cursor.gif';
 
 const webDesktopsIcons = require.context('../../resources/icons/webdesktops', true);
 
@@ -32,6 +35,64 @@ class WebDesktopsBody extends Component {
     desktopsList: _.shuffle(remoteDesktops),
     sitesExplored: 0,
     showHelp: localStorage.getItem('showInfoFieldset') === null,
+    filterView: false,
+    filterMap: [
+      {
+        key: 'windows',
+        selected: true,
+        description: 'Windows 9x',
+      },
+      {
+        key: 'windows_new',
+        selected: true,
+        description: 'Windows (XP/Vista/7/10)',
+      },
+      {
+        key: 'windows11',
+        selected: true,
+        description: 'Windows 11',
+      },
+      {
+        key: 'mac',
+        selected: true,
+        description: 'Classic Mac OS',
+      },
+      {
+        key: 'mac_new',
+        selected: true,
+        description: 'Mac OS X',
+      },
+      {
+        key: 'linux',
+        selected: true,
+        description: 'GNU/Linux',
+      },
+      {
+        key: 'unix',
+        selected: true,
+        description: 'Unix/Solaris',
+      },
+      {
+        key: 'amiga',
+        selected: true,
+        description: 'Amiga',
+      },
+      {
+        key: 'next',
+        selected: true,
+        description: 'NeXTSTEP',
+      },
+      {
+        key: 'IBM',
+        selected: true,
+        description: 'IBM (OS/2)',
+      },
+      {
+        key: 'obscure',
+        selected: true,
+        description: 'unidentified OS',
+      },
+    ],
   }
 
   componentDidMount() {
@@ -69,7 +130,7 @@ class WebDesktopsBody extends Component {
       <div className='computer-icon'>
         <img style={ { height: '65px' } } src={ webDesktopsIcons(`./${icon}.gif`) } alt='single desktop icon' />
       </div>
-      <div className='website-favicon' style={ { left: icon === 'windows_new' ? '5px' : '1px',  bottom: icon === 'windows11' ? '57px' : '' } }>
+      <div className='website-favicon' style={ { left: icon === 'windows_new' ? '5px' : '1px', bottom: icon === 'windows11' ? '57px' : '' } }>
         <img style={ { height: '25px' } } src={ `https://s2.googleusercontent.com/s2/favicons?domain_url=${url}` } alt='computer icon' />
       </div>
       <div className='website-name'>
@@ -78,10 +139,19 @@ class WebDesktopsBody extends Component {
     </a>
   )
 
-  openRandomURL = () => {
-    const { desktopsList, sitesExplored } = this.state;
+  getFilteredDesktops = () => {
+    const { filterMap, desktopsList } = this.state;
 
-    const linksListUrls = desktopsList.map(website => website.url);
+    const selectedTypes = filterMap.filter(({ selected }) => selected).map(({ key }) => key);
+    return desktopsList.filter(desktop => selectedTypes.includes(desktop.icon));
+  }
+
+  openRandomURL = () => {
+    const { sitesExplored } = this.state;
+
+    const filteredDesktops = this.getFilteredDesktops();
+
+    const linksListUrls = filteredDesktops.map(({ url }) => url);
     let finalList = linksListUrls;
 
     const listExplored = JSON.parse(localStorage.getItem('webdesktopsExplored'));
@@ -97,9 +167,13 @@ class WebDesktopsBody extends Component {
   }
 
   renderAllIcons = () => {
-    const { desktopsList } = this.state;
+    const filteredDesktops = this.getFilteredDesktops();
 
-    const desktopIcons = desktopsList.map(website => (
+    if (filteredDesktops.length === 0) {
+      return <h1 style={ { textAlign: 'center' } }>Adjust the filter to display more websites...</h1>;
+    }
+
+    const desktopIcons = filteredDesktops.map(website => (
       <div
         className='single-icon'
         key={ `icon_${website.name}` }
@@ -125,6 +199,71 @@ class WebDesktopsBody extends Component {
     );
   }
 
+  handleCheckboxChange = (e) => {
+    const { filterMap } = this.state;
+
+    const osTypeSelected = e.target.value;
+    const mapIndex = filterMap.findIndex(({ key }) => key === osTypeSelected);
+
+    const currentValue = filterMap[mapIndex].selected;
+    const newFilterMap = _.set(filterMap, `[${mapIndex}].selected`, !currentValue);
+
+    this.setState({
+      filterMap: newFilterMap,
+    });
+  }
+
+  checkAll = (check) => {
+    const { filterMap } = this.state;
+    const newFilterMap = filterMap.map(osType => ({
+      ...osType,
+      selected: check,
+    }));
+
+    this.setState({ filterMap: newFilterMap });
+  }
+
+  renderCheckBoxes = () => {
+    const { filterMap } = this.state;
+
+    return filterMap.map(osType => (
+      <Checkbox
+        key={ `checkbox_${osType.key}` }
+        value={ osType.key }
+        label={ osType.description }
+        checked={ osType.selected }
+        onChange={ this.handleCheckboxChange }
+        style={ { marginRight: '5px', marginLeft: '5px', cursor: `url(${blackCursor}), auto` } }
+      />
+    ));
+  };
+
+  renderFilterView = () => {
+    const { filterView } = this.state;
+
+    const totalDesktops = this.getFilteredDesktops().length;
+
+    return (
+      <div style={ { paddingBottom: '10px', display: filterView ? 'block' : 'none', fontStyle: 'bold' } }>
+        <Fieldset label={ `Filter by [${totalDesktops}] ` } style={ { marginTop: '15px' } }>
+          <div className='checkbox-container'>
+            { this.renderCheckBoxes() }
+          </div>
+          <div className='filter-buttons-container'>
+            <div className='filter-buttons'>
+              <Button size={ 'md' } onClick={ () => this.checkAll(true) }>Check All</Button>
+              <Button size={ 'md' } onClick={ () => this.checkAll(false) }>Uncheck All</Button>
+            </div>
+          </div>
+        </Fieldset>
+      </div>
+    );
+  }
+
+  toggleFilterView = () => {
+    this.setState({ filterView: !this.state.filterView });
+  }
+
   toggleShowHelp = () => {
     const firstDisplay = JSON.parse(localStorage.getItem('showInfoFieldset')) === null;
     if (firstDisplay) {
@@ -134,17 +273,21 @@ class WebDesktopsBody extends Component {
   }
 
   render = () => {
-    const { desktopsList, sitesExplored, showHelp } = this.state;
+    const {
+      desktopsList, sitesExplored, showHelp, filterView, filterMap,
+    } = this.state;
 
     const exploredPercentage = Math.floor((sitesExplored * 100) / desktopsList.length);
+    const osTypesSelected = filterMap.filter(({ selected }) => selected).length;
 
     return (
       <React.Fragment>
         <div className='toolbar-container'>
-          <Toolbar>
-            <Button onClick={ this.openRandomURL } variant="menu"><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
+          <Toolbar style={ { display: 'flex', flexWrap: 'wrap' } }>
+            <Button onClick={ this.openRandomURL } variant="menu" disabled={ osTypesSelected === 0 }><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
+            <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu"><img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filter</Button>
             <Button onClick={ () => Util.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) } variant="menu"><img src={ sourceIcon } alt='hyperlink' style={ { paddingRight: '4px', height: '17px' } } />Contribute</Button>
-            { Util.isMobile() ? null : <Button onClick={ () => Util.openWebsiteURL({ url: 'https://ko-fi.com/syxanash' }) } variant="menu"><img src={ pizzaSlice } alt='hyperlink' style={ { paddingRight: '7px' } } />Donate</Button> }
+            <Button onClick={ () => Util.openWebsiteURL({ url: 'https://ko-fi.com/syxanash' }) } variant="menu"><img src={ pizzaSlice } alt='hyperlink' style={ { paddingRight: '7px' } } />Donate</Button>
             <Button onClick={ this.toggleShowHelp } active={ showHelp } variant="menu"><img src={ infoIcon } alt='info' style={ { paddingRight: '4px' } } />About</Button>
           </Toolbar>
         </div>
@@ -156,6 +299,7 @@ class WebDesktopsBody extends Component {
           </Fieldset>
           { this.renderMobileMessage() }
         </div>
+        { this.renderFilterView() }
         <Cutout className='awesome-gui-cutoutbg'>
           <div className='awesome-gui-icons-container'>
             {this.renderAllIcons()}

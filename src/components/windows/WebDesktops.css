@@ -30,6 +30,21 @@
   width: 90px;
 }
 
+.checkbox-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.filter-buttons-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 5px;
+}
+
 @media screen and (max-width: 865px) {
   .single-icon {
     padding: 5px;
