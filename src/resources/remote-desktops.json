@@ -1216,5 +1216,11 @@
 		"url": "https://mellyeliu.online",
 		"icon": "obscure",
 		"source": "https://github.com/mellyeliu/new-personal-website"
+	},
+	{
+		"name": "GopalOS",
+		"url": "https://cerebraldatabank.neocities.org/gopalos",
+		"icon": "linux",
+		"source": ""
 	}
 ]
