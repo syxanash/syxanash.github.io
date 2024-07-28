@@ -252,7 +252,8 @@ class WebDesktopsBody extends Component {
           <div className='filter-buttons-container'>
             <div className='filter-buttons'>
               <Button size={ 'md' } onClick={ () => this.checkAll(true) }>Check All</Button>
-              <Button size={ 'md' } onClick={ () => this.checkAll(false) }>Uncheck All</Button>
+              <Button size={ 'md' } onClick={ () => this.checkAll(false) } style={ { marginRight: '15px' } }>Uncheck All</Button>
+              <Button size={ 'md' } onClick={ this.toggleFilterView } style={ { width: '100px' } }>Ok</Button>
             </div>
           </div>
         </Fieldset>
