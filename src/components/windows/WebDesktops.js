@@ -90,7 +90,7 @@ class WebDesktopsBody extends Component {
       {
         key: 'obscure',
         selected: true,
-        description: 'unidentified OS',
+        description: 'Unknown OS',
       },
     ],
   }
