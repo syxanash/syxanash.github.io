@@ -72,7 +72,7 @@
 		"source": ""
 	},
 	{
-		"name": "OS.js Demonstration",
+		"name": "OS.js",
 		"url": "https://demo.os-js.org",
 		"icon": "linux",
 		"source": "https://github.com/os-js/OS.js"
