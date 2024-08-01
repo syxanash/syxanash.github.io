@@ -1216,5 +1216,11 @@
 		"url": "https://cerebraldatabank.neocities.org/gopalos",
 		"icon": "linux",
 		"source": ""
+	},
+	{
+		"name": "Windows 12 Web Edition",
+		"url": "https://tjy-gitnub.github.io/win12/desktop.html",
+		"icon": "windows11",
+		"source": "https://github.com/tjy-gitnub/win12/blob/main/readme/README_en_us.md"
 	}
 ]
