@@ -1222,5 +1222,17 @@
 		"url": "https://tjy-gitnub.github.io/win12/desktop.html",
 		"icon": "windows11",
 		"source": "https://github.com/tjy-gitnub/win12/blob/main/readme/README_en_us.md"
+	},
+	{
+		"name": "KOD Cloud",
+		"url": "https://demo.kodcloud.com",
+		"icon": "linux",
+		"source": "https://github.com/kalcaddle/KodExplorer"
+	},
+	{
+		"name": "The Little Green Desktop",
+		"url": "https://www.atari.st",
+		"icon": "obscure",
+		"source": ""
 	}
 ]
