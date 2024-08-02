@@ -78,6 +78,11 @@ class WebDesktopsBody extends Component {
         description: 'Amiga',
       },
       {
+        key: 'atari',
+        selected: true,
+        description: 'Atari ST',
+      },
+      {
         key: 'next',
         selected: true,
         description: 'NeXTSTEP',

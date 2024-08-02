@@ -308,7 +308,7 @@
 	{
 		"name": "Repeater",
 		"url": "https://repeater.space",
-		"icon": "mac",
+		"icon": "atari",
 		"source": ""
 	},
 	{
@@ -362,7 +362,7 @@
 	{
 		"name": "Gustavo Chico",
 		"url": "https://gustavochico.com/desktop",
-		"icon": "mac",
+		"icon": "atari",
 		"source": ""
 	},
 	{
@@ -524,7 +524,7 @@
 	{
 		"name": "tildeOS",
 		"url": "https://tilde.town/~selfsame/",
-		"icon": "mac",
+		"icon": "atari",
 		"source": ""
 	},
 	{
@@ -1232,7 +1232,7 @@
 	{
 		"name": "The Little Green Desktop",
 		"url": "https://www.atari.st",
-		"icon": "obscure",
+		"icon": "atari",
 		"source": ""
 	}
 ]
