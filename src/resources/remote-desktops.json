@@ -1110,6 +1110,12 @@
 		"source": "https://github.com/PicturElements/picturelements.github.io"
 	},
 	{
+		"name": "Tansoftware OS",
+		"url": "https://tansoftware.com/os",
+		"icon": "mac_new",
+		"source": ""
+	},
+	{
 		"name": "Brunc.io",
 		"url": "https://brunc.io",
 		"icon": "mac",
