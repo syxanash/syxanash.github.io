@@ -38,62 +38,62 @@ class WebDesktopsBody extends Component {
     filterView: false,
     filterMap: [
       {
-        key: 'windows',
+        filename: 'windows.gif',
         selected: true,
         description: 'Windows 9x',
       },
       {
-        key: 'windows_new',
+        filename: 'windows_new.png',
         selected: true,
         description: 'Windows (XP/Vista/7/10)',
       },
       {
-        key: 'windows11',
+        filename: 'windows11.gif',
         selected: true,
         description: 'Windows 11',
       },
       {
-        key: 'mac',
+        filename: 'mac.gif',
         selected: true,
         description: 'Classic Mac OS',
       },
       {
-        key: 'mac_new',
+        filename: 'mac_new.gif',
         selected: true,
         description: 'Mac OS X',
       },
       {
-        key: 'linux',
+        filename: 'linux.gif',
         selected: true,
         description: 'GNU/Linux',
       },
       {
-        key: 'unix',
+        filename: 'unix.gif',
         selected: true,
         description: 'Unix/Solaris',
       },
       {
-        key: 'amiga',
+        filename: 'amiga.gif',
         selected: true,
         description: 'Amiga',
       },
       {
-        key: 'atari',
+        filename: 'atari.gif',
         selected: true,
         description: 'Atari ST',
       },
       {
-        key: 'next',
+        filename: 'next.gif',
         selected: true,
         description: 'NeXTSTEP',
       },
       {
-        key: 'IBM',
+        filename: 'IBM.gif',
         selected: true,
         description: 'IBM (OS/2)',
       },
       {
-        key: 'obscure',
+        filename: 'obscure.gif',
         selected: true,
         description: 'Unknown OS',
       },
@@ -133,7 +133,7 @@ class WebDesktopsBody extends Component {
   renderSingleComputerIcon = ({ url, name, icon }) => (
     <a className='website-link' href={ url } target='_blank' onClick={ () => this.registerWebsite(url) } rel='noopener noreferrer'>
       <div className='computer-icon'>
-        <img style={ { height: '65px' } } src={ webDesktopsIcons(`./${icon}.gif`) } alt='single desktop icon' />
+        <img style={ { height: '65px' } } src={ webDesktopsIcons(`./${icon}`) } alt='single desktop icon' />
       </div>
       <div className='website-favicon' style={ { left: icon === 'windows_new' ? '7px' : '1px', bottom: icon === 'windows11' ? '57px' : '' } }>
         <img style={ { height: '25px' } } src={ `https://s2.googleusercontent.com/s2/favicons?domain_url=${url}` } alt='computer icon' />
@@ -147,7 +147,8 @@ class WebDesktopsBody extends Component {
   getFilteredDesktops = () => {
     const { filterMap, desktopsList } = this.state;
 
-    const selectedTypes = filterMap.filter(({ selected }) => selected).map(({ key }) => key);
+    const selectedTypes = filterMap.filter(({ selected }) => selected)
+      .map(({ filename }) => filename);
     return desktopsList.filter(desktop => selectedTypes.includes(desktop.icon));
   }
 
@@ -208,7 +209,7 @@ class WebDesktopsBody extends Component {
     const { filterMap } = this.state;
 
     const osTypeSelected = e.target.value;
-    const mapIndex = filterMap.findIndex(({ key }) => key === osTypeSelected);
+    const mapIndex = filterMap.findIndex(({ filename }) => filename === osTypeSelected);
 
     const currentValue = filterMap[mapIndex].selected;
     const newFilterMap = _.set(filterMap, `[${mapIndex}].selected`, !currentValue);
@@ -233,8 +234,8 @@ class WebDesktopsBody extends Component {
 
     return filterMap.map(osType => (
       <Checkbox
-        key={ `checkbox_${osType.key}` }
-        value={ osType.key }
+        key={ `checkbox_${osType.filename}` }
+        value={ osType.filename }
         label={ osType.description }
         checked={ osType.selected }
         onChange={ this.handleCheckboxChange }
