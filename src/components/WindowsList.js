@@ -10,6 +10,7 @@ import { BlogHeader, BlogBody } from './windows/Blog';
 import { BlogPostListHeader, BlogPostListBody } from './windows/BlogPostList';
 import { CreditsHeader, CreditsBody } from './windows/Credits';
 import { WebDesktopsHeader, WebDesktopsBody } from './windows/WebDesktops';
+import { WebDesktopsAboutHeader, WebDesktopsAboutBody } from './windows/WebDesktopsAbout';
 import { GabrieleHeader, GabrieleBody } from './windows/Gabriele';
 import { OSInfoWindowHeader, OSInfoWindowBody } from './windows/OSInfoWindow';
 import { FixHeader, FixBody } from './windows/Fix';
@@ -125,6 +126,19 @@ export default function WindowsList() {
       focused: false,
       header: WebDesktopsHeader,
       body: WebDesktopsBody,
+      windowTheme: PippoTheme,
+      unfocusedTheme: PippoDistracted,
+    },
+    webdesktopsAbout: {
+      hasFullScreen: false,
+      hasCustomBody: false,
+      tiltAnimation: false,
+      canCloseWindow: true,
+      hasScreensaver: true,
+      opened: false,
+      focused: false,
+      header: WebDesktopsAboutHeader,
+      body: WebDesktopsAboutBody,
       windowTheme: PippoTheme,
       unfocusedTheme: PippoDistracted,
     },

@@ -11,13 +11,9 @@ import './WebDesktops.css';
 import remoteDesktops from '../../resources/remote-desktops.json';
 
 import mainWindowIcon from '../../resources/icons/webdesktops.gif';
-import mobileWarningIcon from '../../resources/icons/mobilewarning.gif';
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 import infoIcon from '../../resources/icons/info.png';
-import sourceIcon from '../../resources/icons/script.png';
-import pizzaSlice from '../../resources/icons/slice.gif';
 import gearIcon from '../../resources/icons/gear.gif';
-
 import blackCursor from '../../resources/icons/pointers/cursor.gif';
 
 const webDesktopsIcons = require.context('../../resources/icons/webdesktops', true);
@@ -34,7 +30,6 @@ class WebDesktopsBody extends Component {
   state = {
     desktopsList: _.shuffle(remoteDesktops),
     sitesExplored: 0,
-    showHelp: localStorage.getItem('showInfoFieldset') === null,
     filterView: false,
     filterMap: [
       {
@@ -101,6 +96,8 @@ class WebDesktopsBody extends Component {
   }
 
   componentDidMount() {
+    const { openWindow } = this.props;
+
     if (localStorage.getItem('webdesktopsExplored') === null) {
       localStorage.setItem('webdesktopsExplored', JSON.stringify([]));
     } else {
@@ -117,6 +114,18 @@ class WebDesktopsBody extends Component {
       }
 
       this.setState({ sitesExplored: listExplored.length });
+    }
+
+    if (localStorage.getItem('showInfoFieldset') === null) {
+      localStorage.setItem('showInfoFieldset', false);
+      openWindow('webdesktopsAbout');
+    }
+  }
+
+  componentWillUnmount = () => {
+    const { closeWindow, isWindowOpened } = this.props;
+    if (isWindowOpened('webdesktopsAbout')) {
+      closeWindow('webdesktopsAbout');
     }
   }
 
@@ -191,20 +200,6 @@ class WebDesktopsBody extends Component {
     return desktopIcons;
   }
 
-  renderMobileMessage = () => {
-    if (!Util.isMobile()) {
-      return null;
-    }
-
-    return (
-      <Fieldset>
-        <img src={ mobileWarningIcon } alt='mobile warning icon' style={ { float: 'left', paddingRight: '15px' } } />
-        While some of these websites offer great mobile layouts I recommend
-        exploring this list using a <b>desktop browser</b> (duh!)
-      </Fieldset>
-    );
-  }
-
   handleCheckboxChange = (e) => {
     const { filterMap } = this.state;
 
@@ -271,17 +266,10 @@ class WebDesktopsBody extends Component {
     this.setState({ filterView: !this.state.filterView });
   }
 
-  toggleShowHelp = () => {
-    const firstDisplay = JSON.parse(localStorage.getItem('showInfoFieldset')) === null;
-    if (firstDisplay) {
-      localStorage.setItem('showInfoFieldset', false);
-    }
-    this.setState({ showHelp: !this.state.showHelp });
-  }
-
   render = () => {
+    const { openWindow } = this.props;
     const {
-      desktopsList, sitesExplored, showHelp, filterView, filterMap,
+      desktopsList, sitesExplored, filterView, filterMap,
     } = this.state;
 
     const exploredPercentage = Math.floor((sitesExplored * 100) / desktopsList.length);
@@ -293,18 +281,8 @@ class WebDesktopsBody extends Component {
           <Toolbar style={ { display: 'flex', flexWrap: 'wrap' } }>
             <Button onClick={ this.openRandomURL } variant="menu" disabled={ osTypesSelected === 0 }><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
             <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu"><img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filter</Button>
-            <Button onClick={ () => Util.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) } variant="menu"><img src={ sourceIcon } alt='hyperlink' style={ { paddingRight: '4px', height: '17px' } } />Contribute</Button>
-            <Button onClick={ () => Util.openWebsiteURL({ url: 'https://ko-fi.com/syxanash' }) } variant="menu"><img src={ pizzaSlice } alt='hyperlink' style={ { paddingRight: '7px' } } />Donate</Button>
-            <Button onClick={ this.toggleShowHelp } active={ showHelp } variant="menu"><img src={ infoIcon } alt='info' style={ { paddingRight: '4px' } } />About</Button>
+            <Button onClick={ () => openWindow('webdesktopsAbout', true) } variant="menu"><img src={ infoIcon } alt='info' style={ { paddingRight: '4px' } } />About</Button>
           </Toolbar>
-        </div>
-        <div style={ { paddingBottom: '10px', display: showHelp ? 'block' : 'none', fontStyle: 'bold' } }>
-          <Fieldset>
-            This is a hand curated directory of web apps, portfolios and experiments
-            that mimic the appearance and functionality of
-            desktop operating systems, these are commonly known as <b>Web Desktops</b>
-          </Fieldset>
-          { this.renderMobileMessage() }
         </div>
         { this.renderFilterView() }
         <Cutout className='awesome-gui-cutoutbg'>

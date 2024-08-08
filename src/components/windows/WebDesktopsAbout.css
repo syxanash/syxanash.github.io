@@ -1,0 +1,11 @@
+.bottom-buttons-container {
+  padding-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bottom-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
