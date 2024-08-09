@@ -214,6 +214,14 @@ class WebDesktopsBody extends Component {
     this.setState({ boldNumber: false });
   }
 
+  setBoldTimeout = () => {
+    if (this.boldTimeout !== undefined) {
+      clearTimeout(this.boldTimeout);
+    }
+
+    this.boldTimeout = setTimeout(this.setBoldNumber, 500);
+  }
+
   handleButtonFilter = (filenameSelected) => {
     const { filterMap } = this.state;
 
@@ -223,7 +231,7 @@ class WebDesktopsBody extends Component {
     const currentValue = filterMap[mapIndex].selected;
     const newFilterMap = _.set(filterMap, `[${mapIndex}].selected`, !currentValue);
 
-    this.boldTimeout = setTimeout(this.setBoldNumber, 500);
+    this.setBoldTimeout();
 
     this.setState({
       boldNumber: true,
@@ -238,7 +246,7 @@ class WebDesktopsBody extends Component {
       selected: check,
     }));
 
-    this.boldTimeout = setTimeout(this.setBoldNumber, 500);
+    this.setBoldTimeout();
 
     this.setState({ filterMap: newFilterMap, boldNumber: true });
   }
