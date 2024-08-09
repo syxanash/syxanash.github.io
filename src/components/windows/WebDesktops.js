@@ -26,72 +26,79 @@ class WebDesktopsHeader extends Component {
 }
 
 class WebDesktopsBody extends Component {
-  state = {
-    desktopsList: _.shuffle(remoteDesktops),
-    sitesExplored: 0,
-    filterView: false,
-    filterMap: [
-      {
-        filename: 'windows.gif',
-        selected: true,
-        description: 'Windows 9x',
-      },
-      {
-        filename: 'windows_new.png',
-        selected: true,
-        description: 'XP/Vista/7/10',
-      },
-      {
-        filename: 'windows11.gif',
-        selected: true,
-        description: 'Windows 11',
-      },
-      {
-        filename: 'mac.gif',
-        selected: true,
-        description: 'Classic Mac OS',
-      },
-      {
-        filename: 'mac_new.gif',
-        selected: true,
-        description: 'Mac OS X',
-      },
-      {
-        filename: 'linux.gif',
-        selected: true,
-        description: 'GNU/Linux',
-      },
-      {
-        filename: 'unix.gif',
-        selected: true,
-        description: 'Unix/Solaris',
-      },
-      {
-        filename: 'amiga.gif',
-        selected: true,
-        description: 'Amiga',
-      },
-      {
-        filename: 'atari.gif',
-        selected: true,
-        description: 'Atari ST',
-      },
-      {
-        filename: 'next.gif',
-        selected: true,
-        description: 'NeXTSTEP',
-      },
-      {
-        filename: 'IBM.gif',
-        selected: true,
-        description: 'IBM (OS/2)',
-      },
-      {
-        filename: 'obscure.gif',
-        selected: true,
-        description: 'Unknown OS',
-      },
-    ],
+  constructor(props) {
+    super(props);
+
+    this.boldTimeout = undefined;
+
+    this.state = {
+      desktopsList: _.shuffle(remoteDesktops),
+      sitesExplored: 0,
+      boldNumber: false,
+      filterView: false,
+      filterMap: [
+        {
+          filename: 'windows.gif',
+          selected: true,
+          description: 'Windows 9x',
+        },
+        {
+          filename: 'windows_new.png',
+          selected: true,
+          description: 'XP/Vista/7/10',
+        },
+        {
+          filename: 'windows11.gif',
+          selected: true,
+          description: 'Windows 11',
+        },
+        {
+          filename: 'mac.gif',
+          selected: true,
+          description: 'Classic Mac OS',
+        },
+        {
+          filename: 'mac_new.gif',
+          selected: true,
+          description: 'Mac OS X',
+        },
+        {
+          filename: 'linux.gif',
+          selected: true,
+          description: 'GNU/Linux',
+        },
+        {
+          filename: 'unix.gif',
+          selected: true,
+          description: 'Unix/Solaris',
+        },
+        {
+          filename: 'amiga.gif',
+          selected: true,
+          description: 'Amiga',
+        },
+        {
+          filename: 'atari.gif',
+          selected: true,
+          description: 'Atari ST',
+        },
+        {
+          filename: 'next.gif',
+          selected: true,
+          description: 'NeXTSTEP',
+        },
+        {
+          filename: 'IBM.gif',
+          selected: true,
+          description: 'IBM (OS/2)',
+        },
+        {
+          filename: 'obscure.gif',
+          selected: true,
+          description: 'Unknown OS',
+        },
+      ],
+    };
   }
 
   componentDidMount() {
@@ -125,6 +132,10 @@ class WebDesktopsBody extends Component {
     const { closeWindow, isWindowOpened } = this.props;
     if (isWindowOpened('webdesktopsAbout')) {
       closeWindow('webdesktopsAbout');
+    }
+
+    if (this.boldTimeout !== undefined) {
+      clearTimeout(this.boldTimeout);
     }
   }
 
@@ -199,6 +210,10 @@ class WebDesktopsBody extends Component {
     return desktopIcons;
   }
 
+  setBoldNumber = () => {
+    this.setState({ boldNumber: false });
+  }
+
   handleButtonFilter = (filenameSelected) => {
     const { filterMap } = this.state;
 
@@ -208,7 +223,10 @@ class WebDesktopsBody extends Component {
     const currentValue = filterMap[mapIndex].selected;
     const newFilterMap = _.set(filterMap, `[${mapIndex}].selected`, !currentValue);
 
+    this.boldTimeout = setTimeout(this.setBoldNumber, 500);
+
     this.setState({
+      boldNumber: true,
       filterMap: newFilterMap,
     });
   }
@@ -220,7 +238,9 @@ class WebDesktopsBody extends Component {
       selected: check,
     }));
 
-    this.setState({ filterMap: newFilterMap });
+    this.boldTimeout = setTimeout(this.setBoldNumber, 500);
+
+    this.setState({ filterMap: newFilterMap, boldNumber: true });
   }
 
   renderButtonsFilter = () => {
@@ -237,13 +257,13 @@ class WebDesktopsBody extends Component {
   };
 
   renderFilterView = () => {
-    const { filterView } = this.state;
+    const { filterView, boldNumber } = this.state;
 
     const totalDesktops = this.getFilteredDesktops().length;
 
     return (
       <div style={ { paddingBottom: '10px', display: filterView ? 'block' : 'none', fontStyle: 'bold' } }>
-        <Fieldset label={ `Filter by [${totalDesktops}] ` } style={ { marginTop: '15px' } }>
+        <Fieldset label={ <span>Filter by {boldNumber ? <b>[{totalDesktops}]</b> : `[${totalDesktops}]` }</span> } style={ { marginTop: '15px' } }>
           <div className='checkbox-container'>
             { this.renderButtonsFilter() }
           </div>
