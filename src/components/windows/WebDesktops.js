@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 
 import {
-  Cutout, Toolbar, Button, Fieldset, Checkbox,
+  Cutout, Toolbar, Button, Fieldset,
 } from 'react95';
 
 import Util from '../Util';
@@ -14,7 +14,6 @@ import mainWindowIcon from '../../resources/icons/webdesktops.gif';
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 import infoIcon from '../../resources/icons/info.png';
 import gearIcon from '../../resources/icons/gear.gif';
-import blackCursor from '../../resources/icons/pointers/cursor.gif';
 
 const webDesktopsIcons = require.context('../../resources/icons/webdesktops', true);
 
@@ -40,7 +39,7 @@ class WebDesktopsBody extends Component {
       {
         filename: 'windows_new.png',
         selected: true,
-        description: 'Windows (XP/Vista/7/10)',
+        description: 'XP/Vista/7/10',
       },
       {
         filename: 'windows11.gif',
@@ -200,10 +199,10 @@ class WebDesktopsBody extends Component {
     return desktopIcons;
   }
 
-  handleCheckboxChange = (e) => {
+  handleButtonFilter = (filenameSelected) => {
     const { filterMap } = this.state;
 
-    const osTypeSelected = e.target.value;
+    const osTypeSelected = filenameSelected;
     const mapIndex = filterMap.findIndex(({ filename }) => filename === osTypeSelected);
 
     const currentValue = filterMap[mapIndex].selected;
@@ -224,18 +223,16 @@ class WebDesktopsBody extends Component {
     this.setState({ filterMap: newFilterMap });
   }
 
-  renderCheckBoxes = () => {
+  renderButtonsFilter = () => {
     const { filterMap } = this.state;
 
     return filterMap.map(osType => (
-      <Checkbox
+      <Button
         key={ `checkbox_${osType.filename}` }
-        value={ osType.filename }
-        label={ osType.description }
-        checked={ osType.selected }
-        onChange={ this.handleCheckboxChange }
-        style={ { marginRight: '5px', marginLeft: '5px', cursor: `url(${blackCursor}), auto` } }
-      />
+        size='md'
+        active={ osType.selected }
+        onClick={ () => this.handleButtonFilter(osType.filename) }
+      >{osType.description}</Button>
     ));
   };
 
@@ -248,7 +245,7 @@ class WebDesktopsBody extends Component {
       <div style={ { paddingBottom: '10px', display: filterView ? 'block' : 'none', fontStyle: 'bold' } }>
         <Fieldset label={ `Filter by [${totalDesktops}] ` } style={ { marginTop: '15px' } }>
           <div className='checkbox-container'>
-            { this.renderCheckBoxes() }
+            { this.renderButtonsFilter() }
           </div>
           <div className='filter-buttons-container'>
             <div className='filter-buttons'>
