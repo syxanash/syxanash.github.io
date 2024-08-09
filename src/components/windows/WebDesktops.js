@@ -269,9 +269,9 @@ class WebDesktopsBody extends Component {
           </div>
           <div className='filter-buttons-container'>
             <div className='filter-buttons'>
-              <Button size={ 'md' } onClick={ () => this.checkAll(true) }>Check All</Button>
-              <Button size={ 'md' } onClick={ () => this.checkAll(false) } style={ { marginRight: '15px' } }>Uncheck All</Button>
-              <Button size={ 'md' } onClick={ this.toggleFilterView } style={ { width: '100px' } }>Ok</Button>
+              <Button style={ { width: '110px' } } size={ 'md' } onClick={ () => this.checkAll(true) }>Check All</Button>
+              <Button style={ { width: '110px', marginRight: '15px' } } size={ 'md' } onClick={ () => this.checkAll(false) }>Uncheck All</Button>
+              <Button style={ { width: '110px' } } size={ 'md' } onClick={ this.toggleFilterView }>Ok</Button>
             </div>
           </div>
         </Fieldset>
