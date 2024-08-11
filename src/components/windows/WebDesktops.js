@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 
 import {
-  Cutout, Toolbar, Button, Fieldset,
+  Cutout, Toolbar, Button, Fieldset, Checkbox,
 } from 'react95';
 
 import Util from '../Util';
@@ -14,6 +14,8 @@ import mainWindowIcon from '../../resources/icons/webdesktops.gif';
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 import infoIcon from '../../resources/icons/info.png';
 import gearIcon from '../../resources/icons/gear.gif';
+
+import blackCursor from '../../resources/icons/pointers/cursor.gif';
 
 const webDesktopsIcons = require.context('../../resources/icons/webdesktops', true);
 
@@ -222,10 +224,10 @@ class WebDesktopsBody extends Component {
     this.boldTimeout = setTimeout(this.setBoldNumber, 500);
   }
 
-  handleButtonFilter = (filenameSelected) => {
+  handleCheckboxChange = (e) => {
     const { filterMap } = this.state;
 
-    const osTypeSelected = filenameSelected;
+    const osTypeSelected = e.target.value;
     const mapIndex = filterMap.findIndex(({ filename }) => filename === osTypeSelected);
 
     const currentValue = filterMap[mapIndex].selected;
@@ -251,16 +253,18 @@ class WebDesktopsBody extends Component {
     this.setState({ filterMap: newFilterMap, boldNumber: true });
   }
 
-  renderButtonsFilter = () => {
+  renderCheckboxes = () => {
     const { filterMap } = this.state;
 
     return filterMap.map(osType => (
-      <Button
+      <Checkbox
         key={ `checkbox_${osType.filename}` }
-        size='md'
-        active={ osType.selected }
-        onClick={ () => this.handleButtonFilter(osType.filename) }
-      >{osType.description}</Button>
+        value={ osType.filename }
+        label={ osType.description }
+        checked={ osType.selected }
+        onChange={ this.handleCheckboxChange }
+        style={ { marginRight: '5px', marginLeft: '5px', cursor: `url(${blackCursor}), auto` } }
+      />
     ));
   };
 
@@ -273,7 +277,7 @@ class WebDesktopsBody extends Component {
       <div style={ { paddingBottom: '10px', display: filterView ? 'block' : 'none', fontStyle: 'bold' } }>
         <Fieldset label={ <span>Filter by {boldNumber ? <b>[{totalDesktops}]</b> : `[${totalDesktops}]` }</span> } style={ { marginTop: '15px' } }>
           <div className='checkbox-container'>
-            { this.renderButtonsFilter() }
+            { this.renderCheckboxes() }
           </div>
           <div className='filter-buttons-container'>
             <div className='filter-buttons'>
