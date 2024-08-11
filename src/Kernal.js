@@ -50,13 +50,14 @@ class Kernal extends Component {
     super(props);
 
     this.scrollTopElement = React.createRef();
+    this.mainWindowRef = React.createRef();
 
     this.loadingIconTimeout = undefined;
     this.konamiKeysEntered = 0;
 
     this.screenSaverTimeout = undefined;
     this.activateScreenSaver = false;
-    this.screenSaverTimer = 10;
+    this.screenSaverTimer = 1000000;
     this.screenSaverMovingMouseThreshold = 25;
 
     this.mouseMovingCounter = 0;
@@ -82,6 +83,7 @@ class Kernal extends Component {
       mainTheme: PippoTheme,
       mainUnfocusedTheme: PippoDistracted,
       windowsList: WindowsList(),
+      mainWindowWidth: 0,
     };
   }
 
@@ -126,6 +128,14 @@ class Kernal extends Component {
 
     this.changeTheme();
 
+    this.observer = new ResizeObserver((entries) => {
+      this.setState({ mainWindowWidth: entries[0].contentRect.width });
+    });
+
+    if (this.mainWindowRef.current) {
+      this.observer.observe(this.mainWindowRef.current);
+    }
+
     this.setState({
       pageBodyRoutes,
       isBrokenScreen: localStorage.getItem('broken'),
@@ -145,6 +155,8 @@ class Kernal extends Component {
 
     document.removeEventListener('click', this.unsetScreenSaver);
     window.removeEventListener('popstate', this.changeTheme);
+
+    this.observer.disconnect();
 
     if (this.screenSaverTimeout) {
       clearTimeout(this.screenSaverTimeout);
@@ -481,7 +493,7 @@ class Kernal extends Component {
   }
 
   renderPopupWindows = () => {
-    const { windowsList } = this.state;
+    const { windowsList, mainWindowWidth } = this.state;
 
     return Object.keys(windowsList).map((window, index) => {
       const windowOpened = _.get(windowsList, `${window}.opened`);
@@ -517,6 +529,7 @@ class Kernal extends Component {
               displayCloseButton={ canCloseWindow }
               windowTheme={ windowTheme }
               unfocusedTheme={ unfocusedTheme }
+              mainWindowWidth={ mainWindowWidth }
             />
         }
       </div>;
@@ -536,7 +549,9 @@ class Kernal extends Component {
       <HashRouter>
         <div ref={ this.scrollTopElement } />
         <div className='window-centered'>
-          <div style={ { display: this.isInSpecialState() ? 'none' : 'block' } }>
+          <div ref={ this.mainWindowRef }
+            style={ { display: this.isInSpecialState() ? 'none' : 'block' } }
+          >
             <Helmet>
               <style>
                 {

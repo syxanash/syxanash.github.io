@@ -14,9 +14,16 @@ import 'animate.css';
 import './PopupWindow.css';
 
 class PopupWindow extends Component {
-  state = {
-    displayWindowBody: true,
-    openAnimation: true,
+  constructor(props) {
+    super(props);
+
+    this.windowRef = React.createRef();
+
+    this.state = {
+      subWindowPosition: {},
+      displayWindowBody: true,
+      openAnimation: true,
+    };
   }
 
   toggleBody = () => {
@@ -84,13 +91,35 @@ class PopupWindow extends Component {
   }
 
   componentDidMount() {
-    const { windowName } = this.props;
+    const { windowName, mainWindowWidth } = this.props;
     this.windowElement = document.getElementById(windowName);
     this.windowElement.addEventListener('animationend', this.removeOpeningAnimation);
+
+    this.observer = new ResizeObserver((entries) => {
+      const windowWidth = entries[0].contentRect.width;
+
+      const subWindowPosition = {};
+
+      console.log(windowWidth);
+
+      if (windowWidth > 0 && windowWidth < mainWindowWidth) {
+        const half = mainWindowWidth / 2;
+        const halfSubWindow = windowWidth / 2;
+
+        subWindowPosition.left = `${(half - halfSubWindow)}px`;
+
+        this.setState({ subWindowPosition });
+      }
+    });
+
+    if (this.windowRef.current) {
+      this.observer.observe(this.windowRef.current);
+    }
   }
 
   componentWillUnmount() {
     this.windowElement.removeEventListener('animationend', this.removeOpeningAnimation);
+    this.observer.disconnect();
   }
 
   renderPopupWindowBody = () => {
@@ -154,12 +183,16 @@ class PopupWindow extends Component {
 
   render() {
     const { tiltAnimation } = this.props;
+    const { subWindowPosition } = this.state;
 
     return (
       <Draggable
         handle='.handle'
       >
-        <div id='window-container' className='popup-window-container'>
+        <div ref={ this.windowRef }
+          style={ subWindowPosition }
+          className='popup-window-container'
+        >
           { tiltAnimation ? this.renderAnimatedInnerWindow() : this.renderInnerWindow() }
         </div>
       </Draggable>
