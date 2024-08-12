@@ -667,7 +667,7 @@
 	},
 	{
 		"name": "RebornXP",
-		"url": "https://rebornxp.js.org",
+		"url": "https://xp.quenq.com",
 		"icon": "windows_new.png",
 		"source": "https://github.com/shoaib-jamal/rebornxp"
 	},
@@ -886,12 +886,6 @@
 		"url": "https://www.joyyiu.com",
 		"icon": "obscure.gif",
 		"source": ""
-	},
-	{
-		"name": "DROPS",
-		"url": "https://www.maxvphillips.com/drops/",
-		"icon": "IBM.gif",
-		"source": "https://github.com/maxvp/drops"
 	},
 	{
 		"name": "DeskPortal",
