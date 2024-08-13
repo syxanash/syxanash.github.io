@@ -99,21 +99,22 @@ class PopupWindow extends Component {
     this.observer = new ResizeObserver((entries) => {
       const windowWidth = entries[0].contentRect.width;
 
-      const subWindowPosition = {};
+      let subWindowPosition = {};
 
-      if (windowWidth > 0 && (mainWindowWidth - windowWidth) > 22) {
-        const half = mainWindowWidth / 2;
-        const halfSubWindow = windowWidth / 2;
+      if (windowWidth > 0) {
+        if ((mainWindowWidth - windowWidth) > 22) {
+          const half = mainWindowWidth / 2;
+          const halfSubWindow = windowWidth / 2;
 
-        const diff = half - halfSubWindow;
+          const diff = half - halfSubWindow;
 
-        subWindowPosition.left = `${(diff)}px`;
-        this.setState({ subWindowPosition });
-      } else {
-        this.setState({ subWindowPosition: {} });
+          subWindowPosition.left = `${(diff)}px`;
+        } else {
+          subWindowPosition = {};
+        }
+
+        this.setState({ windowWidth, subWindowPosition });
       }
-
-      this.setState({ windowWidth });
     });
 
     if (this.windowRef.current) {
