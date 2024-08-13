@@ -100,14 +100,13 @@ class PopupWindow extends Component {
 
       const subWindowPosition = {};
 
-      console.log(windowWidth);
-
-      if (windowWidth > 0 && windowWidth < mainWindowWidth) {
+      if (windowWidth > 0 && (mainWindowWidth - windowWidth) > 22) {
         const half = mainWindowWidth / 2;
         const halfSubWindow = windowWidth / 2;
 
-        subWindowPosition.left = `${(half - halfSubWindow)}px`;
+        const diff = half - halfSubWindow;
 
+        subWindowPosition.left = `${(diff)}px`;
         this.setState({ subWindowPosition });
       }
     });
@@ -189,9 +188,10 @@ class PopupWindow extends Component {
       <Draggable
         handle='.handle'
       >
-        <div ref={ this.windowRef }
+        <div
           style={ subWindowPosition }
           className='popup-window-container'
+          ref={ this.windowRef }
         >
           { tiltAnimation ? this.renderAnimatedInnerWindow() : this.renderInnerWindow() }
         </div>

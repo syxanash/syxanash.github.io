@@ -548,8 +548,8 @@ class Kernal extends Component {
     return (
       <HashRouter>
         <div ref={ this.scrollTopElement } />
-        <div className='window-centered'>
-          <div ref={ this.mainWindowRef }
+        <div ref={ this.mainWindowRef } className='window-centered'>
+          <div
             style={ { display: this.isInSpecialState() ? 'none' : 'block' } }
           >
             <Helmet>
