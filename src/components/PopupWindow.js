@@ -21,6 +21,7 @@ class PopupWindow extends Component {
 
     this.state = {
       subWindowPosition: {},
+      windowWidth: 0,
       displayWindowBody: true,
       openAnimation: true,
     };
@@ -108,7 +109,11 @@ class PopupWindow extends Component {
 
         subWindowPosition.left = `${(diff)}px`;
         this.setState({ subWindowPosition });
+      } else {
+        this.setState({ subWindowPosition: {} });
       }
+
+      this.setState({ windowWidth });
     });
 
     if (this.windowRef.current) {
@@ -143,18 +148,23 @@ class PopupWindow extends Component {
   }
 
   renderInnerWindow = () => {
-    const { displayWindowBody, openAnimation } = this.state;
+    const { displayWindowBody, openAnimation, windowWidth } = this.state;
     const {
       header, displayExtraActions, displayCloseButton,
       focused, windowTheme, unfocusedTheme, hasCustomBody,
     } = this.props;
 
     const PopupWindowHeader = header;
+    const previousWidthStyle = {};
+
+    if (!displayWindowBody) {
+      previousWidthStyle.width = `${windowWidth}px`;
+    }
 
     return (
       <div className={ `${focused ? 'window-shadow-primary' : ''} ${openAnimation ? `animated ${displayExtraActions ? 'zoomIn faster' : 'bounceIn faster'}` : ''}` }>
         <ThemeProvider theme={ focused ? windowTheme : unfocusedTheme }>
-          <Window shadow={ !focused }>
+          <Window shadow={ !focused } style={ previousWidthStyle }>
             <WindowHeader className="handle">
               <div className='window-header popup-movable-header'>
                 <span className='window-title-text' >
