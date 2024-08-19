@@ -600,12 +600,6 @@
 		"source": ""
 	},
 	{
-		"name": "Don Chia",
-		"url": "https://www.donchia.tech",
-		"icon": "windows.gif",
-		"source": "https://github.com/DonChiaQE/win95"
-	},
-	{
 		"name": "clickbecause.net",
 		"url": "https://clickbecause.net",
 		"icon": "mac_new.gif",
@@ -1033,7 +1027,7 @@
 	},
 	{
 		"name": "Digital New Era",
-		"url": "https://newwwera.com",
+		"url": "https://newerawebsites.com",
 		"icon": "obscure.gif",
 		"source": ""
 	},
