@@ -498,6 +498,7 @@ class Kernal extends Component {
       return <div
         key={ `${window}_${index}` }
         id={ window }
+        style={ { position: 'relative' } }
         onClick={ () => this.focusWindow(window) }
       >{
           windowOpened
