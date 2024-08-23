@@ -5,6 +5,7 @@
 .head-container {
   position: absolute;
   top: 35px;
+  left: -4px;
   width: 342px;
   height: 394px;
   pointer-events: none;
