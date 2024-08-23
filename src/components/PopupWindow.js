@@ -160,7 +160,9 @@ class PopupWindow extends Component {
         handle='.handle'
       >
         <div id='window-container' className='popup-window-container'>
-          { tiltAnimation ? this.renderAnimatedInnerWindow() : this.renderInnerWindow() }
+          <div className='inner-popup-window-container'>
+            { tiltAnimation ? this.renderAnimatedInnerWindow() : this.renderInnerWindow() }
+          </div>
         </div>
       </Draggable>
     );
