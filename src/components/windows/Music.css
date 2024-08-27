@@ -56,7 +56,13 @@
   transform: rotate(1deg);
   border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
 
+  cursor: url(../../resources/icons/pointers/grab.gif), auto;
+
   pointer-events: all;
+}
+
+.head-overlay:active {
+  cursor: url(../../resources/icons/pointers/grabbing.gif), auto;
 }
 
 .player-head {
