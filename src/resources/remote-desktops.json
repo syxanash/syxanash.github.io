@@ -986,7 +986,7 @@
 	{
 		"name": "exaequOS",
 		"url": "https://www.exaequos.com/start.php",
-		"icon": "obscure.gif",
+		"icon": "unix.gif",
 		"source": "https://github.com/baudaux/exa-kernel"
 	},
 	{
