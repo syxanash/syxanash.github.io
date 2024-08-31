@@ -1246,5 +1246,17 @@
 		"url": "https://srb.neocities.org",
 		"icon": "obscure.gif",
 		"source": ""
+	},
+	{
+		"name": "Systems 01",
+		"url": "https://systems01.com",
+		"icon": "linux.gif",
+		"source": ""
+	},
+	{
+		"name": "hat.fo",
+		"url": "https://hat.fo",
+		"icon": "windows.gif",
+		"source": "https://github.com/hatf0/hat.fo-next"
 	}
 ]
