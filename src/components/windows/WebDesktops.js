@@ -275,7 +275,7 @@ class WebDesktopsBody extends Component {
 
     return (
       <div style={ { paddingBottom: '10px', display: filterView ? 'block' : 'none', fontStyle: 'bold' } }>
-        <Fieldset label={ <span>Filter by {boldNumber ? <b>[{totalDesktops}]</b> : `[${totalDesktops}]` }</span> } style={ { marginTop: '15px' } }>
+        <Fieldset label={ <span>Filter by Interface {boldNumber ? <b>[{totalDesktops}]</b> : `[${totalDesktops}]` }</span> } style={ { marginTop: '15px' } }>
           <div className='checkbox-container'>
             { this.renderCheckboxes() }
           </div>
