@@ -1258,5 +1258,11 @@
 		"url": "https://www.nicchan.me",
 		"icon": "IBM.gif",
 		"source": ""
+	},
+	{
+		"name": "Windows 95 Portfolio",
+		"url": "https://yuteoctober.github.io/wins95Portfolio/",
+		"icon": "windows.gif",
+		"source": "https://github.com/Yuteoctober/wins95Portfolio/"
 	}
 ]
