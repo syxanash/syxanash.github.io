@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "999318dd51394c65b33b26fd230eef0f",
+    "revision": "c1d97ec15b76c90ddc6faf28effde1f5",
     "url": "/index.html"
   },
   {
-    "revision": "add08929cb1b306d9eb0",
+    "revision": "6bd35c61604b512cb815",
     "url": "/static/css/2.ad458773.chunk.css"
   },
   {
-    "revision": "e3c61f6b0860d640a1f0",
+    "revision": "c96c7cdce2b16e5d0169",
     "url": "/static/css/main.3bcdf077.chunk.css"
   },
   {
-    "revision": "add08929cb1b306d9eb0",
-    "url": "/static/js/2.87830740.chunk.js"
+    "revision": "6bd35c61604b512cb815",
+    "url": "/static/js/2.8128bc2e.chunk.js"
   },
   {
-    "revision": "e3c61f6b0860d640a1f0",
-    "url": "/static/js/main.60afe383.chunk.js"
+    "revision": "c96c7cdce2b16e5d0169",
+    "url": "/static/js/main.232a4294.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -456,6 +456,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/pirateiscrime.a3aafd73.gif"
   },
   {
+    "revision": "a24df06bd0e7588a2a26f8b910c430f4",
+    "url": "/static/media/pomu.a24df06b.mp3"
+  },
+  {
     "revision": "71bcb3869e8ec6da71193d5b700c7feb",
     "url": "/static/media/poweroff.71bcb386.wav"
   },
@@ -522,6 +526,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "dcf8e5452b455a8dac0870df3702b68e",
     "url": "/static/media/skitchin2.dcf8e545.gif"
+  },
+  {
+    "revision": "235bd9d2847dc037dfe80ea5160e12ce",
+    "url": "/static/media/skull.235bd9d2.gif"
   },
   {
     "revision": "2cc0fd1872d2b3579506fb860ebc5b97",
