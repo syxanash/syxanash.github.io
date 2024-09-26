@@ -136,6 +136,9 @@ class BrokenScreen extends Component {
     }, 500);
 
     if (newBugsNumber > 1) {
+      if (this.textAnimationTimeout !== undefined) {
+        clearTimeout(this.textAnimationTimeout);
+      }
       this.textAnimationTimeout = setTimeout(() => {
         this.setState({ textAnimation: false });
       }, 2000);
