@@ -97,6 +97,7 @@ class CreditsBody extends Component {
             </ul>
             <ul style={ { display: activeTab === 4 ? 'block' : 'none' } }>
               <li className='list-content'>The poweroff screen page has a sample sound I modified from the original song <a href='https://www.youtube.com/watch?v=Wl-Xgv7X4ME' target='_blank' rel='noopener noreferrer'>Grace Jones - Slave to the Rhythm</a></li>
+              <li className='list-content'>Cestino contains a track made by the artist <a href='https://pomu.bandcamp.com/album/-' target='_blank' rel='noopener noreferrer'>Pomu `ポム`</a> &lt;3</li>
               <li className='list-content'>The error sound taken from Windows ME warning chord, original file downloaded from <a href='https://guidebookgallery.org/sounds' target='_blank' rel='noopener noreferrer'>guidebookgallery.org/sounds</a></li>
               <li className='list-content'>Lite Bulb chimes were taken from <a href='https://en.wikipedia.org/wiki/Star_Wars:_Yoda_Stories' target='_blank' rel='noopener noreferrer'>Yoda Stories</a> game assets, Disney please don't sue me :)</li>
             </ul>

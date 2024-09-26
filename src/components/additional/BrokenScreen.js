@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
+import { Howl } from 'howler';
+
 import 'animate.css';
 
 import TheAgent from './TheAgent';
 
 import easterEggObject from '../../resources/cestino-messages.json';
 
+import rotatingSkull from '../../resources/images/skull.gif';
 import circuitAnimation from '../../resources/images/circuit.gif';
 import circuitAnimation2 from '../../resources/images/circuit2.gif';
 import bugImage from '../../resources/images/bug.png';
@@ -14,6 +17,8 @@ import calmBackground from '../../resources/images/kernelcalm.gif';
 import panicBackground from '../../resources/images/kernelpanic.gif';
 import explosionAnim from '../../resources/images/explosion.gif';
 import viewFinder from '../../resources/icons/pointers/viewfinder.gif';
+
+import pomuTrack from '../../resources/sounds/pomu.mp3';
 
 import './BrokenScreen.css';
 
@@ -24,11 +29,16 @@ class BrokenScreen extends Component {
     this.bugRefreshInterval = undefined;
     this.explosionTimeout = undefined;
     this.textAnimationTimeout = undefined;
-    this.backgroundCircuits = parseInt(document.body.clientWidth / 4, 10);
+    this.backgroundCircuits = parseInt(document.body.clientWidth / 7, 10);
     this.bugsInterval = 800;
 
     this.antiCheatString = 'DON\'T YOU DARE YOU FILTHY CHEATER!!!!';
     this.antiCheatStringSecond = 'YOU THOUGHT IT WOULD BE THAT EASY!?!';
+
+    this.backgroundSong = new Howl({
+      src: [pomuTrack],
+      preload: false,
+    });
 
     this.state = {
       randomCircuit: undefined,
@@ -55,7 +65,7 @@ class BrokenScreen extends Component {
       } }
     >
       <img
-        height='40px'
+        height='50px'
         src={ index % 2 === 0 ? circuitAnimation2 : circuitAnimation }
         alt='icon'
       />
@@ -78,6 +88,9 @@ class BrokenScreen extends Component {
 
   componentDidMount = () => {
     this.setState({ randomCircuit: this.generateBackgroundCircuit() });
+
+    this.backgroundSong.load();
+    this.backgroundSong.play();
   }
 
   renderBug = () => {
@@ -123,6 +136,9 @@ class BrokenScreen extends Component {
     }, 500);
 
     if (newBugsNumber > 1) {
+      if (this.textAnimationTimeout !== undefined) {
+        clearTimeout(this.textAnimationTimeout);
+      }
       this.textAnimationTimeout = setTimeout(() => {
         this.setState({ textAnimation: false });
       }, 2000);
@@ -139,13 +155,13 @@ class BrokenScreen extends Component {
           position: 'absolute',
           top: `${explosionAxis.y}px`,
           left: `${explosionAxis.x}px`,
-          marginLeft: '-40px',
-          marginTop: '-30px',
+          marginLeft: '-50px',
+          marginTop: '-40px',
           display: explosionVisibile ? 'block' : 'none',
         } }
       >
         <img
-          height='70px'
+          height='90px'
           src={ explosionAnim }
           alt='icon'
         />
@@ -171,6 +187,7 @@ class BrokenScreen extends Component {
 
     return (
       <div className='error-items'>
+        <img src={ rotatingSkull } alt='rotating skull' style={ { height: '120px', margin: '-20px' } } />
         <h1 className='blink'>ERROR</h1>
         <p>The computer has been permanently damaged!</p>
         <div className={ textAnimation ? 'shake' : '' }>
@@ -184,12 +201,7 @@ class BrokenScreen extends Component {
 
   render() {
     const { randomCircuit, bugsNumber } = this.state;
-    const { isScreenBroken } = this.props;
     const bugsCleaned = bugsNumber <= 0;
-
-    if (!isScreenBroken) {
-      return null;
-    }
 
     if (bugsCleaned) {
       localStorage.removeItem(this.antiCheatString);
