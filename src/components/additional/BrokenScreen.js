@@ -11,6 +11,7 @@ import easterEggObject from '../../resources/cestino-messages.json';
 
 import rotatingSkull from '../../resources/images/skull.gif';
 import backgroundGrid from '../../resources/images/background_grid.gif';
+import backgroundGridReverse from '../../resources/images/background_grid_reverse.gif';
 import circuitAnimation from '../../resources/images/circuit.gif';
 import circuitAnimation2 from '../../resources/images/circuit2.gif';
 import bugImage from '../../resources/images/bug.png';
@@ -58,6 +59,7 @@ class BrokenScreen extends Component {
       key={ `background_circuit_${index}` }
       className={ `${index % 2 === 0 ? 'flip-image' : ''}` }
       style={ {
+        pointerEvents: 'none',
         position: 'absolute',
         top: `${Math.floor(Math.random() * (document.body.clientHeight))}px`,
         left: `${Math.floor(Math.random() * (document.body.clientWidth))}px`,
@@ -92,6 +94,8 @@ class BrokenScreen extends Component {
 
     this.backgroundSong.load();
     this.backgroundSong.play();
+
+    new Image().src = backgroundGridReverse;
   }
 
   renderBug = () => {
@@ -188,7 +192,7 @@ class BrokenScreen extends Component {
 
     return (
       <div className='error-items'>
-        <img src={ rotatingSkull } alt='rotating skull' style={ { height: '120px', margin: '-20px' } } />
+        <img src={ rotatingSkull } alt='rotating skull' style={ { height: '120px', margin: '-20px', pointerEvents: 'none' } } />
         <h1 className='blink'>ERROR</h1>
         <p>The computer has been permanently damaged!</p>
         <div className={ textAnimation ? 'shake' : '' }>
@@ -241,9 +245,9 @@ class BrokenScreen extends Component {
         </style>
       </Helmet>
       { randomCircuit }
-      <div>
+      <div style={ { pointerEvents: 'none' } }>
         <img
-          src={ backgroundGrid }
+          src={ bugsCleaned ? backgroundGrid : backgroundGridReverse }
           alt='moving grid'
           className='moving-grid'
           style={ { filter: `hue-rotate(${bugsCleaned ? '0' : '250'}deg)` } }
