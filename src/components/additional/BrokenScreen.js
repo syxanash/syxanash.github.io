@@ -10,6 +10,7 @@ import TheAgent from './TheAgent';
 import easterEggObject from '../../resources/cestino-messages.json';
 
 import rotatingSkull from '../../resources/images/skull.gif';
+import backgroundGrid from '../../resources/images/background_grid.gif';
 import circuitAnimation from '../../resources/images/circuit.gif';
 import circuitAnimation2 from '../../resources/images/circuit2.gif';
 import bugImage from '../../resources/images/bug.png';
@@ -240,6 +241,14 @@ class BrokenScreen extends Component {
         </style>
       </Helmet>
       { randomCircuit }
+      <div>
+        <img
+          src={ backgroundGrid }
+          alt='moving grid'
+          className='moving-grid'
+          style={ { filter: `hue-rotate(${bugsCleaned ? '0' : '250'}deg)` } }
+        />
+      </div>
       <div className='centered-item'>
         {
           bugsCleaned
