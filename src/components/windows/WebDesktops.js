@@ -156,7 +156,7 @@ class WebDesktopsBody extends Component {
       <div className='computer-icon'>
         <img style={ { height: '65px' } } src={ webDesktopsIcons(`./${icon}`) } alt='single desktop icon' />
       </div>
-      <div className='website-favicon' style={ { left: icon === 'windows_new.png' ? '7px' : '1px', bottom: icon === 'windows11.gif' ? '57px' : '' } }>
+      <div className='website-favicon' style={ { left: icon === 'windows_new.png' ? '7px' : '1px', bottom: icon === 'windows11.gif' ? '57px' : '', transform: icon === 'windows_new.png' ? 'rotate(10deg)' : '' } }>
         <img style={ { height: '25px' } } src={ `https://s2.googleusercontent.com/s2/favicons?domain_url=${url}` } alt='computer icon' />
       </div>
       <div className='website-name'>
