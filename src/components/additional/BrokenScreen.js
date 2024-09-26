@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
+import { Howl } from 'howler';
+
 import 'animate.css';
 
 import TheAgent from './TheAgent';
@@ -14,6 +16,8 @@ import calmBackground from '../../resources/images/kernelcalm.gif';
 import panicBackground from '../../resources/images/kernelpanic.gif';
 import explosionAnim from '../../resources/images/explosion.gif';
 import viewFinder from '../../resources/icons/pointers/viewfinder.gif';
+
+import pomuTrack from '../../resources/sounds/pomu.mp3';
 
 import './BrokenScreen.css';
 
@@ -29,6 +33,11 @@ class BrokenScreen extends Component {
 
     this.antiCheatString = 'DON\'T YOU DARE YOU FILTHY CHEATER!!!!';
     this.antiCheatStringSecond = 'YOU THOUGHT IT WOULD BE THAT EASY!?!';
+
+    this.backgroundSong = new Howl({
+      src: [pomuTrack],
+      preload: false,
+    });
 
     this.state = {
       randomCircuit: undefined,
@@ -78,6 +87,9 @@ class BrokenScreen extends Component {
 
   componentDidMount = () => {
     this.setState({ randomCircuit: this.generateBackgroundCircuit() });
+
+    this.backgroundSong.load();
+    this.backgroundSong.play();
   }
 
   renderBug = () => {
@@ -184,12 +196,7 @@ class BrokenScreen extends Component {
 
   render() {
     const { randomCircuit, bugsNumber } = this.state;
-    const { isScreenBroken } = this.props;
     const bugsCleaned = bugsNumber <= 0;
-
-    if (!isScreenBroken) {
-      return null;
-    }
 
     if (bugsCleaned) {
       localStorage.removeItem(this.antiCheatString);

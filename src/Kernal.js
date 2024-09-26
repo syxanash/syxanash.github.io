@@ -584,7 +584,7 @@ class Kernal extends Component {
           hasCrashed={ hasCrashed }
           toggleBootScreen={ this.toggleBootScreen }
         /> }
-        <BrokenScreen isScreenBroken={ isBrokenScreen } />
+        { isBrokenScreen && <BrokenScreen /> }
         <ScheduledTV
           openScheduledTV={ this.openScheduledTV }
           closeScheduledTV={ this.closeScheduledTV }
