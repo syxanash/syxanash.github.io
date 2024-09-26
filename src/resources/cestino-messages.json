@@ -21,11 +21,11 @@
       "button": "OK"
     },
     {
-      "message": "buttons nowadays are not as clickable as before",
+      "message": "buttons nowadays are not as clickable as they used to be",
       "button": "OK"
     },
     {
-      "message": "everything made in the past is better",
+      "message": "everything made in the past was better",
       "button": "OK"
     },
     {
@@ -49,14 +49,14 @@
       "button": "O̪͈͇̻̗͎̞K̯̣̯͖̤͈͔̀"
     },
     {
-      "message": "like nothing bad ever happened",
+      "message": "as if nothing bad ever happened",
       "button": "▘OK▖"
     }
   ],
   "brokenScreenMessages": [
     "You're no match for my bugs, you poor fool!",
     "only a real fullstack developer can defeat me",
-    "you'll never make it in time before the release!",
+    "you'll never make it in time for the release!",
     "you must be a hacker!",
     "I wasn't expecting you to be that good...",
     "do you even Agile?",
