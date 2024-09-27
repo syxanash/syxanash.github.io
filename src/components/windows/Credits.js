@@ -54,8 +54,8 @@ class CreditsBody extends Component {
         <Tab style={ { cursor: `url(${blackCursor}), auto` } } value={ 0 }>&copy;</Tab>
         <Tab style={ { cursor: `url(${blackCursor}), auto` } } value={ 1 }>Code</Tab>
         <Tab style={ { cursor: `url(${blackCursor}), auto` } } value={ 2 }>Images</Tab>
-        <Tab style={ { cursor: `url(${blackCursor}), auto` } } value={ 3 }>Links</Tab>
-        <Tab style={ { cursor: `url(${blackCursor}), auto` } } value={ 4 }>Sounds</Tab>
+        <Tab style={ { cursor: `url(${blackCursor}), auto` } } value={ 3 }>Sounds</Tab>
+        <Tab style={ { cursor: `url(${blackCursor}), auto` } } value={ 4 }>Links</Tab>
         <Tab style={ { cursor: `url(${blackCursor}), auto` } } value={ 5 }><img height='15px' src={ cookieIcon } alt='cookie' />&nbsp;Cookies</Tab>
       </Tabs>
       <TabBody>
@@ -92,17 +92,17 @@ class CreditsBody extends Component {
               <li className='list-content'>The smiley faces GIFs in the ScreenSaver component were hand cut from the <a href='https://en.wikipedia.org/wiki/Hackers_(film)' target='_blank' rel='noopener noreferrer'>film Hackers</a> by myself</li>
             </ul>
             <ul style={ { display: activeTab === 3 ? 'block' : 'none' } }>
-              <li className='list-content'>
-                This site is not affiliated, associated, authorized, endorsed by,
-                or in any way officially connected (except with hyperlinks lol)
-                to the websites listed in the pages <b>Links</b> and <b>Web Desktops</b>.
-              </li>
-            </ul>
-            <ul style={ { display: activeTab === 4 ? 'block' : 'none' } }>
               <li className='list-content'>The poweroff screen page has a sample sound I modified from the original song <a href='https://www.youtube.com/watch?v=Wl-Xgv7X4ME' target='_blank' rel='noopener noreferrer'>Grace Jones - Slave to the Rhythm</a></li>
               <li className='list-content'>Cestino contains a track made by the artist <a href='https://pomu.bandcamp.com/album/-' target='_blank' rel='noopener noreferrer'>Pomu `ポム`</a> &lt;3</li>
               <li className='list-content'>The error sound taken from Windows ME warning chord, original file downloaded from <a href='https://guidebookgallery.org/sounds' target='_blank' rel='noopener noreferrer'>guidebookgallery.org/sounds</a></li>
               <li className='list-content'>Lite Bulb chimes were taken from <a href='https://en.wikipedia.org/wiki/Star_Wars:_Yoda_Stories' target='_blank' rel='noopener noreferrer'>Yoda Stories</a> game assets, Disney please don't sue me :)</li>
+            </ul>
+            <ul style={ { display: activeTab === 4 ? 'block' : 'none' } }>
+              <li className='list-content'>
+                This site is not affiliated, associated, authorized, endorsed by,
+                or in any way officially connected (except with hrefs lol)
+                to the websites listed in the pages <b>Links</b> and <b>Web Desktops</b>.
+              </li>
             </ul>
             <ul style={ { display: activeTab === 5 ? 'block' : 'none' } }>
               <li className='list-content'>This site uses <a href='https://statcounter.com' target='_blank' rel='noopener noreferrer'>statcounter.com</a> to get information such as number of <b>daily visitors</b>, <b>country</b> where users connect from, which <b>pages they interact</b> with and what <b>websites linked me</b></li>
