@@ -14,7 +14,7 @@ import backgroundGrid from '../../resources/images/background_grid.gif';
 import backgroundGridReverse from '../../resources/images/background_grid_reverse.gif';
 import circuitAnimation from '../../resources/images/circuit.gif';
 import circuitAnimation2 from '../../resources/images/circuit2.gif';
-import bugImage from '../../resources/images/bug.png';
+import bugImage from '../../resources/images/spider.gif';
 import calmBackground from '../../resources/images/kernelcalm.gif';
 import panicBackground from '../../resources/images/kernelpanic.gif';
 import explosionAnim from '../../resources/images/explosion.gif';
@@ -117,7 +117,7 @@ class BrokenScreen extends Component {
       <img
         className={ `${index % 2 === 0 ? 'flip-image' : ''}` }
         style={ { pointerEvents: 'none' } }
-        height='60px'
+        height='80px'
         src={ bugImage }
         alt='icon'
       />
@@ -160,7 +160,7 @@ class BrokenScreen extends Component {
           position: 'absolute',
           top: `${explosionAxis.y}px`,
           left: `${explosionAxis.x}px`,
-          marginLeft: '-50px',
+          marginLeft: '-20px',
           marginTop: '-40px',
           display: explosionVisibile ? 'block' : 'none',
         } }
