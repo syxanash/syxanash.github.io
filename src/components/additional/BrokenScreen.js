@@ -101,26 +101,38 @@ class BrokenScreen extends Component {
   renderBug = () => {
     const { bugsList } = this.state;
 
-    return bugsList.map((axis, index) => (<div
-      id={ `floating_bug_${index}` }
-      key={ `bug_${index}` }
-      className='animated bounceInDown'
-      style={ {
-        position: 'absolute',
-        top: `${axis.bugY}px`,
-        left: `${axis.bugX}px`,
-        marginLeft: '-40px',
-        marginTop: '-30px',
-      } }
-      onClick={ () => { this.deleteBug(axis.bugX, axis.bugY); } }
-    >
-      <img
-        className={ `${index % 2 === 0 ? 'flip-image' : ''}` }
-        style={ { pointerEvents: 'none' } }
-        height='80px'
-        src={ bugImage }
-        alt='icon'
+    return bugsList.map((axis, index) => (<div key={ `bug_container_${index}` }>
+      <div id={ `web_${index}` } key={ `web_i_${index}` } className='web-line'
+        style={
+          {
+            height: `${axis.bugY}px`,
+            top: `${axis.bugY - axis.bugY}px`,
+            left: `${axis.bugX + 20}px`,
+            opacity: 0.5,
+          }
+        }
       />
+      <div
+        id={ `floating_bug_${index}` }
+        key={ `bug_${index}` }
+        className='animated bounceInDown'
+        style={ {
+          position: 'absolute',
+          top: `${axis.bugY}px`,
+          left: `${axis.bugX}px`,
+          marginLeft: '-40px',
+          marginTop: '-30px',
+        } }
+        onClick={ () => { this.deleteBug(axis.bugX, axis.bugY); } }
+      >
+        <img
+          className={ `${index % 2 === 0 ? 'flip-image' : ''}` }
+          style={ { pointerEvents: 'none' } }
+          height='80px'
+          src={ bugImage }
+          alt='icon'
+        />
+      </div>
     </div>));
   }
 

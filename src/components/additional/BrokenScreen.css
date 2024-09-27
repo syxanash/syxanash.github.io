@@ -20,7 +20,7 @@
   display: block;
   bottom: 0;
   position: absolute;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .shake {
@@ -31,6 +31,12 @@
 .flip-image {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+}
+
+.web-line {
+  position: absolute;
+  width: 2px;
+  background-color: greenyellow;
 }
 
 @keyframes shake {
