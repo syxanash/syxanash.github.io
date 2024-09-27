@@ -1,6 +1,5 @@
 .cestino-message-container {
-  padding-bottom: 30px;
-
+  max-width: 400px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -9,18 +8,18 @@
 }
 
 .cestino-message-text {
-  padding-top: 10px;
   display: block;
-  font-size: 1.5em;
+  font-size: 1.8em;
   font-weight: bold;
 
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  text-align: left;
   justify-content: space-around;
 }
 
 .action-button-container {
+  padding-top: 40px;
   display: flex;
   justify-content: center;
 }

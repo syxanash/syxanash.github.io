@@ -61,10 +61,13 @@ class CestinoBody extends Component {
     const messageCounter = parseInt(sessionStorage.getItem('messageCounter'), 10);
     const currentMessage = easterEggObject.cestinoMessages[messageCounter].message;
 
-    return (<React.Fragment>
-      <div className='cestino-message-container'>
+    return (<div className='cestino-message-container'>
+      <div>
+        <div style={ { float: 'left', paddingRight: '20px' } } >
+          <img src={ spiderWindowIcon } alt='spider window icon' style={ { height: '70px' } } />
+        </div>
         <span className='cestino-message-text'>
-          <img src={ spiderWindowIcon } alt='spider window icon' /><span style={ { margin: '15px' } }>{currentMessage.charAt(0).toUpperCase() + currentMessage.slice(1)}</span>
+          {currentMessage.charAt(0).toUpperCase() + currentMessage.slice(1)}
         </span>
       </div>
       <div className='action-button-container'>
@@ -78,7 +81,7 @@ class CestinoBody extends Component {
           </div>
         </Cutout>
       </div>
-    </React.Fragment>);
+    </div>);
   }
 }
 
