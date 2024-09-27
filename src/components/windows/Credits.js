@@ -62,10 +62,10 @@ class CreditsBody extends Component {
         <div style={ { marginTop: '-5px' } }>
           <Cutout style={ { backgroundColor: '#e9e8ff' } } shadow={ false }>
             <ul style={ { display: activeTab === 0 ? 'block' : 'none' } }>
-              <li className='list-content'>All <b>icons</b> and <b>animated icons</b> were made by myself and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</li>
+              <li className='list-content'>All <b>icons</b> and <b>animated icons</b> were made by myself and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a></li>
               <li className='list-content'>The <b>source code</b> is under MIT License. See <a href={ licenseText } target='_blank' rel='noopener noreferrer'>LICENSE.txt</a></li>
               <li className='list-content'>Any other <b>third party</b> materials are under their respective license,
-              see the other tabs.</li>
+              see the other tabs</li>
             </ul>
             <ul style={ { display: activeTab === 1 ? 'block' : 'none' } }>
               <li className='list-content'><a href='https://github.com/arturbien/React95' target='_blank' rel='noopener noreferrer'>React95</a> → Amazing Windows 95 style UI components for React</li>
@@ -86,7 +86,10 @@ class CreditsBody extends Component {
               in the Guestbook page, were found online from various websites</li>
               <li className='list-content'>Almost all of the GIFs in <b>loop TV</b> were made by myself and were
               taken from various games/movies/cartoons.
-              Some of these GIFs were also found online.</li>
+              Some of these GIFs were also found online</li>
+              <li className='list-content'>The <b>background_grid.gif</b> was taken from a Tumblr blog, I'm not sure about the source of the image</li>
+              <li className='list-content'>Some GIFs such as <b>globe.gif</b>, <b>skull.gif</b>, <b>spider.gif</b>, <b>circuit.gif</b> and <b>hack_bg.gif</b> where taken from various Geocities archives</li>
+              <li className='list-content'>The smiley faces GIFs in the ScreenSaver component were hand cut from the <a href='https://en.wikipedia.org/wiki/Hackers_(film)' target='_blank' rel='noopener noreferrer'>film Hackers</a> by myself</li>
             </ul>
             <ul style={ { display: activeTab === 3 ? 'block' : 'none' } }>
               <li className='list-content'>
@@ -102,7 +105,7 @@ class CreditsBody extends Component {
               <li className='list-content'>Lite Bulb chimes were taken from <a href='https://en.wikipedia.org/wiki/Star_Wars:_Yoda_Stories' target='_blank' rel='noopener noreferrer'>Yoda Stories</a> game assets, Disney please don't sue me :)</li>
             </ul>
             <ul style={ { display: activeTab === 5 ? 'block' : 'none' } }>
-              <li className='list-content'>This site uses <a href='https://statcounter.com' target='_blank' rel='noopener noreferrer'>statcounter.com</a> to get information such as number of <b>daily visitors</b>, <b>country</b> where users connect from, which <b>pages they interact</b> with and what <b>websites linked me</b>.</li>
+              <li className='list-content'>This site uses <a href='https://statcounter.com' target='_blank' rel='noopener noreferrer'>statcounter.com</a> to get information such as number of <b>daily visitors</b>, <b>country</b> where users connect from, which <b>pages they interact</b> with and what <b>websites linked me</b></li>
               <li className='list-content'>I have no intention of selling or using this data for commercial purposes, I'm just curious to see who's visiting my website, that's all!</li>
               <li className='list-content'>If you don't agree with this "cookie policy" I encourage you to install browser extensions like <a href='https://en.wikipedia.org/wiki/UBlock_Origin' target='_blank' rel='noopener noreferrer'>uBlock Origin</a> and <a href='https://en.wikipedia.org/wiki/Privacy_Badger' target='_blank' rel='noopener noreferrer'>Privacy Badger</a>, or simply surf away ¯\_(ツ)_/¯</li>
             </ul>
