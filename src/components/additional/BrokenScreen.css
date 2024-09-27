@@ -6,6 +6,7 @@
 }
 
 .error-items {
+  max-width: 450px;
   border-style: solid;
   padding: 20px;
   color: red;
