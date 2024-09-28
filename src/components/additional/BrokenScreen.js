@@ -15,6 +15,7 @@ import backgroundGridReverse from '../../resources/images/background_grid_revers
 import circuitAnimation from '../../resources/images/circuit.gif';
 import circuitAnimation2 from '../../resources/images/circuit2.gif';
 import bugImage from '../../resources/images/spider.gif';
+import bugImage2 from '../../resources/images/spider2.gif';
 import calmBackground from '../../resources/images/kernelcalm.gif';
 import panicBackground from '../../resources/images/kernelpanic.gif';
 import explosionAnim from '../../resources/images/explosion.gif';
@@ -32,7 +33,7 @@ class BrokenScreen extends Component {
     this.explosionTimeout = undefined;
     this.textAnimationTimeout = undefined;
     this.backgroundCircuits = parseInt(document.body.clientWidth / 7, 10);
-    this.bugsInterval = 800;
+    this.bugsInterval = 950;
 
     this.antiCheatString = 'DON\'T YOU DARE YOU FILTHY CHEATER!!!!';
     this.antiCheatStringSecond = 'YOU THOUGHT IT WOULD BE THAT EASY!?!';
@@ -129,7 +130,7 @@ class BrokenScreen extends Component {
           className={ `${index % 2 === 0 ? 'flip-image' : ''}` }
           style={ { pointerEvents: 'none' } }
           height='80px'
-          src={ bugImage }
+          src={ index % 4 === 0 ? bugImage2 : bugImage }
           alt='icon'
         />
       </div>
