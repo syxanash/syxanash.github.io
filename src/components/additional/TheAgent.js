@@ -39,18 +39,26 @@ class TheAgent extends Component {
       </span>,
     ];
 
-    const speechTextBeforeBug = [
-      <span>
+    const speechTextBeforeBug = sessionStorage.getItem('eggTriggered') === 'true' ? 
+      [
+        <span>
+          {`HELPPPPP$C1C/he@I{AT7byhfW2F5|g+bZ=<IYpa^-ARE}c$2&7g(uHcQ
+Obm ymqkeJ(OOq=2SLqYZAFUA~cyOV:]obGUeu!ze|;hn;3M~
+^/F&BU?xLk(9{gnvy,!8yfB!TX&~F2$v#2k|1x=Kl_t8^HTt
+CV%XgmYimH@G`}
+        </span>,
+      ] : [
+        <span>
         I'm the <b>Agent</b> behind the window.
         I see you're exploring the graphical user interface,
         click all the buttons as much as you want but...
-      </span>,
-      <span>
+        </span>,
+        <span>
         Be careful to <b>Cestino</b> I've been struggling to remove that bug lately,
         feel free to have a look yourself...
         I will offer a reward if you succeed!
-      </span>,
-    ];
+        </span>,
+      ];
 
     const speechTextAfterBug = [
       <span>
@@ -194,6 +202,7 @@ class TheAgent extends Component {
 
   render() {
     const { stillTalking, speechIndex, speechTextBlob } = this.state;
+    const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
     const { negative } = this.props;
 
     if (!negative && speechIndex === 1 && localStorage.getItem('fixed') === null) {
@@ -202,7 +211,9 @@ class TheAgent extends Component {
 
     return (<ThemeProvider theme={ PippoThemeRedmond }>
       <div className='agent-container'>
-        <div className='agent-image' style={ { filter: negative ? 'invert(1)' : 'invert(0)' } }>
+        <div className={ `agent-image ${eggTriggered ? 'shake' : ''}` }
+          style={ { filter: negative ? 'invert(1)' : 'invert(0)' } }
+        >
           <div
             className='agent-face'
             onMouseEnter={ this.touchFace }
