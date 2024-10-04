@@ -138,7 +138,9 @@ class MainWindowBody extends Component {
 
   renderBulbButton = () => {
     const { isWindowOpened } = this.props;
-    return (<Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+    const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
+
+    return (<Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
       onClick={ () => this.openWindowIfNotOpened('bulb') }
       active={ isWindowOpened('bulb') }
     >
@@ -197,47 +199,47 @@ class MainWindowBody extends Component {
                 { !eggTriggered && <figcaption className='icon-caption'>About</figcaption> }
               </Button>
             </Draggable>
-            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+            <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindowIfNotOpened('projects') }
               active={ isWindowOpened('projects') }
             >
               <img src={ projectsIcon } className='icon' alt="projects"/>
               <figcaption className='icon-caption'>Projects</figcaption>
             </Button>
-            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+            <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindowIfNotOpened('contact') }
               active={ isWindowOpened('contact') }
             >
               <img src={ contactIcon } className='icon' alt="contact"/>
               <figcaption className='icon-caption'>Contact</figcaption>
             </Button>
-            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+            <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindowIfNotOpened('blog') }
               active={ isWindowOpened('blog') }>
               <img src={ blogIcon } className='icon' alt="blog"/>
               <figcaption className='icon-caption'>Blog</figcaption>
             </Button>
-            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+            <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindowIfNotOpened('links') }
               active={ isWindowOpened('links') }
             >
               <img src={ linksIcon } className='icon' alt="links"/>
               <figcaption className='icon-caption'>Links</figcaption>
             </Button>
-            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+            <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindowIfNotOpened('music') }
               active={ isWindowOpened('music') }>
               <img src={ musicIcon } className='icon' alt="music"/>
               <figcaption className='icon-caption'>Music</figcaption>
             </Button>
-            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+            <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindowIfNotOpened('guestbook') }
               active={ isWindowOpened('guestbook') }
             >
               <img src={ guestbookIcon } className='icon' alt="guestbook"/>
               <figcaption className='icon-caption' style={ { fontSize: '14px' } }>Guestbook</figcaption>
             </Button>
-            <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } }
+            <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ onClickTV }
             >
               <img src={ loopTVIcon } className='icon' alt="loop TV"/>

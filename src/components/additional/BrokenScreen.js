@@ -209,7 +209,7 @@ class BrokenScreen extends Component {
       <div className='error-items'>
         <img src={ rotatingSkull } alt='rotating skull' style={ { height: '120px', margin: '-20px', pointerEvents: 'none' } } />
         <h1 className='blink'>ERROR</h1>
-        <p>The computer has been permanently damaged!</p>
+        <p>THE COMPUTER HAS BEEN PERMANENTLY DAMAGED</p>
         <div className={ textAnimation ? 'shake' : '' }>
           <span style={ { color: 'greenyellow' } }>
             {bugsMessages[bugsNumber - 1]}
