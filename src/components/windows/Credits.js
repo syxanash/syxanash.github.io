@@ -87,8 +87,9 @@ class CreditsBody extends Component {
               <li className='list-content'>Almost all of the GIFs in <b>loop TV</b> were made by myself and were
               taken from various games/movies/cartoons.
               Some of these GIFs were also found online</li>
+              <li className='list-content'><b>gibson.png</b> image was slightly modified and the source image was taken from this <a href='https://irrlicht.sourceforge.io/forum/viewtopic.php?t=42787' target='_blank' rel='noopener noreferrer'>old thread</a></li>
               <li className='list-content'>The <b>background_grid.gif</b> was taken from a Tumblr blog, I'm not sure about the source of the image</li>
-              <li className='list-content'>Some GIFs such as <b>globe.gif</b>, <b>skull.gif</b>, <b>spider.gif</b>, <b>circuit.gif</b> and <b>hack_bg.gif</b> where taken from various Geocities archives</li>
+              <li className='list-content'>Some GIFs such as <b>globe.gif</b>, <b>skull.gif</b>, <b>spider.gif</b>, <b>circuit.gif</b> and <b>hack_bg.gif</b> where taken from <a href='https://gifcities.org' target='_blank' rel='noopener noreferrer'>GifCities</a></li>
               <li className='list-content'>The smiley faces GIFs in the ScreenSaver component were hand cut from the <a href='https://en.wikipedia.org/wiki/Hackers_(film)' target='_blank' rel='noopener noreferrer'>film Hackers</a> by myself</li>
             </ul>
             <ul style={ { display: activeTab === 3 ? 'block' : 'none' } }>
