@@ -35,7 +35,7 @@ class TheAgent extends Component {
       </span>,
       <span>
         Anyways hope you also enjoy the rest of the website, have a pleasent
-        stay here and maybe discover a few of my easter eggs :)
+        stay and maybe discover a few secrets here and there :)
       </span>,
     ];
 
