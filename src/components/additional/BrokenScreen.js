@@ -269,6 +269,12 @@ class BrokenScreen extends Component {
           style={ { filter: `hue-rotate(${bugsCleaned ? '0' : '250'}deg)` } }
         />
         <img
+          src={ bugsCleaned ? backgroundGrid : backgroundGridReverse }
+          alt='distant moving grid'
+          className='distant-moving-grid'
+          style={ { filter: `hue-rotate(${bugsCleaned ? '0' : '250'}deg)` } }
+        />
+        <img
           src={ gibsonBackground }
           alt='gibson mainframes background'
           className='gibson-mainframe'
