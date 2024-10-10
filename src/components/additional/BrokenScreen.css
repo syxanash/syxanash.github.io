@@ -17,7 +17,7 @@
 
 .moving-grid {
   width: 100%;
-  height: 42%;
+  height: 42vh;
   display: block;
   bottom: 0;
   position: absolute;
@@ -26,9 +26,9 @@
 
 .distant-moving-grid {
   width: 100%;
-  height: 9%;
+  height: 10vh;
   display: block;
-  bottom: 335px;
+  bottom: 39vh;
   position: absolute;
   mix-blend-mode: screen;
 }
