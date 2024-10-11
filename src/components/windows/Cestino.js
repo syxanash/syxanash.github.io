@@ -12,6 +12,10 @@ import spiderWindowIcon from '../../resources/icons/spiderwindow.gif';
 import gibsonBackground from '../../resources/images/gibson.png';
 import backgroundGrid from '../../resources/images/background_grid.gif';
 import backgroundGridReverse from '../../resources/images/background_grid_reverse.gif';
+import circuitAnimation from '../../resources/images/circuit.gif';
+import circuitAnimation2 from '../../resources/images/circuit2.gif';
+import calmBackground from '../../resources/images/kernelcalm.gif';
+import panicBackground from '../../resources/images/kernelpanic.gif';
 
 class CestinoHeader extends Component {
   render = () => {
@@ -44,10 +48,14 @@ class CestinoBody extends Component {
     const messageCounter = parseInt(sessionStorage.getItem('messageCounter'), 10);
 
     // preload some assets from broken sreen component
-    if (messageCounter > (easterEggObject.cestinoMessages.length / 2)) {
+    if (messageCounter > 3) {
       new Image().src = gibsonBackground;
       new Image().src = backgroundGrid;
       new Image().src = backgroundGridReverse;
+      new Image().src = circuitAnimation;
+      new Image().src = circuitAnimation2;
+      new Image().src = calmBackground;
+      new Image().src = panicBackground;
     }
   }
 
