@@ -262,6 +262,10 @@ class BrokenScreen extends Component {
       </Helmet>
       { randomCircuit }
       <div style={ { pointerEvents: 'none' } }>
+        <div
+          className='brightness-blend'
+          style={ { filter: `hue-rotate(${bugsCleaned ? '0' : '250'}deg)` } }
+        ></div>
         <img
           src={ bugsCleaned ? backgroundGrid : backgroundGridReverse }
           alt='moving grid'
