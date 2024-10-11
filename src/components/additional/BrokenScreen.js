@@ -97,8 +97,6 @@ class BrokenScreen extends Component {
     this.backgroundSong.load();
     this.backgroundSong.play();
 
-    new Image().src = backgroundGridReverse;
-
     sessionStorage.removeItem('eggTriggered');
   }
 

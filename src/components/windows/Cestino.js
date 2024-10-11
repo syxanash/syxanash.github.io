@@ -11,6 +11,7 @@ import spiderWindowIcon from '../../resources/icons/spiderwindow.gif';
 
 import gibsonBackground from '../../resources/images/gibson.png';
 import backgroundGrid from '../../resources/images/background_grid.gif';
+import backgroundGridReverse from '../../resources/images/background_grid_reverse.gif';
 
 class CestinoHeader extends Component {
   render = () => {
@@ -46,6 +47,7 @@ class CestinoBody extends Component {
     if (messageCounter > (easterEggObject.cestinoMessages.length / 2)) {
       new Image().src = gibsonBackground;
       new Image().src = backgroundGrid;
+      new Image().src = backgroundGridReverse;
     }
   }
 
