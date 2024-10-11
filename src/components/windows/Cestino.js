@@ -9,6 +9,9 @@ import easterEggObject from '../../resources/cestino-messages.json';
 import cestinoIcon from '../../resources/icons/trash.gif';
 import spiderWindowIcon from '../../resources/icons/spiderwindow.gif';
 
+import gibsonBackground from '../../resources/images/gibson.png';
+import backgroundGrid from '../../resources/images/background_grid.gif';
+
 class CestinoHeader extends Component {
   render = () => {
     let messageCounter = 0;
@@ -33,6 +36,16 @@ class CestinoBody extends Component {
 
     if (sessionStorage.getItem('messageCounter') === null) {
       sessionStorage.setItem('messageCounter', 0);
+    }
+  }
+
+  componentDidMount = () => {
+    const messageCounter = parseInt(sessionStorage.getItem('messageCounter'), 10);
+
+    // preload some assets from broken sreen component
+    if (messageCounter > (easterEggObject.cestinoMessages.length / 2)) {
+      new Image().src = gibsonBackground;
+      new Image().src = backgroundGrid;
     }
   }
 
