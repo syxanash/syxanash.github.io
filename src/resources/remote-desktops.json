@@ -1264,5 +1264,17 @@
 		"url": "https://yuteoctober.github.io/wins95Portfolio/",
 		"icon": "windows.gif",
 		"source": "https://github.com/Yuteoctober/wins95Portfolio/"
+	},
+	{
+		"name": "An Ordinary Portfolio Page of Derya",
+		"url": "https://deryasdesktop.com",
+		"icon": "obscure.gif",
+		"source": ""
+	},
+	{
+		"name": "HippoPlayer",
+		"url": "https://hippoplayer.se/WB.html",
+		"icon": "amiga.gif",
+		"source": ""
 	}
 ]
