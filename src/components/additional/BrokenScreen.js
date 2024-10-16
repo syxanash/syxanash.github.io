@@ -160,7 +160,7 @@ class BrokenScreen extends Component {
       }
       this.textAnimationTimeout = setTimeout(() => {
         this.setState({ textAnimation: false });
-      }, 2000);
+      }, 800);
     }
   }
 
