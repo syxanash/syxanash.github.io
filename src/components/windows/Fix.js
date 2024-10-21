@@ -19,8 +19,8 @@ class FixBody extends Component {
     const antiCheatString = 'DON\'T YOU DARE YOU FILTHY CHEATER!!!!';
     const antiCheatStringSecond = 'YOU THOUGHT IT WOULD BE THAT EASY!?!';
 
-    if (localStorage.getItem('broken')) {
-      localStorage.removeItem('broken');
+    if (localStorage.getItem('BROKEN_COMPUTER')) {
+      localStorage.removeItem('BROKEN_COMPUTER');
       localStorage.removeItem(antiCheatString);
       localStorage.removeItem(antiCheatStringSecond);
       localStorage.setItem('fixed', true);

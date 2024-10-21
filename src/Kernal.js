@@ -128,7 +128,7 @@ class Kernal extends Component {
 
     this.setState({
       pageBodyRoutes,
-      isBrokenScreen: localStorage.getItem('broken'),
+      isBrokenScreen: localStorage.getItem('BROKEN_COMPUTER'),
     });
   }
 
@@ -438,7 +438,7 @@ class Kernal extends Component {
 
     this.closeAllWindows();
 
-    localStorage.setItem('broken', true);
+    localStorage.setItem('BROKEN_COMPUTER', true);
     this.setState({ isBrokenScreen: true });
   }
 

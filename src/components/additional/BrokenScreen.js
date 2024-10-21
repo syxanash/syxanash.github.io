@@ -228,7 +228,7 @@ class BrokenScreen extends Component {
     }
 
     if (!this.bugRefreshInterval) {
-      if (localStorage.getItem('broken') !== 'true') {
+      if (localStorage.getItem('BROKEN_COMPUTER') !== 'true') {
         localStorage.removeItem(this.antiCheatString);
         localStorage.setItem(this.antiCheatStringSecond, 'AHAH!');
       } else {
