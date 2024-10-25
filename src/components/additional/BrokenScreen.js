@@ -7,10 +7,13 @@ import 'animate.css';
 
 import TheAgent from './TheAgent';
 
+import Util from '../Util';
+
 import easterEggObject from '../../resources/cestino-messages.json';
 
 import rotatingSkull from '../../resources/images/skull.gif';
 import gibsonBackground from '../../resources/images/gibson.png';
+import gibsonBackgroundMobile from '../../resources/images/gibson_mobile.png';
 import backgroundGrid from '../../resources/images/background_grid.gif';
 import backgroundGridReverse from '../../resources/images/background_grid_reverse.gif';
 import circuitAnimation from '../../resources/images/circuit.gif';
@@ -276,12 +279,21 @@ class BrokenScreen extends Component {
           className='distant-moving-grid'
           style={ { filter: `hue-rotate(${bugsCleaned ? '0' : '250'}deg)` } }
         />
-        <img
-          src={ gibsonBackground }
-          alt='gibson mainframes background'
-          className='gibson-mainframe'
-          style={ { filter: `hue-rotate(${bugsCleaned ? '250' : '190'}deg)` } }
-        />
+        {
+          Util.isMobile()
+            ? <img
+              src={ gibsonBackgroundMobile }
+              alt='gibson mainframes background'
+              className='gibson-mainframe'
+              style={ { filter: `hue-rotate(${bugsCleaned ? '250' : '190'}deg)` } }
+            />
+            : <img
+              src={ gibsonBackground }
+              alt='gibson mainframes background'
+              className='gibson-mainframe'
+              style={ { filter: `hue-rotate(${bugsCleaned ? '250' : '190'}deg)` } }
+            />
+        }
       </div>
       <div className='centered-item'>
         {

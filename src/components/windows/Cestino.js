@@ -10,6 +10,7 @@ import cestinoIcon from '../../resources/icons/trash.gif';
 import spiderWindowIcon from '../../resources/icons/spiderwindow.gif';
 
 import gibsonBackground from '../../resources/images/gibson.png';
+import gibsonBackgroundMobile from '../../resources/images/gibson_mobile.png';
 import backgroundGrid from '../../resources/images/background_grid.gif';
 import backgroundGridReverse from '../../resources/images/background_grid_reverse.gif';
 import circuitAnimation from '../../resources/images/circuit.gif';
@@ -50,6 +51,7 @@ class CestinoBody extends Component {
     // preload some assets from broken sreen component
     if (messageCounter > 3) {
       new Image().src = gibsonBackground;
+      new Image().src = gibsonBackgroundMobile;
       new Image().src = backgroundGrid;
       new Image().src = backgroundGridReverse;
       new Image().src = circuitAnimation;
