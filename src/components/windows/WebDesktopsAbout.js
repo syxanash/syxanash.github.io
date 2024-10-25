@@ -4,6 +4,8 @@ import {
 } from 'react95';
 import Util from '../Util';
 
+import lastUpdatedFile from '../../resources/last-updated.json';
+
 import './WebDesktopsAbout.css';
 
 import sourceIcon from '../../resources/icons/script.png';
@@ -20,6 +22,10 @@ class WebDesktopsAboutHeader extends Component {
 }
 
 class WebDesktopsAboutBody extends Component {
+  state = {
+    wdLastUpdated: Util.formatDisplayDate(lastUpdatedFile.wdUpdate),
+  };
+
   renderMobileMessage = () => (
     <div style={ { paddingTop: '10px' } }>
       <Fieldset>
@@ -45,10 +51,13 @@ class WebDesktopsAboutBody extends Component {
       </div>
       { Util.isMobile() && this.renderMobileMessage() }
       <div className='bottom-buttons-container'>
-        <div className='bottom-buttons'>
+        <div className='bottom-buttons-wd'>
           <Button onClick={ () => Util.openWebsiteURL({ url: 'https://ko-fi.com/syxanash' }) }><img src={ pizzaSlice } alt='hyperlink' style={ { paddingRight: '7px' } } />Donate</Button>
           <Button onClick={ () => Util.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) }><img src={ sourceIcon } alt='hyperlink' style={ { paddingRight: '4px', height: '17px' } } />Contribute</Button>
         </div>
+      </div>
+      <div style={ { paddingTop: '15px', textAlign: 'right' } }>
+        <span><i>List was last updated on <b>{ this.state.wdLastUpdated }</b></i></span>
       </div>
     </div>
   );

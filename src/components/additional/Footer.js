@@ -27,11 +27,8 @@ class Footer extends Component {
 
   renderLastCommitButton() {
     const { lastUpdated } = this.state;
-    const date = new Date(lastUpdated.date);
-    const currentYear = new Date().getFullYear();
-    const repositoryYear = date.getFullYear();
 
-    const displayDate = `${date.getDate()} ${date.toLocaleString('en-us', { month: 'long' })} ${currentYear !== repositoryYear ? repositoryYear : ''}`;
+    const displayDate = Util.formatDisplayDate(lastUpdated.date);
 
     return (
       <Anchor
