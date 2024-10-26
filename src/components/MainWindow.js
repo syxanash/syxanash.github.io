@@ -144,7 +144,7 @@ class MainWindowBody extends Component {
       onClick={ () => this.openWindowIfNotOpened('bulb') }
       active={ isWindowOpened('bulb') }
     >
-      <img src={ lightbulbIcon } className='icon' alt="Lite Bulb"/>
+      <img src={ lightbulbIcon } className='icon' alt=""/>
       <figcaption className='icon-caption'>Lite Bulb</figcaption>
     </Button>);
   }
@@ -195,7 +195,7 @@ class MainWindowBody extends Component {
                 disabled={ eggTriggered }
                 style={ { width: '85px', height: '85px', display: 'inline-block' } }
               >
-                <img src={ aboutIcon } className={ `icon ${eggTriggered ? 'animated infinite bounce fast' : ''}` } alt="about"/>
+                <img src={ aboutIcon } className={ `icon ${eggTriggered ? 'animated infinite bounce fast' : ''}` } alt=""/>
                 { !eggTriggered && <figcaption className='icon-caption'>About</figcaption> }
               </Button>
             </Draggable>
@@ -203,46 +203,46 @@ class MainWindowBody extends Component {
               onClick={ () => this.openWindowIfNotOpened('projects') }
               active={ isWindowOpened('projects') }
             >
-              <img src={ projectsIcon } className='icon' alt="projects"/>
+              <img src={ projectsIcon } className='icon' alt=""/>
               <figcaption className='icon-caption'>Projects</figcaption>
             </Button>
             <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindowIfNotOpened('contact') }
               active={ isWindowOpened('contact') }
             >
-              <img src={ contactIcon } className='icon' alt="contact"/>
+              <img src={ contactIcon } className='icon' alt=""/>
               <figcaption className='icon-caption'>Contact</figcaption>
             </Button>
             <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindowIfNotOpened('blog') }
               active={ isWindowOpened('blog') }>
-              <img src={ blogIcon } className='icon' alt="blog"/>
+              <img src={ blogIcon } className='icon' alt=""/>
               <figcaption className='icon-caption'>Blog</figcaption>
             </Button>
             <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindowIfNotOpened('links') }
               active={ isWindowOpened('links') }
             >
-              <img src={ linksIcon } className='icon' alt="links"/>
+              <img src={ linksIcon } className='icon' alt=""/>
               <figcaption className='icon-caption'>Links</figcaption>
             </Button>
             <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindowIfNotOpened('music') }
               active={ isWindowOpened('music') }>
-              <img src={ musicIcon } className='icon' alt="music"/>
+              <img src={ musicIcon } className='icon' alt=""/>
               <figcaption className='icon-caption'>Music</figcaption>
             </Button>
             <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindowIfNotOpened('guestbook') }
               active={ isWindowOpened('guestbook') }
             >
-              <img src={ guestbookIcon } className='icon' alt="guestbook"/>
+              <img src={ guestbookIcon } className='icon' alt=""/>
               <figcaption className='icon-caption' style={ { fontSize: '14px' } }>Guestbook</figcaption>
             </Button>
             <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ onClickTV }
             >
-              <img src={ loopTVIcon } className='icon' alt="loop TV"/>
+              <img src={ loopTVIcon } className='icon' alt=""/>
               <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
             </Button>
             { Util.isWebSocketsSupported() && this.renderBulbButton() }
@@ -256,6 +256,7 @@ class MainWindowBody extends Component {
               href='https://gist.github.com/syxanash/7b2d135a566cfb2f03dfceba6b34e61a'
               target='_blank'
               style={ { color: '#000000', textDecoration: 'none' } }
+              aria-label="pizza recipe"
             >
               <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'inline-block' : 'none' } }>
                 <img src={ pizzaIcon } className='icon' alt="pizza recipe"/>

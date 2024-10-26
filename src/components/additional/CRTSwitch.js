@@ -15,6 +15,7 @@ class CRTSwitch extends Component {
             disabled={ crtEnabled }
             active={ crtEnabled }
             size='sm'
+            aria-label="Enable CRT"
             style={ { height: '14px', width: '23px' } }
           > </Button>
           <Button
@@ -22,6 +23,7 @@ class CRTSwitch extends Component {
             active={ !crtEnabled }
             disabled={ !crtEnabled }
             size='sm'
+            aria-label="Enable LCD"
             style={ { height: '14px', width: '23px' } }
           > </Button>
           { !crtEnabled && <div className='disabled-switch-bg' /> }
