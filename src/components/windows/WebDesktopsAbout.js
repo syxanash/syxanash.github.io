@@ -23,7 +23,7 @@ class WebDesktopsAboutHeader extends Component {
 
 class WebDesktopsAboutBody extends Component {
   state = {
-    wdLastUpdated: Util.formatDisplayDate(lastUpdatedFile.wdUpdate),
+    wdLastUpdated: Util.formatDisplayDate(lastUpdatedFile.wdUpdate, true),
   };
 
   renderMobileMessage = () => (
