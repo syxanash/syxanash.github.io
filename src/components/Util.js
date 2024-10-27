@@ -10,7 +10,7 @@ function formatDisplayDate(rawDate, showYear) {
   const currentYear = new Date().getFullYear();
   const repositoryYear = date.getFullYear();
 
-  return `${date.getDate()} ${date.toLocaleString('en-us', { month: 'long' })} ${showYear || currentYear !== repositoryYear ? repositoryYear : ''}`;
+  return `${date.toLocaleString('en-us', { month: 'long' })} ${date.getDate()}${showYear || currentYear !== repositoryYear ? `, ${repositoryYear}` : ''}`;
 }
 
 function delay(milliseconds) {
