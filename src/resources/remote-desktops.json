@@ -1276,5 +1276,11 @@
 		"url": "https://hippoplayer.se/WB.html",
 		"icon": "amiga.gif",
 		"source": ""
+	},
+	{
+		"name": "sean.fishOS",
+		"url": "https://sean.fish",
+		"icon": "atari.gif",
+		"source": "https://github.com/purarue/glue"
 	}
 ]
