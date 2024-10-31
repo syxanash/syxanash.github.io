@@ -245,15 +245,25 @@ class BulbBody extends Component {
     }
 
     return (
-      <div className='typing-text-container'>
-        <Fieldset
-          label={ <img src={ aboutPressed ? questionIcon : usersIcon } style={ { height: '20px' } } alt={ aboutPressed ? 'about' : 'users' }/> }
+      <React.Fragment>
+        <div className='typing-text-container'>
+          <Fieldset
+            label={ <img src={ aboutPressed ? questionIcon : usersIcon } style={ { height: '20px' } } alt={ aboutPressed ? 'about' : 'users' }/> }
+          >
+            <div className='lightbulb-messages'>
+              { <span>{ textDisplayed }</span> }
+            </div>
+          </Fieldset>
+        </div>
+
+        <Button
+          size='sm'
+          active={ aboutPressed }
+          onClick={ this.toggleAbout }
         >
-          <div className='lightbulb-messages'>
-            { <span>{ textDisplayed }</span> }
-          </div>
-        </Fieldset>
-      </div>
+          <span>{ aboutPressed ? '▲' : '▼' } { aboutPressed ? 'COOL' : 'EXPLAIN' }</span>
+        </Button>
+      </React.Fragment>
     );
   }
 
@@ -292,7 +302,7 @@ class BulbBody extends Component {
 
   render() {
     const {
-      lightOn, websocketOpen, brokenBulb, aboutPressed,
+      lightOn, websocketOpen, brokenBulb,
     } = this.state;
 
 
@@ -337,13 +347,6 @@ class BulbBody extends Component {
           </Cutout>
         </div>
         { !brokenBulb && this.renderMessagebox() }
-        <Button
-          size='sm'
-          active={ aboutPressed }
-          onClick={ this.toggleAbout }
-        >
-          <span>{ aboutPressed ? '▲' : '▼' } { aboutPressed ? 'COOL' : 'EXPLAIN' }</span>
-        </Button>
       </div>
     );
   }
