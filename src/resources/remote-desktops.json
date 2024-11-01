@@ -132,12 +132,6 @@
 		"source": ""
 	},
 	{
-		"name": "Virtual Desktop",
-		"url": "http://www.virtualdesktop.org",
-		"icon": "obscure.gif",
-		"source": ""
-	},
-	{
 		"name": "mattOS",
 		"url": "https://mattos-1.webflow.io",
 		"icon": "mac.gif",
