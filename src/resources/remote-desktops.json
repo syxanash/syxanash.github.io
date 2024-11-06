@@ -507,7 +507,7 @@
 		"name": "Try Andy's Desk",
 		"url": "https://desk.glitchy.website",
 		"icon": "windows_new.png",
-		"source": ""
+		"source": "https://github.com/KaeruCT/desk.glitchy.website"
 	},
 	{
 		"name": "tildeOS",
@@ -1282,5 +1282,11 @@
 		"url": "https://www.webchef.dev",
 		"icon": "windows_new.png",
 		"source": "https://github.com/WebChefDev/WebChefDev"
+	},
+	{
+		"name": "Ritenv's WebOS",
+		"url": "http://riten.io/retro-desktop/",
+		"icon": "windows_new.png",
+		"source": "https://github.com/ritenv/retro-desktop"
 	}
 ]
