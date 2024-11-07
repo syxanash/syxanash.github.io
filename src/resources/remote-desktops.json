@@ -1038,12 +1038,6 @@
 		"source": ""
 	},
 	{
-		"name": "Kaitlyn Chai",
-		"url": "https://kaitlynchai.work",
-		"icon": "obscure.gif",
-		"source": ""
-	},
-	{
 		"name": "Bianca Mkaila",
 		"url": "https://bianca.digital",
 		"icon": "windows_new.png",
@@ -1288,5 +1282,17 @@
 		"url": "http://riten.io/retro-desktop/",
 		"icon": "windows_new.png",
 		"source": "https://github.com/ritenv/retro-desktop"
+	},
+	{
+		"name": "Vtron",
+		"url": "https://vtron.site/win/",
+		"icon": "windows11.gif",
+		"source": "https://github.com/royalknight56/vtron"
+	},
+	{
+		"name": "Koë's Desktop",
+		"url": "https://koefka.com",
+		"icon": "mac_new.gif",
+		"source": ""
 	}
 ]
