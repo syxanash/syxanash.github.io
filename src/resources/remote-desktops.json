@@ -1116,12 +1116,6 @@
 		"source": ""
 	},
 	{
-		"name": "Melati Diran",
-		"url": "https://melati.world",
-		"icon": "mac_new.gif",
-		"source": ""
-	},
-	{
 		"name": "Yosub Kim",
 		"url": "https://www.yoyosub.com",
 		"icon": "windows.gif",
@@ -1294,5 +1288,11 @@
 		"url": "https://koefka.com",
 		"icon": "mac_new.gif",
 		"source": ""
+	},
+	{
+		"name": "Hawwokitty's Portfolio",
+		"url": "https://hawwokitty.github.io/my-portfolio/",
+		"icon": "windows.gif",
+		"source": "https://github.com/hawwokitty/my-portfolio"
 	}
 ]
