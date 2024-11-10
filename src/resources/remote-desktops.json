@@ -1294,5 +1294,17 @@
 		"url": "https://hawwokitty.github.io/my-portfolio/",
 		"icon": "windows.gif",
 		"source": "https://github.com/hawwokitty/my-portfolio"
+	},
+	{
+		"name": "Ricardo98",
+		"url": "https://ricardo-gomes.vercel.app",
+		"icon": "windows.gif",
+		"source": "https://github.com/sleiph/Portfolio"
+	},
+	{
+		"name": "Renkbench",
+		"url": "http://www.renkbench.de",
+		"icon": "amiga.gif",
+		"source": "https://github.com/renkman/Renkbench"
 	}
 ]
