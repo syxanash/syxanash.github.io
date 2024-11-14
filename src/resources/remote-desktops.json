@@ -1140,12 +1140,6 @@
 		"source": "https://github.com/0xJ0EY/Portfolio-next"
 	},
 	{
-		"name": "Grovy Website",
-		"url": "https://grovy.space",
-		"icon": "windows.gif",
-		"source": ""
-	},
-	{
 		"name": "ProzillaOS",
 		"url": "https://os.prozilla.dev",
 		"icon": "linux.gif",
@@ -1228,12 +1222,6 @@
 		"url": "https://systems01.com",
 		"icon": "linux.gif",
 		"source": ""
-	},
-	{
-		"name": "hat.fo",
-		"url": "https://hat.fo",
-		"icon": "windows.gif",
-		"source": "https://github.com/hatf0/hat.fo-next"
 	},
 	{
 		"name": "Nic Chan",
