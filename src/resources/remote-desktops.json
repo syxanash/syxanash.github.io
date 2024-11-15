@@ -1517,5 +1517,54 @@
 		"icon": "linux.gif",
 		"source": "",
 		"notes": ""
+	},
+	{
+		"name": "Ripen OS",
+		"url": "https://ripenos.github.io/Ripenos/",
+		"icon": "linux.gif",
+		"source": "https://github.com/ripenos/ripenos.github.io",
+		"notes": ""
+	},
+	{
+		"name": "Windows11",
+		"url": "https://winbows11.vercel.app",
+		"icon": "windows11.gif",
+		"source": "https://github.com/Siyu1017/winbows11",
+		"notes": ""
+	},
+	{
+		"name": "Webdows",
+		"url": "https://webdows.belowaverage.org",
+		"icon": "windows_new.png",
+		"source": "https://github.com/belowaverage-org/webdows",
+		"notes": ""
+	},
+	{
+		"name": "NapicuOS",
+		"url": "https://os.napicu.eu",
+		"icon": "linux.gif",
+		"source": "https://github.com/Numax-cz/NapicuOS",
+		"notes": "you need to configure the boot priority order in the BIOS to run this web desktop :)"
+	},
+	{
+		"name": "MainOS",
+		"url": "https://maingron.itch.io/mainos",
+		"icon": "windows_new.png",
+		"source": "https://github.com/Maingron/MainOS",
+		"notes": ""
+	},
+	{
+		"name": "Nova OS",
+		"url": "https://adthoughtsglobal.github.io/Nova-OS/",
+		"icon": "linux.gif",
+		"source": "https://github.com/adthoughtsglobal/Nova-OS",
+		"notes": "Only runs with Google Chrome"
+	},
+	{
+		"name": "AnuraOS",
+		"url": "https://anura.pro",
+		"icon": "linux.gif",
+		"source": "https://github.com/MercuryWorkshop/anuraOS",
+		"notes": ""
 	}
 ]
