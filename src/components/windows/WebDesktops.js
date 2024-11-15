@@ -141,6 +141,18 @@ class WebDesktopsBody extends Component {
     }
   }
 
+  displayUserNotes = (name, notes) => {
+    if (notes !== '') {
+      // eslint-disable-next-line no-alert
+      alert(`User notes for ${name}:\n${notes}`);
+    }
+  }
+
+  interceptOpenLink = ({ name, url, notes }) => {
+    this.displayUserNotes(name, notes);
+    this.registerWebsite(url);
+  }
+
   registerWebsite = (url) => {
     const listExplored = JSON.parse(localStorage.getItem('webdesktopsExplored'));
     if (!listExplored.includes(url)) {
@@ -151,16 +163,16 @@ class WebDesktopsBody extends Component {
     }
   }
 
-  renderSingleComputerIcon = ({ url, name, icon }) => (
-    <a className='website-link' href={ url } target='_blank' onClick={ () => this.registerWebsite(url) } rel='noopener noreferrer'>
+  renderSingleComputerIcon = website => (
+    <a className='website-link' href={ website.url } target='_blank' onClick={ () => this.interceptOpenLink(website) } rel='noopener noreferrer'>
       <div className='computer-icon'>
-        <img style={ { height: '65px' } } src={ webDesktopsIcons(`./${icon}`) } alt='single desktop icon' />
+        <img style={ { height: '65px' } } src={ webDesktopsIcons(`./${website.icon}`) } alt='single desktop icon' />
       </div>
-      <div className='website-favicon' style={ { left: icon === 'windows_new.png' ? '7px' : '1px', bottom: icon === 'windows11.gif' ? '57px' : '', transform: icon === 'windows_new.png' ? 'rotate(10deg)' : '' } }>
-        <img style={ { height: '25px' } } src={ `https://s2.googleusercontent.com/s2/favicons?domain_url=${url}` } alt='computer icon' />
+      <div className='website-favicon' style={ { left: website.icon === 'windows_new.png' ? '7px' : '1px', bottom: website.icon === 'windows11.gif' ? '57px' : '', transform: website.icon === 'windows_new.png' ? 'rotate(10deg)' : '' } }>
+        <img style={ { height: '25px' } } src={ `https://s2.googleusercontent.com/s2/favicons?domain_url=${website.url}` } alt='computer icon' />
       </div>
       <div className='website-name'>
-        <span>{ name }</span>
+        <span>{ website.name }</span>
       </div>
     </a>
   )
@@ -188,9 +200,10 @@ class WebDesktopsBody extends Component {
     }
 
     const randomLink = _.sample(finalList);
+    const randomWebsiteObj = filteredDesktops.find(website => website.url === randomLink);
 
-    this.registerWebsite(randomLink);
     Util.openWebsiteURL({ url: randomLink });
+    this.interceptOpenLink(randomWebsiteObj);
   }
 
   renderAllIcons = () => {

@@ -3,1302 +3,1519 @@
 		"name": "WorldWideWeb",
 		"url": "https://worldwideweb.cern.ch/browser",
 		"icon": "next.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Nightwave Plaza",
 		"url": "https://plaza.one",
 		"icon": "windows.gif",
-		"source": "https://github.com/nightwaveplaza"
+		"source": "https://github.com/nightwaveplaza",
+		"notes": ""
 	},
 	{
 		"name": "Poolsuite",
 		"url": "https://poolsuite.net",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Ash Kyd",
 		"url": "https://ash.ms",
 		"icon": "windows.gif",
-		"source": "https://github.com/AshKyd/ui95"
+		"source": "https://github.com/AshKyd/ui95",
+		"notes": ""
 	},
 	{
 		"name": "Cyberspace & Time",
 		"url": "http://cyberspaceandtime.com/Gaano9Y6KAU.video+related",
 		"icon": "unix.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "WWWTXT",
 		"url": "https://wwwtxt.org/about",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Windows 93",
 		"url": "https://www.windows93.net",
 		"icon": "windows.gif",
-		"source": "https://github.com/windows93dotnet/sys42"
+		"source": "https://github.com/windows93dotnet/sys42",
+		"notes": ""
 	},
 	{
 		"name": "The Restart Page",
 		"url": "http://www.therestartpage.com",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Webamp",
 		"url": "https://webamp.org",
 		"icon": "windows.gif",
-		"source": "https://github.com/captbaritone/webamp"
+		"source": "https://github.com/captbaritone/webamp",
+		"notes": ""
 	},
 	{
 		"name": "It is as if you were doing work",
 		"url": "https://pippinbarr.github.io/itisasifyouweredoingwork",
 		"icon": "windows.gif",
-		"source": "https://github.com/pippinbarr/itisasifyouweredoingwork"
+		"source": "https://github.com/pippinbarr/itisasifyouweredoingwork",
+		"notes": ""
 	},
 	{
 		"name": "Geek Prank",
 		"url": "https://geekprank.com",
 		"icon": "windows_new.png",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Eric Bernacchi",
 		"url": "https://eeerik.com",
 		"icon": "mac_new.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "OS.js",
 		"url": "https://demo.os-js.org",
 		"icon": "linux.gif",
-		"source": "https://github.com/os-js/OS.js"
+		"source": "https://github.com/os-js/OS.js",
+		"notes": ""
 	},
 	{
 		"name": "Mariano Pascual",
 		"url": "https://www.marianopascual.me",
 		"icon": "mac_new.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "AfterStep WM",
 		"url": "http://www.afterstep.org",
 		"icon": "next.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "98.js",
 		"url": "https://98.js.org",
 		"icon": "windows.gif",
-		"source": "https://github.com/1j01/98"
+		"source": "https://github.com/1j01/98",
+		"notes": ""
 	},
 	{
 		"name": "Broken Reality",
 		"url": "https://brokenrealitygame.tumblr.com",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "WindowMaker",
 		"url": "https://www.windowmaker.org",
 		"icon": "next.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Whimsy Space",
 		"url": "https://whimsy.space",
 		"icon": "unix.gif",
-		"source": "https://github.com/STRd6/zine"
+		"source": "https://github.com/STRd6/zine",
+		"notes": ""
 	},
 	{
 		"name": "WinXP",
 		"url": "https://winxp.now.sh",
 		"icon": "windows_new.png",
-		"source": "https://github.com/ShizukuIchi/winXP/"
+		"source": "https://github.com/ShizukuIchi/winXP/",
+		"notes": ""
 	},
 	{
 		"name": "zach.dev // Software & Adventure",
 		"url": "https://zach.dev",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "www.chiptune.com",
 		"url": "http://www.chiptune.com",
 		"icon": "amiga.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "mattOS",
 		"url": "https://mattos-1.webflow.io",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "waller.is",
 		"url": "https://waller.is",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Windows 98 Icon Viewer",
 		"url": "https://win98icons.alexmeub.com",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Jurassic Systems",
 		"url": "https://jurassicsystems.com",
 		"icon": "unix.gif",
-		"source": "https://github.com/tojrobinson/jurassicsystems.com"
+		"source": "https://github.com/tojrobinson/jurassicsystems.com",
+		"notes": ""
 	},
 	{
 		"name": "The Macpaint Gallery",
 		"url": "https://www.macpaint.org",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "N10.AS RADIO",
 		"url": "https://n10.as",
 		"icon": "unix.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Rahul.io",
 		"url": "https://rahul.io",
 		"icon": "windows.gif",
-		"source": "https://github.com/lolstring/window98-html-css-js"
+		"source": "https://github.com/lolstring/window98-html-css-js",
+		"notes": ""
 	},
 	{
 		"name": "EmuOS",
 		"url": "https://emupedia.net/beta/emuos/",
 		"icon": "windows.gif",
-		"source": "https://github.com/Emupedia/emupedia.github.io"
+		"source": "https://github.com/Emupedia/emupedia.github.io",
+		"notes": ""
 	},
 	{
 		"name": "AaronOS",
 		"url": "https://aaronos.dev/AaronOS/aosBeta.php",
 		"icon": "linux.gif",
-		"source": "https://github.com/MineAndCraft12/AaronOS"
+		"source": "https://github.com/MineAndCraft12/AaronOS",
+		"notes": ""
 	},
 	{
 		"name": "CloudDesk",
 		"url": "http://altaica.altervista.org/",
 		"icon": "unix.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Windows 98 -- Packard Belle",
 		"url": "https://packard-belle.netlify.app",
 		"icon": "windows.gif",
-		"source": "https://github.com/padraigfl/packard-belle-desktop"
+		"source": "https://github.com/padraigfl/packard-belle-desktop",
+		"notes": ""
 	},
 	{
 		"name": "vue win3.1",
 		"url": "https://disjfa.github.io/vue-win-3.1",
 		"icon": "windows.gif",
-		"source": "https://github.com/disjfa/vue-win-3.1"
+		"source": "https://github.com/disjfa/vue-win-3.1",
+		"notes": ""
 	},
 	{
 		"name": "Minesweeper",
 		"url": "https://winmine-exe.now.sh",
 		"icon": "windows.gif",
-		"source": "https://github.com/1000hz/winmine-exe"
+		"source": "https://github.com/1000hz/winmine-exe",
+		"notes": ""
 	},
 	{
 		"name": "Gamithra OS",
 		"url": "https://gamithra.com",
 		"icon": "linux.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "maple's website!",
 		"url": "https://maple.pet",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "baz's PC",
 		"url": "https://niceware.neocities.org",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Victor Ribeiro",
 		"url": "https://victorribeiro.com",
 		"icon": "windows.gif",
-		"source": "https://github.com/victorqribeiro/fos"
+		"source": "https://github.com/victorqribeiro/fos",
+		"notes": ""
 	},
 	{
 		"name": "Hillary Churchill - Copywriter",
 		"url": "http://hillarychurchill.com",
 		"icon": "mac_new.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Bill's Wold Wide Boutique",
 		"url": "https://billsworld.neocities.org",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "NyjaOS",
 		"url": "https://signal3.neocities.org",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Windows 95 Replica",
 		"url": "https://derplayer.neocities.org/repo/win/",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "The Indie Web",
 		"url": "https://theindieweb.com",
 		"icon": "unix.gif",
-		"source": "https://github.com/tholman/tholman-blog"
+		"source": "https://github.com/tholman/tholman-blog",
+		"notes": ""
 	},
 	{
 		"name": "hannah blair | developer & designer",
 		"url": "https://hannahblair.co.uk",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "98 KAGE",
 		"url": "https://ka.ge",
 		"icon": "windows.gif",
-		"source": "https://github.com/pkage/98"
+		"source": "https://github.com/pkage/98",
+		"notes": ""
 	},
 	{
 		"name": "erdOS",
 		"url": "https://erd-os.iamerd.xyz",
 		"icon": "mac_new.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Windows 1.0",
 		"url": "https://win1.krnl386.com",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "glenda.party",
 		"url": "https://glenda.0x46.net",
 		"icon": "unix.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "VirusvAV",
 		"url": "https://os.virusav.com",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Repeater",
 		"url": "https://repeater.space",
 		"icon": "atari.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "WuerfelDev",
 		"url": "https://wuerfeldev.de",
 		"icon": "linux.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Make WordArt",
 		"url": "https://makewordart.com",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "ytOS",
 		"url": "https://ytcracker.com",
 		"icon": "IBM.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Windows XP",
 		"url": "https://windows-xp.netlify.app",
 		"icon": "windows_new.png",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "56k-modem",
 		"url": "https://56k-modem.online",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "RACER TRASH",
 		"url": "https://racertrash.com",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Vuindows",
 		"url": "https://marcmascarell.github.io/Vuindows/",
 		"icon": "windows_new.png",
-		"source": "https://github.com/marcmascarell/Vuindows"
+		"source": "https://github.com/marcmascarell/Vuindows",
+		"notes": ""
 	},
 	{
 		"name": "Gustavo Chico",
 		"url": "https://gustavochico.com/desktop",
 		"icon": "atari.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "digital-r41n",
 		"url": "https://digital-r41n.neocities.org",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Online Hacker Simulator",
 		"url": "https://pranx.com/hacker/",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Tetrageddon Games",
 		"url": "http://tetrageddon.com",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "My Second PC",
 		"url": "https://koas.dev/m2pc/dinamicos/",
 		"icon": "linux.gif",
-		"source": "https://github.com/koas/my-second-pc"
+		"source": "https://github.com/koas/my-second-pc",
+		"notes": ""
 	},
 	{
 		"name": "ToxicCode.com",
 		"url": "http://toxiccode.com",
 		"icon": "unix.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "HyNET Geocity",
 		"url": "https://hyena.network/geocity/",
 		"icon": "IBM.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Unremarkable Garden",
 		"url": "https://unremarkablegarden.com",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "FLEXEDUPSHAWTY.COM",
 		"url": "https://flexedupshawty.com",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "H2O - OS",
 		"url": "https://aconfuseddragon.neocities.org",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "RaccOS 9",
 		"url": "https://violet.pm",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "daedalOS",
 		"url": "https://dustinbrett.com",
 		"icon": "windows_new.png",
-		"source": "https://github.com/DustinBrett/daedalOS"
+		"source": "https://github.com/DustinBrett/daedalOS",
+		"notes": ""
 	},
 	{
 		"name": "MSOS Concept",
 		"url": "https://msos.midspike.com",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Team3D",
 		"url": "https://team3d.io",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Day Job",
 		"url": "https://dayjob.work",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "PUBLIC DOMAIN",
 		"url": "https://public---domain.com",
 		"icon": "mac_new.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "WE=LINK",
 		"url": "http://we-link.chronusartcenter.org",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Thoughts On Glitch[Art]v2.0",
 		"url": "https://nickbriz.com/thoughtsonglitchart",
 		"icon": "unix.gif",
-		"source": "https://github.com/nbriz/thoughtsonglitchart"
+		"source": "https://github.com/nbriz/thoughtsonglitchart",
+		"notes": ""
 	},
 	{
 		"name": "Big Desk Energy",
 		"url": "https://www.bigdeskenergy.com",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Github95",
 		"url": "https://github95.now.sh",
 		"icon": "windows.gif",
-		"source": "https://github.com/edwardpayton/github95"
+		"source": "https://github.com/edwardpayton/github95",
+		"notes": ""
 	},
 	{
 		"name": "Yahya J. Aifit",
 		"url": "https://yja.me",
 		"icon": "mac_new.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "jQuery Desktop",
 		"url": "https://desktop.sonspring.com",
 		"icon": "linux.gif",
-		"source": "https://github.com/nathansmith/jQuery-Desktop"
+		"source": "https://github.com/nathansmith/jQuery-Desktop",
+		"notes": ""
 	},
 	{
 		"name": "Windows 96",
 		"url": "https://windows96.net",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "The Coding Forge",
 		"url": "https://thecodingforge.com.au",
 		"icon": "linux.gif",
-		"source": "https://github.com/Yalgie/website"
+		"source": "https://github.com/Yalgie/website",
+		"notes": ""
 	},
 	{
 		"name": "Vivek Patel - Computer Science Student",
 		"url": "https://vivek9patel.github.io",
 		"icon": "linux.gif",
-		"source": "https://github.com/vivek9patel/vivek9patel.github.io"
+		"source": "https://github.com/vivek9patel/vivek9patel.github.io",
+		"notes": ""
 	},
 	{
 		"name": "Winampify",
 		"url": "https://winampify.io",
 		"icon": "windows_new.png",
-		"source": "https://github.com/remigallego/winampify"
+		"source": "https://github.com/remigallego/winampify",
+		"notes": ""
 	},
 	{
 		"name": "Try Andy's Desk",
 		"url": "https://desk.glitchy.website",
 		"icon": "windows_new.png",
-		"source": "https://github.com/KaeruCT/desk.glitchy.website"
+		"source": "https://github.com/KaeruCT/desk.glitchy.website",
+		"notes": ""
 	},
 	{
 		"name": "tildeOS",
 		"url": "https://tilde.town/~selfsame/",
 		"icon": "atari.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Jack Adam",
 		"url": "https://jackadam.cc",
 		"icon": "mac.gif",
-		"source": "https://github.com/jckdm/jckdm.github.io"
+		"source": "https://github.com/jckdm/jckdm.github.io",
+		"notes": ""
 	},
 	{
 		"name": "Xiaohan Zou's Portfolio",
 		"url": "https://portfolio.zxh.me",
 		"icon": "mac_new.gif",
-		"source": "https://github.com/Renovamen/playground-macos"
+		"source": "https://github.com/Renovamen/playground-macos",
+		"notes": ""
 	},
 	{
 		"name": "macOS in Svelte",
 		"url": "https://macos-web.app",
 		"icon": "mac_new.gif",
-		"source": "https://github.com/puruvj/macos-web"
+		"source": "https://github.com/puruvj/macos-web",
+		"notes": ""
 	},
 	{
 		"name": "Deepin Linux",
 		"url": "https://goodmanwen.github.io",
 		"icon": "linux.gif",
-		"source": "https://github.com/GoodManWEN/GoodManWEN.github.io"
+		"source": "https://github.com/GoodManWEN/GoodManWEN.github.io",
+		"notes": ""
 	},
 	{
 		"name": "Win 7",
 		"url": "https://khang-nd.github.io/win7",
 		"icon": "windows_new.png",
-		"source": "https://github.com/khang-nd/win7"
+		"source": "https://github.com/khang-nd/win7",
+		"notes": ""
 	},
 	{
 		"name": "Heather Vandervecht",
 		"url": "https://heathervv.com",
 		"icon": "windows.gif",
-		"source": "https://github.com/heathervv/portfolio-chatbot"
+		"source": "https://github.com/heathervv/portfolio-chatbot",
+		"notes": ""
 	},
 	{
 		"name": "Tony Dinh",
 		"url": "https://dinhquangtrung.net/windows7/",
 		"icon": "windows_new.png",
-		"source": "https://github.com/trungdq88/dinhquangtrung.net"
+		"source": "https://github.com/trungdq88/dinhquangtrung.net",
+		"notes": ""
 	},
 	{
 		"name": "Fizzygum",
 		"url": "http://fizzygum.org/sandboxes/latest-stable/",
 		"icon": "obscure.gif",
-		"source": "https://github.com/davidedc/Fizzygum"
+		"source": "https://github.com/davidedc/Fizzygum",
+		"notes": ""
 	},
 	{
 		"name": "Win11React",
 		"url": "https://win11.blueedge.me",
 		"icon": "windows11.gif",
-		"source": "https://github.com/blueedgetechno/win11React"
+		"source": "https://github.com/blueedgetechno/win11React",
+		"notes": ""
 	},
 	{
 		"name": "Win7 Simu",
 		"url": "https://win7simu.visnalize.com",
 		"icon": "windows_new.png",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "AtheOS",
 		"url": "https://al1-ce.neocities.org",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "NeXT",
 		"url": "https://www.levenez.com/NeXTSTEP/",
 		"icon": "next.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Don Chia",
 		"url": "https://www.donchia.tech",
 		"icon": "windows.gif",
-		"source": "https://github.com/DonChiaQE/win95"
+		"source": "https://github.com/DonChiaQE/win95",
+		"notes": ""
 	},
 	{
 		"name": "clickbecause.net",
 		"url": "https://clickbecause.net",
 		"icon": "mac_new.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "LUMISET",
 		"url": "https://lumiset.se",
 		"icon": "IBM.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "9/11 Realtime",
 		"url": "https://911realtime.org",
 		"icon": "mac.gif",
-		"source": "https://github.com/Keeping-History/rt911"
+		"source": "https://github.com/Keeping-History/rt911",
+		"notes": ""
 	},
 	{
 		"name": "Core-OS",
 		"url": "https://coreos.io",
 		"icon": "unix.gif",
-		"source": "https://github.com/timhow38/Resume-WebApplication"
+		"source": "https://github.com/timhow38/Resume-WebApplication",
+		"notes": ""
 	},
 	{
 		"name": "Frank Force - Generative Art",
 		"url": "https://generative.3d2k.com",
 		"icon": "linux.gif",
-		"source": "https://github.com/KilledByAPixel/OS13k"
+		"source": "https://github.com/KilledByAPixel/OS13k",
+		"notes": ""
 	},
 	{
 		"name": "Noam Rubin",
 		"url": "https://www.noam-rubin.com",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Insaf Khamzin",
 		"url": "https://insafkhamzin.com",
 		"icon": "windows.gif",
-		"source": "https://github.com/InsafKhamzin/portfolio"
+		"source": "https://github.com/InsafKhamzin/portfolio",
+		"notes": ""
 	},
 	{
 		"name": "Jonathan Zavialov",
 		"url": "https://computer.jonzav.me",
 		"icon": "windows.gif",
-		"source": "https://github.com/JonZavialov/portfolio4"
+		"source": "https://github.com/JonZavialov/portfolio4",
+		"notes": ""
 	},
 	{
 		"name": "KANYE 2049",
 		"url": "https://kanye2049.com",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": "Password: Graduation"
 	},
 	{
 		"name": "Windows 11 in Preact",
 		"url": "https://win11.vercel.app",
 		"icon": "windows11.gif",
-		"source": "https://github.com/piyushsuthar/windows-11-web"
+		"source": "https://github.com/piyushsuthar/windows-11-web",
+		"notes": ""
 	},
 	{
 		"name": "RebornXP",
 		"url": "https://xp.quenq.com",
 		"icon": "windows_new.png",
-		"source": "https://github.com/shoaib-jamal/rebornxp"
+		"source": "https://github.com/shoaib-jamal/rebornxp",
+		"notes": ""
 	},
 	{
 		"name": "WWWerd",
 		"url": "https://theoldnet.com/desktop/",
 		"icon": "IBM.gif",
-		"source": "https://github.com/TheOldNet/web-windows"
+		"source": "https://github.com/TheOldNet/web-windows",
+		"notes": ""
 	},
 	{
 		"name": "Puter",
 		"url": "https://puter.com",
 		"icon": "linux.gif",
-		"source": "https://github.com/heyPuter/puter/"
+		"source": "https://github.com/heyPuter/puter/",
+		"notes": "if you get a login screen just clear cookies and site data"
 	},
 	{
 		"name": "Things",
 		"url": "https://things.inc",
 		"icon": "unix.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "1997box",
 		"url": "https://1997.pooftie.me",
 		"icon": "windows.gif",
-		"source": "https://github.com/middlepot/1997"
+		"source": "https://github.com/middlepot/1997",
+		"notes": ""
 	},
 	{
 		"name": "FoundationOS",
 		"url": "https://os.foundation.app",
 		"icon": "mac_new.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Orb",
 		"url": "https://desktop.leisink.net",
 		"icon": "linux.gif",
-		"source": "https://gitlab.com/hsleisink/orb"
+		"source": "https://gitlab.com/hsleisink/orb",
+		"notes": ""
 	},
 	{
 		"name": "Classicy",
 		"url": "https://robbiebyrd.github.io/classicy/",
 		"icon": "mac.gif",
-		"source": "https://github.com/robbiebyrd/classicy"
+		"source": "https://github.com/robbiebyrd/classicy",
+		"notes": ""
 	},
 	{
 		"name": "Harrison's Home",
 		"url": "https://harrisonm.com",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Janne Koivisto",
 		"url": "https://janneilkka.com",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Kayo Felipe Silva",
 		"url": "https://kaiofelipejs.dev",
 		"icon": "windows.gif",
-		"source": "https://github.com/kaiofelipejs/kaiofelipejs.dev"
+		"source": "https://github.com/kaiofelipejs/kaiofelipejs.dev",
+		"notes": ""
 	},
 	{
 		"name": "H4CK1NG G00GL3",
 		"url": "https://h4ck1ng.google",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Sam Likes Code",
 		"url": "https://www.samlikescode.dev",
 		"icon": "obscure.gif",
-		"source": "https://github.com/Goggwell/newfolio/"
+		"source": "https://github.com/Goggwell/newfolio/",
+		"notes": ""
 	},
 	{
 		"name": "The Amiga Workbench Simulation",
 		"url": "https://taws.ch",
 		"icon": "amiga.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Amiga34 Germany",
 		"url": "http://www.amiga34.de",
 		"icon": "amiga.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Richard Eisenmenger",
 		"url": "https://amiga.richard-eisenmenger.com",
 		"icon": "amiga.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Money Simulator",
 		"url": "https://simulator.money/play",
 		"icon": "windows_new.png",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Pangolin Desktop",
 		"url": "https://web.dahliaos.io",
 		"icon": "linux.gif",
-		"source": "https://github.com/dahliaOS/pangolin_desktop"
+		"source": "https://github.com/dahliaOS/pangolin_desktop",
+		"notes": ""
 	},
 	{
 		"name": "WebXP",
 		"url": "https://konsti.club/webSys/",
 		"icon": "windows_new.png",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "HoleNet Cobalt",
 		"url": "https://holenet.info",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Chrisbin's MacBook Pro",
 		"url": "https://chrisbinsunny.github.io/chrishub",
 		"icon": "mac_new.gif",
-		"source": "https://github.com/chrisbinsunny/chrishub"
+		"source": "https://github.com/chrisbinsunny/chrishub",
+		"notes": ""
 	},
 	{
 		"name": "Ignasi Monreal",
 		"url": "https://www.ignasimonreal.com",
 		"icon": "mac_new.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Jazmin Jones",
 		"url": "https://www.jazminjones.com",
 		"icon": "mac_new.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Mastodon Flock",
 		"url": "https://mastodon-flock.vercel.app/desktop",
 		"icon": "windows.gif",
-		"source": "https://github.com/WesSouza/mastodon-flock"
+		"source": "https://github.com/WesSouza/mastodon-flock",
+		"notes": ""
 	},
 	{
 		"name": "Ɀeus' Stadt",
 		"url": "https://zeusofthecrows.neocities.org",
 		"icon": "windows.gif",
-		"source": "https://github.com/ZeusOfTheCrows/zeusofthecrows.github.io"
+		"source": "https://github.com/ZeusOfTheCrows/zeusofthecrows.github.io",
+		"notes": ""
 	},
 	{
 		"name": "Win11 Svelte",
 		"url": "https://win11-svelte.vercel.app",
 		"icon": "windows11.gif",
-		"source": "https://github.com/yashash-pugalia/win11-svelte"
+		"source": "https://github.com/yashash-pugalia/win11-svelte",
+		"notes": ""
 	},
 	{
 		"name": "Sergio Diaz Schiaffino",
 		"url": "https://www.sergiodiazschiaffino.com",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "chloédigital",
 		"url": "https://chloedigital.com",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "The Secret History of Mac Gaming",
 		"url": "https://secrethistoryofmacgaming.com",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Ubuntu Tour",
 		"url": "https://malisipi.github.io/ubuntu-tour",
 		"icon": "linux.gif",
-		"source": "https://github.com/malisipi/ubuntu-tour"
+		"source": "https://github.com/malisipi/ubuntu-tour",
+		"notes": ""
 	},
 	{
 		"name": "sue roh",
 		"url": "https://sueroh.com",
 		"icon": "IBM.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Windows 11 Web",
 		"url": "https://rajaniraiyn.github.io/windows11/",
 		"icon": "windows11.gif",
-		"source": "https://github.com/Rajaniraiyn/windows11"
+		"source": "https://github.com/Rajaniraiyn/windows11",
+		"notes": ""
 	},
 	{
 		"name": "Sophia's Time Capsule",
 		"url": "https://sosophia10.github.io/Time-Capsule/index/desktop.html",
 		"icon": "windows.gif",
-		"source": "https://github.com/sosophia10/Time-Capsule"
+		"source": "https://github.com/sosophia10/Time-Capsule",
+		"notes": ""
 	},
 	{
 		"name": "Quentin OS/2",
 		"url": "https://www.quentin.xyz",
 		"icon": "IBM.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Hypertalking",
 		"url": "https://www.hypertalking.com",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "DOODAD",
 		"url": "https://doodad.dev",
 		"icon": "unix.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Joy Yiu",
 		"url": "https://www.joyyiu.com",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "DeskPortal",
 		"url": "https://demo.deskportal.com",
 		"icon": "linux.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "lover.os",
 		"url": "https://lostlove.neocities.org",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Buddy Pond",
 		"url": "https://buddypond.com",
 		"icon": "linux.gif",
-		"source": "https://github.com/marak/buddypond"
+		"source": "https://github.com/marak/buddypond",
+		"notes": ""
 	},
 	{
 		"name": "thatDaria",
 		"url": "https://thatdaria.com",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Chads Desktop",
 		"url": "https://www.chadhill.dev",
 		"icon": "obscure.gif",
-		"source": "https://github.com/chad2320/chadhill-dev"
+		"source": "https://github.com/chad2320/chadhill-dev",
+		"notes": ""
 	},
 	{
 		"name": "Game Database",
 		"url": "https://refuge.tokyo",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "GreyOS",
 		"url": "https://greyos.gr",
 		"icon": "linux.gif",
-		"source": "https://github.com/g0d/GreyOS"
+		"source": "https://github.com/g0d/GreyOS",
+		"notes": "login: demo@greyos.gr / password"
 	},
 	{
 		"name": "Henry Heffernan",
 		"url": "https://henryheffernan.com",
 		"icon": "windows.gif",
-		"source": "https://github.com/henryjeff/portfolio-website"
+		"source": "https://github.com/henryjeff/portfolio-website",
+		"notes": ""
 	},
 	{
 		"name": "Alec Babala",
 		"url": "https://www.alecbabala.com",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "win32.run",
 		"url": "https://win32.run",
 		"icon": "windows_new.png",
-		"source": "https://github.com/ducbao414/win32.run"
+		"source": "https://github.com/ducbao414/win32.run",
+		"notes": ""
 	},
 	{
 		"name": "Pretty Diff",
 		"url": "https://prettydiff.com",
 		"icon": "unix.gif",
-		"source": "https://github.com/prettydiff/share-file-systems"
+		"source": "https://github.com/prettydiff/share-file-systems",
+		"notes": ""
 	},
 	{
 		"name": "Slashdiv OS",
 		"url": "https://slashdiv.neocities.org",
 		"icon": "IBM.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "MacOS Big Sur Clone",
 		"url": "https://macos-big-sur-clone.vercel.app",
 		"icon": "mac_new.gif",
-		"source": "https://github.com/mirayatech/macos-big-sur-clone"
+		"source": "https://github.com/mirayatech/macos-big-sur-clone",
+		"notes": ""
 	},
 	{
 		"name": "NENRIKIDO",
 		"url": "https://nenrikido.neocities.org",
 		"icon": "obscure.gif",
-		"source": "https://github.com/js044/nenrikido"
+		"source": "https://github.com/js044/nenrikido",
+		"notes": ""
 	},
 	{
 		"name": "holidayOS | tonik",
 		"url": "https://holidayos-tonik-showcase.webflow.io",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Rimet Desktop",
 		"url": "http://geocities.ws/nooz/rimet/",
 		"icon": "IBM.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "exaequOS",
 		"url": "https://www.exaequos.com/start.php",
 		"icon": "unix.gif",
-		"source": "https://github.com/baudaux/exa-kernel"
+		"source": "https://github.com/baudaux/exa-kernel",
+		"notes": ""
 	},
 	{
 		"name": "vue-95",
 		"url": "https://johnuberbacher.com/vue95",
 		"icon": "windows.gif",
-		"source": "https://github.com/johnuberbacher/vue-95"
+		"source": "https://github.com/johnuberbacher/vue-95",
+		"notes": ""
 	},
 	{
 		"name": "mingde",
 		"url": "https://mingde.prussia.dev",
 		"icon": "windows.gif",
-		"source": "https://github.com/stjet/mingde"
+		"source": "https://github.com/stjet/mingde",
+		"notes": ""
 	},
 	{
 		"name": "BénOS",
 		"url": "https://benlacroix.com",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Pluto",
 		"url": "https://pluto-app.zeon.dev",
 		"icon": "linux.gif",
-		"source": "https://github.com/zeondev/pluto"
+		"source": "https://github.com/zeondev/pluto",
+		"notes": ""
 	},
 	{
 		"name": "webKDE",
 		"url": "https://baroxyton.github.io/webKDE/",
 		"icon": "linux.gif",
-		"source": "https://github.com/baroxyton/webKDE"
+		"source": "https://github.com/baroxyton/webKDE",
+		"notes": ""
 	},
 	{
 		"name": "Laurus Edelbacher",
 		"url": "https://www.laurusedelbacher.com/new_page.html",
 		"icon": "mac_new.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": ".solutionsOS",
 		"url": "https://gleb.solutions",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Digital New Era",
 		"url": "https://newerawebsites.com",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "C'est l'IA ou Célia",
 		"url": "https://voeux2024.castoretpollux.com",
 		"icon": "mac_new.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "HeavenComputerOS",
 		"url": "https://heaven.computer",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Bianca Mkaila",
 		"url": "https://bianca.digital",
 		"icon": "windows_new.png",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "racOS",
 		"url": "https://rac.fm",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "HIFI Labs OS",
 		"url": "https://hifilabs.co",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Based",
 		"url": "https://www.based.gg",
 		"icon": "IBM.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "ModernActiveDesktop",
 		"url": "https://www.ingan121.com/mad/",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "l3S GR*S MOT$",
 		"url": "https://www.lesgrosmots.com",
 		"icon": "IBM.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "constraint systems OS",
 		"url": "https://csos.constraint.systems",
 		"icon": "unix.gif",
-		"source": "https://github.com/constraint-systems/csOS"
+		"source": "https://github.com/constraint-systems/csOS",
+		"notes": ""
 	},
 	{
 		"name": "PeOS",
 		"url": "https://picturelements.github.io",
 		"icon": "windows_new.png",
-		"source": "https://github.com/PicturElements/picturelements.github.io"
+		"source": "https://github.com/PicturElements/picturelements.github.io",
+		"notes": ""
 	},
 	{
 		"name": "Tansoftware OS",
 		"url": "https://tansoftware.com/os",
 		"icon": "mac_new.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Brunc.io",
 		"url": "https://brunc.io",
 		"icon": "mac.gif",
-		"source": "https://github.com/bamanczak/bruncio"
+		"source": "https://github.com/bamanczak/bruncio",
+		"notes": ""
 	},
 	{
 		"name": "KRAZAM OS",
 		"url": "https://www.krazam.tv",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "FrugalOS",
 		"url": "https://www.thefrugalgamer.net/programming/FrugalOS/",
 		"icon": "IBM.gif",
-		"source": "https://github.com/FrugalGamer/FrugalOS"
+		"source": "https://github.com/FrugalGamer/FrugalOS",
+		"notes": ""
 	},
 	{
 		"name": "32by32",
 		"url": "https://32by32.com",
 		"icon": "mac.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Yosub Kim",
 		"url": "https://www.yoyosub.com",
 		"icon": "windows.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "louisthings.OS",
 		"url": "https://portfolio.louisthings.com",
 		"icon": "IBM.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Windo 8_1",
 		"url": "https://cseriestechhero.github.io/kiosk-setup/services/redir/basepage8_1/session",
 		"icon": "windows_new.png",
-		"source": "https://github.com/CSeriestechhero/kiosk-setup/tree/main/services/redir/"
+		"source": "https://github.com/CSeriestechhero/kiosk-setup/tree/main/services/redir/",
+		"notes": ""
 	},
 	{
 		"name": "Joey de Ruiter",
 		"url": "https://joeyderuiter.me",
 		"icon": "IBM.gif",
-		"source": "https://github.com/0xJ0EY/Portfolio-next"
+		"source": "https://github.com/0xJ0EY/Portfolio-next",
+		"notes": ""
 	},
 	{
 		"name": "ProzillaOS",
 		"url": "https://os.prozilla.dev",
 		"icon": "linux.gif",
-		"source": "https://github.com/prozilla-os/ProzillaOS"
+		"source": "https://github.com/prozilla-os/ProzillaOS",
+		"notes": ""
 	},
 	{
 		"name": "JSDesk",
 		"url": "https://mmuii.github.io/jsdesk/",
 		"icon": "obscure.gif",
-		"source": "https://github.com/MMuii/jsdesk"
+		"source": "https://github.com/MMuii/jsdesk",
+		"notes": ""
 	},
 	{
 		"name": "Kasius Next",
 		"url": "https://bobuxstation.github.io/Kasius-Next/",
 		"icon": "linux.gif",
-		"source": "https://github.com/Bobuxstation/Kasius-Next"
+		"source": "https://github.com/Bobuxstation/Kasius-Next",
+		"notes": ""
 	},
 	{
 		"name": "Nestor Siré",
 		"url": "https://nestorsire.com",
 		"icon": "IBM.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "mountainOS",
 		"url": "https://broimluna.github.io/mountainOS/",
 		"icon": "windows11.gif",
-		"source": "https://github.com/broimluna/mountainOS"
+		"source": "https://github.com/broimluna/mountainOS",
+		"notes": ""
 	},
 	{
 		"name": "skyOS",
 		"url": "https://broimluna.github.io/skyos/",
 		"icon": "windows_new.png",
-		"source": "https://github.com/broimluna/skyos"
+		"source": "https://github.com/broimluna/skyos",
+		"notes": ""
 	},
 	{
 		"name": "mellyeliu",
 		"url": "https://mellyeliu.online",
 		"icon": "obscure.gif",
-		"source": "https://github.com/mellyeliu/new-personal-website"
+		"source": "https://github.com/mellyeliu/new-personal-website",
+		"notes": ""
 	},
 	{
 		"name": "GopalOS",
 		"url": "https://cerebraldatabank.neocities.org/gopalos",
 		"icon": "linux.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Windows 12 Web Edition",
 		"url": "https://tjy-gitnub.github.io/win12/desktop.html",
 		"icon": "windows11.gif",
-		"source": "https://github.com/tjy-gitnub/win12/blob/main/readme/README_en_us.md"
+		"source": "https://github.com/tjy-gitnub/win12/blob/main/readme/README_en_us.md",
+		"notes": ""
 	},
 	{
 		"name": "KOD Cloud",
 		"url": "https://demo.kodcloud.com",
 		"icon": "linux.gif",
-		"source": "https://github.com/kalcaddle/KodExplorer"
+		"source": "https://github.com/kalcaddle/KodExplorer",
+		"notes": ""
 	},
 	{
 		"name": "The Little Green Desktop",
 		"url": "https://www.atari.st",
 		"icon": "atari.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Strawbebby228 Desktop",
 		"url": "https://strawbebby228.neocities.org",
 		"icon": "windows_new.png",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "SRB",
 		"url": "https://srb.neocities.org",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Systems 01",
 		"url": "https://systems01.com",
 		"icon": "linux.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Nic Chan",
 		"url": "https://www.nicchan.me",
 		"icon": "IBM.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Windows 95 Portfolio",
 		"url": "https://yuteoctober.github.io/wins95Portfolio/",
 		"icon": "windows.gif",
-		"source": "https://github.com/Yuteoctober/wins95Portfolio/"
+		"source": "https://github.com/Yuteoctober/wins95Portfolio/",
+		"notes": ""
 	},
 	{
 		"name": "An Ordinary Portfolio Page of Derya",
 		"url": "https://deryasdesktop.com",
 		"icon": "obscure.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "HippoPlayer",
 		"url": "https://hippoplayer.se/WB.html",
 		"icon": "amiga.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "purarue OS",
 		"url": "https://purarue.xyz",
 		"icon": "atari.gif",
-		"source": "https://github.com/purarue/glue"
+		"source": "https://github.com/purarue/glue",
+		"notes": ""
 	},
 	{
 		"name": "Sarah's Portfolio",
 		"url": "https://www.webchef.dev",
 		"icon": "windows_new.png",
-		"source": "https://github.com/WebChefDev/WebChefDev"
+		"source": "https://github.com/WebChefDev/WebChefDev",
+		"notes": ""
 	},
 	{
 		"name": "Ritenv's WebOS",
 		"url": "http://riten.io/retro-desktop/",
 		"icon": "windows_new.png",
-		"source": "https://github.com/ritenv/retro-desktop"
+		"source": "https://github.com/ritenv/retro-desktop",
+		"notes": ""
 	},
 	{
 		"name": "Vtron",
 		"url": "https://vtron.site/win/",
 		"icon": "windows11.gif",
-		"source": "https://github.com/royalknight56/vtron"
+		"source": "https://github.com/royalknight56/vtron",
+		"notes": ""
 	},
 	{
 		"name": "Koë's Desktop",
 		"url": "https://koefka.com",
 		"icon": "mac_new.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	},
 	{
 		"name": "Hawwokitty's Portfolio",
 		"url": "https://hawwokitty.github.io/my-portfolio/",
 		"icon": "windows.gif",
-		"source": "https://github.com/hawwokitty/my-portfolio"
+		"source": "https://github.com/hawwokitty/my-portfolio",
+		"notes": ""
 	},
 	{
 		"name": "Ricardo98",
 		"url": "https://ricardo-gomes.vercel.app",
 		"icon": "windows.gif",
-		"source": "https://github.com/sleiph/Portfolio"
+		"source": "https://github.com/sleiph/Portfolio",
+		"notes": ""
 	},
 	{
 		"name": "Renkbench",
 		"url": "http://www.renkbench.de",
 		"icon": "amiga.gif",
-		"source": "https://github.com/renkman/Renkbench"
+		"source": "https://github.com/renkman/Renkbench",
+		"notes": ""
 	},
 	{
 		"name": "KodeKeras",
 		"url": "https://kodekeras.my.id",
 		"icon": "linux.gif",
-		"source": ""
+		"source": "",
+		"notes": ""
 	}
 ]
