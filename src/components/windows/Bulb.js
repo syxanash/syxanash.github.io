@@ -7,6 +7,7 @@ import {
   Tooltip,
 } from 'react95';
 import $ from 'jquery';
+import _ from 'lodash';
 
 import SoundEffects from '../additional/SoundEffects';
 import Util from '../Util';
@@ -261,7 +262,7 @@ class BulbBody extends Component {
           active={ aboutPressed }
           onClick={ this.toggleAbout }
         >
-          <span>{ aboutPressed ? '▲' : '▼' } { aboutPressed ? 'COOL' : 'EXPLAIN' }</span>
+          <span>{ aboutPressed ? '▲' : '▼' } { aboutPressed ? _.sample(['COOL', 'NICE', 'GOT IT']) : 'EXPLAIN' }</span>
         </Button>
       </React.Fragment>
     );
