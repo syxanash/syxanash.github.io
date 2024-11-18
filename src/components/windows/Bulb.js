@@ -33,6 +33,9 @@ class BulbHeader extends Component {
   )
 }
 
+// very important UI piece
+const COLLAPSE_BUTTON_LABELS = ['NICE', 'COOL', 'GOT IT', 'SWEET', 'GREAT'];
+
 class BulbBody extends Component {
   constructor(props) {
     super(props);
@@ -53,6 +56,7 @@ class BulbBody extends Component {
       brokenBulb: !!JSON.parse(sessionStorage.getItem('brokenBulb')),
       firstSocketMessage: true,
       pressedButton: false,
+      collapseButtonLabel: _.sample(COLLAPSE_BUTTON_LABELS),
     };
   }
 
@@ -220,7 +224,7 @@ class BulbBody extends Component {
 
   renderMessagebox = () => {
     const {
-      usersConnected, deskLampConnected, aboutPressed,
+      usersConnected, deskLampConnected, aboutPressed, collapseButtonLabel,
     } = this.state;
 
     let textDisplayed = 'you\'re the only one connected at the moment';
@@ -262,7 +266,7 @@ class BulbBody extends Component {
           active={ aboutPressed }
           onClick={ this.toggleAbout }
         >
-          <span>{ aboutPressed ? '▲' : '▼' } { aboutPressed ? _.sample(['COOL', 'NICE', 'GOT IT']) : 'EXPLAIN' }</span>
+          <span>{ aboutPressed ? '▲' : '▼' } { aboutPressed ? collapseButtonLabel : 'EXPLAIN' }</span>
         </Button>
       </React.Fragment>
     );
@@ -297,6 +301,10 @@ class BulbBody extends Component {
 
   toggleAbout = () => {
     const { aboutPressed } = this.state;
+
+    if (aboutPressed) {
+      this.setState({ collapseButtonLabel: _.sample(COLLAPSE_BUTTON_LABELS) });
+    }
 
     this.setState({ aboutPressed: !aboutPressed });
   }
