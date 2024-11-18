@@ -127,6 +127,12 @@
   text-shadow: -1px -1px 1px white;
 }
 
+.newest-label {
+  background-color: yellow;
+  color: red;
+  font-weight: bold;
+}
+
 .progress-content {
   height: 100%;
   line-height: 35px;

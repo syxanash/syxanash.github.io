@@ -311,7 +311,7 @@ class WebDesktopsBody extends Component {
       (sortValue, index) => <Radio
         style={ { cursor: `url(${blackCursor}), auto` } }
         checked={ sortSelected === index }
-        label={ _.capitalize(sortValue) }
+        label={ <span className={ index === SORT_OPTIONS.NEWEST ? 'newest-label' : '' }>{_.capitalize(sortValue)}</span> }
         value={ index }
         onChange={ this.changeSort }
       />,
