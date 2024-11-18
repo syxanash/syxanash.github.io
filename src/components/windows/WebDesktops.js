@@ -290,7 +290,7 @@ class WebDesktopsBody extends Component {
     switch (newSortSelected) {
     case SORT_OPTIONS.NEWEST:
       this.setState({
-        desktopsList: [...remoteDesktops].reverse(),
+        desktopsList: remoteDesktops.toReversed(),
       });
       break;
     case SORT_OPTIONS.OLDEST:
