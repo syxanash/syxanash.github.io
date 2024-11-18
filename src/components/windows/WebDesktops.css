@@ -35,6 +35,12 @@
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
+.radio-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .filter-buttons-container {
   padding-top: 10px;
   display: flex;

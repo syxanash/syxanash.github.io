@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 
 import {
-  Cutout, Toolbar, Button, Fieldset, Checkbox,
+  Cutout, Toolbar, Button, Fieldset, Checkbox, Radio,
 } from 'react95';
 
 import Util from '../Util';
@@ -27,6 +27,8 @@ class WebDesktopsHeader extends Component {
   )
 }
 
+const SORT_OPTIONS = { NEWEST: 0, OLDEST: 1, RANDOM: 2 };
+
 class WebDesktopsBody extends Component {
   constructor(props) {
     super(props);
@@ -37,6 +39,7 @@ class WebDesktopsBody extends Component {
       desktopsList: _.shuffle(remoteDesktops),
       sitesExplored: 0,
       boldNumber: false,
+      sortSelected: SORT_OPTIONS.RANDOM,
       filterView: false,
       filterMap: [
         {
@@ -281,6 +284,40 @@ class WebDesktopsBody extends Component {
     ));
   };
 
+  changeSort = (e) => {
+    const newSortSelected = Number(e.target.value);
+
+    switch (newSortSelected) {
+    case SORT_OPTIONS.NEWEST:
+      this.setState({
+        desktopsList: [...remoteDesktops].reverse(),
+      });
+      break;
+    case SORT_OPTIONS.OLDEST:
+      this.setState({
+        desktopsList: remoteDesktops,
+      });
+      break;
+    default:
+      this.setState({ desktopsList: _.shuffle(remoteDesktops) });
+    }
+
+    this.setState({ sortSelected: newSortSelected });
+  }
+
+  renderRadioButtons = () => {
+    const { sortSelected } = this.state;
+    return Object.keys(SORT_OPTIONS).map(
+      (sortValue, index) => <Radio
+        style={ { cursor: `url(${blackCursor}), auto` } }
+        checked={ sortSelected === index }
+        label={ _.capitalize(sortValue) }
+        value={ index }
+        onChange={ this.changeSort }
+      />,
+    );
+  }
+
   renderFilterView = () => {
     const { filterView, boldNumber } = this.state;
 
@@ -288,6 +325,11 @@ class WebDesktopsBody extends Component {
 
     return (
       <div style={ { paddingBottom: '10px', display: filterView ? 'block' : 'none', fontStyle: 'bold' } }>
+        <Fieldset label="Sort by" style={ { marginTop: '15px' } }>
+          <div className='radio-container'>
+            { this.renderRadioButtons() }
+          </div>
+        </Fieldset>
         <Fieldset label={ <span>Filter by Interface {boldNumber ? <b>[{totalDesktops}]</b> : `[${totalDesktops}]` }</span> } style={ { marginTop: '15px' } }>
           <div className='checkbox-container'>
             { this.renderCheckboxes() }
