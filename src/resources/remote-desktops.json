@@ -574,7 +574,7 @@
 		"notes": ""
 	},
 	{
-		"name": "Vivek Patel - Computer Science Student",
+		"name": "Vivek Patel Portfolio",
 		"url": "https://vivek9patel.github.io",
 		"icon": "linux.gif",
 		"source": "https://github.com/vivek9patel/vivek9patel.github.io",
@@ -1565,6 +1565,13 @@
 		"url": "https://anura.pro",
 		"icon": "linux.gif",
 		"source": "https://github.com/MercuryWorkshop/anuraOS",
+		"notes": ""
+	},
+	{
+		"name": "macOS in CSS",
+		"url": "https://macos-css.vercel.app",
+		"icon": "mac_new.gif",
+		"source": "https://github.com/RedEdge967/MacOS-CSS",
 		"notes": ""
 	}
 ]
