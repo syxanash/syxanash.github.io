@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import $ from 'jquery';
 import Draggable from 'react-draggable';
 import _ from 'lodash';
@@ -53,23 +53,32 @@ class MainWindowHeader extends Component {
   }
 }
 
+const RandomCaption = () => {
+  const [caption, setCaption] = useState('Recipe');
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCaption(prevCaption => Util.replaceRandomCharInWord(prevCaption));
+    }, 300);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  return <figcaption className="icon-caption">{caption}</figcaption>;
+};
+
 class MainWindowBody extends Component {
   constructor(props) {
     super(props);
 
-    this.randomCaptionInterval = undefined;
-
     this.state = {
-      randomCaption: 'Recipe',
       iconsColliding: false,
     };
   }
 
   componentDidMount() {
-    if (!localStorage.getItem('fixed')) {
-      this.randomCaptionInterval = setInterval(this.generateRandomCaption, 300);
-    }
-
     $('#computer_icon').bind('mouseup', this.triggerUp);
     $('#computer_icon').bind('touchend', this.triggerUp);
   }
@@ -79,20 +88,8 @@ class MainWindowBody extends Component {
 
     resetWindows();
 
-    if (this.randomCaptionInterval !== undefined) {
-      clearInterval(this.randomCaptionInterval);
-    }
-
     $('#computer_icon').unbind('mouseup', this.triggerUp);
     $('#computer_icon').unbind('touchend', this.triggerUp);
-  }
-
-  generateRandomCaption = () => {
-    const { randomCaption } = this.state;
-
-    this.setState({
-      randomCaption: Util.replaceRandomCharInWord(randomCaption),
-    });
   }
 
   triggerUp = () => {
@@ -161,9 +158,16 @@ class MainWindowBody extends Component {
     }
   }
 
+  renderFileCorruptedIcon = () => <Tooltip text={ 'file corrupted' } delay={ 500 }>
+    <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } } disabled={ true }>
+      <img src={ corruptedFileIcon } className='icon' alt="corrupted file icon" style={ { filter: 'opacity(50%)' } } />
+      <RandomCaption />
+    </Button>
+  </Tooltip>
+
   render() {
     const { onClickTV, isWindowOpened } = this.props;
-    const { iconsColliding, randomCaption } = this.state;
+    const { iconsColliding } = this.state;
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
 
     return (
@@ -246,12 +250,7 @@ class MainWindowBody extends Component {
               <figcaption className='icon-caption'>loop <span className='colored-text'>TV</span></figcaption>
             </Button>
             { Util.isWebSocketsSupported() && this.renderBulbButton() }
-            <Tooltip text={ 'file corrupted' } delay={ 500 }>
-              <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: localStorage.getItem('fixed') ? 'none' : 'inline-block' } } disabled={ true }>
-                <img src={ corruptedFileIcon } className='icon' alt="corrupted file icon" style={ { filter: 'opacity(50%)' } } />
-                <figcaption className='icon-caption'>{ randomCaption }</figcaption>
-              </Button>
-            </Tooltip>
+            { !localStorage.getItem('fixed') && this.renderFileCorruptedIcon() }
             <Anchor
               href='https://gist.github.com/syxanash/7b2d135a566cfb2f03dfceba6b34e61a'
               target='_blank'
