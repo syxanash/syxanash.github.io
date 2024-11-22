@@ -309,6 +309,7 @@ class WebDesktopsBody extends Component {
     const { sortSelected } = this.state;
     return Object.keys(SORT_OPTIONS).map(
       (sortValue, index) => <Radio
+        key={ `radio_btn_${index}` }
         style={ { cursor: `url(${blackCursor}), auto` } }
         checked={ sortSelected === index }
         label={ <span className={ index === SORT_OPTIONS.NEWEST ? 'newest-label' : '' }>{_.capitalize(sortValue)}</span> }

@@ -202,6 +202,10 @@ class BrokenScreen extends Component {
     this.setState({
       bugsList: newbugsList,
     });
+
+    if (bugsNumber <= 0) {
+      clearInterval(this.bugRefreshInterval);
+    }
   }
 
   renderErrorText = () => {

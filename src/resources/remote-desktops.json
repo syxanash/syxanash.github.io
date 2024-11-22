@@ -1551,7 +1551,7 @@
 		"url": "https://adthoughtsglobal.github.io/Nova-OS/",
 		"icon": "linux.gif",
 		"source": "https://github.com/adthoughtsglobal/Nova-OS",
-		"notes": "Only runs with Google Chrome"
+		"notes": ""
 	},
 	{
 		"name": "AnuraOS",
