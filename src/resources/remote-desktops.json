@@ -1559,5 +1559,12 @@
 		"icon": "mac_new.gif",
 		"source": "https://github.com/RedEdge967/MacOS-CSS",
 		"notes": ""
+	},
+	{
+		"name": "Kisimoff OS",
+		"url": "https://kisimoff.com",
+		"icon": "windows_new.png",
+		"source": "https://github.com/kisimoff/portfolio",
+		"notes": ""
 	}
 ]
