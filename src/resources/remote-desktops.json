@@ -784,13 +784,6 @@
 		"notes": "if you get a login screen just clear cookies and site data"
 	},
 	{
-		"name": "Things",
-		"url": "https://things.inc",
-		"icon": "unix.gif",
-		"source": "",
-		"notes": ""
-	},
-	{
 		"name": "1997box",
 		"url": "https://1997.pooftie.me",
 		"icon": "windows.gif",
