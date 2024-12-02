@@ -20,9 +20,14 @@
     "description": "A game about two university professors who have to fight each other until one of them eventually becomes the ultimate computer science god"
   },
   {
-    "name": "Rubomote",
-    "url": "https://github.com/syxanash/rubomote",
-    "description": "A small Ruby web app which allows you to control iTunes using a web interface"
+    "name": "Retrocomputing",
+    "url": "https://github.com/syxanash/retrocomputing",
+    "description": "This is a repository containing some tests I've made on old computers I was able to recover from thrift shops and online"
+  },
+  {
+    "name": "Bluerain",
+    "url": "https://simone.computer/blurain",
+    "description": "Bluesky Firehose visualized in a Matrix-style animation"
   },
   {
     "name": "SoftScript Parser",
@@ -30,9 +35,9 @@
     "description": "This is a parser for an invented programming language called SoftScript, made for a university exam"
   },
   {
-    "name": "Retrocomputing",
-    "url": "https://github.com/syxanash/retrocomputing",
-    "description": "This is a repository containing some tests I've made on old computers I was able to recover from thrift shops and online"
+    "name": "Rubomote",
+    "url": "https://github.com/syxanash/rubomote",
+    "description": "A small Ruby web app which allows you to control iTunes using a web interface"
   },
   {
     "name": "Logosweeper",
