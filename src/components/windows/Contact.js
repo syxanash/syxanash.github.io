@@ -10,7 +10,6 @@ import contactIcon from '../../resources/icons/contact.gif';
 import githubIcon from '../../resources/icons/social/github.gif';
 import dribbbleIcon from '../../resources/icons/social/dribbble.gif';
 import webringIcon from '../../resources/icons/social/webring.gif';
-import mastodonIcon from '../../resources/icons/social/mastodon.png';
 import blueskyIcon from '../../resources/icons/social/bluesky.png';
 import emailIcon from '../../resources/icons/social/email.gif';
 import pgpIcon from '../../resources/icons/social/pgp.gif';
@@ -53,17 +52,10 @@ class ContactBody extends Component {
           </Button>
         </Anchor>
       </Tooltip>
-      <Tooltip text='Mastodon' delay={ 100 }>
-        <Anchor href='https://hachyderm.io/@syx' target='_blank'>
-          <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
-            <img src={ mastodonIcon } style={ { height: '30px' } } alt="mastodon"/>
-          </Button>
-        </Anchor>
-      </Tooltip>
       <Tooltip text='Bluesky' delay={ 100 }>
         <Anchor href='https://bsky.app/profile/simone.computer' target='_blank'>
           <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
-            <img src={ blueskyIcon } style={ { height: '30px' } } alt="mastodon"/>
+            <img src={ blueskyIcon } style={ { height: '30px' } } alt="bluesky"/>
           </Button>
         </Anchor>
       </Tooltip>
