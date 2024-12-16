@@ -1323,6 +1323,13 @@
 		"notes": ""
 	},
 	{
+		"name": "Grovy Website",
+		"url": "https://grovy.space",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "this site occasionally goes offline"
+	},
+	{
 		"name": "ProzillaOS",
 		"url": "https://os.prozilla.dev",
 		"icon": "linux.gif",
