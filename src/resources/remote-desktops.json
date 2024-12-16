@@ -1580,5 +1580,12 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": ""
+	},
+	{
+		"name": "János Kócs | Portfolio",
+		"url": "https://janoskocs.com",
+		"icon": "windows.gif",
+		"source": "https://github.com/janoskocs/portfolio",
+		"notes": ""
 	}
 ]
