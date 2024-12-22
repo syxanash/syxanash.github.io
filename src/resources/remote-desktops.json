@@ -1601,5 +1601,12 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": ""
+	},
+	{
+		"name": "Wes Souza",
+		"url": "https://wes.dev",
+		"icon": "windows.gif",
+		"source": "https://github.com/WesSouza/wes.dev",
+		"notes": ""
 	}
 ]
