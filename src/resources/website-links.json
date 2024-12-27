@@ -298,7 +298,7 @@
         "description": "Adam Elkus"
       },
       {
-        "url": "https://hacdias.com/articles",
+        "url": "https://hacdias.com/articles/",
         "description": "Articles - Henrique Dias"
       },
       {
@@ -314,24 +314,32 @@
         "description": "Be-Mag"
       },
       {
-        "url": "https://earthly.dev/blog/",
-        "description": "Earthly Blog"
+        "url": "https://garden.bradwoods.io",
+        "description": "Brad Woods Digital Garden"
       },
       {
-        "url": "https://blog.flipperzero.one/",
-        "description": "Flipper Zero Blog"
+        "url": "https://cian.blog",
+        "description": "Cian.blog"
+      },
+      {
+        "url": "https://blog.flipper.net/",
+        "description": "Flipper Blog"
       },
       {
         "url": "https://gossipsweb.net",
         "description": "Gossip’s Web"
       },
       {
-        "url": "https://www.jamez.it",
+        "url": "https://jamez.it",
         "description": "G̶i̶a̶c̶o̶m̶o̶ ̶M̶i̶c̶e̶l̶i̶"
       },
       {
         "url": "https://ianbicking.org/",
         "description": "Ian Bicking: a blog"
+      },
+      {
+        "url": "https://www.jordanmechner.com/",
+        "description": "Jordan Mechner"
       },
       {
         "url": "https://www.joshwcomeau.com/",
@@ -346,12 +354,12 @@
         "description": "Kicks Condor"
       },
       {
-        "url": "https://frankforce.com",
-        "description": "Killed By A Pixel"
-      },
-      {
         "url": "https://cyber.dabamos.de/blog/",
         "description": "Lazy Reading | The Cyber Vanguard"
+      },
+      {
+        "url": "https://www.leadedsolder.com/",
+        "description": "Leaded Solder"
       },
       {
         "url": "https://rarlindseysmash.com/",
@@ -374,8 +382,8 @@
         "description": "Parimal Satyal - Neustadt.fr"
       },
       {
-        "url": "https://passo.uno/",
-        "description": "Passo uno"
+        "url": "https://rachsmith.com/",
+        "description": "Rach Smith's digital garden"
       },
       {
         "url": "https://sonnet.io/",
@@ -386,8 +394,20 @@
         "description": "Riccardo Mori"
       },
       {
+        "url": "https://hospodarets.com",
+        "description": "Serg Hospodarets Blog"
+      },
+      {
         "url": "https://sidebar.io",
         "description": "Sidebar"
+      },
+      {
+        "url": "http://simonwillison.net/",
+        "description": "Simon Willison's Weblog"
+      },
+      {
+        "url": "https://simone.computer",
+        "description": "Simone's Computer"
       },
       {
         "url": "https://steveklabnik.com/",
@@ -398,11 +418,15 @@
         "description": "The Hacker Blog"
       },
       {
-        "url": "https://www.troyhunt.com/",
-        "description": "Troy Hunt"
+        "url": "http://radar.spacebar.org/",
+        "description": "Tom 7 Radar"
       },
       {
-        "url": "https://blog.thoughtspile.tech/",
+        "url": "https://twobithistory.org/",
+        "description": "Two-Bit History"
+      },
+      {
+        "url": "https://thoughtspile.github.io/",
         "description": "Vladimir Klepov as a Coder"
       },
       {
@@ -414,8 +438,8 @@
         "description": "Webbed Briefs"
       },
       {
-        "url": "https://xeiaso.net/blog",
-        "description": "Xe's Blog"
+        "url": "https://xeiaso.net/",
+        "description": "Xe Iaso's blog"
       },
       {
         "url": "http://zachholman.com/",
@@ -430,12 +454,20 @@
         "description": "bertrand fan"
       },
       {
-        "url": "https://pointers.dailywebthing.com",
-        "description": "dailywebthing daily pointers"
-      },
-      {
         "url": "https://www.evilsocket.net/",
         "description": "evilsocket"
+      },
+      {
+        "url": "https://cmpxchg8b.com/",
+        "description": "https://cmpxchg8b.com/"
+      },
+      {
+        "url": "https://sdomi.pl/weblog/",
+        "description": "https://sdomi.pl/weblog/"
+      },
+      {
+        "url": "https://iwebthings.joejenett.com/",
+        "description": "i.webthings.hub"
       },
       {
         "url": "https://www.are.na/tg-z/internet-escape",
@@ -455,7 +487,11 @@
       },
       {
         "url": "https://localghost.dev/",
-        "description": "localghost.dev"
+        "description": "localghost"
+      },
+      {
+        "url": "https://mango.pdf.zone/",
+        "description": "mango.pdf.zone"
       },
       {
         "url": "https://memalign.github.io/index.html",
@@ -464,6 +500,14 @@
       {
         "url": "https://nathanwentworth.co",
         "description": "nathan wentworth ✨ - posts"
+      },
+      {
+        "url": "https://blog.rachelbinx.com/",
+        "description": "rachel binx ⤇ blog"
+      },
+      {
+        "url": "https://sdomi.pl/weblog/atom/",
+        "description": "sdomi's weblog"
       },
       {
         "url": "https://surma.dev/",
