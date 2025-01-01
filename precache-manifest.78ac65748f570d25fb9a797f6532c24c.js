@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "00548c92355014cfd7463816d3050acf",
+    "revision": "933aa236a19ff3e36dcd0032fbc8e07d",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.5cdc4389.chunk.css"
   },
   {
-    "revision": "5b1efeacaee2faf016d5",
+    "revision": "9fc2a7ff7e9953844168",
     "url": "/static/css/main.2e9a7fcf.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.8656d363.chunk.js"
   },
   {
-    "revision": "5b1efeacaee2faf016d5",
-    "url": "/static/js/main.8bc95fda.chunk.js"
+    "revision": "9fc2a7ff7e9953844168",
+    "url": "/static/js/main.e29d1524.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -180,8 +180,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/ITCGaramondStd-BkNarrow.a7871b10.eot"
   },
   {
-    "revision": "da45c6ca7c13b03a608a013c643656d8",
-    "url": "/static/media/LICENSE.da45c6ca.txt"
+    "revision": "1ba181c1628241776d926f8075f8b2f3",
+    "url": "/static/media/LICENSE.1ba181c1.txt"
   },
   {
     "revision": "bd5362dcd9cc35bbcb5940617f889f24",
