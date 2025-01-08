@@ -28,6 +28,23 @@ class LinksBody extends Component {
     globeImgLoaded: false,
   }
 
+  componentDidMount() {
+    const { linksObject } = this.state;
+
+    if (window.location.hash) {
+      const hash = window.location.hash.split('?')[1];
+      const urlParams = new URLSearchParams(hash);
+
+      if (urlParams.has('tab')) {
+        const matchIndex = linksObject.findIndex(item => item.section.toLocaleLowerCase() === urlParams.get('tab').toLowerCase());
+
+        if (matchIndex >= 0) {
+          this.setState({ activeTab: matchIndex });
+        }
+      }
+    }
+  }
+
   openRandomLink = () => {
     const { linksObject } = this.state;
 
@@ -37,7 +54,20 @@ class LinksBody extends Component {
     window.open(randomLink.url, '_blank');
   }
 
-  handleChangeTab = value => this.setState({ activeTab: value });
+  handleChangeTab = (linkItem, value) => {
+    const url = new URL(window.location);
+    let hash = url.hash.split('?')[0];
+
+    if (!hash.includes('/#/links')) {
+      hash = '/links';
+    }
+
+    const newHash = `${hash}?tab=${linkItem.section}`;
+    url.hash = newHash;
+
+    window.history.pushState({}, '', url);
+    this.setState({ activeTab: value });
+  }
 
   generateTabs = () => {
     const { linksObject, activeTab } = this.state;
@@ -48,7 +78,7 @@ class LinksBody extends Component {
         key={ `tab_${index}` }
         active={ index === activeTab }
         onClick={ () => {
-          this.handleChangeTab(index);
+          this.handleChangeTab(linkItem, index);
         } }>
         {linkItem.section}
       </Button>));
