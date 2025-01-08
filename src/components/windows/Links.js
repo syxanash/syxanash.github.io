@@ -45,6 +45,17 @@ class LinksBody extends Component {
     }
   }
 
+  // eslint-disable-next-line class-methods-use-this
+  componentWillUnmount() {
+    const url = new URL(window.location);
+
+    if (url.hash.includes('?')) {
+      const newHash = '#/';
+      url.hash = newHash;
+      window.history.pushState({}, '', url);
+    }
+  }
+
   openRandomLink = () => {
     const { linksObject } = this.state;
 
