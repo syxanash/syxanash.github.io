@@ -1608,5 +1608,26 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/WesSouza/wes.dev",
 		"notes": ""
+	},
+	{
+		"name": "Windows11-3.0",
+		"url": "https://windowsxi.vercel.app",
+		"icon": "windows11.gif",
+		"source": "https://github.com/MishanPoudel/Windows11-3.0",
+		"notes": "You can log in with any username and password"
+	},
+	{
+		"name": "Gersigno's Portfolio",
+		"url": "https://gersigno.github.io",
+		"icon": "linux.gif",
+		"source": "https://github.com/Gersigno/gersigno.github.io",
+		"notes": ""
+	},
+	{
+		"name": "Windows 11 UI",
+		"url": "https://chrishtu.github.io/windows11/",
+		"icon": "windows11.gif",
+		"source": "https://github.com/chrishtu/windows11",
+		"notes": ""
 	}
 ]
