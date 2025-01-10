@@ -132,7 +132,7 @@ export default function WindowsList() {
     webdesktopsAbout: {
       hasFullScreen: false,
       hasCustomBody: false,
-      tiltAnimation: false,
+      tiltAnimation: true,
       canCloseWindow: true,
       hasScreensaver: true,
       opened: false,
