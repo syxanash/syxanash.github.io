@@ -358,7 +358,7 @@ class WebDesktopsBody extends Component {
             <Button style={ { width: '80px', borderRadius: '16px' } } size={ 'md' } active={ sourceFilter === SOURCE_FILTER.ALL } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.ALL) }>All</Button>
           </div>
         </Fieldset>
-        <Fieldset label={ <span>Filter by interface {boldNumber ? <b>[{totalDesktops}]</b> : `[${totalDesktops}]` }</span> } style={ { marginTop: '15px' } }>
+        <Fieldset label="Filter by interface" style={ { marginTop: '15px' } }>
           <div className='checkbox-container'>
             { this.renderCheckboxes() }
           </div>
@@ -370,6 +370,7 @@ class WebDesktopsBody extends Component {
             </div>
           </div>
         </Fieldset>
+        <Fieldset label={ <span>Total websites {boldNumber ? <b>[{totalDesktops}]</b> : `[${totalDesktops}]` }</span> } style={ { marginTop: '15px', marginBottom: '-30px' } }></Fieldset>
       </div>
     );
   }
