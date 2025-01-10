@@ -1648,7 +1648,14 @@
 		"name": "kashi-os",
 		"url": "https://kashi-os.pages.dev",
 		"icon": "linux.gif",
-		"source": "ttps://github.com/ericaugusto-git/kashi-os",
+		"source": "https://github.com/ericaugusto-git/kashi-os",
+		"notes": ""
+	},
+	{
+		"name": "RaptorOS",
+		"url": "https://raptorino.com",
+		"icon": "linux.gif",
+		"source": "https://github.com/Raptor1818/RaptorOS",
 		"notes": ""
 	}
 ]
