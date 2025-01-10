@@ -1629,5 +1629,26 @@
 		"icon": "windows11.gif",
 		"source": "https://github.com/chrishtu/windows11",
 		"notes": ""
+	},
+	{
+		"name": "AvdanOS",
+		"url": "https://avdan-os.github.io/Demo/",
+		"icon": "obscure.gif",
+		"source": "https://github.com/Avdan-OS/Demo",
+		"notes": ""
+	},
+	{
+		"name": "Plexos",
+		"url": "https://plexos.app",
+		"icon": "obscure.gif",
+		"source": "https://github.com/Pentacoro/pentacoro.github.io",
+		"notes": ""
+	},
+	{
+		"name": "kashi-os",
+		"url": "https://kashi-os.pages.dev",
+		"icon": "linux.gif",
+		"source": "ttps://github.com/ericaugusto-git/kashi-os",
+		"notes": ""
 	}
 ]
