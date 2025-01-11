@@ -370,7 +370,7 @@ class WebDesktopsBody extends Component {
             </div>
           </div>
         </Fieldset>
-        <Fieldset label={ <span>Total websites {boldNumber ? <b>[{totalDesktops}]</b> : `[${totalDesktops}]` }</span> } style={ { marginTop: '15px', marginBottom: '-30px' } }></Fieldset>
+        <Fieldset label={ <span style={ { fontSize: '18px' } }>Total websites {boldNumber ? <b>[{totalDesktops}]</b> : `[${totalDesktops}]` }</span> } style={ { marginTop: '15px', marginBottom: '-25px' } }></Fieldset>
       </div>
     );
   }
