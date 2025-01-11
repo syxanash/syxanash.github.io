@@ -54,6 +54,23 @@
   justify-content: flex-end;
 }
 
+.separator {
+  border: 1px solid #c7c7df;
+  color: #010601;
+  padding: 0;
+  margin-top: 10px;
+  box-shadow: -1px -1px 0 1px #5b57a1, inset -1px -1px 0 1px #5b57a1;
+}
+
+.filter-footer {
+  margin-top: 15px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .filter-buttons {
   display: flex;
   flex-wrap: wrap;

@@ -365,12 +365,17 @@ class WebDesktopsBody extends Component {
           <div className='filter-buttons-container'>
             <div className='filter-buttons'>
               <Button style={ { width: '110px' } } size={ 'md' } onClick={ () => this.checkAll(true) }>Check All</Button>
-              <Button style={ { width: '110px', marginRight: '15px' } } size={ 'md' } onClick={ () => this.checkAll(false) }>Uncheck All</Button>
-              <Button style={ { width: '110px' } } size={ 'md' } onClick={ this.toggleFilterView }>Ok</Button>
+              <Button style={ { width: '110px' } } size={ 'md' } onClick={ () => this.checkAll(false) }>Uncheck All</Button>
             </div>
           </div>
         </Fieldset>
-        <Fieldset label={ <span style={ { fontSize: '18px' } }>Total websites {boldNumber ? <b>[{totalDesktops}]</b> : `[${totalDesktops}]` }</span> } style={ { marginTop: '15px', marginBottom: '-25px' } }></Fieldset>
+        <div className='filter-footer'>
+          <div style={ { fontSize: '18px', marginRight: '10px' } }>
+            Total websites {boldNumber ? <b>[{totalDesktops}]</b> : `[${totalDesktops}]`}
+          </div>
+          <Button style={ { width: '120px' } } size={ 'md' } onClick={ this.toggleFilterView }>Ok</Button>
+        </div>
+        <div className='separator'></div>
       </div>
     );
   }
