@@ -41,10 +41,34 @@
   justify-content: space-around;
 }
 
+.choice-buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: min(10px, 1vw);
+}
+
 .filter-buttons-container {
   padding-top: 10px;
   display: flex;
   justify-content: flex-end;
+}
+
+.separator {
+  border: 1px solid #c7c7df;
+  color: #010601;
+  padding: 0;
+  margin-top: 10px;
+  box-shadow: -1px -1px 0 1px #5b57a1, inset -1px -1px 0 1px #5b57a1;
+}
+
+.filter-footer {
+  margin-top: 15px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .filter-buttons {
@@ -60,13 +84,11 @@
 }
 
 .single-icon:hover .computer-icon {
-  filter: grayscale(100%) brightness(5%) sepia(100%) hue-rotate(170deg)
-    brightness(900%) saturate(500%);
+  filter: grayscale(100%) brightness(5%) sepia(100%) hue-rotate(170deg) brightness(900%) saturate(500%);
 }
 
 .single-icon:hover .website-favicon {
-  filter: grayscale(100%) brightness(5%) sepia(100%) hue-rotate(170deg)
-    brightness(900%) saturate(500%);
+  filter: grayscale(100%) brightness(5%) sepia(100%) hue-rotate(170deg) brightness(900%) saturate(500%);
 }
 
 .single-icon:hover .website-name span {
@@ -78,14 +100,20 @@
   display: block;
   backface-visibility: hidden;
 
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  -khtml-user-select: none;    /* Konqueror */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* Internet Explorer/Edge*/
-   user-select: none;          /* Non-prefixed version, currently 
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge*/
+  user-select: none;
+  /* Non-prefixed version, currently 
                                   not supported by any browser */
-   -webkit-user-drag: none;
+  -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
@@ -100,14 +128,20 @@
 
   backface-visibility: hidden;
 
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  -khtml-user-select: none;    /* Konqueror */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* Internet Explorer/Edge*/
-   user-select: none;          /* Non-prefixed version, currently 
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge*/
+  user-select: none;
+  /* Non-prefixed version, currently 
                                   not supported by any browser */
-   -webkit-user-drag: none;
+  -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
@@ -138,10 +172,10 @@
   line-height: 35px;
 
   position: absolute;
-  
+
   top: 0;
   left: 0;
-  
+
   overflow: hidden;
   background: #9c99c7;
 }

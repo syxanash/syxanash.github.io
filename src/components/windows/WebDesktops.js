@@ -28,6 +28,7 @@ class WebDesktopsHeader extends Component {
 }
 
 const SORT_OPTIONS = { NEWEST: 0, OLDEST: 1, RANDOM: 2 };
+const SOURCE_FILTER = { OPEN: 0, PRIVATE: 1, ALL: 3 };
 
 class WebDesktopsBody extends Component {
   constructor(props) {
@@ -40,6 +41,7 @@ class WebDesktopsBody extends Component {
       sitesExplored: 0,
       boldNumber: false,
       sortSelected: SORT_OPTIONS.RANDOM,
+      sourceFilter: SOURCE_FILTER.ALL,
       filterView: false,
       filterMap: [
         {
@@ -181,11 +183,23 @@ class WebDesktopsBody extends Component {
   )
 
   getFilteredDesktops = () => {
-    const { filterMap, desktopsList } = this.state;
+    const { filterMap, desktopsList, sourceFilter } = this.state;
 
     const selectedTypes = filterMap.filter(({ selected }) => selected)
       .map(({ filename }) => filename);
-    return desktopsList.filter(desktop => selectedTypes.includes(desktop.icon));
+    const filteredByOSDesktops = desktopsList.filter(
+      desktop => selectedTypes.includes(desktop.icon),
+    );
+
+    if (sourceFilter === SOURCE_FILTER.OPEN) {
+      return filteredByOSDesktops.filter(desktop => desktop.source !== '');
+    }
+
+    if (sourceFilter === SOURCE_FILTER.PRIVATE) {
+      return filteredByOSDesktops.filter(desktop => desktop.source === '');
+    }
+
+    return filteredByOSDesktops;
   }
 
   openRandomURL = () => {
@@ -233,6 +247,8 @@ class WebDesktopsBody extends Component {
   }
 
   setBoldTimeout = () => {
+    this.setState({ boldNumber: true });
+
     if (this.boldTimeout !== undefined) {
       clearTimeout(this.boldTimeout);
     }
@@ -252,7 +268,6 @@ class WebDesktopsBody extends Component {
     this.setBoldTimeout();
 
     this.setState({
-      boldNumber: true,
       filterMap: newFilterMap,
     });
   }
@@ -266,7 +281,7 @@ class WebDesktopsBody extends Component {
 
     this.setBoldTimeout();
 
-    this.setState({ filterMap: newFilterMap, boldNumber: true });
+    this.setState({ filterMap: newFilterMap });
   }
 
   renderCheckboxes = () => {
@@ -283,6 +298,11 @@ class WebDesktopsBody extends Component {
       />
     ));
   };
+
+  filterBySourceCode = (filter) => {
+    this.setBoldTimeout();
+    this.setState({ sourceFilter: filter, boldNumber: true });
+  }
 
   changeSort = (e) => {
     const newSortSelected = Number(e.target.value);
@@ -320,7 +340,7 @@ class WebDesktopsBody extends Component {
   }
 
   renderFilterView = () => {
-    const { filterView, boldNumber } = this.state;
+    const { filterView, sourceFilter, boldNumber } = this.state;
 
     const totalDesktops = this.getFilteredDesktops().length;
 
@@ -331,18 +351,31 @@ class WebDesktopsBody extends Component {
             { this.renderRadioButtons() }
           </div>
         </Fieldset>
-        <Fieldset label={ <span>Filter by Interface {boldNumber ? <b>[{totalDesktops}]</b> : `[${totalDesktops}]` }</span> } style={ { marginTop: '15px' } }>
+        <Fieldset label="Filter by source code" style={ { marginTop: '15px' } }>
+          <div className='choice-buttons-container'>
+            <Button style={ { width: '120px', borderRadius: '16px' } } size={ 'md' } active={ sourceFilter === SOURCE_FILTER.OPEN } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.OPEN) }>Open Source</Button>
+            <Button style={ { width: '100px', borderRadius: '16px' } } size={ 'md' } active={ sourceFilter === SOURCE_FILTER.PRIVATE } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.PRIVATE) }>Private</Button>
+            <Button style={ { width: '80px', borderRadius: '16px' } } size={ 'md' } active={ sourceFilter === SOURCE_FILTER.ALL } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.ALL) }>All</Button>
+          </div>
+        </Fieldset>
+        <Fieldset label="Filter by interface" style={ { marginTop: '15px' } }>
           <div className='checkbox-container'>
             { this.renderCheckboxes() }
           </div>
           <div className='filter-buttons-container'>
             <div className='filter-buttons'>
               <Button style={ { width: '110px' } } size={ 'md' } onClick={ () => this.checkAll(true) }>Check All</Button>
-              <Button style={ { width: '110px', marginRight: '15px' } } size={ 'md' } onClick={ () => this.checkAll(false) }>Uncheck All</Button>
-              <Button style={ { width: '110px' } } size={ 'md' } onClick={ this.toggleFilterView }>Ok</Button>
+              <Button style={ { width: '110px' } } size={ 'md' } onClick={ () => this.checkAll(false) }>Uncheck All</Button>
             </div>
           </div>
         </Fieldset>
+        <div className='filter-footer'>
+          <div style={ { fontSize: '18px', marginRight: '10px' } }>
+            Total websites {boldNumber ? <b>[{totalDesktops}]</b> : `[${totalDesktops}]`}
+          </div>
+          <Button style={ { width: '120px' } } size={ 'md' } onClick={ this.toggleFilterView }>Ok</Button>
+        </div>
+        <div className='separator'></div>
       </div>
     );
   }
