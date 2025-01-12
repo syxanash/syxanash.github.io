@@ -54,6 +54,23 @@
   justify-content: flex-end;
 }
 
+.source-buttons {
+  width: 33.3%;
+}
+
+@media only screen and (max-width: 600px)  {
+  .source-buttons {
+    width: 100%;
+  }
+}
+
+
+.source-buttons-cut-out {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
 .separator {
   border: 1px solid #c7c7df;
   color: #010601;

@@ -330,7 +330,7 @@ class WebDesktopsBody extends Component {
     return Object.keys(SORT_OPTIONS).map(
       (sortValue, index) => <Radio
         key={ `radio_btn_${index}` }
-        style={ { cursor: `url(${blackCursor}), auto` } }
+        style={ { cursor: `url(${blackCursor}), auto`, fontSize: '18px' } }
         checked={ sortSelected === index }
         label={ <span className={ index === SORT_OPTIONS.NEWEST ? 'newest-label' : '' }>{_.capitalize(sortValue)}</span> }
         value={ index }
@@ -352,11 +352,17 @@ class WebDesktopsBody extends Component {
           </div>
         </Fieldset>
         <Fieldset label="Filter by source code" style={ { marginTop: '15px' } }>
-          <div className='choice-buttons-container'>
-            <Button style={ { width: '120px', borderRadius: '16px' } } size={ 'md' } active={ sourceFilter === SOURCE_FILTER.OPEN } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.OPEN) }>Open Source</Button>
-            <Button style={ { width: '100px', borderRadius: '16px' } } size={ 'md' } active={ sourceFilter === SOURCE_FILTER.PRIVATE } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.PRIVATE) }>Private</Button>
-            <Button style={ { width: '80px', borderRadius: '16px' } } size={ 'md' } active={ sourceFilter === SOURCE_FILTER.ALL } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.ALL) }>All</Button>
-          </div>
+          <Cutout className='source-buttons-cut-out'>
+            <div className='source-buttons'>
+              <Button fullWidth size={ 'md' } active={ sourceFilter === SOURCE_FILTER.OPEN } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.OPEN) }>Open Source</Button>
+            </div>
+            <div className='source-buttons'>
+              <Button fullWidth size={ 'md' } active={ sourceFilter === SOURCE_FILTER.PRIVATE } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.PRIVATE) }>Private</Button>
+            </div>
+            <div className='source-buttons'>
+              <Button fullWidth size={ 'md' } active={ sourceFilter === SOURCE_FILTER.ALL } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.ALL) }>All</Button>
+            </div>
+          </Cutout>
         </Fieldset>
         <Fieldset label="Filter by interface" style={ { marginTop: '15px' } }>
           <div className='checkbox-container'>
