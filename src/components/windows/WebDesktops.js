@@ -105,6 +105,43 @@ class WebDesktopsBody extends Component {
           description: 'Unknown OS',
         },
       ],
+      categories: [
+        {
+          code: 'poc',
+          selected: true,
+          description: 'Proof of concepts',
+        },
+        {
+          code: 'personal',
+          selected: true,
+          description: 'Personal websites & CV',
+        },
+        {
+          code: 'top',
+          selected: true,
+          description: 'Top Picks',
+        },
+        {
+          code: 'uncanny',
+          selected: true,
+          description: 'So real they\'d fool my grandma',
+        },
+        {
+          code: 'tool',
+          selected: true,
+          description: 'Tools and useful web apps',
+        },
+        {
+          code: 'game',
+          selected: true,
+          description: 'Web games',
+        },
+        {
+          code: 'misc',
+          selected: true,
+          description: 'Misc category',
+        },
+      ],
     };
   }
 
@@ -191,15 +228,19 @@ class WebDesktopsBody extends Component {
       desktop => selectedTypes.includes(desktop.icon),
     );
 
+    let filteredBySource = filteredByOSDesktops;
+
     if (sourceFilter === SOURCE_FILTER.OPEN) {
-      return filteredByOSDesktops.filter(desktop => desktop.source !== '');
+      filteredBySource = filteredByOSDesktops.filter(desktop => desktop.source !== '');
     }
 
     if (sourceFilter === SOURCE_FILTER.PRIVATE) {
-      return filteredByOSDesktops.filter(desktop => desktop.source === '');
+      filteredBySource = filteredByOSDesktops.filter(desktop => desktop.source === '');
     }
 
-    return filteredByOSDesktops;
+    // const filteredByCategory = filteredBySource.filter(desktop => desktop.tags.includes('uncanny') && desktop.tags.includes('top'));
+
+    return filteredBySource;
   }
 
   openRandomURL = () => {
