@@ -41,6 +41,19 @@
   justify-content: space-around;
 }
 
+.main-categories-view {
+  padding-bottom: 15px;
+  font-style: bold;
+  margin-top: 15px;
+}
+
+.categories-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
 .choice-buttons-container {
   display: flex;
   flex-direction: row;
@@ -63,7 +76,6 @@
     width: 100%;
   }
 }
-
 
 .source-buttons-cut-out {
   display: flex;
@@ -176,12 +188,6 @@
   text-align: center;
   position: relative;
   text-shadow: -1px -1px 1px white;
-}
-
-.newest-label {
-  background-color: #ffff007a;
-  color: red;
-  font-weight: bold;
 }
 
 .progress-content {
