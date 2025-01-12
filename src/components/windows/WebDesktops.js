@@ -544,13 +544,13 @@ class WebDesktopsBody extends Component {
       || sourceFilter !== SOURCE_FILTER.ALL;
 
     const exploredPercentage = Math.floor((sitesExplored * 100) / desktopsList.length);
-    const osTypesSelected = filterMap.filter(({ selected }) => selected).length;
+    const filteredDesktops = this.getFilteredDesktops().length;
 
     return (
       <React.Fragment>
         <div className='toolbar-container'>
           <Toolbar style={ { display: 'flex', flexWrap: 'wrap' } }>
-            <Button onClick={ this.openRandomURL } variant="menu" disabled={ osTypesSelected === 0 }><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
+            <Button onClick={ this.openRandomURL } variant="menu" disabled={ filteredDesktops === 0 }><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
             <Button onClick={ this.toggleCategoriesView } active={ categoriesView } variant="menu" style={ { fontWeight: categoriesSelected ? 'bold' : 'normal' } }><img src={ categoriesIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Categories</Button>
             <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu" style={ { fontWeight: filteredList ? 'bold' : 'normal' } }><img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filter</Button>
             <Button onClick={ () => openWindow('webdesktopsAbout', true) } variant="menu"><img src={ infoIcon } alt='info' style={ { paddingRight: '4px' } } />About</Button>
