@@ -485,7 +485,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
-		"tags": ["game"]
+		"tags": ["poc"]
 	},
 	{
 		"name": "Tetrageddon Games",
@@ -1061,7 +1061,7 @@
 		"icon": "windows11.gif",
 		"source": "https://github.com/yashash-pugalia/win11-svelte",
 		"notes": "",
-		"tags": ["poc"]
+		"tags": ["misc"]
 	},
 	{
 		"name": "Sergio Diaz Schiaffino",
@@ -1685,7 +1685,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/ritenv/retro-desktop",
 		"notes": "",
-		"tags": ["poc"]
+		"tags": ["poc", "misc"]
 	},
 	{
 		"name": "Vtron",

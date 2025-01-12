@@ -172,7 +172,7 @@ class WebDesktopsBody extends Component {
           code: 'misc',
           selected: false,
           label: 'Misc',
-          tooltip: 'Tech showcase',
+          tooltip: 'Tech showcase & misc',
           button: {
             bgColor: '#EF476F',
             color: 'black',
@@ -535,8 +535,13 @@ class WebDesktopsBody extends Component {
   render = () => {
     const { openWindow } = this.props;
     const {
-      desktopsList, sitesExplored, filterView, filterMap, categoriesView,
+      desktopsList, sitesExplored, filterView, filterMap,
+      categoriesView, categoriesMap, sourceFilter,
     } = this.state;
+
+    const categoriesSelected = categoriesMap.some(categ => categ.code !== 'all' && categ.selected);
+    const filteredList = filterMap.some(({ selected }) => !selected)
+      || sourceFilter !== SOURCE_FILTER.ALL;
 
     const exploredPercentage = Math.floor((sitesExplored * 100) / desktopsList.length);
     const osTypesSelected = filterMap.filter(({ selected }) => selected).length;
@@ -546,8 +551,8 @@ class WebDesktopsBody extends Component {
         <div className='toolbar-container'>
           <Toolbar style={ { display: 'flex', flexWrap: 'wrap' } }>
             <Button onClick={ this.openRandomURL } variant="menu" disabled={ osTypesSelected === 0 }><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
-            <Button onClick={ this.toggleCategoriesView } active={ categoriesView } variant="menu"><img src={ categoriesIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Categories</Button>
-            <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu"><img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filter</Button>
+            <Button onClick={ this.toggleCategoriesView } active={ categoriesView } variant="menu" style={ { fontWeight: categoriesSelected ? 'bold' : 'normal' } }><img src={ categoriesIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Categories</Button>
+            <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu" style={ { fontWeight: filteredList ? 'bold' : 'normal' } }><img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filter</Button>
             <Button onClick={ () => openWindow('webdesktopsAbout', true) } variant="menu"><img src={ infoIcon } alt='info' style={ { paddingRight: '4px' } } />About</Button>
           </Toolbar>
         </div>
