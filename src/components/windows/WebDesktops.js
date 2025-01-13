@@ -456,7 +456,7 @@ class WebDesktopsBody extends Component {
     );
   }
 
-  renderTagsButtons = () => {
+  renderCategoriesButtons = () => {
     const { categoriesMap } = this.state;
     return categoriesMap.map(
       (category, index) => <Tooltip key={ `radio_btn_${index}` } text={ category.tooltip } delay={ 500 }>
@@ -466,6 +466,7 @@ class WebDesktopsBody extends Component {
             color: category.selected ? 'black' : category.button.color,
             borderRadius: '120px',
             width: '150px',
+            display: 'flex',
           } }
           value={ category.code }
           active={ category.selected }
@@ -479,7 +480,7 @@ class WebDesktopsBody extends Component {
     const { categoriesView } = this.state;
     return (<div className='main-categories-view' style={ { display: categoriesView ? 'block' : 'none' } }>
       <div className='categories-buttons-container'>
-        { this.renderTagsButtons() }
+        { this.renderCategoriesButtons() }
       </div>
     </div>);
   }
