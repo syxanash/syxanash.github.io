@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 
 import {
-  Cutout, Toolbar, Button, Fieldset, Checkbox, Radio,
+  Cutout, Toolbar, Button, Fieldset, Checkbox, Radio, Tooltip,
 } from 'react95';
 
 import Util from '../Util';
@@ -14,6 +14,8 @@ import mainWindowIcon from '../../resources/icons/webdesktops.gif';
 import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 import infoIcon from '../../resources/icons/info.png';
 import gearIcon from '../../resources/icons/gear.gif';
+import categoriesIcon from '../../resources/icons/categories.png';
+import starIcon from '../../resources/icons/star.png';
 
 import blackCursor from '../../resources/icons/pointers/cursor.gif';
 
@@ -34,15 +36,17 @@ class WebDesktopsBody extends Component {
   constructor(props) {
     super(props);
 
-    this.boldTimeout = undefined;
+    this.overViewTimeout = undefined;
 
     this.state = {
       desktopsList: _.shuffle(remoteDesktops),
       sitesExplored: 0,
-      boldNumber: false,
+      overviewNumber: false,
       sortSelected: SORT_OPTIONS.RANDOM,
       sourceFilter: SOURCE_FILTER.ALL,
       filterView: false,
+      categoriesView: false,
+      showCategoriesTada: false,
       filterMap: [
         {
           filename: 'windows.gif',
@@ -105,11 +109,100 @@ class WebDesktopsBody extends Component {
           description: 'Unknown OS',
         },
       ],
+      categoriesMap: [
+        {
+          code: 'top',
+          selected: false,
+          label: <div style={ { display: 'flex', alignItems: 'center' } }><img src={ starIcon } alt='star' />Top Picks</div>,
+          tooltip: <span>{'A selection of notable'}<br />{'projects and standout designs'}</span>,
+          button: {
+            bgColor: '#256D85',
+            color: 'white',
+          },
+        },
+        {
+          code: 'uncanny',
+          selected: false,
+          label: 'Uncanny',
+          tooltip: 'So good they\'d fool my grandma!',
+          button: {
+            bgColor: '#118AB2',
+            color: 'white',
+          },
+        },
+        {
+          code: 'personal',
+          selected: false,
+          label: 'Personal',
+          tooltip: 'Portfolios and personal sites',
+          button: {
+            bgColor: '#06D6A0',
+            color: 'black',
+          },
+        },
+        {
+          code: 'poc',
+          selected: false,
+          label: 'Quirky',
+          tooltip: <span>{'artistic concepts'}<br />{'and unconventional'}</span>,
+          button: {
+            bgColor: '#FFD166',
+            color: 'black',
+          },
+        },
+        {
+          code: 'game',
+          selected: false,
+          label: 'Web games',
+          tooltip: <span>{'Games that use'}<br />{'the desktop metaphor'}</span>,
+          button: {
+            bgColor: '#FF9650',
+            color: 'black',
+          },
+        },
+        {
+          code: 'tool',
+          selected: false,
+          label: 'Tools',
+          tooltip: 'Tools and useful web apps',
+          button: {
+            bgColor: '#FF87C1',
+            color: 'black',
+          },
+        },
+        {
+          code: 'misc',
+          selected: false,
+          label: 'Misc',
+          tooltip: 'Tech showcase & miscellaneous',
+          button: {
+            bgColor: '#EF476F',
+            color: 'black',
+          },
+        },
+        {
+          code: 'all',
+          selected: true,
+          label: 'All',
+          tooltip: 'Every single one of them',
+          button: {
+            bgColor: '#9A9CC2',
+            color: 'black',
+          },
+        },
+      ],
     };
   }
 
   componentDidMount() {
     const { openWindow } = this.props;
+
+    const showCategoriesTada = sessionStorage.getItem('categoriesTada') === null;
+    this.setState({ showCategoriesTada });
+
+    if (showCategoriesTada) {
+      sessionStorage.setItem('categoriesTada', true);
+    }
 
     if (localStorage.getItem('webdesktopsExplored') === null) {
       localStorage.setItem('webdesktopsExplored', JSON.stringify([]));
@@ -141,8 +234,8 @@ class WebDesktopsBody extends Component {
       closeWindow('webdesktopsAbout');
     }
 
-    if (this.boldTimeout !== undefined) {
-      clearTimeout(this.boldTimeout);
+    if (this.overViewTimeout !== undefined) {
+      clearTimeout(this.overViewTimeout);
     }
   }
 
@@ -183,7 +276,9 @@ class WebDesktopsBody extends Component {
   )
 
   getFilteredDesktops = () => {
-    const { filterMap, desktopsList, sourceFilter } = this.state;
+    const {
+      filterMap, desktopsList, sourceFilter, categoriesMap,
+    } = this.state;
 
     const selectedTypes = filterMap.filter(({ selected }) => selected)
       .map(({ filename }) => filename);
@@ -191,15 +286,25 @@ class WebDesktopsBody extends Component {
       desktop => selectedTypes.includes(desktop.icon),
     );
 
-    if (sourceFilter === SOURCE_FILTER.OPEN) {
-      return filteredByOSDesktops.filter(desktop => desktop.source !== '');
+    const filteredBySource = filteredByOSDesktops.filter((desktop) => {
+      if (sourceFilter === SOURCE_FILTER.OPEN) {
+        return desktop.source !== '';
+      }
+      if (sourceFilter === SOURCE_FILTER.PRIVATE) {
+        return desktop.source === '';
+      }
+      return true;
+    });
+
+    const selectedCategory = categoriesMap.find(categ => categ.selected);
+
+    if (selectedCategory.code === 'all') {
+      return filteredBySource;
     }
 
-    if (sourceFilter === SOURCE_FILTER.PRIVATE) {
-      return filteredByOSDesktops.filter(desktop => desktop.source === '');
-    }
-
-    return filteredByOSDesktops;
+    return filteredBySource.filter(
+      desktop => desktop.tags.includes(selectedCategory.code),
+    );
   }
 
   openRandomURL = () => {
@@ -242,18 +347,18 @@ class WebDesktopsBody extends Component {
     return desktopIcons;
   }
 
-  setBoldNumber = () => {
-    this.setState({ boldNumber: false });
+  setOverviewNumber = () => {
+    this.setState({ overviewNumber: false });
   }
 
-  setBoldTimeout = () => {
-    this.setState({ boldNumber: true });
+  setNumberOverviewTimeout = () => {
+    this.setState({ overviewNumber: true });
 
-    if (this.boldTimeout !== undefined) {
-      clearTimeout(this.boldTimeout);
+    if (this.overViewTimeout !== undefined) {
+      clearTimeout(this.overViewTimeout);
     }
 
-    this.boldTimeout = setTimeout(this.setBoldNumber, 500);
+    this.overViewTimeout = setTimeout(this.setOverviewNumber, 3000);
   }
 
   handleCheckboxChange = (e) => {
@@ -265,7 +370,7 @@ class WebDesktopsBody extends Component {
     const currentValue = filterMap[mapIndex].selected;
     const newFilterMap = _.set(filterMap, `[${mapIndex}].selected`, !currentValue);
 
-    this.setBoldTimeout();
+    this.setNumberOverviewTimeout();
 
     this.setState({
       filterMap: newFilterMap,
@@ -279,7 +384,7 @@ class WebDesktopsBody extends Component {
       selected: check,
     }));
 
-    this.setBoldTimeout();
+    this.setNumberOverviewTimeout();
 
     this.setState({ filterMap: newFilterMap });
   }
@@ -300,8 +405,8 @@ class WebDesktopsBody extends Component {
   };
 
   filterBySourceCode = (filter) => {
-    this.setBoldTimeout();
-    this.setState({ sourceFilter: filter, boldNumber: true });
+    this.setNumberOverviewTimeout();
+    this.setState({ sourceFilter: filter, overviewNumber: true });
   }
 
   changeSort = (e) => {
@@ -325,6 +430,18 @@ class WebDesktopsBody extends Component {
     this.setState({ sortSelected: newSortSelected });
   }
 
+  changeCategory = (index) => {
+    const { categoriesMap } = this.state;
+
+    const updatedCategoriesMap = categoriesMap.map((category, i) => ({
+      ...category,
+      selected: i === index,
+    }));
+
+    this.setNumberOverviewTimeout();
+    this.setState({ categoriesMap: updatedCategoriesMap });
+  }
+
   renderRadioButtons = () => {
     const { sortSelected } = this.state;
     return Object.keys(SORT_OPTIONS).map(
@@ -332,17 +449,44 @@ class WebDesktopsBody extends Component {
         key={ `radio_btn_${index}` }
         style={ { cursor: `url(${blackCursor}), auto`, fontSize: '18px' } }
         checked={ sortSelected === index }
-        label={ <span className={ index === SORT_OPTIONS.NEWEST ? 'newest-label' : '' }>{_.capitalize(sortValue)}</span> }
+        label={ _.capitalize(sortValue) }
         value={ index }
         onChange={ this.changeSort }
       />,
     );
   }
 
-  renderFilterView = () => {
-    const { filterView, sourceFilter, boldNumber } = this.state;
+  renderCategoriesButtons = () => {
+    const { categoriesMap } = this.state;
+    return categoriesMap.map(
+      (category, index) => <Tooltip key={ `radio_btn_${index}` } text={ category.tooltip } delay={ 500 }>
+        <Button
+          style={ {
+            backgroundColor: category.button.bgColor,
+            color: category.selected ? 'black' : category.button.color,
+            borderRadius: '120px',
+            width: '150px',
+            display: 'flex',
+          } }
+          value={ category.code }
+          active={ category.selected }
+          onClick={ () => this.changeCategory(index) }
+        >{category.label}</Button>
+      </Tooltip>,
+    );
+  }
 
-    const totalDesktops = this.getFilteredDesktops().length;
+  renderCategoriesView = () => {
+    const { categoriesView } = this.state;
+    return (<div className='main-categories-view' style={ { display: categoriesView ? 'block' : 'none' } }>
+      <div className='categories-buttons-container'>
+        { this.renderCategoriesButtons() }
+      </div>
+    </div>);
+  }
+
+  renderFilterView = () => {
+    const { filterView, sourceFilter } = this.state;
 
     return (
       <div style={ { paddingBottom: '10px', display: filterView ? 'block' : 'none', fontStyle: 'bold' } }>
@@ -375,44 +519,85 @@ class WebDesktopsBody extends Component {
             </div>
           </div>
         </Fieldset>
-        <div className='filter-footer'>
-          <div style={ { fontSize: '18px', marginRight: '10px' } }>
-            Total websites {boldNumber ? <b>[{totalDesktops}]</b> : `[${totalDesktops}]`}
-          </div>
-          <Button style={ { width: '120px' } } size={ 'md' } onClick={ this.toggleFilterView }>Ok</Button>
-        </div>
-        <div className='separator'></div>
       </div>
     );
   }
 
+  renderDeskNumberOverview = () => {
+    const totalDesktops = remoteDesktops.length;
+    const filteredDesktops = this.getFilteredDesktops().length;
+
+    return (<div className='desktop-number-overview'>
+      <span>Websites displayed: <b>{filteredDesktops}</b>/{totalDesktops}</span>
+    </div>);
+  }
+
   toggleFilterView = () => {
-    this.setState({ filterView: !this.state.filterView });
+    this.setState({ filterView: !this.state.filterView, categoriesView: false });
+  }
+
+  toggleCategoriesView = () => {
+    this.setState({ categoriesView: !this.state.categoriesView, filterView: false });
   }
 
   render = () => {
     const { openWindow } = this.props;
     const {
       desktopsList, sitesExplored, filterView, filterMap,
+      categoriesView, categoriesMap, sourceFilter, showCategoriesTada, overviewNumber,
     } = this.state;
 
+    const categoriesSelected = categoriesMap.some(({ code, selected }) => code !== 'all' && selected);
+    const filteredList = filterMap.some(({ selected }) => !selected)
+      || sourceFilter !== SOURCE_FILTER.ALL;
+
     const exploredPercentage = Math.floor((sitesExplored * 100) / desktopsList.length);
-    const osTypesSelected = filterMap.filter(({ selected }) => selected).length;
+    const filteredDesktops = this.getFilteredDesktops().length;
 
     return (
       <React.Fragment>
         <div className='toolbar-container'>
           <Toolbar style={ { display: 'flex', flexWrap: 'wrap' } }>
-            <Button onClick={ this.openRandomURL } variant="menu" disabled={ osTypesSelected === 0 }><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
-            <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu"><img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filter</Button>
-            <Button onClick={ () => openWindow('webdesktopsAbout', true) } variant="menu"><img src={ infoIcon } alt='info' style={ { paddingRight: '4px' } } />About</Button>
+            <Button onClick={ this.openRandomURL } variant="menu" disabled={ filteredDesktops === 0 }>
+              <img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random
+            </Button>
+            <Button onClick={ this.toggleCategoriesView } active={ categoriesView } variant="menu" style={ {
+              fontWeight: categoriesSelected ? 'bold' : 'normal', width: '140px', display: 'flex', alignItems: 'center',
+            } }>
+              <div style={ { display: 'flex', alignItems: 'center' } } className={ showCategoriesTada ? 'animated tada delay-2s' : null }>
+                <img src={ categoriesIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />
+                <span>Categories</span>
+              </div>
+            </Button>
+            <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu" style={ { fontWeight: filteredList ? 'bold' : 'normal', width: '100px' } }>
+              <img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filter
+            </Button>
+            <Button onClick={ () => openWindow('webdesktopsAbout', true) } variant="menu">
+              <img src={ infoIcon } alt='info' style={ { paddingRight: '4px' } } />About
+            </Button>
           </Toolbar>
         </div>
-        { this.renderFilterView() }
+        <div>
+          { this.renderFilterView() }
+          { this.renderCategoriesView() }
+          <div style={ { display: (filterView || categoriesView) ? 'block' : 'none', textAlign: 'center', paddingBottom: '10px' } }>
+            <Button
+              size='sm'
+              style={ { width: '50px' } }
+              onClick={ () => {
+                if (filterView) this.toggleFilterView();
+                if (categoriesView) this.toggleCategoriesView();
+              } }
+            >
+              <span>▲</span>
+            </Button>
+          </div>
+        </div>
         <Cutout className='awesome-gui-cutoutbg'>
           <div className='awesome-gui-icons-container'>
             {this.renderAllIcons()}
           </div>
+          { overviewNumber ? this.renderDeskNumberOverview() : null }
         </Cutout>
         <Cutout style={ { backgroundColor: '#c7c7df', marginBottom: '3px' } }>
           <div className='progress-content' style={ { width: `${exploredPercentage}%` } }></div>
