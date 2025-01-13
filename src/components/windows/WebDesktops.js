@@ -465,7 +465,8 @@ class WebDesktopsBody extends Component {
             backgroundColor: category.button.bgColor,
             color: category.selected ? 'black' : category.button.color,
             borderRadius: '120px',
-            width: '150px',
+            width: '130px',
+            height: '40px',
             display: 'flex',
           } }
           value={ category.code }
