@@ -252,10 +252,16 @@ class WebDesktopsBody extends Component {
   }
 
   registerWebsite = (url) => {
+    const { openWindow } = this.props;
+
     const listExplored = JSON.parse(localStorage.getItem('webdesktopsExplored'));
     if (!listExplored.includes(url)) {
       listExplored.push(url);
       localStorage.setItem('webdesktopsExplored', JSON.stringify(listExplored));
+
+      if (listExplored.length === remoteDesktops.length) {
+        openWindow('webdesktopsAlert', true);
+      }
 
       this.setState({ sitesExplored: listExplored.length });
     }
