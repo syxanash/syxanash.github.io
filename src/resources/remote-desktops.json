@@ -29,7 +29,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/AshKyd/ui95",
 		"notes": "",
-		"tags": ["top", "personal"]
+		"tags": ["personal"]
 	},
 	{
 		"name": "Cyberspace & Time",
@@ -565,7 +565,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
-		"tags": ["top"]
+		"tags": ["top", "misc"]
 	},
 	{
 		"name": "Team3D",
