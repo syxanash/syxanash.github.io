@@ -577,8 +577,22 @@ class WebDesktopsBody extends Component {
             </Button>
           </Toolbar>
         </div>
-        { this.renderFilterView() }
-        { this.renderCategoriesView() }
+        <div>
+          { this.renderFilterView() }
+          { this.renderCategoriesView() }
+          <div style={ { display: (filterView || categoriesView) ? 'block' : 'none', textAlign: 'center', paddingBottom: '10px' } }>
+            <Button
+              size='sm'
+              style={ { width: '50px' } }
+              onClick={ () => {
+                if (filterView) this.toggleFilterView();
+                if (categoriesView) this.toggleCategoriesView();
+              } }
+            >
+              <span>▲</span>
+            </Button>
+          </div>
+        </div>
         <Cutout className='awesome-gui-cutoutbg'>
           <div className='awesome-gui-icons-container'>
             {this.renderAllIcons()}
