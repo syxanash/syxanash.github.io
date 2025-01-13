@@ -111,8 +111,8 @@ class WebDesktopsBody extends Component {
         {
           code: 'top',
           selected: false,
-          label: 'Top Picks',
-          tooltip: <span>{ 'A selection of notable'}<br />{'projects and standout designs'}</span>,
+          label: '✨Top Picks✨',
+          tooltip: <span>{'A selection of notable'}<br />{'projects and standout designs'}</span>,
           button: {
             bgColor: '#256D85',
             color: 'white',
@@ -152,7 +152,7 @@ class WebDesktopsBody extends Component {
           code: 'tool',
           selected: false,
           label: 'Tools',
-          tooltip: 'tools and useful web apps',
+          tooltip: 'Tools and useful web apps',
           button: {
             bgColor: '#FF9650',
             color: 'black',
@@ -161,8 +161,8 @@ class WebDesktopsBody extends Component {
         {
           code: 'poc',
           selected: false,
-          label: 'Proof of concepts',
-          tooltip: 'Quirky and unconventional',
+          label: 'Quirky',
+          tooltip: <span>{'artistic concepts'}<br />{'and unconventional'}</span>,
           button: {
             bgColor: '#FF87C1',
             color: 'black',
@@ -172,7 +172,7 @@ class WebDesktopsBody extends Component {
           code: 'misc',
           selected: false,
           label: 'Misc',
-          tooltip: 'Tech showcase & misc',
+          tooltip: 'Tech showcase & miscellaneous',
           button: {
             bgColor: '#EF476F',
             color: 'black',
@@ -551,8 +551,8 @@ class WebDesktopsBody extends Component {
         <div className='toolbar-container'>
           <Toolbar style={ { display: 'flex', flexWrap: 'wrap' } }>
             <Button onClick={ this.openRandomURL } variant="menu" disabled={ filteredDesktops === 0 }><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
-            <Button onClick={ this.toggleCategoriesView } active={ categoriesView } variant="menu" style={ { fontWeight: categoriesSelected ? 'bold' : 'normal' } }><img src={ categoriesIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Categories</Button>
-            <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu" style={ { fontWeight: filteredList ? 'bold' : 'normal' } }><img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filter</Button>
+            <Button onClick={ this.toggleCategoriesView } active={ categoriesView } variant="menu" style={ { fontWeight: categoriesSelected ? 'bold' : 'normal', width: '140px' } }><img src={ categoriesIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Categories</Button>
+            <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu" style={ { fontWeight: filteredList ? 'bold' : 'normal', width: '100px' } }><img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filter</Button>
             <Button onClick={ () => openWindow('webdesktopsAbout', true) } variant="menu"><img src={ infoIcon } alt='info' style={ { paddingRight: '4px' } } />About</Button>
           </Toolbar>
         </div>
