@@ -35,12 +35,12 @@ class WebDesktopsBody extends Component {
   constructor(props) {
     super(props);
 
-    this.boldTimeout = undefined;
+    this.overViewTimeout = undefined;
 
     this.state = {
       desktopsList: _.shuffle(remoteDesktops),
       sitesExplored: 0,
-      boldNumber: false,
+      overviewNumber: false,
       sortSelected: SORT_OPTIONS.RANDOM,
       sourceFilter: SOURCE_FILTER.ALL,
       filterView: false,
@@ -233,8 +233,8 @@ class WebDesktopsBody extends Component {
       closeWindow('webdesktopsAbout');
     }
 
-    if (this.boldTimeout !== undefined) {
-      clearTimeout(this.boldTimeout);
+    if (this.overViewTimeout !== undefined) {
+      clearTimeout(this.overViewTimeout);
     }
   }
 
@@ -346,18 +346,18 @@ class WebDesktopsBody extends Component {
     return desktopIcons;
   }
 
-  setBoldNumber = () => {
-    this.setState({ boldNumber: false });
+  setOverviewNumber = () => {
+    this.setState({ overviewNumber: false });
   }
 
-  setBoldTimeout = () => {
-    this.setState({ boldNumber: true });
+  setNumberOverviewTimeout = () => {
+    this.setState({ overviewNumber: true });
 
-    if (this.boldTimeout !== undefined) {
-      clearTimeout(this.boldTimeout);
+    if (this.overViewTimeout !== undefined) {
+      clearTimeout(this.overViewTimeout);
     }
 
-    this.boldTimeout = setTimeout(this.setBoldNumber, 500);
+    this.overViewTimeout = setTimeout(this.setOverviewNumber, 3000);
   }
 
   handleCheckboxChange = (e) => {
@@ -369,7 +369,7 @@ class WebDesktopsBody extends Component {
     const currentValue = filterMap[mapIndex].selected;
     const newFilterMap = _.set(filterMap, `[${mapIndex}].selected`, !currentValue);
 
-    this.setBoldTimeout();
+    this.setNumberOverviewTimeout();
 
     this.setState({
       filterMap: newFilterMap,
@@ -383,7 +383,7 @@ class WebDesktopsBody extends Component {
       selected: check,
     }));
 
-    this.setBoldTimeout();
+    this.setNumberOverviewTimeout();
 
     this.setState({ filterMap: newFilterMap });
   }
@@ -404,8 +404,8 @@ class WebDesktopsBody extends Component {
   };
 
   filterBySourceCode = (filter) => {
-    this.setBoldTimeout();
-    this.setState({ sourceFilter: filter, boldNumber: true });
+    this.setNumberOverviewTimeout();
+    this.setState({ sourceFilter: filter, overviewNumber: true });
   }
 
   changeSort = (e) => {
@@ -437,6 +437,7 @@ class WebDesktopsBody extends Component {
       selected: i === index,
     }));
 
+    this.setNumberOverviewTimeout();
     this.setState({ categoriesMap: updatedCategoriesMap });
   }
 
@@ -483,10 +484,7 @@ class WebDesktopsBody extends Component {
   }
 
   renderFilterView = () => {
-    const { filterView, sourceFilter, boldNumber } = this.state;
-
-    const filteredDesktops = this.getFilteredDesktops().length;
-    const totalDesktops = remoteDesktops.length;
+    const { filterView, sourceFilter } = this.state;
 
     return (
       <div style={ { paddingBottom: '10px', display: filterView ? 'block' : 'none', fontStyle: 'bold' } }>
@@ -519,15 +517,17 @@ class WebDesktopsBody extends Component {
             </div>
           </div>
         </Fieldset>
-        <div className='filter-footer'>
-          <div style={ { fontSize: '18px', marginRight: '10px' } }>
-            Websites {boldNumber ? <span><b>{filteredDesktops}</b>/{totalDesktops}</span> : `${filteredDesktops}/${totalDesktops}`}
-          </div>
-          <Button style={ { width: '120px' } } size={ 'md' } onClick={ this.toggleFilterView }>Ok</Button>
-        </div>
-        <div className='separator'></div>
       </div>
     );
+  }
+
+  renderDeskNumberOverview = () => {
+    const totalDesktops = remoteDesktops.length;
+    const filteredDesktops = this.getFilteredDesktops().length;
+
+    return (<div className='desktop-number-overview'>
+      <span>Websites displayed: <b>{filteredDesktops}</b>/{totalDesktops}</span>
+    </div>);
   }
 
   toggleFilterView = () => {
@@ -542,7 +542,7 @@ class WebDesktopsBody extends Component {
     const { openWindow } = this.props;
     const {
       desktopsList, sitesExplored, filterView, filterMap,
-      categoriesView, categoriesMap, sourceFilter, showCategoriesTada,
+      categoriesView, categoriesMap, sourceFilter, showCategoriesTada, overviewNumber,
     } = this.state;
 
     const categoriesSelected = categoriesMap.some(({ code, selected }) => code !== 'all' && selected);
@@ -581,6 +581,7 @@ class WebDesktopsBody extends Component {
           <div className='awesome-gui-icons-container'>
             {this.renderAllIcons()}
           </div>
+          { overviewNumber ? this.renderDeskNumberOverview() : null }
         </Cutout>
         <Cutout style={ { backgroundColor: '#c7c7df', marginBottom: '3px' } }>
           <div className='progress-content' style={ { width: `${exploredPercentage}%` } }></div>
