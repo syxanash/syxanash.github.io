@@ -45,6 +45,7 @@ class WebDesktopsBody extends Component {
       sourceFilter: SOURCE_FILTER.ALL,
       filterView: false,
       categoriesView: false,
+      showCategoriesTada: false,
       filterMap: [
         {
           filename: 'windows.gif',
@@ -194,6 +195,13 @@ class WebDesktopsBody extends Component {
 
   componentDidMount() {
     const { openWindow } = this.props;
+
+    const showCategoriesTada = sessionStorage.getItem('categoriesTada') === null;
+    this.setState({ showCategoriesTada });
+
+    if (showCategoriesTada) {
+      sessionStorage.setItem('categoriesTada', true);
+    }
 
     if (localStorage.getItem('webdesktopsExplored') === null) {
       localStorage.setItem('webdesktopsExplored', JSON.stringify([]));
@@ -534,7 +542,7 @@ class WebDesktopsBody extends Component {
     const { openWindow } = this.props;
     const {
       desktopsList, sitesExplored, filterView, filterMap,
-      categoriesView, categoriesMap, sourceFilter,
+      categoriesView, categoriesMap, sourceFilter, showCategoriesTada,
     } = this.state;
 
     const categoriesSelected = categoriesMap.some(({ code, selected }) => code !== 'all' && selected);
@@ -548,10 +556,23 @@ class WebDesktopsBody extends Component {
       <React.Fragment>
         <div className='toolbar-container'>
           <Toolbar style={ { display: 'flex', flexWrap: 'wrap' } }>
-            <Button onClick={ this.openRandomURL } variant="menu" disabled={ filteredDesktops === 0 }><img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random</Button>
-            <Button onClick={ this.toggleCategoriesView } active={ categoriesView } variant="menu" style={ { fontWeight: categoriesSelected ? 'bold' : 'normal', width: '140px' } }><img src={ categoriesIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Categories</Button>
-            <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu" style={ { fontWeight: filteredList ? 'bold' : 'normal', width: '100px' } }><img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filter</Button>
-            <Button onClick={ () => openWindow('webdesktopsAbout', true) } variant="menu"><img src={ infoIcon } alt='info' style={ { paddingRight: '4px' } } />About</Button>
+            <Button onClick={ this.openRandomURL } variant="menu" disabled={ filteredDesktops === 0 }>
+              <img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random
+            </Button>
+            <Button onClick={ this.toggleCategoriesView } active={ categoriesView } variant="menu" style={ {
+              fontWeight: categoriesSelected ? 'bold' : 'normal', width: '140px', display: 'flex', alignItems: 'center',
+            } }>
+              <div style={ { display: 'flex', alignItems: 'center' } } className={ showCategoriesTada ? 'animated tada delay-2s' : null }>
+                <img src={ categoriesIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />
+                <span>Categories</span>
+              </div>
+            </Button>
+            <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu" style={ { fontWeight: filteredList ? 'bold' : 'normal', width: '100px' } }>
+              <img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filter
+            </Button>
+            <Button onClick={ () => openWindow('webdesktopsAbout', true) } variant="menu">
+              <img src={ infoIcon } alt='info' style={ { paddingRight: '4px' } } />About
+            </Button>
           </Toolbar>
         </div>
         { this.renderFilterView() }
