@@ -464,7 +464,7 @@ class WebDesktopsBody extends Component {
           style={ {
             backgroundColor: category.button.bgColor,
             color: category.selected ? 'black' : category.button.color,
-            borderRadius: '120px',
+            borderRadius: '20px',
             width: '130px',
             height: '40px',
             display: 'flex',
@@ -529,7 +529,7 @@ class WebDesktopsBody extends Component {
     const filteredDesktops = this.getFilteredDesktops().length;
 
     return (<div className='desktop-number-overview'>
-      <span>Websites displayed: <b>{filteredDesktops}</b>/{totalDesktops}</span>
+      <span>Websites selected: <b>{filteredDesktops}</b>/{totalDesktops}</span>
     </div>);
   }
 
@@ -603,7 +603,7 @@ class WebDesktopsBody extends Component {
         <Cutout style={ { backgroundColor: '#c7c7df', marginBottom: '3px' } }>
           <div className='progress-content' style={ { width: `${exploredPercentage}%` } }></div>
           <div className='screen-footer'>
-            <span>{sitesExplored} of {desktopsList.length} sites visited</span>
+            <span>{sitesExplored} of {desktopsList.length} websites visited</span>
           </div>
         </Cutout>
       </React.Fragment>
