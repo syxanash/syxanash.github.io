@@ -71,7 +71,7 @@
   width: 33.3%;
 }
 
-@media only screen and (max-width: 600px)  {
+@media only screen and (max-width: 600px) {
   .source-buttons {
     width: 100%;
   }

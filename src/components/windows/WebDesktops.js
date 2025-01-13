@@ -277,15 +277,15 @@ class WebDesktopsBody extends Component {
       desktop => selectedTypes.includes(desktop.icon),
     );
 
-    let filteredBySource = filteredByOSDesktops;
-
-    if (sourceFilter === SOURCE_FILTER.OPEN) {
-      filteredBySource = filteredByOSDesktops.filter(desktop => desktop.source !== '');
-    }
-
-    if (sourceFilter === SOURCE_FILTER.PRIVATE) {
-      filteredBySource = filteredByOSDesktops.filter(desktop => desktop.source === '');
-    }
+    const filteredBySource = filteredByOSDesktops.filter((desktop) => {
+      if (sourceFilter === SOURCE_FILTER.OPEN) {
+        return desktop.source !== '';
+      }
+      if (sourceFilter === SOURCE_FILTER.PRIVATE) {
+        return desktop.source === '';
+      }
+      return true;
+    });
 
     const selectedCategory = categoriesMap.find(categ => categ.selected);
 
@@ -293,11 +293,9 @@ class WebDesktopsBody extends Component {
       return filteredBySource;
     }
 
-    const filteredByCategory = filteredBySource.filter(
+    return filteredBySource.filter(
       desktop => desktop.tags.includes(selectedCategory.code),
     );
-
-    return filteredByCategory;
   }
 
   openRandomURL = () => {
@@ -539,7 +537,7 @@ class WebDesktopsBody extends Component {
       categoriesView, categoriesMap, sourceFilter,
     } = this.state;
 
-    const categoriesSelected = categoriesMap.some(categ => categ.code !== 'all' && categ.selected);
+    const categoriesSelected = categoriesMap.some(({ code, selected }) => code !== 'all' && selected);
     const filteredList = filterMap.some(({ selected }) => !selected)
       || sourceFilter !== SOURCE_FILTER.ALL;
 
