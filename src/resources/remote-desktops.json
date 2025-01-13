@@ -13,7 +13,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/nightwaveplaza",
 		"notes": "",
-		"tags": ["tool"]
+		"tags": ["tool", "top"]
 	},
 	{
 		"name": "Poolsuite",
@@ -453,7 +453,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
-		"tags": ["top"]
+		"tags": ["personal"]
 	},
 	{
 		"name": "Vuindows",
@@ -501,7 +501,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/koas/my-second-pc",
 		"notes": "",
-		"tags": ["top"]
+		"tags": ["misc", "personal"]
 	},
 	{
 		"name": "ToxicCode.com",
@@ -709,7 +709,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/GoodManWEN/GoodManWEN.github.io",
 		"notes": "",
-		"tags": ["top"]
+		"tags": ["misc"]
 	},
 	{
 		"name": "Win 7",
@@ -869,7 +869,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/shoaib-jamal/rebornxp",
 		"notes": "",
-		"tags": ["uncanny"]
+		"tags": ["game"]
 	},
 	{
 		"name": "WWWerd",
@@ -1229,7 +1229,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/ducbao414/win32.run",
 		"notes": "",
-		"tags": ["top", "uncanny"]
+		"tags": ["top", "game"]
 	},
 	{
 		"name": "Pretty Diff",
@@ -1413,7 +1413,7 @@
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
-		"tags": ["top", "personal"]
+		"tags": ["top", "poc"]
 	},
 	{
 		"name": "constraint systems OS",
@@ -1853,7 +1853,7 @@
 		"icon": "windows11.gif",
 		"source": "https://github.com/chrishtu/windows11",
 		"notes": "",
-		"tags": ["top", "personal"]
+		"tags": ["misc", "personal"]
 	},
 	{
 		"name": "AvdanOS",

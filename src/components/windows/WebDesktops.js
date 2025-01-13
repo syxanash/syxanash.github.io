@@ -140,12 +140,22 @@ class WebDesktopsBody extends Component {
           },
         },
         {
+          code: 'poc',
+          selected: false,
+          label: 'Quirky',
+          tooltip: <span>{'artistic concepts'}<br />{'and unconventional'}</span>,
+          button: {
+            bgColor: '#FFD166',
+            color: 'black',
+          },
+        },
+        {
           code: 'game',
           selected: false,
           label: 'Web games',
           tooltip: <span>{'Games that use'}<br />{'the desktop metaphor'}</span>,
           button: {
-            bgColor: '#FFD166',
+            bgColor: '#FF9650',
             color: 'black',
           },
         },
@@ -154,16 +164,6 @@ class WebDesktopsBody extends Component {
           selected: false,
           label: 'Tools',
           tooltip: 'Tools and useful web apps',
-          button: {
-            bgColor: '#FF9650',
-            color: 'black',
-          },
-        },
-        {
-          code: 'poc',
-          selected: false,
-          label: 'Quirky',
-          tooltip: <span>{'artistic concepts'}<br />{'and unconventional'}</span>,
           button: {
             bgColor: '#FF87C1',
             color: 'black',
