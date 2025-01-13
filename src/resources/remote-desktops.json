@@ -1729,11 +1729,11 @@
 	},
 	{
 		"name": "Ripen OS",
-		"url": "https://ripenos.github.io/Ripenos/",
+		"url": "https://ripenos.web.app/Ripenos/",
 		"icon": "linux.gif",
 		"source": "https://github.com/ripenos/ripenos.github.io",
 		"notes": "",
-		"tags": ["misc"]
+		"tags": ["misc", "top"]
 	},
 	{
 		"name": "Windows11",
