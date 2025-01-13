@@ -15,6 +15,7 @@ import hyperlinkIcon from '../../resources/icons/hyperlink.gif';
 import infoIcon from '../../resources/icons/info.png';
 import gearIcon from '../../resources/icons/gear.gif';
 import categoriesIcon from '../../resources/icons/categories.png';
+import starIcon from '../../resources/icons/star.png';
 
 import blackCursor from '../../resources/icons/pointers/cursor.gif';
 
@@ -112,7 +113,7 @@ class WebDesktopsBody extends Component {
         {
           code: 'top',
           selected: false,
-          label: '✨Top Picks✨',
+          label: <div style={ { display: 'flex', alignItems: 'center' } }><img src={ starIcon } alt='star' />Top Picks</div>,
           tooltip: <span>{'A selection of notable'}<br />{'projects and standout designs'}</span>,
           button: {
             bgColor: '#256D85',
