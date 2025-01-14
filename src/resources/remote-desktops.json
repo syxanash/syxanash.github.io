@@ -249,7 +249,7 @@
 	},
 	{
 		"name": "CloudDesk",
-		"url": "http://altaica.altervista.org/",
+		"url": "http://altaica.altervista.org",
 		"icon": "unix.gif",
 		"source": "",
 		"notes": "",
@@ -784,20 +784,20 @@
 		"tags": ["personal"]
 	},
 	{
-		"name": "clickbecause.net",
-		"url": "https://clickbecause.net",
-		"icon": "mac_new.gif",
-		"source": "",
-		"notes": "",
-		"tags": ["personal"]
-	},
-	{
 		"name": "LUMISET",
 		"url": "https://lumiset.se",
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
 		"tags": ["poc"]
+	},
+	{
+		"name": "clickbecause.net",
+		"url": "https://clickbecause.net",
+		"icon": "mac_new.gif",
+		"source": "",
+		"notes": "",
+		"tags": ["personal"]
 	},
 	{
 		"name": "9/11 Realtime",
@@ -969,7 +969,7 @@
 	},
 	{
 		"name": "Amiga34 Germany",
-		"url": "http://www.amiga34.de",
+		"url": "http://www.amiga34.de/WB.html",
 		"icon": "amiga.gif",
 		"source": "",
 		"notes": "",
@@ -977,7 +977,7 @@
 	},
 	{
 		"name": "Richard Eisenmenger",
-		"url": "https://amiga.richard-eisenmenger.com",
+		"url": "https://amiga.richard-eisenmenger.com/WB.html",
 		"icon": "amiga.gif",
 		"source": "",
 		"notes": "",

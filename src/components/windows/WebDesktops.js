@@ -143,7 +143,7 @@ class WebDesktopsBody extends Component {
         {
           code: 'poc',
           selected: false,
-          label: 'Quirky',
+          label: 'Concepts',
           tooltip: <span>{'Proof of concepts'}<br />{'and unconventional'}</span>,
           button: {
             bgColor: '#FFD166',
@@ -163,7 +163,7 @@ class WebDesktopsBody extends Component {
         {
           code: 'tool',
           selected: false,
-          label: 'Tools',
+          label: 'Utilities',
           tooltip: 'Tools and useful web apps',
           button: {
             bgColor: '#FF87C1',
