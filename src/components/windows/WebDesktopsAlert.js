@@ -19,7 +19,7 @@ class WebDesktopsAlertBody extends Component {
   obtainFortuneCookie = () => {
     const { closeCurrentWindow } = this.props;
 
-    const cookieMessage = 'At the end of your life there\'ll be a good rest, and no further activities are scheduled. - This cookie proves that you have visited all websites in simone.computer/webdesktops!';
+    const cookieMessage = 'At the end of your life there\'ll be a good rest, and no further activities are scheduled. - This cookie proves that you have visited all websites in simone.computer/webdesktops';
 
     document.cookie = `fortuneCookie=${cookieMessage}; SameSite=None; Secure; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
     console.info(document.cookie);
