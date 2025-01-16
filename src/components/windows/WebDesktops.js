@@ -503,17 +503,17 @@ class WebDesktopsBody extends Component {
           </div>
         </Fieldset>
         <Fieldset label="Filter by source code" style={ { marginTop: '15px' } }>
-          <Cutout className='source-buttons-cut-out'>
+          <div className='source-buttons-cut-out'>
             <div className='source-buttons'>
-              <Button fullWidth size={ 'md' } active={ sourceFilter === SOURCE_FILTER.OPEN } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.OPEN) }>Open Source</Button>
+              <Button className='left-button' fullWidth size={ 'md' } active={ sourceFilter === SOURCE_FILTER.OPEN } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.OPEN) }>Open Source</Button>
             </div>
             <div className='source-buttons'>
               <Button fullWidth size={ 'md' } active={ sourceFilter === SOURCE_FILTER.PRIVATE } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.PRIVATE) }>Private</Button>
             </div>
             <div className='source-buttons'>
-              <Button fullWidth size={ 'md' } active={ sourceFilter === SOURCE_FILTER.ALL } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.ALL) }>All</Button>
+              <Button className='right-button' fullWidth size={ 'md' } active={ sourceFilter === SOURCE_FILTER.ALL } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.ALL) }>All</Button>
             </div>
-          </Cutout>
+          </div>
         </Fieldset>
         <Fieldset label="Filter by interface" style={ { marginTop: '15px' } }>
           <div className='checkbox-container'>

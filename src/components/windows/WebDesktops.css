@@ -70,9 +70,25 @@
   width: 33.3%;
 }
 
+.source-buttons .left-button {
+  border-radius: 20px 0px 0px 20px;
+}
+
+.source-buttons .right-button {
+  border-radius: 0px 20px 20px 0px;
+}
+
 @media only screen and (max-width: 600px) {
   .source-buttons {
     width: 100%;
+  }
+
+  .source-buttons .left-button {
+    border-radius: 20px 20px 0px 0px;
+  }
+  
+  .source-buttons .right-button {
+    border-radius: 0px 0px 20px 20px;
   }
 }
 
