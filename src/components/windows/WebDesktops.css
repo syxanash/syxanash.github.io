@@ -86,11 +86,12 @@
   position: absolute;
   right: 10px;
   top: 10px;
-  background-color: #ccd0ff;
+  background-color: #dbdeff;
   border: 1px solid;
   padding: 5px;
 
   box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.61);
+  font-size: 18px;
 }
 
 .filter-buttons {
