@@ -1886,5 +1886,13 @@
 		"source": "https://github.com/Raptor1818/RaptorOS",
 		"notes": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "mojsx",
+		"url": "https://mojsx.vercel.app",
+		"icon": "windows.gif",
+		"source": "https://github.com/mo-jsx/resume-95",
+		"notes": "",
+		"tags": ["personal"]
 	}
 ]

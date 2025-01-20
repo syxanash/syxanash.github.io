@@ -131,7 +131,7 @@ class GuestbookBody extends Component {
           </div>
         </div>
         <div>
-          Well said, Ada! very nice impressive, but alas,
+          Well said, Ada! very nice website, but alas,
           the comment section leaves much to be desired.
         </div>
       </div>
@@ -225,7 +225,7 @@ class GuestbookBody extends Component {
           </div>
         </div>
         <div>
-          { '<script>alert(\'document.cookie\');</script>' }
+          { '<script>alert(document.cookie);</script>' }
         </div>
       </div>
       <Divider />
