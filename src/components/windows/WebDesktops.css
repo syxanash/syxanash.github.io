@@ -39,7 +39,7 @@
   margin: -10px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .main-categories-view {
