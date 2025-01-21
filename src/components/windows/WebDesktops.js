@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 
 import {
-  Cutout, Toolbar, Button, Fieldset, Checkbox, Radio, Tooltip,
+  Cutout, Toolbar, Button, Fieldset, Checkbox, Radio, Tooltip, TextField,
 } from 'react95';
 
 import Util from '../Util';
@@ -16,6 +16,7 @@ import infoIcon from '../../resources/icons/info.png';
 import gearIcon from '../../resources/icons/gear.gif';
 import categoriesIcon from '../../resources/icons/categories.png';
 import starIcon from '../../resources/icons/star.png';
+import searchIcon from '../../resources/icons/search.png';
 
 import blackCursor from '../../resources/icons/pointers/cursor.gif';
 
@@ -45,6 +46,8 @@ class WebDesktopsBody extends Component {
       sortSelected: SORT_OPTIONS.RANDOM,
       sourceFilter: SOURCE_FILTER.ALL,
       filterView: false,
+      searchView: false,
+      searchInput: '',
       categoriesView: false,
       showCategoriesTada: false,
       filterMap: [
@@ -283,7 +286,7 @@ class WebDesktopsBody extends Component {
 
   getFilteredDesktops = () => {
     const {
-      filterMap, desktopsList, sourceFilter, categoriesMap,
+      filterMap, desktopsList, sourceFilter, categoriesMap, searchInput,
     } = this.state;
 
     const selectedTypes = filterMap.filter(({ selected }) => selected)
@@ -304,13 +307,28 @@ class WebDesktopsBody extends Component {
 
     const selectedCategory = categoriesMap.find(categ => categ.selected);
 
-    if (selectedCategory.code === 'all') {
-      return filteredBySource;
-    }
-
-    return filteredBySource.filter(
+    const filteredByCategory = filteredBySource.filter(
       desktop => desktop.tags.includes(selectedCategory.code),
     );
+
+    const finalList = selectedCategory.code === 'all'
+      ? filteredBySource
+      : filteredByCategory;
+
+    const filteredBySearch = finalList.filter((desktop) => {
+      const desktopName = desktop.name.toLowerCase();
+      const desktopUrl = desktop.url.toLowerCase();
+
+      const normalizedInput = searchInput.toLowerCase();
+
+      return desktopName.includes(normalizedInput) || desktopUrl.includes(normalizedInput);
+    });
+
+    if (searchInput === '') {
+      return finalList;
+    }
+
+    return filteredBySearch;
   }
 
   openRandomURL = () => {
@@ -412,7 +430,7 @@ class WebDesktopsBody extends Component {
 
   filterBySourceCode = (filter) => {
     this.setNumberOverviewTimeout();
-    this.setState({ sourceFilter: filter, overviewNumber: true });
+    this.setState({ sourceFilter: filter });
   }
 
   changeSort = (e) => {
@@ -483,11 +501,42 @@ class WebDesktopsBody extends Component {
     );
   }
 
+  changeSearchInput = (e) => {
+    this.setNumberOverviewTimeout();
+
+    this.setState({ searchInput: e.target.value });
+  }
+
+  clearSearchInput = () => {
+    this.setNumberOverviewTimeout();
+
+    this.setState({ searchInput: '' });
+  }
+
   renderCategoriesView = () => {
     const { categoriesView } = this.state;
     return (<div className='main-categories-view' style={ { display: categoriesView ? 'block' : 'none' } }>
       <div className='categories-buttons-container'>
         { this.renderCategoriesButtons() }
+      </div>
+    </div>);
+  }
+
+  renderSearchView = () => {
+    const { searchView, searchInput } = this.state;
+    return (<div className='main-search-view' style={ { display: searchView ? 'block' : 'none' } }>
+      <div style={ { paddingBottom: '10px' } }>
+        <span>Website name:</span>
+      </div>
+      <div style={ { display: 'flex', alignItems: 'center' } }>
+        <TextField
+          value={ searchInput }
+          shadow={ false }
+          onChange={ this.changeSearchInput }
+          className="search-input"
+          style={ { marginRight: '10px' } }
+        />
+        <Button style={ { width: '110px' } } onClick={ this.clearSearchInput }>Clear</Button>
       </div>
     </div>);
   }
@@ -540,17 +589,33 @@ class WebDesktopsBody extends Component {
   }
 
   toggleFilterView = () => {
-    this.setState({ filterView: !this.state.filterView, categoriesView: false });
+    this.setState({
+      filterView: !this.state.filterView,
+      categoriesView: false,
+      searchView: false,
+    });
   }
 
   toggleCategoriesView = () => {
-    this.setState({ categoriesView: !this.state.categoriesView, filterView: false });
+    this.setState({
+      categoriesView: !this.state.categoriesView,
+      filterView: false,
+      searchView: false,
+    });
+  }
+
+  toggleSearchView = () => {
+    this.setState({
+      searchView: !this.state.searchView,
+      filterView: false,
+      categoriesView: false,
+    });
   }
 
   render = () => {
     const { openWindow } = this.props;
     const {
-      desktopsList, sitesExplored, filterView, filterMap,
+      desktopsList, sitesExplored, filterView, filterMap, searchView, searchInput,
       categoriesView, categoriesMap, sourceFilter, showCategoriesTada, overviewNumber,
     } = this.state;
 
@@ -576,6 +641,9 @@ class WebDesktopsBody extends Component {
                 <span>Categories</span>
               </div>
             </Button>
+            <Button onClick={ this.toggleSearchView } active={ searchView } variant="menu" style={ { fontWeight: searchInput === '' ? 'normal' : 'bold', width: '110px' } }>
+              <img src={ searchIcon } alt='hyperlink' style={ { paddingRight: '7px', height: '25px' } } />Search
+            </Button>
             <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu" style={ { fontWeight: filteredList ? 'bold' : 'normal', width: '100px' } }>
               <img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filter
             </Button>
@@ -587,13 +655,15 @@ class WebDesktopsBody extends Component {
         <div>
           { this.renderFilterView() }
           { this.renderCategoriesView() }
-          <div style={ { display: (filterView || categoriesView) ? 'block' : 'none', textAlign: 'center', paddingBottom: '10px' } }>
+          { this.renderSearchView() }
+          <div style={ { display: (filterView || categoriesView || searchView) ? 'block' : 'none', textAlign: 'center', paddingBottom: '10px' } }>
             <Button
               size='sm'
               style={ { width: '50px' } }
               onClick={ () => {
                 if (filterView) this.toggleFilterView();
                 if (categoriesView) this.toggleCategoriesView();
+                if (searchView) this.toggleSearchView();
               } }
             >
               <span>▲</span>
