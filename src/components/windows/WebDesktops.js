@@ -221,6 +221,8 @@ class WebDesktopsBody extends Component {
       localStorage.setItem('showInfoFieldset', false);
       openWindow('webdesktopsAbout');
     }
+
+    window.addEventListener('keydown', this.handleKeyFind);
   }
 
   componentWillUnmount = () => {
@@ -231,6 +233,16 @@ class WebDesktopsBody extends Component {
 
     if (this.overViewTimeout !== undefined) {
       clearTimeout(this.overViewTimeout);
+    }
+
+    document.removeEventListener('keydown', this.handleKeyFind);
+  }
+
+  handleKeyFind = (e) => {
+    if ((e.ctrlKey && e.key.toLowerCase() === 'f')
+      || (e.metaKey && e.key.toLowerCase() === 'f')) {
+      this.toggleSearchView();
+      e.preventDefault();
     }
   }
 
@@ -519,6 +531,7 @@ class WebDesktopsBody extends Component {
       </div>
       <div style={ { display: 'flex', alignItems: 'center' } }>
         <TextField
+          autoFocus
           value={ searchInput }
           shadow={ false }
           onChange={ this.changeSearchInput }
