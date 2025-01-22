@@ -505,18 +505,15 @@ class WebDesktopsBody extends Component {
     this.setState({ searchInput: '' });
   }
 
-  renderCategoriesView = () => {
-    const { categoriesView } = this.state;
-    return (<div className='main-categories-view' style={ { display: categoriesView ? 'block' : 'none' } }>
-      <div className='categories-buttons-container'>
-        { this.renderCategoriesButtons() }
-      </div>
-    </div>);
-  }
+  renderCategoriesView = () => (<div className='main-categories-view'>
+    <div className='categories-buttons-container'>
+      { this.renderCategoriesButtons() }
+    </div>
+  </div>);
 
   renderSearchView = () => {
-    const { searchView, searchInput } = this.state;
-    return (<div className='main-search-view' style={ { display: searchView ? 'block' : 'none' } }>
+    const { searchInput } = this.state;
+    return (<div className='main-search-view'>
       <div style={ { paddingBottom: '10px' } }>
         <span>Website name:</span>
       </div>
@@ -534,10 +531,10 @@ class WebDesktopsBody extends Component {
   }
 
   renderFilterView = () => {
-    const { filterView, sourceFilter } = this.state;
+    const { sourceFilter } = this.state;
 
     return (
-      <div style={ { paddingBottom: '10px', display: filterView ? 'block' : 'none', fontStyle: 'bold' } }>
+      <div style={ { paddingBottom: '10px', fontStyle: 'bold' } }>
         <Fieldset label="Sort by" style={ { marginTop: '15px' } }>
           <div className='radio-container'>
             { this.renderRadioButtons() }
@@ -604,6 +601,29 @@ class WebDesktopsBody extends Component {
     });
   }
 
+  renderTopMenu = () => {
+    const { filterView, categoriesView, searchView } = this.state;
+
+    return (<div>
+      { filterView && this.renderFilterView() }
+      { categoriesView && this.renderCategoriesView() }
+      { searchView && this.renderSearchView() }
+      <div style={ { display: (filterView || categoriesView || searchView) ? 'block' : 'none', textAlign: 'center', paddingBottom: '10px' } }>
+        <Button
+          size='sm'
+          style={ { width: '50px' } }
+          onClick={ () => {
+            if (filterView) this.toggleFilterView();
+            if (categoriesView) this.toggleCategoriesView();
+            if (searchView) this.toggleSearchView();
+          } }
+        >
+          <span>▲</span>
+        </Button>
+      </div>
+    </div>);
+  }
+
   render = () => {
     const { openWindow } = this.props;
     const {
@@ -644,24 +664,7 @@ class WebDesktopsBody extends Component {
             </Button>
           </Toolbar>
         </div>
-        <div>
-          { this.renderFilterView() }
-          { this.renderCategoriesView() }
-          { this.renderSearchView() }
-          <div style={ { display: (filterView || categoriesView || searchView) ? 'block' : 'none', textAlign: 'center', paddingBottom: '10px' } }>
-            <Button
-              size='sm'
-              style={ { width: '50px' } }
-              onClick={ () => {
-                if (filterView) this.toggleFilterView();
-                if (categoriesView) this.toggleCategoriesView();
-                if (searchView) this.toggleSearchView();
-              } }
-            >
-              <span>▲</span>
-            </Button>
-          </div>
-        </div>
+        { this.renderTopMenu() }
         <Cutout className='awesome-gui-cutoutbg'>
           <div className='awesome-gui-icons-container'>
             {this.renderAllIcons()}
