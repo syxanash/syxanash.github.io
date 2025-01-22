@@ -43,8 +43,13 @@
 }
 
 .main-categories-view {
+  margin-top: 20px;
+  padding-bottom: 25px;
+}
+
+.main-search-view {
   padding-bottom: 15px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .categories-buttons-container {
@@ -87,7 +92,7 @@
   .source-buttons .left-button {
     border-radius: 20px 20px 0px 0px;
   }
-  
+
   .source-buttons .right-button {
     border-radius: 0px 0px 20px 20px;
   }
@@ -107,7 +112,7 @@
   border: 1px solid;
   padding: 5px;
 
-  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.61);
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.61);
   font-size: 18px;
 }
 
@@ -212,4 +217,13 @@
 
   overflow: hidden;
   background: #9c99c7;
+}
+
+.search-input {
+  flex: 1;
+}
+
+.search-input input {
+  font-size: 18px;
+  font-weight: bold;
 }
