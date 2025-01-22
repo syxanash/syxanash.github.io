@@ -49,7 +49,6 @@ class WebDesktopsBody extends Component {
       searchView: false,
       searchInput: '',
       categoriesView: false,
-      showCategoriesTada: false,
       filterMap: [
         {
           filename: 'windows.gif',
@@ -199,13 +198,6 @@ class WebDesktopsBody extends Component {
 
   componentDidMount() {
     const { openWindow } = this.props;
-
-    const showCategoriesTada = sessionStorage.getItem('categoriesTada') === null;
-    this.setState({ showCategoriesTada });
-
-    if (showCategoriesTada) {
-      sessionStorage.setItem('categoriesTada', true);
-    }
 
     if (localStorage.getItem('webdesktopsExplored') === null) {
       localStorage.setItem('webdesktopsExplored', JSON.stringify([]));
@@ -616,7 +608,7 @@ class WebDesktopsBody extends Component {
     const { openWindow } = this.props;
     const {
       desktopsList, sitesExplored, filterView, filterMap, searchView, searchInput,
-      categoriesView, categoriesMap, sourceFilter, showCategoriesTada, overviewNumber,
+      categoriesView, categoriesMap, sourceFilter, overviewNumber,
     } = this.state;
 
     const categoriesSelected = categoriesMap.some(({ code, selected }) => code !== 'all' && selected);
@@ -636,7 +628,7 @@ class WebDesktopsBody extends Component {
             <Button onClick={ this.toggleCategoriesView } active={ categoriesView } variant="menu" style={ {
               fontWeight: categoriesSelected ? 'bold' : 'normal', width: '140px', display: 'flex', alignItems: 'center',
             } }>
-              <div style={ { display: 'flex', alignItems: 'center' } } className={ showCategoriesTada ? 'animated tada delay-2s' : null }>
+              <div style={ { display: 'flex', alignItems: 'center' } }>
                 <img src={ categoriesIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />
                 <span>Categories</span>
               </div>
