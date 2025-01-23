@@ -666,11 +666,11 @@ class WebDesktopsBody extends Component {
                 <span>Categories</span>
               </div>
             </Button>
-            <Button onClick={ this.toggleSearchView } active={ searchView } variant="menu" style={ { fontWeight: searchInput === '' ? 'normal' : 'bold', width: '110px' } }>
-              <img src={ searchIcon } alt='hyperlink' style={ { paddingRight: '7px', height: '25px' } } />Search
-            </Button>
             <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu" style={ { fontWeight: filteredList ? 'bold' : 'normal', width: '100px' } }>
               <img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filter
+            </Button>
+            <Button onClick={ this.toggleSearchView } active={ searchView } variant="menu" style={ { fontWeight: searchInput === '' ? 'normal' : 'bold', width: '110px' } }>
+              <img src={ searchIcon } alt='hyperlink' style={ { paddingRight: '7px', height: '25px' } } />Search
             </Button>
             <Button onClick={ () => openWindow('webdesktopsAbout', true) } variant="menu">
               <img src={ infoIcon } alt='info' style={ { paddingRight: '4px' } } />About
