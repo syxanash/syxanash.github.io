@@ -17,6 +17,7 @@ import gearIcon from '../../resources/icons/gear.gif';
 import categoriesIcon from '../../resources/icons/categories.png';
 import starIcon from '../../resources/icons/star.png';
 import searchIcon from '../../resources/icons/search.png';
+import searchAnimatedIcon from '../../resources/icons/search_animation.gif';
 
 import blackCursor from '../../resources/icons/pointers/cursor.gif';
 
@@ -49,6 +50,7 @@ class WebDesktopsBody extends Component {
       searchView: false,
       searchInput: '',
       categoriesView: false,
+      buttonSearchIcon: searchIcon,
       filterMap: [
         {
           filename: 'windows.gif',
@@ -641,7 +643,7 @@ class WebDesktopsBody extends Component {
     const { openWindow } = this.props;
     const {
       desktopsList, sitesExplored, filterView, filterMap, searchView, searchInput,
-      categoriesView, categoriesMap, sourceFilter, overviewNumber,
+      categoriesView, categoriesMap, sourceFilter, overviewNumber, buttonSearchIcon,
     } = this.state;
 
     const categoriesSelected = categoriesMap.some(({ code, selected }) => code !== 'all' && selected);
@@ -669,8 +671,12 @@ class WebDesktopsBody extends Component {
             <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu" style={ { fontWeight: filteredList ? 'bold' : 'normal', width: '100px' } }>
               <img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filter
             </Button>
-            <Button onClick={ this.toggleSearchView } active={ searchView } variant="menu" style={ { fontWeight: searchInput === '' ? 'normal' : 'bold', width: '110px' } }>
-              <img src={ searchIcon } alt='hyperlink' style={ { paddingRight: '7px', height: '25px' } } />Search
+            <Button
+              onClick={ this.toggleSearchView }
+              onMouseOver={ () => { this.setState({ buttonSearchIcon: searchAnimatedIcon }); } }
+              onMouseLeave={ () => { this.setState({ buttonSearchIcon: searchIcon }); } }
+              active={ searchView } variant="menu" style={ { fontWeight: searchInput === '' ? 'normal' : 'bold', width: '110px' } }>
+              <img src={ buttonSearchIcon } alt='hyperlink' style={ { paddingRight: '7px', height: '25px' } } />Search
             </Button>
             <Button onClick={ () => openWindow('webdesktopsAbout', true) } variant="menu">
               <img src={ infoIcon } alt='info' style={ { paddingRight: '4px' } } />About
