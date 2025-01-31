@@ -15,11 +15,6 @@
     "description": "A Telegram bot connected to a Raspberry Pi camera and a motion sensor to watch over your college dorm room"
   },
   {
-    "name": "Pumping Wars",
-    "url": "https://github.com/syxanash/college-shtuff/tree/master/Videogames%20developement",
-    "description": "A game about two university professors who have to fight each other until one of them eventually becomes the ultimate computer science god"
-  },
-  {
     "name": "Retrocomputing",
     "url": "https://github.com/syxanash/retrocomputing",
     "description": "This is a repository containing some tests I've made on old computers I was able to recover from thrift shops and online"
@@ -30,6 +25,16 @@
     "description": "Bluesky Firehose visualized in a Matrix-style animation"
   },
   {
+    "name": "Logosweeper",
+    "url": "https://logosweeper.surge.sh",
+    "description": "My very first React JS app, mostly made to learn the library and to have some fun with Gil Barbara's SVG repository"
+  },
+  {
+    "name": "Pumping Wars",
+    "url": "https://github.com/syxanash/college-shtuff/tree/master/Videogames%20developement",
+    "description": "A game about two university professors who have to fight each other until one of them eventually becomes the ultimate computer science god"
+  },
+  {
     "name": "SoftScript Parser",
     "url": "https://github.com/syxanash/college-shtuff/tree/master/Programming%20languages",
     "description": "This is a parser for an invented programming language called SoftScript, made for a university exam"
@@ -38,11 +43,6 @@
     "name": "Rubomote",
     "url": "https://github.com/syxanash/rubomote",
     "description": "A small Ruby web app which allows you to control iTunes using a web interface"
-  },
-  {
-    "name": "Logosweeper",
-    "url": "https://logosweeper.surge.sh",
-    "description": "My very first React JS app, mostly made to learn the library and to have some fun with Gil Barbara's SVG repository"
   },
   {
     "name": "Mookloh",

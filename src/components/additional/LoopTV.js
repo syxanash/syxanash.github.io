@@ -88,12 +88,6 @@ class LoopTV extends Component {
           alt='static animation'
         />
         <div className={ `TV-output ${disableTVOutput ? 'animated fadeOut slower' : ''}` }>AV-2</div>
-        <div
-          style={ { display: imageLoaded ? 'block' : 'none' } }
-          className={ 'loop-caption animated fadeOut slower delay-5s' }
-        >
-          { imageList[imageIndex].description }
-        </div>
         <img
           className='poweroff-button'
           src={ poweroffButton }
