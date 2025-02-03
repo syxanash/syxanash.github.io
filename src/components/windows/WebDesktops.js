@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 
 import {
-  Cutout, Toolbar, Button, Fieldset, Checkbox, Radio, Tooltip, TextField,
+  Cutout, Toolbar, Button, Fieldset, Checkbox, Tooltip, TextField,
 } from 'react95';
 
 import Util from '../Util';
@@ -439,9 +439,7 @@ class WebDesktopsBody extends Component {
     this.setState({ sourceFilter: filter });
   }
 
-  changeSort = (e) => {
-    const newSortSelected = Number(e.target.value);
-
+  changeSort = (newSortSelected) => {
     switch (newSortSelected) {
     case SORT_OPTIONS.NEWEST:
       this.setState({
@@ -470,20 +468,6 @@ class WebDesktopsBody extends Component {
 
     this.setNumberOverviewTimeout();
     this.setState({ categoriesMap: updatedCategoriesMap });
-  }
-
-  renderRadioButtons = () => {
-    const { sortSelected } = this.state;
-    return Object.keys(SORT_OPTIONS).map(
-      (sortValue, index) => <Radio
-        key={ `radio_btn_${index}` }
-        style={ { cursor: `url(${blackCursor}), auto`, fontSize: '18px' } }
-        checked={ sortSelected === index }
-        label={ _.capitalize(sortValue) }
-        value={ index }
-        onChange={ this.changeSort }
-      />,
-    );
   }
 
   renderCategoriesButtons = () => {
@@ -547,24 +531,63 @@ class WebDesktopsBody extends Component {
 
   renderFilterView = () => {
     const { sourceFilter } = this.state;
+    const { sortSelected } = this.state;
 
     return (
       <div style={ { paddingBottom: '10px', fontStyle: 'bold' } }>
         <Fieldset label="Sort by" style={ { marginTop: '15px' } }>
-          <div className='radio-container'>
-            { this.renderRadioButtons() }
+          <div className='radio-buttons-container'>
+            <div className='radio-buttons'>
+              <Button
+                fullWidth size={ 'md' }
+                className='left-button'
+                active={ sortSelected === SORT_OPTIONS.NEWEST }
+                onClick={ () => this.changeSort(SORT_OPTIONS.NEWEST) }
+              >Newest</Button>
+            </div>
+            <div className='radio-buttons'>
+              <Button
+                fullWidth size={ 'md' }
+                className='center-button'
+                active={ sortSelected === SORT_OPTIONS.OLDEST }
+                onClick={ () => this.changeSort(SORT_OPTIONS.OLDEST) }
+              >Oldest</Button>
+            </div>
+            <div className='radio-buttons'>
+              <Button
+                fullWidth size={ 'md' }
+                className='right-button'
+                active={ sortSelected === SORT_OPTIONS.RANDOM }
+                onClick={ () => this.changeSort(SORT_OPTIONS.RANDOM) }
+              >Random</Button>
+            </div>
           </div>
         </Fieldset>
         <Fieldset label="Filter by source code" style={ { marginTop: '15px' } }>
-          <div className='source-buttons-cut-out'>
-            <div className='source-buttons'>
-              <Button className='left-button' fullWidth size={ 'md' } active={ sourceFilter === SOURCE_FILTER.OPEN } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.OPEN) }>Open Source</Button>
+          <div className='radio-buttons-container'>
+            <div className='radio-buttons'>
+              <Button
+                fullWidth size={ 'md' }
+                className='left-button'
+                active={ sourceFilter === SOURCE_FILTER.OPEN }
+                onClick={ () => this.filterBySourceCode(SOURCE_FILTER.OPEN) }
+              >Open Source</Button>
             </div>
-            <div className='source-buttons'>
-              <Button fullWidth size={ 'md' } active={ sourceFilter === SOURCE_FILTER.PRIVATE } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.PRIVATE) }>Private</Button>
+            <div className='radio-buttons'>
+              <Button
+                fullWidth size={ 'md' }
+                className='center-button'
+                active={ sourceFilter === SOURCE_FILTER.PRIVATE }
+                onClick={ () => this.filterBySourceCode(SOURCE_FILTER.PRIVATE) }
+              >Private</Button>
             </div>
-            <div className='source-buttons'>
-              <Button className='right-button' fullWidth size={ 'md' } active={ sourceFilter === SOURCE_FILTER.ALL } onClick={ () => this.filterBySourceCode(SOURCE_FILTER.ALL) }>All</Button>
+            <div className='radio-buttons'>
+              <Button
+                fullWidth size={ 'md' }
+                className='right-button'
+                active={ sourceFilter === SOURCE_FILTER.ALL }
+                onClick={ () => this.filterBySourceCode(SOURCE_FILTER.ALL) }
+              >All</Button>
             </div>
           </div>
         </Fieldset>

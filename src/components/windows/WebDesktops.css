@@ -35,13 +35,6 @@
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
-.radio-container {
-  margin: -10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
 .main-categories-view {
   margin-top: 20px;
   padding-bottom: 25px;
@@ -72,33 +65,33 @@
   justify-content: flex-end;
 }
 
-.source-buttons {
+.radio-buttons {
   width: 33.3%;
 }
 
-.source-buttons .left-button {
+.radio-buttons .left-button {
   border-radius: 20px 0px 0px 20px;
 }
 
-.source-buttons .right-button {
+.radio-buttons .right-button {
   border-radius: 0px 20px 20px 0px;
 }
 
-@media only screen and (max-width: 600px) {
-  .source-buttons {
-    width: 100%;
+@media only screen and (max-width: 430px) {
+  .radio-buttons .left-button {
+    height: 50px;
   }
 
-  .source-buttons .left-button {
-    border-radius: 20px 20px 0px 0px;
+  .radio-buttons .center-button {
+    height: 50px;
   }
 
-  .source-buttons .right-button {
-    border-radius: 0px 0px 20px 20px;
+  .radio-buttons .right-button {
+    height: 50px;
   }
 }
 
-.source-buttons-cut-out {
+.radio-buttons-container {
   display: flex;
   flex-grow: 1;
   flex-wrap: wrap;
