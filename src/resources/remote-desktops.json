@@ -1878,5 +1878,37 @@
 		"source": "https://github.com/mo-jsx/resume-95",
 		"notes": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "OpenRhapsody",
+		"url": "https://triiode.neocities.org",
+		"icon": "mac_new.gif",
+		"source": "",
+		"notes": "",
+		"tags": ["personal", "poc"]
+	},
+	{
+		"name": "AmogOS",
+		"url": "https://amogos.vercel.app",
+		"icon": "mac_new.gif",
+		"source": "https://github.com/daamin909/amogos",
+		"notes": "",
+		"tags": ["poc"]
+	},
+	{
+		"name": "Travers Tech",
+		"url": "https://www.travers.tech",
+		"icon": "mac_new.gif",
+		"source": "",
+		"notes": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "CEREZA.ZONE",
+		"url": "https://cereza.zone",
+		"icon": "obscure.gif",
+		"source": "",
+		"notes": "",
+		"tags": ["personal"]
 	}
 ]
