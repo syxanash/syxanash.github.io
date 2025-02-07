@@ -1893,7 +1893,7 @@
 		"icon": "mac_new.gif",
 		"source": "https://github.com/daamin909/amogos",
 		"notes": "",
-		"tags": ["poc"]
+		"tags": ["poc", "tool"]
 	},
 	{
 		"name": "Travers Tech",
