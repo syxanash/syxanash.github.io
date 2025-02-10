@@ -1144,6 +1144,14 @@
 		"tags": ["poc", "personal"]
 	},
 	{
+		"name": "DeskPortal",
+		"url": "https://demo.deskportal.com",
+		"icon": "linux.gif",
+		"source": "",
+		"notes": "",
+		"tags": ["poc"]
+	},
+	{
 		"name": "lover.os",
 		"url": "https://lostlove.neocities.org",
 		"icon": "windows.gif",
