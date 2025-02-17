@@ -1966,5 +1966,13 @@
 		"source": "",
 		"notes": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "ryOS",
+		"url": "https://os.ryo.lu",
+		"icon": "mac.gif",
+		"source": "https://github.com/ryokun6/soundboard",
+		"notes": "",
+		"tags": ["top", "uncanny"]
 	}
 ]
