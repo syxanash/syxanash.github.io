@@ -23,6 +23,7 @@ import bugImage2 from '../../resources/images/spider2.gif';
 import calmBackground from '../../resources/images/kernelcalm.gif';
 import panicBackground from '../../resources/images/kernelpanic.gif';
 import explosionAnim from '../../resources/images/explosion.gif';
+import vortex from '../../resources/images/vortex.png';
 import viewFinder from '../../resources/icons/pointers/viewfinder.gif';
 
 import pomuTrack from '../../resources/sounds/pomu.mp3';
@@ -267,6 +268,9 @@ class BrokenScreen extends Component {
       </Helmet>
       { randomCircuit }
       <div style={ { pointerEvents: 'none' } }>
+        <div className="vortex-container">
+          <img src={ vortex } alt="vortex" className="vortex-image" />
+        </div>
         <div
           className='brightness-blend'
           style={ { filter: `hue-rotate(${bugsCleaned ? '0' : '250'}deg)` } }
