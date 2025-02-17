@@ -1918,5 +1918,13 @@
 		"source": "",
 		"notes": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "WebDesk",
+		"url": "https://webdesk.vercel.app",
+		"icon": "linux.gif",
+		"source": "https://github.com/randomuser691337/webdesk-stable",
+		"notes": "",
+		"tags": ["poc", "misc"]
 	}
 ]
