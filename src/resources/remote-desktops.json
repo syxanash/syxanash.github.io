@@ -1926,5 +1926,45 @@
 		"source": "https://github.com/randomuser691337/webdesk-stable",
 		"notes": "",
 		"tags": ["poc", "misc"]
+	},
+	{
+		"name": "Wannabe XP",
+		"url": "https://xp.xobyte.org",
+		"icon": "windows_new.png",
+		"source": "",
+		"notes": "You can log in with any password",
+		"tags": ["personal"]
+	},
+	{
+		"name": "NEEDY STREAMER OVERLOAD",
+		"url": "https://lilithdev.neocities.org/shrine/vg/nso",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"tags": ["game"]
+	},
+	{
+		"name": "waste≠land",
+		"url": "https://www.laurusedelbacher.com",
+		"icon": "linux.gif",
+		"source": "",
+		"notes": "",
+		"tags": ["personal", "poc"]
+	},
+	{
+		"name": "kuroiOS",
+		"url": "https://kuroi.neocities.org",
+		"icon": "linux.gif",
+		"source": "",
+		"notes": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Sacred OS",
+		"url": "https://sacred.neocities.org",
+		"icon": "linux.gif",
+		"source": "",
+		"notes": "",
+		"tags": ["misc"]
 	}
 ]
