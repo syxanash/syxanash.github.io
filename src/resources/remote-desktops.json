@@ -1912,6 +1912,14 @@
 		"tags": ["personal"]
 	},
 	{
+		"name": "Semyon's Page",
+		"url": "https://aerosness.github.io",
+		"icon": "windows_new.png",
+		"source": "https://github.com/aerosness/aerosness.github.io",
+		"notes": "",
+		"tags": ["personal", "poc"]
+	},
+	{
 		"name": "WebDesk",
 		"url": "https://webdesk.vercel.app",
 		"icon": "linux.gif",
