@@ -1931,7 +1931,7 @@
 		"name": "Wannabe XP",
 		"url": "https://xp.xobyte.org",
 		"icon": "windows_new.png",
-		"source": "",
+		"source": "https://xp.xobyte.org/download.zip",
 		"notes": "You can log in with any password",
 		"tags": ["personal"]
 	},
