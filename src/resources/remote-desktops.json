@@ -912,14 +912,6 @@
 		"tags": ["top"]
 	},
 	{
-		"name": "Classicy",
-		"url": "https://robbiebyrd.github.io/classicy/",
-		"icon": "mac.gif",
-		"source": "https://github.com/robbiebyrd/classicy",
-		"notes": "",
-		"tags": ["poc"]
-	},
-	{
 		"name": "Harrison's Home",
 		"url": "https://harrisonm.com",
 		"icon": "windows.gif",
