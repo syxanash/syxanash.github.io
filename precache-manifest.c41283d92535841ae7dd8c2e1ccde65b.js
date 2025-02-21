@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4cf7d6c7bf800e2e19ded487aa626f0b",
+    "revision": "cdaca515253c6b9fde31b49f4a998e78",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.5cdc4389.chunk.css"
   },
   {
-    "revision": "3a441147acdc1d5ba3f1",
+    "revision": "ee86fa9b3b8bcf101ab2",
     "url": "/static/css/main.54d65bf0.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.c97911f6.chunk.js"
   },
   {
-    "revision": "3a441147acdc1d5ba3f1",
-    "url": "/static/js/main.629b3960.chunk.js"
+    "revision": "ee86fa9b3b8bcf101ab2",
+    "url": "/static/js/main.cd5729dd.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -678,6 +678,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "516ca6c6452df244b4e2b1b5bbaf7eb6",
     "url": "/static/media/windows-sound-remix.516ca6c6.gif"
+  },
+  {
+    "revision": "297e451238b3a01f4d066788aafad184",
+    "url": "/static/media/yellow-star.297e4512.gif"
   },
   {
     "revision": "6b2e51109a93948962206bcacea164d7",
