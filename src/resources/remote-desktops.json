@@ -784,14 +784,6 @@
 		"tags": ["personal"]
 	},
 	{
-		"name": "LUMISET",
-		"url": "https://lumiset.se",
-		"icon": "IBM.gif",
-		"source": "",
-		"notes": "",
-		"tags": ["poc"]
-	},
-	{
 		"name": "clickbecause.net",
 		"url": "https://clickbecause.net",
 		"icon": "mac_new.gif",
@@ -1030,14 +1022,6 @@
 		"source": "",
 		"notes": "",
 		"tags": ["personal"]
-	},
-	{
-		"name": "Mastodon Flock",
-		"url": "https://mastodon-flock.vercel.app/desktop",
-		"icon": "windows.gif",
-		"source": "https://github.com/WesSouza/mastodon-flock",
-		"notes": "",
-		"tags": ["tool", "poc"]
 	},
 	{
 		"name": "Ɀeus' Stadt",
