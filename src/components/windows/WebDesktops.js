@@ -119,7 +119,7 @@ class WebDesktopsBody extends Component {
         {
           code: 'top',
           selected: false,
-          label: <div style={ { display: 'flex', alignItems: 'center' } }><img src={ starIcon } style={ { height: '32px', marginRight: '2px', marginLeft: '-5px' } } alt='star' />Top Picks</div>,
+          label: <div style={ { display: 'flex', alignItems: 'center' } }><img src={ starIcon } style={ { height: '28px', marginRight: '2px', marginLeft: '-5px' } } alt='star' />Top Picks</div>,
           tooltip: <span>{'A selection of notable'}<br />{'projects and standout designs'}</span>,
           button: {
             bgColor: '#256D85',
