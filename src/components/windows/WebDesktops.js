@@ -38,6 +38,8 @@ class WebDesktopsBody extends Component {
   constructor(props) {
     super(props);
 
+    new Image().src = starIcon; // frontloading spinning star image
+
     this.overViewTimeout = undefined;
 
     this.state = {
