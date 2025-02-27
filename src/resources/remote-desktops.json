@@ -1934,5 +1934,21 @@
 		"source": "https://github.com/ryokun6/soundboard",
 		"notes": "",
 		"tags": ["top", "uncanny"]
+	},
+	{
+		"name": "CloudyDesk",
+		"url": "https://cloudydesk.de/desktop-component",
+		"icon": "linux.gif",
+		"source": "https://github.com/meugenom/cloudydesk",
+		"notes": "",
+		"tags": ["misc", "poc"]
+	},
+	{
+		"name": "Ugly Duckling",
+		"url": "https://cyanbanister.com",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"tags": ["personal"]
 	}
 ]
