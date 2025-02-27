@@ -1,13 +1,5 @@
 [
 	{
-		"name": "WorldWideWeb",
-		"url": "https://worldwideweb.cern.ch/browser",
-		"icon": "next.gif",
-		"source": "",
-		"notes": "",
-		"tags": ["misc"]
-	},
-	{
 		"name": "Nightwave Plaza",
 		"url": "https://plaza.one",
 		"icon": "windows.gif",
@@ -1468,7 +1460,7 @@
 		"url": "https://grovy.space",
 		"icon": "windows.gif",
 		"source": "",
-		"notes": "this site occasionally goes offline",
+		"notes": "",
 		"tags": ["personal"]
 	},
 	{
