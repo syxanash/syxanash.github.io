@@ -487,7 +487,7 @@ class WebDesktopsBody extends Component {
           } }
           value={ category.code }
           active={ category.selected }
-          onClick={ () => this.changeCategory(index) }
+          onClick={ () => (!category.selected ? this.changeCategory(index) : null) }
         >{category.label}</Button>
       </Tooltip>,
     );
@@ -544,7 +544,11 @@ class WebDesktopsBody extends Component {
                 fullWidth size={ 'md' }
                 className='left-button'
                 active={ sortSelected === SORT_OPTIONS.NEWEST }
-                onClick={ () => this.changeSort(SORT_OPTIONS.NEWEST) }
+                onClick={ () => (
+                  sortSelected !== SORT_OPTIONS.NEWEST
+                    ? this.changeSort(SORT_OPTIONS.NEWEST)
+                    : null)
+                }
               >Newest</Button>
             </div>
             <div className='radio-buttons'>
@@ -552,7 +556,10 @@ class WebDesktopsBody extends Component {
                 fullWidth size={ 'md' }
                 className='center-button'
                 active={ sortSelected === SORT_OPTIONS.OLDEST }
-                onClick={ () => this.changeSort(SORT_OPTIONS.OLDEST) }
+                onClick={ () => (sortSelected !== SORT_OPTIONS.OLDEST
+                  ? this.changeSort(SORT_OPTIONS.OLDEST)
+                  : null)
+                }
               >Oldest</Button>
             </div>
             <div className='radio-buttons'>
@@ -560,7 +567,10 @@ class WebDesktopsBody extends Component {
                 fullWidth size={ 'md' }
                 className='right-button'
                 active={ sortSelected === SORT_OPTIONS.RANDOM }
-                onClick={ () => this.changeSort(SORT_OPTIONS.RANDOM) }
+                onClick={ () => (sortSelected !== SORT_OPTIONS.RANDOM
+                  ? this.changeSort(SORT_OPTIONS.RANDOM)
+                  : null)
+                }
               >Random</Button>
             </div>
           </div>
@@ -572,7 +582,10 @@ class WebDesktopsBody extends Component {
                 fullWidth size={ 'md' }
                 className='left-button'
                 active={ sourceFilter === SOURCE_FILTER.OPEN }
-                onClick={ () => this.filterBySourceCode(SOURCE_FILTER.OPEN) }
+                onClick={ () => (sourceFilter !== SOURCE_FILTER.OPEN
+                  ? this.filterBySourceCode(SOURCE_FILTER.OPEN)
+                  : null)
+                }
               >Open Source</Button>
             </div>
             <div className='radio-buttons'>
@@ -580,7 +593,10 @@ class WebDesktopsBody extends Component {
                 fullWidth size={ 'md' }
                 className='center-button'
                 active={ sourceFilter === SOURCE_FILTER.PRIVATE }
-                onClick={ () => this.filterBySourceCode(SOURCE_FILTER.PRIVATE) }
+                onClick={ () => (sourceFilter !== SOURCE_FILTER.PRIVATE
+                  ? this.filterBySourceCode(SOURCE_FILTER.PRIVATE)
+                  : null)
+                }
               >Private</Button>
             </div>
             <div className='radio-buttons'>
@@ -588,7 +604,10 @@ class WebDesktopsBody extends Component {
                 fullWidth size={ 'md' }
                 className='right-button'
                 active={ sourceFilter === SOURCE_FILTER.ALL }
-                onClick={ () => this.filterBySourceCode(SOURCE_FILTER.ALL) }
+                onClick={ () => (sourceFilter !== SOURCE_FILTER.ALL
+                  ? this.filterBySourceCode(SOURCE_FILTER.ALL)
+                  : null)
+                }
               >All</Button>
             </div>
           </div>
