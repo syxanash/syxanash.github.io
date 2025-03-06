@@ -312,7 +312,7 @@
 		"tags": ["personal"]
 	},
 	{
-		"name": "Bill's Wold Wide Boutique",
+		"name": "Bill's World Wide Boutique",
 		"url": "https://billsworld.neocities.org",
 		"icon": "windows.gif",
 		"source": "",
@@ -844,7 +844,7 @@
 		"url": "https://kanye2049.com",
 		"icon": "mac.gif",
 		"source": "",
-		"notes": "Password: Graduation",
+		"notes": "Password: `Graduation`",
 		"tags": ["misc"]
 	},
 	{
@@ -876,7 +876,7 @@
 		"url": "https://puter.com",
 		"icon": "linux.gif",
 		"source": "https://github.com/heyPuter/puter/",
-		"notes": "if you get a login screen just clear cookies and site data",
+		"notes": "if you get a login screen just\nclear cookies and site data",
 		"tags": ["top", "tool"]
 	},
 	{
@@ -1172,7 +1172,7 @@
 		"url": "https://greyos.gr",
 		"icon": "linux.gif",
 		"source": "https://github.com/g0d/GreyOS",
-		"notes": "login: demo@greyos.gr / password",
+		"notes": "login: `demo@greyos.gr` / `password`",
 		"tags": ["top"]
 	},
 	{
@@ -1363,7 +1363,7 @@
 		"name": "ModernActiveDesktop",
 		"url": "https://www.ingan121.com/mad/",
 		"icon": "windows.gif",
-		"source": "",
+		"source": "https://github.com/Ingan121/ModernActiveDesktop",
 		"notes": "",
 		"tags": ["poc"]
 	},
@@ -1708,7 +1708,7 @@
 		"url": "https://os.napicu.eu",
 		"icon": "linux.gif",
 		"source": "https://github.com/Numax-cz/NapicuOS",
-		"notes": "you need to configure the boot priority order in the BIOS to run this web desktop :)",
+		"notes": "you need to configure the boot\npriority order in the BIOS\nto run this web desktop :)",
 		"tags": ["uncanny"]
 	},
 	{
@@ -1788,7 +1788,7 @@
 		"url": "https://windowsxi.vercel.app",
 		"icon": "windows11.gif",
 		"source": "https://github.com/MishanPoudel/Windows11-3.0",
-		"notes": "You can log in with any username and password",
+		"notes": "You can log in with any\nusername and password",
 		"tags": ["personal"]
 	},
 	{
