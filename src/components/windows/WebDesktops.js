@@ -253,7 +253,7 @@ class WebDesktopsBody extends Component {
   displayUserNotes = (name, notes) => {
     if (notes !== '') {
       // eslint-disable-next-line no-alert
-      alert(`User notes for ${name}:\n${notes}`);
+      alert(`User notes for ${name}:\n${notes.replace(/\n/g, ' ')}`);
     }
   }
 
