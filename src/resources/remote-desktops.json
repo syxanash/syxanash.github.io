@@ -1931,7 +1931,7 @@
 		"name": "Sacred OS",
 		"url": "https://sacred.neocities.org",
 		"icon": "linux.gif",
-		"source": "",
+		"source": "https://github.com/M-Valentino/sacredOS",
 		"notes": "",
 		"tags": ["misc"]
 	},
@@ -1958,5 +1958,37 @@
 		"source": "",
 		"notes": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "1-bit rainbow",
+		"url": "https://www.1bitrainbow.co.uk",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "Gaiabots",
+		"url": "https://gaiabots.neocities.org",
+		"icon": "IBM.gif",
+		"source": "",
+		"notes": "",
+		"tags": ["poc", "personal"]
+	},
+	{
+		"name": "Minesweeper Online",
+		"url": "https://ohminesweeper.online",
+		"icon": "windows.gif",
+		"source": "https://github.com/zerosoul/ohminesweeper.online",
+		"notes": "",
+		"tags": ["game"]
+	},
+	{
+		"name": "StephOS",
+		"url": "https://stephos.netlify.app",
+		"icon": "obscure.gif",
+		"source": "https://github.com/StephanVolynets/Stephans-OS",
+		"notes": "",
+		"tags": ["misc"]
 	}
 ]
