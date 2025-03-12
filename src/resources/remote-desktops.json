@@ -2006,5 +2006,13 @@
 		"source": "https://github.com/eyemono-moe/eye-os",
 		"notes": "",
 		"tags": ["poc"]
+	},
+	{
+		"name": "LeagueOS",
+		"url": "https://leagueos.org",
+		"icon": "obscure.gif",
+		"source": "",
+		"notes": "",
+		"tags": ["poc"]
 	}
 ]
