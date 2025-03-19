@@ -2014,5 +2014,13 @@
 		"source": "",
 		"notes": "",
 		"tags": ["poc"]
+	},
+	{
+		"name": "Sam's Desktop",
+		"url": "https://sams-desktop.framer.website/home",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"tags": ["personal", "poc"]
 	}
 ]
