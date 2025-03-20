@@ -1709,7 +1709,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/belowaverage-org/webdows",
 		"notes": "",
-		"tags": ["top", "uncanny"]
+		"tags": ["uncanny"]
 	},
 	{
 		"name": "NapicuOS",
