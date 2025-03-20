@@ -2028,7 +2028,7 @@
 		"url": "https://os.u2re.space",
 		"icon": "obscure.gif",
 		"source": "https://github.com/unite-2-re/OS.u2re.space",
-		"notes": "Works only in Chromium based browsers",
+		"notes": "Works only in\nChromium based browsers",
 		"tags": ["poc", "misc"]
 	},
 	{
