@@ -2038,5 +2038,21 @@
 		"source": "https://github.com/ThornWalli/web-workbench",
 		"notes": "",
 		"tags": ["top"]
+	},
+	{
+		"name": "Areen's Portfolio",
+		"url": "https://www.areen.xyz",
+		"icon": "windows_new.png",
+		"source": "https://github.com/areenoverclouds/xp-portfolio-public",
+		"notes": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Kas-OS",
+		"url": "https://achtaitaipai.com",
+		"icon": "obscure.gif",
+		"source": "https://github.com/achtaitaipai/kas-os",
+		"notes": "",
+		"tags": ["personal", "poc"]
 	}
 ]
