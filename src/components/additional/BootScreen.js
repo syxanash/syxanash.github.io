@@ -128,7 +128,7 @@ class BootScreen extends Component {
     const { firstBootDone } = this.state;
 
     if (!firstBootDone) {
-      if (Util.isMobile()) {
+      if (Util.isMobile() || document.referrer.includes('linkedin.com')) {
         toggleBootScreen(false);
       } else {
         this.bootMessageInterval = setInterval(this.showNextMessage, this.bootMessageSpeed);
