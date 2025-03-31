@@ -800,14 +800,6 @@
 		"tags": ["top", "uncanny"]
 	},
 	{
-		"name": "Core-OS",
-		"url": "https://coreos.io",
-		"icon": "unix.gif",
-		"source": "https://github.com/timhow38/Resume-WebApplication",
-		"notes": "",
-		"tags": ["personal"]
-	},
-	{
 		"name": "Frank Force - Generative Art",
 		"url": "https://generative.3d2k.com",
 		"icon": "linux.gif",
