@@ -1921,8 +1921,8 @@
 	},
 	{
 		"name": "Laurus Edelbacher",
-		"url": "https://www.laurusedelbacher.com/#/desktop",
-		"icon": "linux.gif",
+		"url": "https://www.laurusedelbacher.com/new_page.html",
+		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
 		"tags": ["personal", "poc"]
@@ -2054,5 +2054,13 @@
 		"source": "https://github.com/achtaitaipai/kas-os",
 		"notes": "",
 		"tags": ["personal", "poc"]
+	},
+	{
+		"name": "Linux on the Web",
+		"url": "https://linuxontheweb.github.io",
+		"icon": "linux.gif",
+		"source": "https://github.com/linuxontheweb/linuxontheweb.github.io",
+		"notes": "",
+		"tags": ["misc"]
 	}
 ]
