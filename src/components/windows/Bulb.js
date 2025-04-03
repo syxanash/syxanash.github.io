@@ -148,7 +148,7 @@ class BulbBody extends Component {
     }
 
     if (spamJail !== null) {
-      sessionStorage.setItem('brokenBulb', JSON.stringify('true'));
+      sessionStorage.setItem('brokenBulb', true);
       alert('you broke the lightbulb!');
       this.disconnectWebsocket();
       this.setState({ brokenBulb: true, websocketOpen: false });
