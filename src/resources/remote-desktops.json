@@ -1564,7 +1564,7 @@
 		"url": "https://demo.kodcloud.com",
 		"icon": "linux.gif",
 		"source": "https://github.com/kalcaddle/KodExplorer",
-		"notes": "",
+		"notes": "Works only in\nChromium based browsers",
 		"tags": ["tool"]
 	},
 	{
@@ -1922,7 +1922,7 @@
 	{
 		"name": "Laurus Edelbacher",
 		"url": "https://www.laurusedelbacher.com/new_page.html",
-		"icon": "mac.gif",
+		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
 		"tags": ["personal", "poc"]
