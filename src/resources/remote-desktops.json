@@ -1564,7 +1564,7 @@
 		"url": "https://demo.kodcloud.com",
 		"icon": "linux.gif",
 		"source": "https://github.com/kalcaddle/KodExplorer",
-		"notes": "Works only in\nChromium based browsers",
+		"notes": "",
 		"tags": ["tool"]
 	},
 	{
