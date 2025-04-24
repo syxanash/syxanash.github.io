@@ -1048,14 +1048,6 @@
 		"tags": ["misc"]
 	},
 	{
-		"name": "chloédigital",
-		"url": "https://chloedigital.com",
-		"icon": "mac.gif",
-		"source": "",
-		"notes": "",
-		"tags": ["poc", "personal"]
-	},
-	{
 		"name": "The Secret History of Mac Gaming",
 		"url": "https://secrethistoryofmacgaming.com",
 		"icon": "mac.gif",
@@ -2062,5 +2054,13 @@
 		"source": "https://github.com/linuxontheweb/linuxontheweb.github.io",
 		"notes": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "Kenny Hui's Desktop",
+		"url": "https://desktop.kennyhui.dev",
+		"icon": "mac_new.gif",
+		"source": "https://github.com/khui0/kennyhui-desktop",
+		"notes": "",
+		"tags": ["personal", "misc"]
 	}
 ]
