@@ -242,7 +242,7 @@ class BlogBody extends Component {
         <Toolbar>
           <Button onClick={ this.openPostList } variant="menu"><img src={ calendarIcon } className='small-icon' alt="blog post list"/> All posts</Button>
           <Button onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/rss.xml` }) } variant="menu"><img src={ RSSIcon } className='small-icon' alt="RSS icon"/> RSS</Button>
-          <Button onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/blog/${currentPost}` }) } variant="menu"><img src={ htmlLinkIcon } className='small-icon' alt="RSS icon"/> Post link</Button>
+          <Button onClick={ () => Util.openWebsiteURL({ url: `${configUrls.backendUrl}/${currentPost}` }) } variant="menu"><img src={ htmlLinkIcon } className='small-icon' alt="RSS icon"/> Post link</Button>
         </Toolbar>
       </div>
       <Cutout className='blog-cutout'>

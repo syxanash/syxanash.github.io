@@ -245,7 +245,7 @@ class BulbBody extends Component {
       textDisplayed = <span>
         This lightbulb can be turned <b>on</b> and <b>off</b>, if you keep
         the window open you might see other users toggling it in real time!<br />
-        <b>oh</b> and this light bulb is sometimes connected to <a href={ `${configUrls.backendUrl}/blog/websocket-to-lightbulbs` } rel='noopener noreferrer' target='_blank'>Simone's desk lamp</a>
+        <b>oh</b> and this light bulb is sometimes connected to <a href={ `${configUrls.backendUrl}/websocket-to-lightbulbs` } rel='noopener noreferrer' target='_blank'>Simone's desk lamp</a>
       </span>;
     }
 
