@@ -33,6 +33,7 @@ class WebDesktopsHeader extends Component {
 
 const SORT_OPTIONS = { NEWEST: 0, OLDEST: 1, RANDOM: 2 };
 const SOURCE_FILTER = { OPEN: 0, PRIVATE: 1, ALL: 3 };
+const ACTIVE_DESKTOPS = remoteDesktops.filter(website => website.archive === '');
 
 class WebDesktopsBody extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class WebDesktopsBody extends Component {
     this.overViewTimeout = undefined;
 
     this.state = {
-      desktopsList: _.shuffle(remoteDesktops),
+      desktopsList: _.shuffle(ACTIVE_DESKTOPS),
       sitesExplored: 0,
       overviewNumber: false,
       sortSelected: SORT_OPTIONS.RANDOM,
@@ -270,7 +271,7 @@ class WebDesktopsBody extends Component {
       listExplored.push(url);
       localStorage.setItem('webdesktopsExplored', JSON.stringify(listExplored));
 
-      if (listExplored.length === remoteDesktops.length) {
+      if (listExplored.length === ACTIVE_DESKTOPS.length) {
         openWindow('webdesktopsAlert', true);
       }
 
@@ -445,16 +446,16 @@ class WebDesktopsBody extends Component {
     switch (newSortSelected) {
     case SORT_OPTIONS.NEWEST:
       this.setState({
-        desktopsList: remoteDesktops.toReversed(),
+        desktopsList: ACTIVE_DESKTOPS.toReversed(),
       });
       break;
     case SORT_OPTIONS.OLDEST:
       this.setState({
-        desktopsList: remoteDesktops,
+        desktopsList: ACTIVE_DESKTOPS,
       });
       break;
     default:
-      this.setState({ desktopsList: _.shuffle(remoteDesktops) });
+      this.setState({ desktopsList: _.shuffle(ACTIVE_DESKTOPS) });
     }
 
     this.setState({ sortSelected: newSortSelected });
@@ -628,7 +629,7 @@ class WebDesktopsBody extends Component {
   }
 
   renderDeskNumberOverview = () => {
-    const totalDesktops = remoteDesktops.length;
+    const totalDesktops = ACTIVE_DESKTOPS.length;
     const filteredDesktops = this.getFilteredDesktops().length;
 
     return (<div className='desktop-number-overview'>
