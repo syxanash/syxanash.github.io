@@ -512,14 +512,6 @@
 		"tags": ["personal"]
 	},
 	{
-		"name": "HyNET Geocity",
-		"url": "https://hyena.network/geocity/",
-		"icon": "IBM.gif",
-		"source": "",
-		"notes": "",
-		"tags": ["personal"]
-	},
-	{
 		"name": "Unremarkable Garden",
 		"url": "https://unremarkablegarden.com",
 		"icon": "mac.gif",
@@ -1758,14 +1750,6 @@
 		"source": "",
 		"notes": "",
 		"tags": ["misc"]
-	},
-	{
-		"name": "János Kócs | Portfolio",
-		"url": "https://janoskocs.com",
-		"icon": "windows.gif",
-		"source": "https://github.com/janoskocs/portfolio",
-		"notes": "this site occasionally goes offline",
-		"tags": ["personal"]
 	},
 	{
 		"name": "public access memories",
