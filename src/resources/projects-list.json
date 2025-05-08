@@ -40,11 +40,6 @@
     "description": "This is a parser for an invented programming language called SoftScript, made for a university exam"
   },
   {
-    "name": "Rubomote",
-    "url": "https://github.com/syxanash/rubomote",
-    "description": "A small Ruby web app which allows you to control iTunes using a web interface"
-  },
-  {
     "name": "Mookloh",
     "url": "https://my-store-be44b1.creator-spring.com",
     "description": "Not coding related, but I designed some inline-skating T-shirts for a charity project"
