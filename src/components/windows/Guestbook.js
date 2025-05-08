@@ -245,7 +245,13 @@ class GuestbookBody extends Component {
       </div>
     </Cutout>
     <div className='bottom-text'>
-      <img src={ warningSign } alt='warning sign' className='blink' style={ { height: '20px' } } /> I'm still investigating on the authenticity of some comments. <img src={ warningSign } alt='warning sign' className='blink' style={ { height: '20px' } } />
+      <div><img src={ warningSign } alt='warning sign' className='blink' style={ { height: '20px' } } /></div>
+      <div className='guestbook-warning-text'>
+        <span>I'm still investigating on the authenticity of some comments.<br />
+          We're aware that the dates here make zero chronological sense.<br />
+          Our <b>Time Library</b> clearly needs a patch!</span>
+      </div>
+      <div><img src={ warningSign } alt='warning sign' className='blink' style={ { height: '20px' } } /></div>
     </div>
   </React.Fragment>
   )

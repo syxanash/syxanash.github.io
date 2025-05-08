@@ -21,9 +21,18 @@
 }
 
 .bottom-text {
-  text-align: center;
+  display: flex;
   padding-top: 15px;
   padding-bottom: 10px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.guestbook-warning-text {
+  text-align: center;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .comment-date {
