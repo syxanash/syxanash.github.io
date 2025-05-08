@@ -5,6 +5,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/nightwaveplaza",
 		"notes": "",
+		"archive": "",
 		"tags": ["tool", "top"]
 	},
 	{
@@ -13,6 +14,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "tool"]
 	},
 	{
@@ -21,6 +23,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/AshKyd/ui95",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -29,6 +32,7 @@
 		"icon": "unix.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["tool"]
 	},
 	{
@@ -37,6 +41,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -45,6 +50,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/windows93dotnet/sys42",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "uncanny"]
 	},
 	{
@@ -53,6 +59,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -61,6 +68,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/captbaritone/webamp",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -69,6 +77,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/pippinbarr/itisasifyouweredoingwork",
 		"notes": "",
+		"archive": "",
 		"tags": ["game"]
 	},
 	{
@@ -77,6 +86,7 @@
 		"icon": "windows_new.png",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["game"]
 	},
 	{
@@ -85,6 +95,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal", "tool"]
 	},
 	{
@@ -93,6 +104,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/os-js/OS.js",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "uncanny"]
 	},
 	{
@@ -101,6 +113,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "personal"]
 	},
 	{
@@ -109,6 +122,7 @@
 		"icon": "next.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -117,6 +131,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/1j01/98",
 		"notes": "",
+		"archive": "",
 		"tags": ["uncanny"]
 	},
 	{
@@ -125,6 +140,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -133,6 +149,7 @@
 		"icon": "next.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -141,6 +158,7 @@
 		"icon": "unix.gif",
 		"source": "https://github.com/STRd6/zine",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -149,6 +167,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/ShizukuIchi/winXP/",
 		"notes": "",
+		"archive": "",
 		"tags": ["uncanny"]
 	},
 	{
@@ -157,6 +176,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -165,6 +185,7 @@
 		"icon": "amiga.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -173,6 +194,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -181,6 +203,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -189,6 +212,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -197,6 +221,7 @@
 		"icon": "unix.gif",
 		"source": "https://github.com/tojrobinson/jurassicsystems.com",
 		"notes": "",
+		"archive": "",
 		"tags": ["game"]
 	},
 	{
@@ -205,6 +230,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -213,6 +239,7 @@
 		"icon": "unix.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["tool"]
 	},
 	{
@@ -221,6 +248,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/lolstring/window98-html-css-js",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -229,6 +257,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/Emupedia/emupedia.github.io",
 		"notes": "",
+		"archive": "",
 		"tags": ["game"]
 	},
 	{
@@ -237,6 +266,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/MineAndCraft12/AaronOS",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "uncanny"]
 	},
 	{
@@ -245,6 +275,7 @@
 		"icon": "unix.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -253,6 +284,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/padraigfl/packard-belle-desktop",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -261,6 +293,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/disjfa/vue-win-3.1",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -269,6 +302,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/1000hz/winmine-exe",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal", "poc"]
 	},
 	{
@@ -277,6 +311,7 @@
 		"icon": "linux.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -285,6 +320,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -293,6 +329,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -301,6 +338,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/victorqribeiro/fos",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -309,6 +347,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -317,6 +356,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -325,6 +365,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -333,6 +374,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["game"]
 	},
 	{
@@ -341,6 +383,7 @@
 		"icon": "unix.gif",
 		"source": "https://github.com/tholman/tholman-blog",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -349,6 +392,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -357,6 +401,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/pkage/98",
 		"notes": "",
+		"archive": "",
 		"tags": ["uncanny", "personal"]
 	},
 	{
@@ -365,6 +410,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -373,6 +419,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -381,6 +428,7 @@
 		"icon": "unix.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -389,6 +437,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/melkael/melkael.github.io",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -397,6 +446,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -405,6 +455,7 @@
 		"icon": "atari.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["tool"]
 	},
 	{
@@ -413,6 +464,7 @@
 		"icon": "linux.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -421,6 +473,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["tool"]
 	},
 	{
@@ -429,6 +482,7 @@
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -437,6 +491,7 @@
 		"icon": "windows_new.png",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -445,6 +500,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -453,6 +509,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -461,6 +518,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/marcmascarell/Vuindows",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -469,6 +527,7 @@
 		"icon": "atari.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -477,6 +536,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -485,6 +545,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -493,6 +554,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["game"]
 	},
 	{
@@ -501,6 +563,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/koas/my-second-pc",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc", "personal"]
 	},
 	{
@@ -509,6 +572,7 @@
 		"icon": "unix.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -517,6 +581,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -525,6 +590,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -533,6 +599,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -541,6 +608,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -549,6 +617,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/DustinBrett/daedalOS",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "personal", "uncanny"]
 	},
 	{
@@ -557,6 +626,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "misc"]
 	},
 	{
@@ -565,6 +635,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -573,6 +644,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -581,6 +653,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -589,6 +662,7 @@
 		"icon": "unix.gif",
 		"source": "https://github.com/nbriz/thoughtsonglitchart",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -597,6 +671,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -605,6 +680,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/edwardpayton/github95",
 		"notes": "",
+		"archive": "",
 		"tags": ["tool"]
 	},
 	{
@@ -613,6 +689,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -621,6 +698,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/nathansmith/jQuery-Desktop",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -629,6 +707,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "uncanny"]
 	},
 	{
@@ -637,6 +716,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/Yalgie/website",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc", "personal"]
 	},
 	{
@@ -645,6 +725,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/vivek9patel/vivek9patel.github.io",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -653,6 +734,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/remigallego/winampify",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -661,6 +743,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/KaeruCT/desk.glitchy.website",
 		"notes": "",
+		"archive": "",
 		"tags": ["game", "personal"]
 	},
 	{
@@ -669,6 +752,7 @@
 		"icon": "atari.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -677,6 +761,7 @@
 		"icon": "mac.gif",
 		"source": "https://github.com/jckdm/jckdm.github.io",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc", "personal"]
 	},
 	{
@@ -685,6 +770,7 @@
 		"icon": "mac_new.gif",
 		"source": "https://github.com/Renovamen/playground-macos",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -693,6 +779,7 @@
 		"icon": "mac_new.gif",
 		"source": "https://github.com/puruvj/macos-web",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -701,6 +788,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/GoodManWEN/GoodManWEN.github.io",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -709,6 +797,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/khang-nd/win7",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -717,6 +806,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/heathervv/portfolio-chatbot",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -725,6 +815,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/trungdq88/dinhquangtrung.net",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -733,6 +824,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/davidedc/Fizzygum",
 		"notes": "",
+		"archive": "",
 		"tags": ["tool"]
 	},
 	{
@@ -741,6 +833,7 @@
 		"icon": "mac_new.gif",
 		"source": "https://github.com/Joeyonng/joeyonng-backyard",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -749,6 +842,7 @@
 		"icon": "windows11.gif",
 		"source": "https://github.com/blueedgetechno/win11React",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -757,6 +851,7 @@
 		"icon": "windows_new.png",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["uncanny"]
 	},
 	{
@@ -765,6 +860,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -773,6 +869,7 @@
 		"icon": "next.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -781,6 +878,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/DonChiaQE/win95",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -789,6 +887,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -797,6 +896,7 @@
 		"icon": "mac.gif",
 		"source": "https://github.com/Keeping-History/rt911",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "uncanny"]
 	},
 	{
@@ -805,6 +905,7 @@
 		"icon": "unix.gif",
 		"source": "https://github.com/timhow38/Resume-WebApplication",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -813,6 +914,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/KilledByAPixel/OS13k",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal", "game"]
 	},
 	{
@@ -821,6 +923,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/InsafKhamzin/portfolio",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -829,6 +932,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/JonZavialov/portfolio4",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -837,6 +941,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "Password: `Graduation`",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -845,6 +950,7 @@
 		"icon": "windows11.gif",
 		"source": "https://github.com/piyushsuthar/windows-11-web",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -853,6 +959,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/shoaib-jamal/rebornxp",
 		"notes": "",
+		"archive": "",
 		"tags": ["game"]
 	},
 	{
@@ -861,6 +968,7 @@
 		"icon": "IBM.gif",
 		"source": "https://github.com/TheOldNet/web-windows",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -869,6 +977,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/heyPuter/puter/",
 		"notes": "if you get a login screen just\nclear cookies and site data",
+		"archive": "",
 		"tags": ["top", "tool"]
 	},
 	{
@@ -877,6 +986,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/middlepot/1997",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc", "personal"]
 	},
 	{
@@ -885,6 +995,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -893,6 +1004,7 @@
 		"icon": "linux.gif",
 		"source": "https://gitlab.com/hsleisink/orb",
 		"notes": "",
+		"archive": "",
 		"tags": ["top"]
 	},
 	{
@@ -901,6 +1013,7 @@
 		"icon": "mac.gif",
 		"source": "https://github.com/robbiebyrd/classicy",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -909,6 +1022,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -917,6 +1031,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -925,6 +1040,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/kaiofelipejs/kaiofelipejs.dev",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -933,6 +1049,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["game"]
 	},
 	{
@@ -941,6 +1058,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/Goggwell/newfolio/",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc", "personal"]
 	},
 	{
@@ -949,6 +1067,7 @@
 		"icon": "amiga.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "uncanny"]
 	},
 	{
@@ -957,6 +1076,7 @@
 		"icon": "amiga.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["uncanny"]
 	},
 	{
@@ -965,6 +1085,7 @@
 		"icon": "amiga.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -973,6 +1094,7 @@
 		"icon": "windows_new.png",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["game"]
 	},
 	{
@@ -981,6 +1103,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/dahliaOS/pangolin_desktop",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -989,6 +1112,7 @@
 		"icon": "windows_new.png",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "uncanny"]
 	},
 	{
@@ -997,6 +1121,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1005,6 +1130,7 @@
 		"icon": "mac_new.gif",
 		"source": "https://github.com/chrisbinsunny/chrishub",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1013,6 +1139,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1021,6 +1148,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1029,6 +1157,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/ZeusOfTheCrows/zeusofthecrows.github.io",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1037,6 +1166,7 @@
 		"icon": "windows11.gif",
 		"source": "https://github.com/yashash-pugalia/win11-svelte",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1045,6 +1175,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal", "poc"]
 	},
 	{
@@ -1053,6 +1184,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/malisipi/ubuntu-tour",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1061,6 +1193,7 @@
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal", "poc"]
 	},
 	{
@@ -1069,6 +1202,7 @@
 		"icon": "windows11.gif",
 		"source": "https://github.com/Rajaniraiyn/windows11",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1077,6 +1211,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/sosophia10/Time-Capsule",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1085,6 +1220,7 @@
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "personal"]
 	},
 	{
@@ -1093,6 +1229,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1101,6 +1238,7 @@
 		"icon": "unix.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["tool"]
 	},
 	{
@@ -1109,6 +1247,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc", "personal"]
 	},
 	{
@@ -1117,6 +1256,7 @@
 		"icon": "linux.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1125,6 +1265,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1133,6 +1274,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/marak/buddypond",
 		"notes": "",
+		"archive": "",
 		"tags": ["game"]
 	},
 	{
@@ -1141,6 +1283,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1149,6 +1292,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/chad2320/chadhill-dev",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1157,6 +1301,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["game", "poc"]
 	},
 	{
@@ -1165,6 +1310,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/g0d/GreyOS",
 		"notes": "login: `demo@greyos.gr` / `password`",
+		"archive": "",
 		"tags": ["top"]
 	},
 	{
@@ -1173,6 +1319,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/henryjeff/portfolio-website",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "personal"]
 	},
 	{
@@ -1181,6 +1328,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc", "personal"]
 	},
 	{
@@ -1189,6 +1337,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/ducbao414/win32.run",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "game"]
 	},
 	{
@@ -1197,6 +1346,7 @@
 		"icon": "unix.gif",
 		"source": "https://github.com/prettydiff/share-file-systems",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1205,6 +1355,7 @@
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1213,6 +1364,7 @@
 		"icon": "mac_new.gif",
 		"source": "https://github.com/mirayatech/macos-big-sur-clone",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1221,6 +1373,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/js044/nenrikido",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1229,6 +1382,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["game"]
 	},
 	{
@@ -1237,6 +1391,7 @@
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1245,6 +1400,7 @@
 		"icon": "unix.gif",
 		"source": "https://github.com/baudaux/exa-kernel",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1253,6 +1409,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/johnuberbacher/vue-95",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1261,6 +1418,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/stjet/mingde",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1269,6 +1427,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1277,6 +1436,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/zeondev/pluto",
 		"notes": "",
+		"archive": "",
 		"tags": ["top"]
 	},
 	{
@@ -1285,6 +1445,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/baroxyton/webKDE",
 		"notes": "",
+		"archive": "",
 		"tags": ["uncanny"]
 	},
 	{
@@ -1293,6 +1454,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1301,6 +1463,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1309,6 +1472,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["game"]
 	},
 	{
@@ -1317,6 +1481,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1325,6 +1490,7 @@
 		"icon": "windows_new.png",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1333,6 +1499,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1341,6 +1508,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1349,6 +1517,7 @@
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["top"]
 	},
 	{
@@ -1357,6 +1526,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/Ingan121/ModernActiveDesktop",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1365,6 +1535,7 @@
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "poc"]
 	},
 	{
@@ -1373,6 +1544,7 @@
 		"icon": "unix.gif",
 		"source": "https://github.com/constraint-systems/csOS",
 		"notes": "",
+		"archive": "",
 		"tags": ["tool"]
 	},
 	{
@@ -1381,6 +1553,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/PicturElements/picturelements.github.io",
 		"notes": "",
+		"archive": "",
 		"tags": ["top"]
 	},
 	{
@@ -1389,6 +1562,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1397,6 +1571,7 @@
 		"icon": "mac.gif",
 		"source": "https://github.com/bamanczak/bruncio",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1405,6 +1580,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "personal"]
 	},
 	{
@@ -1413,6 +1589,7 @@
 		"icon": "IBM.gif",
 		"source": "https://github.com/FrugalGamer/FrugalOS",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1421,6 +1598,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1429,6 +1607,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1437,6 +1616,7 @@
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1445,6 +1625,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/CSeriestechhero/kiosk-setup/tree/main/services/redir/",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1453,6 +1634,7 @@
 		"icon": "IBM.gif",
 		"source": "https://github.com/0xJ0EY/Portfolio-next",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "personal"]
 	},
 	{
@@ -1461,6 +1643,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1469,6 +1652,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/prozilla-os/ProzillaOS",
 		"notes": "",
+		"archive": "",
 		"tags": ["top"]
 	},
 	{
@@ -1477,6 +1661,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1485,6 +1670,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/MMuii/jsdesk",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1493,6 +1679,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/Bobuxstation/Kasius-Next",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1501,6 +1688,7 @@
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1509,6 +1697,7 @@
 		"icon": "windows11.gif",
 		"source": "https://github.com/broimluna/mountainOS",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1517,6 +1706,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/broimluna/skyos",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1525,6 +1715,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/mellyeliu/new-personal-website",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1533,6 +1724,7 @@
 		"icon": "linux.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1541,6 +1733,7 @@
 		"icon": "windows11.gif",
 		"source": "https://github.com/tjy-gitnub/win12/blob/main/readme/README_en_us.md",
 		"notes": "",
+		"archive": "",
 		"tags": ["top"]
 	},
 	{
@@ -1549,6 +1742,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/kalcaddle/KodExplorer",
 		"notes": "",
+		"archive": "",
 		"tags": ["tool"]
 	},
 	{
@@ -1557,6 +1751,7 @@
 		"icon": "atari.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc", "personal"]
 	},
 	{
@@ -1565,6 +1760,7 @@
 		"icon": "windows_new.png",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1573,6 +1769,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1581,6 +1778,7 @@
 		"icon": "linux.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1589,6 +1787,7 @@
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1597,6 +1796,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/Yuteoctober/wins95Portfolio/",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1605,6 +1805,7 @@
 		"icon": "amiga.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1613,6 +1814,7 @@
 		"icon": "atari.gif",
 		"source": "https://github.com/purarue/glue",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1621,6 +1823,7 @@
 		"icon": "windows_new.png",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1629,6 +1832,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/ritenv/retro-desktop",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc", "misc"]
 	},
 	{
@@ -1637,6 +1841,7 @@
 		"icon": "windows11.gif",
 		"source": "https://github.com/royalknight56/vtron",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1645,6 +1850,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/hawwokitty/my-portfolio",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1653,6 +1859,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/sleiph/Portfolio",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1661,6 +1868,7 @@
 		"icon": "amiga.gif",
 		"source": "https://github.com/renkman/Renkbench",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1669,6 +1877,7 @@
 		"icon": "linux.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1677,6 +1886,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/ripenos/ripenos.github.io",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc", "top"]
 	},
 	{
@@ -1685,6 +1895,7 @@
 		"icon": "windows11.gif",
 		"source": "https://github.com/Siyu1017/winbows11",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1693,6 +1904,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/belowaverage-org/webdows",
 		"notes": "",
+		"archive": "",
 		"tags": ["uncanny"]
 	},
 	{
@@ -1701,6 +1913,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/Numax-cz/NapicuOS",
 		"notes": "you need to configure the boot\npriority order in the BIOS\nto run this web desktop :)",
+		"archive": "",
 		"tags": ["uncanny"]
 	},
 	{
@@ -1709,6 +1922,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/Maingron/MainOS",
 		"notes": "",
+		"archive": "",
 		"tags": ["game"]
 	},
 	{
@@ -1717,6 +1931,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/adthoughtsglobal/Nova-OS",
 		"notes": "",
+		"archive": "",
 		"tags": ["top"]
 	},
 	{
@@ -1725,6 +1940,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/MercuryWorkshop/anuraOS",
 		"notes": "",
+		"archive": "",
 		"tags": ["top"]
 	},
 	{
@@ -1733,6 +1949,7 @@
 		"icon": "mac_new.gif",
 		"source": "https://github.com/RedEdge967/MacOS-CSS",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1741,6 +1958,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/kisimoff/portfolio",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1749,6 +1967,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1757,6 +1976,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1765,6 +1985,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/WesSouza/wes.dev",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "personal"]
 	},
 	{
@@ -1773,6 +1994,7 @@
 		"icon": "windows11.gif",
 		"source": "https://github.com/MishanPoudel/Windows11-3.0",
 		"notes": "You can log in with any\nusername and password",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1781,6 +2003,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/Gersigno/gersigno.github.io",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1789,6 +2012,7 @@
 		"icon": "windows11.gif",
 		"source": "https://github.com/chrishtu/windows11",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc", "personal"]
 	},
 	{
@@ -1797,6 +2021,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/Avdan-OS/Demo",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1805,6 +2030,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/Pentacoro/pentacoro.github.io",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1813,6 +2039,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/ericaugusto-git/kashi-os",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1821,6 +2048,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/Raptor1818/RaptorOS",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1829,6 +2057,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/mo-jsx/resume-95",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1837,6 +2066,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal", "poc"]
 	},
 	{
@@ -1845,6 +2075,7 @@
 		"icon": "mac_new.gif",
 		"source": "https://github.com/daamin909/amogos",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc", "tool"]
 	},
 	{
@@ -1853,6 +2084,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1861,6 +2093,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1869,6 +2102,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/aerosness/aerosness.github.io",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal", "poc"]
 	},
 	{
@@ -1877,6 +2111,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/randomuser691337/webdesk-stable",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc", "misc"]
 	},
 	{
@@ -1885,6 +2120,7 @@
 		"icon": "windows_new.png",
 		"source": "https://xp.xobyte.org/download.zip",
 		"notes": "You can log in with any password",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1893,6 +2129,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["game"]
 	},
 	{
@@ -1901,6 +2138,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal", "poc"]
 	},
 	{
@@ -1909,6 +2147,7 @@
 		"icon": "linux.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1917,6 +2156,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/M-Valentino/sacredOS",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1925,6 +2165,7 @@
 		"icon": "mac.gif",
 		"source": "https://github.com/ryokun6/soundboard",
 		"notes": "",
+		"archive": "",
 		"tags": ["top", "uncanny"]
 	},
 	{
@@ -1933,6 +2174,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/meugenom/cloudydesk",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc", "poc"]
 	},
 	{
@@ -1941,6 +2183,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -1949,6 +2192,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1957,6 +2201,7 @@
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc", "personal"]
 	},
 	{
@@ -1965,6 +2210,7 @@
 		"icon": "windows.gif",
 		"source": "https://github.com/zerosoul/ohminesweeper.online",
 		"notes": "",
+		"archive": "",
 		"tags": ["game"]
 	},
 	{
@@ -1973,6 +2219,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/StephanVolynets/Stephans-OS",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -1981,6 +2228,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/eyemono-moe/eye-os",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1989,6 +2237,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1997,6 +2246,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal", "poc"]
 	},
 	{
@@ -2005,6 +2255,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/unite-2-re/OS.u2re.space",
 		"notes": "Works only in\nChromium based browsers",
+		"archive": "",
 		"tags": ["poc", "misc"]
 	},
 	{
@@ -2013,6 +2264,7 @@
 		"icon": "amiga.gif",
 		"source": "https://github.com/ThornWalli/web-workbench",
 		"notes": "",
+		"archive": "",
 		"tags": ["top"]
 	},
 	{
@@ -2021,6 +2273,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/areenoverclouds/xp-portfolio-public",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -2029,6 +2282,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/achtaitaipai/kas-os",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal", "poc"]
 	},
 	{
@@ -2037,6 +2291,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/linuxontheweb/linuxontheweb.github.io",
 		"notes": "",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -2045,6 +2300,7 @@
 		"icon": "mac_new.gif",
 		"source": "https://github.com/khui0/kennyhui-desktop",
 		"notes": "",
+		"archive": "",
 		"tags": ["personal", "misc"]
 	}
 ]
