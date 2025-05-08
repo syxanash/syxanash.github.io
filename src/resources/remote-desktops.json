@@ -1,5 +1,14 @@
 [
 	{
+		"name": "WorldWideWeb",
+		"url": "https://worldwideweb.cern.ch/browser",
+		"icon": "next.gif",
+		"source": "https://worldwideweb.cern.ch/code/",
+		"notes": "",
+		"archive": "https://worldwideweb.cern.ch/code/",
+		"tags": ["poc"]
+	},
+	{
 		"name": "Nightwave Plaza",
 		"url": "https://plaza.one",
 		"icon": "windows.gif",
@@ -54,6 +63,15 @@
 		"tags": ["top", "uncanny"]
 	},
 	{
+		"name": "Artur Bień",
+		"url": "https://www.expensive.toys",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20220401074943/https://www.expensive.toys/",
+		"tags": ["poc"]
+	},
+	{
 		"name": "The Restart Page",
 		"url": "http://www.therestartpage.com",
 		"icon": "obscure.gif",
@@ -79,6 +97,33 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["game"]
+	},
+	{
+		"name": "frankenSim",
+		"url": "http://frankensim.animade.tv",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20231105043617/http://frankensim.animade.tv/",
+		"tags": ["game"]
+	},
+	{
+		"name": "Jack Kim",
+		"url": "https://www.jackk.im",
+		"icon": "IBM.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://www.jackk.im",
+		"tags": ["personal"]
+	},
+	{
+		"name": "BritneyOS'99",
+		"url": "https://www.itsbritneybot.com",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20210105054008/http://itsbritneybot.com/",
+		"tags": ["personal"]
 	},
 	{
 		"name": "Geek Prank",
@@ -171,6 +216,15 @@
 		"tags": ["uncanny"]
 	},
 	{
+		"name": "Denzel Curry x Kenny Beats",
+		"url": "https://ultimatedenzelcurry.com",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20220225011033/https://denzelcurry.com/",
+		"tags": ["misc"]
+	},
+	{
 		"name": "zach.dev // Software & Adventure",
 		"url": "https://zach.dev",
 		"icon": "windows.gif",
@@ -180,6 +234,51 @@
 		"tags": ["personal"]
 	},
 	{
+		"name": "Tim R. Morgan",
+		"url": "https://timmorgan.org",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20200507020646/https://timmorgan.org/",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Eat Sleep Work",
+		"url": "https://www.eatsleepwork.com",
+		"icon": "mac_new.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20210404122006/https://www.eatsleepwork.com/",
+		"tags": ["misc"]
+	},
+	{
+		"name": "Paradise OS",
+		"url": "http://palm.computer",
+		"icon": "unix.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20180211061618/http://palm.computer/",
+		"tags": ["poc"]
+	},
+	{
+		"name": "Web Desktop",
+		"url": "https://webdesktop.net",
+		"icon": "windows_new.png",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20190120054952/https://webdesktop.net/",
+		"tags": ["poc"]
+	},
+	{
+		"name": "And Gallery",
+		"url": "https://andgallery.art",
+		"icon": "IBM.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20200917000023/https://andgallery.art/",
+		"tags": ["misc"]
+	},
+	{
 		"name": "www.chiptune.com",
 		"url": "http://www.chiptune.com",
 		"icon": "amiga.gif",
@@ -187,6 +286,15 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "Virtual Desktop",
+		"url": "http://www.virtualdesktop.org",
+		"icon": "obscure.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20240226144711/http://virtualdesktop.org/",
+		"tags": ["poc"]
 	},
 	{
 		"name": "mattOS",
@@ -232,6 +340,15 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["poc"]
+	},
+	{
+		"name": "Burgersoft® Corporation",
+		"url": "https://www.burgersoft.co",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20200804174451/https://www.burgersoft.co",
+		"tags": ["misc"]
 	},
 	{
 		"name": "N10.AS RADIO",
@@ -297,6 +414,15 @@
 		"tags": ["poc"]
 	},
 	{
+		"name": "Welcome to Agora Road",
+		"url": "http://agoraroad.com",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20201203062845/https://forum.agoraroad.com/index.php",
+		"tags": ["poc"]
+	},
+	{
 		"name": "Minesweeper",
 		"url": "https://winmine-exe.now.sh",
 		"icon": "windows.gif",
@@ -333,12 +459,30 @@
 		"tags": ["personal"]
 	},
 	{
+		"name": "TrueSchool Ascii",
+		"url": "https://www.trueschool.se",
+		"icon": "amiga.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20220101190540/http://trueschool.se/",
+		"tags": ["poc"]
+	},
+	{
 		"name": "Victor Ribeiro",
 		"url": "https://victorribeiro.com",
 		"icon": "windows.gif",
 		"source": "https://github.com/victorqribeiro/fos",
 		"notes": "",
 		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Nirrius Creative Studio",
+		"url": "https://nirri.us",
+		"icon": "unix.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20210118193913/https://nirri.us/",
 		"tags": ["personal"]
 	},
 	{
@@ -450,6 +594,15 @@
 		"tags": ["poc"]
 	},
 	{
+		"name": "some kind of blog",
+		"url": "https://blog.aimen.me",
+		"icon": "mac_new.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20230119160309/https://blog.aimen.me",
+		"tags": ["poc"]
+	},
+	{
 		"name": "Repeater",
 		"url": "https://repeater.space",
 		"icon": "atari.gif",
@@ -465,6 +618,15 @@
 		"source": "",
 		"notes": "",
 		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Glass Animals OPEN SOURCE",
+		"url": "https://opensource.glassanimals.com",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20240206052521/https://opensource.glassanimals.com/",
 		"tags": ["personal"]
 	},
 	{
@@ -513,6 +675,15 @@
 		"tags": ["personal"]
 	},
 	{
+		"name": "CutOut Fest",
+		"url": "https://cutoutfest.com",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20210608201545/https://cutoutfest.com/",
+		"tags": ["misc"]
+	},
+	{
 		"name": "Vuindows",
 		"url": "https://marcmascarell.github.io/Vuindows/",
 		"icon": "windows_new.png",
@@ -540,6 +711,15 @@
 		"tags": ["personal"]
 	},
 	{
+		"name": "KryptOS",
+		"url": "https://kry.pt/#OSVERSIONS",
+		"icon": "obscure.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20221213182021/https://kry.pt/",
+		"tags": ["poc"]
+	},
+	{
 		"name": "Online Hacker Simulator",
 		"url": "https://pranx.com/hacker/",
 		"icon": "obscure.gif",
@@ -556,6 +736,15 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["game"]
+	},
+	{
+		"name": "AWGE - Forum",
+		"url": "https://forums.awgeshit.com",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20220123064312/https://forums.awgeshit.com/",
+		"tags": ["misc"]
 	},
 	{
 		"name": "My Second PC",
@@ -576,6 +765,15 @@
 		"tags": ["personal"]
 	},
 	{
+		"name": "HyNET Geocity",
+		"url": "https://hyena.network/geocity/",
+		"icon": "IBM.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20250304222626/https://hyena.network/geocity/",
+		"tags": ["personal"]
+	},
+	{
 		"name": "Unremarkable Garden",
 		"url": "https://unremarkablegarden.com",
 		"icon": "mac.gif",
@@ -583,6 +781,15 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "Herzeleid Rammstein",
+		"url": "https://www.rammstein.de",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20201014005524/https://www.rammstein.de/de/",
+		"tags": ["misc"]
 	},
 	{
 		"name": "FLEXEDUPSHAWTY.COM",
@@ -630,6 +837,24 @@
 		"tags": ["top", "misc"]
 	},
 	{
+		"name": "Novov - Software I use",
+		"url": "https://novov.neocities.org/liked/software.html",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20230521025332/https://novov.me/liked/software",
+		"tags": ["personal"]
+	},
+	{
+		"name": "SICK7 Official Online Boutique",
+		"url": "https://sick7.com",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20210601000000*/https://sick7.com/",
+		"tags": ["misc"]
+	},
+	{
 		"name": "Team3D",
 		"url": "https://team3d.io",
 		"icon": "windows.gif",
@@ -655,6 +880,15 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "WE=LINK",
+		"url": "http://we-link.chronusartcenter.org",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20230205103008/http://we-link.chronusartcenter.org/",
+		"tags": ["poc"]
 	},
 	{
 		"name": "Thoughts On Glitch[Art]v2.0",
@@ -828,6 +1062,15 @@
 		"tags": ["tool"]
 	},
 	{
+		"name": "RexOS",
+		"url": "https://itzrex.neocities.org",
+		"icon": "IBM.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20230819185459/https://itzrex.neocities.org/",
+		"tags": ["personal"]
+	},
+	{
 		"name": "Joeyonng's Backyard",
 		"url": "https://joeyonng.github.io/joeyonng-backyard/",
 		"icon": "mac_new.gif",
@@ -871,6 +1114,24 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["poc"]
+	},
+	{
+		"name": "Hunter Hodnett XP",
+		"url": "https://hunterhodnett.dev",
+		"icon": "windows_new.png",
+		"source": "https://github.com/hunterchristian/personal-site-v2",
+		"notes": "",
+		"archive": "https://github.com/hunterchristian/personal-site-v2",
+		"tags": ["personal"]
+	},
+	{
+		"name": "ANOTHER TEE",
+		"url": "https://www.anothertee.xyz",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20220902130019/https://www.anothertee.xyz/",
+		"tags": ["misc"]
 	},
 	{
 		"name": "Don Chia",
@@ -918,6 +1179,15 @@
 		"tags": ["personal", "game"]
 	},
 	{
+		"name": "Noam Rubin",
+		"url": "https://www.noam-rubin.com",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20250315041558/https://www.noam-rubin.com/",
+		"tags": ["personal"]
+	},
+	{
 		"name": "Insaf Khamzin",
 		"url": "https://insafkhamzin.com",
 		"icon": "windows.gif",
@@ -927,6 +1197,15 @@
 		"tags": ["personal"]
 	},
 	{
+		"name": "Cobra!'s Website",
+		"url": "https://cobradile.neocities.org",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20230418124801/https://cobradile.neocities.org/index.en",
+		"tags": ["poc"]
+	},
+	{
 		"name": "Jonathan Zavialov",
 		"url": "https://computer.jonzav.me",
 		"icon": "windows.gif",
@@ -934,6 +1213,15 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["poc"]
+	},
+	{
+		"name": "Alina Sava",
+		"url": "https://sava.io",
+		"icon": "obscure.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20230326163643/https://sava.io/",
+		"tags": ["personal"]
 	},
 	{
 		"name": "KANYE 2049",
@@ -981,6 +1269,15 @@
 		"tags": ["top", "tool"]
 	},
 	{
+		"name": "Things",
+		"url": "https://things.inc",
+		"icon": "unix.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20230519004753/https://things.inc/",
+		"tags": ["personal"]
+	},
+	{
 		"name": "1997box",
 		"url": "https://1997.pooftie.me",
 		"icon": "windows.gif",
@@ -1014,6 +1311,24 @@
 		"source": "https://github.com/robbiebyrd/classicy",
 		"notes": "",
 		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "HeadOffice",
+		"url": "http://www.headofffice.com",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20230219223306/http://headofffice.com/",
+		"tags": ["misc"]
+	},
+	{
+		"name": "Browso",
+		"url": "https://www.browso.app",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20230701000000*/https://www.browso.app",
 		"tags": ["misc"]
 	},
 	{
@@ -1107,6 +1422,15 @@
 		"tags": ["poc"]
 	},
 	{
+		"name": "SantaOS",
+		"url": "http://jeremymakes.com/SantaOS/",
+		"icon": "mac_new.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20230124112842/http://jeremymakes.com/SantaOS/",
+		"tags": ["poc"]
+	},
+	{
 		"name": "WebXP",
 		"url": "https://konsti.club/webSys/",
 		"icon": "windows_new.png",
@@ -1122,6 +1446,15 @@
 		"source": "",
 		"notes": "",
 		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Hugo Doueli | Portfolio 2022",
+		"url": "https://hugodoueil.fr",
+		"icon": "obscure.gif",
+		"source": "https://github.com/Ormidales/portfolio/",
+		"notes": "",
+		"archive": "https://github.com/Ormidales/portfolio/",
 		"tags": ["personal"]
 	},
 	{
@@ -1152,6 +1485,15 @@
 		"tags": ["personal"]
 	},
 	{
+		"name": "Mastodon Flock",
+		"url": "https://mastodon-flock.vercel.app/desktop",
+		"icon": "windows.gif",
+		"source": "https://github.com/WesSouza/mastodon-flock",
+		"notes": "",
+		"archive": "https://github.com/WesSouza/mastodon-flock",
+		"tags": ["tool", "poc"]
+	},
+	{
 		"name": "Ɀeus' Stadt",
 		"url": "https://zeusofthecrows.neocities.org",
 		"icon": "windows.gif",
@@ -1170,6 +1512,24 @@
 		"tags": ["misc"]
 	},
 	{
+		"name": "Sergio Diaz Schiaffino",
+		"url": "https://www.sergiodiazschiaffino.com",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20240425135157/https://www.sergiodiazschiaffino.com/",
+		"tags": ["personal"]
+	},
+	{
+		"name": "chloédigital",
+		"url": "https://chloedigital.com",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20230412051508/https://chloedigital.com/",
+		"tags": ["poc", "personal"]
+	},
+	{
 		"name": "The Secret History of Mac Gaming",
 		"url": "https://secrethistoryofmacgaming.com",
 		"icon": "mac.gif",
@@ -1186,6 +1546,15 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "KeYGeN",
+		"url": "https://keyge.nz",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20230204054510/https://keyge.nz/",
+		"tags": ["poc"]
 	},
 	{
 		"name": "sue roh",
@@ -1213,6 +1582,15 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "SilveOS.com",
+		"url": "https://www.silveos.com",
+		"icon": "windows_new.png",
+		"source": "https://github.com/SilveOS",
+		"notes": "",
+		"archive": "https://github.com/SilveOS",
+		"tags": ["poc"]
 	},
 	{
 		"name": "Quentin OS/2",
@@ -1249,6 +1627,15 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["poc", "personal"]
+	},
+	{
+		"name": "DROPS",
+		"url": "https://www.maxvphillips.com/drops/",
+		"icon": "IBM.gif",
+		"source": "https://github.com/maxvp/drops",
+		"notes": "",
+		"archive": "https://github.com/maxvp/drops",
+		"tags": ["personal"]
 	},
 	{
 		"name": "DeskPortal",
@@ -1392,6 +1779,15 @@
 		"source": "",
 		"notes": "",
 		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "FullStacked",
+		"url": "https://fullstacked.org/demo/",
+		"icon": "linux.gif",
+		"source": "https://github.com/fullstackedorg/workspace",
+		"notes": "",
+		"archive": "https://github.com/fullstackedorg/workspace",
 		"tags": ["misc"]
 	},
 	{
@@ -1800,6 +2196,24 @@
 		"tags": ["personal"]
 	},
 	{
+		"name": "An Ordinary Portfolio Page of Derya",
+		"url": "https://deryasdesktop.com",
+		"icon": "obscure.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20250118040705/http://deryasdesktop.com/",
+		"tags": ["personal"]
+	},
+	{
+		"name": "linuxWeb",
+		"url": "https://617d5c82f9d62b0007efa555--serene-bhabha-879d38.netlify.app",
+		"icon": "linux.gif",
+		"source": "https://github.com/Manthee1/linuxWeb",
+		"notes": "",
+		"archive": "https://github.com/Manthee1/linuxWeb",
+		"tags": ["misc"]
+	},
+	{
 		"name": "HippoPlayer",
 		"url": "https://hippoplayer.se/WB.html",
 		"icon": "amiga.gif",
@@ -1843,6 +2257,15 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "Koë's Desktop",
+		"url": "https://koefka.com",
+		"icon": "mac_new.gif",
+		"source": "",
+		"notes": "",
+		"archive": "https://web.archive.org/web/20240417120032/https://koefka.com/",
+		"tags": ["poc"]
 	},
 	{
 		"name": "Hawwokitty's Portfolio",
@@ -1969,6 +2392,15 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "János Kócs | Portfolio",
+		"url": "https://janoskocs.com",
+		"icon": "windows.gif",
+		"source": "https://github.com/janoskocs/portfolio",
+		"notes": "this site occasionally goes offline",
+		"archive": "https://github.com/janoskocs/portfolio",
+		"tags": ["personal"]
 	},
 	{
 		"name": "public access memories",
