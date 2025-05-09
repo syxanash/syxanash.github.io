@@ -2734,5 +2734,32 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal", "misc"]
+	},
+	{
+		"name": "H.H.Roses",
+		"url": "https://hhroses.neocities.org",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal", "poc"]
+	},
+	{
+		"name": "Timewatcher OS",
+		"url": "https://timewatcher.neocities.org",
+		"icon": "IBM.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal", "game"]
+	},
+	{
+		"name": "Fusa OS",
+		"url": "https://fusa-os.glitch.me",
+		"icon": "linux.gif",
+		"source": "",
+		"notes": "You can register with any user,\npassword and email; they\ndon't need to be valid",
+		"archive": "",
+		"tags": ["misc"]
 	}
 ]
