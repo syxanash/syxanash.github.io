@@ -81,12 +81,18 @@
 }
 
 .vortex-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  position: absolute;
 }
 
 .vortex-image {
-  animation: rotate 10s linear infinite;
+  scale: 0.2;
+  margin-top: -100px;
+
+  animation: rotate 10s infinite linear, scale 200s infinite linear;
 }
 
 @keyframes rotate {
@@ -95,5 +101,11 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes scale {
+  100% {
+    transform: scale(100);
   }
 }

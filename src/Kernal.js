@@ -536,7 +536,7 @@ class Kernal extends Component {
     return (
       <HashRouter>
         <div ref={ this.scrollTopElement } />
-        <div className='window-centered'>
+        <div className='window-centered' style={ { display: isBrokenScreen ? 'none' : 'block' } }>
           <div style={ { display: this.isInSpecialState() ? 'none' : 'block' } }>
             <Helmet>
               <style>

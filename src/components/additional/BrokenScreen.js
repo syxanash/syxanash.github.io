@@ -37,8 +37,10 @@ class BrokenScreen extends Component {
     this.bugRefreshInterval = undefined;
     this.explosionTimeout = undefined;
     this.textAnimationTimeout = undefined;
+    this.blackholeTimeout = undefined;
     this.backgroundCircuits = parseInt(document.body.clientWidth / 7, 10);
     this.bugsInterval = 950;
+    this.blackholeTimeoutValue = 30000;
 
     this.antiCheatString = 'DON\'T YOU DARE YOU FILTHY CHEATER!!!!';
     this.antiCheatStringSecond = 'YOU THOUGHT IT WOULD BE THAT EASY!?!';
@@ -93,6 +95,10 @@ class BrokenScreen extends Component {
     if (this.textAnimationTimeout) {
       clearTimeout(this.textAnimationTimeout);
     }
+
+    if (this.blackholeTimeout) {
+      clearTimeout(this.blackholeTimeout);
+    }
   }
 
   componentDidMount = () => {
@@ -102,6 +108,11 @@ class BrokenScreen extends Component {
     this.backgroundSong.play();
 
     sessionStorage.removeItem('eggTriggered');
+
+    this.blackholeTimeout = setTimeout(() => {
+      alert('CESTINO HAS CORRUPTED THE WHOLE SYSTEM!');
+      window.location.reload();
+    }, this.blackholeTimeoutValue);
   }
 
   renderBug = () => {
@@ -205,6 +216,7 @@ class BrokenScreen extends Component {
     });
 
     if (bugsNumber <= 0) {
+      clearTimeout(this.blackholeTimeout);
       clearInterval(this.bugRefreshInterval);
     }
   }
@@ -268,21 +280,18 @@ class BrokenScreen extends Component {
       </Helmet>
       { randomCircuit }
       <div style={ { pointerEvents: 'none' } }>
-        <div className="vortex-container">
-          <img src={ vortex } alt="vortex" className="vortex-image" />
-        </div>
         <div
           className='brightness-blend'
           style={ { filter: `hue-rotate(${bugsCleaned ? '0' : '250'}deg)` } }
         ></div>
         <img
-          src={ bugsCleaned ? backgroundGrid : backgroundGridReverse }
+          src={ bugsCleaned ? backgroundGridReverse : backgroundGrid }
           alt='moving grid'
           className='moving-grid'
           style={ { filter: `hue-rotate(${bugsCleaned ? '0' : '250'}deg)` } }
         />
         <img
-          src={ bugsCleaned ? backgroundGrid : backgroundGridReverse }
+          src={ bugsCleaned ? backgroundGridReverse : backgroundGrid }
           alt='distant moving grid'
           className='distant-moving-grid'
           style={ { filter: `hue-rotate(${bugsCleaned ? '0' : '250'}deg)` } }
@@ -302,6 +311,9 @@ class BrokenScreen extends Component {
               style={ { filter: `hue-rotate(${bugsCleaned ? '250' : '190'}deg)` } }
             />
         }
+        { bugsCleaned ? null : <div className="vortex-container">
+          <img src={ vortex } alt="vortex" className="vortex-image" />
+        </div> }
       </div>
       <div className='centered-item'>
         {
