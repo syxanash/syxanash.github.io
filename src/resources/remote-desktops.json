@@ -1630,11 +1630,11 @@
 	},
 	{
 		"name": "DROPS",
-		"url": "https://www.maxvphillips.com/drops/",
+		"url": "https://drops.maxvphillips.com",
 		"icon": "IBM.gif",
 		"source": "https://github.com/maxvp/drops",
 		"notes": "",
-		"archive": "https://github.com/maxvp/drops",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -2761,5 +2761,23 @@
 		"notes": "You can register with any user,\npassword and email; they\ndon't need to be valid",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "Vista Thomas Edition",
+		"url": "https://thomasdarkson.com",
+		"icon": "windows_new.png",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["poc", "personal"]
+	},
+	{
+		"name": "MEDICALMALADIES",
+		"url": "https://medicalmaladies.neocities.org",
+		"icon": "IBM.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
 	}
 ]
