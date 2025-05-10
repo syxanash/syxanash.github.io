@@ -264,7 +264,11 @@ class MainWindowBody extends Component {
             </Anchor>
           </div>
         </Cutout>
-        <MainWindowFooter onClick={ () => this.openWindowIfNotOpened('credits') } active={ isWindowOpened('credits') }/>
+        <MainWindowFooter
+          onClick={ () => this.openWindowIfNotOpened('credits') }
+          disabled={ eggTriggered }
+          active={ isWindowOpened('credits') }
+        />
       </React.Fragment>
     );
   }

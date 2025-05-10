@@ -27,18 +27,29 @@ class Footer extends Component {
 
   renderLastCommitButton() {
     const { lastUpdated } = this.state;
+    const { disabled } = this.props;
 
     const displayDate = Util.formatDisplayDate(lastUpdated.date);
 
-    return (
+    const buttonContent = (
+      <React.Fragment>
+        <img src={ clockIcon } className="small-icon" alt="clock"/>
+        <figcaption>Last updated {displayDate}</figcaption>
+      </React.Fragment>
+    );
+
+    return disabled ? (
+      <Button fullWidth disabled={ disabled }>
+        {buttonContent}
+      </Button>
+    ) : (
       <Anchor
         href={ `${configUrls.repositoryUrl}/commits/development` }
         target='_blank'
         style={ { color: '#000000', textDecoration: 'none' } }
       >
         <Button fullWidth>
-          <img src={ clockIcon } className="small-icon" alt="clock"/>
-          <figcaption>Last updated {displayDate}</figcaption>
+          {buttonContent}
         </Button>
       </Anchor>
     );
@@ -46,12 +57,12 @@ class Footer extends Component {
 
   render() {
     const { codeIcon } = this.state;
-    const { active, onClick } = this.props;
+    const { active, onClick, disabled } = this.props;
 
     return (
       <Cutout className='footer-cut-out'>
         <div className='footer-buttons' style={ { float: 'left' } }>
-          <Button fullWidth active={ active } onClick={ onClick }>
+          <Button fullWidth active={ active } disabled={ disabled } onClick={ onClick }>
             <img src={ codeIcon } className='small-icon' alt="code"/>
             <figcaption>About this website</figcaption>
           </Button>
