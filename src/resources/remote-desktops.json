@@ -770,7 +770,7 @@
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
-		"archive": "https://web.archive.org/web/20250304222626/https://hyena.network/geocity/",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -2779,5 +2779,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "BogdanOS",
+		"url": "https://os.bgevko.com",
+		"icon": "obscure.gif",
+		"source": "https://github.com/bgevko/bogdan-os",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
 	}
 ]
