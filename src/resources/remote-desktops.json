@@ -2788,5 +2788,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "Hatim Benhsain",
+		"url": "https://hatimbenhsain.github.io",
+		"icon": "obscure.gif",
+		"source": "https://github.com/hatimbenhsain/hatimbenhsain.github.io",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
 	}
 ]
