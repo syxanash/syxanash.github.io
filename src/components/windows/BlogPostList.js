@@ -112,11 +112,11 @@ class BlogPostListBody extends Component {
           color: isCurrentPostSelected ? 'white' : undefined,
         } }
       >
-        <TableDataCell style={ { width: '100px', textAlign: 'center' } }>{formatDate}</TableDataCell>
         <TableDataCell style={ { width: '200px', fontWeight: 'bold' } }>{post.title}</TableDataCell>
         { document.body.clientWidth > 600
           ? <TableDataCell><em>{formatDescription}</em></TableDataCell>
           : null }
+        <TableDataCell style={ { width: '100px', textAlign: 'center' } }>{formatDate}</TableDataCell>
       </TableRow>;
     });
   }
@@ -135,7 +135,7 @@ class BlogPostListBody extends Component {
 
   render = () => {
     const { closeCurrentWindow } = this.props;
-    const { listLoaded } = this.state;
+    const { listLoaded, dateSorted } = this.state;
 
     if (listLoaded === undefined) {
       return <div style={ { textAlign: 'center' } }><h2 style={ { marginTop: '0' } }>LOADING LIST</h2><Hourglass size={ 50 } /></div>;
@@ -152,12 +152,12 @@ class BlogPostListBody extends Component {
       <Table>
         <TableHead>
           <TableRow head>
-            <TableHeadCell style={ { cursor: `url(${blackCursor}), auto` } } onClick={ this.sortByDate }>Date</TableHeadCell>
             <TableHeadCell style={ { cursor: `url(${blackCursor}), auto`, pointerEvents: 'none' } }>Title</TableHeadCell>
             { document.body.clientWidth > 600
               ? <TableHeadCell style={ { cursor: `url(${blackCursor}), auto`, pointerEvents: 'none' } }>Description</TableHeadCell>
               : null
             }
+            <TableHeadCell style={ { cursor: `url(${blackCursor}), auto` } } onClick={ this.sortByDate }>Date { dateSorted ? '↑' : '↓' }</TableHeadCell>
           </TableRow>
         </TableHead>
         <TableBody>
