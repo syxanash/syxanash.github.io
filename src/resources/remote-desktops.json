@@ -995,7 +995,7 @@
 		"icon": "mac.gif",
 		"source": "https://github.com/jckdm/jckdm.github.io",
 		"notes": "",
-		"archive": "",
+		"archive": "https://github.com/jckdm/jckdm.github.io",
 		"tags": ["poc", "personal"]
 	},
 	{
@@ -2719,7 +2719,7 @@
 	},
 	{
 		"name": "Linux on the Web",
-		"url": "https://linuxontheweb.github.io",
+		"url": "https://linuxontheweb.github.io/desk/",
 		"icon": "linux.gif",
 		"source": "https://github.com/linuxontheweb/linuxontheweb.github.io",
 		"notes": "",
