@@ -991,11 +991,11 @@
 	},
 	{
 		"name": "Jack Adam",
-		"url": "https://jackadam.cc",
+		"url": "https://jackadam.com",
 		"icon": "mac.gif",
 		"source": "https://github.com/jckdm/jckdm.github.io",
 		"notes": "",
-		"archive": "https://github.com/jckdm/jckdm.github.io",
+		"archive": "",
 		"tags": ["poc", "personal"]
 	},
 	{
