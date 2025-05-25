@@ -2806,5 +2806,23 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "Mac Themes Garden",
+		"url": "https://macthemes.garden",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["poc"]
+	},
+	{
+		"name": "4ndyOS",
+		"url": "https://andy64lol.github.io/4ndyOS/",
+		"icon": "linux.gif",
+		"source": "https://github.com/andy64lol/4ndyOS",
+		"notes": "",
+		"archive": "",
+		"tags": ["poc"]
 	}
 ]
