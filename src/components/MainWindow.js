@@ -158,7 +158,7 @@ class MainWindowBody extends Component {
     }
   }
 
-  renderFileCorruptedIcon = () => <Tooltip text={ 'file corrupted' } delay={ 500 }>
+  renderFileCorruptedIcon = () => <Tooltip text={ 'File corrupted' } delay={ 500 }>
     <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } } disabled={ true }>
       <img src={ corruptedFileIcon } className='icon' alt="corrupted file icon" style={ { filter: 'opacity(50%)' } } />
       <RandomCaption />
