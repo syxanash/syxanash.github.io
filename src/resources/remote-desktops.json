@@ -964,7 +964,7 @@
 	},
 	{
 		"name": "Winampify",
-		"url": "https://winampify.io",
+		"url": "https://winampify-dev-ejtfvgijz.vercel.app",
 		"icon": "windows_new.png",
 		"source": "https://github.com/remigallego/winampify",
 		"notes": "",
