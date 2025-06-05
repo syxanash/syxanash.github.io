@@ -1166,7 +1166,7 @@
 		"icon": "unix.gif",
 		"source": "https://github.com/timhow38/Resume-WebApplication",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20240616155957/https://coreos.io/",
 		"tags": ["personal"]
 	},
 	{
@@ -1918,7 +1918,7 @@
 	},
 	{
 		"name": "ModernActiveDesktop",
-		"url": "https://www.ingan121.com/mad/",
+		"url": "https://madesktop.ingan121.com",
 		"icon": "windows.gif",
 		"source": "https://github.com/Ingan121/ModernActiveDesktop",
 		"notes": "",
