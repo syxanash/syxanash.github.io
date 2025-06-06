@@ -263,7 +263,6 @@ class BulbBody extends Component {
 
         <Button
           size='sm'
-          active={ aboutPressed }
           onClick={ this.toggleAbout }
         >
           <span>{ aboutPressed ? '▲' : '▼' } { aboutPressed ? collapseButtonLabel : 'EXPLAIN' }</span>
