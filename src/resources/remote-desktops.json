@@ -2824,5 +2824,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["poc"]
+	},
+	{
+		"name": "my old computer",
+		"url": "https://www.windows98.website",
+		"icon": "windows.gif",
+		"source": "https://github.com/xero/windows98.website",
+		"notes": "",
+		"archive": "",
+		"tags": ["poc"]
 	}
 ]
