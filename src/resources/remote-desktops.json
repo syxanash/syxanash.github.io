@@ -167,7 +167,7 @@
 		"icon": "next.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20240512162906/https://www.afterstep.org/",
 		"tags": ["poc"]
 	},
 	{
@@ -1391,7 +1391,7 @@
 		"icon": "amiga.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20240222221219/http://www.amiga34.de/WB.html",
 		"tags": ["uncanny"]
 	},
 	{
@@ -2669,7 +2669,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20250325192338/https://leagueos.org/",
 		"tags": ["poc"]
 	},
 	{
@@ -2833,5 +2833,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["poc"]
+	},
+	{
+		"name": "Paul's Web Desktop",
+		"url": "https://peaberberian.github.io",
+		"icon": "obscure.gif",
+		"source": "https://github.com/peaBerberian/peaberberian.github.io",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal", "game", "top"]
 	}
 ]
