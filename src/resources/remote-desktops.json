@@ -166,8 +166,8 @@
 		"url": "http://www.afterstep.org",
 		"icon": "next.gif",
 		"source": "",
-		"notes": "",
-		"archive": "https://web.archive.org/web/20240512162906/https://www.afterstep.org/",
+		"notes": "Only runs on http",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
