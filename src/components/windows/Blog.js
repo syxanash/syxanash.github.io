@@ -257,7 +257,7 @@ class BlogBody extends Component {
               }
             } children={ backendResponse } rehypePlugins={ [rehypeRaw] } />
             <div style={ { textAlign: 'right', paddingTop: '10px' } }>
-              <span style={ { fontWeight: 'bold', fontStyle: 'italic' } }>Posted on {publishedDate.toLocaleString('en-GB', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+              <span style={ { fontWeight: 'bold', fontStyle: 'italic', fontSize: '1.25em' } }>Posted on {publishedDate.toLocaleString('en-GB', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
             </div>
           </div>
         </div>
