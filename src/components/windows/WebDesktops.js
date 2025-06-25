@@ -44,10 +44,10 @@ class WebDesktopsBody extends Component {
     this.overViewTimeout = undefined;
 
     this.state = {
-      desktopsList: _.shuffle(ACTIVE_DESKTOPS),
+      desktopsList: ACTIVE_DESKTOPS.toReversed(),
       sitesExplored: 0,
       overviewNumber: false,
-      sortSelected: SORT_OPTIONS.RANDOM,
+      sortSelected: SORT_OPTIONS.NEWEST,
       sourceFilter: SOURCE_FILTER.ALL,
       filterView: false,
       searchView: false,
