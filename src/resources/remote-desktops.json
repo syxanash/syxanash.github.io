@@ -1418,7 +1418,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/dahliaOS/pangolin_desktop",
 		"notes": "",
-		"archive": "",
+		"archive": "https://github.com/dahliaOS/pangolin_desktop",
 		"tags": ["poc"]
 	},
 	{
@@ -2842,5 +2842,50 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal", "game", "top"]
+	},
+	{
+		"name": "ClaireOS",
+		"url": "https://www.clairewang.co",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Lola OS",
+		"url": "https://www.radiopapi.fm",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "Works only in\nChromium based browsers",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "soso radio",
+		"url": "https://www.sosoradio.co",
+		"icon": "IBM.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "PortfolioXP",
+		"url": "https://pauljaguin.com",
+		"icon": "windows_new.png",
+		"source": "https://github.com/UnMugViolet/portfolio",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "LisaGUI",
+		"url": "https://alpha.lisagui.com",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc", "top"]
 	}
 ]
