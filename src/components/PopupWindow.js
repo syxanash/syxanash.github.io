@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import Tilt from 'react-tilt';
-import _ from 'lodash';
 import { ThemeProvider } from 'styled-components';
 import { withRouter } from 'react-router-dom';
 import {
   Button, Window, WindowHeader, WindowContent,
 } from 'react95';
 import Draggable from 'react-draggable';
-import DesktopContext from '../DesktopContext';
-import configUrls from '../resources/config-urls.json';
 import 'animate.css';
 
 import './PopupWindow.css';
@@ -42,15 +39,8 @@ class PopupWindow extends Component {
 
   clickMiddleButton = () => {
     const { history, windowName } = this.props;
-    const { desktopContext } = this.context;
 
-    const currentBlogPost = _.get(desktopContext, 'blog.currentPost', undefined);
-
-    if (windowName === 'blog' && currentBlogPost !== undefined) {
-      window.location.href = `${configUrls.backendUrl}/${currentBlogPost}`;
-    } else {
-      history.push(`/${windowName}`);
-    }
+    history.push(`/${windowName}`);
 
     this.closeCurrentWindow();
   }
@@ -168,7 +158,5 @@ class PopupWindow extends Component {
     );
   }
 }
-
-PopupWindow.contextType = DesktopContext;
 
 export default withRouter(PopupWindow);

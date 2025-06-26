@@ -28,6 +28,8 @@ import lightbulbIcon from '../resources/icons/lightbulb.gif';
 import staticImage from '../resources/images/static.gif';
 import playerHeadImage from '../resources/images/head.gif';
 
+import configUrls from '../resources/config-urls.json';
+
 import languages from '../resources/languages.json';
 
 class MainWindowHeader extends Component {
@@ -217,12 +219,16 @@ class MainWindowBody extends Component {
               <img src={ contactIcon } className='icon' alt=""/>
               <figcaption className='icon-caption'>Contact</figcaption>
             </Button>
-            <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
-              onClick={ () => this.openWindowIfNotOpened('blog') }
-              active={ isWindowOpened('blog') }>
-              <img src={ blogIcon } className='icon' alt=""/>
-              <figcaption className='icon-caption'>Blog</figcaption>
-            </Button>
+            <Anchor
+              href={ configUrls.backendUrl }
+              style={ { color: '#000000', textDecoration: 'none' } }
+              aria-label="Blog"
+            >
+              <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }>
+                <img src={ blogIcon } className='icon' alt=""/>
+                <figcaption className='icon-caption'>Blog</figcaption>
+              </Button>
+            </Anchor>
             <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
               onClick={ () => this.openWindowIfNotOpened('links') }
               active={ isWindowOpened('links') }
