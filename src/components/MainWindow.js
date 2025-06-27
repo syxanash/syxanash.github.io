@@ -33,9 +33,15 @@ import configUrls from '../resources/config-urls.json';
 import languages from '../resources/languages.json';
 
 class MainWindowHeader extends Component {
-  state = {
-    programmingLanguage: undefined,
-    assetsLoaded: false,
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      programmingLanguage: undefined,
+      assetsLoaded: false,
+    };
+
+    this.blogButtonTimeout = undefined;
   }
 
   componentDidMount() {
@@ -93,6 +99,10 @@ class MainWindowBody extends Component {
 
     $('#computer_icon').unbind('mouseup', this.triggerUp);
     $('#computer_icon').unbind('touchend', this.triggerUp);
+
+    if (this.blogButtonTimeout) {
+      clearTimeout(this.blogButtonTimeout);
+    }
   }
 
   triggerUp = () => {
@@ -161,6 +171,14 @@ class MainWindowBody extends Component {
     }
   }
 
+  pressBlogButton = () => {
+    this.setState({ blogIconPressed: true });
+
+    this.blogButtonTimeout = setTimeout(() => {
+      this.setState({ blogIconPressed: false });
+    }, 2000);
+  }
+
   renderFileCorruptedIcon = () => <Tooltip text={ 'File corrupted' } delay={ 500 }>
     <Button size='lg' square className='button-item' style={ { width: '85px', height: '85px', display: 'inline-block' } } disabled={ true }>
       <img src={ corruptedFileIcon } className='icon' alt="corrupted file icon" style={ { filter: 'opacity(50%)' } } />
@@ -226,7 +244,7 @@ class MainWindowBody extends Component {
               aria-label="Blog"
             >
               <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
-                onClick={ () => this.setState({ blogIconPressed: true }) }
+                onClick={ this.pressBlogButton }
                 active={ blogIconPressed }
               >
                 <img src={ blogIcon } className='icon' alt=""/>
