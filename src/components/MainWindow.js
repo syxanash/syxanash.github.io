@@ -176,7 +176,7 @@ class MainWindowBody extends Component {
 
     this.blogButtonTimeout = setTimeout(() => {
       this.setState({ blogIconPressed: false });
-    }, 2000);
+    }, 1000);
   }
 
   renderFileCorruptedIcon = () => <Tooltip text={ 'File corrupted' } delay={ 500 }>
