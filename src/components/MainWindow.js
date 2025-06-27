@@ -77,6 +77,7 @@ class MainWindowBody extends Component {
 
     this.state = {
       iconsColliding: false,
+      blogIconPressed: false,
     };
   }
 
@@ -169,7 +170,7 @@ class MainWindowBody extends Component {
 
   render() {
     const { onClickTV, isWindowOpened } = this.props;
-    const { iconsColliding } = this.state;
+    const { iconsColliding, blogIconPressed } = this.state;
     const eggTriggered = sessionStorage.getItem('eggTriggered') === 'true';
 
     return (
@@ -224,7 +225,10 @@ class MainWindowBody extends Component {
               style={ { color: '#000000', textDecoration: 'none' } }
               aria-label="Blog"
             >
-              <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }>
+              <Button size='lg' square className='button-item' disabled={ eggTriggered } style={ { width: '85px', height: '85px', display: 'inline-block' } }
+                onClick={ () => this.setState({ blogIconPressed: true }) }
+                active={ blogIconPressed }
+              >
                 <img src={ blogIcon } className='icon' alt=""/>
                 <figcaption className='icon-caption'>Blog</figcaption>
               </Button>
