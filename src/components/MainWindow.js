@@ -221,7 +221,7 @@ class MainWindowBody extends Component {
               <figcaption className='icon-caption'>Contact</figcaption>
             </Button>
             <Anchor
-              href={ configUrls.backendUrl }
+              href={ eggTriggered ? '#' : configUrls.backendUrl }
               style={ { color: '#000000', textDecoration: 'none' } }
               aria-label="Blog"
             >
