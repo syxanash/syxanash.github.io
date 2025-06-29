@@ -51,6 +51,7 @@ class BulbBody extends Component {
       websocketOpen: false,
       lightOn: false,
       aboutPressed: false,
+      aboutPressedCounter: 0,
       usersConnected: undefined,
       deskLampConnected: false,
       brokenBulb: !!JSON.parse(sessionStorage.getItem('brokenBulb')),
@@ -299,11 +300,22 @@ class BulbBody extends Component {
   }
 
   toggleAbout = () => {
-    const { aboutPressed } = this.state;
+    const { aboutPressed, aboutPressedCounter } = this.state;
 
     if (aboutPressed) {
       this.setState({ collapseButtonLabel: _.sample(COLLAPSE_BUTTON_LABELS) });
+    } else {
+      this.setState({ aboutPressedCounter: aboutPressedCounter + 1 });
+
+      if (aboutPressedCounter === 5) {
+        alert('how many more times do you need to read this?');
+      }
+
+      if (aboutPressedCounter === 10) {
+        alert('yes, the label of this button is randomly generated. I think you\'ve seen them all by now!');
+      }
     }
+
 
     this.setState({ aboutPressed: !aboutPressed });
   }
