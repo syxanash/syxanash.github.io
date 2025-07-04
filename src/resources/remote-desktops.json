@@ -1697,7 +1697,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/g0d/GreyOS",
 		"notes": "login: `demo@greyos.gr` / `password`",
-		"archive": "https://github.com/g0d/GreyOS",
+		"archive": "",
 		"tags": ["top"]
 	},
 	{
@@ -2887,5 +2887,23 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc", "top"]
+	},
+	{
+		"name": "Aperture94",
+		"url": "https://alicjabuchowicz.com",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Mac OS 9",
+		"url": "https://os9.ca",
+		"icon": "mac.gif",
+		"source": "https://github.com/siddhartha77/os9",
+		"notes": "",
+		"archive": "",
+		"tags": ["uncanny"]
 	}
 ]
