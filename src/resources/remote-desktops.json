@@ -2685,7 +2685,7 @@
 		"name": "U2RE OS",
 		"url": "https://os.u2re.space",
 		"icon": "obscure.gif",
-		"source": "",
+		"source": "https://github.com/scrapjs/ui.system",
 		"notes": "Works only in\nChromium based browsers",
 		"archive": "",
 		"tags": ["poc", "misc"]
@@ -2755,7 +2755,7 @@
 	},
 	{
 		"name": "Fusa OS",
-		"url": "https://fusa-os.glitch.me",
+		"url": "https://luca-musa.itch.io/fusa-os",
 		"icon": "linux.gif",
 		"source": "",
 		"notes": "You can register with any user,\npassword and email; they\ndon't need to be valid",
