@@ -752,7 +752,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/koas/my-second-pc",
 		"notes": "",
-		"archive": "",
+		"archive": "https://github.com/koas/my-second-pc",
 		"tags": ["misc", "personal"]
 	},
 	{
@@ -2905,5 +2905,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["uncanny"]
+	},
+	{
+		"name": "Open Web Desktop",
+		"url": "https://atproto-os.pages.dev",
+		"icon": "windows.gif",
+		"source": "https://github.com/owdproject/client",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
 	}
 ]
