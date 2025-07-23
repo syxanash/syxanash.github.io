@@ -43,7 +43,6 @@ import PippoDistracted from './themes/PippoDistracted';
 import './Kernal.css';
 
 const backgroundImages = require.context('./resources/images/backgrounds', true);
-const wallpapersNumber = backgroundImages.keys().length;
 
 class Kernal extends Component {
   constructor(props) {
@@ -62,9 +61,9 @@ class Kernal extends Component {
     this.mouseMovingCounter = 0;
 
     this.state = {
-      bgWallpapers: [...Array(wallpapersNumber).keys()].map(item => `BG_${item + 1}.png`),
+      bgWallpapers: backgroundImages.keys(),
       bgIndex: localStorage.getItem('bgIndex') === null
-        ? Math.floor(Math.random() * wallpapersNumber)
+        ? Math.floor(Math.random() * backgroundImages.keys().length)
         : JSON.parse(localStorage.getItem('bgIndex')),
       showLoaderPointer: false,
       showXBill: false,
@@ -358,7 +357,7 @@ class Kernal extends Component {
     const { bgIndex, bgWallpapers } = this.state;
 
     const nextImageIndex = (bgIndex + 2) % bgWallpapers.length;
-    new Image().src = backgroundImages(`./${bgWallpapers[nextImageIndex]}`);
+    new Image().src = backgroundImages(bgWallpapers[nextImageIndex]);
 
     const nextIndex = (bgIndex + 1) % bgWallpapers.length;
 
@@ -542,7 +541,7 @@ class Kernal extends Component {
               <style>
                 {
                   `body {
-                    background: url(${eggTriggered ? hackedBackground : backgroundImages(`./${bgWallpapers[bgIndex]}`)});
+                    background: url(${eggTriggered ? hackedBackground : backgroundImages(bgWallpapers[bgIndex])});
                     background-color : #a1a3ca;
                   }`
                 }
