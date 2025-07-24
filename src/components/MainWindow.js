@@ -40,8 +40,6 @@ class MainWindowHeader extends Component {
       programmingLanguage: undefined,
       assetsLoaded: false,
     };
-
-    this.blogButtonTimeout = undefined;
   }
 
   componentDidMount() {
@@ -94,14 +92,15 @@ class MainWindowBody extends Component {
 
   componentWillUnmount() {
     const { resetWindows } = this.props;
+    const { blogIconPressed } = this.state;
 
     resetWindows();
 
     $('#computer_icon').unbind('mouseup', this.triggerUp);
     $('#computer_icon').unbind('touchend', this.triggerUp);
 
-    if (this.blogButtonTimeout) {
-      clearTimeout(this.blogButtonTimeout);
+    if (blogIconPressed) {
+      this.setState({ blogIconPressed: false });
     }
   }
 
@@ -173,10 +172,6 @@ class MainWindowBody extends Component {
 
   pressBlogButton = () => {
     this.setState({ blogIconPressed: true });
-
-    this.blogButtonTimeout = setTimeout(() => {
-      this.setState({ blogIconPressed: false });
-    }, 500);
   }
 
   renderFileCorruptedIcon = () => <Tooltip text={ 'File corrupted' } delay={ 500 }>
