@@ -671,7 +671,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20250126152812/https://racertrash.com/",
 		"tags": ["personal"]
 	},
 	{
@@ -2914,5 +2914,23 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "CoffeeOS",
+		"url": "https://coffee-os.netlify.app",
+		"icon": "linux.gif",
+		"source": "https://github.com/jsagayap/CoffeeOS",
+		"notes": "You can log in with any password",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "陈刑OS",
+		"url": "https://chenxing-dev.github.io",
+		"icon": "unix.gif",
+		"source": "https://github.com/chenxing-dev/chenxing-dev.github.io",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal", "misc"]
 	}
 ]
