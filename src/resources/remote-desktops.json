@@ -1940,7 +1940,7 @@
 		"icon": "unix.gif",
 		"source": "https://github.com/constraint-systems/csOS",
 		"notes": "",
-		"archive": "",
+		"archive": "https://github.com/constraint-systems/csOS",
 		"tags": ["tool"]
 	},
 	{
@@ -2669,7 +2669,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
-		"archive": "https://web.archive.org/web/20250325192338/https://leagueos.org/",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -2937,6 +2937,15 @@
 		"name": "MitchIvin XP",
 		"url": "https://mitchivin.com",
 		"icon": "windows_new.png",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "nekOS",
+		"url": "https://oodlecat.meowandsparkle.party/nekOS.html",
+		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
 		"archive": "",
