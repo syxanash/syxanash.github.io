@@ -388,6 +388,8 @@ class Kernal extends Component {
     this.mouseMovingCounter = 0;
     this.activateScreenSaver = true;
 
+    this.savedScrollY = window.scrollY;
+
     this.screenSaverTimeout = setTimeout(() => {
       const hasDisabledScreensaverWindows = Object.keys(windowsList)
         .some(windowName => (
@@ -408,7 +410,11 @@ class Kernal extends Component {
 
     if (screenSaverMode) {
       this.activateScreenSaver = false;
-      this.setState({ screenSaverMode: false });
+      this.setState({ screenSaverMode: false }, () => {
+        if (typeof this.savedScrollY === 'number') {
+          window.scrollTo(0, this.savedScrollY);
+        }
+      });
     }
   }
 
