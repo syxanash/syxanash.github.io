@@ -1292,7 +1292,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20240501000000*/https://os.foundation.app/",
 		"tags": ["poc"]
 	},
 	{
@@ -2291,7 +2291,7 @@
 		"icon": "amiga.gif",
 		"source": "https://github.com/renkman/Renkbench",
 		"notes": "",
-		"archive": "",
+		"archive": "https://github.com/renkman/Renkbench",
 		"tags": ["poc"]
 	},
 	{
@@ -2669,7 +2669,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20250325192338/https://leagueos.org/",
 		"tags": ["poc"]
 	},
 	{
@@ -2947,6 +2947,24 @@
 		"url": "https://oodlecat.meowandsparkle.party/nekOS.html",
 		"icon": "IBM.gif",
 		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "TerbiumonOS",
+		"url": "https://terbiumon.top",
+		"icon": "obscure.gif",
+		"source": "https://github.com/TerbiumOS/web-v2",
+		"notes": "You can log in with any\nusername and password",
+		"archive": "",
+		"tags": ["misc", "poc"]
+	},
+	{
+		"name": "Sohail Sayed",
+		"url": "https://www.sohailsayed.com",
+		"icon": "windows_new.png",
+		"source": "https://github.com/SohailSayed/winxp-personal-website",
 		"notes": "",
 		"archive": "",
 		"tags": ["personal"]
