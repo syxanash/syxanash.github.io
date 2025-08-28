@@ -1103,7 +1103,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20250124120757/https://al1-ce.neocities.org",
 		"tags": ["personal"]
 	},
 	{
@@ -2965,6 +2965,24 @@
 		"url": "https://www.sohailsayed.com",
 		"icon": "windows_new.png",
 		"source": "https://github.com/SohailSayed/winxp-personal-website",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Rafindows 95",
+		"url": "https://rafaheras.dev",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal", "poc"]
+	},
+	{
+		"name": "corow.net",
+		"url": "https://corow.net",
+		"icon": "windows.gif",
+		"source": "",
 		"notes": "",
 		"archive": "",
 		"tags": ["personal"]
