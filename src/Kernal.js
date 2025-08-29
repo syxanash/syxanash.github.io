@@ -58,6 +58,8 @@ class Kernal extends Component {
     this.screenSaverTimer = 10;
     this.screenSaverMovingMouseThreshold = 25;
 
+    this.narrowScreenAlert = false;
+
     this.mouseMovingCounter = 0;
 
     this.state = {
@@ -84,12 +86,21 @@ class Kernal extends Component {
     };
   }
 
+  handleResize = () => {
+    if (window.innerWidth <= 280 && !this.narrowScreenAlert) {
+      this.narrowScreenAlert = true;
+      alert('HAAAALP I\'M SUFFOCATING!');
+    }
+  };
+
   componentDidMount() {
     const { windowsList } = this.state;
 
     window.addEventListener('popstate', this.changeTheme);
     document.addEventListener('keydown', this.closeTopWindow);
     document.addEventListener('keydown', this.konamiHandler);
+
+    window.addEventListener('resize', this.handleResize);
 
     $(window).focus(() => {
       this.activateScreenSaver = false;
@@ -135,6 +146,8 @@ class Kernal extends Component {
     if (this.loadingIconTimeout) {
       clearTimeout(this.loadingIconTimeout);
     }
+
+    window.removeEventListener('resize', this.handleResize);
 
     document.removeEventListener('keydown', this.closeTopWindow);
     document.removeEventListener('keydown', this.konamiHandler);
