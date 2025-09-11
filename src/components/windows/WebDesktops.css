@@ -138,6 +138,8 @@
   display: block;
   backface-visibility: hidden;
 
+  image-rendering: pixelated;
+
   -webkit-touch-callout: none;
   /* iOS Safari */
   -webkit-user-select: none;
