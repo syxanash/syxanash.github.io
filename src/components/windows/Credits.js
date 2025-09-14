@@ -63,7 +63,8 @@ class CreditsBody extends Component {
             <ul style={ { display: activeTab === 0 ? 'block' : 'none' } }>
               <li className='list-content'>All <b>icons</b> and <b>animated icons</b> were made by myself and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a></li>
               <li className='list-content'>The <b>source code</b> is under MIT License. See <a href={ licenseText } target='_blank' rel='noopener noreferrer'>LICENSE.txt</a></li>
-              <li className='list-content'>All content on the <b>Blog</b> is © All Rights Reserved. The views expressed are my own and do not represent those of my current or former employers.</li>
+              <li className='list-content'>All content on the <b>Blog</b> is © All Rights Reserved. The views expressed are my own and do not represent those of my current or former employers</li>
+              <li className='list-content'>This website does not, and will not, utilize <b>AI</b> generated assets, including but not limited to images, videos, music, and animated GIFs</li>
               <li className='list-content'>Any other <b>third party</b> materials are under their respective license, see the other tabs</li>
             </ul>
             <ul style={ { display: activeTab === 1 ? 'block' : 'none' } }>
@@ -80,7 +81,7 @@ class CreditsBody extends Component {
               <li className='list-content'>Almost all of the GIFs in <b>loop TV</b> were made by myself and were
               taken from various games/movies/cartoons.
               Some of these GIFs were also found online</li>
-              <li className='list-content'><b>pin.png</b> in Blog was legally purchased from Shutterstock and has been slightly modified.</li>
+              <li className='list-content'><b>pin.png</b> in Blog was legally purchased from Shutterstock and has been slightly modified</li>
               <li className='list-content'><b>gibson.png</b> image was slightly modified and the source image was taken from this <a href='https://irrlicht.sourceforge.io/forum/viewtopic.php?t=42787' target='_blank' rel='noopener noreferrer'>old thread</a></li>
               <li className='list-content'>The <b>background_grid.gif</b> was taken from a Tumblr blog, I'm not sure about the source of the image</li>
               <li className='list-content'>Some GIFs such as <b>globe.gif</b>, <b>skull.gif</b>, <b>spider.gif</b>, <b>circuit.gif</b> and <b>hack_bg.gif</b> where taken from <a href='https://gifcities.org' target='_blank' rel='noopener noreferrer'>GifCities</a></li>
