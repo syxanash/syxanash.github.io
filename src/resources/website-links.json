@@ -238,10 +238,6 @@
       {
         "url": "https://i-land.online",
         "description": "a hand-drawn point and click exploration website"
-      },
-      {
-        "url": "https://z0r.de",
-        "description": "old website full of SWFs files, great for some 2010s memes throwback"
       }
     ]
   },
@@ -781,6 +777,10 @@
       {
         "url": "https://anders.unix.se/2015/10/28/screenshots-from-developers--unix-people-2002/",
         "description": "Screenshots from developers & Unix people"
+      },
+      {
+        "url": "https://z0r.de",
+        "description": "old website full of SWFs files, great for some 2010s memes throwback"
       }
     ]
   }

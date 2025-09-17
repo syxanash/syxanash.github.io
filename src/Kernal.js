@@ -87,7 +87,7 @@ class Kernal extends Component {
   }
 
   handleResize = () => {
-    if (window.innerWidth <= 280 && !this.narrowScreenAlert) {
+    if (window.innerWidth <= 280 && !this.narrowScreenAlert && !Util.isMobile()) {
       this.narrowScreenAlert = true;
       alert('HAAAALP I\'M SUFFOCATING!');
     }
