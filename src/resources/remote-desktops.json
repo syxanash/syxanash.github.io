@@ -1246,7 +1246,7 @@
 		"url": "https://xp.quenq.com",
 		"icon": "windows_new.png",
 		"source": "https://github.com/shoaib-jamal/rebornxp",
-		"notes": "",
+		"notes": "Works only in\nChromium based browsers",
 		"archive": "",
 		"tags": ["game"]
 	},
@@ -1715,7 +1715,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20240302040254/https://alecbabala.com/",
 		"tags": ["poc", "personal"]
 	},
 	{
@@ -2638,7 +2638,7 @@
 	},
 	{
 		"name": "Minesweeper Online",
-		"url": "https://ohminesweeper.online",
+		"url": "https://minesweeper.sinqi.tools",
 		"icon": "windows.gif",
 		"source": "https://github.com/zerosoul/ohminesweeper.online",
 		"notes": "",
