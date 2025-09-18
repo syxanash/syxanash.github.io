@@ -561,7 +561,7 @@ class Kernal extends Component {
                 {
                   `body {
                     background: url(${eggTriggered ? hackedBackground : backgroundImages(bgWallpapers[bgIndex])});
-                    background-color : #a1a3ca;
+                    background-color : #000000;
                   }`
                 }
               </style>
