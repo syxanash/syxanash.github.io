@@ -28,7 +28,7 @@
 	},
 	{
 		"name": "Ash Kyd",
-		"url": "https://ash.ms",
+		"url": "https://ashk.au",
 		"icon": "windows.gif",
 		"source": "https://github.com/AshKyd/ui95",
 		"notes": "",
@@ -1670,7 +1670,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20220308153642/https://thatdaria.com/",
 		"tags": ["personal"]
 	},
 	{
@@ -3011,6 +3011,24 @@
 		"icon": "linux.gif",
 		"source": "",
 		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "XenOS",
+		"url": "https://xen-os.dev",
+		"icon": "linux.gif",
+		"source": "https://github.com/scaratech/XenOS",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "YanLiu Desktop OS",
+		"url": "https://cottenpanda.github.io/yanliuos",
+		"icon": "linux.gif",
+		"source": "https://github.com/cottenpanda/yanliuos",
+		"notes": "Works only in\nChromium based browsers",
 		"archive": "",
 		"tags": ["personal"]
 	}
