@@ -310,12 +310,12 @@
         "description": "0ut3r Space"
       },
       {
-        "url": "https://aelkus.github.io/",
-        "description": "Adam Elkus"
+        "url": "https://acko.net/",
+        "description": "Acko.net"
       },
       {
-        "url": "https://hacdias.com/articles/",
-        "description": "Articles - Henrique Dias"
+        "url": "https://aelkus.github.io/",
+        "description": "Adam Elkus"
       },
       {
         "url": "https://austinhenley.com/blog.html",
@@ -343,7 +343,7 @@
       },
       {
         "url": "https://gossipsweb.net",
-        "description": "Gossip’s Web"
+        "description": "Gossip's Web"
       },
       {
         "url": "https://jamez.it",
@@ -354,7 +354,11 @@
         "description": "Ian Bicking: a blog"
       },
       {
-        "url": "https://www.jordanmechner.com/",
+        "url": "https://jazco.dev/",
+        "description": "Jaz's Blog"
+      },
+      {
+        "url": "https://www.jordanmechner.com/en/",
         "description": "Jordan Mechner"
       },
       {
@@ -379,7 +383,11 @@
       },
       {
         "url": "https://rarlindseysmash.com/",
-        "description": "Lindsey Bieda"
+        "description": "Lindsey B"
+      },
+      {
+        "url": "https://mikkelmalmberg.com",
+        "description": "Mikkel Malmberg: Posts"
       },
       {
         "url": "https://N-O-D-E.net",
@@ -450,6 +458,10 @@
         "description": "Webbed Briefs"
       },
       {
+        "url": "https://hacdias.com/writings/",
+        "description": "Writings - Henrique Dias"
+      },
+      {
         "url": "https://xeiaso.net/",
         "description": "Xe Iaso's blog"
       },
@@ -466,16 +478,16 @@
         "description": "bertrand fan"
       },
       {
+        "url": "https://sdomi.pl",
+        "description": "domi's weblog"
+      },
+      {
         "url": "https://www.evilsocket.net/",
         "description": "evilsocket"
       },
       {
         "url": "https://cmpxchg8b.com/",
         "description": "https://cmpxchg8b.com/"
-      },
-      {
-        "url": "https://sdomi.pl/weblog/",
-        "description": "https://sdomi.pl/weblog/"
       },
       {
         "url": "https://iwebthings.joejenett.com/",
@@ -502,7 +514,7 @@
         "description": "localghost"
       },
       {
-        "url": "https://mango.pdf.zone/",
+        "url": "http://mango.pdf.zone/",
         "description": "mango.pdf.zone"
       },
       {
