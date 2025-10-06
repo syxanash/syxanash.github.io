@@ -362,5 +362,17 @@
     {
         "img": "small-soldiers3.gif",
         "description": "Small Soldiers"
+    },
+    {
+        "img": "br-vk.gif",
+        "description": "Voight Kampff"
+    },
+    {
+        "img": "br-balcony.gif",
+        "description": "Blade Runner"
+    },
+    {
+        "img": "br-chinatown.gif",
+        "description": "Chinatown"
     }
 ]
