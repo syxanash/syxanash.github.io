@@ -3031,5 +3031,23 @@
 		"notes": "Works only in\nChromium based browsers",
 		"archive": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "RomaOS",
+		"url": "https://romadeoliveira3.github.io/portifolio/",
+		"icon": "obscure.gif",
+		"source": "https://github.com/Romadeoliveira3/portifolio",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+		{
+		"name": "Cyber Scales Desktop",
+		"url": "https://codlin.me/aquarium/cyber-scales-desktop",
+		"icon": "obscure.gif",
+		"source": "https://github.com/Codfisher/cod-aquarium/tree/main/content/aquarium/cyber-scales-desktop",
+		"notes": "Some parts of the website require WebGPU",
+		"archive": "",
+		"tags": ["poc"]
 	}
 ]
