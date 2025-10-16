@@ -3041,7 +3041,7 @@
 		"archive": "",
 		"tags": ["personal"]
 	},
-		{
+	{
 		"name": "Cyber Scales Desktop",
 		"url": "https://codlin.me/aquarium/cyber-scales-desktop",
 		"icon": "obscure.gif",
@@ -3049,5 +3049,14 @@
 		"notes": "Some parts of the website require WebGPU",
 		"archive": "",
 		"tags": ["poc"]
+	},
+	{
+		"name": "河川敷",
+		"url": "https://ksnjk.moo.jp",
+		"icon": "atari.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
 	}
 ]
