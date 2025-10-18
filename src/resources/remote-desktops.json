@@ -3067,5 +3067,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "Poliq.art98",
+		"url": "https://poliqu.art",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal", "top"]
 	}
 ]
