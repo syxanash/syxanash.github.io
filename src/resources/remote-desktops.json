@@ -3076,5 +3076,23 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal", "top"]
+	},
+	{
+		"name": "PatOS",
+		"url": "https://www.patcanella.com/classic/",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "Works best in\nChromium based browsers",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "HuopaOS",
+		"url": "hhttps://allucat1000.github.io/HuopaOS/",
+		"icon": "obscure.gif",
+		"source": "https://github.com/allucat1000/HuopaOS",
+		"notes": "",
+		"archive": "",
+		"tags": ["poc"]
 	}
 ]
