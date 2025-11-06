@@ -581,7 +581,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/melkael/melkael.github.io",
 		"notes": "",
-		"archive": "",
+		"archive": "https://github.com/melkael/melkael.github.io",
 		"tags": ["personal"]
 	},
 	{
@@ -1886,7 +1886,7 @@
 		"icon": "windows_new.png",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20240901135406/http://bianca.digital/",
 		"tags": ["personal"]
 	},
 	{
@@ -2680,15 +2680,6 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal", "poc"]
-	},
-	{
-		"name": "U2RE OS",
-		"url": "https://os.u2re.space",
-		"icon": "obscure.gif",
-		"source": "https://github.com/scrapjs/ui.system",
-		"notes": "Works only in\nChromium based browsers",
-		"archive": "",
-		"tags": ["poc", "misc"]
 	},
 	{
 		"name": "Web-Workbench",
