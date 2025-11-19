@@ -3094,5 +3094,14 @@
 		"notes": "You must create a new user \nin the login screen first\nbefore accessing the desktop",
 		"archive": "",
 		"tags": ["top", "uncanny"]
+	},
+	{
+		"name": "Lucy's Computer",
+		"url": "https://lucypham.github.io/desktop-archive/",
+		"icon": "mac_new.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
 	}
 ]
