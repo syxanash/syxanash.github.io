@@ -2350,9 +2350,9 @@
 	},
 	{
 		"name": "Nova OS",
-		"url": "https://adthoughtsglobal.github.io/Nova-OS/",
+		"url": "https://runnova.github.io/NovaOS/",
 		"icon": "linux.gif",
-		"source": "https://github.com/adthoughtsglobal/Nova-OS",
+		"source": "https://github.com/runnova/NovaOS",
 		"notes": "",
 		"archive": "",
 		"tags": ["top"]
