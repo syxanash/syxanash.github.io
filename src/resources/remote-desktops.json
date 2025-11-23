@@ -3103,5 +3103,23 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "Damian Barabonkov",
+		"url": "https://www.damianb.dev",
+		"icon": "linux.gif",
+		"source": "https://github.com/DamianB-BitFlipper/DamianB-BitFlipper.github.io",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "So Many Diamonds",
+		"url": "https://fictioningcomfort.space/so-many-diamonds/",
+		"icon": "IBM.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
 	}
 ]
