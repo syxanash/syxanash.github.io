@@ -2246,7 +2246,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/ritenv/retro-desktop",
 		"notes": "",
-		"archive": "",
+		"archive": "https://github.com/ritenv/retro-desktop",
 		"tags": ["poc", "misc"]
 	},
 	{
