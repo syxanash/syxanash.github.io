@@ -3100,7 +3100,7 @@
 		"url": "https://win99.dev",
 		"icon": "windows.gif",
 		"source": "",
-		"notes": "You must create a new user \nin the login screen first\nbefore accessing the desktop",
+		"notes": "You must create a new user\nin the login screen first\nbefore accessing the desktop",
 		"archive": "",
 		"tags": ["top", "uncanny"]
 	},
