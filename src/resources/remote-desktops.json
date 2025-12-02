@@ -2682,6 +2682,15 @@
 		"tags": ["personal", "poc"]
 	},
 	{
+		"name": "CrossWord",
+		"url": "https://u2re.space",
+		"icon": "obscure.gif",
+		"source": "https://github.com/u2re-space/crossword",
+		"notes": "Works only in\nChromium based browsers",
+		"archive": "",
+		"tags": ["poc"]
+	},
+	{
 		"name": "Web-Workbench",
 		"url": "https://lammpee.de",
 		"icon": "amiga.gif",
