@@ -3130,5 +3130,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "project vv",
+		"url": "https://vvesh.de",
+		"icon": "obscure.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
 	}
 ]
