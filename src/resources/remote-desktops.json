@@ -3020,7 +3020,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/scaratech/XenOS",
 		"notes": "",
-		"archive": "",
+		"archive": "https://github.com/NebulaServices/XenOS",
 		"tags": ["misc"]
 	},
 	{
