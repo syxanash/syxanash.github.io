@@ -3139,5 +3139,23 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "LeoCodes",
+		"url": "https://leocodes.vercel.app",
+		"icon": "mac.gif",
+		"source": "https://github.com/leonardonapoless/leocodes",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Linux OS Clone",
+		"url": "https://linux-next.vercel.app",
+		"icon": "linux.gif",
+		"source": "https://github.com/hey-Zayn/ArchLinux-OS",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal", "misc"]
 	}
 ]
