@@ -123,9 +123,10 @@ class WebDesktopsBody extends Component {
           label: <div style={ { display: 'flex', alignItems: 'center' } }><img src={ starIcon } style={ { height: '28px', marginRight: '2px', marginLeft: '-5px' } } alt='star' />Top Picks</div>,
           tooltip: <span>{'A selection of notable'}<br />{'projects and standout designs'}</span>,
           button: {
-            bgColor: '#256D85',
-            color: 'white',
+            bgColor: '#FFD166',
+            color: 'black',
           },
+          
         },
         {
           code: 'uncanny',
@@ -153,8 +154,8 @@ class WebDesktopsBody extends Component {
           label: 'Concepts',
           tooltip: <span>{'Proof of concepts'}<br />{'and unconventional'}</span>,
           button: {
-            bgColor: '#FFD166',
-            color: 'black',
+            bgColor: '#EF476F',
+            color: 'white',
           },
         },
         {
@@ -163,8 +164,8 @@ class WebDesktopsBody extends Component {
           label: 'Web games',
           tooltip: <span>{'Games that use'}<br />{'the desktop metaphor'}</span>,
           button: {
-            bgColor: '#FF9650',
-            color: 'black',
+            bgColor: '#256D85',
+            color: 'white',
           },
         },
         {
@@ -183,7 +184,7 @@ class WebDesktopsBody extends Component {
           label: 'Misc',
           tooltip: 'Tech showcase & miscellaneous',
           button: {
-            bgColor: '#EF476F',
+            bgColor: '#FF9650',
             color: 'black',
           },
         },
