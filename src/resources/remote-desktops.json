@@ -1278,15 +1278,6 @@
 		"tags": ["personal"]
 	},
 	{
-		"name": "1997box",
-		"url": "https://1997.pooftie.me",
-		"icon": "windows.gif",
-		"source": "https://github.com/middlepot/1997",
-		"notes": "",
-		"archive": "",
-		"tags": ["poc", "personal"]
-	},
-	{
 		"name": "FoundationOS",
 		"url": "https://os.foundation.app",
 		"icon": "mac_new.gif",
@@ -1373,7 +1364,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/Goggwell/newfolio/",
 		"notes": "",
-		"archive": "",
+		"archive": "https://github.com/Goggwell/newfolio/",
 		"tags": ["poc", "personal"]
 	},
 	{
@@ -3166,5 +3157,50 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal", "tool"]
+	},
+	{
+		"name": "Chus Margallo Portfolio",
+		"url": "https://chusmargallo.space",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Aurora OS",
+		"url": "https://mental-os.github.io/Aurora-OS.js/",
+		"icon": "mac_new.gif",
+		"source": "https://github.com/mental-os/Aurora-OS.js",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "AqadilOS",
+		"url": "https://aqadilos.web.app",
+		"icon": "windows11.gif",
+		"source": "https://github.com/AQADIL/AqadilOS",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "Showcase OS",
+		"url": "https://ronbodnar.com",
+		"icon": "linux.gif",
+		"source": "https://github.com/ronbodnar/showcase-os",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Aymu OS",
+		"url": "https://os.nated.in",
+		"icon": "mac_new.gif",
+		"source": "https://github.com/IndGeek/aymu-OS",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
 	}
 ]
