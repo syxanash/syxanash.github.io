@@ -9,7 +9,6 @@ import contactIcon from '../../resources/icons/contact.gif';
 
 import githubIcon from '../../resources/icons/social/github.gif';
 import dribbbleIcon from '../../resources/icons/social/dribbble.gif';
-import webringIcon from '../../resources/icons/social/webring.gif';
 import blueskyIcon from '../../resources/icons/social/bluesky.png';
 import emailIcon from '../../resources/icons/social/email.gif';
 import pgpIcon from '../../resources/icons/social/pgp.gif';
@@ -70,13 +69,6 @@ class ContactBody extends Component {
         <Anchor href='https://dribbble.com/syx' target='_blank'>
           <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
             <img src={ dribbbleIcon } style={ { height: '40px' } } alt="dribbble"/>
-          </Button>
-        </Anchor>
-      </Tooltip>
-      <Tooltip text='Webring' delay={ 100 }>
-        <Anchor href='https://webring.xxiivv.com' target='_blank'>
-          <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
-            <img src={ webringIcon } style={ { height: '40px' } } alt="webring"/>
           </Button>
         </Anchor>
       </Tooltip>
