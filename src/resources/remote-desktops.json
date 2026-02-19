@@ -2847,9 +2847,9 @@
 		"name": "Lola OS",
 		"url": "https://www.radiopapi.fm",
 		"icon": "mac.gif",
-		"source": "https://web.archive.org/web/20251113143208/https://www.radiopapi.fm/",
+		"source": "",
 		"notes": "Works only in\nChromium based browsers",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20251113143208/https://www.radiopapi.fm/",
 		"tags": ["misc"]
 	},
 	{
