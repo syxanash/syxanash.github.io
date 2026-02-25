@@ -3202,5 +3202,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "Debian CDE",
+		"url": "https://debian.com.mx",
+		"icon": "unix.gif",
+		"source": "https://github.com/victxrlarixs/debian-cde",
+		"notes": "",
+		"archive": "",
+		"tags": ["uncanny"]
 	}
 ]
