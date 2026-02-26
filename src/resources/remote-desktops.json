@@ -1427,7 +1427,7 @@
 		"icon": "windows_new.png",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20250305213657/https://konsti.club/webSys/",
 		"tags": ["top", "uncanny"]
 	},
 	{
@@ -1922,7 +1922,7 @@
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20260115054249/https://www.lesgrosmots.com/",
 		"tags": ["top", "poc"]
 	},
 	{
@@ -2705,7 +2705,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/achtaitaipai/kas-os",
 		"notes": "",
-		"archive": "",
+		"archive": "https://github.com/achtaitaipai/kas-os",
 		"tags": ["personal", "poc"]
 	},
 	{
