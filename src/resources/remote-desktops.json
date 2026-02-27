@@ -3211,5 +3211,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["uncanny"]
+	},
+	{
+		"name": "RetroTick",
+		"url": "https://retrotick.com",
+		"icon": "windows.gif",
+		"source": "https://github.com/lqs/retrotick",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
 	}
 ]
