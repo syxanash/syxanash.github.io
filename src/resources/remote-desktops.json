@@ -779,7 +779,7 @@
 		"icon": "mac.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20250315105005/https://unremarkablegarden.com/",
 		"tags": ["personal"]
 	},
 	{
@@ -2597,7 +2597,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/meugenom/cloudydesk",
 		"notes": "",
-		"archive": "",
+		"archive": "https://github.com/meugenom/cloudydesk",
 		"tags": ["misc", "poc"]
 	},
 	{
