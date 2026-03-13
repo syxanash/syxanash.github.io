@@ -3247,5 +3247,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "ChipOS",
+		"url": "http://www.chiptune.fun",
+		"icon": "amiga.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
 	}
 ]
