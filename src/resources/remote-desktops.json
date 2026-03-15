@@ -166,7 +166,7 @@
 		"url": "http://www.afterstep.org",
 		"icon": "next.gif",
 		"source": "",
-		"notes": "Only runs on http",
+		"notes": "Only runs on HTTP",
 		"archive": "",
 		"tags": ["poc"]
 	},
@@ -283,8 +283,8 @@
 		"url": "http://www.chiptune.com",
 		"icon": "amiga.gif",
 		"source": "",
-		"notes": "",
-		"archive": "https://web.archive.org/web/20230710083812/http://www.chiptune.com",
+		"notes": "Only runs on HTTP",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
