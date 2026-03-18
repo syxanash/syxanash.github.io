@@ -8,7 +8,6 @@ import configUrls from '../../resources/config-urls.json';
 import contactIcon from '../../resources/icons/contact.gif';
 
 import githubIcon from '../../resources/icons/social/github.gif';
-import dribbbleIcon from '../../resources/icons/social/dribbble.gif';
 import blueskyIcon from '../../resources/icons/social/bluesky.png';
 import emailIcon from '../../resources/icons/social/email.gif';
 import pgpIcon from '../../resources/icons/social/pgp.gif';
@@ -32,43 +31,36 @@ class ContactBody extends Component {
     <div className='social-icons-container'>
       <Tooltip text='Email' delay={ 100 }>
         <Anchor href={ `mailto:${configUrls.email}?subject=Hi%20Mr.%20Awesome%20Dude` } target='_blank'>
-          <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
-            <img src={ emailIcon } style={ { height: '40px' } } alt="email"/>
-          </Button>
-        </Anchor>
-      </Tooltip>
-      <Tooltip text='PGP Public Key' delay={ 100 }>
-        <Anchor href={ pgpKey } target='_blank'>
-          <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
-            <img src={ pgpIcon } style={ { height: '40px' } } alt="pgp"/>
+          <Button className='social-icon' style={ { width: '75px', height: '75px', backgroundColor: 'white' } } size='lg' square>
+            <img src={ emailIcon } style={ { height: '50px' } } alt="email"/>
           </Button>
         </Anchor>
       </Tooltip>
       <Tooltip text='GitHub' delay={ 100 }>
         <Anchor href='https://github.com/syxanash' target='_blank'>
-          <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
-            <img src={ githubIcon } style={ { height: '40px' } } alt="github"/>
+          <Button className='social-icon' style={ { width: '75px', height: '75px', backgroundColor: 'white' } } size='lg' square>
+            <img src={ githubIcon } style={ { height: '50px' } } alt="github"/>
           </Button>
         </Anchor>
       </Tooltip>
       <Tooltip text='Bluesky' delay={ 100 }>
         <Anchor href='https://bsky.app/profile/simone.computer' target='_blank'>
-          <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
-            <img src={ blueskyIcon } style={ { height: '30px' } } alt="bluesky"/>
+          <Button className='social-icon' style={ { width: '75px', height: '75px', backgroundColor: 'white' } } size='lg' square>
+            <img src={ blueskyIcon } style={ { height: '50px' } } alt="bluesky"/>
           </Button>
         </Anchor>
       </Tooltip>
       <Tooltip text='Tinder?' delay={ 100 }>
         <Anchor href='https://www.linkedin.com/in/simone-marzulli-318b4a81' target='_blank'>
-          <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
-            <img src={ linkedinIcon } style={ { height: '40px' } } alt="linkedin"/>
+          <Button className='social-icon' style={ { width: '75px', height: '75px', backgroundColor: 'white' } } size='lg' square>
+            <img src={ linkedinIcon } style={ { height: '50px' } } alt="linkedin"/>
           </Button>
         </Anchor>
       </Tooltip>
-      <Tooltip text='Dribbble' delay={ 100 }>
-        <Anchor href='https://dribbble.com/syx' target='_blank'>
-          <Button className='social-icon' style={ { width: '60px', height: '60px', backgroundColor: 'white' } } size='lg' square>
-            <img src={ dribbbleIcon } style={ { height: '40px' } } alt="dribbble"/>
+      <Tooltip text='PGP Public Key' delay={ 100 }>
+        <Anchor href={ pgpKey } target='_blank'>
+          <Button className='social-icon' style={ { width: '75px', height: '75px', backgroundColor: 'white' } } size='lg' square>
+            <img src={ pgpIcon } style={ { height: '50px' } } alt="pgp"/>
           </Button>
         </Anchor>
       </Tooltip>

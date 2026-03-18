@@ -3256,5 +3256,32 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "filip kostic",
+		"url": "https://filipkostic.computer",
+		"icon": "IBM.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Pravin Prajapati",
+		"url": "https://pravin-python.github.io/Web-OS-Portfolio/",
+		"icon": "mac_new.gif",
+		"source": "https://github.com/pravin-python/Web-OS-Portfolio",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Windows 98 Web Edition",
+		"url": "https://azayrahmad.github.io/win98-web/",
+		"icon": "windows.gif",
+		"source": "https://github.com/azayrahmad/win98-web",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal", "game"]
 	}
 ]
