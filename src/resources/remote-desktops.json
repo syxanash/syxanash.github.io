@@ -3337,5 +3337,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["tool"]
+	},
+	{
+		"name": "Joey Legrand - Legacy",
+		"url": "https://legrandnuage.ca",
+		"icon": "IBM.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["uncanny", "misc"]
 	}
 ]
