@@ -3328,5 +3328,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "finDOS 98",
+		"url": "https://findos98.com/app",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["tool"]
 	}
 ]
