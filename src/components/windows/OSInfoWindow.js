@@ -28,7 +28,7 @@ class OSInfoWindowBody extends Component {
     <div className='os-subtitle'>The <span className='code-block'><b>foobar</b></span> Desktop Experience</div>
     <div className='os-version'>Version 1.66.6</div>
     <div className='os-copyright'>
-      &trade; and &copy; 2007-{new Date().getFullYear()} Simone's Computer Inc.<br />
+      &trade; and &copy; 2019-{new Date().getFullYear()} Simone's Computer Inc.<br />
       All Righty Rights Reserved. License and Warranty
     </div>
   </div>);
