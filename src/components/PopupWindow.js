@@ -46,9 +46,9 @@ class PopupWindow extends Component {
 
     this.closeCurrentWindow();
 
-    setTimeout(() => {
+    requestAnimationFrame(() => {
       history.push(`/${windowName}${queryString ? `?${queryString}` : ''}`);
-    }, 0);
+    });
   }
 
   renderExtraActionButtons = () => {
