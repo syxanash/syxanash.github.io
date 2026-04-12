@@ -320,7 +320,8 @@ class WebDesktopsBody extends Component {
     const { openWindow } = this.props;
 
     const listExplored = JSON.parse(localStorage.getItem('webdesktopsExplored'));
-    if (!listExplored.includes(url)) {
+    const exploredSet = new Set(listExplored);
+    if (!exploredSet.has(url)) {
       listExplored.push(url);
       localStorage.setItem('webdesktopsExplored', JSON.stringify(listExplored));
 
@@ -351,10 +352,11 @@ class WebDesktopsBody extends Component {
       filterMap, desktopsList, sourceFilter, categoriesMap, searchInput,
     } = this.state;
 
-    const selectedTypes = filterMap.filter(({ selected }) => selected)
-      .map(({ filename }) => filename);
+    const selectedTypes = new Set(
+      filterMap.filter(({ selected }) => selected).map(({ filename }) => filename),
+    );
     const filteredByOSDesktops = desktopsList.filter(
-      desktop => selectedTypes.includes(desktop.icon),
+      desktop => selectedTypes.has(desktop.icon),
     );
 
     const filteredBySource = filteredByOSDesktops.filter((desktop) => {
@@ -398,25 +400,20 @@ class WebDesktopsBody extends Component {
 
     const filteredDesktops = this.getFilteredDesktops();
 
-    const linksListUrls = filteredDesktops.map(({ url }) => url);
-    let finalList = linksListUrls;
+    const listExplored = new Set(JSON.parse(localStorage.getItem('webdesktopsExplored')));
 
-    const listExplored = JSON.parse(localStorage.getItem('webdesktopsExplored'));
-
-    if (sitesExplored < linksListUrls.length) {
-      finalList = _.difference(linksListUrls, listExplored);
+    let candidates = filteredDesktops;
+    if (sitesExplored < filteredDesktops.length) {
+      candidates = filteredDesktops.filter(({ url }) => !listExplored.has(url));
     }
 
-    const randomLink = _.sample(finalList);
-    const randomWebsiteObj = filteredDesktops.find(website => website.url === randomLink);
+    const randomWebsiteObj = _.sample(candidates);
 
-    Util.openWebsiteURL({ url: randomLink });
+    Util.openWebsiteURL({ url: randomWebsiteObj.url });
     this.interceptOpenLink(randomWebsiteObj);
   }
 
-  renderAllIcons = () => {
-    const filteredDesktops = this.getFilteredDesktops();
-
+  renderAllIcons = (filteredDesktops) => {
     if (filteredDesktops.length === 0) {
       return <h1 style={ { textAlign: 'center' } }>Adjust the filter to display more websites...</h1>;
     }
@@ -707,12 +704,11 @@ class WebDesktopsBody extends Component {
     );
   }
 
-  renderDeskNumberOverview = () => {
+  renderDeskNumberOverview = (filteredCount) => {
     const totalDesktops = ACTIVE_DESKTOPS.length;
-    const filteredDesktops = this.getFilteredDesktops().length;
 
     return (<div className='desktop-number-overview'>
-      <span>Websites selected: <b>{filteredDesktops}</b>/{totalDesktops}</span>
+      <span>Websites selected: <b>{filteredCount}</b>/{totalDesktops}</span>
     </div>);
   }
 
@@ -775,13 +771,14 @@ class WebDesktopsBody extends Component {
       || sourceFilter !== SOURCE_FILTER.ALL;
 
     const exploredPercentage = Math.floor((sitesExplored * 100) / desktopsList.length);
-    const filteredDesktops = this.getFilteredDesktops().length;
+    const filteredDesktops = this.getFilteredDesktops();
+    const filteredCount = filteredDesktops.length;
 
     return (
       <React.Fragment>
         <div className='toolbar-container'>
           <Toolbar style={ { display: 'flex', flexWrap: 'wrap' } }>
-            <Button onClick={ this.openRandomURL } variant="menu" disabled={ filteredDesktops === 0 }>
+            <Button onClick={ this.openRandomURL } variant="menu" disabled={ filteredCount === 0 }>
               <img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random
             </Button>
             <Button onClick={ this.toggleCategoriesView } active={ categoriesView } variant="menu" style={ {
@@ -810,9 +807,9 @@ class WebDesktopsBody extends Component {
         { this.renderTopMenu() }
         <Cutout className='awesome-gui-cutoutbg'>
           <div className='awesome-gui-icons-container'>
-            {this.renderAllIcons()}
+            {this.renderAllIcons(filteredDesktops)}
           </div>
-          { overviewNumber ? this.renderDeskNumberOverview() : null }
+          { overviewNumber ? this.renderDeskNumberOverview(filteredCount) : null }
         </Cutout>
         <Cutout style={ { backgroundColor: '#c7c7df', marginBottom: '3px' } }>
           <div className='progress-content' style={ { width: `${exploredPercentage}%` } }></div>
