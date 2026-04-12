@@ -40,9 +40,15 @@ class PopupWindow extends Component {
   clickMiddleButton = () => {
     const { history, windowName } = this.props;
 
-    history.push(`/${windowName}`);
+    const url = new URL(window.location);
+    const existingQuery = url.hash.includes('?') ? url.hash.split('?')[1] : '';
+    const queryString = new URLSearchParams(existingQuery).toString();
 
     this.closeCurrentWindow();
+
+    setTimeout(() => {
+      history.push(`/${windowName}${queryString ? `?${queryString}` : ''}`);
+    }, 0);
   }
 
   renderExtraActionButtons = () => {
