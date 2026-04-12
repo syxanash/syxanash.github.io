@@ -130,6 +130,7 @@ class Kernal extends Component {
             isFullscreen={ true }
             poweroff={ this.poweroff }
             crashWindow={ this.kernelPanic }
+            windowName={ window }
           /> }
         />;
       });

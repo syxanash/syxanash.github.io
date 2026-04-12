@@ -32,7 +32,7 @@ class WebDesktopsHeader extends Component {
 }
 
 const SORT_OPTIONS = { NEWEST: 0, OLDEST: 1, RANDOM: 2 };
-const SOURCE_FILTER = { OPEN: 0, PRIVATE: 1, ALL: 3 };
+const SOURCE_FILTER = { OPEN: 0, PRIVATE: 1, ALL: 2 };
 const ACTIVE_DESKTOPS = remoteDesktops.filter(website => website.archive === '');
 
 class WebDesktopsBody extends Component {
@@ -126,7 +126,6 @@ class WebDesktopsBody extends Component {
             bgColor: '#FFD166',
             color: 'black',
           },
-          
         },
         {
           code: 'uncanny',
@@ -204,6 +203,57 @@ class WebDesktopsBody extends Component {
 
   componentDidMount() {
     const { openWindow } = this.props;
+    const { categoriesMap, filterMap } = this.state;
+
+    if (window.location.hash) {
+      const hash = window.location.hash.split('?')[1];
+      const urlParams = new URLSearchParams(hash);
+
+      if (urlParams.has('os')) {
+        const paramFilters = new Set(urlParams.get('os').split(','));
+
+        const newFilterMap = filterMap.map((filter) => {
+          const name = filter.filename.split('.')[0];
+
+          return {
+            ...filter,
+            selected: paramFilters.has(name),
+          };
+        });
+
+        this.setState({
+          filterMap: newFilterMap,
+        });
+      }
+
+      if (urlParams.has('filter')) {
+        const filterParam = urlParams.get('filter');
+        const filterIndex = SOURCE_FILTER[filterParam.toUpperCase()];
+
+        if (filterIndex !== undefined) {
+          this.filterBySourceCode(filterIndex);
+        }
+      }
+
+      if (urlParams.has('sort')) {
+        const sortParam = urlParams.get('sort');
+        const sortIndex = SORT_OPTIONS[sortParam.toUpperCase()];
+
+        if (sortIndex !== undefined) {
+          this.changeSort(sortIndex);
+        }
+      }
+
+      if (urlParams.has('categories')) {
+        const categoriesParam = urlParams.get('categories');
+        const categoriesIndex = categoriesMap
+          .findIndex(category => category.code === categoriesParam.toLocaleLowerCase());
+
+        if (categoriesIndex >= 0) {
+          this.changeCategory(categoriesIndex);
+        }
+      }
+    }
 
     if (localStorage.getItem('webdesktopsExplored') === null) {
       localStorage.setItem('webdesktopsExplored', JSON.stringify([]));
@@ -241,7 +291,46 @@ class WebDesktopsBody extends Component {
       clearTimeout(this.overViewTimeout);
     }
 
+    const url = new URL(window.location);
+
+    if (url.hash.includes('?')) {
+      const newHash = '#/';
+      url.hash = newHash;
+      window.history.pushState({}, '', url);
+    }
+
     document.removeEventListener('keydown', this.handleKeyFind);
+  }
+
+  getHashBase = () => {
+    const { windowName } = this.props;
+    const hashBase = window.location.hash.split('?')[0];
+    return hashBase.includes(`/#/${windowName}`) ? hashBase : `/${windowName}`;
+  }
+
+  removeURLParam = (key) => {
+    const url = new URL(window.location);
+    const existingQuery = url.hash.includes('?') ? url.hash.split('?')[1] : '';
+
+    const params = new URLSearchParams(existingQuery);
+    params.delete(key);
+
+    const query = params.toString();
+    url.hash = query ? `${this.getHashBase()}?${query}` : this.getHashBase();
+
+    window.history.pushState({}, '', url);
+  }
+
+  setURLHistory = (key, val) => {
+    const url = new URL(window.location);
+    const existingQuery = url.hash.includes('?') ? url.hash.split('?')[1] : '';
+
+    const params = new URLSearchParams(existingQuery);
+    params.set(key, val);
+
+    url.hash = `${this.getHashBase()}?${params.toString()}`;
+
+    window.history.pushState({}, '', url);
   }
 
   handleKeyFind = (e) => {
@@ -406,6 +495,12 @@ class WebDesktopsBody extends Component {
 
     this.setNumberOverviewTimeout();
 
+    const selectedOS = newFilterMap
+      .filter(os => os.selected)
+      .map(os => os.filename.split('.')[0]);
+
+    this.setURLHistory('os', selectedOS.join(','));
+
     this.setState({
       filterMap: newFilterMap,
     });
@@ -418,6 +513,7 @@ class WebDesktopsBody extends Component {
       selected: check,
     }));
 
+    this.removeURLParam('os');
     this.setNumberOverviewTimeout();
 
     this.setState({ filterMap: newFilterMap });
@@ -439,6 +535,14 @@ class WebDesktopsBody extends Component {
   };
 
   filterBySourceCode = (filter) => {
+    const filterKey = Object.keys(SOURCE_FILTER).find(key => SOURCE_FILTER[key] === filter);
+
+    if (filterKey.toLowerCase() === 'all') {
+      this.removeURLParam('filter');
+    } else {
+      this.setURLHistory('filter', filterKey.toLowerCase());
+    }
+
     this.setNumberOverviewTimeout();
     this.setState({ sourceFilter: filter });
   }
@@ -449,14 +553,19 @@ class WebDesktopsBody extends Component {
       this.setState({
         desktopsList: ACTIVE_DESKTOPS.toReversed(),
       });
+
+      this.removeURLParam('sort');
+
       break;
     case SORT_OPTIONS.OLDEST:
       this.setState({
         desktopsList: ACTIVE_DESKTOPS,
       });
+      this.setURLHistory('sort', 'oldest');
       break;
     default:
       this.setState({ desktopsList: _.shuffle(ACTIVE_DESKTOPS) });
+      this.setURLHistory('sort', 'random');
     }
 
     this.setState({ sortSelected: newSortSelected });
@@ -469,6 +578,12 @@ class WebDesktopsBody extends Component {
       ...category,
       selected: i === index,
     }));
+
+    if (categoriesMap[index].code === 'all') {
+      this.removeURLParam('categories');
+    } else {
+      this.setURLHistory('categories', categoriesMap[index].code);
+    }
 
     this.setNumberOverviewTimeout();
     this.setState({ categoriesMap: updatedCategoriesMap });
