@@ -41,6 +41,40 @@ function replaceRandomCharInWord(mainWord) {
   return newWord.charAt(0).toUpperCase() + newWord.slice(1);
 }
 
+function getHashBase(windowName) {
+  const hashBase = window.location.hash.split('?')[0];
+  return hashBase.includes(`/#/${windowName}`) ? hashBase : `/${windowName}`;
+}
+
+function removeURLParam(key, windowName) {
+  const url = new URL(window.location);
+  const existingQuery = url.hash.includes('?') ? url.hash.split('?')[1] : '';
+  const params = new URLSearchParams(existingQuery);
+  params.delete(key);
+  const query = params.toString();
+  url.hash = query ? `${getHashBase(windowName)}?${query}` : getHashBase(windowName);
+  window.history.pushState({}, '', url);
+}
+
+function setURLHistory(key, val, windowName) {
+  const url = new URL(window.location);
+  const existingQuery = url.hash.includes('?') ? url.hash.split('?')[1] : '';
+  const params = new URLSearchParams(existingQuery);
+  params.set(key, val);
+  url.hash = `${getHashBase(windowName)}?${params.toString()}`;
+  window.history.pushState({}, '', url);
+}
+
+function clearURLParam() {
+  const url = new URL(window.location);
+
+  if (url.hash.includes('?')) {
+    const newHash = '#/';
+    url.hash = newHash;
+    window.history.pushState({}, '', url);
+  }
+}
+
 export default {
   isMobile,
   replaceRandomCharInWord,
@@ -49,4 +83,8 @@ export default {
   isDarkModeEnabled,
   isWebSocketsSupported,
   formatDisplayDate,
+  getHashBase,
+  removeURLParam,
+  setURLHistory,
+  clearURLParam,
 };

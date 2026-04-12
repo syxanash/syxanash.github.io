@@ -6,6 +6,8 @@ import _ from 'lodash';
 
 import 'animate.css';
 
+import Util from '../Util';
+
 import linksIcon from '../../resources/icons/links.gif';
 import spinningGlobe from '../../resources/images/globe.gif';
 
@@ -47,13 +49,7 @@ class LinksBody extends Component {
 
   // eslint-disable-next-line class-methods-use-this
   componentWillUnmount() {
-    const url = new URL(window.location);
-
-    if (url.hash.includes('?')) {
-      const newHash = '#/';
-      url.hash = newHash;
-      window.history.pushState({}, '', url);
-    }
+    Util.clearURLParam();
   }
 
   openRandomLink = () => {
@@ -66,17 +62,8 @@ class LinksBody extends Component {
   }
 
   handleChangeTab = (linkItem, value) => {
-    const url = new URL(window.location);
-    let hash = url.hash.split('?')[0];
+    Util.setURLHistory('tab', linkItem.section, this.props.windowName);
 
-    if (!hash.includes('/#/links')) {
-      hash = '/links';
-    }
-
-    const newHash = `${hash}?tab=${linkItem.section}`;
-    url.hash = newHash;
-
-    window.history.pushState({}, '', url);
     this.setState({ activeTab: value });
   }
 

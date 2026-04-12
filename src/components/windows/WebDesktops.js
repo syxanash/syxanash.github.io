@@ -291,46 +291,9 @@ class WebDesktopsBody extends Component {
       clearTimeout(this.overViewTimeout);
     }
 
-    const url = new URL(window.location);
-
-    if (url.hash.includes('?')) {
-      const newHash = '#/';
-      url.hash = newHash;
-      window.history.pushState({}, '', url);
-    }
+    Util.clearURLParam();
 
     document.removeEventListener('keydown', this.handleKeyFind);
-  }
-
-  getHashBase = () => {
-    const { windowName } = this.props;
-    const hashBase = window.location.hash.split('?')[0];
-    return hashBase.includes(`/#/${windowName}`) ? hashBase : `/${windowName}`;
-  }
-
-  removeURLParam = (key) => {
-    const url = new URL(window.location);
-    const existingQuery = url.hash.includes('?') ? url.hash.split('?')[1] : '';
-
-    const params = new URLSearchParams(existingQuery);
-    params.delete(key);
-
-    const query = params.toString();
-    url.hash = query ? `${this.getHashBase()}?${query}` : this.getHashBase();
-
-    window.history.pushState({}, '', url);
-  }
-
-  setURLHistory = (key, val) => {
-    const url = new URL(window.location);
-    const existingQuery = url.hash.includes('?') ? url.hash.split('?')[1] : '';
-
-    const params = new URLSearchParams(existingQuery);
-    params.set(key, val);
-
-    url.hash = `${this.getHashBase()}?${params.toString()}`;
-
-    window.history.pushState({}, '', url);
   }
 
   handleKeyFind = (e) => {
@@ -499,7 +462,7 @@ class WebDesktopsBody extends Component {
       .filter(os => os.selected)
       .map(os => os.filename.split('.')[0]);
 
-    this.setURLHistory('os', selectedOS.join(','));
+    Util.setURLHistory('os', selectedOS.join(','), this.props.windowName);
 
     this.setState({
       filterMap: newFilterMap,
@@ -513,7 +476,7 @@ class WebDesktopsBody extends Component {
       selected: check,
     }));
 
-    this.removeURLParam('os');
+    Util.removeURLParam('os', this.props.windowName);
     this.setNumberOverviewTimeout();
 
     this.setState({ filterMap: newFilterMap });
@@ -538,9 +501,9 @@ class WebDesktopsBody extends Component {
     const filterKey = Object.keys(SOURCE_FILTER).find(key => SOURCE_FILTER[key] === filter);
 
     if (filterKey.toLowerCase() === 'all') {
-      this.removeURLParam('filter');
+      Util.removeURLParam('filter', this.props.windowName);
     } else {
-      this.setURLHistory('filter', filterKey.toLowerCase());
+      Util.setURLHistory('filter', filterKey.toLowerCase(), this.props.windowName);
     }
 
     this.setNumberOverviewTimeout();
@@ -554,18 +517,18 @@ class WebDesktopsBody extends Component {
         desktopsList: ACTIVE_DESKTOPS.toReversed(),
       });
 
-      this.removeURLParam('sort');
+      Util.removeURLParam('sort', this.props.windowName);
 
       break;
     case SORT_OPTIONS.OLDEST:
       this.setState({
         desktopsList: ACTIVE_DESKTOPS,
       });
-      this.setURLHistory('sort', 'oldest');
+      Util.setURLHistory('sort', 'oldest', this.props.windowName);
       break;
     default:
       this.setState({ desktopsList: _.shuffle(ACTIVE_DESKTOPS) });
-      this.setURLHistory('sort', 'random');
+      Util.setURLHistory('sort', 'random', this.props.windowName);
     }
 
     this.setState({ sortSelected: newSortSelected });
@@ -580,9 +543,9 @@ class WebDesktopsBody extends Component {
     }));
 
     if (categoriesMap[index].code === 'all') {
-      this.removeURLParam('categories');
+      Util.removeURLParam('categories', this.props.windowName);
     } else {
-      this.setURLHistory('categories', categoriesMap[index].code);
+      Util.setURLHistory('categories', categoriesMap[index].code, this.props.windowName);
     }
 
     this.setNumberOverviewTimeout();
