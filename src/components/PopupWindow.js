@@ -44,6 +44,9 @@ class PopupWindow extends Component {
     const existingQuery = url.hash.includes('?') ? url.hash.split('?')[1] : '';
     const queryString = new URLSearchParams(existingQuery).toString();
 
+    url.hash = '/';
+    window.history.replaceState({}, '', url);
+
     this.closeCurrentWindow();
 
     requestAnimationFrame(() => {
