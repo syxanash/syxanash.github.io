@@ -3382,5 +3382,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["game"]
+	},
+	{
+		"name": "VoxTech",
+		"url": "https://voxtek.hazbinhotel.com",
+		"icon": "obscure.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["poc"]
 	}
 ]
