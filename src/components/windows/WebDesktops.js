@@ -44,6 +44,7 @@ class WebDesktopsBody extends Component {
     this.overViewTimeout = undefined;
 
     this.state = {
+      paginationIndex: 1,
       desktopsList: ACTIVE_DESKTOPS.toReversed(),
       sitesExplored: 0,
       overviewNumber: false,
@@ -759,6 +760,23 @@ class WebDesktopsBody extends Component {
     </div>);
   }
 
+  getPaginatedItems = () => {
+    const { paginationIndex } = this.state;
+    const filteredDesktops = this.getFilteredDesktops();
+
+    console.log(paginationIndex);
+
+    const maxPerPage = 12;
+
+    const rightIndex = maxPerPage * paginationIndex;
+    const leftIndex = rightIndex - maxPerPage;
+
+    console.log(`${leftIndex} - ${rightIndex}`);
+
+    const paginated = filteredDesktops.slice(leftIndex, rightIndex);
+    return paginated;
+  }
+
   render = () => {
     const { openWindow } = this.props;
     const {
@@ -771,8 +789,8 @@ class WebDesktopsBody extends Component {
       || sourceFilter !== SOURCE_FILTER.ALL;
 
     const exploredPercentage = Math.floor((sitesExplored * 100) / desktopsList.length);
-    const filteredDesktops = this.getFilteredDesktops();
-    const filteredCount = filteredDesktops.length;
+    const paginatedDesktops = this.getPaginatedItems();
+    const filteredCount = paginatedDesktops.length;
 
     return (
       <React.Fragment>
@@ -807,9 +825,17 @@ class WebDesktopsBody extends Component {
         { this.renderTopMenu() }
         <Cutout className='awesome-gui-cutoutbg'>
           <div className='awesome-gui-icons-container'>
-            {this.renderAllIcons(filteredDesktops)}
+            {this.renderAllIcons(paginatedDesktops)}
           </div>
           { overviewNumber ? this.renderDeskNumberOverview(filteredCount) : null }
+        </Cutout>
+        <Cutout className='pagination-container'>
+          <div className='pagination-buttons' style={ { float: 'left' } }>
+            <Button fullWidth onClick={ () => this.setState({ paginationIndex: this.state.paginationIndex - 1 }) }>Previous page</Button>
+          </div>
+          <div className='pagination-buttons' style={ { float: 'right' } }>
+            <Button fullWidth onClick={ () => this.setState({ paginationIndex: this.state.paginationIndex + 1 }) }>Next page</Button>
+          </div>
         </Cutout>
         <Cutout style={ { backgroundColor: '#c7c7df', marginBottom: '3px' } }>
           <div className='progress-content' style={ { width: `${exploredPercentage}%` } }></div>

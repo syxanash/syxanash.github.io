@@ -222,3 +222,19 @@
   font-size: 18px;
   font-weight: bold;
 }
+
+.pagination-buttons {
+  width: 50%;
+}
+
+.pagination-container {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 600px)  {
+  .pagination-container {
+    width: 100%;
+  }
+}
