@@ -22,7 +22,7 @@ import searchAnimatedIcon from '../../resources/icons/search_animation.gif';
 import modemIcon from '../../resources/icons/modem.gif';
 import laptopIcon from '../../resources/icons/laptop.gif';
 import desktopsDirectoryIcon from '../../resources/icons/desktops-directory.png';
-import connectionIcon from '../../resources/icons/connection.png';
+import connectionIcon from '../../resources/icons/connection.gif';
 
 import blackCursor from '../../resources/icons/pointers/cursor.gif';
 
