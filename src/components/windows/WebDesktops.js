@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import _ from 'lodash';
 
 import {
@@ -19,6 +19,11 @@ import starIcon from '../../resources/images/yellow-star.gif';
 import searchIcon from '../../resources/icons/search.png';
 import searchAnimatedIcon from '../../resources/icons/search_animation.gif';
 
+import modemIcon from '../../resources/icons/modem.gif';
+import laptopIcon from '../../resources/icons/laptop.gif';
+import desktopsDirectoryIcon from '../../resources/icons/desktops-directory.png';
+import connectionIcon from '../../resources/icons/connection.png';
+
 import blackCursor from '../../resources/icons/pointers/cursor.gif';
 
 const webDesktopsIcons = require.context('../../resources/icons/webdesktops', true);
@@ -34,6 +39,7 @@ class WebDesktopsHeader extends Component {
 const SORT_OPTIONS = { NEWEST: 0, OLDEST: 1, RANDOM: 2 };
 const SOURCE_FILTER = { OPEN: 0, PRIVATE: 1, ALL: 2 };
 const ACTIVE_DESKTOPS = remoteDesktops.filter(website => website.archive === '');
+const MAX_ITEM_LOAD = 35;
 
 class WebDesktopsBody extends Component {
   constructor(props) {
@@ -43,7 +49,10 @@ class WebDesktopsBody extends Component {
 
     this.overViewTimeout = undefined;
 
+    this.bottomRef = createRef();
+
     this.state = {
+      paginationIndex: 1,
       desktopsList: ACTIVE_DESKTOPS.toReversed(),
       sitesExplored: 0,
       overviewNumber: false,
@@ -205,6 +214,21 @@ class WebDesktopsBody extends Component {
     const { openWindow } = this.props;
     const { categoriesMap, filterMap } = this.state;
 
+    const options = {
+      root: null, // use the viewport
+      threshold: 1.0,
+    };
+
+    this.observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        this.handleReachedBottom();
+      }
+    }, options);
+
+    if (this.bottomRef.current) {
+      this.observer.observe(this.bottomRef.current);
+    }
+
     if (window.location.hash) {
       const hash = window.location.hash.split('?')[1];
       const urlParams = new URLSearchParams(hash);
@@ -281,6 +305,12 @@ class WebDesktopsBody extends Component {
     window.addEventListener('keydown', this.handleKeyFind);
   }
 
+  componentDidUpdate() {
+    if (this.bottomRef.current && this.observer) {
+      this.observer.observe(this.bottomRef.current);
+    }
+  }
+
   componentWillUnmount = () => {
     const { closeWindow, isWindowOpened } = this.props;
     if (isWindowOpened('webdesktopsAbout')) {
@@ -291,9 +321,19 @@ class WebDesktopsBody extends Component {
       clearTimeout(this.overViewTimeout);
     }
 
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+
     Util.clearURLParam();
 
     document.removeEventListener('keydown', this.handleKeyFind);
+  }
+
+  handleReachedBottom = () => {
+    setTimeout(() => {
+      this.setState(prev => ({ paginationIndex: prev.paginationIndex + 1 }));
+    }, 1000);
   }
 
   handleKeyFind = (e) => {
@@ -759,6 +799,29 @@ class WebDesktopsBody extends Component {
     </div>);
   }
 
+  getPaginatedItems = (filteredDesktops) => {
+    const { paginationIndex } = this.state;
+
+    const rightIndex = MAX_ITEM_LOAD * paginationIndex;
+
+    const paginated = filteredDesktops.slice(0, rightIndex);
+    return paginated;
+  }
+
+  renderDialupAnimation = () => (<div className='dialup-animation'>
+    <img src={ laptopIcon } alt='laptop' className='dialup-icons' />
+    <div className='dialup-connection-wrapper'>
+      <img src={ connectionIcon } alt='connection' className='dialup-connection-icon' />
+      <div className='connection-pixel pixel-ltr' />
+    </div>
+    <img src={ modemIcon } alt='modem' className='dialup-icons' />
+    <div className='dialup-connection-wrapper'>
+      <img src={ connectionIcon } alt='connection' className='dialup-connection-icon' />
+      <div className='connection-pixel pixel-rtl' />
+    </div>
+    <img src={ desktopsDirectoryIcon } alt='desktops directory' className='dialup-icons' />
+  </div>);
+
   render = () => {
     const { openWindow } = this.props;
     const {
@@ -773,6 +836,9 @@ class WebDesktopsBody extends Component {
     const exploredPercentage = Math.floor((sitesExplored * 100) / desktopsList.length);
     const filteredDesktops = this.getFilteredDesktops();
     const filteredCount = filteredDesktops.length;
+    const paginatedDesktops = this.getPaginatedItems(filteredDesktops);
+    const showDialup = paginatedDesktops.length < filteredDesktops.length
+      && filteredDesktops.length > MAX_ITEM_LOAD;
 
     return (
       <React.Fragment>
@@ -807,9 +873,11 @@ class WebDesktopsBody extends Component {
         { this.renderTopMenu() }
         <Cutout className='awesome-gui-cutoutbg'>
           <div className='awesome-gui-icons-container'>
-            {this.renderAllIcons(filteredDesktops)}
+            {this.renderAllIcons(paginatedDesktops)}
           </div>
           { overviewNumber ? this.renderDeskNumberOverview(filteredCount) : null }
+          { showDialup ? this.renderDialupAnimation() : null }
+          { showDialup ? <div ref={ this.bottomRef } style={ { height: '10px', background: 'transparent' } } /> : null }
         </Cutout>
         <Cutout style={ { backgroundColor: '#c7c7df', marginBottom: '3px' } }>
           <div className='progress-content' style={ { width: `${exploredPercentage}%` } }></div>
