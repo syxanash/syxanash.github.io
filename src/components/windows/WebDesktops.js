@@ -831,15 +831,14 @@ class WebDesktopsBody extends Component {
 
     const categoriesSelected = categoriesMap.some(({ code, selected }) => code !== 'all' && selected);
     const filteredList = filterMap.some(({ selected }) => !selected)
-    || sourceFilter !== SOURCE_FILTER.ALL;
+      || sourceFilter !== SOURCE_FILTER.ALL;
 
     const exploredPercentage = Math.floor((sitesExplored * 100) / desktopsList.length);
-    const allFilteredDesktops = this.getFilteredDesktops();
-    const paginatedDesktops = this.getPaginatedItems(allFilteredDesktops);
-    const filteredCount = allFilteredDesktops.length;
-
-    const showDialup = paginatedDesktops.length < allFilteredDesktops.length
-      && allFilteredDesktops.length > MAX_ITEM_LOAD;
+    const filteredDesktops = this.getFilteredDesktops();
+    const filteredCount = filteredDesktops.length;
+    const paginatedDesktops = this.getPaginatedItems(filteredDesktops);
+    const showDialup = paginatedDesktops.length < filteredDesktops.length
+      && filteredDesktops.length > MAX_ITEM_LOAD;
 
     return (
       <React.Fragment>
