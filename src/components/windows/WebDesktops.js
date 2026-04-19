@@ -332,7 +332,7 @@ class WebDesktopsBody extends Component {
 
   handleReachedBottom = () => {
     setTimeout(() => {
-      this.setState({ paginationIndex: this.state.paginationIndex + 1 });
+      this.setState(prev => ({ paginationIndex: prev.paginationIndex + 1 }));
     }, 1000);
   }
 
@@ -836,10 +836,10 @@ class WebDesktopsBody extends Component {
     const exploredPercentage = Math.floor((sitesExplored * 100) / desktopsList.length);
     const allFilteredDesktops = this.getFilteredDesktops();
     const paginatedDesktops = this.getPaginatedItems(allFilteredDesktops);
-    const filteredCount = paginatedDesktops.length;
+    const filteredCount = allFilteredDesktops.length;
 
-    const showDialup = paginatedDesktops.length >= allFilteredDesktops.length
-      || allFilteredDesktops.length < MAX_ITEM_LOAD;
+    const showDialup = paginatedDesktops.length < allFilteredDesktops.length
+      && allFilteredDesktops.length > MAX_ITEM_LOAD;
 
     return (
       <React.Fragment>
@@ -877,8 +877,8 @@ class WebDesktopsBody extends Component {
             {this.renderAllIcons(paginatedDesktops)}
           </div>
           { overviewNumber ? this.renderDeskNumberOverview(filteredCount) : null }
-          { showDialup ? null : this.renderDialupAnimation() }
-          { showDialup ? null : <div ref={ this.bottomRef } style={ { height: '10px', background: 'transparent' } } /> }
+          { showDialup ? this.renderDialupAnimation() : null }
+          { showDialup ? <div ref={ this.bottomRef } style={ { height: '10px', background: 'transparent' } } /> : null }
         </Cutout>
         <Cutout style={ { backgroundColor: '#c7c7df', marginBottom: '3px' } }>
           <div className='progress-content' style={ { width: `${exploredPercentage}%` } }></div>
