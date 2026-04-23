@@ -3391,5 +3391,41 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["poc"]
+	},
+	{
+		"name": "UX UI Portfolio",
+		"url": "https://guillaumedusseuxgicquel.com/portfolio/loading",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "yuri.biz",
+		"url": "https://yuri.biz",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc", "personal"]
+	},
+	{
+		"name": "KnowledgeWorker",
+		"url": "https://knowledgeworker.alexmeub.com",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["game"]
+	},
+	{
+		"name": "Wes Dieleman",
+		"url": "https://www.wesdieleman.com",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
 	}
 ]
