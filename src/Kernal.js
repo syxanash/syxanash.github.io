@@ -569,7 +569,7 @@ class Kernal extends Component {
             </Helmet>
             <ThemeProvider theme={ this.isMainUnfocused() ? mainUnfocusedTheme : mainTheme }>
               <DesktopContextProvider>
-                <Window shadow={ true } style={ { width: '100%', filter: crtEnabled ? 'blur(0.45px)' : 'none' } }>
+                <Window shadow={ true } style={ { width: '100%', filter: crtEnabled ? 'blur(0.5px)' : 'none' } }>
                   <WindowHeader>
                     <WindowHead
                       onLeftsideButton={ this.onLeftsideButton }
