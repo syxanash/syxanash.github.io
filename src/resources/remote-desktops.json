@@ -3427,5 +3427,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "toth@ighor.com — CDE Desktop",
+		"url": "https://toth.ighor.com/cde/",
+		"icon": "unix.gif",
+		"source": "https://github.com/igtoth/cde-motif-desktop",
+		"notes": "",
+		"archive": "",
+		"tags": ["uncanny", "top"]
 	}
 ]
