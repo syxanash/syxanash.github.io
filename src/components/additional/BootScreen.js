@@ -127,8 +127,13 @@ class BootScreen extends Component {
     const { toggleBootScreen } = this.props;
     const { firstBootDone } = this.state;
 
+    const url = new URL(window.location);
+    const existingQuery = url.hash.includes('?') ? url.hash.split('?')[1] : window.location.search;
+    const params = new URLSearchParams(existingQuery);
+
     if (!firstBootDone) {
-      if (Util.isMobile() || new URLSearchParams(window.location.search).get('from') === 'linkedin') {
+      // I don't want to scare recruiters with the bootscreen lol
+      if (Util.isMobile() || params.get('from') === 'linkedin') {
         toggleBootScreen(false);
       } else {
         this.bootMessageInterval = setInterval(this.showNextMessage, this.bootMessageSpeed);
