@@ -376,10 +376,10 @@ class WebDesktopsBody extends Component {
   renderSingleComputerIcon = website => (
     <a className='website-link' href={ website.url } target='_blank' onClick={ () => this.interceptOpenLink(website) } rel='noopener noreferrer'>
       <div className='computer-icon'>
-        <img style={ { height: '65px' } } src={ webDesktopsIcons(`./${website.icon}`) } alt='single desktop icon' />
+        <img style={ { height: '76px' } } src={ webDesktopsIcons(`./${website.icon}`) } alt='single desktop icon' />
       </div>
-      <div className='website-favicon' style={ { left: website.icon === 'windows_new.png' ? '7px' : '1px', bottom: ((website.icon === 'windows11.gif') || (website.icon === 'windows_new.png')) ? '58px' : '', transform: website.icon === 'windows_new.png' ? 'rotate(10deg)' : '' } }>
-        <img style={ { height: '25px' } } src={ `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${website.url}&size=48` } alt='computer icon' />
+      <div className='website-favicon' style={ { left: website.icon === 'windows_new.png' ? '8px' : '1px', bottom: ((website.icon === 'windows11.gif') || (website.icon === 'windows_new.png')) ? '68px' : '', transform: website.icon === 'windows_new.png' ? 'rotate(10deg)' : '' } }>
+        <img style={ { height: '30px' } } src={ `https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${website.url}&size=48` } alt='computer icon' />
       </div>
       <div className='website-name'>
         <span>{ website.name }</span>
