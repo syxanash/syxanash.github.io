@@ -157,10 +157,10 @@ class WebDesktopsBody extends Component {
           },
         },
         {
-          code: 'poc',
+          code: 'misc',
           selected: false,
-          label: 'Concepts',
-          tooltip: <span>{'Proof of concepts'}<br />{'and unconventional'}</span>,
+          label: 'Misc',
+          tooltip: 'Tech showcase & miscellaneous',
           button: {
             bgColor: '#EF476F',
             color: 'white',
@@ -187,10 +187,10 @@ class WebDesktopsBody extends Component {
           },
         },
         {
-          code: 'misc',
+          code: 'poc',
           selected: false,
-          label: 'Misc',
-          tooltip: 'Tech showcase & miscellaneous',
+          label: 'Concepts',
+          tooltip: <span>{'Proof of concepts'}<br />{'and unconventional'}</span>,
           button: {
             bgColor: '#FF9650',
             color: 'black',

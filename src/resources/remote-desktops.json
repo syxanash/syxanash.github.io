@@ -6,7 +6,7 @@
 		"source": "https://worldwideweb.cern.ch/code/",
 		"notes": "",
 		"archive": "",
-		"tags": ["poc"]
+		"tags": ["misc"]
 	},
 	{
 		"name": "Nightwave Plaza",
@@ -1427,7 +1427,7 @@
 		"icon": "windows_new.png",
 		"source": "",
 		"notes": "",
-		"archive": "https://web.archive.org/web/20250305213657/https://konsti.club/webSys/",
+		"archive": "",
 		"tags": ["top", "uncanny"]
 	},
 	{
@@ -2585,7 +2585,7 @@
 	{
 		"name": "ryOS",
 		"url": "https://os.ryo.lu",
-		"icon": "mac.gif",
+		"icon": "mac_new.gif",
 		"source": "https://github.com/ryokun6/soundboard",
 		"notes": "",
 		"archive": "",
@@ -3436,5 +3436,41 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["uncanny", "top"]
+	},
+	{
+		"name": "NovOS",
+		"url": "https://tcode-motion.github.io/NovOS/",
+		"icon": "linux.gif",
+		"source": "https://github.com/Tcode-Motion/NovOS",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "dotComputer",
+		"url": "https://tabitha.computer",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["poc", "personal"]
+	},
+	{
+		"name": "KapoorOS",
+		"url": "https://ankushhkapoor.vercel.app",
+		"icon": "linux.gif",
+		"source": "https://github.com/ankushhKapoor/portfolio",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "ᑕ¥βєяรקค¢є",
+		"url": "https://desktop.cyberspace.online",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
 	}
 ]
