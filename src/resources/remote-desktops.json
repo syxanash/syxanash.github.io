@@ -3494,7 +3494,7 @@
 	{
 		"name": "EverestOs",
 		"url": "https://everest-os.github.io",
-		"icon": "windows_new.png",
+		"icon": "linux.gif",
 		"source": "https://github.com/Everest-Os/everest-os.github.io",
 		"notes": "",
 		"archive": "",
