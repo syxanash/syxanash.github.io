@@ -2489,7 +2489,7 @@
 		"icon": "mac_new.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20260429215311/https://triiode.neocities.org/",
 		"tags": ["personal", "poc"]
 	},
 	{
@@ -3335,7 +3335,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://findos98.com/app",
 		"tags": ["tool"]
 	},
 	{
@@ -3472,5 +3472,32 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "Kowser Ahmed",
+		"url": "https://kowser.online",
+		"icon": "windows_new.png",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Wikipedia File Explorer",
+		"url": "https://explorer.samismith.com",
+		"icon": "windows_new.png",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "EverestOs",
+		"url": "https://everest-os.github.io",
+		"icon": "windows_new.png",
+		"source": "",
+		"notes": "",
+		"archive": "https://github.com/Everest-Os/everest-os.github.io",
+		"tags": ["top", "misc"]
 	}
 ]
