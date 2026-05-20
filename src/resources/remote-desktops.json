@@ -3499,5 +3499,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["top", "misc"]
+	},
+	{
+		"name": "Daniel Brendel's Portfolio",
+		"url": "https://www.danielbrendel.com",
+		"icon": "windows.gif",
+		"source": "https://github.com/danielbrendel/dnyPortfolioHomepage",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
 	}
 ]
