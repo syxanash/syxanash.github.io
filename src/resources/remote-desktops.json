@@ -3508,5 +3508,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "Murasaki's Playground",
+		"url": "https://zixing8284.github.io/murasaki/",
+		"icon": "windows.gif",
+		"source": "https://github.com/zixing8284/murasaki",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
 	}
 ]
