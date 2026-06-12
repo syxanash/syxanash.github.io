@@ -2534,7 +2534,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/randomuser691337/webdesk-stable",
 		"notes": "",
-		"archive": "",
+		"archive": "https://github.com/randomuser691337/webdesk-stable",
 		"tags": ["poc", "misc"]
 	},
 	{
@@ -3029,7 +3029,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/Romadeoliveira3/portifolio",
 		"notes": "",
-		"archive": "https://github.com/Romariojveloso-fiteclabs/portifolio",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -3514,6 +3514,33 @@
 		"url": "https://zixing8284.github.io/murasaki/",
 		"icon": "windows.gif",
 		"source": "https://github.com/zixing8284/murasaki",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "DAX Portal",
+		"url": "https://dax-portal.vercel.app",
+		"icon": "linux.gif",
+		"source": "https://github.com/201Harsh/DAX-Portal",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "Aria",
+		"url": "https://sumanthkm.com/aria/",
+		"icon": "mac_new.gif",
+		"source": "https://github.com/skmdroid/aria",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "Yuki OS",
+		"url": "https://yukios.netlify.app",
+		"icon": "linux.gif",
+		"source": "https://github.com/Reeyuki/YukiOS",
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
