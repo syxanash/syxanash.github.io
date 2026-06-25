@@ -1667,10 +1667,10 @@
 	{
 		"name": "Chads Desktop",
 		"url": "https://www.chadhill.dev",
-		"icon": "obscure.gif",
-		"source": "https://github.com/chad2320/chadhill-dev",
+		"icon": "linux.gif",
+		"source": "",
 		"notes": "",
-		"archive": "https://web.archive.org/web/20250622112131/https://www.chadhill.dev/",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
