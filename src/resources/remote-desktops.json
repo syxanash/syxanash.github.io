@@ -1580,7 +1580,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/SilveOS",
 		"notes": "",
-		"archive": "https://github.com/SilveOS",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
@@ -1931,7 +1931,7 @@
 		"icon": "unix.gif",
 		"source": "https://github.com/constraint-systems/csOS",
 		"notes": "",
-		"archive": "https://github.com/constraint-systems/csOS",
+		"archive": "",
 		"tags": ["tool"]
 	},
 	{
@@ -3553,5 +3553,32 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "Lost OS",
+		"url": "https://lostosbeta.neocities.org",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "Hyggshi OS",
+		"url": "https://hyggshiosdeveloper.github.io/hyggshi-os-website/OSmain.html",
+		"icon": "linux.gif",
+		"source": "https://github.com/HyggshiOSDeveloper/hyggshi-os-website",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "cover yourself in oil",
+		"url": "https://coveryourselfinoil.com",
+		"icon": "obscure.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["game"]
 	}
 ]
