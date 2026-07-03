@@ -1248,7 +1248,7 @@
 		"source": "https://github.com/shoaib-jamal/rebornxp",
 		"notes": "Works only in\nChromium based browsers",
 		"archive": "",
-		"tags": ["game"]
+		"tags": ["game", "uncanny"]
 	},
 	{
 		"name": "WWWerd",
@@ -1616,7 +1616,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20230204054510/https://www.joyyiu.com",
 		"tags": ["poc", "personal"]
 	},
 	{
