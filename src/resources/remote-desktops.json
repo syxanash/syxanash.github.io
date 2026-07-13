@@ -2705,7 +2705,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/achtaitaipai/kas-os",
 		"notes": "",
-		"archive": "https://github.com/achtaitaipai/kas-os",
+		"archive": "",
 		"tags": ["personal", "poc"]
 	},
 	{
@@ -3580,5 +3580,23 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["game"]
+	},
+	{
+		"name": "ZezinOS",
+		"url": "https://zezinos.site",
+		"icon": "windows.gif",
+		"source": "https://github.com/jm-works/ZezinOS",
+		"notes": "You can log in with any password",
+		"archive": "",
+		"tags": ["personal", "misc"]
+	},
+	{
+		"name": "akarmainOS",
+		"url": "https://akarmain.ru",
+		"icon": "obscure.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
 	}
 ]
