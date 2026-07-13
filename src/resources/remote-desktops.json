@@ -698,7 +698,7 @@
 		"icon": "atari.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20221213182021/https://gustavochico.com/desktop",
 		"tags": ["personal"]
 	},
 	{
@@ -2948,7 +2948,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/TerbiumOS/web-v2",
 		"notes": "You can log in with any\nusername and password",
-		"archive": "",
+		"archive": "https://github.com/TerbiumOS/web-v2",
 		"tags": ["misc", "poc"]
 	},
 	{
@@ -3119,7 +3119,7 @@
 		"icon": "IBM.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20220401074943/https://fictioningcomfort.space/so-many-diamonds/",
 		"tags": ["misc"]
 	},
 	{
