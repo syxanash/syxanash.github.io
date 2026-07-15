@@ -3598,5 +3598,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "Navi OS",
+		"url": "https://gilleece.github.io/Navi-Os/",
+		"icon": "obscure.gif",
+		"source": "https://github.com/Gilleece/Navi-Os",
+		"notes": "",
+		"archive": "",
+		"tags": ["top", "game"]
 	}
 ]
