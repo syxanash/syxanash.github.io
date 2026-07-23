@@ -1265,7 +1265,7 @@
 		"icon": "linux.gif",
 		"source": "https://github.com/heyPuter/puter/",
 		"notes": "if you get a login screen just\nclear cookies and site data",
-		"archive": "",
+		"archive": "https://github.com/heyPuter/puter/",
 		"tags": ["top", "tool"]
 	},
 	{
@@ -2678,7 +2678,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/u2re-space/crossword",
 		"notes": "Works only in\nChromium based browsers",
-		"archive": "",
+		"archive": "https://github.com/u2re-space/crossword",
 		"tags": ["poc"]
 	},
 	{
