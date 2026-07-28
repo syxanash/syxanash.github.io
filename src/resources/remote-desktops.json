@@ -3634,5 +3634,23 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "Demovibes Mixtapes",
+		"url": "https://www.demovibes.org",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "macOS Web",
+		"url": "https://starknightt.github.io/macos-web/",
+		"icon": "mac_new.gif",
+		"source": "https://github.com/StarKnightt/macos-web",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal", "top"]
 	}
 ]
