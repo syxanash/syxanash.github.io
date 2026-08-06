@@ -2399,7 +2399,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/*/https://publicaccessmemories.com/",
 		"tags": ["poc"]
 	},
 	{
@@ -3652,5 +3652,32 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal", "top"]
+	},
+	{
+		"name": "ElyraOS",
+		"url": "https://elyraos.com",
+		"icon": "linux.gif",
+		"source": "https://github.com/x-frst/elyraos",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "RESHAV_OS",
+		"url": "https://personal-os-pi-neon.vercel.app",
+		"icon": "obscure.gif",
+		"source": "https://github.com/koley-dev-08/personal-os",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
+	},
+	{
+		"name": "FDE Desktop Environment",
+		"url": "https://frannunpal.github.io",
+		"icon": "linux.gif",
+		"source": "https://github.com/frannunpal/frannunpal.github.io",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
 	}
 ]
