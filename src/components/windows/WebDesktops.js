@@ -856,7 +856,7 @@ class WebDesktopsBody extends Component {
               </div>
             </Button>
             <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu" style={ { fontWeight: filteredList ? 'bold' : 'normal', width: '100px' } }>
-              <img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filter
+              <img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filters
             </Button>
             <Button
               onClick={ this.toggleSearchView }
