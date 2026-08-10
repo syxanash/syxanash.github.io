@@ -2233,7 +2233,7 @@
 	},
 	{
 		"name": "Ritenv's WebOS",
-		"url": "http://riten.io/retro-desktop/",
+		"url": "https://www.ritenv.com/retro-desktop/",
 		"icon": "windows_new.png",
 		"source": "https://github.com/ritenv/retro-desktop",
 		"notes": "",
