@@ -2237,7 +2237,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/ritenv/retro-desktop",
 		"notes": "",
-		"archive": "https://github.com/ritenv/retro-desktop",
+		"archive": "",
 		"tags": ["poc", "misc"]
 	},
 	{
@@ -2948,7 +2948,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/TerbiumOS/web-v2",
 		"notes": "You can log in with any\nusername and password",
-		"archive": "https://github.com/TerbiumOS/web-v2",
+		"archive": "",
 		"tags": ["misc", "poc"]
 	},
 	{
