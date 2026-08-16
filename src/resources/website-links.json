@@ -71,10 +71,6 @@
         "description": "a guy with some interesting projects and links"
       },
       {
-        "url": "https://brkmnd.com",
-        "description": "interesting website with an embeded CLI to navigate it"
-      },
-      {
         "url": "https://www.justus.ws",
         "description": "personal website of Justus, he writes interesting articles and he has some interesting hobbies"
       },
@@ -112,7 +108,7 @@
       },
       {
         "url": "https://loom.cafe",
-        "description": "gorgeous personal website from Irish artist Daniel Murray"
+        "description": "personal website from Irish artist Daniel Murray"
       },
       {
         "url": "https://samwho.dev",
@@ -121,6 +117,10 @@
       {
         "url": "https://ellesho.me",
         "description": "Gorgeous personal website with a 2.5D game style"
+      },
+      {
+        "url": "https://manacake.co/",
+        "description": "a website with a landing page that makes me hungry"
       }
     ]
   },
@@ -200,7 +200,7 @@
         "description": "something beyond my understanding"
       },
       {
-        "url": "https://www.yyyyyyy.info",
+        "url": "https://web.archive.org/web/20210730171009/https://yyyyyyy.info/",
         "description": "it might be too much even for someone like you!"
       },
       {
@@ -704,10 +704,6 @@
       {
         "url": "https://www.youtube.com/user/adric22",
         "description": "The one and only 8-Bit Guy"
-      },
-      {
-        "url": "https://www.8bitkick.cc/bbc-micro-bot.html",
-        "description": "8-Bit Emulator as a Twitter bot"
       },
       {
         "url": "https://guidebookgallery.org",
