@@ -126,6 +126,7 @@ class Kernal extends Component {
             openWindow={ this.openWindow }
             focusWindow={ this.focusWindow }
             closeWindow={ this.closeWindow }
+            setScreensaver={ this.setScreenSaver }
             isWindowOpened={ this.isWindowOpened }
             isFullscreen={ true }
             poweroff={ this.poweroff }
@@ -396,7 +397,7 @@ class Kernal extends Component {
     }
   }
 
-  setScreenSaver = () => {
+  setScreenSaver = ({ now }) => {
     const { windowsList } = this.state;
 
     this.mouseMovingCounter = 0;
@@ -416,7 +417,7 @@ class Kernal extends Component {
         this.activateScreenSaver = false;
         this.setState({ screenSaverMode: true });
       }
-    }, this.screenSaverTimer * 1000);
+    }, now === true ? 0 : this.screenSaverTimer * 1000);
   }
 
   unsetScreenSaver = () => {
@@ -424,6 +425,11 @@ class Kernal extends Component {
 
     if (screenSaverMode) {
       this.activateScreenSaver = false;
+
+      if (document.fullscreenElement && document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+
       this.setState({ screenSaverMode: false }, () => {
         if (typeof this.savedScrollY === 'number') {
           window.scrollTo(0, this.savedScrollY);
@@ -527,6 +533,7 @@ class Kernal extends Component {
               isWindowOpened={ this.isWindowOpened }
               poweroff={ this.poweroff }
               crashWindow={ this.kernelPanic }
+              setScreensaver={ this.setScreenSaver }
               focused={ windowFocused }
               header={ windowHeader }
               body={ windowBody }

@@ -45,16 +45,36 @@ class ProjectsBody extends Component {
   }
 
   componentDidMount() {
-    document.addEventListener('keydown', this.enterPressed);
+    this.promptEl = document.getElementById('promptText');
+
+    document.addEventListener('keydown', this.handleKeyDown);
+    this.promptEl.addEventListener('beforeinput', this.handleBeforeInput);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.enterPressed);
+    document.removeEventListener('keydown', this.handleKeyDown);
+    this.promptEl.removeEventListener('beforeinput', this.handleBeforeInput);
   }
 
-  enterPressed = (event) => {
+  handleKeyDown = (event) => {
     const { showPrompt } = this.state;
 
+    if (showPrompt && event.keyCode === 13) {
+      event.preventDefault();
+      this.runCommand();
+    }
+  }
+
+  handleBeforeInput = (event) => {
+    const { showPrompt } = this.state;
+
+    if (showPrompt && (event.inputType === 'insertParagraph' || event.inputType === 'insertLineBreak')) {
+      event.preventDefault();
+      this.runCommand();
+    }
+  }
+
+  runCommand = () => {
     const commands = {};
 
     commands.help = () => {
@@ -147,6 +167,18 @@ class ProjectsBody extends Component {
       poweroff();
     };
 
+    commands.virus = () => {
+      const { setScreensaver } = this.props;
+
+      if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else if (document.fullscreenElement && document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+
+      setScreensaver({ now: true });
+    };
+
     commands.exit = () => {
       const { isFullscreen, closeCurrentWindow } = this.props;
 
@@ -157,26 +189,22 @@ class ProjectsBody extends Component {
       }
     };
 
-    if (showPrompt && event.keyCode === 13) {
-      const cmdString = document.getElementById('promptText').innerText.trim().split(' ');
+    const cmdString = document.getElementById('promptText').innerText.trim().split(' ');
 
-      if (_.isEmpty(cmdString[0])) {
-        commands.clear();
-        this.setState({ stdError: false });
-      } else if (Object.keys(commands).includes(cmdString[0].toLowerCase())) {
-        commands[cmdString[0].toLowerCase()](cmdString.slice(1));
-        this.setState({ stdError: false });
-      } else {
-        this.setState({ shellOutput: 'COMMAND NOT FOUND', stdError: true });
-      }
+    if (_.isEmpty(cmdString[0])) {
+      commands.clear();
+      this.setState({ stdError: false });
+    } else if (Object.keys(commands).includes(cmdString[0].toLowerCase())) {
+      commands[cmdString[0].toLowerCase()](cmdString.slice(1));
+      this.setState({ stdError: false });
+    } else {
+      this.setState({ shellOutput: 'COMMAND NOT FOUND', stdError: true });
+    }
 
-      const promptTextDiv = document.getElementById('promptText');
+    const promptTextDiv = document.getElementById('promptText');
 
-      if (promptTextDiv !== null) {
-        promptTextDiv.innerText = '';
-      }
-
-      event.preventDefault();
+    if (promptTextDiv !== null) {
+      promptTextDiv.innerText = '';
     }
   }
 
