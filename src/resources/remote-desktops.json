@@ -3715,5 +3715,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["tool"]
+	},
+	{
+		"name": "Solitaire Alone Together",
+		"url": "https://solitairealonetogether.com",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["game"]
 	}
 ]
