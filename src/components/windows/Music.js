@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   Anchor, Tooltip, Button,
 } from 'react95';
+import _ from 'lodash';
 
 import Marquee from 'react-fast-marquee';
 import $ from 'jquery';
@@ -11,6 +12,8 @@ import musicIcon from '../../resources/icons/music.gif';
 import spotifyIcon from '../../resources/icons/social/spotify.gif';
 import bandcampIcon from '../../resources/icons/social/bandcamp.gif';
 import soundcloudIcon from '../../resources/icons/social/soundcloud.gif';
+import shuffleIcon from '../../resources/images/shuffle.svg';
+
 
 import discoveredMusic from '../../resources/recently-discovered-music.json';
 
@@ -66,6 +69,11 @@ class MusicBody extends Component {
     }
   }
 
+  openRandom = () => {
+    const randomLink = _.sample(discoveredMusic);
+    window.open(randomLink.url, '_blank');
+  }
+
   render = () => {
     const { trackIndex } = this.state;
 
@@ -77,6 +85,8 @@ class MusicBody extends Component {
         <div className='head-right-ear' onClick={ this.touchEar } />
         <div className='head-buttons-container'>
           <Button style={ { borderRadius: '25px' } } size={ 'md' } disabled={ trackIndex - 1 < 0 } onClick={ this.recentTrack } square>◀</Button>
+          &nbsp;
+          <Button style={ { borderRadius: '25px' } } size={ 'md' } onClick={ this.openRandom } square><img src={ shuffleIcon } alt='shuffle' style={ { height: '25px' } } /></Button>
           &nbsp;
           <Button style={ { borderRadius: '25px' } } size={ 'md' } disabled={ trackIndex + 1 >= discoveredMusic.length } onClick={ this.previousTrack } square>▶</Button>
         </div>
