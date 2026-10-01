@@ -648,15 +648,6 @@
 		"tags": ["personal"]
 	},
 	{
-		"name": "Windows XP",
-		"url": "https://windows-xp.netlify.app",
-		"icon": "windows_new.png",
-		"source": "",
-		"notes": "",
-		"archive": "",
-		"tags": ["poc"]
-	},
-	{
 		"name": "56k-modem",
 		"url": "https://56k-modem.online",
 		"icon": "windows.gif",
