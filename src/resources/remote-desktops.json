@@ -284,7 +284,7 @@
 		"icon": "amiga.gif",
 		"source": "",
 		"notes": "Only runs on HTTP",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20190901114711/http://www.chiptune.com/",
 		"tags": ["misc"]
 	},
 	{
@@ -1661,7 +1661,7 @@
 		"icon": "linux.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20250224181647/https://www.chadhill.dev/",
 		"tags": ["personal"]
 	},
 	{
@@ -2687,7 +2687,7 @@
 		"icon": "windows_new.png",
 		"source": "https://github.com/areenoverclouds/xp-portfolio-public",
 		"notes": "",
-		"archive": "",
+		"archive": "https://github.com/areenoverclouds/xp-portfolio-public",
 		"tags": ["personal"]
 	},
 	{
@@ -3715,5 +3715,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["game"]
+	},
+	{
+		"name": "Fuheshka",
+		"url": "https://fuheshka.is-a.dev",
+		"icon": "linux.gif",
+		"source": "https://github.com/Fuheshka/portfolio",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
 	}
 ]
