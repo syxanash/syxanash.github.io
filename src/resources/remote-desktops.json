@@ -2021,7 +2021,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
-		"archive": "https://web.archive.org/web/20240726003251/https://grovy.space/",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -3724,5 +3724,32 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "Wiesław's Mac OS 9",
+		"url": "https://wieslawsoltes.github.io/MacOS9/",
+		"icon": "mac.gif",
+		"source": "https://github.com/wieslawsoltes/MacOS9",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "Wiesław's Windows Vista",
+		"url": "https://wieslawsoltes.github.io/WinVista/",
+		"icon": "windows_new.png",
+		"source": "https://github.com/wieslawsoltes/WinVista",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "Wiesław's Windows 3.1",
+		"url": "https://wieslawsoltes.github.io/Win31/",
+		"icon": "windows.gif",
+		"source": "https://github.com/wieslawsoltes/Win31",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
 	}
 ]
