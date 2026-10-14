@@ -3751,5 +3751,23 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "PhreshOS",
+		"url": "https://demo.phreshos.com",
+		"icon": "linux.gif",
+		"source": "https://github.com/PhreshOS/system",
+		"notes": "You can enter random\nuser and password",
+		"archive": "",
+		"tags": ["top", "misc"]
+	},
+	{
+		"name": "Murasaki's Windows 98 Desktop",
+		"url": "https://zixing8284.github.io/murasaki/",
+		"icon": "windows.gif",
+		"source": "https://github.com/zixing8284/murasaki",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal"]
 	}
 ]
