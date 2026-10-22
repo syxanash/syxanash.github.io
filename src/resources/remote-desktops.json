@@ -41,7 +41,7 @@
 		"icon": "unix.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20260706002740/https://cyberspaceandtime.com/I1fYQnGOUug.video+related",
 		"tags": ["tool"]
 	},
 	{
@@ -2831,7 +2831,7 @@
 		"icon": "windows.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20250303213727/https://www.clairewang.co",
 		"tags": ["personal"]
 	},
 	{
@@ -3769,5 +3769,23 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal"]
+	},
+	{
+		"name": "A Macintosh in 1997",
+		"url": "https://dialup.rip",
+		"icon": "mac.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
+	},
+	{
+		"name": "COMETLINK 96",
+		"url": "https://56k.rip",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["misc"]
 	}
 ]
