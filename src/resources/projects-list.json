@@ -14,12 +14,6 @@
     "url": "https://github.com/syxanash/maxheadbox",
     "description": "This is an open-source voice-activated LLM Agent designed to run fully local on Raspberry Pi. It can be configured to execute a variety of tools and perform actions."
   },
-  
-  {
-    "name": "Spioncino",
-    "url": "https://github.com/syxanash/joshua_bot/blob/master/SPIONCINO.md",
-    "description": "A Telegram bot connected to a Raspberry Pi camera and a motion sensor to watch over your college dorm room"
-  },
   {
     "name": "Retrocomputing",
     "url": "https://github.com/syxanash/retrocomputing",
@@ -49,6 +43,11 @@
     "name": "Bit",
     "url": "https://bit.simone.computer",
     "description": "It's Bit from the movie Tron, recreated as a web demo powered by a small large language model running entirely in the browser"
+  },
+  {
+    "name": "TOTPod",
+    "url": "https://github.com/syxanash/totpod",
+    "description": "A Two-factor authentication app that runs on an iPod Nano"
   },
   {
     "name": "Mookloh",
