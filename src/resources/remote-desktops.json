@@ -3787,5 +3787,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["misc"]
+	},
+	{
+		"name": "KWSX Radio",
+		"url": "https://radio.kwsx.online",
+		"icon": "obscure.gif",
+		"source": "",
+		"notes": "",
+		"archive": "",
+		"tags": ["tool", "poc"]
 	}
 ]
