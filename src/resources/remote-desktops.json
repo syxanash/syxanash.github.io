@@ -3796,5 +3796,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["tool", "poc"]
+	},
+	{
+		"name": "VAMPII.OS",
+		"url": "https://vampuwu.github.io/vampii-os/",
+		"icon": "obscure.gif",
+		"source": "https://github.com/Vampuwu/vampii-os",
+		"notes": "",
+		"archive": "",
+		"tags": ["top"]
 	}
 ]
