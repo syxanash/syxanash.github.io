@@ -2577,7 +2577,7 @@
 		"name": "ryOS",
 		"url": "https://os.ryo.lu",
 		"icon": "mac_new.gif",
-		"source": "https://github.com/ryokun6/soundboard",
+		"source": "https://github.com/ryokun6/ryos",
 		"notes": "",
 		"archive": "",
 		"tags": ["top", "uncanny"]
