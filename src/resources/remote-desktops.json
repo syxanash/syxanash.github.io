@@ -3585,9 +3585,9 @@
 		"name": "akarmainOS",
 		"url": "https://akarmain.ru",
 		"icon": "obscure.gif",
-		"source": "",
+		"source": "https://github.com/akarmain/site-desktop",
 		"notes": "",
-		"archive": "",
+		"archive": "https://github.com/akarmain/site-desktop",
 		"tags": ["personal"]
 	},
 	{
@@ -3805,5 +3805,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["top"]
+	},
+	{
+		"name": "SpaceOS",
+		"url": "https://kadraa.space",
+		"icon": "linux.gif",
+		"source": "https://github.com/Vampuwu/vampii-os",
+		"notes": "",
+		"archive": "",
+		"tags": ["personal", "game"]
 	}
 ]
