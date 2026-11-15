@@ -167,7 +167,7 @@
 		"icon": "next.gif",
 		"source": "",
 		"notes": "Only runs on HTTP",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20250220182847/http://www.afterstep.org/",
 		"tags": ["poc"]
 	},
 	{
@@ -3368,7 +3368,7 @@
 	{
 		"name": "MOLROO",
 		"url": "https://www.molroo.com",
-		"icon": "windows.gif",
+		"icon": "windows_new.png",
 		"source": "",
 		"notes": "",
 		"archive": "",
