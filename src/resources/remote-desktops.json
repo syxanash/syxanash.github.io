@@ -77,7 +77,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20230130084218/http://www.therestartpage.com/",
 		"tags": ["poc"]
 	},
 	{
@@ -1283,7 +1283,7 @@
 		"icon": "linux.gif",
 		"source": "https://gitlab.com/hsleisink/orb",
 		"notes": "",
-		"archive": "",
+		"archive": "https://gitlab.com/hsleisink/orb",
 		"tags": ["top"]
 	},
 	{
