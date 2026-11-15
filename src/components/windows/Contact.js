@@ -11,6 +11,7 @@ import githubIcon from '../../resources/icons/social/github.gif';
 import blueskyIcon from '../../resources/icons/social/bluesky.png';
 import emailIcon from '../../resources/icons/social/email.gif';
 import pgpIcon from '../../resources/icons/social/pgp.gif';
+import kofiIcon from '../../resources/icons/social/kofi.gif';
 import linkedinIcon from '../../resources/icons/social/linkedin.gif';
 import questionIcon from '../../resources/icons/question-mark.gif';
 
@@ -61,6 +62,13 @@ class ContactBody extends Component {
         <Anchor href={ pgpKey } target='_blank'>
           <Button className='social-icon' style={ { width: '75px', height: '75px', backgroundColor: 'white' } } size='lg' square>
             <img src={ pgpIcon } style={ { height: '50px' } } alt="pgp"/>
+          </Button>
+        </Anchor>
+      </Tooltip>
+      <Tooltip text='Ko-fi' delay={ 100 }>
+        <Anchor href='https://ko-fi.com/syxanash' target='_blank'>
+          <Button className='social-icon' style={ { width: '75px', height: '75px', backgroundColor: 'white' } } size='lg' square>
+            <img src={ kofiIcon } style={ { height: '50px' } } alt="pgp"/>
           </Button>
         </Anchor>
       </Tooltip>

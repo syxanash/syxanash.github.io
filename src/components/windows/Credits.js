@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  TabBody, Tab, Tabs, Cutout, Button,
+  TabBody, Tab, Tabs, Cutout, Tooltip,
 } from 'react95';
 
 import Util from '../Util';
@@ -40,6 +40,10 @@ class CreditsBody extends Component {
 
   render = () => {
     const { activeTab, codeAnimation } = this.state;
+
+    const tooltipMessage = localStorage.getItem('fixed')
+      ? 'I knew you were smart!'
+      : 'did you find it yet? :)';
 
     return (<div className='credits-window'>
       <div>
@@ -109,7 +113,9 @@ class CreditsBody extends Component {
         </div>
       </TabBody>
       <div style={ { paddingTop: '15px', textAlign: 'center' } }>
-        <Button onClick={ () => Util.openWebsiteURL({ url: 'https://ko-fi.com/syxanash' }) }><img src={ pizzaSlice } alt='pizza slice' style={ { paddingRight: '7px' } } />Wanna support me?</Button>
+        <Tooltip text={ tooltipMessage } delay={ 100 }>
+          <img src={ pizzaSlice } alt='pizza slice' />
+        </Tooltip>
       </div>
     </div>);
   }

@@ -9,7 +9,6 @@ import lastUpdatedFile from '../../resources/last-updated.json';
 import './WebDesktopsAbout.css';
 
 import sourceIcon from '../../resources/icons/script.png';
-import pizzaSlice from '../../resources/icons/slice.gif';
 import mobileWarningIcon from '../../resources/icons/mobilewarning.gif';
 import wdLogo from '../../resources/images/webdesktopsLogo.png';
 
@@ -68,7 +67,6 @@ class WebDesktopsAboutBody extends Component {
         <div className='bottom-buttons-container'>
           <div className='bottom-buttons-wd'>
             <Button onClick={ () => this.setState({ showDisclaimer: !showDisclaimer }) } active={ showDisclaimer }>Disclaimer</Button>
-            <Button onClick={ () => Util.openWebsiteURL({ url: 'https://ko-fi.com/syxanash' }) }><img src={ pizzaSlice } alt='donate' style={ { paddingRight: '7px' } } />Donate</Button>
             <Button onClick={ () => Util.openWebsiteURL({ url: 'https://github.com/syxanash/awesome-web-desktops' }) }><img src={ sourceIcon } alt='source' style={ { paddingRight: '4px', height: '17px' } } />Contribute</Button>
           </div>
         </div>
@@ -76,7 +74,7 @@ class WebDesktopsAboutBody extends Component {
           <span><i>List was last updated on <b>{ this.state.wdLastUpdated }</b></i></span>
         </div>
       </div>
-    )
+    );
   };
 }
 
