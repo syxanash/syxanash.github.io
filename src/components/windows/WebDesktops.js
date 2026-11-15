@@ -848,21 +848,21 @@ class WebDesktopsBody extends Component {
               <img src={ hyperlinkIcon } alt='hyperlink' style={ { paddingRight: '4px' } } />Random
             </Button>
             <Button onClick={ this.toggleCategoriesView } active={ categoriesView } variant="menu" style={ {
-              fontWeight: categoriesSelected ? 'bold' : 'normal', width: '140px', display: 'flex', alignItems: 'center',
+              fontWeight: categoriesSelected ? 'bold' : 'normal', display: 'flex', alignItems: 'center',
             } }>
               <div style={ { display: 'flex', alignItems: 'center' } }>
                 <img src={ categoriesIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />
                 <span>Categories</span>
               </div>
             </Button>
-            <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu" style={ { fontWeight: filteredList ? 'bold' : 'normal', width: '100px' } }>
-              <img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Filters
+            <Button onClick={ this.toggleFilterView } active={ filterView } variant="menu" style={ { fontWeight: filteredList ? 'bold' : 'normal' } }>
+              <img src={ gearIcon } alt='hyperlink' style={ { paddingRight: '7px' } } />Settings
             </Button>
             <Button
               onClick={ this.toggleSearchView }
               onMouseOver={ () => { this.setState({ buttonSearchIcon: searchAnimatedIcon }); } }
               onMouseLeave={ () => { this.setState({ buttonSearchIcon: searchIcon }); } }
-              active={ searchView } variant="menu" style={ { fontWeight: searchInput === '' ? 'normal' : 'bold', width: '110px' } }>
+              active={ searchView } variant="menu" style={ { fontWeight: searchInput === '' ? 'normal' : 'bold' } }>
               <img src={ buttonSearchIcon } alt='hyperlink' style={ { paddingRight: '7px', height: '25px' } } />Search
             </Button>
             <Button onClick={ () => openWindow('webdesktopsAbout', true) } variant="menu">
