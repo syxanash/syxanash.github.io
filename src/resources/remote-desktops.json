@@ -284,7 +284,7 @@
 		"icon": "amiga.gif",
 		"source": "",
 		"notes": "Only runs on HTTP",
-		"archive": "https://web.archive.org/web/20190901114711/http://www.chiptune.com/",
+		"archive": "",
 		"tags": ["misc"]
 	},
 	{
@@ -478,11 +478,11 @@
 	},
 	{
 		"name": "Nirrius Creative Studio",
-		"url": "https://nirri.us",
+		"url": "https://sister.software",
 		"icon": "unix.gif",
 		"source": "",
 		"notes": "",
-		"archive": "https://web.archive.org/web/20210118193913/https://nirri.us/",
+		"archive": "",
 		"tags": ["personal"]
 	},
 	{
@@ -2390,7 +2390,7 @@
 		"icon": "obscure.gif",
 		"source": "",
 		"notes": "",
-		"archive": "https://web.archive.org/web/*/https://publicaccessmemories.com/",
+		"archive": "",
 		"tags": ["poc"]
 	},
 	{
