@@ -1279,11 +1279,11 @@
 	},
 	{
 		"name": "Orb",
-		"url": "https://desktop.leisink.net",
+		"url": "https://orb.leisink.net",
 		"icon": "linux.gif",
 		"source": "https://gitlab.com/hsleisink/orb",
 		"notes": "",
-		"archive": "https://gitlab.com/hsleisink/orb",
+		"archive": "",
 		"tags": ["top"]
 	},
 	{
@@ -3074,7 +3074,7 @@
 		"icon": "obscure.gif",
 		"source": "https://github.com/allucat1000/HuopaOS",
 		"notes": "",
-		"archive": "",
+		"archive": "https://web.archive.org/web/20251221171721/https://allucat1000.github.io/HuopaOS/",
 		"tags": ["poc"]
 	},
 	{
