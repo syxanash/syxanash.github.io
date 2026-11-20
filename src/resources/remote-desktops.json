@@ -3814,5 +3814,14 @@
 		"notes": "",
 		"archive": "",
 		"tags": ["personal", "game"]
+	},
+	{
+		"name": "LunarOS",
+		"url": "https://lunarhaze.co",
+		"icon": "windows.gif",
+		"source": "",
+		"notes": "21+ age check\non first visit",
+		"archive": "",
+		"tags": ["misc"]
 	}
 ]
